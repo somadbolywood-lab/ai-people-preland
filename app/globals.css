@@ -135,9 +135,9 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: 88px !important;
+        height: 92px !important;
         width: auto !important;
-        max-width: 176px !important;
+        max-width: 184px !important;
     }
     
     .notification-banner {
@@ -199,9 +199,9 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: 80px !important;
+        height: 84px !important;
         width: auto !important;
-        max-width: 154px !important;
+        max-width: 162px !important;
     }
 }
 
@@ -255,9 +255,9 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: 70px !important;
+        height: 74px !important;
         width: auto !important;
-        max-width: 132px !important;
+        max-width: 138px !important;
     }
 }
 
