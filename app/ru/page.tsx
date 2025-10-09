@@ -312,7 +312,7 @@ export default function Page() {
                 <a href="/ru/blog" style={{color: '#1e40af', textDecoration: 'underline', fontWeight: '700'}} data-lang-en="expert insights on AI models and virtual influencers" data-lang-ru="экспертные инсайты по AI-моделям и виртуальным инфлюенсерам">экспертные инсайты по AI-моделям и виртуальным инфлюенсерам</a>
                 <span data-lang-en="." data-lang-ru=".">.</span>
               </p>
-              <a href="/ru/auth/role" className="btn primary" style={{marginTop: '1.5rem', display: 'inline-block'}}><span data-lang-en="Join the Waiting List — Launching Nov 1, 2025" data-lang-ru="Присоединиться к списку ожидания — Запуск 01.11.2025">Присоединиться к списку ожидания — Запуск 01.11.2025</span></a>
+              <a href="/ru/auth/role" className="btn primary" style={{marginTop: '1.5rem', display: 'inline-block'}}><span data-lang-en="Join the Waiting List" data-lang-ru="Присоединиться к списку ожидания">Присоединиться к списку ожидания</span></a>
             </div>
           </section>
         </section>
