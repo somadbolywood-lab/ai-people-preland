@@ -6761,13 +6761,16 @@ a.visible-link {
 /* Mobile responsive for footer legal */
 @media (max-width: 480px) {
     .footer-legal {
-        flex-direction: column;
-        gap: 0.25rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
         text-align: center;
     }
     
     .footer-legal a {
         font-size: 10px;
+        white-space: nowrap;
     }
 }
 
