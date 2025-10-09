@@ -263,11 +263,22 @@ html, body { height: 100%; }
   /* Topbar */
   .topbar { padding: 4px 8px !important; min-height: 60px !important; height: 60px !important; }
   .brand .logo-img { width: 64px !important; height: 64px !important; }
+  /* Override Next.js <Image> wrapper (span) around logo */
+  .brand a > span:has(> img.logo-img) {
+    width: 64px !important;
+    height: 64px !important;
+    display: inline-block !important;
+  }
   .feedback-btn { padding: 4px 8px !important; font-size: 11px !important; line-height: 1 !important; }
   
   /* Marquee */
   .marquee-item { width: 150px !important; height: 94px !important; }
+  /* Override Next.js <Image> wrapper (span) inside marquee items */
+  .marquee-item > span { width: 150px !important; height: 94px !important; display: block !important; }
   .marquee-item img { width: 150px !important; height: 94px !important; }
+  /* Blog marquee cards scale */
+  .marquee-card { width: 340px !important; height: 440px !important; }
+  .marquee-image { height: 200px !important; }
 
   /* Footer legal inline */
   .footer-legal { flex-direction: row !important; justify-content: center !important; gap: 0.5rem !important; flex-wrap: wrap !important; }
