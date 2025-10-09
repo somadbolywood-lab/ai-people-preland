@@ -11,6 +11,7 @@ export const metadata = {
   creator: 'AI-People',
   publisher: 'AI-People',
   robots: 'index, follow',
+  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
   metadataBase: new URL('https://ai-people.io'),
   alternates: {
     canonical: 'https://ai-people.io',
