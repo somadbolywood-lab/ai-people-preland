@@ -1581,7 +1581,7 @@ a.visible-link {
 }
 .btn:hover { 
     transform: scale(1.05);
-    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3), 0 0 20px rgba(139, 92, 246, 0.2);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.4), 0 0 25px rgba(139, 92, 246, 0.3);
 }
 .btn:active { transform: scale(0.98); }
 .btn.primary { 
@@ -1590,12 +1590,11 @@ a.visible-link {
     color: white; 
     font-weight: 700; 
     transition: all 0.3s ease;
+    position: relative;
 }
 .btn.primary:hover {
     background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5), 0 0 25px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.4);
 }
 
 .btn.secondary {
@@ -7556,7 +7555,7 @@ a.visible-link {
 .call-to-action .btn:hover {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   transform: scale(1.05);
-  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5), 0 0 25px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.4);
 }
 
 @keyframes ctaPulse {
