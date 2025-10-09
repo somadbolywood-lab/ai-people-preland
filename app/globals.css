@@ -81,8 +81,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 150px !important;
-        height: 94px !important;
+        width: 120px !important;
+        height: 75px !important;
     }
     
     .marquee-item img {
@@ -135,8 +135,8 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        width: 64px !important;
-        height: 64px !important;
+        width: 50px !important;
+        height: 50px !important;
     }
     
     .notification-banner {
@@ -169,8 +169,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 130px !important;
-        height: 78px !important;
+        width: 100px !important;
+        height: 60px !important;
     }
     
     .marquee-item img {
@@ -198,8 +198,8 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        width: 54px !important;
-        height: 54px !important;
+        width: 40px !important;
+        height: 40px !important;
     }
 }
 
@@ -224,8 +224,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 110px !important;
-        height: 69px !important;
+        width: 80px !important;
+        height: 50px !important;
     }
     
     .marquee-item img {
@@ -253,36 +253,9 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        width: 48px !important;
-        height: 48px !important;
+        width: 35px !important;
+        height: 35px !important;
     }
-}
-
-/* FINAL mobile portrait overrides (ensure highest precedence on prod) */
-@media (max-width: 639px) and (orientation: portrait) {
-  /* Topbar */
-  .topbar { padding: 4px 8px !important; min-height: 60px !important; height: 60px !important; }
-  .brand .logo-img { width: 64px !important; height: 64px !important; }
-  /* Override Next.js <Image> wrapper (span) around logo */
-  .brand a > span:has(> img.logo-img) {
-    width: 64px !important;
-    height: 64px !important;
-    display: inline-block !important;
-  }
-  .feedback-btn { padding: 4px 8px !important; font-size: 11px !important; line-height: 1 !important; }
-  
-  /* Marquee */
-  .marquee-item { width: 150px !important; height: 94px !important; }
-  /* Override Next.js <Image> wrapper (span) inside marquee items */
-  .marquee-item > span { width: 150px !important; height: 94px !important; display: block !important; }
-  .marquee-item img { width: 150px !important; height: 94px !important; }
-  /* Blog marquee cards scale */
-  .marquee-card { width: 340px !important; height: 440px !important; }
-  .marquee-image { height: 200px !important; }
-
-  /* Footer legal inline */
-  .footer-legal { flex-direction: row !important; justify-content: center !important; gap: 0.5rem !important; flex-wrap: wrap !important; }
-  .footer-legal a { white-space: nowrap !important; font-size: 11px !important; }
 }
 
 /* Mobile-first optimizations */
@@ -315,9 +288,7 @@ html, body { height: 100%; }
     }
     
     .feedback-btn {
-        padding: 4px 8px !important;
-        font-size: 11px !important;
-        line-height: 1 !important;
+        display: none;
     }
     
     .menu-panel {
@@ -6790,17 +6761,13 @@ a.visible-link {
 /* Mobile responsive for footer legal */
 @media (max-width: 480px) {
     .footer-legal {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
+        flex-direction: column;
+        gap: 0.25rem;
         text-align: center;
-        flex-wrap: wrap;
     }
     
     .footer-legal a {
-        font-size: 11px;
-        white-space: nowrap;
+        font-size: 10px;
     }
 }
 

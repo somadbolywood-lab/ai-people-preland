@@ -47,15 +47,15 @@ const FooterContent = dynamic(() => Promise.resolve(function FooterContent() {
           </svg>
         </a>
       </div>
-      <span>© 2025 <span className="gradient-text">AI-People</span></span>
-      <p className="footer-rights" data-lang-en="All rights reserved. Unauthorized reproduction or distribution of content is prohibited." data-lang-ru="Все права защищены. Несанкционированное воспроизведение или распространение контента запрещено.">
-        All rights reserved. Unauthorized reproduction or distribution of content is prohibited.
-      </p>
       <div className="footer-legal">
         <a href="/legal/terms" data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">Terms of Service</a> · 
         <a href="/legal/privacy" data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">Privacy Policy</a> · 
         <a href="/legal/cookies" data-lang-en="Cookie Policy" data-lang-ru="Политика файлов cookie">Cookie Policy</a>
       </div>
+      <p className="footer-rights" data-lang-en="All rights reserved. Unauthorized reproduction or distribution of content is prohibited." data-lang-ru="Все права защищены. Несанкционированное воспроизведение или распространение контента запрещено.">
+        All rights reserved. Unauthorized reproduction or distribution of content is prohibited.
+      </p>
+      <span>© 2025 <span className="gradient-text">AI-People</span></span>
     </footer>
   );
 }), { ssr: false });
