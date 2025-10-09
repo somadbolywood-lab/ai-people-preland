@@ -81,8 +81,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 120px !important;
-        height: 75px !important;
+        width: 150px !important;
+        height: 94px !important;
     }
     
     .marquee-item img {
@@ -135,8 +135,8 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        width: 50px !important;
-        height: 50px !important;
+        width: 64px !important;
+        height: 64px !important;
     }
     
     .notification-banner {
@@ -169,8 +169,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 100px !important;
-        height: 60px !important;
+        width: 130px !important;
+        height: 78px !important;
     }
     
     .marquee-item img {
@@ -198,8 +198,8 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        width: 40px !important;
-        height: 40px !important;
+        width: 54px !important;
+        height: 54px !important;
     }
 }
 
@@ -224,8 +224,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 80px !important;
-        height: 50px !important;
+        width: 110px !important;
+        height: 69px !important;
     }
     
     .marquee-item img {
@@ -253,8 +253,8 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        width: 35px !important;
-        height: 35px !important;
+        width: 48px !important;
+        height: 48px !important;
     }
 }
 
@@ -288,7 +288,9 @@ html, body { height: 100%; }
     }
     
     .feedback-btn {
-        display: none;
+        padding: 4px 8px !important;
+        font-size: 11px !important;
+        line-height: 1 !important;
     }
     
     .menu-panel {
@@ -6761,13 +6763,17 @@ a.visible-link {
 /* Mobile responsive for footer legal */
 @media (max-width: 480px) {
     .footer-legal {
-        flex-direction: column;
-        gap: 0.25rem;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
         text-align: center;
+        flex-wrap: wrap;
     }
     
     .footer-legal a {
-        font-size: 10px;
+        font-size: 11px;
+        white-space: nowrap;
     }
 }
 
