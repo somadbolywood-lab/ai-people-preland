@@ -1,0 +1,54 @@
+# ============================================
+# AI-PEOPLE DATABASE CONNECTION SETTINGS
+# ============================================
+# Copy this file to .env and fill in your actual values
+# NEVER commit .env to version control!
+
+# Database Configuration
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=aipeople_prelaunch
+DB_USER=your_database_user
+DB_PASSWORD=your_secure_password
+
+# Connection Pool Settings
+DB_CONNECTION_LIMIT=10
+DB_QUEUE_LIMIT=0
+DB_WAIT_FOR_CONNECTIONS=true
+DB_CONNECT_TIMEOUT=10000
+
+# SSL/TLS (uncomment if using secure connection)
+# DB_SSL_CA=/path/to/ca-cert.pem
+# DB_SSL_CERT=/path/to/client-cert.pem
+# DB_SSL_KEY=/path/to/client-key.pem
+
+# Timezone
+DB_TIMEZONE=+00:00
+
+# Charset
+DB_CHARSET=utf8mb4
+
+# Debug Mode (set to false in production)
+DB_DEBUG=false
+
+# ============================================
+# PRODUCTION SETTINGS EXAMPLE
+# ============================================
+# DB_HOST=production-db.example.com
+# DB_PORT=3306
+# DB_NAME=aipeople_production
+# DB_USER=api_user
+# DB_PASSWORD=super_secure_production_password_here
+# DB_SSL_CA=/etc/ssl/certs/mysql-ca.pem
+# DB_DEBUG=false
+
+# ============================================
+# DEVELOPMENT SETTINGS EXAMPLE
+# ============================================
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_NAME=aipeople_dev
+# DB_USER=root
+# DB_PASSWORD=root
+# DB_DEBUG=true
+

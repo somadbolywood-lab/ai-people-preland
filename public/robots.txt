@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://ai-people.io/sitemap.xml
+
+# Protect private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+
+# Allow important sections
+Allow: /blog/
+Allow: /faq/
+Allow: /auth/
+Allow: /legal/
+
+# Googlebot - faster crawling
+User-agent: Googlebot
+Crawl-delay: 0
+
+# Yandex - faster crawling with clean params
+User-agent: Yandex
+Crawl-delay: 0
+Clean-param: utm_source&utm_medium&utm_campaign
+
+# Host preference for Yandex (only once!)
+Host: ai-people.io
