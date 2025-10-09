@@ -3527,38 +3527,62 @@ a.visible-link {
     padding: 0 4px;
 }
 
-/* Russian version - smaller title and subtitle with higher specificity */
-.container.ru-optimized .title { 
+/* ULTIMATE RUSSIAN STYLES - MAXIMUM SPECIFICITY */
+body.ru-optimized .container .title,
+.container.ru-optimized .title,
+body.ru-optimized .title,
+.ru-optimized .title { 
     font-size: clamp(2rem, 5vw, 3rem) !important;
 }
 
-.container.ru-optimized .title .gradient-text {
+body.ru-optimized .container .title .gradient-text,
+.container.ru-optimized .title .gradient-text,
+body.ru-optimized .title .gradient-text,
+.ru-optimized .title .gradient-text {
     font-size: clamp(2.25rem, 5.5vw, 3.5rem) !important;
 }
 
-.container.ru-optimized .title span:not(.gradient-text) {
+body.ru-optimized .container .title span:not(.gradient-text),
+.container.ru-optimized .title span:not(.gradient-text),
+body.ru-optimized .title span:not(.gradient-text),
+.ru-optimized .title span:not(.gradient-text) {
     font-size: clamp(1.75rem, 4.5vw, 2.75rem) !important;
 }
 
-.container.ru-optimized .subtitle { 
+body.ru-optimized .container .subtitle,
+.container.ru-optimized .subtitle,
+body.ru-optimized .subtitle,
+.ru-optimized .subtitle { 
     font-size: clamp(1rem, 2vw, 1.25rem) !important;
 }
 
-/* Russian desktop optimization - уменьшенные размеры только для десктопа */
+/* ULTIMATE RUSSIAN DESKTOP OPTIMIZATION - MAXIMUM SPECIFICITY */
 @media (min-width: 1024px) {
-    .container.ru-optimized .title { 
+    body.ru-optimized .container .title,
+    .container.ru-optimized .title,
+    body.ru-optimized .title,
+    .ru-optimized .title { 
         font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
     }
 
-    .container.ru-optimized .title .gradient-text {
+    body.ru-optimized .container .title .gradient-text,
+    .container.ru-optimized .title .gradient-text,
+    body.ru-optimized .title .gradient-text,
+    .ru-optimized .title .gradient-text {
         font-size: clamp(2rem, 4.5vw, 3rem) !important;
     }
 
-    .container.ru-optimized .title span:not(.gradient-text) {
+    body.ru-optimized .container .title span:not(.gradient-text),
+    .container.ru-optimized .title span:not(.gradient-text),
+    body.ru-optimized .title span:not(.gradient-text),
+    .ru-optimized .title span:not(.gradient-text) {
         font-size: clamp(1.5rem, 3.5vw, 2.25rem) !important;
     }
 
-    .container.ru-optimized .subtitle { 
+    body.ru-optimized .container .subtitle,
+    .container.ru-optimized .subtitle,
+    body.ru-optimized .subtitle,
+    .ru-optimized .subtitle { 
         font-size: clamp(0.9rem, 1.5vw, 1.1rem) !important;
     }
 }
@@ -4067,22 +4091,22 @@ a.visible-link {
     
     /* Hamburger styles moved to main section */
     
-    .title {
+    .title:not(.ru-optimized .title) {
         font-size: clamp(20px, 5vw, 36px);
         margin: 6px 0 0px;
         font-weight: 700;
     }
     
-    .title .gradient-text {
+    .title .gradient-text:not(.ru-optimized .title .gradient-text) {
         font-size: clamp(26px, 6vw, 44px);
     }
     
-    .title span:not(.gradient-text)[data-lang-en],
-    .title span:not(.gradient-text)[data-lang-ru] {
+    .title span:not(.gradient-text)[data-lang-en]:not(.ru-optimized .title span),
+    .title span:not(.gradient-text)[data-lang-ru]:not(.ru-optimized .title span) {
         font-size: clamp(20px, 4.8vw, 36px);
     }
     
-    .subtitle {
+    .subtitle:not(.ru-optimized .subtitle) {
         font-size: 12px;
     }
     
