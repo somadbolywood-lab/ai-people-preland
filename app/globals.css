@@ -258,6 +258,22 @@ html, body { height: 100%; }
     }
 }
 
+/* FINAL mobile portrait overrides (ensure highest precedence on prod) */
+@media (max-width: 639px) and (orientation: portrait) {
+  /* Topbar */
+  .topbar { padding: 4px 8px !important; min-height: 60px !important; height: 60px !important; }
+  .brand .logo-img { width: 64px !important; height: 64px !important; }
+  .feedback-btn { padding: 4px 8px !important; font-size: 11px !important; line-height: 1 !important; }
+  
+  /* Marquee */
+  .marquee-item { width: 150px !important; height: 94px !important; }
+  .marquee-item img { width: 150px !important; height: 94px !important; }
+
+  /* Footer legal inline */
+  .footer-legal { flex-direction: row !important; justify-content: center !important; gap: 0.5rem !important; flex-wrap: wrap !important; }
+  .footer-legal a { white-space: nowrap !important; font-size: 11px !important; }
+}
+
 /* Mobile-first optimizations */
 @media (max-width: 639px) {
     .nav {
