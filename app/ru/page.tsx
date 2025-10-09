@@ -243,7 +243,7 @@ export default function Page() {
 
       <main>
         {/* Hero Section */}
-        <section className="hero">
+        <section className="hero home-hero">
           <h1 className="title">
             <span className="gradient-text" data-lang-en="AI Models Marketplace:" data-lang-ru="Маркетплейс AI-моделей:">Маркетплейс AI-моделей:</span>
             <br />

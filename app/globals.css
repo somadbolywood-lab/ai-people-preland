@@ -2711,6 +2711,27 @@ a.visible-link {
     line-height: 1.4;
 }
 
+/* ================= Desktop-only tuning for RU homepage ================= */
+@media (min-width: 1024px) {
+  /* Reduce only RU text within homepage hero */
+  .home-hero .title .gradient-text[data-lang-ru] {
+    /* Blog/FAQ headline scale reference */
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.1;
+  }
+
+  .home-hero .title span:not(.gradient-text)[data-lang-ru] {
+    font-size: clamp(22px, 3.2vw, 36px);
+    line-height: 1.15;
+  }
+
+  .home-hero .subtitle[data-lang-ru],
+  .home-hero .subtitle [data-lang-ru] {
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.5;
+  }
+}
+
 /* Optimize spacing for Russian text */
 .ru-optimized .subtitle {
     line-height: 1.5;
@@ -2729,11 +2750,13 @@ a.visible-link {
 /* Russian text specific adjustments */
 .ru-optimized .title {
     line-height: 1.2;
+    font-size: clamp(2rem, 5vw, 3rem) !important;
 }
 
 .ru-optimized .subtitle {
     line-height: 1.5;
     margin-bottom: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.25rem) !important;
 }
 
 /* Russian mobile optimization */
@@ -3527,64 +3550,21 @@ a.visible-link {
     padding: 0 4px;
 }
 
-/* ULTIMATE RUSSIAN STYLES - MAXIMUM SPECIFICITY */
-body.ru-optimized .container .title,
-.container.ru-optimized .title,
-body.ru-optimized .title,
+/* Russian version - smaller title and subtitle */
 .ru-optimized .title { 
     font-size: clamp(2rem, 5vw, 3rem) !important;
 }
 
-body.ru-optimized .container .title .gradient-text,
-.container.ru-optimized .title .gradient-text,
-body.ru-optimized .title .gradient-text,
 .ru-optimized .title .gradient-text {
     font-size: clamp(2.25rem, 5.5vw, 3.5rem) !important;
 }
 
-body.ru-optimized .container .title span:not(.gradient-text),
-.container.ru-optimized .title span:not(.gradient-text),
-body.ru-optimized .title span:not(.gradient-text),
 .ru-optimized .title span:not(.gradient-text) {
     font-size: clamp(1.75rem, 4.5vw, 2.75rem) !important;
 }
 
-body.ru-optimized .container .subtitle,
-.container.ru-optimized .subtitle,
-body.ru-optimized .subtitle,
 .ru-optimized .subtitle { 
     font-size: clamp(1rem, 2vw, 1.25rem) !important;
-}
-
-/* ULTIMATE RUSSIAN DESKTOP OPTIMIZATION - MAXIMUM SPECIFICITY */
-@media (min-width: 1024px) {
-    body.ru-optimized .container .title,
-    .container.ru-optimized .title,
-    body.ru-optimized .title,
-    .ru-optimized .title { 
-        font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
-    }
-
-    body.ru-optimized .container .title .gradient-text,
-    .container.ru-optimized .title .gradient-text,
-    body.ru-optimized .title .gradient-text,
-    .ru-optimized .title .gradient-text {
-        font-size: clamp(2rem, 4.5vw, 3rem) !important;
-    }
-
-    body.ru-optimized .container .title span:not(.gradient-text),
-    .container.ru-optimized .title span:not(.gradient-text),
-    body.ru-optimized .title span:not(.gradient-text),
-    .ru-optimized .title span:not(.gradient-text) {
-        font-size: clamp(1.5rem, 3.5vw, 2.25rem) !important;
-    }
-
-    body.ru-optimized .container .subtitle,
-    .container.ru-optimized .subtitle,
-    body.ru-optimized .subtitle,
-    .ru-optimized .subtitle { 
-        font-size: clamp(0.9rem, 1.5vw, 1.1rem) !important;
-    }
 }
 .hero-cta { 
     margin-top: 16px; 
@@ -4091,22 +4071,22 @@ body.ru-optimized .subtitle,
     
     /* Hamburger styles moved to main section */
     
-    .title:not(.ru-optimized .title) {
+    .title {
         font-size: clamp(20px, 5vw, 36px);
         margin: 6px 0 0px;
         font-weight: 700;
     }
     
-    .title .gradient-text:not(.ru-optimized .title .gradient-text) {
+    .title .gradient-text {
         font-size: clamp(26px, 6vw, 44px);
     }
     
-    .title span:not(.gradient-text)[data-lang-en]:not(.ru-optimized .title span),
-    .title span:not(.gradient-text)[data-lang-ru]:not(.ru-optimized .title span) {
+    .title span:not(.gradient-text)[data-lang-en],
+    .title span:not(.gradient-text)[data-lang-ru] {
         font-size: clamp(20px, 4.8vw, 36px);
     }
     
-    .subtitle:not(.ru-optimized .subtitle) {
+    .subtitle {
         font-size: 12px;
     }
     
