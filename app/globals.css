@@ -2729,13 +2729,11 @@ a.visible-link {
 /* Russian text specific adjustments */
 .ru-optimized .title {
     line-height: 1.2;
-    font-size: clamp(2rem, 5vw, 3rem) !important;
 }
 
 .ru-optimized .subtitle {
     line-height: 1.5;
     margin-bottom: 1.5rem;
-    font-size: clamp(1rem, 2vw, 1.25rem) !important;
 }
 
 /* Russian mobile optimization */
@@ -3529,38 +3527,38 @@ a.visible-link {
     padding: 0 4px;
 }
 
-/* Russian version - smaller title and subtitle */
-.ru-optimized .title { 
+/* Russian version - smaller title and subtitle with higher specificity */
+.container.ru-optimized .title { 
     font-size: clamp(2rem, 5vw, 3rem) !important;
 }
 
-.ru-optimized .title .gradient-text {
+.container.ru-optimized .title .gradient-text {
     font-size: clamp(2.25rem, 5.5vw, 3.5rem) !important;
 }
 
-.ru-optimized .title span:not(.gradient-text) {
+.container.ru-optimized .title span:not(.gradient-text) {
     font-size: clamp(1.75rem, 4.5vw, 2.75rem) !important;
 }
 
-.ru-optimized .subtitle { 
+.container.ru-optimized .subtitle { 
     font-size: clamp(1rem, 2vw, 1.25rem) !important;
 }
 
 /* Russian desktop optimization - уменьшенные размеры только для десктопа */
 @media (min-width: 1024px) {
-    .ru-optimized .title { 
+    .container.ru-optimized .title { 
         font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
     }
 
-    .ru-optimized .title .gradient-text {
+    .container.ru-optimized .title .gradient-text {
         font-size: clamp(2rem, 4.5vw, 3rem) !important;
     }
 
-    .ru-optimized .title span:not(.gradient-text) {
+    .container.ru-optimized .title span:not(.gradient-text) {
         font-size: clamp(1.5rem, 3.5vw, 2.25rem) !important;
     }
 
-    .ru-optimized .subtitle { 
+    .container.ru-optimized .subtitle { 
         font-size: clamp(0.9rem, 1.5vw, 1.1rem) !important;
     }
 }
