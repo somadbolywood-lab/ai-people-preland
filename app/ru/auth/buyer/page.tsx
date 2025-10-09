@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
 import ThankYouModal from "../../../components/ThankYouModal";
 import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
 import CustomDropdown from "../../../components/CustomDropdown";
 
 export default function BuyerLeadPage() {
+  useHamburgerMenu();
   
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);

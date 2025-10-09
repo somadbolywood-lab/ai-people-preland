@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
+import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
 import Image from "next/image";
 import Script from "next/script";
 import Footer from "../../../components/Footer";
@@ -9,6 +10,8 @@ import LanguageSelector from "../../../components/LanguageSelector";
 import Head from "next/head";
 
 export default function RoleSelectionPage() {
+  useHamburgerMenu();
+  
   useEffect(() => {
     // Set Russian language by default
     localStorage.setItem('selectedLanguage', 'ru');

@@ -1,4 +1,8 @@
 import Script from 'next/script';
+import '../globals.css';
+import Image from 'next/image';
+import ThemeToggle from '../components/ThemeToggle';
+import LanguageSelector from '../components/LanguageSelector';
 
 export const metadata = {
   title: 'AI-People: Маркетплейс AI-моделей | Гиперреалистичные виртуальные инфлюенсеры и AI-арт 2025',
@@ -59,6 +63,9 @@ export const viewport = {
 export default function RuLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <style dangerouslySetInnerHTML={{
+        __html: `body{margin:0;padding-top:80px!important;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;min-height:100vh}@media (max-width:639px){body{padding-top:80px!important}}`
+      }} />
       {children}
     </>
   );

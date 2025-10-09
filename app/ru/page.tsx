@@ -182,12 +182,11 @@ export default function Page() {
         <div className="actions">
           <LanguageSelector />
           <ThemeToggle />
-          <a href="mailto:feedback@ai-people.com" className="btn outline feedback-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <a href="mailto:feedback@ai-people.com" className="feedback-btn" aria-label="Feedback">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
-            <span data-lang-en="Feedback" data-lang-ru="Обратная связь">Обратная связь</span>
           </a>
           <button className="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="menuPanel"><span className="bar"></span><span className="bar"></span><span className="bar"></span></button>
         </div>
@@ -243,13 +242,11 @@ export default function Page() {
 
       <main>
         {/* Hero Section */}
-        <section className="hero home-hero">
-          <h1 className="title">
-            <span className="gradient-text" data-lang-en="AI Models Marketplace:" data-lang-ru="Маркетплейс AI-моделей:">Маркетплейс AI-моделей:</span>
-            <br />
-            <span data-lang-en="Buy & Sell Hyperrealistic Virtual Influencers" data-lang-ru="Покупайте и продавайте гиперреалистичных виртуальных инфлюенсеров">Покупайте и продавайте гиперреалистичных виртуальных инфлюенсеров</span>
-          </h1>
-          <p className="subtitle" data-lang-en="The world's first curated platform for premium AI-generated content. Join the community of creators and brands revolutionizing digital marketing." data-lang-ru="Первая в мире курируемая платформа для премиум AI-контента. Присоединяйтесь к сообществу креаторов и брендов, революционизирующих цифровой маркетинг.">Первая в мире курируемая платформа для премиум AI-контента. Присоединяйтесь к сообществу креаторов и брендов, революционизирующих цифровой маркетинг.</p>
+        <section className="hero">
+          <h1 className="title"><span className="gradient-text" data-lang-en="AI Models Marketplace" data-lang-ru="Маркетплейс AI-моделей">Маркетплейс AI-моделей</span></h1>
+          <div className="subtitle">
+            <p className="gradient-text" data-lang-en="The world's first curated platform for premium AI-generated content. Buy & sell hyperrealistic virtual influencers. Join the community of creators and brands revolutionizing digital marketing." data-lang-ru="Первая в мире курируемая платформа для премиум AI-контента. Покупайте и продавайте гиперреалистичных виртуальных инфлюенсеров. Присоединяйтесь к сообществу креаторов и брендов, революционизирующих цифровой маркетинг.">Первая в мире курируемая платформа для премиум AI-контента. Покупайте и продавайте гиперреалистичных виртуальных инфлюенсеров. Присоединяйтесь к сообществу креаторов и брендов, революционизирующих цифровой маркетинг.</p>
+          </div>
         </section>
 
         {/* Main Content */}

@@ -30,7 +30,7 @@ export default function ThemeToggle() {
 
   return (
     <button 
-      className="btn theme-toggle" 
+      className="theme-toggle" 
       onClick={toggleTheme}
       aria-label="Toggle theme"
     >

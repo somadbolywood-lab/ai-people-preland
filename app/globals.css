@@ -135,12 +135,13 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        width: 50px !important;
-        height: 50px !important;
+        height: 40px !important;
+        width: auto !important;
+        max-width: 80px !important;
     }
     
     .notification-banner {
-        margin: 4px 2px 8px !important;
+        margin: 0 2px 6px !important;
         padding: 6px 8px !important;
         font-size: 12px !important;
         line-height: 1.3 !important;
@@ -198,8 +199,9 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        width: 40px !important;
-        height: 40px !important;
+        height: 36px !important;
+        width: auto !important;
+        max-width: 70px !important;
     }
 }
 
@@ -253,8 +255,9 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        width: 35px !important;
-        height: 35px !important;
+        height: 32px !important;
+        width: auto !important;
+        max-width: 60px !important;
     }
 }
 
@@ -272,7 +275,7 @@ html, body { height: 100%; }
     }
     
     body {
-        padding-top: 72px !important;
+        padding-top: 80px !important;
     }
     
     .logo-img {
@@ -365,7 +368,7 @@ html, body { height: 100%; }
 
 body {
     margin: 0;
-    padding-top: 78px !important;
+    padding-top: 80px !important;
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     background: var(--bg);
     color: var(--text);
@@ -1477,52 +1480,6 @@ a.visible-link {
     flex-shrink: 0;
 }
 
-.feedback-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    background: transparent;
-    color: var(--text);
-    border-radius: 8px;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    position: relative;
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    z-index: 1;
-}
-
-.feedback-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 2px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    border-radius: 8px;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-}
-
-.feedback-btn:hover {
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    color: white;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-}
-
-.feedback-btn:hover::before {
-    display: none;
-}
-
-.feedback-btn svg {
-    flex-shrink: 0;
-}
-
 .nav {
     display: flex;
     align-items: center;
@@ -1633,8 +1590,63 @@ a.visible-link {
     transform: scale(1.05);
 }
 
-.btn.ghost { background: transparent; }
-.theme-toggle { border: 1px solid var(--border); background: var(--panel); }
+/* Unified topbar icons styles */
+.theme-toggle, 
+.feedback-btn, 
+.hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text);
+    flex-shrink: 0;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.theme-toggle:hover,
+.feedback-btn:hover,
+.hamburger:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+    transform: scale(1.05);
+}
+
+.theme-toggle:active,
+.feedback-btn:active,
+.hamburger:active {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.4);
+    transform: scale(0.98);
+}
+
+.theme-toggle svg,
+.feedback-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.hamburger {
+    flex-direction: column;
+    gap: 3px;
+}
+
+.hamburger .bar {
+    width: 20px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
 .gradient-text { 
     background: linear-gradient(135deg, #8b5cf6, #ec4899) !important; 
     -webkit-background-clip: text !important; 
@@ -2617,24 +2629,42 @@ a.visible-link {
 }
 
 .language-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 4px;
-    padding: 6px 8px;
-    background: none;
-    border: none;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
     color: var(--text);
     font-size: 14px;
     font-weight: 500;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-    min-height: 32px;
+    flex-shrink: 0;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .language-btn:hover {
-    background: rgba(var(--text-rgb), 0.1);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
     transform: scale(1.05);
+}
+
+.language-btn:active {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.4);
+    transform: scale(0.98);
+}
+
+.language-btn svg {
+    width: 12px;
+    height: 12px;
 }
 
 .language-text {
@@ -2711,23 +2741,28 @@ a.visible-link {
     line-height: 1.4;
 }
 
-
-/* ===== RU homepage desktop overrides (placed at end to win cascade) ===== */
+/* ================= Desktop-only tuning for RU homepage ================= */
 @media (min-width: 1024px) {
-  /* Maximum specificity to override mobile !important rules */
-  section.hero.home-hero h1.title .gradient-text[data-lang-ru] { 
-    font-size: clamp(32px, 4.5vw, 56px) !important; 
-    line-height: 1.1 !important; 
+  /* Reduce only RU text within homepage hero */
+  .home-hero .title .gradient-text[data-lang-ru] {
+    /* Blog/FAQ headline scale reference */
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.1;
   }
-  section.hero.home-hero h1.title span:not(.gradient-text)[data-lang-ru] { 
-    font-size: clamp(22px, 3.2vw, 36px) !important; 
-    line-height: 1.15 !important; 
+
+  .home-hero .title span:not(.gradient-text)[data-lang-ru] {
+    font-size: clamp(22px, 3.2vw, 36px);
+    line-height: 1.15;
   }
-  section.hero.home-hero p.subtitle[data-lang-ru] { 
-    font-size: clamp(14px, 1.2vw, 16px) !important; 
-    line-height: 1.5 !important; 
+
+  .home-hero .subtitle[data-lang-ru],
+  .home-hero .subtitle [data-lang-ru] {
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.5;
   }
 }
+
+/* ===== Unified headings styles for all pages ===== */
 
 /* Optimize spacing for Russian text */
 .ru-optimized .subtitle {
@@ -2742,18 +2777,6 @@ a.visible-link {
 .ru-optimized .menu-panel a {
     padding: 0.75rem 1rem;
     line-height: 1.3;
-}
-
-/* Russian text specific adjustments */
-.ru-optimized .title {
-    line-height: 1.2;
-    font-size: clamp(2rem, 5vw, 3rem) !important;
-}
-
-.ru-optimized .subtitle {
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    font-size: clamp(1rem, 2vw, 1.25rem) !important;
 }
 
 /* Russian mobile optimization */
@@ -2921,33 +2944,7 @@ a.visible-link {
     margin-bottom: 0.75rem;
 }
 
-/* Hamburger */
-.hamburger { 
-    display: inline-flex; 
-    flex-direction: column; 
-    gap: 3px; 
-    padding: 8px; 
-    border-radius: 8px; 
-    border: 1px solid var(--border); 
-    background: var(--panel); 
-    cursor: pointer; 
-    min-height: 40px;
-    min-width: 40px;
-    justify-content: center;
-    align-items: center;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 2;
-}
-.hamburger .bar { 
-    width: 20px; 
-    height: 2px; 
-    background: var(--text); 
-    border-radius: 2px; 
-    transition: all 0.3s ease;
-}
+/* Hamburger menu panel */
 .menu-panel { 
     position: fixed; 
     top: 90px; 
@@ -3529,9 +3526,7 @@ a.visible-link {
 }
 
 .title .gradient-text {
-    font-size: clamp(36px, 7vw, 72px);
-    display: block;
-    margin-bottom: 0.25rem;
+    font-size: inherit;
 }
 
 .title span:not(.gradient-text)[data-lang-en],
@@ -3547,22 +3542,12 @@ a.visible-link {
     padding: 0 4px;
 }
 
-/* Russian version - smaller title and subtitle */
-.ru-optimized .title { 
-    font-size: clamp(2rem, 5vw, 3rem) !important;
+.subtitle .gradient-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
-.ru-optimized .title .gradient-text {
-    font-size: clamp(2.25rem, 5.5vw, 3.5rem) !important;
-}
-
-.ru-optimized .title span:not(.gradient-text) {
-    font-size: clamp(1.75rem, 4.5vw, 2.75rem) !important;
-}
-
-.ru-optimized .subtitle { 
-    font-size: clamp(1rem, 2vw, 1.25rem) !important;
-}
 .hero-cta { 
     margin-top: 16px; 
     display: flex; 
@@ -4044,6 +4029,7 @@ a.visible-link {
     
     .logo-img {
         height: 32px;
+        width: auto;
         max-width: 90px;
     }
     
@@ -4142,7 +4128,7 @@ a.visible-link {
     .container { padding: 16px; }
     .nav { display: flex; }
     .topbar { gap: 12px; padding: 8px 72px; min-height: 72px !important; height: 72px !important; }
-    body { padding-top: 72px !important; }
+    body { padding-top: 80px !important; }
     .logo-img { height: 44px; }
     .social-link { width: 36px; height: 36px; }
     
@@ -4173,7 +4159,7 @@ a.visible-link {
 @media (min-width: 860px) {
     .container { padding: 20px; }
     .topbar { gap: 16px; padding: 8px 72px; min-height: 72px !important; height: 72px !important; }
-    body { padding-top: 72px !important; }
+    body { padding-top: 80px !important; }
     .logo-img { height: 75px !important; max-width: 180px !important; }
     .marquee-item { width: 220px; height: 132px; }
     
@@ -6803,7 +6789,7 @@ a.visible-link {
 .notification-banner {
   background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
   border-radius: 12px;
-  margin: 0.5rem auto 1rem;
+  margin: 0 auto 1rem;
   max-width: 1200px;
   padding: 1rem;
   box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
@@ -6861,7 +6847,7 @@ a.visible-link {
 /* Mobile responsive for notification banner */
 @media (max-width: 768px) {
   .notification-banner {
-    margin: 0.5rem 1rem 1rem;
+    margin: 0 1rem 1rem;
     padding: 0.8rem;
   }
   
@@ -6872,7 +6858,7 @@ a.visible-link {
 
 @media (max-width: 480px) {
   .notification-banner {
-    margin: 0.3rem 0.5rem 0.5rem;
+    margin: 0 0.5rem 0.5rem;
     padding: 0.7rem;
   }
   
@@ -8076,7 +8062,7 @@ a.visible-link {
 /* Blog Hero */
 .blog-hero {
   text-align: center;
-  padding: 1.5rem 1rem 2rem;
+  padding: 2rem 1rem 3rem;
   background: linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(139, 92, 246, 0.01) 50%, transparent 100%);
 }
 
@@ -8094,7 +8080,7 @@ a.visible-link {
 }
 
 .blog-hero-title .gradient-text {
-  font-size: clamp(36px, 7vw, 72px);
+  font-size: inherit;
 }
 
 .blog-title-white {
