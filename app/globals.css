@@ -7031,6 +7031,10 @@ a.visible-link {
     width: 44px;
     height: 44px;
   }
+
+  .role-choice-btn[data-role="creator"] .role-icon {
+    transform: translateX(5px);
+  }
 }
 
 @media (max-width: 480px) {
