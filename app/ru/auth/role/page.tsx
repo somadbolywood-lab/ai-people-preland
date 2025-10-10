@@ -170,10 +170,11 @@ export default function RoleSelectionPage() {
       <main className="auth-main">
         <div className="auth-container">
           <div className="auth-header">
-            <h1 className="auth-title">
-              <span data-lang-en="Join" data-lang-ru="Присоединяйтесь к">Join</span> <span className="gradient-text">AI-People</span>
+            <h1 className="title">
+              <span className="gradient-text" data-lang-en="Join AI-People" data-lang-ru="Присоединяйтесь к AI-People">Присоединяйтесь к AI-People</span>
             </h1>
-            <p className="auth-subtitle" data-lang-en="Choose your role and start your journey in the world of hyperrealistic AI models" data-lang-ru="Выберите свою роль и начните свой путь в мире гиперреалистичных AI-моделей">Choose your role and start your journey in the world of hyperrealistic AI models</p>
+            <h2 className="hero-subtitle" data-lang-en="Choose your role and start your journey in the world of hyperrealistic AI models" data-lang-ru="Выберите свою роль и начните свой путь в мире гиперреалистичных AI-моделей">Выберите свою роль и начните свой путь в мире гиперреалистичных AI-моделей</h2>
+            <h3 className="hero-description" data-lang-en="Professional AI marketplace connecting creators and buyers. Curated quality, secure transactions, and fair creator commissions. Join the future of digital content." data-lang-ru="Профессиональный AI маркетплейс, соединяющий креаторов и покупателей. Курируемое качество, безопасные транзакции и справедливые комиссии креаторов. Присоединяйтесь к будущему цифрового контента.">Профессиональный AI маркетплейс, соединяющий креаторов и покупателей. Курируемое качество, безопасные транзакции и справедливые комиссии креаторов. Присоединяйтесь к будущему цифрового контента.</h3>
           </div>
 
           <div className="role-selection">
