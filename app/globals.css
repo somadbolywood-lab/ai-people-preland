@@ -6956,7 +6956,7 @@ a.visible-link {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1.5rem;
   padding: 1.5rem 2.5rem;
   min-width: 320px;
@@ -7000,6 +7000,10 @@ a.visible-link {
   justify-content: center;
 }
 
+.role-choice-btn[data-role="creator"] .role-icon {
+  transform: translateY(5px);
+}
+
 .role-choice-btn:hover,
 .role-choice-btn:active {
   transform: scale(1.05);
@@ -7033,7 +7037,7 @@ a.visible-link {
   }
 
   .role-choice-btn[data-role="creator"] .role-icon {
-    transform: translateX(5px);
+    transform: translateY(5px) translateX(5px);
   }
 }
 

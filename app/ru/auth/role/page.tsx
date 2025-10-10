@@ -104,7 +104,7 @@ export default function RoleSelectionPage() {
             </a>
             
             <a href="/ru/auth/creator-info" className="role-choice-btn" data-role="creator">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="role-icon" style={{transform: "translateY(5px)"}}>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="role-icon">
                 <path d="M17 12l-1.5-7.5L2 2l3.5 14.5L12 17l5-5z"/>
                 <path d="M2 2l7.586 7.586"/>
                 <circle cx="10" cy="10" r="3"/>
