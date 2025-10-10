@@ -1,12 +1,14 @@
 "use client";
 import Image from "next/image";
 import { useHamburgerMenu } from "./hooks/useHamburgerMenu";
+import { useScrollBorder } from "./hooks/useScrollBorder";
 import Footer from "./components/Footer";
 import ThemeToggle from "./components/ThemeToggle";
 import LanguageSelector from "./components/LanguageSelector";
 
 export default function Page() {
   useHamburgerMenu();
+  const { buyerRef, creatorRef } = useScrollBorder();
 
   return (
     <div className="container home-page">
@@ -122,7 +124,7 @@ export default function Page() {
           </div>
 
           {/* For Buyers */}
-          <div className="content-block for-buyers">
+          <div ref={buyerRef} className="content-block for-buyers">
             <h2 data-lang-en="For Buyers: Access Premium AI Models & Virtual Influencers" data-lang-ru="Для покупателей: Доступ к премиум AI-моделям и виртуальным инфлюенсерам">For Buyers: Access Premium AI Models & Virtual Influencers</h2>
             <p data-lang-en="Gain instant access to a curated catalog of premium AI models and ready-made photo/video content packages. Perfect for advertising campaigns, social media marketing, branding projects, or any creative initiative requiring professional visuals." data-lang-ru="Получите мгновенный доступ к курированному каталогу премиум AI-моделей и готовых пакетов фото/видео контента. Идеально для рекламных кампаний, маркетинга в соцсетях, брендинговых проектов или любых креативных инициатив, требующих профессиональных визуалов.">Gain instant access to a curated catalog of premium AI models and ready-made photo/video content packages. Perfect for advertising campaigns, social media marketing, branding projects, or any creative initiative requiring professional visuals.</p>
             
@@ -142,7 +144,7 @@ export default function Page() {
             </div>
 
           {/* For Creators */}
-          <div className="content-block for-creators">
+          <div ref={creatorRef} className="content-block for-creators">
             <h2 data-lang-en="For Creators: Monetize Your AI Art & Build Your Brand" data-lang-ru="Для креаторов: Монетизируйте AI-искусство и развивайте бренд">For Creators: Monetize Your AI Art & Build Your Brand</h2>
             <p data-lang-en="Turn your AI generation skills into a thriving business. Upload your hyperrealistic AI models, set your own prices, and earn from every sale. Join creators already making $5,000-$25,000 per month selling virtual influencers and AI-generated content on our platform." data-lang-ru="Превратите свои навыки AI-генерации в процветающий бизнес. Загружайте гиперреалистичные AI-модели, устанавливайте свои цены и зарабатывайте с каждой продажи. Присоединяйтесь к креаторам, уже зарабатывающим $5,000-$25,000 в месяц, продавая виртуальных инфлюенсеров и AI-контент на нашей платформе.">Turn your AI generation skills into a thriving business. Upload your hyperrealistic AI models, set your own prices, and earn from every sale. Join creators already making $5,000-$25,000 per month selling virtual influencers and AI-generated content on our platform.</p>
             

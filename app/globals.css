@@ -7581,6 +7581,16 @@ a.visible-link {
   background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent), var(--accent-2));
 }
 
+/* Классы для автоматической активации при скролле */
+.why-choose-us.border-active::after, .for-buyers.border-active::after, .for-creators.border-active::after {
+  opacity: 1 !important;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent), var(--accent-2)) !important;
+}
+
+.why-choose-us.border-active::before, .for-buyers.border-active::before, .for-creators.border-active::before {
+  opacity: 1 !important;
+}
+
 .why-choose-us p, .for-buyers p, .for-creators p {
   margin: 0;
   font-size: 1.05rem;

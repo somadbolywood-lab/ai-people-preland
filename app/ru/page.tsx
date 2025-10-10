@@ -3,12 +3,14 @@ import Image from "next/image";
 import Script from "next/script";
 import { useEffect } from "react";
 import { useHamburgerMenu } from "../hooks/useHamburgerMenu";
+import { useScrollBorder } from "../hooks/useScrollBorder";
 import Footer from "../components/Footer";
 import ThemeToggle from "../components/ThemeToggle";
 import LanguageSelector from "../components/LanguageSelector";
 
 export default function Page() {
   useHamburgerMenu();
+  const { buyerRef, creatorRef } = useScrollBorder();
 
   // Set Russian language by default on mount
   useEffect(() => {
@@ -257,7 +259,7 @@ export default function Page() {
           </div>
 
           {/* For Buyers */}
-          <div className="content-block for-buyers">
+          <div ref={buyerRef} className="content-block for-buyers">
             <h2 data-lang-en="Buy AI Models: Premium Hyperrealistic Virtual Influencers for Marketing" data-lang-ru="Покупайте AI-модели: Премиум гиперреалистичные виртуальные инфлюенсеры для маркетинга">Покупайте AI-модели: Премиум гиперреалистичные виртуальные инфлюенсеры для маркетинга</h2>
             <p data-lang-en="Gain instant access to a curated catalog of premium AI models and ready-made photo/video content packages. Perfect for advertising campaigns, social media marketing, branding projects, or any creative initiative requiring professional visuals." data-lang-ru="Получите мгновенный доступ к курированному каталогу премиум AI-моделей и готовых пакетов фото/видео контента. Идеально для рекламных кампаний, маркетинга в соцсетях, брендинговых проектов или любых креативных инициатив, требующих профессиональных визуалов.">Получите мгновенный доступ к курированному каталогу премиум AI-моделей и готовых пакетов фото/видео контента. Идеально для рекламных кампаний, маркетинга в соцсетях, брендинговых проектов или любых креативных инициатив, требующих профессиональных визуалов.</p>
             
@@ -277,7 +279,7 @@ export default function Page() {
             </div>
 
           {/* For Creators */}
-          <div className="content-block for-creators">
+          <div ref={creatorRef} className="content-block for-creators">
             <h2 data-lang-en="Sell AI Models: Monetize AI Art & Earn $5K-$25K Monthly" data-lang-ru="Продавайте AI-модели: Монетизируйте AI-искусство и зарабатывайте $5K-$25K в месяц">Продавайте AI-модели: Монетизируйте AI-искусство и зарабатывайте $5K-$25K в месяц</h2>
             <p data-lang-en="Turn your AI generation skills into a thriving business. Upload your hyperrealistic AI models, set your own prices, and earn from every sale. Join creators already making $5,000-$25,000 per month selling virtual influencers and AI-generated content on our platform." data-lang-ru="Превратите свои навыки AI-генерации в процветающий бизнес. Загружайте гиперреалистичные AI-модели, устанавливайте свои цены и зарабатывайте с каждой продажи. Присоединяйтесь к креаторам, уже зарабатывающим $5,000-$25,000 в месяц, продавая виртуальных инфлюенсеров и AI-контент на нашей платформе.">Превратите свои навыки AI-генерации в процветающий бизнес. Загружайте гиперреалистичные AI-модели, устанавливайте свои цены и зарабатывайте с каждой продажи. Присоединяйтесь к креаторам, уже зарабатывающим $5,000-$25,000 в месяц, продавая виртуальных инфлюенсеров и AI-контент на нашей платформе.</p>
             
