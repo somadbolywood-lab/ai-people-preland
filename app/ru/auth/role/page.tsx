@@ -104,13 +104,10 @@ export default function RoleSelectionPage() {
             </a>
             
             <a href="/ru/auth/creator-info" className="role-choice-btn" data-role="creator">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="role-icon">
-                <circle cx="13.5" cy="6.5" r="1.8"/>
-                <circle cx="17.5" cy="10.5" r="1.8"/>
-                <circle cx="8.5" cy="7.5" r="1.8"/>
-                <circle cx="6.5" cy="12.5" r="1.8"/>
-                <circle cx="12.5" cy="8.5" r="1.8"/>
-                <path d="M7 14c-3.5 0-6-2.5-6-6s2.5-6 6-6 6 2.5 6 6-2.5 6-6 6z"/>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="role-icon">
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                <path d="M2 2l7.586 7.586"/>
+                <circle cx="11" cy="11" r="2"/>
                 </svg>
               <span data-lang-en="I'm a Creator" data-lang-ru="Я Креатор">Я Креатор</span>
             </a>
