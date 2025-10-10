@@ -154,6 +154,13 @@ html, body { height: 100%; }
         width: auto !important;
         max-width: 184px !important;
     }
+    
+    /* .notification-banner {
+        margin: 0 2px 6px !important;
+        padding: 6px 8px !important;
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+    } */ /* REMOVED: Conflicting with responsive rem-based styles */
 }
 
 /* Extra small screens in portrait mode */
@@ -391,6 +398,13 @@ html, body { height: 100%; }
     
     .table th, .table td {
         padding: 6px 4px;
+    }
+    
+    .foot {
+        margin: 16px 0 8px;
+        gap: 8px;
+        /* font-size: 11px; */ /* REMOVED: Conflicting with base 12px */
+        padding: 0 4px;
     }
     .section {
         padding: 0 12px;
@@ -2821,6 +2835,13 @@ a.visible-link {
     -ms-hyphens: auto;
   }
   
+  /* Russian notification banner */
+  .notification-banner [data-lang-ru] {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    word-spacing: 0.1em;
+  }
+  
   /* Russian titles on mobile */
   .title [data-lang-ru] {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
@@ -4181,6 +4202,13 @@ a.visible-link {
     
     .table th, .table td {
         padding: 4px 3px;
+    }
+    
+    .foot {
+        margin: 12px 0 6px;
+        gap: 6px;
+        /* font-size: 10px; */ /* REMOVED: Conflicting with base 12px */
+        padding: 0 2px;
     }
     .section {
         padding: 0 8px;
@@ -6755,7 +6783,7 @@ a.visible-link {
 
 .footer-rights {
     margin: 0;
-    font-size: 12px;
+    font-size: 11px;
     color: var(--subtext);
     opacity: 0.8;
     line-height: 1.4;
