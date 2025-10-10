@@ -611,7 +611,7 @@ export default function Page() {
 
       <main>
         <section className="hero">
-          <h1 className="title"><span className="gradient-text">FAQ</span> <span data-lang-en="AI-People" data-lang-ru="AI-People">AI-People</span></h1>
+          <h1 className="title"><span className="gradient-text" data-lang-en="FAQ" data-lang-ru="FAQ">FAQ</span></h1>
           <div className="subtitle">
             <p className="gradient-text" data-lang-en="Everything you need to know about AI-generated content marketplace, virtual models, and earning opportunities." data-lang-ru="Всё, что нужно знать об AI-маркетплейсе контента, виртуальных моделях и возможностях заработка.">Everything you need to know about AI-generated content marketplace, virtual models, and earning opportunities.</p>
           </div>

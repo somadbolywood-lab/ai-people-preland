@@ -62,6 +62,12 @@ html, body { height: 100%; }
         margin-bottom: 0.25rem;
     }
     
+    /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
+    .faq-page .title .gradient-text,
+    .blog-page .blog-hero-title .gradient-text {
+        font-size: clamp(48px, 10vw, 72px) !important;
+    }
+    
     .subtitle {
         font-size: clamp(14px, 3.5vw, 18px) !important;
         margin: 8px 0 12px !important;
@@ -163,6 +169,12 @@ html, body { height: 100%; }
         font-size: clamp(20px, 4.5vw, 30px) !important;
     }
     
+    /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
+    .faq-page .title .gradient-text,
+    .blog-page .blog-hero-title .gradient-text {
+        font-size: clamp(40px, 9vw, 60px) !important;
+    }
+    
     .subtitle {
         font-size: clamp(12px, 3vw, 16px) !important;
         margin: 6px 0 8px !important;
@@ -218,6 +230,12 @@ html, body { height: 100%; }
     
     .title .gradient-text {
         font-size: clamp(18px, 4vw, 26px) !important;
+    }
+    
+    /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
+    .faq-page .title .gradient-text,
+    .blog-page .blog-hero-title .gradient-text {
+        font-size: clamp(36px, 8vw, 52px) !important;
     }
     
     .subtitle {

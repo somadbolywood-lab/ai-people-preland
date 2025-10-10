@@ -206,7 +206,7 @@ export default function BlogPage() {
         <section className="blog-hero">
           <div className="blog-hero-content">
             <h1 className="blog-hero-title">
-              <span className="gradient-text" data-lang-en="AI-People" data-lang-ru="AI-People">AI-People</span> <span className="blog-title-white" data-lang-en="Blog" data-lang-ru="Блог">Blog</span>
+              <span className="gradient-text" data-lang-en="Blog" data-lang-ru="Блог">Blog</span>
             </h1>
             <div className="subtitle">
               <p className="gradient-text" data-lang-en="Creator success stories, monetization strategies, virtual influencer trends, and professional insights from the AI content marketplace revolution" data-lang-ru="Истории успеха креаторов, стратегии монетизации, тренды виртуальных инфлюенсеров и профессиональные инсайты революции AI-контент маркетплейса">
