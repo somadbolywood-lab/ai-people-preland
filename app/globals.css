@@ -6954,12 +6954,12 @@ a.visible-link {
 
 .role-choice-btn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 2.5rem 3rem;
-  min-width: 280px;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem 2.5rem;
+  min-width: 320px;
   background: var(--panel);
   border: 2px solid transparent;
   border-radius: 16px;
@@ -6968,7 +6968,7 @@ a.visible-link {
   transition: all 0.3s ease;
   text-decoration: none;
   color: var(--text);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   overflow: hidden;
 }
@@ -6990,10 +6990,11 @@ a.visible-link {
 }
 
 .role-choice-btn .role-icon {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   color: var(--accent);
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .role-choice-btn:hover,
@@ -7019,25 +7020,25 @@ a.visible-link {
   .role-choice-btn {
     min-width: 100%;
     max-width: 400px;
-    padding: 2rem 2.5rem;
+    padding: 1.5rem 2rem;
     font-size: 1.3rem;
   }
 
   .role-choice-btn .role-icon {
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
   }
 }
 
 @media (max-width: 480px) {
   .role-choice-btn {
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 1.8rem;
     font-size: 1.2rem;
   }
 
   .role-choice-btn .role-icon {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
   }
 }
 
