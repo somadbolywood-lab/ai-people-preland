@@ -244,9 +244,8 @@ export default function Page() {
         {/* Hero Section */}
         <section className="hero">
           <h1 className="title"><span className="gradient-text" data-lang-en="Marketplace" data-lang-ru="Маркетплейс">Маркетплейс</span></h1>
-          <div className="subtitle">
-            <p className="gradient-text" data-lang-en="The world's first curated platform for premium AI-generated content. Buy & sell hyperrealistic virtual influencers. Join the community of creators and brands revolutionizing digital marketing." data-lang-ru="Первая в мире курируемая платформа для премиум AI-контента. Покупайте и продавайте гиперреалистичных виртуальных инфлюенсеров. Присоединяйтесь к сообществу креаторов и брендов, революционизирующих цифровой маркетинг.">Первая в мире курируемая платформа для премиум AI-контента. Покупайте и продавайте гиперреалистичных виртуальных инфлюенсеров. Присоединяйтесь к сообществу креаторов и брендов, революционизирующих цифровой маркетинг.</p>
-          </div>
+          <h2 className="hero-subtitle" data-lang-en="Buy and sell hyperrealistic virtual influencers or employees" data-lang-ru="Покупайте и продавайте гиперреалистичных виртуальных инфлюэнсеров или сотрудников">Покупайте и продавайте гиперреалистичных виртуальных инфлюэнсеров или сотрудников</h2>
+          <h3 className="hero-description" data-lang-en="The world's first curated platform for premium AI content. Join today the community of creators revolutionizing digital marketing." data-lang-ru="Первая в мире курируемая платформа для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.">Первая в мире курируемая платформа для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.</h3>
         </section>
 
         {/* Main Content */}
