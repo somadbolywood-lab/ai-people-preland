@@ -208,8 +208,8 @@ export default function BlogPage() {
             <h1 className="blog-hero-title">
               <span className="gradient-text" data-lang-en="Blog" data-lang-ru="Блог">Blog</span>
             </h1>
-            <h2 className="blog-hero-subtitle" data-lang-en="Virtual influencer trends, monetization strategies, success stories of the new generation of creators" data-lang-ru="Тренды виртуальных инфлюэнсеров, стратегии монетизации, истории успеха креаторов нового поколения">Virtual influencer trends, monetization strategies, success stories of the new generation of creators</h2>
-            <h3 className="blog-hero-description" data-lang-en="Create, explore and monetize next-generation digital personas. Today is the time when virtual people have real influence. AI-realism that works for you." data-lang-ru="Создавай, исследуй и монетизируй цифровые образы нового поколения. Сегодня то время, когда виртуальные люди имеют реальное влияние. AI-реализм, который работает на тебя.">Create, explore and monetize next-generation digital personas. Today is the time when virtual people have real influence. AI-realism that works for you.</h3>
+            <h2 className="blog-hero-subtitle" data-lang-en="Virtual influencer trends, monetization strategies, success stories of creators" data-lang-ru="Тренды виртуальных инфлюэнсеров, стратегии монетизации, истории успеха креаторов">Virtual influencer trends, monetization strategies, success stories of creators</h2>
+            <h3 className="blog-hero-description" data-lang-en="Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you." data-lang-ru="Создавай, исследуй и монетизируй цифровые образы созданные креаторами нового поколения. Сегодня то время, когда виртуальные люди имеют реальное влияние. AI-реализм, который работает на тебя.">Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you.</h3>
           </div>
         </section>
 

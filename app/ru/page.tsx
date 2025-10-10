@@ -243,9 +243,9 @@ export default function Page() {
       <main>
         {/* Hero Section */}
         <section className="hero">
-          <h1 className="title"><span className="gradient-text" data-lang-en="Marketplace" data-lang-ru="Маркетплейс">Маркетплейс</span></h1>
-          <h2 className="hero-subtitle" data-lang-en="Buy and sell hyperrealistic virtual influencers or employees" data-lang-ru="Покупайте и продавайте гиперреалистичных виртуальных инфлюэнсеров или сотрудников">Покупайте и продавайте гиперреалистичных виртуальных инфлюэнсеров или сотрудников</h2>
-          <h3 className="hero-description" data-lang-en="The world's first curated platform for premium AI content. Join today the community of creators revolutionizing digital marketing." data-lang-ru="Первая в мире курируемая платформа для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.">Первая в мире курируемая платформа для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.</h3>
+          <h1 className="title"><span className="gradient-text" data-lang-en="AI-PEOPLE.IO" data-lang-ru="AI-PEOPLE.IO">AI-PEOPLE.IO</span></h1>
+          <h2 className="hero-subtitle" data-lang-en="Buy and sell superrealistic virtual influencers" data-lang-ru="Покупайте и продавайте сеперреалистичных виртуальных инфлюэнсеров">Покупайте и продавайте сеперреалистичных виртуальных инфлюэнсеров</h2>
+          <h3 className="hero-description" data-lang-en="The world's first curated platform for premium AI content. Join today to the community of creators revolutionizing digital marketing." data-lang-ru="Первая в мире курируемая платфлорма для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.">Первая в мире курируемая платфлорма для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.</h3>
         </section>
 
         {/* Main Content */}
