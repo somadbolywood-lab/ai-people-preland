@@ -7735,6 +7735,9 @@ a.visible-link {
   .call-to-action .btn {
     padding: 0.75rem 1.75rem;
     font-size: 0.95rem;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .subtitle > p {
@@ -7777,6 +7780,9 @@ a.visible-link {
   .call-to-action .btn {
     padding: 0.7rem 1.5rem;
     font-size: 0.9rem;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
 
