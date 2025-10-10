@@ -7739,6 +7739,7 @@ a.visible-link {
     align-items: center !important;
     justify-content: center !important;
     width: fit-content;
+    margin: 1.5rem auto 0 !important;
   }
   
   .subtitle > p {
@@ -7785,6 +7786,7 @@ a.visible-link {
     align-items: center !important;
     justify-content: center !important;
     width: fit-content;
+    margin: 1.5rem auto 0 !important;
   }
 }
 
