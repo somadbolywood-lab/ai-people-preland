@@ -328,8 +328,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 330px;
-        height: 231px;
+        width: 110px;
+        height: 77px;
     }
     
     .card {
@@ -3578,7 +3578,7 @@ a.visible-link {
     content: ""; 
     position: absolute; 
     top: 0; 
-    width: 90px; 
+    width: 30px; 
     height: 100%; 
     z-index: 2; 
     pointer-events: none; 
@@ -3593,9 +3593,9 @@ a.visible-link {
 }
 .marquee-track { 
     display: flex; 
-    gap: 18px; 
+    gap: 6px; 
     align-items: center; 
-    padding: 18px; 
+    padding: 6px; 
     animation: slide 30s linear infinite; 
 }
 .marquee:hover .marquee-track { 
@@ -3603,8 +3603,8 @@ a.visible-link {
 }
 .marquee-item { 
     flex: 0 0 auto; 
-    width: 396px; 
-    height: 264px; 
+    width: 132px; 
+    height: 88px; 
     border-radius: 6px; 
     overflow: hidden; 
     border: 1px solid var(--border); 
@@ -4080,8 +4080,8 @@ a.visible-link {
     }
     
     .marquee-item {
-        width: 264px;
-        height: 198px;
+        width: 88px;
+        height: 66px;
     }
     
     .card {
@@ -4140,8 +4140,8 @@ a.visible-link {
     .menu-panel {
         top: 84px;
     }
-    .marquee-item { width: 528px; height: 330px; }
-    .marquee::before, .marquee::after { width: 165px; }
+    .marquee-item { width: 176px; height: 110px; }
+    .marquee::before, .marquee::after { width: 55px; }
     .grid { 
         grid-template-columns: 1fr; 
         gap: 1.5rem; 
@@ -4161,7 +4161,7 @@ a.visible-link {
     .topbar { gap: 16px; padding: 8px 72px; min-height: 72px !important; height: 72px !important; }
     body { padding-top: 80px !important; }
     .logo-img { height: 75px !important; max-width: 180px !important; }
-    .marquee-item { width: 660px; height: 396px; }
+    .marquee-item { width: 220px; height: 132px; }
     
     .feedback-btn {
         padding: 10px 20px;
@@ -4171,7 +4171,7 @@ a.visible-link {
     .menu-panel {
         top: 84px;
     }
-    .marquee::before, .marquee::after { width: 198px; }
+    .marquee::before, .marquee::after { width: 66px; }
     .grid { 
         grid-template-columns: repeat(3, 1fr); 
         gap: 2rem; 
@@ -8252,7 +8252,7 @@ a.visible-link {
 
 .marquee-track {
   display: flex;
-  gap: 4.5rem;
+  gap: 1.5rem;
   animation: marquee 60s linear infinite;
   width: fit-content;
 }
@@ -8272,8 +8272,8 @@ a.visible-link {
 
 .marquee-card {
   flex-shrink: 0;
-  width: 960px;
-  height: 1260px;
+  width: 320px;
+  height: 420px;
   background: var(--panel);
   border: 2px solid var(--border);
   border-radius: 16px;
@@ -8293,7 +8293,7 @@ a.visible-link {
 .marquee-image {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 200px;
   overflow: hidden;
 }
 
