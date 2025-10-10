@@ -527,7 +527,7 @@ export default function Page() {
           }}
         />
       </Head>
-      <div className="container ru-optimized">
+      <div className="container ru-optimized faq-page">
       <header className="topbar">
         <div className="brand">
           <a href="/ru" className="brand-link">

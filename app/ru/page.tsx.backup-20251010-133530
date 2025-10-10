@@ -162,7 +162,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       
-    <div className="container ru-optimized home-page">
+    <div className="container ru-optimized">
       <header className="topbar">
         <div className="brand">
           <a href="/ru" className="brand-link">
@@ -243,7 +243,7 @@ export default function Page() {
       <main>
         {/* Hero Section */}
         <section className="hero">
-          <h1 className="title"><span className="gradient-text" data-lang-en="Marketplace" data-lang-ru="Маркетплейс">Маркетплейс</span></h1>
+          <h1 className="title"><span className="gradient-text" data-lang-en="AI Models Marketplace" data-lang-ru="Маркетплейс AI-моделей">Маркетплейс AI-моделей</span></h1>
           <div className="subtitle">
             <p className="gradient-text" data-lang-en="The world's first curated platform for premium AI-generated content. Buy & sell hyperrealistic virtual influencers. Join the community of creators and brands revolutionizing digital marketing." data-lang-ru="Первая в мире курируемая платформа для премиум AI-контента. Покупайте и продавайте гиперреалистичных виртуальных инфлюенсеров. Присоединяйтесь к сообществу креаторов и брендов, революционизирующих цифровой маркетинг.">Первая в мире курируемая платформа для премиум AI-контента. Покупайте и продавайте гиперреалистичных виртуальных инфлюенсеров. Присоединяйтесь к сообществу креаторов и брендов, революционизирующих цифровой маркетинг.</p>
           </div>

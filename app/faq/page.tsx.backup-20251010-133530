@@ -479,7 +479,7 @@ export default function Page() {
           }}
         />
       </Head>
-      <div className="container faq-page">
+      <div className="container">
       <header className="topbar">
         <div className="brand">
           <a href="/" className="brand-link">
