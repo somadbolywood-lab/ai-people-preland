@@ -111,8 +111,7 @@ export default function RoleSelectionPage() {
                 <circle cx="6.5" cy="12.5" r="1.5"/>
                 <circle cx="12.5" cy="8.5" r="1.5"/>
                 <path d="M7 14c-2.83 0-5-2.17-5-5s2.17-5 5-5 5 2.17 5 5-2.17 5-5 5z"/>
-                <path d="M7 14l-1-1 1-1 1 1-1 1z"/>
-                </svg>
+              </svg>
               <span data-lang-en="I'm a Creator" data-lang-ru="Я Креатор">Я Креатор</span>
             </a>
           </div>
