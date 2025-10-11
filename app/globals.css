@@ -3084,6 +3084,7 @@ a.visible-link {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 0.5rem;
     margin-top: 12px;
     padding-top: 12px;
@@ -3104,6 +3105,15 @@ a.visible-link {
     color: var(--accent);
     background: rgba(139, 92, 246, 0.1);
     transform: scale(1.05);
+}
+
+/* Style for separator dots in menu legal section */
+.menu-legal-section {
+    color: var(--subtext);
+}
+
+.menu-legal-section a {
+    vertical-align: middle;
 }
 
 /* Mobile responsive for menu legal */
