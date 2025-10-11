@@ -12,7 +12,7 @@ import VideoModal from "../components/VideoModal";
 export default function Page() {
   useHamburgerMenu();
   const { buyerRef, creatorRef } = useScrollBorder();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   // Set Russian language by default on mount
   useEffect(() => {
@@ -252,19 +252,26 @@ export default function Page() {
           <h3 className="hero-description" data-lang-en="The world's first curated platform for premium AI content. Join today to the community of creators revolutionizing digital marketing." data-lang-ru="Первая в мире курируемая платфлорма для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.">Первая в мире курируемая платфлорма для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.</h3>
           
           {/* Presentation Button */}
-          <div style={{textAlign: 'center'}}>
+          <div className="presentation-btn-container">
             <button 
               className="presentation-btn"
-              onClick={() => setIsModalOpen(true)}
-              aria-label="Watch presentation video"
+              onClick={() => setIsVideoModalOpen(true)}
             >
-              <svg className="play-icon" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="play-icon">
                 <path d="M8 5v14l11-7z"/>
               </svg>
               <span data-lang-en="Presentation" data-lang-ru="Презентация">Презентация</span>
             </button>
           </div>
         </section>
+
+        {/* Video Modal */}
+        <VideoModal 
+          isOpen={isVideoModalOpen}
+          onClose={() => setIsVideoModalOpen(false)}
+          videoSrc="/video/presentation.mp4"
+          youtubeChannel="https://www.youtube.com/@shariinua"
+        />
 
         {/* Main Content */}
         <section className="content-section">
@@ -333,14 +340,6 @@ export default function Page() {
       </main>
 
       <Footer />
-
-      {/* Video Modal */}
-      <VideoModal 
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        videoId="dQw4w9WgXcQ"
-        channelUrl="https://www.youtube.com/@YourChannel"
-      />
       
       {/* Schema.org Structured Data - Russian Version */}
       <Script

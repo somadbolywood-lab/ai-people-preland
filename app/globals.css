@@ -6985,6 +6985,7 @@ a.visible-link {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   pointer-events: none;
 }
@@ -7053,27 +7054,31 @@ a.visible-link {
   }
 }
 
-/* ==================== Video Modal Styles ==================== */
+/* ==================== Presentation Button Styles ==================== */
 
-/* Presentation Button */
+.presentation-btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
 .presentation-btn {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
+  gap: 1rem;
+  padding: 1.2rem 2.5rem;
   background: var(--panel);
   border: 2px solid transparent;
-  border-radius: 12px;
+  border-radius: 16px;
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1.2rem;
-  font-weight: 600;
   color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 600;
   text-decoration: none;
-  margin: 2rem auto 0;
-  overflow: hidden;
 }
 
 .presentation-btn::before {
@@ -7083,11 +7088,12 @@ a.visible-link {
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 2px;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   pointer-events: none;
 }
@@ -7097,6 +7103,7 @@ a.visible-link {
   height: 24px;
   color: var(--accent);
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .presentation-btn:hover,
@@ -7112,21 +7119,35 @@ a.visible-link {
   transform: scale(1.1);
 }
 
-/* Modal Overlay */
-.video-modal-overlay {
+@media (max-width: 768px) {
+  .presentation-btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+  }
+
+  .presentation-btn .play-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ==================== Video Modal Styles ==================== */
+
+.video-modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  padding: 1rem;
-  animation: fadeIn 0.3s ease-in-out;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -7138,112 +7159,161 @@ a.visible-link {
   }
 }
 
-/* Modal Container */
 .video-modal-container {
   position: relative;
-  width: 100%;
-  max-width: 500px;
-  max-height: 90vh;
-  background: transparent;
-  border-radius: 20px;
-  padding: 2px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  animation: scaleIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  animation: slideUp 0.3s ease;
 }
 
-@keyframes scaleIn {
+@keyframes slideUp {
   from {
-    transform: scale(0.9);
+    transform: translateY(50px);
     opacity: 0;
   }
   to {
-    transform: scale(1);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 
-/* Modal Content */
-.video-modal-content {
-  position: relative;
-  width: 100%;
-  padding-bottom: 177.78%; /* 9:16 aspect ratio */
-  background: var(--bg);
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-/* Video iframe */
-.video-modal-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 18px;
-}
-
-/* Close Button */
 .video-modal-close {
   position: absolute;
   top: -50px;
   right: 0;
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: var(--panel);
+  border: 2px solid transparent;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: var(--text);
   transition: all 0.3s ease;
-  z-index: 10;
+  z-index: 10001;
+}
+
+.video-modal-close::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .video-modal-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: var(--accent);
-  transform: rotate(90deg);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  transform: scale(1.1);
 }
 
-.video-modal-close svg {
+.video-modal-content {
+  position: relative;
+  width: auto;
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: var(--panel);
+}
+
+.video-modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.video-modal-player {
+  display: block;
+  width: auto;
+  height: 80vh;
+  max-height: 80vh;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  border-radius: 14px;
+}
+
+.video-modal-youtube-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: var(--panel);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.video-modal-youtube-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, #FF0000, #CC0000);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.video-modal-youtube-btn svg {
+  width: 24px;
+  height: 24px;
+  color: #FF0000;
+  transition: all 0.3s ease;
+}
+
+.video-modal-youtube-btn:hover {
+  background: linear-gradient(135deg, #FF0000, #CC0000);
+  color: white;
+  transform: scale(1.05);
+}
+
+.video-modal-youtube-btn:hover svg {
   color: white;
 }
 
-/* YouTube Logo */
-.video-modal-youtube-logo {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 10;
-  opacity: 0.9;
-}
-
-.video-modal-youtube-logo:hover {
-  transform: scale(1.15);
-  opacity: 1;
-}
-
-/* Mobile Responsive */
 @media (max-width: 768px) {
-  .presentation-btn {
-    padding: 0.9rem 1.8rem;
-    font-size: 1.1rem;
-  }
-
-  .presentation-btn .play-icon {
-    width: 22px;
-    height: 22px;
-  }
-
-  .video-modal-container {
-    max-width: 95%;
+  .video-modal-backdrop {
+    padding: 1rem;
   }
 
   .video-modal-close {
@@ -7252,36 +7322,26 @@ a.visible-link {
     height: 36px;
   }
 
-  .video-modal-youtube-logo {
-    width: 28px;
-    height: 28px;
-    bottom: 12px;
-    right: 12px;
+  .video-modal-player {
+    height: 70vh;
+    max-height: 70vh;
   }
-}
 
-@media (max-width: 480px) {
-  .presentation-btn {
+  .video-modal-youtube-btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
 
-  .presentation-btn .play-icon {
+  .video-modal-youtube-btn svg {
     width: 20px;
     height: 20px;
   }
+}
 
-  .video-modal-close {
-    top: -40px;
-    width: 32px;
-    height: 32px;
-  }
-
-  .video-modal-youtube-logo {
-    width: 26px;
-    height: 26px;
-    bottom: 10px;
-    right: 10px;
+@media (max-width: 480px) {
+  .video-modal-player {
+    height: 60vh;
+    max-height: 60vh;
   }
 }
 
