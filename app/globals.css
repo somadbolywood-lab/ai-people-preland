@@ -3079,6 +3079,49 @@ a.visible-link {
     letter-spacing: 0.5px;
 }
 
+/* Menu Legal Policies Section */
+.menu-legal-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.menu-legal-section a {
+    color: var(--subtext);
+    text-decoration: none;
+    font-size: 12px !important;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.menu-legal-section a:hover {
+    color: var(--accent);
+    background: rgba(139, 92, 246, 0.1);
+    transform: scale(1.05);
+}
+
+/* Mobile responsive for menu legal */
+@media (max-width: 480px) {
+    .menu-legal-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .menu-legal-section a {
+        font-size: 12px !important;
+        white-space: nowrap;
+    }
+}
+
 /* Video Presentation button styles */
 .video-presentation-btn {
     background: linear-gradient(135deg, #8b5cf6, #ec4899);

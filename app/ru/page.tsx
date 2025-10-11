@@ -269,6 +269,13 @@ export default function Page() {
           <span data-lang-en="Prices" data-lang-ru="Цены">Цены</span>
           <span className="soon-label" data-lang-en="Soon" data-lang-ru="Скоро">Скоро</span>
         </a>
+        
+        {/* Legal Policies Section */}
+        <div className="menu-legal-section">
+          <a href="/legal/terms" data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">Условия обслуживания</a> · 
+          <a href="/legal/privacy" data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">Политика конфиденциальности</a> · 
+          <a href="/legal/cookies" data-lang-en="Cookie Policy" data-lang-ru="Политика файлов cookie">Политика файлов cookie</a>
+        </div>
       </div>
 
       {/* Pre-launch Notification Banner */}
