@@ -2971,7 +2971,7 @@ a.visible-link {
 /* Hamburger menu panel */
 .menu-panel { 
     position: fixed; 
-    top: 70px; 
+    top: 50px; 
     right: 8px; 
     left: auto;
     min-width: 240px;
