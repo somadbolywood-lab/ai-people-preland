@@ -187,9 +187,7 @@ export default function BuyerLeadPage() {
         <div className="actions">
           <LanguageSelector />
           <ThemeToggle />
-          <a href="/auth/role" className="btn ghost">
-            <span data-lang-en="Back to Role Selection" data-lang-ru="Назад к выбору роли">Back to Role Selection</span>
-          </a>
+          <a href="/auth/role" className="topbar-nav-btn" data-lang-en="Back to Role Selection" data-lang-ru="Назад">Back to Role Selection</a>
         </div>
       </header>
 

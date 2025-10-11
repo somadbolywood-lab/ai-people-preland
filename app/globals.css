@@ -2703,6 +2703,41 @@ a.visible-link {
     font-weight: 500;
 }
 
+/* Topbar navigation buttons - unified style */
+.topbar-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px 12px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.topbar-nav-btn:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+    transform: scale(1.05);
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.topbar-nav-btn:active {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.4);
+    transform: scale(0.98);
+}
+
 .language-menu {
     position: absolute;
     top: 100%;

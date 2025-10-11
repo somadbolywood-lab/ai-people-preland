@@ -60,7 +60,7 @@ export default function RoleSelectionPage() {
         <div className="actions">
           <LanguageSelector />
           <ThemeToggle />
-          <a href="/ru" className="btn ghost" data-lang-en="Back to Home" data-lang-ru="На главную">На главную</a>
+          <a href="/ru" className="topbar-nav-btn" data-lang-en="Back to Home" data-lang-ru="Назад">Назад</a>
         </div>
       </header>
 
