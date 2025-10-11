@@ -2974,7 +2974,7 @@ a.visible-link {
     top: 90px; 
     right: 8px; 
     left: auto;
-    min-width: 200px;
+    min-width: 240px;
     max-width: calc(100vw - 16px);
     width: auto;
     display: none; 
@@ -3050,6 +3050,19 @@ a.visible-link {
 .menu-panel a[aria-disabled="true"] { 
     opacity: 0.5; 
     pointer-events: none; 
+}
+
+/* Coming Soon label styles */
+.menu-panel .soon-label {
+    margin-left: auto;
+    padding: 2px 8px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #0b0b0c;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Video Presentation button styles */
