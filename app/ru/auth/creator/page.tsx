@@ -217,6 +217,7 @@ export default function CreatorLeadPage() {
         setFormData({
           email: "",
           name: "",
+          country: "",
           username: "",
           aiExperience: "",
           specialization: "",

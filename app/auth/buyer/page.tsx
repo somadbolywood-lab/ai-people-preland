@@ -155,6 +155,7 @@ export default function BuyerLeadPage() {
         setFormData({
           email: "",
           name: "",
+          country: "",
           role: "",
           company: "",
           teamSize: "",
