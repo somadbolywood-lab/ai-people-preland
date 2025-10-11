@@ -24,6 +24,7 @@ export default function BuyerLeadPage() {
   const [formData, setFormData] = useState({
     email: "",
     name: "",
+    country: "",
     role: "",
     company: "",
     teamSize: "",
@@ -250,7 +251,77 @@ export default function BuyerLeadPage() {
                     onChange={handleInputChange}
                     placeholder="John Smith"
                   />
-                  </div>
+                </div>
+                
+                <div className="form-group">
+                  <label htmlFor="buyerCountry" data-lang-en="Country *" data-lang-ru="Страна *">Country *</label>
+                  <select 
+                    id="buyerCountry" 
+                    name="country" 
+                    value={formData.country}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="" data-lang-en="Select your country" data-lang-ru="Выберите вашу страну">Select your country</option>
+                    <option value="US" data-lang-en="United States" data-lang-ru="Соединенные Штаты">United States</option>
+                    <option value="CA" data-lang-en="Canada" data-lang-ru="Канада">Canada</option>
+                    <option value="GB" data-lang-en="United Kingdom" data-lang-ru="Великобритания">United Kingdom</option>
+                    <option value="DE" data-lang-en="Germany" data-lang-ru="Германия">Germany</option>
+                    <option value="FR" data-lang-en="France" data-lang-ru="Франция">France</option>
+                    <option value="IT" data-lang-en="Italy" data-lang-ru="Италия">Italy</option>
+                    <option value="ES" data-lang-en="Spain" data-lang-ru="Испания">Spain</option>
+                    <option value="NL" data-lang-en="Netherlands" data-lang-ru="Нидерланды">Netherlands</option>
+                    <option value="SE" data-lang-en="Sweden" data-lang-ru="Швеция">Sweden</option>
+                    <option value="NO" data-lang-en="Norway" data-lang-ru="Норвегия">Norway</option>
+                    <option value="DK" data-lang-en="Denmark" data-lang-ru="Дания">Denmark</option>
+                    <option value="FI" data-lang-en="Finland" data-lang-ru="Финляндия">Finland</option>
+                    <option value="CH" data-lang-en="Switzerland" data-lang-ru="Швейцария">Switzerland</option>
+                    <option value="AT" data-lang-en="Austria" data-lang-ru="Австрия">Austria</option>
+                    <option value="BE" data-lang-en="Belgium" data-lang-ru="Бельгия">Belgium</option>
+                    <option value="PL" data-lang-en="Poland" data-lang-ru="Польша">Poland</option>
+                    <option value="CZ" data-lang-en="Czech Republic" data-lang-ru="Чехия">Czech Republic</option>
+                    <option value="HU" data-lang-en="Hungary" data-lang-ru="Венгрия">Hungary</option>
+                    <option value="RO" data-lang-en="Romania" data-lang-ru="Румыния">Romania</option>
+                    <option value="BG" data-lang-en="Bulgaria" data-lang-ru="Болгария">Bulgaria</option>
+                    <option value="HR" data-lang-en="Croatia" data-lang-ru="Хорватия">Croatia</option>
+                    <option value="SI" data-lang-en="Slovenia" data-lang-ru="Словения">Slovenia</option>
+                    <option value="SK" data-lang-en="Slovakia" data-lang-ru="Словакия">Slovakia</option>
+                    <option value="LT" data-lang-en="Lithuania" data-lang-ru="Литва">Lithuania</option>
+                    <option value="LV" data-lang-en="Latvia" data-lang-ru="Латвия">Latvia</option>
+                    <option value="EE" data-lang-en="Estonia" data-lang-ru="Эстония">Estonia</option>
+                    <option value="IE" data-lang-en="Ireland" data-lang-ru="Ирландия">Ireland</option>
+                    <option value="PT" data-lang-en="Portugal" data-lang-ru="Португалия">Portugal</option>
+                    <option value="GR" data-lang-en="Greece" data-lang-ru="Греция">Greece</option>
+                    <option value="CY" data-lang-en="Cyprus" data-lang-ru="Кипр">Cyprus</option>
+                    <option value="MT" data-lang-en="Malta" data-lang-ru="Мальта">Malta</option>
+                    <option value="LU" data-lang-en="Luxembourg" data-lang-ru="Люксембург">Luxembourg</option>
+                    <option value="JP" data-lang-en="Japan" data-lang-ru="Япония">Japan</option>
+                    <option value="KR" data-lang-en="South Korea" data-lang-ru="Южная Корея">South Korea</option>
+                    <option value="CN" data-lang-en="China" data-lang-ru="Китай">China</option>
+                    <option value="IN" data-lang-en="India" data-lang-ru="Индия">India</option>
+                    <option value="AU" data-lang-en="Australia" data-lang-ru="Австралия">Australia</option>
+                    <option value="NZ" data-lang-en="New Zealand" data-lang-ru="Новая Зеландия">New Zealand</option>
+                    <option value="BR" data-lang-en="Brazil" data-lang-ru="Бразилия">Brazil</option>
+                    <option value="AR" data-lang-en="Argentina" data-lang-ru="Аргентина">Argentina</option>
+                    <option value="MX" data-lang-en="Mexico" data-lang-ru="Мексика">Mexico</option>
+                    <option value="CL" data-lang-en="Chile" data-lang-ru="Чили">Chile</option>
+                    <option value="CO" data-lang-en="Colombia" data-lang-ru="Колумбия">Colombia</option>
+                    <option value="PE" data-lang-en="Peru" data-lang-ru="Перу">Peru</option>
+                    <option value="ZA" data-lang-en="South Africa" data-lang-ru="Южная Африка">South Africa</option>
+                    <option value="NG" data-lang-en="Nigeria" data-lang-ru="Нигерия">Nigeria</option>
+                    <option value="KE" data-lang-en="Kenya" data-lang-ru="Кения">Kenya</option>
+                    <option value="EG" data-lang-en="Egypt" data-lang-ru="Египет">Egypt</option>
+                    <option value="MA" data-lang-en="Morocco" data-lang-ru="Марокко">Morocco</option>
+                    <option value="TN" data-lang-en="Tunisia" data-lang-ru="Тунис">Tunisia</option>
+                    <option value="DZ" data-lang-en="Algeria" data-lang-ru="Алжир">Algeria</option>
+                    <option value="RU" data-lang-en="Russia" data-lang-ru="Россия">Russia</option>
+                    <option value="UA" data-lang-en="Ukraine" data-lang-ru="Украина">Ukraine</option>
+                    <option value="BY" data-lang-en="Belarus" data-lang-ru="Беларусь">Belarus</option>
+                    <option value="KZ" data-lang-en="Kazakhstan" data-lang-ru="Казахстан">Kazakhstan</option>
+                    <option value="UZ" data-lang-en="Uzbekistan" data-lang-ru="Узбекистан">Uzbekistan</option>
+                    <option value="OTHER" data-lang-en="Other" data-lang-ru="Другое">Other</option>
+                  </select>
+                </div>
                 <div className="wizard-actions">
                   <button type="button" className="btn primary" onClick={() => setStep(1)} data-lang-en="Continue" data-lang-ru="Продолжить">Continue</button>
                 </div>
