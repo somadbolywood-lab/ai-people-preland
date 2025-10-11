@@ -46,7 +46,7 @@ export default function ThankYouModal({ isOpen, onClose, userType, userName }: T
       subtitle: `${userName ? `${userName}, welcome` : 'Welcome'} to AI-People`,
       message: "You're now on the waiting list for exclusive early access to the world's first AI models marketplace.",
       benefits: [
-        "Priority access when we launch on 01.11.2025",
+        "Priority access when we launch on 12/01/2025",
         "Exclusive discounts for early subscribers",
         "First look at premium AI model catalog",
         "Direct communication about platform updates"
@@ -66,7 +66,7 @@ export default function ThankYouModal({ isOpen, onClose, userType, userName }: T
       subtitle: `${userName ? `${userName}, добро пожаловать` : 'Добро пожаловать'} в AI-People`,
       message: "Вы в списке ожидания для эксклюзивного раннего доступа к первому маркетплейсу AI-моделей в мире.",
       benefits: [
-        "Приоритетный доступ при запуске 01.11.2025",
+        "Приоритетный доступ при запуске 12/01/2025",
         "Эксклюзивные скидки для ранних подписчиков",
         "Первый взгляд на каталог премиум AI-моделей",
         "Прямая коммуникация об обновлениях платформы"
