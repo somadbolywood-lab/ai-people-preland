@@ -214,7 +214,7 @@ export default function CreatorLeadPage() {
         <div className="actions">
           <LanguageSelector />
           <ThemeToggle />
-          <a href="/auth/role" className="topbar-nav-btn" data-lang-en="Back to Role Selection" data-lang-ru="Назад">Back to Role Selection</a>
+          <a href="/auth/role" className="topbar-nav-btn" data-lang-en="Back" data-lang-ru="Назад">Back</a>
         </div>
       </header>
 
