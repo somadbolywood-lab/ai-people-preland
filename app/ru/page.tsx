@@ -270,7 +270,7 @@ export default function Page() {
           isOpen={isVideoModalOpen}
           onClose={() => setIsVideoModalOpen(false)}
           videoSrc="/video/presentation.mp4"
-          youtubeChannel="https://www.youtube.com/@shariinua"
+          youtubeChannel="https://youtube.com/@ai_people_io"
         />
 
         {/* Main Content */}

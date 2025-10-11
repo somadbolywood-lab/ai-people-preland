@@ -9,7 +9,7 @@ interface VideoModalProps {
   youtubeChannel?: string;
 }
 
-export default function VideoModal({ isOpen, onClose, videoSrc, youtubeChannel = 'https://www.youtube.com/@shariinua' }: VideoModalProps) {
+export default function VideoModal({ isOpen, onClose, videoSrc, youtubeChannel = 'https://youtube.com/@ai_people_io' }: VideoModalProps) {
   // Блокировка скролла при открытой модалке
   useEffect(() => {
     if (isOpen) {
