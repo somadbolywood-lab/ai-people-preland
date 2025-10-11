@@ -231,7 +231,7 @@ export default function Page() {
             <circle cx="12" cy="7" r="4"/>
             <path d="m15 14 3 3 3-3"/>
           </svg>
-          <span data-lang-en="Creator Admin Panel" data-lang-ru="Панель Администратора Креатора">Панель Администратора Креатора</span>
+          <span data-lang-en="Creator Admin Panel" data-lang-ru="Админ. панель Креатора">Админ. панель Креатора</span>
           <span className="soon-label" data-lang-en="Soon" data-lang-ru="Скоро">Скоро</span>
         </a>
         
@@ -245,7 +245,7 @@ export default function Page() {
             <path d="M9 15v.01"/>
             <path d="M9 18v.01"/>
           </svg>
-          <span data-lang-en="Buyer Admin Panel" data-lang-ru="Панель Администратора Покупателя">Панель Администратора Покупателя</span>
+          <span data-lang-en="Buyer Admin Panel" data-lang-ru="Админ. панель Покупателя">Админ. панель Покупателя</span>
           <span className="soon-label" data-lang-en="Soon" data-lang-ru="Скоро">Скоро</span>
         </a>
         
