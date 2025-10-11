@@ -7316,15 +7316,65 @@ a.visible-link {
     padding: 1rem;
   }
 
+  .video-modal-container {
+    transform: translateY(-10%) scale(1.1);
+    transform-origin: center;
+  }
+
   .video-modal-close {
-    top: -45px;
-    width: 36px;
-    height: 36px;
+    top: -50px;
+    width: 40px;
+    height: 40px;
   }
 
   .video-modal-player {
-    height: 70vh;
-    max-height: 70vh;
+    height: 75vh;
+    max-height: 75vh;
+    width: auto;
+  }
+
+  .video-modal-youtube-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .video-modal-youtube-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-modal-container {
+    transform: translateY(-8%) scale(1.05);
+  }
+
+  .video-modal-player {
+    height: 72vh;
+    max-height: 72vh;
+  }
+
+  .video-modal-close {
+    top: -48px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-modal-container {
+    transform: translateY(-6%) scale(1.02);
+  }
+
+  .video-modal-player {
+    height: 68vh;
+    max-height: 68vh;
+  }
+
+  .video-modal-close {
+    top: -46px;
+    width: 36px;
+    height: 36px;
   }
 
   .video-modal-youtube-btn {
@@ -7338,10 +7388,57 @@ a.visible-link {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 390px) {
+  .video-modal-container {
+    transform: translateY(-5%) scale(1.0);
+  }
+
   .video-modal-player {
-    height: 60vh;
-    max-height: 60vh;
+    height: 65vh;
+    max-height: 65vh;
+  }
+
+  .video-modal-close {
+    top: -44px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .video-modal-youtube-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .video-modal-youtube-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 320px) {
+  .video-modal-container {
+    transform: translateY(-4%) scale(0.98);
+  }
+
+  .video-modal-player {
+    height: 62vh;
+    max-height: 62vh;
+  }
+
+  .video-modal-close {
+    top: -42px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .video-modal-youtube-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .video-modal-youtube-btn svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
