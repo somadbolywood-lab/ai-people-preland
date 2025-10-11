@@ -1,14 +1,17 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
 import { useHamburgerMenu } from "./hooks/useHamburgerMenu";
 import { useScrollBorder } from "./hooks/useScrollBorder";
 import Footer from "./components/Footer";
 import ThemeToggle from "./components/ThemeToggle";
 import LanguageSelector from "./components/LanguageSelector";
+import VideoModal from "./components/VideoModal";
 
 export default function Page() {
   useHamburgerMenu();
   const { buyerRef, creatorRef } = useScrollBorder();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="container home-page">
@@ -113,6 +116,20 @@ export default function Page() {
           <h1 className="title"><span className="gradient-text" data-lang-en="AI-PEOPLE.IO" data-lang-ru="AI-PEOPLE.IO">AI-PEOPLE.IO</span></h1>
           <h2 className="hero-subtitle" data-lang-en="Buy and sell superrealistic virtual influencers" data-lang-ru="Покупайте и продавайте сеперреалистичных виртуальных инфлюэнсеров">Buy and sell superrealistic virtual influencers</h2>
           <h3 className="hero-description" data-lang-en="The world's first curated platform for premium AI content. Join today to the community of creators revolutionizing digital marketing." data-lang-ru="Первая в мире курируемая платфлорма для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.">The world's first curated platform for premium AI content. Join today to the community of creators revolutionizing digital marketing.</h3>
+          
+          {/* Presentation Button */}
+          <div style={{textAlign: 'center'}}>
+            <button 
+              className="presentation-btn"
+              onClick={() => setIsModalOpen(true)}
+              aria-label="Watch presentation video"
+            >
+              <svg className="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              <span data-lang-en="Presentation" data-lang-ru="Презентация">Presentation</span>
+            </button>
+          </div>
         </section>
 
         {/* Main Content */}
@@ -174,6 +191,14 @@ export default function Page() {
       </main>
 
       <Footer />
+
+      {/* Video Modal */}
+      <VideoModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        videoId="dQw4w9WgXcQ"
+        channelUrl="https://www.youtube.com/@YourChannel"
+      />
     </div>
   );
 }
