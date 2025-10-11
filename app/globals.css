@@ -7317,7 +7317,7 @@ a.visible-link {
   }
 
   .video-modal-container {
-    transform: translateY(-10%) scale(1.1);
+    transform: translateY(-5%) scale(1.1);
     transform-origin: center;
   }
 
@@ -7346,7 +7346,7 @@ a.visible-link {
 
 @media (max-width: 600px) {
   .video-modal-container {
-    transform: translateY(-8%) scale(1.05);
+    transform: translateY(-4%) scale(1.05);
   }
 
   .video-modal-player {
@@ -7363,7 +7363,7 @@ a.visible-link {
 
 @media (max-width: 480px) {
   .video-modal-container {
-    transform: translateY(-6%) scale(1.02);
+    transform: translateY(-3%) scale(1.02);
   }
 
   .video-modal-player {
@@ -7390,7 +7390,7 @@ a.visible-link {
 
 @media (max-width: 390px) {
   .video-modal-container {
-    transform: translateY(-5%) scale(1.0);
+    transform: translateY(-2.5%) scale(1.0);
   }
 
   .video-modal-player {
@@ -7417,7 +7417,7 @@ a.visible-link {
 
 @media (max-width: 320px) {
   .video-modal-container {
-    transform: translateY(-4%) scale(0.98);
+    transform: translateY(-2%) scale(0.98);
   }
 
   .video-modal-player {
