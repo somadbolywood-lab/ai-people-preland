@@ -4234,7 +4234,7 @@ a.visible-link {
     }
     
     .menu-panel {
-        top: 84px;
+        top: 64px;
     }
     .marquee-item { width: 176px; height: 110px; }
     .marquee::before, .marquee::after { width: 55px; }
@@ -4265,7 +4265,7 @@ a.visible-link {
     }
     
     .menu-panel {
-        top: 84px;
+        top: 64px;
     }
     .marquee::before, .marquee::after { width: 66px; }
     .grid { 
