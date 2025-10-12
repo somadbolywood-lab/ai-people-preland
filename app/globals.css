@@ -7989,35 +7989,27 @@ a.visible-link {
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .dropdown-menu {
-    position: fixed;
-    top: auto;
-    bottom: 0;
+    /* Keep desktop positioning - dropdown from field */
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
-    margin: 0;
-    border-radius: 16px 16px 0 0;
-    max-height: 45vh;
-    animation: dropdownSlideUp 0.3s ease-out;
-  }
-  
-  @keyframes dropdownSlideUp {
-    from {
-      transform: translateY(100%);
-    }
-    to {
-      transform: translateY(0);
-    }
+    margin-top: 0.25rem;
+    border-radius: 12px;
+    max-height: 300px;
+    animation: dropdownFadeIn 0.2s ease-out;
   }
   
   .dropdown-option {
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
   .dropdown-menu {
-    max-height: 40vh;
+    max-height: 280px;
+    border-radius: 10px;
   }
   
   .dropdown-option {
@@ -8028,7 +8020,7 @@ a.visible-link {
 
 @media (max-width: 375px) {
   .dropdown-menu {
-    max-height: 38vh;
+    max-height: 260px;
   }
 }
 
