@@ -8456,6 +8456,56 @@ a.visible-link {
   }
 }
 
+/* ===== INFO PAGES CALL-TO-ACTION CENTERING ===== */
+/* Specific styles for buyer-info and creator-info pages */
+.auth-page .call-to-action {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.auth-page .call-to-action .btn {
+  margin: 0 auto !important;
+  display: inline-block !important;
+}
+
+/* Mobile specific centering for info pages */
+@media (max-width: 768px) {
+  .auth-page .call-to-action {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .auth-page .call-to-action .btn {
+    margin: 0 auto !important;
+    display: inline-block !important;
+    width: fit-content !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page .call-to-action {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .auth-page .call-to-action .btn {
+    margin: 0 auto !important;
+    display: inline-block !important;
+    width: fit-content !important;
+  }
+}
+
 /* ===== THANK YOU MODAL STYLES ===== */
 .modal-overlay {
   position: fixed;
