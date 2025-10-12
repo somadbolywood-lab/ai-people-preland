@@ -8380,6 +8380,10 @@ a.visible-link {
   .call-to-action {
     margin: 1.5rem 0;
     padding: 1.5rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .call-to-action p {
@@ -8427,6 +8431,10 @@ a.visible-link {
   .call-to-action {
     margin: 1rem 0;
     padding: 1.25rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .call-to-action p {
