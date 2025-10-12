@@ -296,8 +296,8 @@ export default function CreatorLeadPage() {
               <span className="gradient-text" data-lang-en="Join as " data-lang-ru="Присоединиться как ">Join as </span>
               <span className="role-em" data-lang-en=" Creator" data-lang-ru=" креатор"> Creator</span>
             </h1>
-            <p className="auth-subtitle" data-lang-en="Sell without limits! Activate unlimited content uploads until 30.10.25 and earn more." data-lang-ru="Продавайте без границ! Активируйте безлимитную загрузку контента до 30.10.25 и зарабатывайте больше.">
-              Sell without limits! Activate unlimited content uploads until 30.10.25 and earn more.
+            <p className="auth-subtitle" data-lang-en="Sell without limits! Activate unlimited content uploads until 12/01/2025 and earn more." data-lang-ru="Продавайте без границ! Активируйте безлимитную загрузку контента до 01.12.2025 и зарабатывайте больше.">
+              Sell without limits! Activate unlimited content uploads until 12/01/2025 and earn more.
             </p>
             <div className="wizard-stepper" role="progressbar" aria-valuemin={0} aria-valuemax={steps.length - 1} aria-valuenow={step}>
               <div className="wizard-track"><div className="wizard-progress" style={{ width: `${(step)/(steps.length-1)*100}%` }} /></div>
