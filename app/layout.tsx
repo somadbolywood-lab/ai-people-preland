@@ -5,6 +5,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import Image from 'next/image';
 import ThemeToggle from './components/ThemeToggle';
 import LanguageSelector from './components/LanguageSelector';
+import HreflangLinks from './components/HreflangLinks';
 
 export const metadata = {
   title: 'AI-People: Маркетплейс AI-моделей | Гиперреалистичные виртуальные инфлюенсеры 2025 | Premier AI Models Marketplace',
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+        <HreflangLinks currentPath="/" locale="en" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -82,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "AI-People",
-              "url": "https://ai-people.com",
+              "url": "https://ai-people.io",
               "logo": "https://ai-people.io/faq/AI-people Logo.png",
               "description": "Leading AI models marketplace featuring hyperrealistic virtual influencers, AI-generated content, and premium AI art",
               "foundingDate": "2024",
@@ -117,7 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "AI-People",
-              "url": "https://ai-people.com",
+              "url": "https://ai-people.io",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": "https://ai-people.io/search?q={search_term_string}",
@@ -140,13 +142,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
               "location": {
                 "@type": "VirtualLocation",
-                "url": "https://ai-people.com"
+                "url": "https://ai-people.io"
               },
               "image": "https://ai-people.io/faq/AI-people Logo.png",
               "organizer": {
                 "@type": "Organization",
                 "name": "AI-People",
-                "url": "https://ai-people.com"
+                "url": "https://ai-people.io"
               },
               "offers": {
                 "@type": "Offer",

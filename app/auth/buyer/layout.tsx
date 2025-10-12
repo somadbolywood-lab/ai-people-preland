@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'AI-People: Buyer Registration',
     description: 'Join as a buyer and access premium AI models and virtual influencers',
     type: 'website',
-    url: 'https://ai-people.com/auth/buyer',
+    url: 'https://ai-people.io/auth/buyer',
   },
   twitter: {
     card: 'summary_large_image',

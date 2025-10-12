@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'AI-People: Регистрация креатора',
     description: 'Присоединяйтесь как креатор и монетизируйте ваше AI-искусство и виртуальных инфлюенсеров',
     type: 'website',
-    url: 'https://ai-people.com/ru/auth/creator',
+    url: 'https://ai-people.io/ru/auth/creator',
     locale: 'ru_RU',
   },
   twitter: {

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'AI-People: Role Selection',
     description: 'Choose your role in the AI marketplace - creator or buyer',
     type: 'website',
-    url: 'https://ai-people.com/auth/role',
+    url: 'https://ai-people.io/auth/role',
   },
   twitter: {
     card: 'summary_large_image',

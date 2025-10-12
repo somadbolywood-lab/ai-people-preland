@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'AI-People: Выбор роли',
     description: 'Выберите свою роль в маркетплейсе AI - креатор или покупатель',
     type: 'website',
-    url: 'https://ai-people.com/ru/auth/role',
+    url: 'https://ai-people.io/ru/auth/role',
     locale: 'ru_RU',
   },
   twitter: {

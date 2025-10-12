@@ -5,12 +5,12 @@ export const metadata = {
   description: 'Expert insights on AI models marketplace, virtual influencer marketing, monetizing AI art, and latest trends in AI-generated content industry. Real data, proven strategies, and actionable tips.',
   keywords: 'AI models blog, virtual influencers insights, AI art monetization, AI marketplace trends, make money with AI art, sell AI content, AI creator success stories',
   alternates: {
-    canonical: 'https://ai-people.com/blog',
+    canonical: 'https://ai-people.io/blog',
   },
   openGraph: {
     title: 'AI-People Blog: AI Models & Virtual Influencers Insights',
     description: 'Expert insights on AI models, virtual influencers, and monetizing AI-generated content.',
-    url: 'https://ai-people.com/blog',
+    url: 'https://ai-people.io/blog',
     type: 'website',
     images: [
       {
@@ -35,14 +35,14 @@ const blogSchema = {
   "@type": "Blog",
   "name": "AI-People Blog",
   "description": "Expert insights on AI models, virtual influencers, and monetizing AI-generated content",
-  "url": "https://ai-people.com/blog",
+  "url": "https://ai-people.io/blog",
   "publisher": {
     "@type": "Organization",
     "name": "AI-People",
-    "url": "https://ai-people.com",
+    "url": "https://ai-people.io",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://ai-people.com/faq/AI-people Logo.png",
+      "url": "https://ai-people.io/faq/AI-people Logo.png",
       "width": 512,
       "height": 512
     }
@@ -51,8 +51,8 @@ const blogSchema = {
     {
       "@type": "BlogPosting",
       "headline": "AI-Generated Content Marketing 2025: Virtual Models Cut Costs 90%",
-      "image": "https://ai-people.com/assets/models/model-01.png",
-      "url": "https://ai-people.com/blog/1",
+      "image": "https://ai-people.io/assets/models/model-01.png",
+      "url": "https://ai-people.io/blog/1",
       "datePublished": "2025-09-01",
       "dateModified": "2025-10-07",
       "author": {
@@ -67,8 +67,8 @@ const blogSchema = {
     {
       "@type": "BlogPosting",
       "headline": "How to Make Money with AI Art: $5K-$25K/Month Creator Guide 2025",
-      "image": "https://ai-people.com/assets/models/model-02.png",
-      "url": "https://ai-people.com/blog/2",
+      "image": "https://ai-people.io/assets/models/model-02.png",
+      "url": "https://ai-people.io/blog/2",
       "datePublished": "2025-09-15",
       "dateModified": "2025-10-07",
       "author": {
@@ -83,8 +83,8 @@ const blogSchema = {
     {
       "@type": "BlogPosting",
       "headline": "Why Top Brands Are Switching to Virtual Influencers: Market Analysis 2025",
-      "image": "https://ai-people.com/assets/models/model-03.png",
-      "url": "https://ai-people.com/blog/3",
+      "image": "https://ai-people.io/assets/models/model-03.png",
+      "url": "https://ai-people.io/blog/3",
       "datePublished": "2025-09-28",
       "dateModified": "2025-10-07",
       "author": {
@@ -99,8 +99,8 @@ const blogSchema = {
     {
       "@type": "BlogPosting",
       "headline": "AI Instagram Model Kion Signs Million-Dollar Brand Deals",
-      "image": "https://ai-people.com/assets/models/model-04.png",
-      "url": "https://ai-people.com/blog/4",
+      "image": "https://ai-people.io/assets/models/model-04.png",
+      "url": "https://ai-people.io/blog/4",
       "datePublished": "2025-10-06",
       "dateModified": "2025-10-07",
       "author": {
