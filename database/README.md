@@ -629,24 +629,79 @@ FLUSH PRIVILEGES;
 
 ---
 
-## 📙 Установка и настройка (полный гид)
+## 📙 Установка и настройка (объединено из SETUP_GUIDE)
 
-Полный, пошаговый Setup Guide перенесён в этот репозиторий и является частью основной документации. Для удобства поддержки и чтобы не дублировать инструкции в двух местах, ниже приведена общая структура и быстрые ссылки. Полная версия с командами, примерами и troubleshooting доступна в файле `SETUP_GUIDE.md` и полностью соответствует текущему README (дублирует разделы один-в-один).
+Ниже — краткий, выверенный гайд установки, собранный из `SETUP_GUIDE.md` и согласованный с текущей схемой/скриптами.
 
-Содержание полного гида:
-- Системные требования (MySQL 8+/MariaDB 10.5+)
-- Установка MySQL (Windows/macOS/Linux)
-- Создание БД `aipeople_prelaunch` и пользователя `aipeople_user`
-- Импорт `schema.sql` и (опционально) `seed_test_data.sql`
-- Настройка подключения приложения через `.env` и `mysql2`
-- Проверка работоспособности (таблицы, views, процедуры, триггеры)
-- Troubleshooting (частые ошибки и способы решения)
-- Обслуживание и мониторинг (бэкапы, оптимизация, очистка логов)
+### 1) Требования
+- MySQL 8.0+ / MariaDB 10.5+
+- UTF8MB4 (база и таблицы)
 
-Быстрые ссылки:
-- Полный гид: см. `database/SETUP_GUIDE.md`
-- Схема: `database/schema.sql`
-- Тестовые данные (dev/stage): `database/seed_test_data.sql`
+Проверка версии:
+```bash
+mysql --version
+```
 
-Если нужно, могу инлайнить полный текст `SETUP_GUIDE.md` внутрь этого README — скажите, включать ли его целиком ниже.
+### 2) Создание БД и пользователя
+```sql
+CREATE DATABASE aipeople_prelaunch CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'aipeople_user'@'localhost' IDENTIFIED BY 'secure_password_here';
+GRANT ALL PRIVILEGES ON aipeople_prelaunch.* TO 'aipeople_user'@'localhost';
+FLUSH PRIVILEGES;
+```
 
+### 3) Импорт схемы и (опционально) сидов
+```bash
+cd aipeople-next/database
+mysql -u aipeople_user -p aipeople_prelaunch < schema.sql
+# опционально для разработки
+mysql -u aipeople_user -p aipeople_prelaunch < seed_test_data.sql
+```
+
+Проверьте таблицы/вьюхи/процедуры:
+```sql
+SHOW TABLES;
+SHOW FULL TABLES WHERE Table_type = 'VIEW';
+SHOW PROCEDURE STATUS WHERE Db = 'aipeople_prelaunch';
+```
+
+### 4) .env для приложения
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=aipeople_prelaunch
+DB_USER=aipeople_user
+DB_PASSWORD=secure_password_here
+DB_CHARSET=utf8mb4
+DB_DEBUG=true
+```
+
+### 5) Подключение из Node.js (mysql2)
+```ts
+import mysql from 'mysql2/promise';
+export default mysql.createPool({
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT || '3306'),
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  charset: process.env.DB_CHARSET || 'utf8mb4',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+});
+```
+
+### 6) Проверка (быстрые команды)
+```sql
+SELECT 1;                 -- подключение
+SHOW TRIGGERS;            -- триггеры lead score
+SELECT * FROM v_lead_funnel LIMIT 1;  -- вьюхи
+```
+
+### 7) Обслуживание (регулярно)
+- OPTIMIZE/ANALYZE таблиц: buyer_leads, creator_leads, lead_activity_log
+- Очистка логов старше 90 дней
+- Регулярные бэкапы `mysqldump`
+
+> Примечание: исходный `SETUP_GUIDE.md` объединён сюда и более не требуется.
