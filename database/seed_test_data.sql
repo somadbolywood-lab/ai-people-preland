@@ -79,29 +79,29 @@ INSERT INTO creator_leads (email, name, username, ai_experience, specialization,
 
 -- Buyer activities
 INSERT INTO lead_activity_log (lead_type, lead_id, activity_type, activity_category, activity_data, page_url, session_id, device_type, created_at) VALUES
-('buyer', 1, 'form_submitted', 'conversion', '{"form_type": "buyer_registration", "completion_time_seconds": 120}', 'https://ai-people.com/auth/buyer', 'sess_buyer_001', 'desktop', DATE_SUB(NOW(), INTERVAL 5 DAY)),
-('buyer', 1, 'page_viewed', 'engagement', '{"page": "pricing"}', 'https://ai-people.com/pricing', 'sess_buyer_001', 'desktop', DATE_SUB(NOW(), INTERVAL 4 DAY)),
-('buyer', 2, 'form_submitted', 'conversion', '{"form_type": "buyer_registration", "completion_time_seconds": 95}', 'https://ai-people.com/auth/buyer', 'sess_buyer_002', 'mobile', DATE_SUB(NOW(), INTERVAL 3 DAY)),
-('buyer', 3, 'form_submitted', 'conversion', '{"form_type": "buyer_registration", "completion_time_seconds": 180}', 'https://ai-people.com/auth/buyer', 'sess_buyer_003', 'desktop', DATE_SUB(NOW(), INTERVAL 2 DAY)),
-('buyer', 4, 'form_submitted', 'conversion', '{"form_type": "buyer_registration", "completion_time_seconds": 110}', 'https://ai-people.com/auth/buyer', 'sess_buyer_004', 'tablet', DATE_SUB(NOW(), INTERVAL 1 DAY));
+('buyer', 1, 'form_submitted', 'conversion', '{"form_type": "buyer_registration", "completion_time_seconds": 120}', 'https://ai-people.io/auth/buyer', 'sess_buyer_001', 'desktop', DATE_SUB(NOW(), INTERVAL 5 DAY)),
+('buyer', 1, 'page_viewed', 'engagement', '{"page": "pricing"}', 'https://ai-people.io/pricing', 'sess_buyer_001', 'desktop', DATE_SUB(NOW(), INTERVAL 4 DAY)),
+('buyer', 2, 'form_submitted', 'conversion', '{"form_type": "buyer_registration", "completion_time_seconds": 95}', 'https://ai-people.io/auth/buyer', 'sess_buyer_002', 'mobile', DATE_SUB(NOW(), INTERVAL 3 DAY)),
+('buyer', 3, 'form_submitted', 'conversion', '{"form_type": "buyer_registration", "completion_time_seconds": 180}', 'https://ai-people.io/auth/buyer', 'sess_buyer_003', 'desktop', DATE_SUB(NOW(), INTERVAL 2 DAY)),
+('buyer', 4, 'form_submitted', 'conversion', '{"form_type": "buyer_registration", "completion_time_seconds": 110}', 'https://ai-people.io/auth/buyer', 'sess_buyer_004', 'tablet', DATE_SUB(NOW(), INTERVAL 1 DAY));
 
 -- Creator activities
 INSERT INTO lead_activity_log (lead_type, lead_id, activity_type, activity_category, activity_data, page_url, session_id, device_type, created_at) VALUES
-('creator', 1, 'form_submitted', 'conversion', '{"form_type": "creator_registration", "completion_time_seconds": 150}', 'https://ai-people.com/auth/creator', 'sess_creator_001', 'desktop', DATE_SUB(NOW(), INTERVAL 5 DAY)),
-('creator', 1, 'page_viewed', 'engagement', '{"page": "blog"}', 'https://ai-people.com/blog', 'sess_creator_001', 'desktop', DATE_SUB(NOW(), INTERVAL 4 DAY)),
-('creator', 2, 'form_submitted', 'conversion', '{"form_type": "creator_registration", "completion_time_seconds": 135}', 'https://ai-people.com/auth/creator', 'sess_creator_002', 'desktop', DATE_SUB(NOW(), INTERVAL 3 DAY)),
-('creator', 3, 'form_submitted', 'conversion', '{"form_type": "creator_registration", "completion_time_seconds": 200}', 'https://ai-people.com/auth/creator', 'sess_creator_003', 'mobile', DATE_SUB(NOW(), INTERVAL 2 DAY)),
-('creator', 4, 'form_submitted', 'conversion', '{"form_type": "creator_registration", "completion_time_seconds": 160}', 'https://ai-people.com/auth/creator', 'sess_creator_004', 'desktop', DATE_SUB(NOW(), INTERVAL 1 DAY));
+('creator', 1, 'form_submitted', 'conversion', '{"form_type": "creator_registration", "completion_time_seconds": 150}', 'https://ai-people.io/auth/creator', 'sess_creator_001', 'desktop', DATE_SUB(NOW(), INTERVAL 5 DAY)),
+('creator', 1, 'page_viewed', 'engagement', '{"page": "blog"}', 'https://ai-people.io/blog', 'sess_creator_001', 'desktop', DATE_SUB(NOW(), INTERVAL 4 DAY)),
+('creator', 2, 'form_submitted', 'conversion', '{"form_type": "creator_registration", "completion_time_seconds": 135}', 'https://ai-people.io/auth/creator', 'sess_creator_002', 'desktop', DATE_SUB(NOW(), INTERVAL 3 DAY)),
+('creator', 3, 'form_submitted', 'conversion', '{"form_type": "creator_registration", "completion_time_seconds": 200}', 'https://ai-people.io/auth/creator', 'sess_creator_003', 'mobile', DATE_SUB(NOW(), INTERVAL 2 DAY)),
+('creator', 4, 'form_submitted', 'conversion', '{"form_type": "creator_registration", "completion_time_seconds": 160}', 'https://ai-people.io/auth/creator', 'sess_creator_004', 'desktop', DATE_SUB(NOW(), INTERVAL 1 DAY));
 
 -- ============================================
 -- SEED EMAIL CAMPAIGNS
 -- ============================================
 
 INSERT INTO email_campaigns (campaign_name, campaign_type, target_audience, subject_line, sender_name, sender_email, status, total_sent, total_delivered, total_opened, total_clicked, scheduled_at, sent_at, created_at) VALUES
-('Welcome Buyers', 'welcome', 'buyers', 'Welcome to AI-People - Your Gateway to Premium AI Content', 'AI-People Team', 'team@ai-people.com', 'sent', 15, 15, 12, 5, DATE_SUB(NOW(), INTERVAL 4 DAY), DATE_SUB(NOW(), INTERVAL 4 DAY), DATE_SUB(NOW(), INTERVAL 5 DAY)),
-('Welcome Creators', 'welcome', 'creators', 'Welcome to AI-People - Start Monetizing Your AI Art Today', 'AI-People Team', 'team@ai-people.com', 'sent', 15, 14, 11, 7, DATE_SUB(NOW(), INTERVAL 3 DAY), DATE_SUB(NOW(), INTERVAL 3 DAY), DATE_SUB(NOW(), INTERVAL 4 DAY)),
-('Launch Announcement', 'launch_announcement', 'both', 'AI-People is Launching November 1st - Get Early Access!', 'AI-People Team', 'team@ai-people.com', 'scheduled', 0, 0, 0, 0, DATE_ADD(NOW(), INTERVAL 7 DAY), NULL, NOW()),
-('Nurture Campaign Week 1', 'nurture', 'creators', 'Tips to Create Your Perfect AI Portfolio', 'AI-People Team', 'team@ai-people.com', 'draft', 0, 0, 0, 0, NULL, NULL, NOW());
+('Welcome Buyers', 'welcome', 'buyers', 'Welcome to AI-People - Your Gateway to Premium AI Content', 'AI-People Team', 'team@ai-people.io', 'sent', 15, 15, 12, 5, DATE_SUB(NOW(), INTERVAL 4 DAY), DATE_SUB(NOW(), INTERVAL 4 DAY), DATE_SUB(NOW(), INTERVAL 5 DAY)),
+('Welcome Creators', 'welcome', 'creators', 'Welcome to AI-People - Start Monetizing Your AI Art Today', 'AI-People Team', 'team@ai-people.io', 'sent', 15, 14, 11, 7, DATE_SUB(NOW(), INTERVAL 3 DAY), DATE_SUB(NOW(), INTERVAL 3 DAY), DATE_SUB(NOW(), INTERVAL 4 DAY)),
+('Launch Announcement', 'launch_announcement', 'both', 'AI-People is Launching November 1st - Get Early Access!', 'AI-People Team', 'team@ai-people.io', 'scheduled', 0, 0, 0, 0, DATE_ADD(NOW(), INTERVAL 7 DAY), NULL, NOW()),
+('Nurture Campaign Week 1', 'nurture', 'creators', 'Tips to Create Your Perfect AI Portfolio', 'AI-People Team', 'team@ai-people.io', 'draft', 0, 0, 0, 0, NULL, NULL, NOW());
 
 -- ============================================
 -- UPDATE SOME LEAD STATUSES (simulate progress)

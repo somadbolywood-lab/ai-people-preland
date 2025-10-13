@@ -245,7 +245,7 @@ CREATE TABLE IF NOT EXISTS email_campaigns (
   
   subject_line VARCHAR(255) NOT NULL COMMENT 'Email subject line',
   sender_name VARCHAR(100) NOT NULL DEFAULT 'AI-People Team' COMMENT 'Sender display name',
-  sender_email VARCHAR(255) NOT NULL DEFAULT 'team@ai-people.com' COMMENT 'Sender email address',
+  sender_email VARCHAR(255) NOT NULL DEFAULT 'team@ai-people.io' COMMENT 'Sender email address',
   
   html_template TEXT COMMENT 'HTML email template',
   text_template TEXT COMMENT 'Plain text email template',
