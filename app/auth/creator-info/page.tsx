@@ -119,11 +119,11 @@ export default function CreatorInfoPage() {
 
       <section className="marquee" aria-label="Model previews">
         <div className="marquee-track">
-          {Array.from({length:8}).map((_,i)=> (
-            <div className="marquee-item" key={`m-a-${i}`}><Image src={`/assets/models/model-0${i+1}.png`} alt={`AI Model 0${i+1}`} width={160} height={100} loading="lazy" /></div>
+          {Array.from({length:19}).map((_,i)=> (
+            <div className="marquee-item" key={`m-a-${i}`}><Image src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} alt={`AI Model ${i+1}`} width={160} height={100} loading="lazy" /></div>
           ))}
-          {Array.from({length:8}).map((_,i)=> (
-            <div className="marquee-item" key={`m-b-${i}`}><Image src={`/assets/models/model-0${i+1}.png`} alt={`AI Model 0${i+1}`} width={160} height={100} loading="lazy" /></div>
+          {Array.from({length:19}).map((_,i)=> (
+            <div className="marquee-item" key={`m-b-${i}`}><Image src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} alt={`AI Model ${i+1}`} width={160} height={100} loading="lazy" /></div>
           ))}
         </div>
       </section>
