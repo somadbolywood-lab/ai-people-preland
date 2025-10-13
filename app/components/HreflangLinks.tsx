@@ -18,9 +18,6 @@ export default function HreflangLinks({ currentPath, locale = 'en' }: HreflangLi
   
   return (
     <>
-      {/* Canonical URL */}
-      <link rel="canonical" href={enUrl} />
-      
       {/* Hreflang links */}
       <link rel="alternate" hrefLang="en" href={enUrl} />
       <link rel="alternate" hrefLang="ru" href={ruUrl} />
