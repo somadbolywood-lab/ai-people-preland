@@ -27,24 +27,39 @@ export default function RoleSelectionPage() {
               "@type": "WebPage",
               "name": "AI-People Registration - Choose Your Role",
               "description": "Pre-launch registration page for buyers and creators on AI-People marketplace",
-              "url": "https://ai-people.com/auth/role",
+              "url": "https://ai-people.io/ru/auth/role",
               "inLanguage": ["en", "ru"],
               "isPartOf": {
                 "@type": "WebSite",
                 "name": "AI-People",
-                "url": "https://ai-people.com"
+                "url": "https://ai-people.io"
               },
               "potentialAction": [
                 {
                   "@type": "RegisterAction",
                   "name": "Join as Buyer",
-                  "target": "https://ai-people.com/auth/buyer"
+                  "target": "https://ai-people.io/ru/auth/buyer"
                 },
                 {
                   "@type": "RegisterAction",
                   "name": "Join as Creator",
-                  "target": "https://ai-people.com/auth/creator"
+                  "target": "https://ai-people.io/ru/auth/creator"
                 }
+              ]
+            })
+          }}
+        />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "inLanguage": "ru-RU",
+            "mainEntity": [
+              {"@type": "Question", "name": "Кому выбрать роль покупателя, а кому — креатора?", "acceptedAnswer": {"@type": "Answer", "text": "Выбирайте Покупателя, если вам нужны готовые AI‑модели и контент для маркетинга. Выбирайте Креатора, если хотите продавать свой AI‑контент и виртуальных инфлюенсеров брендам."}},
+              {"@type": "Question", "name": "Какая комиссия у креаторов?", "acceptedAnswer": {"@type": "Answer", "text": "Креаторы получают 75% вознаграждения от продаж. Обеспечены безопасные выплаты и маркетинговая поддержка."}},
+              {"@type": "Question", "name": "Когда запуск?", "acceptedAnswer": {"@type": "Answer", "text": "Запуск маркетплейса — 01.12.2025. Предрегистрация даёт ранние привилегии."}}
               ]
             })
           }}
@@ -174,10 +189,10 @@ export default function RoleSelectionPage() {
             "provider": {
               "@type": "Organization",
               "name": "AI-People",
-              "url": "https://ai-people.com"
+              "url": "https://ai-people.io"
             },
             "serviceType": "Регистрация в AI маркетплейсе",
-            "url": "https://ai-people.com/ru/auth/role",
+            "url": "https://ai-people.io/ru/auth/role",
             "inLanguage": "ru-RU",
             "offers": {
               "@type": "Offer",

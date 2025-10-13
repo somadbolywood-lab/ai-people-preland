@@ -27,23 +27,49 @@ export default function RoleSelectionPage() {
               "@type": "WebPage",
               "name": "AI-People Registration - Choose Your Role",
               "description": "Pre-launch registration page for buyers and creators on AI-People marketplace",
-              "url": "https://ai-people.com/auth/role",
+              "url": "https://ai-people.io/auth/role",
               "inLanguage": ["en", "ru"],
               "isPartOf": {
                 "@type": "WebSite",
                 "name": "AI-People",
-                "url": "https://ai-people.com"
+                "url": "https://ai-people.io"
               },
               "potentialAction": [
                 {
                   "@type": "RegisterAction",
                   "name": "Join as Buyer",
-                  "target": "https://ai-people.com/auth/buyer"
+                  "target": "https://ai-people.io/auth/buyer"
                 },
                 {
                   "@type": "RegisterAction",
                   "name": "Join as Creator",
-                  "target": "https://ai-people.com/auth/creator"
+                  "target": "https://ai-people.io/auth/creator"
+                }
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Who should choose Buyer vs Creator?",
+                  "acceptedAnswer": {"@type": "Answer", "text": "Choose Buyer if you need ready AI models and content for marketing. Choose Creator if you want to sell your AI art and virtual influencers to brands."}
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are the fees for creators?",
+                  "acceptedAnswer": {"@type": "Answer", "text": "Creators keep 75% commission on sales. Secure payments and full marketing support are provided."}
+                },
+                {
+                  "@type": "Question",
+                  "name": "When is the launch?",
+                  "acceptedAnswer": {"@type": "Answer", "text": "The marketplace launches on December 1, 2025 (01.12.2025 RU). Pre‑registration grants early access benefits."}
                 }
               ]
             })

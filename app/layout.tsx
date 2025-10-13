@@ -82,19 +82,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
+              "@id": "https://ai-people.io/#organization",
               "name": "AI-People",
               "url": "https://ai-people.io",
               "logo": "https://ai-people.io/faq/AI-people Logo.png",
               "description": "Leading AI models marketplace featuring hyperrealistic virtual influencers, AI-generated content, and premium AI art",
               "foundingDate": "2024",
               "sameAs": [
-                "https://twitter.com/aipeople",
-                "https://linkedin.com/company/ai-people"
+                "https://www.instagram.com/ai_people_io",
+                "https://www.tiktok.com/@ai_people_io",
+                "https://x.com/ai_people_io",
+                "https://www.reddit.com/u/AI-PEOPLE",
+                "https://pin.it/12q1ESjB2",
+                "https://youtube.com/@ai_people_io"
               ],
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer service",
-                "availableLanguage": ["English", "Russian"]
+                "email": "feedback@ai-people.io",
+                "availableLanguage": ["en", "ru"]
               },
               "address": {
                 "@type": "PostalAddress",
@@ -117,8 +123,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
+              "@id": "https://ai-people.io/#website",
               "name": "AI-People",
               "url": "https://ai-people.io",
+              "publisher": { "@id": "https://ai-people.io/#organization" },
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": "https://ai-people.io/search?q={search_term_string}",
