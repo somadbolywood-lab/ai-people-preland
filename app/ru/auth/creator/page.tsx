@@ -6,6 +6,7 @@ import ThankYouModal from "../../../components/ThankYouModal";
 import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
 import CustomDropdown from "../../../components/CustomDropdown";
+import Script from "next/script";
 
 export default function CreatorLeadPage() {
   useHamburgerMenu();
@@ -689,6 +690,22 @@ export default function CreatorLeadPage() {
         onClose={() => setShowModal(false)}
         userType="creator"
         userName={formData.name}
+      />
+      {/* FAQ Schema.org (RU) for Creator Registration */}
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "inLanguage": "ru-RU",
+            "mainEntity": [
+              {"@type": "Question", "name": "Сколько может зарабатывать креатор?", "acceptedAnswer": {"@type": "Answer", "text": "Креаторы получают 75% вознаграждения от продаж. Топ‑креаторы зарабатывают $5K–$25K в месяц на премиальном AI‑контенте."}},
+              {"@type": "Question", "name": "Что можно продавать?", "acceptedAnswer": {"@type": "Answer", "text": "Гиперреалистичные AI‑модели, виртуальных инфлюенсеров, фото/видео‑сеты и кастомные коммерческие пакеты."}},
+              {"@type": "Question", "name": "Требуется ли KYC?", "acceptedAnswer": {"@type": "Answer", "text": "При ежемесячных выплатах до $10K подтверждение личности не требуется. Далее действует стандартная верификация."}}
+            ]
+          })
+        }}
       />
     </div>
   );

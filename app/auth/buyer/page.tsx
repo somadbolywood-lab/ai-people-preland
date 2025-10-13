@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ThankYouModal from "../../components/ThankYouModal";
+import Script from "next/script";
 import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSelector from "../../components/LanguageSelector";
 import CustomDropdown from "../../components/CustomDropdown";
@@ -502,6 +503,33 @@ export default function BuyerLeadPage() {
         onClose={() => setShowModal(false)}
         userType="buyer"
         userName={formData.name}
+      />
+      {/* FAQ Schema.org for Buyer Registration (SEO only) */}
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What can I buy as a buyer?",
+                "acceptedAnswer": {"@type": "Answer", "text": "You can purchase hyperrealistic AI models, virtual influencers and AI-generated content packages for ads, social media and e‑commerce."}
+              },
+              {
+                "@type": "Question",
+                "name": "How are payments and licensing handled?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Payments are secured and each purchase includes commercial licensing terms suitable for marketing use."}
+              },
+              {
+                "@type": "Question",
+                "name": "When will the marketplace launch?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Public launch is on December 1, 2025. Pre‑registration grants early access benefits."}
+              }
+            ]
+          })
+        }}
       />
     </div>
   );

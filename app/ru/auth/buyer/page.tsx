@@ -6,6 +6,7 @@ import ThankYouModal from "../../../components/ThankYouModal";
 import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
 import CustomDropdown from "../../../components/CustomDropdown";
+import Script from "next/script";
 
 export default function BuyerLeadPage() {
   useHamburgerMenu();
@@ -539,6 +540,22 @@ export default function BuyerLeadPage() {
         onClose={() => setShowModal(false)}
         userType="buyer"
         userName={formData.name}
+      />
+      {/* FAQ Schema.org (RU) for Buyer Registration */}
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "inLanguage": "ru-RU",
+            "mainEntity": [
+              {"@type": "Question", "name": "Что я могу купить как покупатель?", "acceptedAnswer": {"@type": "Answer", "text": "Вы можете покупать гиперреалистичные AI‑модели, виртуальных инфлюенсеров и AI‑пакеты контента для рекламы, соцсетей и e‑commerce."}},
+              {"@type": "Question", "name": "Как устроены платежи и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "Платежи защищены, каждая покупка содержит коммерческие условия лицензирования для маркетингового использования."}},
+              {"@type": "Question", "name": "Когда запуск платформы?", "acceptedAnswer": {"@type": "Answer", "text": "Публичный запуск — 01.12.2025. Предрегистрация даёт ранние привилегии."}}
+            ]
+          })
+        }}
       />
     </div>
   );

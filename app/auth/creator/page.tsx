@@ -5,6 +5,7 @@ import ThankYouModal from "../../components/ThankYouModal";
 import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSelector from "../../components/LanguageSelector";
 import CustomDropdown from "../../components/CustomDropdown";
+import Script from "next/script";
 import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
 
 export default function CreatorLeadPage() {
@@ -654,6 +655,21 @@ export default function CreatorLeadPage() {
         onClose={() => setShowModal(false)}
         userType="creator"
         userName={formData.name}
+      />
+      {/* FAQ Schema.org for Creator Registration (SEO only) */}
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type": "Question", "name": "How much can creators earn?", "acceptedAnswer": {"@type": "Answer", "text": "Creators keep 75% commission on sales. Top creators earn $5K–$25K per month with premium AI content."}},
+              {"@type": "Question", "name": "What content can I sell?", "acceptedAnswer": {"@type": "Answer", "text": "You can sell hyperrealistic AI models, virtual influencers, photo/video sets and custom commercial packages."}},
+              {"@type": "Question", "name": "Do I need KYC?", "acceptedAnswer": {"@type": "Answer", "text": "No KYC is required under $10K monthly payouts. Standard verification applies beyond that."}}
+            ]
+          })
+        }}
       />
     </div>
   );
