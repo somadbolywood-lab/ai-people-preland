@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Join as Buyer | AI-People Marketplace',
+  title: 'Join as Buyer — Access Hyperrealistic AI Models | AI-People',
   description: 'Access premium AI models and hyperrealistic virtual influencers for your business. Get ready-made packages or order custom content.',
 }
 

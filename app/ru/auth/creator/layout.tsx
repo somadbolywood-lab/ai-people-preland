@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AI-People: Регистрация креатора | Монетизируйте ваше AI-искусство',
+  title: 'Продавайте AI‑контент — 75% вознаграждение | AI-People',
   description: 'Зарегистрируйтесь как креатор на маркетплейсе AI-People. Продавайте ваши AI-модели, виртуальных инфлюенсеров и AI-контент. Зарабатывайте $5K-$25K в месяц.',
   keywords: 'регистрация AI-креатора, продать AI-модели, монетизировать AI-искусство, креатор маркетплейса AI, креатор виртуальных инфлюенсеров',
   robots: 'index, follow',
   openGraph: {
-    title: 'AI-People: Регистрация креатора',
+    title: 'Продавайте AI‑контент — 75% вознаграждение | AI-People',
     description: 'Присоединяйтесь как креатор и монетизируйте ваше AI-искусство и виртуальных инфлюенсеров',
     type: 'website',
     url: 'https://ai-people.io/ru/auth/creator',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI-People: Регистрация креатора',
+    title: 'Продавайте AI‑контент — 75% вознаграждение | AI-People',
     description: 'Присоединяйтесь как креатор и монетизируйте ваше AI-искусство и виртуальных инфлюенсеров',
   },
 }

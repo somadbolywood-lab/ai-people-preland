@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Join as Buyer | AI-People Marketplace',
-  description: 'Access premium AI models and hyperrealistic virtual influencers for your business. Get ready-made packages or order custom content.',
+  title: 'Покупатель — доступ к гиперреалистичным AI‑моделям | AI-People',
+  description: 'Доступ к премиум AI‑моделям и виртуальным инфлюенсерам для бизнеса. Готовые пакеты и кастомный контент.',
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

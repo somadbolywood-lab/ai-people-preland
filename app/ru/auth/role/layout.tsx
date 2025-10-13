@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AI-People: Выбор роли | Выберите свой путь в маркетплейсе AI',
+  title: 'Выберите роль — покупатель или креатор | AI-People',
   description: 'Присоединяйтесь к маркетплейсу AI-People как креатор или покупатель. Выберите свою роль и начните путешествие в первом в мире маркетплейсе AI-моделей.',
   keywords: 'выбор роли маркетплейса AI, регистрация креатора, регистрация покупателя, маркетплейс AI-моделей, виртуальные инфлюенсеры',
   robots: 'index, follow',
   openGraph: {
-    title: 'AI-People: Выбор роли',
+    title: 'Выберите роль — покупатель или креатор | AI-People',
     description: 'Выберите свою роль в маркетплейсе AI - креатор или покупатель',
     type: 'website',
     url: 'https://ai-people.io/ru/auth/role',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI-People: Выбор роли',
+    title: 'Выберите роль — покупатель или креатор | AI-People',
     description: 'Выберите свою роль в маркетплейсе AI - креатор или покупатель',
   },
 }

@@ -8,7 +8,7 @@ import LanguageSelector from './components/LanguageSelector';
 import HreflangLinks from './components/HreflangLinks';
 
 export const metadata = {
-  title: 'AI-People: Маркетплейс AI-моделей | Гиперреалистичные виртуальные инфлюенсеры 2025 | Premier AI Models Marketplace',
+  title: "World's First Curated AI Models Marketplace | AI-People",
   description: 'Первый в мире маркетплейс AI-моделей, запуск 1 ноября 2025. Покупайте и продавайте гиперреалистичных виртуальных инфлюенсеров, AI-контент. Креаторы зарабатывают $5К-$25К/месяц. The world\'s first AI models marketplace launching November 1, 2025.',
   keywords: 'маркетплейс AI-моделей, виртуальные инфлюенсеры, AI-искусство, купить AI модели, продать AI модели, гиперреалистичные AI модели, AI контент маркетинг, платформа виртуальных инфлюенсеров 2025, заработок на AI, AI models marketplace, virtual influencers, AI art, hyperrealistic AI models, AI-generated content, AI creator platform, virtual influencer marketing, AI model licensing, buy AI models, sell AI models, AI marketplace 2025',
   authors: [{ name: 'AI-People Team' }],
@@ -29,7 +29,7 @@ export const metadata = {
     locale: 'ru_RU',
     alternateLocale: ['en_US'],
     url: 'https://ai-people.io',
-    title: 'AI-People: Маркетплейс гиперреалистичных AI-моделей | Виртуальные инфлюенсеры 2025',
+    title: "World's First Curated AI Models Marketplace | AI-People",
     description: 'Первый маркетплейс AI-моделей в мире. Покупайте и продавайте гиперреалистичных виртуальных инфлюенсеров. Креаторы зарабатывают $5К-$25К/месяц. Запуск 01.12.2025.',
     siteName: 'AI-People',
     images: [
@@ -43,7 +43,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI-People: Маркетплейс гиперреалистичных AI-моделей',
+    title: "World's First Curated AI Models Marketplace | AI-People",
     description: 'Первый маркетплейс AI-моделей. Креаторы зарабатывают $5К-$25К/месяц. Запуск 01.12.2025.',
     images: ['/faq/AI-people Logo.png'],
   },

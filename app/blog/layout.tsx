@@ -1,14 +1,14 @@
 import Script from 'next/script';
 
 export const metadata = {
-  title: 'AI-People Blog: AI Models, Virtual Influencers & AI Art Insights 2025',
+  title: 'AI-People Blog — AI Models & Virtual Influencers',
   description: 'Expert insights on AI models marketplace, virtual influencer marketing, monetizing AI art, and latest trends in AI-generated content industry. Real data, proven strategies, and actionable tips.',
   keywords: 'AI models blog, virtual influencers insights, AI art monetization, AI marketplace trends, make money with AI art, sell AI content, AI creator success stories',
   alternates: {
     canonical: 'https://ai-people.io/blog',
   },
   openGraph: {
-    title: 'AI-People Blog: AI Models & Virtual Influencers Insights',
+    title: 'AI-People Blog — AI Models & Virtual Influencers',
     description: 'Expert insights on AI models, virtual influencers, and monetizing AI-generated content.',
     url: 'https://ai-people.io/blog',
     type: 'website',
@@ -23,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI-People Blog: AI Models & Virtual Influencers',
+    title: 'AI-People Blog — AI Models & Virtual Influencers',
     description: 'Expert insights on AI models marketplace and monetizing AI art.',
     images: ['/assets/models/model-01.png'],
   },
