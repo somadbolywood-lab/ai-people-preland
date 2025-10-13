@@ -17,7 +17,7 @@ export default function TermsOfServicePage() {
         <meta name="description" content="AI-People Terms of Service: marketplace rules, 75% creator commission, USDT payments, 72-hour verification, refund policy. Launching November 1, 2025." />
         <meta name="keywords" content="AI-People terms, AI marketplace legal, virtual influencer agreement, creator commission 75%, USDT payment terms" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ai-people.com/legal/terms" />
+        <link rel="canonical" href="https://ai-people.io/legal/terms" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

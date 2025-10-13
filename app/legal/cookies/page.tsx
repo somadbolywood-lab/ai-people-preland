@@ -17,7 +17,7 @@ export default function CookiePolicyPage() {
         <meta name="description" content="AI-People Cookie Policy: learn about essential, functional, and analytics cookies. Manage your preferences. EU Cookie Law compliant. No tracking without consent." />
         <meta name="keywords" content="AI-People cookies, cookie policy, EU cookie law, privacy settings, tracking preferences" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ai-people.com/legal/cookies" />
+        <link rel="canonical" href="https://ai-people.io/legal/cookies" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

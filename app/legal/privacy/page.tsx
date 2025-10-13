@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
         <meta name="description" content="AI-People Privacy Policy: GDPR/CCPA compliant data protection, pre-launch lead collection, email privacy, no data selling. Learn how we protect your information." />
         <meta name="keywords" content="AI-People privacy, GDPR compliance, CCPA privacy policy, data protection AI marketplace, email privacy" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ai-people.com/legal/privacy" />
+        <link rel="canonical" href="https://ai-people.io/legal/privacy" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -18,7 +18,7 @@ export default function RoleSelectionPage() {
         <meta name="description" content="Join AI-People pre-launch waiting list! Choose Buyer (access 18+ AI models, OnlyFans content) or Creator (earn 75%, no KYC under $10K). Launching November 1, 2025. Get VIP early access!" />
         <meta name="keywords" content="AI-People registration, join waiting list, AI creator signup, buyer registration, 75% commission, no KYC, pre-launch access" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ai-people.com/auth/role" />
+        <link rel="canonical" href="https://ai-people.io/auth/role" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
