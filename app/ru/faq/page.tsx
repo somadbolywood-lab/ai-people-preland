@@ -2,14 +2,11 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Script from "next/script";
-import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
 import Footer from "../../components/Footer";
-import ThemeToggle from "../../components/ThemeToggle";
-import LanguageSelector from "../../components/LanguageSelector";
 import Head from "next/head";
+import HeaderWithMenu from "../../components/HeaderWithMenu";
 
 export default function Page() {
-  useHamburgerMenu();
 
   // Set Russian language by default on mount
   useEffect(() => {
@@ -528,129 +525,7 @@ export default function Page() {
         />
       </Head>
       <div className="container ru-optimized faq-page">
-      <header className="topbar">
-        <div className="brand">
-          <a href="/ru" className="brand-link">
-            <Image 
-              src="/faq/AI-people Logo.png" 
-              alt="AI-People" 
-              className="logo-img" 
-              width={75} 
-              height={75} 
-              priority 
-              quality={100}
-              unoptimized={true}
-            />
-          </a>
-        </div>
-        
-        <div className="actions">
-          <LanguageSelector />
-          <ThemeToggle />
-          <a href="mailto:feedback@ai-people.com" className="feedback-btn" aria-label="Feedback">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-          </a>
-          <button className="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="menuPanel">
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </button>
-        </div>
-      </header>
-
-      <div className="menu-panel" id="menuPanel" role="menu" aria-hidden="true">
-        <a href="/ru" role="menuitem" data-lang-en="Home" data-lang-ru="Главная">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-            <polyline points="9,22 9,12 15,12 15,22"/>
-          </svg>
-          <span>Главная</span>
-        </a>
-        <a href="/ru/about" role="menuitem" data-lang-en="About" data-lang-ru="О нас">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <circle cx="12" cy="16" r="1"/>
-          </svg>
-          <span>О нас</span>
-        </a>
-        <a href="/ru/faq" role="menuitem" data-lang-en="FAQ" data-lang-ru="FAQ">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="m9 12 2 2 4-4"/>
-          </svg>
-          <span>FAQ</span>
-        </a>
-        <a href="/ru/blog" role="menuitem" data-lang-en="Blog" data-lang-ru="Блог">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-            <polyline points="14,2 14,8 20,8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-            <line x1="16" y1="17" x2="8" y2="17"/>
-            <line x1="10" y1="9" x2="8" y2="9"/>
-          </svg>
-          <span>Блог</span>
-        </a>
-        
-        {/* Coming Soon Section */}
-        <div style={{marginTop: '12px', paddingTop: '12px', borderTop: '1px solid rgba(255,255,255,0.1)'}}></div>
-        
-        <a href="#" role="menuitem" aria-disabled="true" data-lang-en="Creator Admin Panel" data-lang-ru="Админ. панель Креатора">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-            <path d="m15 14 3 3 3-3"/>
-          </svg>
-          <span data-lang-en="Creator Admin Panel" data-lang-ru="Админ. панель Креатора">Админ. панель Креатора</span>
-          <span className="soon-label" data-lang-en="Soon" data-lang-ru="Скоро">Скоро</span>
-        </a>
-        
-        <a href="#" role="menuitem" aria-disabled="true" data-lang-en="Buyer Admin Panel" data-lang-ru="Админ. панель Покупателя">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M3 21h18"/>
-            <path d="M5 21V7l8-4v18"/>
-            <path d="M19 21V11l-6-4"/>
-            <path d="M9 9v.01"/>
-            <path d="M9 12v.01"/>
-            <path d="M9 15v.01"/>
-            <path d="M9 18v.01"/>
-          </svg>
-          <span data-lang-en="Buyer Admin Panel" data-lang-ru="Админ. панель Покупателя">Админ. панель Покупателя</span>
-          <span className="soon-label" data-lang-en="Soon" data-lang-ru="Скоро">Скоро</span>
-        </a>
-        
-        <a href="#" role="menuitem" aria-disabled="true" data-lang-en="Catalog" data-lang-ru="Каталог">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-            <path d="M8 7h8"/>
-            <path d="M8 11h8"/>
-            <path d="M8 15h4"/>
-          </svg>
-          <span data-lang-en="Catalog" data-lang-ru="Каталог">Каталог</span>
-          <span className="soon-label" data-lang-en="Soon" data-lang-ru="Скоро">Скоро</span>
-        </a>
-        
-        <a href="#" role="menuitem" aria-disabled="true" data-lang-en="Prices" data-lang-ru="Цены">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <line x1="12" y1="1" x2="12" y2="23"/>
-            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-          <span data-lang-en="Prices" data-lang-ru="Цены">Цены</span>
-          <span className="soon-label" data-lang-en="Soon" data-lang-ru="Скоро">Скоро</span>
-        </a>
-        
-        {/* Legal Policies Section */}
-        <div className="menu-legal-section">
-          <a href="/legal/terms" data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">Условия обслуживания</a> · 
-          <a href="/legal/privacy" data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">Политика конфиденциальности</a> · 
-          <a href="/legal/cookies" data-lang-en="Cookie Policy" data-lang-ru="Политика файлов cookie">Политика файлов cookie</a> · 
-          <a href="/ru/legal/content-policy" data-lang-en="Content & 18+ Policy" data-lang-ru="Политика контента и 18+">Политика контента и 18+</a>
-        </div>
-      </div>
+      <HeaderWithMenu homeHref="/ru" />
 
       {/* Pre-launch Notification Banner */}
       <div className="notification-banner">
