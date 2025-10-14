@@ -214,6 +214,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: { ru: `${baseUrl}/ru/legal/terms` } },
     },
     {
+      url: `${baseUrl}/legal/content-policy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+      alternates: { languages: { ru: `${baseUrl}/ru/legal/content-policy` } },
+    },
+    {
       url: `${baseUrl}/legal/privacy`,
       lastModified: currentDate,
       changeFrequency: 'yearly' as const,
