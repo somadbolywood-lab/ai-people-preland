@@ -147,6 +147,8 @@ export function LanguageProvider({
     isEnglish: currentLanguage === 'en'
   };
 
+  console.log('[LanguageProvider] Rendering with value:', value);
+  
   return (
     <LanguageContext.Provider value={value}>
       {children}

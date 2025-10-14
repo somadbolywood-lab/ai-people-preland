@@ -10,8 +10,10 @@ import CustomDropdown from "../../../components/CustomDropdown";
 import Script from "next/script";
 
 export default function CreatorLeadPage() {
+  console.log('[CreatorLeadPage] Component rendering...');
   useHamburgerMenu();
   const { getTranslatedOptions } = useDropdownOptions();
+  console.log('[CreatorLeadPage] useDropdownOptions hook executed');
   
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
