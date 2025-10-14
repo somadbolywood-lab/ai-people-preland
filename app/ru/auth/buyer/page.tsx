@@ -78,110 +78,110 @@ export default function BuyerLeadPage() {
 
   // Dropdown options
   const countryOptions = [
-    { value: "US", label: "Соединенные Штаты" },
-    { value: "CA", label: "Канада" },
-    { value: "GB", label: "Великобритания" },
-    { value: "DE", label: "Германия" },
-    { value: "FR", label: "Франция" },
-    { value: "IT", label: "Италия" },
-    { value: "ES", label: "Испания" },
-    { value: "NL", label: "Нидерланды" },
-    { value: "SE", label: "Швеция" },
-    { value: "NO", label: "Норвегия" },
-    { value: "DK", label: "Дания" },
-    { value: "FI", label: "Финляндия" },
-    { value: "CH", label: "Швейцария" },
-    { value: "AT", label: "Австрия" },
-    { value: "BE", label: "Бельгия" },
-    { value: "PL", label: "Польша" },
-    { value: "CZ", label: "Чехия" },
-    { value: "HU", label: "Венгрия" },
-    { value: "RO", label: "Румыния" },
-    { value: "BG", label: "Болгария" },
-    { value: "HR", label: "Хорватия" },
-    { value: "SI", label: "Словения" },
-    { value: "SK", label: "Словакия" },
-    { value: "LT", label: "Литва" },
-    { value: "LV", label: "Латвия" },
-    { value: "EE", label: "Эстония" },
-    { value: "IE", label: "Ирландия" },
-    { value: "PT", label: "Португалия" },
-    { value: "GR", label: "Греция" },
-    { value: "CY", label: "Кипр" },
-    { value: "MT", label: "Мальта" },
-    { value: "LU", label: "Люксембург" },
-    { value: "JP", label: "Япония" },
-    { value: "KR", label: "Южная Корея" },
-    { value: "CN", label: "Китай" },
-    { value: "IN", label: "Индия" },
-    { value: "AU", label: "Австралия" },
-    { value: "NZ", label: "Новая Зеландия" },
-    { value: "BR", label: "Бразилия" },
-    { value: "AR", label: "Аргентина" },
-    { value: "MX", label: "Мексика" },
-    { value: "CL", label: "Чили" },
-    { value: "CO", label: "Колумбия" },
-    { value: "PE", label: "Перу" },
-    { value: "ZA", label: "Южная Африка" },
-    { value: "NG", label: "Нигерия" },
-    { value: "KE", label: "Кения" },
-    { value: "EG", label: "Египет" },
-    { value: "MA", label: "Марокко" },
-    { value: "TN", label: "Тунис" },
-    { value: "DZ", label: "Алжир" },
-    { value: "RU", label: "Россия" },
-    { value: "UA", label: "Украина" },
-    { value: "BY", label: "Беларусь" },
-    { value: "KZ", label: "Казахстан" },
-    { value: "UZ", label: "Узбекистан" },
-    { value: "OTHER", label: "Другое" }
+    { value: "US", label: "United States", labelRu: "Соединенные Штаты" },
+    { value: "CA", label: "Canada", labelRu: "Канада" },
+    { value: "GB", label: "United Kingdom", labelRu: "Великобритания" },
+    { value: "DE", label: "Germany", labelRu: "Германия" },
+    { value: "FR", label: "France", labelRu: "Франция" },
+    { value: "IT", label: "Italy", labelRu: "Италия" },
+    { value: "ES", label: "Spain", labelRu: "Испания" },
+    { value: "NL", label: "Netherlands", labelRu: "Нидерланды" },
+    { value: "SE", label: "Sweden", labelRu: "Швеция" },
+    { value: "NO", label: "Norway", labelRu: "Норвегия" },
+    { value: "DK", label: "Denmark", labelRu: "Дания" },
+    { value: "FI", label: "Finland", labelRu: "Финляндия" },
+    { value: "CH", label: "Switzerland", labelRu: "Швейцария" },
+    { value: "AT", label: "Austria", labelRu: "Австрия" },
+    { value: "BE", label: "Belgium", labelRu: "Бельгия" },
+    { value: "PL", label: "Poland", labelRu: "Польша" },
+    { value: "CZ", label: "Czech Republic", labelRu: "Чехия" },
+    { value: "HU", label: "Hungary", labelRu: "Венгрия" },
+    { value: "RO", label: "Romania", labelRu: "Румыния" },
+    { value: "BG", label: "Bulgaria", labelRu: "Болгария" },
+    { value: "HR", label: "Croatia", labelRu: "Хорватия" },
+    { value: "SI", label: "Slovenia", labelRu: "Словения" },
+    { value: "SK", label: "Slovakia", labelRu: "Словакия" },
+    { value: "LT", label: "Lithuania", labelRu: "Литва" },
+    { value: "LV", label: "Latvia", labelRu: "Латвия" },
+    { value: "EE", label: "Estonia", labelRu: "Эстония" },
+    { value: "IE", label: "Ireland", labelRu: "Ирландия" },
+    { value: "PT", label: "Portugal", labelRu: "Португалия" },
+    { value: "GR", label: "Greece", labelRu: "Греция" },
+    { value: "CY", label: "Cyprus", labelRu: "Кипр" },
+    { value: "MT", label: "Malta", labelRu: "Мальта" },
+    { value: "LU", label: "Luxembourg", labelRu: "Люксембург" },
+    { value: "JP", label: "Japan", labelRu: "Япония" },
+    { value: "KR", label: "South Korea", labelRu: "Южная Корея" },
+    { value: "CN", label: "China", labelRu: "Китай" },
+    { value: "IN", label: "India", labelRu: "Индия" },
+    { value: "AU", label: "Australia", labelRu: "Австралия" },
+    { value: "NZ", label: "New Zealand", labelRu: "Новая Зеландия" },
+    { value: "BR", label: "Brazil", labelRu: "Бразилия" },
+    { value: "AR", label: "Argentina", labelRu: "Аргентина" },
+    { value: "MX", label: "Mexico", labelRu: "Мексика" },
+    { value: "CL", label: "Chile", labelRu: "Чили" },
+    { value: "CO", label: "Colombia", labelRu: "Колумбия" },
+    { value: "PE", label: "Peru", labelRu: "Перу" },
+    { value: "ZA", label: "South Africa", labelRu: "Южная Африка" },
+    { value: "NG", label: "Nigeria", labelRu: "Нигерия" },
+    { value: "KE", label: "Kenya", labelRu: "Кения" },
+    { value: "EG", label: "Egypt", labelRu: "Египет" },
+    { value: "MA", label: "Morocco", labelRu: "Марокко" },
+    { value: "TN", label: "Tunisia", labelRu: "Тунис" },
+    { value: "DZ", label: "Algeria", labelRu: "Алжир" },
+    { value: "RU", label: "Russia", labelRu: "Россия" },
+    { value: "UA", label: "Ukraine", labelRu: "Украина" },
+    { value: "BY", label: "Belarus", labelRu: "Беларусь" },
+    { value: "KZ", label: "Kazakhstan", labelRu: "Казахстан" },
+    { value: "UZ", label: "Uzbekistan", labelRu: "Узбекистан" },
+    { value: "OTHER", label: "Other", labelRu: "Другое" }
   ];
 
   const roleOptions = [
-    { value: "business_owner", label: "Business Owner / CEO" },
-    { value: "marketer", label: "Marketing Professional" },
-    { value: "freelancer", label: "Freelancer / Individual" },
-    { value: "agency", label: "Agency" },
-    { value: "startup", label: "Startup" },
-    { value: "other", label: "Other" }
+    { value: "business_owner", label: "Business Owner / CEO", labelRu: "Владелец бизнеса / CEO" },
+    { value: "marketer", label: "Marketing Professional", labelRu: "Маркетолог" },
+    { value: "freelancer", label: "Freelancer / Individual", labelRu: "Фрилансер / Частное лицо" },
+    { value: "agency", label: "Agency", labelRu: "Агентство" },
+    { value: "startup", label: "Startup", labelRu: "Стартап" },
+    { value: "other", label: "Other", labelRu: "Другое" }
   ];
 
   const teamSizeOptions = [
-    { value: "1-10", label: "1-10 people" },
-    { value: "11-50", label: "11-50 people" },
-    { value: "51-200", label: "51-200 people" },
-    { value: "200+", label: "200+ people" }
+    { value: "1-10", label: "1-10 people", labelRu: "1-10 человек" },
+    { value: "11-50", label: "11-50 people", labelRu: "11-50 человек" },
+    { value: "51-200", label: "51-200 people", labelRu: "51-200 человек" },
+    { value: "200+", label: "200+ people", labelRu: "200+ человек" }
   ];
 
   const useCaseOptions = [
-    { value: "advertising", label: "Advertising campaigns" },
-    { value: "social_media", label: "Social media content" },
-    { value: "branding", label: "Branding & design" },
-    { value: "ecommerce", label: "E-commerce" },
-    { value: "other", label: "Other" }
+    { value: "advertising", label: "Advertising campaigns", labelRu: "Рекламные кампании" },
+    { value: "social_media", label: "Social media content", labelRu: "Контент для соцсетей" },
+    { value: "branding", label: "Branding & design", labelRu: "Брендинг и дизайн" },
+    { value: "ecommerce", label: "E-commerce", labelRu: "Электронная коммерция" },
+    { value: "other", label: "Other", labelRu: "Другое" }
   ];
 
   const budgetOptions = [
-    { value: "0-100", label: "$0 - $100" },
-    { value: "100-500", label: "$100 - $500" },
-    { value: "500-1000", label: "$500 - $1,000" },
-    { value: "1000-5000", label: "$1,000 - $5,000" },
-    { value: "5000+", label: "$5,000+" }
+    { value: "0-100", label: "$0 - $100", labelRu: "$0 - $100" },
+    { value: "100-500", label: "$100 - $500", labelRu: "$100 - $500" },
+    { value: "500-1000", label: "$500 - $1,000", labelRu: "$500 - $1,000" },
+    { value: "1000-5000", label: "$1,000 - $5,000", labelRu: "$1,000 - $5,000" },
+    { value: "5000+", label: "$5,000+", labelRu: "$5,000+" }
   ];
 
   const experienceOptions = [
-    { value: "never_used", label: "Never used AI tools" },
-    { value: "beginner", label: "Beginner" },
-    { value: "intermediate", label: "Intermediate" },
-    { value: "advanced", label: "Advanced user" }
+    { value: "never_used", label: "Never used AI tools", labelRu: "Никогда не использовал AI инструменты" },
+    { value: "beginner", label: "Beginner", labelRu: "Начинающий" },
+    { value: "intermediate", label: "Intermediate", labelRu: "Средний" },
+    { value: "advanced", label: "Advanced user", labelRu: "Продвинутый пользователь" }
   ];
 
   const sourceOptions = [
-    { value: "google", label: "Google search" },
-    { value: "social_media", label: "Social media" },
-    { value: "friend", label: "Friend / Colleague" },
-    { value: "blog", label: "Blog / Article" },
-    { value: "other", label: "Other" }
+    { value: "google", label: "Google search", labelRu: "Поиск Google" },
+    { value: "social_media", label: "Social media", labelRu: "Социальные сети" },
+    { value: "friend", label: "Friend / Colleague", labelRu: "Друг / Коллега" },
+    { value: "blog", label: "Blog / Article", labelRu: "Блог / Статья" },
+    { value: "other", label: "Other", labelRu: "Другое" }
   ];
 
   useEffect(() => {
@@ -203,13 +203,13 @@ export default function BuyerLeadPage() {
     
     // Validate required fields
     if (!formData.email || !formData.name) {
-      alert('Please fill in all required fields (Email and Name)');
+      alert('Пожалуйста, заполните все обязательные поля (Email и Имя)');
       setStep(0); // Go back to first step
       return;
     }
     
     if (!formData.termsAccepted) {
-      alert('Please accept the Terms & Conditions');
+      alert('Пожалуйста, примите Условия использования');
       setStep(3); // Go back to consents step
       return;
     }
@@ -267,11 +267,11 @@ export default function BuyerLeadPage() {
           termsAccepted: false
         });
       } else {
-        alert(data.error || 'An error occurred. Please try again.');
+        alert(data.error || 'Произошла ошибка. Пожалуйста, попробуйте снова.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('An error occurred. Please try again.');
+      alert('Произошла ошибка. Пожалуйста, попробуйте снова.');
     } finally {
       setIsSubmitting(false);
     }
@@ -378,7 +378,7 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(roleOptions)}
                     value={formData.role}
                     onChange={(value) => setFormData(prev => ({ ...prev, role: value as string }))}
-                    placeholder="Select your role"
+                    placeholder="Выберите вашу роль"
                   />
                 </div>
                 
@@ -400,12 +400,12 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(teamSizeOptions)}
                     value={formData.teamSize}
                     onChange={(value) => setFormData(prev => ({ ...prev, teamSize: value as string }))}
-                    placeholder="Select team size"
+                    placeholder="Выберите размер команды"
                   />
                 </div>
                 <div className="wizard-actions">
-                  <button type="button" className="btn outline" onClick={() => setStep(0)}>Back</button>
-                  <button type="button" className="btn primary" onClick={() => setStep(2)}>Continue</button>
+                  <button type="button" className="btn outline" onClick={() => setStep(0)} data-lang-en="Back" data-lang-ru="Назад">Назад</button>
+                  <button type="button" className="btn primary" onClick={() => setStep(2)} data-lang-en="Continue" data-lang-ru="Продолжить">Продолжить</button>
                 </div>
               </div>
 
@@ -419,7 +419,7 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(useCaseOptions)}
                     value={formData.useCase}
                     onChange={(value) => setFormData(prev => ({ ...prev, useCase: value as string }))}
-                    placeholder="What will you use AI models for?"
+                    placeholder="Для чего вы будете использовать AI модели?"
                   />
                 </div>
 
@@ -429,7 +429,7 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(budgetOptions)}
                     value={formData.monthlyBudget}
                     onChange={(value) => setFormData(prev => ({ ...prev, monthlyBudget: value as string }))}
-                    placeholder="Select budget range"
+                    placeholder="Выберите диапазон бюджета"
                   />
                 </div>
 
@@ -439,7 +439,7 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(experienceOptions)}
                     value={formData.aiExperience}
                     onChange={(value) => setFormData(prev => ({ ...prev, aiExperience: value as string }))}
-                    placeholder="Your AI experience level"
+                    placeholder="Ваш уровень опыта с AI"
                   />
                 </div>
 
@@ -449,12 +449,12 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(sourceOptions)}
                     value={formData.source}
                     onChange={(value) => setFormData(prev => ({ ...prev, source: value as string }))}
-                    placeholder="Select source"
+                    placeholder="Выберите источник"
                   />
                 </div>
                 <div className="wizard-actions">
-                  <button type="button" className="btn outline" onClick={() => setStep(1)}>Back</button>
-                  <button type="button" className="btn primary" onClick={() => setStep(3)}>Continue</button>
+                  <button type="button" className="btn outline" onClick={() => setStep(1)} data-lang-en="Back" data-lang-ru="Назад">Назад</button>
+                  <button type="button" className="btn primary" onClick={() => setStep(3)} data-lang-en="Continue" data-lang-ru="Продолжить">Продолжить</button>
                 </div>
               </div>
 
@@ -491,8 +491,8 @@ export default function BuyerLeadPage() {
                   </label>
                 </div>
                 <div className="wizard-actions">
-                  <button type="button" className="btn outline" onClick={() => setStep(2)}>Back</button>
-                  <button type="button" className="btn primary" onClick={() => setStep(4)}>Continue</button>
+                  <button type="button" className="btn outline" onClick={() => setStep(2)} data-lang-en="Back" data-lang-ru="Назад">Назад</button>
+                  <button type="button" className="btn primary" onClick={() => setStep(4)} data-lang-en="Continue" data-lang-ru="Продолжить">Продолжить</button>
                 </div>
               </div>
               

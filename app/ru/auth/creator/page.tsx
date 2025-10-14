@@ -238,19 +238,19 @@ export default function CreatorLeadPage() {
     
     // Validate required fields
     if (!formData.email || !formData.name || !formData.username) {
-      alert('Please fill in all required fields (Email, Name, and Username)');
+      alert('Пожалуйста, заполните все обязательные поля (Email, Имя и Имя пользователя)');
       setStep(0); // Go back to first step
       return;
     }
     
     if (!formData.termsAccepted) {
-      alert('Please accept the Terms & Conditions');
+      alert('Пожалуйста, примите Условия использования');
       setStep(3); // Go back to consents step
       return;
     }
     
     if (!formData.contentRightsConfirmed) {
-      alert('Please confirm content rights ownership');
+      alert('Пожалуйста, подтвердите права на контент');
       setStep(3); // Go back to consents step
       return;
     }
@@ -310,11 +310,11 @@ export default function CreatorLeadPage() {
           contentRightsConfirmed: false
         });
       } else {
-        alert(data.error || 'An error occurred. Please try again.');
+        alert(data.error || 'Произошла ошибка. Пожалуйста, попробуйте снова.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('An error occurred. Please try again.');
+      alert('Произошла ошибка. Пожалуйста, попробуйте снова.');
     } finally {
       setIsSubmitting(false);
     }
@@ -433,7 +433,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(aiExperienceOptions)}
                     value={formData.aiExperience}
                     onChange={(value) => setFormData(prev => ({ ...prev, aiExperience: value as string }))}
-                    placeholder="Select your experience level"
+                    placeholder="Выберите ваш уровень опыта"
                   />
                 </div>
                 
@@ -443,7 +443,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(specializationOptions)}
                     value={formData.specialization}
                     onChange={(value) => setFormData(prev => ({ ...prev, specialization: value as string }))}
-                    placeholder="What do you create?"
+                    placeholder="Что вы создаете?"
                   />
                 </div>
                 
@@ -570,7 +570,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(incomeOptions)}
                     value={formData.expectedMonthlyIncome}
                     onChange={(value) => setFormData(prev => ({ ...prev, expectedMonthlyIncome: value as string }))}
-                    placeholder="What are your income goals?"
+                    placeholder="Какие у вас цели по доходу?"
                   />
                 </div>
                 
@@ -580,7 +580,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(readyContentOptions)}
                     value={formData.readyContentCount}
                     onChange={(value) => setFormData(prev => ({ ...prev, readyContentCount: value as string }))}
-                    placeholder="How many sets ready to upload?"
+                    placeholder="Сколько наборов готово к загрузке?"
                   />
                 </div>
                 
@@ -590,7 +590,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(productionOptions)}
                     value={formData.monthlyProductionCapacity}
                     onChange={(value) => setFormData(prev => ({ ...prev, monthlyProductionCapacity: value as string }))}
-                    placeholder="How many new sets can you create per month?"
+                    placeholder="Сколько новых наборов вы можете создать в месяц?"
                   />
                 </div>
                 
@@ -600,12 +600,12 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(sourceOptions)}
                     value={formData.source}
                     onChange={(value) => setFormData(prev => ({ ...prev, source: value as string }))}
-                    placeholder="Select source"
+                    placeholder="Выберите источник"
                   />
                 </div>
                 <div className="wizard-actions">
-                  <button type="button" className="btn outline" onClick={() => setStep(1)}>Back</button>
-                  <button type="button" className="btn primary" onClick={() => setStep(3)}>Continue</button>
+                  <button type="button" className="btn outline" onClick={() => setStep(1)} data-lang-en="Back" data-lang-ru="Назад">Назад</button>
+                  <button type="button" className="btn primary" onClick={() => setStep(3)} data-lang-en="Continue" data-lang-ru="Продолжить">Продолжить</button>
                 </div>
               </div>
 
@@ -657,8 +657,8 @@ export default function CreatorLeadPage() {
                   </label>
                 </div>
                 <div className="wizard-actions">
-                  <button type="button" className="btn outline" onClick={() => setStep(2)}>Back</button>
-                  <button type="button" className="btn primary" onClick={() => setStep(4)}>Continue</button>
+                  <button type="button" className="btn outline" onClick={() => setStep(2)} data-lang-en="Back" data-lang-ru="Назад">Назад</button>
+                  <button type="button" className="btn primary" onClick={() => setStep(4)} data-lang-en="Continue" data-lang-ru="Продолжить">Продолжить</button>
                 </div>
               </div>
               
