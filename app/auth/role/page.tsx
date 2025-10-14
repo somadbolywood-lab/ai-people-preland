@@ -11,7 +11,7 @@ import Head from "next/head";
 
 export default function RoleSelectionPage() {
   useHamburgerMenu();
-  useLanguage();
+  useLanguage({ forceLanguage: 'en' });
 
   return (
     <>

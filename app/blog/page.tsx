@@ -8,7 +8,7 @@ import HeaderWithMenu from "../components/HeaderWithMenu";
 import { useLanguage } from "../hooks/useLanguage";
 
 export default function BlogPage() {
-  useLanguage();
+  useLanguage({ forceLanguage: 'en' });
 
   // SEO-optimized blog posts data
   const blogPosts = [

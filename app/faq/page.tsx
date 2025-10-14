@@ -8,7 +8,7 @@ import HeaderWithMenu from "../components/HeaderWithMenu";
 import { useLanguage } from "../hooks/useLanguage";
 
 export default function Page() {
-  useLanguage();
+  useLanguage({ forceLanguage: 'en' });
 
   
   useEffect(() => {

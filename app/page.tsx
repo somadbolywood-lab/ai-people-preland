@@ -8,7 +8,7 @@ import VideoModal from "./components/VideoModal";
 import HeaderWithMenu from "./components/HeaderWithMenu";
 
 export default function Page() {
-  useLanguage();
+  useLanguage({ forceLanguage: 'en' });
   const { buyerRef, creatorRef } = useScrollBorder();
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 

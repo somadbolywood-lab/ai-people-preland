@@ -12,7 +12,7 @@ import { useLanguage } from "../../hooks/useLanguage";
 
 export default function BuyerLeadPage() {
   useHamburgerMenu();
-  useLanguage(); // Enable language switching
+  useLanguage({ forceLanguage: 'en' }); // Force English language
   const { getTranslatedOptions } = useDropdownOptions();
   
   const [showModal, setShowModal] = useState(false);
