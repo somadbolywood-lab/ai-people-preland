@@ -57,6 +57,18 @@ export default function LanguageSelector() {
     // Dispatch language change event
     window.dispatchEvent(new CustomEvent('languageChange'));
     
+    // Navigate to locale-specific route if counterpart exists by path convention
+    try {
+      const currentPath = window.location.pathname;
+      const cleanPath = currentPath.replace(/^\/ru/, '') || '/';
+      const targetPath = lang === 'ru' ? `/ru${cleanPath === '/' ? '' : cleanPath}` : cleanPath;
+      const targetUrl = `${targetPath}${window.location.search}${window.location.hash}`;
+      if (targetUrl !== currentPath + window.location.search + window.location.hash) {
+        window.location.assign(targetUrl);
+        return; // stop further UI tweaks; full navigation will happen
+      }
+    } catch {}
+    
     // Close menu
     if (menuRef.current) {
       menuRef.current.classList.remove('show');
