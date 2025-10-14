@@ -5,14 +5,13 @@ import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
 import ThankYouModal from "../../../components/ThankYouModal";
 import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
-import { useLanguage } from "../../../hooks/useLanguage";
+import { useDropdownOptions } from "../../../hooks/useDropdownOptions";
 import CustomDropdown from "../../../components/CustomDropdown";
 import Script from "next/script";
 
 export default function CreatorLeadPage() {
   useHamburgerMenu();
-  // Use unified language hook with forced Russian language
-  useLanguage({ forceLanguage: 'ru' });
+  const { getTranslatedOptions } = useDropdownOptions();
   
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -385,7 +384,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorCountry" data-lang-en="Country *" data-lang-ru="Страна *">Страна *</label>
                   <CustomDropdown
-                    options={countryOptions}
+                    options={getTranslatedOptions(countryOptions)}
                     value={formData.country}
                     onChange={(value) => setFormData(prev => ({ ...prev, country: value as string }))}
                     placeholder="Выберите вашу страну"
@@ -415,7 +414,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorExperience" data-lang-en="AI Generation Experience" data-lang-ru="Опыт работы с AI-генерацией">Опыт работы с AI-генерацией</label>
                   <CustomDropdown
-                    options={aiExperienceOptions}
+                    options={getTranslatedOptions(aiExperienceOptions)}
                     value={formData.aiExperience}
                     onChange={(value) => setFormData(prev => ({ ...prev, aiExperience: value as string }))}
                     placeholder="Select your experience level"
@@ -425,7 +424,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorSpecialization" data-lang-en="Primary Specialization" data-lang-ru="Основная специализация">Основная специализация</label>
                   <CustomDropdown
-                    options={specializationOptions}
+                    options={getTranslatedOptions(specializationOptions)}
                     value={formData.specialization}
                     onChange={(value) => setFormData(prev => ({ ...prev, specialization: value as string }))}
                     placeholder="What do you create?"
@@ -552,7 +551,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorIncome" data-lang-en="Expected Monthly Income (USD)" data-lang-ru="Ожидаемый ежемесячный доход (USD)">Ожидаемый ежемесячный доход (USD)</label>
                   <CustomDropdown
-                    options={incomeOptions}
+                    options={getTranslatedOptions(incomeOptions)}
                     value={formData.expectedMonthlyIncome}
                     onChange={(value) => setFormData(prev => ({ ...prev, expectedMonthlyIncome: value as string }))}
                     placeholder="What are your income goals?"
@@ -562,7 +561,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorReadyContent" data-lang-en="Ready Content You Can Publish" data-lang-ru="Готовый контент для публикации">Готовый контент для публикации</label>
                   <CustomDropdown
-                    options={readyContentOptions}
+                    options={getTranslatedOptions(readyContentOptions)}
                     value={formData.readyContentCount}
                     onChange={(value) => setFormData(prev => ({ ...prev, readyContentCount: value as string }))}
                     placeholder="How many sets ready to upload?"
@@ -572,7 +571,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorProduction" data-lang-en="Monthly Production Capacity" data-lang-ru="Ежемесячный объём производства">Ежемесячный объём производства</label>
                   <CustomDropdown
-                    options={productionOptions}
+                    options={getTranslatedOptions(productionOptions)}
                     value={formData.monthlyProductionCapacity}
                     onChange={(value) => setFormData(prev => ({ ...prev, monthlyProductionCapacity: value as string }))}
                     placeholder="How many new sets can you create per month?"
@@ -582,7 +581,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorSource" data-lang-en="How did you hear about us?" data-lang-ru="Как вы узнали о нас?">Как вы узнали о нас?</label>
                   <CustomDropdown
-                    options={sourceOptions}
+                    options={getTranslatedOptions(sourceOptions)}
                     value={formData.source}
                     onChange={(value) => setFormData(prev => ({ ...prev, source: value as string }))}
                     placeholder="Select source"

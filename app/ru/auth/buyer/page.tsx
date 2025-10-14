@@ -5,14 +5,13 @@ import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
 import ThankYouModal from "../../../components/ThankYouModal";
 import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
-import { useLanguage } from "../../../hooks/useLanguage";
+import { useDropdownOptions } from "../../../hooks/useDropdownOptions";
 import CustomDropdown from "../../../components/CustomDropdown";
 import Script from "next/script";
 
 export default function BuyerLeadPage() {
   useHamburgerMenu();
-  // Use unified language hook with forced Russian language
-  useLanguage({ forceLanguage: 'ru' });
+  const { getTranslatedOptions } = useDropdownOptions();
   
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -358,7 +357,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerCountry" data-lang-en="Country *" data-lang-ru="Страна *">Страна *</label>
                   <CustomDropdown
-                    options={countryOptions}
+                    options={getTranslatedOptions(countryOptions)}
                     value={formData.country}
                     onChange={(value) => setFormData(prev => ({ ...prev, country: value as string }))}
                     placeholder="Выберите вашу страну"
@@ -376,7 +375,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerRole" data-lang-en="Your Role" data-lang-ru="Ваша роль">Ваша роль</label>
                   <CustomDropdown
-                    options={roleOptions}
+                    options={getTranslatedOptions(roleOptions)}
                     value={formData.role}
                     onChange={(value) => setFormData(prev => ({ ...prev, role: value as string }))}
                     placeholder="Select your role"
@@ -398,7 +397,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerTeamSize" data-lang-en="Team Size" data-lang-ru="Размер команды">Размер команды</label>
                   <CustomDropdown
-                    options={teamSizeOptions}
+                    options={getTranslatedOptions(teamSizeOptions)}
                     value={formData.teamSize}
                     onChange={(value) => setFormData(prev => ({ ...prev, teamSize: value as string }))}
                     placeholder="Select team size"
@@ -417,7 +416,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerUseCase" data-lang-en="Primary Use Case" data-lang-ru="Основное использование">Основное использование</label>
                   <CustomDropdown
-                    options={useCaseOptions}
+                    options={getTranslatedOptions(useCaseOptions)}
                     value={formData.useCase}
                     onChange={(value) => setFormData(prev => ({ ...prev, useCase: value as string }))}
                     placeholder="What will you use AI models for?"
@@ -427,7 +426,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerBudget" data-lang-en="Monthly Content Budget (USD)" data-lang-ru="Месячный бюджет на контент (USD)">Месячный бюджет на контент (USD)</label>
                   <CustomDropdown
-                    options={budgetOptions}
+                    options={getTranslatedOptions(budgetOptions)}
                     value={formData.monthlyBudget}
                     onChange={(value) => setFormData(prev => ({ ...prev, monthlyBudget: value as string }))}
                     placeholder="Select budget range"
@@ -437,7 +436,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerExperience" data-lang-en="AI Tools Experience" data-lang-ru="Опыт с AI инструментами">Опыт с AI инструментами</label>
                   <CustomDropdown
-                    options={experienceOptions}
+                    options={getTranslatedOptions(experienceOptions)}
                     value={formData.aiExperience}
                     onChange={(value) => setFormData(prev => ({ ...prev, aiExperience: value as string }))}
                     placeholder="Your AI experience level"
@@ -447,7 +446,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerSource" data-lang-en="How did you hear about us?" data-lang-ru="Как вы узнали о нас?">Как вы узнали о нас?</label>
                   <CustomDropdown
-                    options={sourceOptions}
+                    options={getTranslatedOptions(sourceOptions)}
                     value={formData.source}
                     onChange={(value) => setFormData(prev => ({ ...prev, source: value as string }))}
                     placeholder="Select source"

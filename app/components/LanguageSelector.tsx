@@ -14,18 +14,6 @@ export default function LanguageSelector() {
     // Use the unified language switching function
     switchLanguage(lang);
     
-    // Navigate to locale-specific route using Next.js router (no page reload)
-    try {
-      const currentPath = window.location.pathname;
-      const cleanPath = currentPath.replace(/^\/ru/, '') || '/';
-      const targetPath = lang === 'ru' ? `/ru${cleanPath === '/' ? '' : cleanPath}` : cleanPath;
-      const targetUrl = `${targetPath}${window.location.search}${window.location.hash}`;
-      if (targetUrl !== currentPath + window.location.search + window.location.hash) {
-        router.push(targetUrl);
-        return; // stop further UI tweaks; SPA navigation will happen
-      }
-    } catch {}
-    
     // Close menu
     if (menuRef.current) {
       menuRef.current.classList.remove('show');
