@@ -13,8 +13,8 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <Head>
-        <title>AI-People Privacy Policy | GDPR & CCPA Compliant Data Protection 2025</title>
-        <meta name="description" content="AI-People Privacy Policy: GDPR/CCPA compliant data protection, pre-launch lead collection, email privacy, no data selling. Learn how we protect your information." />
+        <title>Privacy Policy — AI-PEOPLE.IO</title>
+        <meta name="description" content="AI-PEOPLE.IO Privacy Policy. Effective October 2025. How we collect, use, store and protect data. Contact: support@ai-people.io." />
         <meta name="keywords" content="AI-People privacy, GDPR compliance, CCPA privacy policy, data protection AI marketplace, email privacy" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ai-people.io/legal/privacy" />
@@ -24,11 +24,11 @@ export default function PrivacyPolicyPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "name": "AI-People Privacy Policy",
-              "description": "Official privacy policy detailing data collection, usage, and protection practices",
-              "url": "https://ai-people.com/legal/privacy",
+              "name": "Privacy Policy — AI-PEOPLE.IO",
+              "description": "Privacy Policy for AI-PEOPLE.IO: collection, usage, storage and protection of personal data.",
+              "url": "https://ai-people.io/legal/privacy",
               "datePublished": "2025-10-01",
-              "dateModified": "2025-10-07",
+              "dateModified": "2025-10-14",
               "inLanguage": ["en", "ru"],
               "isPartOf": {
                 "@type": "WebSite",
@@ -192,121 +192,85 @@ export default function PrivacyPolicyPage() {
 
       <main className="legal-main">
         <div className="legal-container">
-          <h1 className="legal-title">
-            <span className="gradient-text" data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">Privacy Policy</span>
-          </h1>
-          <p className="legal-subtitle">
-            <span data-lang-en="Last updated: October 1, 2025" data-lang-ru="Последнее обновление: 1 октября 2025 года">Last updated: October 1, 2025</span>
-          </p>
+              <h1 className="legal-title">
+                <span className="gradient-text" data-lang-en="Privacy Policy — AI-PEOPLE.IO" data-lang-ru="Политика конфиденциальности — AI-PEOPLE.IO">Privacy Policy — AI-PEOPLE.IO</span>
+              </h1>
+              <p className="legal-subtitle">
+                <span data-lang-en="Effective Date: October 2025 • Location: New York, USA • Contact: support@ai-people.io" data-lang-ru="Дата вступления в силу: Октябрь 2025 • Локация: Нью‑Йорк, США • Контакт: support@ai-people.io">Effective Date: October 2025 • Location: New York, USA • Contact: support@ai-people.io</span>
+              </p>
 
           <div className="legal-content">
             <section>
-              <h2 data-lang-en="1. Information We Collect" data-lang-ru="1. Информация, которую мы собираем">1. Information We Collect</h2>
-              <p data-lang-en="During our pre-launch phase, we collect information you provide when joining our waiting list or contacting us for support:" data-lang-ru="Во время фазы предзапуска мы собираем информацию, которую вы предоставляете при присоединении к списку ожидания или обращении к нам за поддержкой:">
-                During our pre-launch phase, we collect information you provide when joining our waiting list or contacting us for support:
-              </p>
+              <h2>1. Information We Collect</h2>
+              <p>We collect information in order to provide better services to our users, including:</p>
               <ul>
-                <li data-lang-en="Contact information (name, email address)" data-lang-ru="Контактная информация (имя, адрес электронной почты)">Contact information (name, email address)</li>
-                <li data-lang-en="Professional details (role, company, team size, use case)" data-lang-ru="Профессиональные детали (роль, компания, размер команды, вариант использования)">Professional details (role, company, team size, use case)</li>
-                <li data-lang-en="Creator profile information (experience level, specialization, platforms used)" data-lang-ru="Информация профиля креатора (уровень опыта, специализация, используемые платформы)">Creator profile information (experience level, specialization, platforms used)</li>
-                <li data-lang-en="Marketing attribution data (referrer, UTM parameters, source)" data-lang-ru="Данные маркетинговой атрибуции (реферер, UTM параметры, источник)">Marketing attribution data (referrer, UTM parameters, source)</li>
-                <li data-lang-en="Technical data (IP address, user agent, browser type)" data-lang-ru="Технические данные (IP адрес, user agent, тип браузера)">Technical data (IP address, user agent, browser type)</li>
-                <li data-lang-en="Communications with us" data-lang-ru="Переписка с нами">Communications with us</li>
-              </ul>
-              <p data-lang-en="Upon marketplace launch (November 1, 2025), we will additionally collect account credentials, payment information (USDT wallet addresses), and transaction history as outlined in our updated Privacy Policy." data-lang-ru="При запуске маркетплейса (1 ноября 2025 года) мы дополнительно будем собирать учетные данные аккаунта, платежную информацию (адреса USDT кошельков) и историю транзакций, как указано в нашей обновленной Политике конфиденциальности.">
-                Upon marketplace launch (November 1, 2025), we will additionally collect account credentials, payment information (USDT wallet addresses), and transaction history as outlined in our updated Privacy Policy.
-              </p>
-            </section>
-
-            <section>
-              <h2 data-lang-en="2. How We Use Your Information" data-lang-ru="2. Как мы используем вашу информацию">2. How We Use Your Information</h2>
-              <p data-lang-en="We use the information we collect to:" data-lang-ru="Мы используем собранную информацию для:">
-                We use the information we collect to:
-              </p>
-              <ul>
-                <li data-lang-en="Manage pre-launch waiting list and early registrations" data-lang-ru="Управления списком ожидания предзапуска и ранними регистрациями">Manage pre-launch waiting list and early registrations</li>
-                <li data-lang-en="Send launch notifications and platform updates" data-lang-ru="Отправки уведомлений о запуске и обновлениях платформы">Send launch notifications and platform updates</li>
-                <li data-lang-en="Analyze user segments for targeted marketing" data-lang-ru="Анализа сегментов пользователей для таргетированного маркетинга">Analyze user segments for targeted marketing</li>
-                <li data-lang-en="Provide customer support and respond to inquiries" data-lang-ru="Предоставления клиентской поддержки и ответов на запросы">Provide customer support and respond to inquiries</li>
-                <li data-lang-en="Track marketing campaign effectiveness (UTM, referrers)" data-lang-ru="Отслеживания эффективности маркетинговых кампаний (UTM, реферы)">Track marketing campaign effectiveness (UTM, referrers)</li>
-                <li data-lang-en="Comply with legal obligations (GDPR, CCPA, data protection laws)" data-lang-ru="Соблюдения правовых обязательств (GDPR, CCPA, законы о защите данных)">Comply with legal obligations (GDPR, CCPA, data protection laws)</li>
-              </ul>
-              <p data-lang-en="After launch (November 1, 2025), we will additionally use information to process transactions, deliver purchased content, manage creator payouts, and provide full marketplace services." data-lang-ru="После запуска (1 ноября 2025 года) мы дополнительно будем использовать информацию для обработки транзакций, доставки купленного контента, управления выплатами креаторам и предоставления полных услуг маркетплейса.">
-                After launch (November 1, 2025), we will additionally use information to process transactions, deliver purchased content, manage creator payouts, and provide full marketplace services.
-              </p>
-            </section>
-
-            <section>
-              <h2 data-lang-en="3. Information Sharing" data-lang-ru="3. Обмен информацией">3. Information Sharing</h2>
-              <p data-lang-en="We do not sell, trade, or otherwise transfer your personal information to third parties except:" data-lang-ru="Мы не продаем, не обмениваем и не передаем вашу персональную информацию третьим лицам, за исключением:">
-                We do not sell, trade, or otherwise transfer your personal information to third parties except:
-              </p>
-              <ul>
-                <li data-lang-en="With your explicit consent" data-lang-ru="С вашего явного согласия">With your explicit consent</li>
-                <li data-lang-en="To comply with legal requirements" data-lang-ru="Для соблюдения правовых требований">To comply with legal requirements</li>
-                <li data-lang-en="To protect our rights and prevent fraud" data-lang-ru="Для защиты наших прав и предотвращения мошенничества">To protect our rights and prevent fraud</li>
-                <li data-lang-en="With service providers who assist our operations" data-lang-ru="С поставщиками услуг, которые помогают нашей деятельности">With service providers who assist our operations</li>
+                <li>Personal Data: Name, email address, account credentials, and payment details (if applicable).</li>
+                <li>Usage Data: IP address, browser type, operating system, referring URLs, pages viewed, and actions taken on our site.</li>
+                <li>Cookies and Tracking: We use cookies and similar technologies to improve user experience, analyze traffic, and remember preferences.</li>
               </ul>
             </section>
 
             <section>
-              <h2 data-lang-en="4. Data Security" data-lang-ru="4. Безопасность данных">4. Data Security</h2>
-              <p data-lang-en="We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure." data-lang-ru="Мы применяем соответствующие технические и организационные меры для защиты вашей персональной информации от несанкционированного доступа, изменения, раскрытия или уничтожения. Однако ни один метод передачи через интернет не является на 100% безопасным.">
-                We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.
-              </p>
-            </section>
-
-            <section>
-              <h2 data-lang-en="5. Your Rights (GDPR/CCPA)" data-lang-ru="5. Ваши права (GDPR/CCPA)">5. Your Rights (GDPR/CCPA)</h2>
-              <p data-lang-en="Depending on your location, you may have the following rights regarding your personal information:" data-lang-ru="В зависимости от вашего местоположения, вы можете иметь следующие права в отношении вашей персональной информации:">
-                Depending on your location, you may have the following rights regarding your personal information:
-              </p>
+              <h2>2. How We Use Your Information</h2>
               <ul>
-                <li data-lang-en="Access and portability of your data" data-lang-ru="Доступ и портируемость ваших данных">Access and portability of your data</li>
-                <li data-lang-en="Correction of inaccurate information" data-lang-ru="Исправление неточной информации">Correction of inaccurate information</li>
-                <li data-lang-en="Deletion of your personal data" data-lang-ru="Удаление ваших личных данных">Deletion of your personal data</li>
-                <li data-lang-en="Restriction of processing" data-lang-ru="Ограничение обработки">Restriction of processing</li>
-                <li data-lang-en="Objection to processing" data-lang-ru="Возражение против обработки">Objection to processing</li>
-                <li data-lang-en="Withdrawal of consent" data-lang-ru="Отзыв согласия">Withdrawal of consent</li>
+                <li>Operate and improve our platform and services.</li>
+                <li>Manage user accounts and provide membership access.</li>
+                <li>Send updates, news, and promotional information (only if you opt in).</li>
+                <li>Analyze platform usage to enhance performance and personalization.</li>
+                <li>Ensure compliance with legal and regulatory obligations.</li>
               </ul>
             </section>
 
             <section>
-              <h2 data-lang-en="6. Data Retention" data-lang-ru="6. Хранение данных">6. Data Retention</h2>
-              <p data-lang-en="We retain your personal information for as long as necessary to provide our services and fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required by law." data-lang-ru="Мы храним вашу персональную информацию столько времени, сколько необходимо для предоставления наших услуг и выполнения целей, изложенных в настоящей Политике конфиденциальности, если более длительный период хранения не требуется по закону.">
-                We retain your personal information for as long as necessary to provide our services and fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required by law.
-              </p>
+              <h2>3. Membership Access</h2>
+              <p>Registration on AI-PEOPLE.IO is free. Access to AI model catalogs and premium content is available through a membership plan, which provides exclusive features, advanced tools, and early access to new creators. Membership pricing is transparent, with no hidden fees.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="7. International Transfers" data-lang-ru="7. Международные переводы">7. International Transfers</h2>
-              <p data-lang-en="Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place to protect your personal information in accordance with applicable data protection laws." data-lang-ru="Ваша информация может быть передана и обработана в странах, отличных от вашей собственной. Мы обеспечиваем наличие соответствующих гарантий для защиты вашей личной информации в соответствии с применимыми законами о защите данных.">
-                Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place to protect your personal information in accordance with applicable data protection laws.
-              </p>
+              <h2>4. Data Protection and Storage</h2>
+              <p>We implement security measures designed to protect your personal data from unauthorized access, disclosure, alteration, or destruction. Data may be stored on secure servers in the United States or other locations that comply with international privacy standards.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="8. Children's Privacy" data-lang-ru="8. Конфиденциальность детей">8. Children's Privacy</h2>
-              <p data-lang-en="Our Service is not intended for children under 18 years of age. We do not knowingly collect personal information from children under 18. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately." data-lang-ru="Наш Сервис не предназначен для детей младше 18 лет. Мы сознательно не собираем персональную информацию от детей младше 18 лет. Если вы являетесь родителем или опекуном и считаете, что ваш ребенок предоставил нам персональную информацию, немедленно свяжитесь с нами.">
-                Our Service is not intended for children under 18 years of age. We do not knowingly collect personal information from children under 18. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.
-              </p>
+              <h2>5. Data Sharing and Third Parties</h2>
+              <p>We do not sell your personal data. We may share data only with:</p>
+              <ul>
+                <li>Service providers assisting in website operations (hosting, analytics, payment processing).</li>
+                <li>Legal authorities when required by law.</li>
+                <li>Business partners, only with your explicit consent.</li>
+              </ul>
             </section>
 
             <section>
-              <h2 data-lang-en="9. Changes to This Policy" data-lang-ru="9. Изменения в настоящей Политике">9. Changes to This Policy</h2>
-              <p data-lang-en="We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last updated' date." data-lang-ru="Мы можем время от времени обновлять настоящую Политику конфиденциальности. Мы уведомим вас о любых изменениях, разместив новую Политику конфиденциальности на этой странице и обновив дату «Последнего обновления».">
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
-              </p>
+              <h2>6. Cookies and Analytics</h2>
+              <p>We use cookies to personalize content, analyze traffic, and track marketing effectiveness. You can manage or disable cookies through your browser settings.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="10. Contact Us" data-lang-ru="10. Свяжитесь с нами">10. Contact Us</h2>
-              <p data-lang-en="If you have any questions about this Privacy Policy, please contact us at privacy@ai-people.com" data-lang-ru="Если у вас есть вопросы по настоящей Политике конфиденциальности, пожалуйста, свяжитесь с нами по адресу privacy@ai-people.com">
-                If you have any questions about this Privacy Policy, please contact us at privacy@ai-people.com
-              </p>
-              <p data-lang-en="For general terms and conditions, see our Terms of Service. For cookie information, see our Cookie Policy." data-lang-ru="Для общих условий и положений смотрите наши Условия обслуживания. Для информации о файлах cookie смотрите нашу Политику файлов cookie.">
-                For general terms and conditions, see our <a href="/legal/terms" style={{color: 'var(--accent)', textDecoration: 'underline'}}>Terms of Service</a>. For cookie information, see our <a href="/legal/cookies" style={{color: 'var(--accent)', textDecoration: 'underline'}}>Cookie Policy</a>.
-              </p>
+              <h2>7. Your Rights</h2>
+              <p>Depending on your location, you may have the right to:</p>
+              <ul>
+                <li>Access, update, or delete your personal data.</li>
+                <li>Withdraw consent to marketing communications.</li>
+                <li>Request a copy of your stored data.</li>
+              </ul>
+              <p>To exercise these rights, contact us at support@ai-people.io.</p>
+            </section>
+
+            <section>
+              <h2>8. Children’s Privacy</h2>
+              <p>AI-PEOPLE.IO is not intended for individuals under 18 years of age. We do not knowingly collect data from minors.</p>
+            </section>
+
+            <section>
+              <h2>9. Changes to This Policy</h2>
+              <p>We may update this Privacy Policy from time to time. The latest version will always be available on this page, with the updated “Effective Date”.</p>
+            </section>
+
+            <section>
+              <h2>10. Contact Us</h2>
+              <p>For questions, concerns, or privacy requests, please contact: support@ai-people.io</p>
+              <p>New York, USA</p>
             </section>
           </div>
         </div>
