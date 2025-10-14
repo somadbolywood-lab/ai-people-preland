@@ -75,7 +75,7 @@ export default function TermsRuPage() {
           <a href="/ru/faq" role="menuitem">FAQ</a>
           <a href="/ru/blog" role="menuitem">Блог</a>
           <div className="menu-legal-section">
-            <a href="/legal/privacy">Политика конфиденциальности</a> · <a href="/legal/cookies">Политика файлов cookie</a>
+            <a href="/legal/privacy">Политика конфиденциальности</a> · <a href="/legal/cookies">Политика файлов cookie</a> · <a href="/ru/legal/content-policy">Политика контента и 18+</a>
           </div>
         </div>
 

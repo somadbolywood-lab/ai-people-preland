@@ -67,7 +67,7 @@ export default function ContentPolicyPage() {
           <a href="/faq" role="menuitem">FAQ</a>
           <a href="/blog" role="menuitem">Blog</a>
           <div className="menu-legal-section">
-            <a href="/legal/terms">Terms of Service</a> · <a href="/legal/privacy">Privacy Policy</a> · <a href="/legal/cookies">Cookie Policy</a>
+            <a href="/legal/terms">Terms of Service</a> · <a href="/legal/privacy">Privacy Policy</a> · <a href="/legal/cookies">Cookie Policy</a> · <a href="/legal/content-policy">Content & 18+ Policy</a>
           </div>
         </div>
 

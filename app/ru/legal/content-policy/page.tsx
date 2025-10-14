@@ -50,7 +50,7 @@ export default function ContentPolicyRuPage() {
           <a href="/ru/faq" role="menuitem">FAQ</a>
           <a href="/ru/blog" role="menuitem">Блог</a>
           <div className="menu-legal-section">
-            <a href="/ru/legal/terms">Условия обслуживания</a> · <a href="/ru/legal/privacy">Политика конфиденциальности</a> · <a href="/ru/legal/cookies">Политика cookie</a>
+            <a href="/ru/legal/terms">Условия обслуживания</a> · <a href="/ru/legal/privacy">Политика конфиденциальности</a> · <a href="/ru/legal/cookies">Политика cookie</a> · <a href="/ru/legal/content-policy">Политика контента и 18+</a>
           </div>
         </div>
 
