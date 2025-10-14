@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from 'react';
-import { useLanguage } from './useLanguage';
+import { useLanguageContext } from '../contexts/LanguageContext';
 
 interface DropdownOption {
   value: string;
@@ -15,7 +15,7 @@ interface TranslatedOption {
 }
 
 export function useDropdownOptions() {
-  const { currentLanguage } = useLanguage();
+  const { currentLanguage } = useLanguageContext();
 
   const getTranslatedOptions = useMemo(() => {
     return (options: DropdownOption[]): TranslatedOption[] => {

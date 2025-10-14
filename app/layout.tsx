@@ -6,6 +6,7 @@ import Image from 'next/image';
 import ThemeToggle from './components/ThemeToggle';
 import LanguageSelector from './components/LanguageSelector';
 import HreflangLinks from './components/HreflangLinks';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 export const metadata = {
   title: "World's First Curated AI Models Marketplace | AI-People",
@@ -175,8 +176,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
     <body suppressHydrationWarning>
       <ErrorBoundary>
+        <LanguageProvider>
           <ThemeInitializer />
           {children}
+        </LanguageProvider>
       </ErrorBoundary>
       {/* Optimized modular script loading */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />

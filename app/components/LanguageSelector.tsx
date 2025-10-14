@@ -2,13 +2,13 @@
 
 import React, { useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useLanguage } from '../hooks/useLanguage';
+import { useLanguageContext } from '../contexts/LanguageContext';
 
 export default function LanguageSelector() {
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const router = useRouter();
-  const { currentLanguage, switchLanguage } = useLanguage({ skipInitialization: true });
+  const { currentLanguage, switchLanguage } = useLanguageContext();
 
   const handleLanguageSwitch = (lang: 'en' | 'ru') => {
     // Use the unified language switching function
