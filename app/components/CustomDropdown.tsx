@@ -34,6 +34,14 @@ export default function CustomDropdown({
     console.log('[CustomDropdown] Selected option:', selectedOption);
     console.log('[CustomDropdown] Placeholder:', placeholder);
     console.log('[CustomDropdown] Will show:', selectedOption ? selectedOption.label : placeholder);
+    
+    // Check if any option has empty value
+    const emptyValueOption = options.find(opt => opt.value === '');
+    console.log('[CustomDropdown] Empty value option:', emptyValueOption);
+    
+    // Check if value matches any option exactly
+    const exactMatch = options.find(opt => opt.value === value);
+    console.log('[CustomDropdown] Exact match for value:', exactMatch);
   }, [options, value, selectedOption, placeholder]);
 
   useEffect(() => {

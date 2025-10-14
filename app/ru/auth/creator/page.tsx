@@ -19,7 +19,7 @@ export default function CreatorLeadPage() {
   }
   
   useHamburgerMenu();
-  const { getTranslatedOptions } = useDropdownOptions();
+  const { getTranslatedOptions } = useDropdownOptions('ru');
   console.log('[CreatorLeadPage] useDropdownOptions hook executed');
   
   const [showModal, setShowModal] = useState(false);

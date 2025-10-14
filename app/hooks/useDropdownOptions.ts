@@ -15,14 +15,11 @@ interface TranslatedOption {
 }
 
 export function useDropdownOptions(forceLanguage?: 'en' | 'ru') {
-  const { currentLanguage } = useLanguage();
-  
-  // Use forceLanguage if provided, otherwise use currentLanguage
-  const effectiveLanguage = forceLanguage || currentLanguage;
+  // Use forceLanguage directly, don't rely on useLanguage
+  const effectiveLanguage = forceLanguage || 'en';
 
   const getTranslatedOptions = useMemo(() => {
     return (options: DropdownOption[]): TranslatedOption[] => {
-      console.log('[useDropdownOptions] currentLanguage:', currentLanguage);
       console.log('[useDropdownOptions] forceLanguage:', forceLanguage);
       console.log('[useDropdownOptions] effectiveLanguage:', effectiveLanguage);
       console.log('[useDropdownOptions] options count:', options.length);
@@ -33,7 +30,7 @@ export function useDropdownOptions(forceLanguage?: 'en' | 'ru') {
       console.log('[useDropdownOptions] translated options:', translated.slice(0, 3)); // Show first 3
       return translated;
     };
-  }, [currentLanguage, forceLanguage, effectiveLanguage]);
+  }, [forceLanguage, effectiveLanguage]);
 
-  return { getTranslatedOptions, currentLanguage };
+  return { getTranslatedOptions, currentLanguage: effectiveLanguage };
 }

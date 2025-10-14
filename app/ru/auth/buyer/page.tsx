@@ -11,7 +11,7 @@ import Script from "next/script";
 
 export default function BuyerLeadPage() {
   useHamburgerMenu();
-  const { getTranslatedOptions } = useDropdownOptions();
+  const { getTranslatedOptions } = useDropdownOptions('ru');
   
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
