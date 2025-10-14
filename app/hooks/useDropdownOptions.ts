@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from 'react';
 import { useLanguage } from './useLanguage';
 
 interface DropdownOption {
@@ -16,12 +17,14 @@ interface TranslatedOption {
 export function useDropdownOptions() {
   const { currentLanguage } = useLanguage();
 
-  const getTranslatedOptions = (options: DropdownOption[]): TranslatedOption[] => {
-    return options.map(option => ({
-      value: option.value,
-      label: currentLanguage === 'ru' && option.labelRu ? option.labelRu : option.label
-    }));
-  };
+  const getTranslatedOptions = useMemo(() => {
+    return (options: DropdownOption[]): TranslatedOption[] => {
+      return options.map(option => ({
+        value: option.value,
+        label: currentLanguage === 'ru' && option.labelRu ? option.labelRu : option.label
+      }));
+    };
+  }, [currentLanguage]);
 
   return { getTranslatedOptions, currentLanguage };
 }

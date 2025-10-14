@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useCallback, useMemo } from 'react';
+import { useEffect, useCallback, useMemo, useState } from 'react';
 
 interface UseLanguageOptions {
   defaultLanguage?: 'en' | 'ru';
@@ -15,12 +15,18 @@ export function useLanguage(options: UseLanguageOptions = {}) {
     skipInitialization = false 
   } = options;
 
-  // Memoized language value to prevent unnecessary re-renders
-  const currentLanguage = useMemo(() => {
+  // State to track language changes
+  const [languageState, setLanguageState] = useState<'en' | 'ru'>(() => {
     if (forceLanguage) return forceLanguage;
     if (typeof window === 'undefined') return defaultLanguage;
     return (localStorage.getItem('selectedLanguage') as 'en' | 'ru') || defaultLanguage;
-  }, [forceLanguage, defaultLanguage]);
+  });
+
+  // Memoized language value to prevent unnecessary re-renders
+  const currentLanguage = useMemo(() => {
+    if (forceLanguage) return forceLanguage;
+    return languageState;
+  }, [forceLanguage, languageState]);
 
   // Memoized language switching function
   const switchLanguage = useCallback((lang: 'en' | 'ru') => {
@@ -31,6 +37,9 @@ export function useLanguage(options: UseLanguageOptions = {}) {
 
     // Update localStorage
     localStorage.setItem('selectedLanguage', lang);
+    
+    // Update state to trigger re-render
+    setLanguageState(lang);
 
     // Apply language to DOM elements
     const elements = document.querySelectorAll('[data-lang-en], [data-lang-ru]');
@@ -123,6 +132,7 @@ export function useLanguage(options: UseLanguageOptions = {}) {
       if (newLang && newLang !== currentLanguage) {
         // Language was changed by another component, update our state
         localStorage.setItem('selectedLanguage', newLang);
+        setLanguageState(newLang);
       }
     };
 
