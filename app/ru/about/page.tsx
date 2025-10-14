@@ -115,14 +115,16 @@ export default function Page() {
       </div>
 
       <main>
-        {/* Hero (About RU) */}
-        <section className="hero">
-          <h1 className="title"><span className="gradient-text" data-lang-en="About" data-lang-ru="О нас">О нас</span></h1>
-          <h2 className="hero-subtitle" data-lang-en="About AI-People — mission, vision and product" data-lang-ru="О AI-People — миссия, видение и продукт">О AI-People — миссия, видение и продукт</h2>
-          <h3 className="hero-description" data-lang-en="We build the first curated marketplace for hyperrealistic AI models and virtual influencers to help businesses get premium visuals and empower creators to monetize their art." data-lang-ru="Мы создаём первый курируемый маркетплейс гиперреалистичных AI‑моделей и виртуальных инфлюенсеров, чтобы бизнес получал премиальные визуалы, а креаторы монетизировали творчество.">Мы создаём первый курируемый маркетплейс гиперреалистичных AI‑моделей и виртуальных инфлюенсеров, чтобы бизнес получал премиальные визуалы, а креаторы монетизировали творчество.</h3>
-        </section>
+        {/* Уведомление */}
+        <div className="notification-banner">
+          <div className="notification-content">
+            <span data-lang-en="🔥 This is just the warm-up! You're on the pre-landing page — subscribe and be among the first to break into the project. Early subscribers get privileges at launch. 🚀 Launching 12/01/2025" data-lang-ru="🔥 Это только разогрев! Сейчас ты на прелендинге — подпишись и окажись в числе первых, кто ворвётся в проект. Ранние подписчики получают привилегии на старте. 🚀 Стартуем 01.12.2025">
+              🔥 Это только разогрев! Сейчас ты на прелендинге — подпишись и окажись в числе первых, кто ворвётся в проект. Ранние подписчики получают привилегии на старте. 🚀 Стартуем 01.12.2025
+            </span>
+          </div>
+        </div>
 
-        {/* Marquee (RU) */}
+        {/* Marquee (RU) — перед заголовками */}
         <section className="marquee" aria-label="Model previews">
           <div className="marquee-track">
             {Array.from({length:19}).map((_,i)=> (
@@ -132,6 +134,13 @@ export default function Page() {
               <div className="marquee-item" key={`m-b-${i}`}><Image src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} alt={`AI Model ${i+1}`} width={160} height={100} loading="lazy" /></div>
             ))}
           </div>
+        </section>
+
+        {/* Hero (About RU) — после маркви */}
+        <section className="hero">
+          <h1 className="title"><span className="gradient-text" data-lang-en="About" data-lang-ru="О нас">О нас</span></h1>
+          <h2 className="hero-subtitle" data-lang-en="About AI-People — mission, vision and product" data-lang-ru="О AI-People — миссия, видение и продукт">О AI-People — миссия, видение и продукт</h2>
+          <h3 className="hero-description" data-lang-en="We build the first curated marketplace for hyperrealistic AI models and virtual influencers to help businesses get premium visuals and empower creators to monetize their art." data-lang-ru="Мы создаём первый курируемый маркетплейс гиперреалистичных AI‑моделей и виртуальных инфлюенсеров, чтобы бизнес получал премиальные визуалы, а креаторы монетизировали творчество.">Мы создаём первый курируемый маркетплейс гиперреалистичных AI‑моделей и виртуальных инфлюенсеров, чтобы бизнес получал премиальные визуалы, а креаторы монетизировали творчество.</h3>
         </section>
 
         {/* RU FAQ blocks (extended) */}
