@@ -14,9 +14,9 @@ export default function RoleSelectionPage() {
   return (
     <>
       <Head>
-        <title>Join AI-People Waiting List | Buyer or Creator Pre-Launch Registration 2025</title>
-        <meta name="description" content="Join AI-People pre-launch waiting list! Choose Buyer (access 18+ AI models, OnlyFans content) or Creator (earn 75%, no KYC under $10K). Launching November 1, 2025. Get VIP early access!" />
-        <meta name="keywords" content="AI-People registration, join waiting list, AI creator signup, buyer registration, 75% commission, no KYC, pre-launch access" />
+        <title>Присоединяйтесь к AI-People | Регистрация покупателя или креатора 2025</title>
+        <meta name="description" content="Присоединяйтесь к списку ожидания AI-People! Выберите Покупателя (доступ к 18+ AI-моделям, OnlyFans контенту) или Креатора (зарабатывайте 75%, без KYC до $10K). Запуск 1 декабря 2025. Получите VIP ранний доступ!" />
+        <meta name="keywords" content="регистрация AI-People, присоединиться к списку ожидания, регистрация AI-креатора, регистрация покупателя, 75% комиссия, без KYC, предзапуск доступ" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ai-people.io/ru/auth/role" />
         <script
@@ -25,8 +25,8 @@ export default function RoleSelectionPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "name": "AI-People Registration - Choose Your Role",
-              "description": "Pre-launch registration page for buyers and creators on AI-People marketplace",
+              "name": "Регистрация AI-People - Выберите свою роль",
+              "description": "Страница предзапусковой регистрации для покупателей и креаторов на маркетплейсе AI-People",
               "url": "https://ai-people.io/ru/auth/role",
               "inLanguage": ["en", "ru"],
               "isPartOf": {
@@ -37,12 +37,12 @@ export default function RoleSelectionPage() {
               "potentialAction": [
                 {
                   "@type": "RegisterAction",
-                  "name": "Join as Buyer",
+                  "name": "Присоединиться как покупатель",
                   "target": "https://ai-people.io/ru/auth/buyer"
                 },
                 {
                   "@type": "RegisterAction",
-                  "name": "Join as Creator",
+                  "name": "Присоединиться как креатор",
                   "target": "https://ai-people.io/ru/auth/creator"
                 }
               ]
@@ -137,38 +137,38 @@ export default function RoleSelectionPage() {
               </svg>
             </div>
             <div className="notice-content">
-              <h4 data-lang-en="Legal Compliance Notice" data-lang-ru="Правовое уведомление">Legal Compliance Notice</h4>
+              <h4 data-lang-en="Legal Compliance Notice" data-lang-ru="Правовое уведомление">Правовое уведомление</h4>
               <p data-lang-en="All AI-generated content on the AI-People marketplace must be used exclusively for legal and legitimate purposes. AI content creators and buyers bear full responsibility for ensuring that the use or creation of hyperrealistic AI models complies with all applicable laws, regulations, and ethical standards in their jurisdiction." data-lang-ru="Весь AI-сгенерированный контент на маркетплейсе AI-People должен использоваться исключительно в законных и легитимных целях. AI-креаторы контента и покупатели несут полную ответственность за то, чтобы использование или создание гиперреалистичных AI-моделей соответствовало всем применимым законам, нормам и этическим стандартам их юрисдикции.">
-                <strong>All AI-generated content on the AI-People marketplace</strong> must be used exclusively for legal and legitimate purposes. AI content creators and buyers bear full responsibility for ensuring that the use or creation of hyperrealistic AI models complies with all applicable laws, regulations, and ethical standards in their jurisdiction.
+                <strong>Весь AI-сгенерированный контент на маркетплейсе AI-People</strong> должен использоваться исключительно в законных и легитимных целях. AI-креаторы контента и покупатели несут полную ответственность за то, чтобы использование или создание гиперреалистичных AI-моделей соответствовало всем применимым законам, нормам и этическим стандартам их юрисдикции.
               </p>
               
               <div className="legal-list">
-                <h5 data-lang-en="Required Compliance Areas:" data-lang-ru="Обязательные области соблюдения:"><strong>Required Compliance Areas:</strong></h5>
+                <h5 data-lang-en="Required Compliance Areas:" data-lang-ru="Обязательные области соблюдения:"><strong>Обязательные области соблюдения:</strong></h5>
                 <ul>
-                  <li data-lang-en="Copyright & intellectual property rights for AI-generated models" data-lang-ru="Авторские и интеллектуальные права на AI-сгенерированные модели"><strong>Copyright & intellectual property rights</strong> for AI-generated models</li>
-                  <li data-lang-en="Data protection standards (GDPR, CCPA) and privacy requirements" data-lang-ru="Стандарты защиты данных (GDPR, CCPA) и требования конфиденциальности"><strong>Data protection standards</strong> (GDPR, CCPA) and privacy requirements</li>
-                  <li data-lang-en="Advertising regulations for commercial use of AI content" data-lang-ru="Рекламные нормы для коммерческого использования AI-контента"><strong>Advertising regulations</strong> for commercial use of AI content</li>
-                  <li data-lang-en="Age restrictions for 18+ and NSFW virtual influencer content" data-lang-ru="Возрастные ограничения для 18+ и NSFW контента виртуальных инфлюенсеров"><strong>Age restrictions</strong> for 18+ and NSFW virtual influencer content</li>
-                  <li data-lang-en="National and international regulations for AI marketplace operations" data-lang-ru="Национальные и международные нормы для операций AI-маркетплейса"><strong>National and international regulations</strong> for AI marketplace operations</li>
+                  <li data-lang-en="Copyright & intellectual property rights for AI-generated models" data-lang-ru="Авторские и интеллектуальные права на AI-сгенерированные модели"><strong>Авторские и интеллектуальные права</strong> на AI-сгенерированные модели</li>
+                  <li data-lang-en="Data protection standards (GDPR, CCPA) and privacy requirements" data-lang-ru="Стандарты защиты данных (GDPR, CCPA) и требования конфиденциальности"><strong>Стандарты защиты данных</strong> (GDPR, CCPA) и требования конфиденциальности</li>
+                  <li data-lang-en="Advertising regulations for commercial use of AI content" data-lang-ru="Рекламные нормы для коммерческого использования AI-контента"><strong>Рекламные нормы</strong> для коммерческого использования AI-контента</li>
+                  <li data-lang-en="Age restrictions for 18+ and NSFW virtual influencer content" data-lang-ru="Возрастные ограничения для 18+ и NSFW контента виртуальных инфлюенсеров"><strong>Возрастные ограничения</strong> для 18+ и NSFW контента виртуальных инфлюенсеров</li>
+                  <li data-lang-en="National and international regulations for AI marketplace operations" data-lang-ru="Национальные и международные нормы для операций AI-маркетплейса"><strong>Национальные и международные нормы</strong> для операций AI-маркетплейса</li>
                 </ul>
               </div>
 
-              <h5 data-lang-en="AI-People Marketplace Platform Role:" data-lang-ru="Роль маркетплейс-платформы AI-People:"><strong>AI-People Marketplace Platform Role:</strong></h5>
+              <h5 data-lang-en="AI-People Marketplace Platform Role:" data-lang-ru="Роль маркетплейс-платформы AI-People:"><strong>Роль маркетплейс-платформы AI-People:</strong></h5>
               <p data-lang-en="AI-People acts exclusively as an intermediary marketplace platform and transaction guarantor between AI content creators and buyers." data-lang-ru="AI-People выступает исключительно как посредническая маркетплейс-платформа и гарант сделок между AI-креаторами контента и покупателями.">
-                <strong>AI-People acts exclusively as an intermediary marketplace platform</strong> and transaction guarantor between AI content creators and buyers.
+                <strong>AI-People выступает исключительно как посредническая маркетплейс-платформа</strong> и гарант сделок между AI-креаторами контента и покупателями.
               </p>
               
               <div className="legal-list">
-                <h5 data-lang-en="Platform Limitations:" data-lang-ru="Ограничения платформы:"><strong>Platform Limitations:</strong></h5>
+                <h5 data-lang-en="Platform Limitations:" data-lang-ru="Ограничения платформы:"><strong>Ограничения платформы:</strong></h5>
                 <ul>
-                  <li data-lang-en="Does not bear responsibility for legal compliance or consequences of AI content use" data-lang-ru="Не несёт ответственности за юридическое соответствие или последствия использования AI-контента">Does not bear responsibility for legal compliance or consequences of AI content use</li>
-                  <li data-lang-en="Does not control further use of purchased AI models outside the marketplace" data-lang-ru="Не контролирует дальнейшее использование купленных AI-моделей за пределами маркетплейса">Does not control further use of purchased AI models outside the marketplace</li>
-                  <li data-lang-en="Reserves right to monitor activity and suspend access for violations of platform rules" data-lang-ru="Оставляет за собой право мониторить активность и приостанавливать доступ за нарушения правил платформы">Reserves right to monitor activity and suspend access for violations of platform rules</li>
+                  <li data-lang-en="Does not bear responsibility for legal compliance or consequences of AI content use" data-lang-ru="Не несёт ответственности за юридическое соответствие или последствия использования AI-контента">Не несёт ответственности за юридическое соответствие или последствия использования AI-контента</li>
+                  <li data-lang-en="Does not control further use of purchased AI models outside the marketplace" data-lang-ru="Не контролирует дальнейшее использование купленных AI-моделей за пределами маркетплейса">Не контролирует дальнейшее использование купленных AI-моделей за пределами маркетплейса</li>
+                  <li data-lang-en="Reserves right to monitor activity and suspend access for violations of platform rules" data-lang-ru="Оставляет за собой право мониторить активность и приостанавливать доступ за нарушения правил платформы">Оставляет за собой право мониторить активность и приостанавливать доступ за нарушения правил платформы</li>
                 </ul>
               </div>
 
               <p data-lang-en="By joining the AI-People pre-launch waiting list, each user and creator confirms agreement to comply with these legal terms and fully accepts responsibility for the use or distribution of AI-generated content." data-lang-ru="Присоединяясь к списку ожидания предзапуска AI-People, каждый пользователь и креатор подтверждает согласие соблюдать эти юридические условия и полностью принимает ответственность за использование или распространение AI-сгенерированного контента." style={{fontStyle: 'italic', marginTop: '1rem'}}>
-                <em>By joining the AI-People pre-launch waiting list, each user and creator confirms agreement to comply with these legal terms and fully accepts responsibility for the use or distribution of AI-generated content.</em>
+                <em>Присоединяясь к списку ожидания предзапуска AI-People, каждый пользователь и креатор подтверждает согласие соблюдать эти юридические условия и полностью принимает ответственность за использование или распространение AI-сгенерированного контента.</em>
               </p>
             </div>
           </div>
