@@ -6,6 +6,7 @@ import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSelector from "../../components/LanguageSelector";
 import Image from "next/image";
 import Head from "next/head";
+import HreflangLinks from "../../components/HreflangLinks";
 
 export default function TermsOfServicePage() {
   useHamburgerMenu();
@@ -13,54 +14,38 @@ export default function TermsOfServicePage() {
   return (
     <>
       <Head>
-        <title>AI-People Terms of Service | AI Models Marketplace Legal Agreement 2025</title>
-        <meta name="description" content="AI-People Terms of Service: marketplace rules, 75% creator commission, USDT payments, 72-hour verification, refund policy. Launching November 1, 2025." />
-        <meta name="keywords" content="AI-People terms, AI marketplace legal, virtual influencer agreement, creator commission 75%, USDT payment terms" />
+        <title>Terms of Service — AI-PEOPLE.IO</title>
+        <meta name="description" content="AI-PEOPLE.IO Terms of Service. Rules for creators and clients, eligibility, IP, conduct, membership, disclaimers and contacts." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ai-people.io/legal/terms" />
+        <link rel="alternate" href="https://ai-people.io/legal/terms" hrefLang="en" />
+        <link rel="alternate" href="https://ai-people.io/ru/legal/terms" hrefLang="ru" />
+        <meta property="og:title" content="Terms of Service — AI-PEOPLE.IO" />
+        <meta property="og:description" content="Terms governing the use of AI-PEOPLE.IO marketplace." />
+        <meta property="og:url" content="https://ai-people.io/legal/terms" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://ai-people.io/assets/models/model-02.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Terms of Service — AI-PEOPLE.IO" />
+        <meta name="twitter:description" content="Terms governing the use of AI-PEOPLE.IO marketplace." />
+        <meta name="twitter:image" content="https://ai-people.io/assets/models/model-02.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "name": "AI-People Terms of Service",
-              "description": "Official terms and conditions for AI-People marketplace platform",
-              "url": "https://ai-people.com/legal/terms",
+              "name": "Terms of Service — AI-PEOPLE.IO",
+              "description": "Terms governing the use of AI-PEOPLE.IO marketplace.",
+              "url": "https://ai-people.io/legal/terms",
               "datePublished": "2025-10-01",
-              "dateModified": "2025-10-07",
-              "inLanguage": ["en", "ru"],
-              "isPartOf": {
-                "@type": "WebSite",
-                "name": "AI-People",
-                "url": "https://ai-people.com"
-              },
-              "breadcrumb": {
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                  {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://ai-people.com"
-                  },
-                  {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Legal",
-                    "item": "https://ai-people.com/legal"
-                  },
-                  {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "name": "Terms of Service"
-                  }
-                ]
-              }
+              "dateModified": "2025-10-14",
+              "inLanguage": "en"
             })
           }}
         />
       </Head>
+      <HreflangLinks currentPath="/legal/terms" locale="en" />
     <div className="container">
       <header className="topbar">
         <div className="brand">
@@ -191,111 +176,64 @@ export default function TermsOfServicePage() {
       <main className="legal-main">
         <div className="legal-container">
           <h1 className="legal-title">
-            <span className="gradient-text" data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">Terms of Service</span>
+            <span className="gradient-text">Terms of Service — AI-PEOPLE.IO</span>
           </h1>
-          <p className="legal-subtitle">
-            <span data-lang-en="Last updated: October 1, 2025" data-lang-ru="Последнее обновление: 1 октября 2025 года">Last updated: October 1, 2025</span>
-          </p>
+          <p className="legal-subtitle">Effective Date: October 2025 • Location: New York, USA • Contact: support@ai-people.io</p>
 
           <div className="legal-content">
             <section>
-              <h2 data-lang-en="1. Acceptance of Terms" data-lang-ru="1. Принятие условий">1. Acceptance of Terms</h2>
-              <p data-lang-en="By accessing and using AI-People (the 'Service'), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service." data-lang-ru="Получая доступ и используя AI-People (далее «Сервис»), вы принимаете и соглашаетесь соблюдать условия и положения настоящего соглашения. Если вы не согласны соблюдать вышеизложенное, пожалуйста, не используйте данный сервис.">
-                By accessing and using AI-People (the "Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
-              </p>
-              <p data-lang-en="These Terms should be read in conjunction with our Privacy Policy and Cookie Policy." data-lang-ru="Настоящие Условия должны читаться совместно с нашей Политикой конфиденциальности и Политикой файлов cookie.">
-                These Terms should be read in conjunction with our <a href="/legal/privacy" style={{color: 'var(--accent)', textDecoration: 'underline'}}>Privacy Policy</a> and <a href="/legal/cookies" style={{color: 'var(--accent)', textDecoration: 'underline'}}>Cookie Policy</a>.
-              </p>
+              <h2>1. Acceptance of Terms</h2>
+              <p>By visiting AI-PEOPLE.IO or creating an account, you acknowledge that you have read, understood, and agreed to these Terms and our Privacy Policy. If you do not agree, you may not use our services.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="2. Description of Service" data-lang-ru="2. Описание сервиса">2. Description of Service</h2>
-              <p data-lang-en="AI-People is a marketplace platform launching November 1, 2025, that will facilitate the creation, distribution, and monetization of hyperrealistic AI-generated digital personalities and content packages. Currently in pre-launch phase, we collect early registrations from content creators and buyers. Full marketplace functionality will be available upon official launch." data-lang-ru="AI-People — это маркетплейс-платформа, запускающаяся 1 ноября 2025 года, которая будет способствовать созданию, распространению и монетизации гиперреалистичных цифровых личностей и контент-пакетов, созданных с помощью ИИ. В настоящее время на этапе предзапуска мы собираем ранние регистрации от создателей контента и покупателей. Полный функционал маркетплейса будет доступен при официальном запуске.">
-                AI-People is a marketplace platform launching November 1, 2025, that will facilitate the creation, distribution, and monetization of hyperrealistic AI-generated digital personalities and content packages. Currently in pre-launch phase, we collect early registrations from content creators and buyers. Full marketplace functionality will be available upon official launch.
-              </p>
+              <h2>2. Description of Services</h2>
+              <p>AI-PEOPLE.IO is an AI model marketplace enabling Creators to upload, display, and sell AI-generated model content (images, videos, voice, etc.), and enabling Clients to purchase or request AI models for personal or commercial use. Access to certain features and AI model catalogs may require a membership plan. Registration is free; paid access will be introduced later with transparent pricing.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="3. User Eligibility" data-lang-ru="3. Право пользователей">3. User Eligibility</h2>
-              <p data-lang-en="You must be at least 18 years old to use this Service. By using AI-People, you represent and warrant that you are at least 18 years of age and have the legal capacity to enter into this agreement." data-lang-ru="Вам должно быть не менее 18 лет для использования данного Сервиса. Используя AI-People, вы заявляете и гарантируете, что вам не менее 18 лет и у вас есть правоспособность для заключения настоящего соглашения.">
-                You must be at least 18 years old to use this Service. By using AI-People, you represent and warrant that you are at least 18 years of age and have the legal capacity to enter into this agreement.
-              </p>
+              <h2>3. Eligibility</h2>
+              <p>You must be at least 18 years old to use AI-PEOPLE.IO. By registering, you confirm that your information is accurate and that you are legally capable of entering into agreements.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="4. Prohibited Uses" data-lang-ru="4. Запрещенное использование">4. Prohibited Uses</h2>
-              <p data-lang-en="You may not use our Service:" data-lang-ru="Вы не можете использовать наш Сервис:">
-                You may not use our Service:
-              </p>
-              <ul>
-                <li data-lang-en="For any unlawful purpose or to solicit others to perform unlawful acts" data-lang-ru="В любых незаконных целях или для склонения других к совершению незаконных действий">For any unlawful purpose or to solicit others to perform unlawful acts</li>
-                <li data-lang-en="To violate any international, federal, provincial, or state regulations, rules, laws, or local ordinances" data-lang-ru="Для нарушения любых международных, федеральных, провинциальных или государственных правил, законов или местных постановлений">To violate any international, federal, provincial, or state regulations, rules, laws, or local ordinances</li>
-                <li data-lang-en="To infringe upon or violate our intellectual property rights or the intellectual property rights of others" data-lang-ru="Для нарушения наших прав интеллектуальной собственности или прав интеллектуальной собственности других лиц">To infringe upon or violate our intellectual property rights or the intellectual property rights of others</li>
-                <li data-lang-en="To harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate" data-lang-ru="Для преследования, оскорбления, причинения вреда, клеветы, унижения, запугивания или дискриминации">To harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate</li>
-                <li data-lang-en="To submit false or misleading information" data-lang-ru="Для предоставления ложной или вводящей в заблуждение информации">To submit false or misleading information</li>
-                <li data-lang-en="To upload or transmit viruses or any other type of malicious code" data-lang-ru="Для загрузки или передачи вирусов или любого другого типа вредоносного кода">To upload or transmit viruses or any other type of malicious code</li>
-              </ul>
+              <h2>4. User Accounts</h2>
+              <p>To access certain features, you must create an account. You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account. We may suspend or terminate accounts that violate these Terms.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="5. AI-Generated Content Policy" data-lang-ru="5. Политика контента, созданного ИИ">5. AI-Generated Content Policy</h2>
-              <p data-lang-en="All content available through our Service is AI-generated and does not depict real individuals. Users acknowledge and agree that:" data-lang-ru="Весь контент, доступный через наш Сервис, создан с помощью ИИ и не изображает реальных людей. Пользователи признают и соглашаются с тем, что:">
-                All content available through our Service is AI-generated and does not depict real individuals. Users acknowledge and agree that:
-              </p>
-              <ul>
-                <li data-lang-en="All models and personalities are synthetic and computer-generated" data-lang-ru="Все модели и личности являются синтетическими и созданными компьютером">All models and personalities are synthetic and computer-generated</li>
-                <li data-lang-en="No real person's likeness, identity, or personal information is used without explicit consent" data-lang-ru="Никакое сходство, личность или личная информация реального человека не используется без явного согласия">No real person's likeness, identity, or personal information is used without explicit consent</li>
-                <li data-lang-en="Users are responsible for ethical use of AI-generated content" data-lang-ru="Пользователи несут ответственность за этичное использование контента, созданного ИИ">Users are responsible for ethical use of AI-generated content</li>
-              </ul>
+              <h2>5. Intellectual Property</h2>
+              <p>All AI models, visual materials, and textual content on AI-PEOPLE.IO are protected by copyright and intellectual property laws. You may not reproduce, modify, or distribute any content without permission. Creators retain ownership of their AI content but grant the Platform a limited license to display, promote, and distribute it within the marketplace.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="6. Intellectual Property Rights" data-lang-ru="6. Права интеллектуальной собственности">6. Intellectual Property Rights</h2>
-              <p data-lang-en="The Service and its original content, features, and functionality are and will remain the exclusive property of AI-People and its licensors. The Service is protected by copyright, trademark, and other laws. Our trademarks and trade dress may not be used in connection with any product or service without our prior written consent." data-lang-ru="Сервис и его оригинальный контент, функции и функциональность являются и будут оставаться исключительной собственностью AI-People и его лицензиаров. Сервис защищен авторским правом, товарными знаками и другими законами. Наши товарные знаки и торговый стиль не могут использоваться в связи с любым продуктом или услугой без нашего предварительного письменного согласия.">
-                The Service and its original content, features, and functionality are and will remain the exclusive property of AI-People and its licensors. The Service is protected by copyright, trademark, and other laws. Our trademarks and trade dress may not be used in connection with any product or service without our prior written consent.
-              </p>
+              <h2>6. Membership and Payments</h2>
+              <p>Registration is free. Access to premium content and full model catalogs will be available via membership plans. When introduced, payment terms, pricing, and refund policies will be clearly stated.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="7. Payment Terms (Effective Upon Launch)" data-lang-ru="7. Условия платежей (вступают в силу при запуске)">7. Payment Terms (Effective Upon Launch)</h2>
-              <p data-lang-en="Upon marketplace launch on November 1, 2025, payments for content purchases will be processed through USDT cryptocurrency transactions on Tron and BSC networks. All sales will be final with a 72-hour verification period. Creators receive 75% of sales (platform fee 25%). Minimum withdrawal: 100 USDT. These terms become effective upon platform launch." data-lang-ru="При запуске маркетплейса 1 ноября 2025 года платежи за покупки контента будут обрабатываться через криптовалютные транзакции USDT в сетях Tron и BSC. Все продажи будут окончательными с периодом проверки 72 часа. Креаторы получают 75% от продаж (платформенная комиссия 25%). Минимальный вывод: 100 USDT. Эти условия вступают в силу при запуске платформы.">
-                Upon marketplace launch on November 1, 2025, payments for content purchases will be processed through USDT cryptocurrency transactions on Tron and BSC networks. All sales will be final with a 72-hour verification period. Creators receive 75% of sales (platform fee 25%). Minimum withdrawal: 100 USDT. These terms become effective upon platform launch.
-              </p>
+              <h2>7. User Conduct</h2>
+              <p>You agree not to upload illegal or harmful content, impersonate others, engage in fraudulent activities, or violate any applicable laws or third‑party rights. Violation may result in suspension or permanent ban.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="8. Disclaimers" data-lang-ru="8. Отказ от ответственности">8. Disclaimers</h2>
-              <p data-lang-en="The information on this Service is provided on an 'as is' basis. To the fullest extent permitted by law, AI-People excludes all representations, warranties, conditions and terms relating to our Service and the use of this Service." data-lang-ru="Информация в данном Сервисе предоставляется на условиях «как есть». В максимальной степени, разрешенной законом, AI-People исключает все заявления, гарантии, условия и положения, относящиеся к нашему Сервису и использованию данного Сервиса.">
-                The information on this Service is provided on an "as is" basis. To the fullest extent permitted by law, AI-People excludes all representations, warranties, conditions and terms relating to our Service and the use of this Service.
-              </p>
+              <h2>8. Disclaimer of Warranties</h2>
+              <p>AI-PEOPLE.IO provides its services “as is” and “as available”. We do not guarantee uninterrupted service or error‑free operation. The Platform is not liable for user‑generated or AI‑generated content.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="9. Limitation of Liability" data-lang-ru="9. Ограничение ответственности">9. Limitation of Liability</h2>
-              <p data-lang-en="In no event shall AI-People, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service." data-lang-ru="Ни при каких обстоятельствах AI-People, а также его директора, сотрудники, партнеры, агенты, поставщики или филиалы не несут ответственности за любые косвенные, случайные, специальные, последующие или штрафные убытки, включая, помимо прочего, потерю прибыли, данных, использования, деловой репутации или других нематериальных потерь, возникающих в результате использования вами Сервиса.">
-                In no event shall AI-People, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.
-              </p>
+              <h2>9. Limitation of Liability</h2>
+              <p>AI-PEOPLE.IO shall not be held liable for any indirect, incidental, or consequential damages arising from your use of the Platform.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="10. Governing Law" data-lang-ru="10. Применимое право">10. Governing Law</h2>
-              <p data-lang-en="These Terms shall be interpreted and governed by the laws of the State of Delaware, United States, without regard to its conflict of law provisions. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of Delaware." data-lang-ru="Настоящие Условия должны толковаться и регулироваться законами штата Делавэр, Соединенные Штаты Америки, без учета положений о коллизии законов. Любые споры, возникающие из настоящих Условий, подлежат исключительной юрисдикции судов штата Делавэр.">
-                These Terms shall be interpreted and governed by the laws of the State of Delaware, United States, without regard to its conflict of law provisions. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of Delaware.
-              </p>
+              <h2>10. Changes to Terms</h2>
+              <p>We may update these Terms from time to time. The latest version will always be available on this page, with the date of revision noted.</p>
             </section>
 
             <section>
-              <h2 data-lang-en="11. Changes to Terms" data-lang-ru="11. Изменения условий">11. Changes to Terms</h2>
-              <p data-lang-en="We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect." data-lang-ru="Мы оставляем за собой право по нашему собственному усмотрению изменять или заменять настоящие Условия в любое время. Если пересмотр является существенным, мы постараемся предоставить уведомление как минимум за 30 дней до вступления в силу любых новых условий.">
-                We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect.
-              </p>
-            </section>
-
-            <section>
-              <h2 data-lang-en="12. Contact Information" data-lang-ru="12. Контактная информация">12. Contact Information</h2>
-              <p data-lang-en="If you have any questions about these Terms of Service, please contact us at legal@ai-people.com" data-lang-ru="Если у вас есть вопросы по настоящим Условиям обслуживания, пожалуйста, свяжитесь с нами по адресу legal@ai-people.com">
-                If you have any questions about these Terms of Service, please contact us at legal@ai-people.com
-              </p>
+              <h2>11. Contact</h2>
+              <p>For inquiries regarding these Terms, contact: support@ai-people.io<br/>New York, USA</p>
             </section>
           </div>
         </div>

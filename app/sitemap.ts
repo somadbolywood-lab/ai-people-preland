@@ -211,6 +211,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'yearly' as const,
       priority: 0.3,
+      alternates: { languages: { ru: `${baseUrl}/ru/legal/terms` } },
     },
     {
       url: `${baseUrl}/legal/privacy`,
