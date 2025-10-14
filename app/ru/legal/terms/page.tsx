@@ -7,6 +7,7 @@ import LanguageSelector from "../../../components/LanguageSelector";
 import Image from "next/image";
 import Head from "next/head";
 import HreflangLinks from "../../../components/HreflangLinks";
+import HeaderWithMenu from "../../../components/HeaderWithMenu";
 
 export default function TermsRuPage() {
   useHamburgerMenu();
@@ -53,31 +54,7 @@ export default function TermsRuPage() {
       <HreflangLinks currentPath="/ru/legal/terms" locale="ru" />
 
       <div className="container">
-        <header className="topbar">
-          <div className="brand">
-            <a href="/ru" className="brand-link">
-              <Image src="/faq/AI-people Logo.png" alt="AI-People" className="logo-img" width={75} height={75} />
-            </a>
-          </div>
-          <div className="actions">
-            <LanguageSelector />
-            <ThemeToggle />
-            <a href="mailto:feedback@ai-people.com" className="feedback-btn" aria-label="Feedback">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </a>
-            <button className="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="menuPanel"><span className="bar"></span><span className="bar"></span><span className="bar"></span></button>
-          </div>
-        </header>
-
-        <div className="menu-panel" id="menuPanel" role="menu" aria-hidden="true">
-          <a href="/ru" role="menuitem">Главная</a>
-          <a href="/ru/about" role="menuitem">О нас</a>
-          <a href="/ru/faq" role="menuitem">FAQ</a>
-          <a href="/ru/blog" role="menuitem">Блог</a>
-          <div className="menu-legal-section">
-            <a href="/legal/privacy">Политика конфиденциальности</a> · <a href="/legal/cookies">Политика файлов cookie</a> · <a href="/ru/legal/content-policy">Политика контента и 18+</a>
-          </div>
-        </div>
+        <HeaderWithMenu homeHref="/ru" />
 
         <main className="legal-main">
           <div className="legal-container">

@@ -3228,6 +3228,16 @@ a.visible-link {
     vertical-align: middle;
 }
 
+/* Desktop-only: compact two-column legal links to reduce menu width */
+@media (min-width: 1024px) {
+    .menu-legal-section {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 8px 24px;
+        justify-content: start;
+    }
+}
+
 /* Mobile responsive for menu legal */
 @media (max-width: 480px) {
     .menu-legal-section {
