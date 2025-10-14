@@ -5,8 +5,10 @@ import Script from "next/script";
 import Footer from "../components/Footer";
 import Head from "next/head";
 import HeaderWithMenu from "../components/HeaderWithMenu";
+import { useLanguage } from "../hooks/useLanguage";
 
 export default function Page() {
+  useLanguage();
 
   
   useEffect(() => {

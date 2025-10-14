@@ -5,9 +5,10 @@ import Link from "next/link";
 import Script from "next/script";
 import Footer from "../components/Footer";
 import HeaderWithMenu from "../components/HeaderWithMenu";
+import { useLanguage } from "../hooks/useLanguage";
 
 export default function BlogPage() {
-  
+  useLanguage();
 
   // SEO-optimized blog posts data
   const blogPosts = [

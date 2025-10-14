@@ -307,8 +307,8 @@ export default function BuyerLeadPage() {
         <div className="auth-container">
           <div className="auth-header">
             <h1 className="auth-title">
-              <span className="gradient-text" data-lang-en="Join as " data-lang-ru="Присоединиться как ">Join as </span>
-              <span className="role-em" data-lang-en=" Buyer" data-lang-ru=" покупатель"> Buyer</span>
+              <span className="gradient-text" data-lang-en="Join as " data-lang-ru="Присоединиться как ">Присоединиться как </span>
+              <span className="role-em" data-lang-en=" Buyer" data-lang-ru=" покупатель"> покупатель</span>
             </h1>
             <p className="auth-subtitle" data-lang-en="Get exclusive early access to AI-People marketplace as a buyer" data-lang-ru="Получите эксклюзивный ранний доступ к маркетплейсу AI-People как покупатель">
               Get exclusive early access to AI-People marketplace as a buyer
@@ -329,10 +329,10 @@ export default function BuyerLeadPage() {
               <form className="form wizard" onSubmit={handleSubmit}>
               {/* Basic Information */}
               <div className={`form-section wizard-panel ${step===0 ? 'show' : ''}`}>
-                <h3 className="form-section-title" data-lang-en="Basic Information" data-lang-ru="Базовая информация">Basic Information</h3>
+                <h3 className="form-section-title" data-lang-en="Basic Information" data-lang-ru="Базовая информация">Базовая информация</h3>
                 
                 <div className="form-group">
-                  <label htmlFor="buyerEmail" data-lang-en="Email Address *" data-lang-ru="Email адрес *">Email Address *</label>
+                  <label htmlFor="buyerEmail" data-lang-en="Email Address *" data-lang-ru="Email адрес *">Email адрес *</label>
                   <input 
                     type="email" 
                     id="buyerEmail" 
@@ -344,7 +344,7 @@ export default function BuyerLeadPage() {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="buyerName" data-lang-en="Full Name *" data-lang-ru="Полное имя *">Full Name *</label>
+                  <label htmlFor="buyerName" data-lang-en="Full Name *" data-lang-ru="Полное имя *">Полное имя *</label>
                   <input 
                     type="text" 
                     id="buyerName" 
@@ -365,16 +365,16 @@ export default function BuyerLeadPage() {
                   />
                 </div>
                 <div className="wizard-actions">
-                  <button type="button" className="btn primary" onClick={() => setStep(1)} data-lang-en="Continue" data-lang-ru="Продолжить">Continue</button>
+                  <button type="button" className="btn primary" onClick={() => setStep(1)} data-lang-en="Continue" data-lang-ru="Продолжить">Продолжить</button>
                 </div>
               </div>
 
               {/* Professional Information */}
               <div className={`form-section wizard-panel ${step===1 ? 'show' : ''}`}>
-                <h3 className="form-section-title" data-lang-en="Tell Us About Your Business" data-lang-ru="Расскажите о вашем бизнесе">Tell Us About Your Business</h3>
+                <h3 className="form-section-title" data-lang-en="Tell Us About Your Business" data-lang-ru="Расскажите о вашем бизнесе">Расскажите о вашем бизнесе</h3>
                 
                 <div className="form-group">
-                  <label htmlFor="buyerRole" data-lang-en="Your Role" data-lang-ru="Ваша роль">Your Role</label>
+                  <label htmlFor="buyerRole" data-lang-en="Your Role" data-lang-ru="Ваша роль">Ваша роль</label>
                   <CustomDropdown
                     options={roleOptions}
                     value={formData.role}
@@ -384,7 +384,7 @@ export default function BuyerLeadPage() {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="buyerCompany" data-lang-en="Company Name (optional)" data-lang-ru="Название компании (опционально)">Company Name (optional)</label>
+                  <label htmlFor="buyerCompany" data-lang-en="Company Name (optional)" data-lang-ru="Название компании (опционально)">Название компании (опционально)</label>
                   <input 
                     type="text" 
                     id="buyerCompany" 
@@ -396,7 +396,7 @@ export default function BuyerLeadPage() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="buyerTeamSize" data-lang-en="Team Size" data-lang-ru="Размер команды">Team Size</label>
+                  <label htmlFor="buyerTeamSize" data-lang-en="Team Size" data-lang-ru="Размер команды">Размер команды</label>
                   <CustomDropdown
                     options={teamSizeOptions}
                     value={formData.teamSize}
@@ -412,10 +412,10 @@ export default function BuyerLeadPage() {
 
               {/* Use Case & Budget */}
               <div className={`form-section wizard-panel ${step===2 ? 'show' : ''}`}>
-                <h3 className="form-section-title" data-lang-en="Your Needs" data-lang-ru="Ваши потребности">Your Needs</h3>
+                <h3 className="form-section-title" data-lang-en="Your Needs" data-lang-ru="Ваши потребности">Ваши потребности</h3>
                 
                 <div className="form-group">
-                  <label htmlFor="buyerUseCase" data-lang-en="Primary Use Case" data-lang-ru="Основное использование">Primary Use Case</label>
+                  <label htmlFor="buyerUseCase" data-lang-en="Primary Use Case" data-lang-ru="Основное использование">Основное использование</label>
                   <CustomDropdown
                     options={useCaseOptions}
                     value={formData.useCase}
@@ -425,7 +425,7 @@ export default function BuyerLeadPage() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="buyerBudget" data-lang-en="Monthly Content Budget (USD)" data-lang-ru="Месячный бюджет на контент (USD)">Monthly Content Budget (USD)</label>
+                  <label htmlFor="buyerBudget" data-lang-en="Monthly Content Budget (USD)" data-lang-ru="Месячный бюджет на контент (USD)">Месячный бюджет на контент (USD)</label>
                   <CustomDropdown
                     options={budgetOptions}
                     value={formData.monthlyBudget}
@@ -435,7 +435,7 @@ export default function BuyerLeadPage() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="buyerExperience" data-lang-en="AI Tools Experience" data-lang-ru="Опыт с AI инструментами">AI Tools Experience</label>
+                  <label htmlFor="buyerExperience" data-lang-en="AI Tools Experience" data-lang-ru="Опыт с AI инструментами">Опыт с AI инструментами</label>
                   <CustomDropdown
                     options={experienceOptions}
                     value={formData.aiExperience}
@@ -445,7 +445,7 @@ export default function BuyerLeadPage() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="buyerSource" data-lang-en="How did you hear about us?" data-lang-ru="Как вы узнали о нас?">How did you hear about us?</label>
+                  <label htmlFor="buyerSource" data-lang-en="How did you hear about us?" data-lang-ru="Как вы узнали о нас?">Как вы узнали о нас?</label>
                   <CustomDropdown
                     options={sourceOptions}
                     value={formData.source}
@@ -504,9 +504,9 @@ export default function BuyerLeadPage() {
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
-                    <span data-lang-en="Submitting..." data-lang-ru="Отправка...">Submitting...</span>
+                    <span data-lang-en="Submitting..." data-lang-ru="Отправка...">Отправка...</span>
                   ) : (
-                    <span data-lang-en="Join the Waiting List" data-lang-ru="Присоединиться к списку ожидания">Join the Waiting List</span>
+                    <span data-lang-en="Join the Waiting List" data-lang-ru="Присоединиться к списку ожидания">Присоединиться к списку ожидания</span>
                   )}
               </button>
             </div>

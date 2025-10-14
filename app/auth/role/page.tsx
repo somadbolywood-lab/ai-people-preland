@@ -1,6 +1,7 @@
 "use client";
 
 import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
+import { useLanguage } from "../../hooks/useLanguage";
 import Image from "next/image";
 import Script from "next/script";
 import Footer from "../../components/Footer";
@@ -10,6 +11,7 @@ import Head from "next/head";
 
 export default function RoleSelectionPage() {
   useHamburgerMenu();
+  useLanguage();
 
   return (
     <>

@@ -7,9 +7,11 @@ import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSelector from "../../components/LanguageSelector";
 import CustomDropdown from "../../components/CustomDropdown";
 import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export default function BuyerLeadPage() {
   useHamburgerMenu();
+  useLanguage();
   
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);

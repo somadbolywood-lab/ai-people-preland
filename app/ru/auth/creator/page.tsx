@@ -334,8 +334,8 @@ export default function CreatorLeadPage() {
         <div className="auth-container">
           <div className="auth-header">
             <h1 className="auth-title">
-              <span className="gradient-text" data-lang-en="Join as " data-lang-ru="Присоединиться как ">Join as </span>
-              <span className="role-em" data-lang-en=" Creator" data-lang-ru=" креатор"> Creator</span>
+              <span className="gradient-text" data-lang-en="Join as " data-lang-ru="Присоединиться как ">Присоединиться как </span>
+              <span className="role-em" data-lang-en=" Creator" data-lang-ru=" креатор"> креатор</span>
             </h1>
             <p className="auth-subtitle" data-lang-en="Sell without limits! Activate unlimited content uploads until 12/01/2025 and earn more." data-lang-ru="Продавайте без границ! Активируйте безлимитную загрузку контента до 01.12.2025 и зарабатывайте больше.">
               Продавайте без границ! Активируйте безлимитную загрузку контента до 01.12.2025 и зарабатывайте больше.
@@ -356,10 +356,10 @@ export default function CreatorLeadPage() {
               <form className="form wizard" onSubmit={handleSubmit}>
               {/* Basic Information */}
               <div className={`form-section wizard-panel ${step===0 ? 'show' : ''}`}>
-                <h3 className="form-section-title" data-lang-en="Basic Information" data-lang-ru="Базовая информация">Basic Information</h3>
+                <h3 className="form-section-title" data-lang-en="Basic Information" data-lang-ru="Базовая информация">Базовая информация</h3>
                 
                 <div className="form-group">
-                  <label htmlFor="creatorEmail" data-lang-en="Email Address *" data-lang-ru="Email адрес *">Email Address *</label>
+                  <label htmlFor="creatorEmail" data-lang-en="Email Address *" data-lang-ru="Email адрес *">Email адрес *</label>
                   <input 
                     type="email" 
                     id="creatorEmail" 
@@ -371,7 +371,7 @@ export default function CreatorLeadPage() {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="creatorName" data-lang-en="Full Name / Alias *" data-lang-ru="Полное имя / Псевдоним *">Full Name / Alias *</label>
+                  <label htmlFor="creatorName" data-lang-en="Full Name / Alias *" data-lang-ru="Полное имя / Псевдоним *">Полное имя / Псевдоним *</label>
                   <input 
                     type="text" 
                     id="creatorName" 
@@ -393,7 +393,7 @@ export default function CreatorLeadPage() {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="creatorUsername" data-lang-en="Preferred Username (optional)" data-lang-ru="Желаемое имя пользователя (опционально)">Preferred Username (optional)</label>
+                  <label htmlFor="creatorUsername" data-lang-en="Preferred Username (optional)" data-lang-ru="Желаемое имя пользователя (опционально)">Желаемое имя пользователя (опционально)</label>
                   <input 
                     type="text" 
                     id="creatorUsername" 
@@ -404,16 +404,16 @@ export default function CreatorLeadPage() {
                   />
                 </div>
                 <div className="wizard-actions">
-                  <button type="button" className="btn primary" onClick={() => setStep(1)} data-lang-en="Continue" data-lang-ru="Продолжить">Continue</button>
+                  <button type="button" className="btn primary" onClick={() => setStep(1)} data-lang-en="Continue" data-lang-ru="Продолжить">Продолжить</button>
                 </div>
               </div>
 
               {/* Professional Experience */}
               <div className={`form-section wizard-panel ${step===1 ? 'show' : ''}`}>
-                <h3 className="form-section-title" data-lang-en="Your Expertise" data-lang-ru="Ваш опыт">Your Expertise</h3>
+                <h3 className="form-section-title" data-lang-en="Your Expertise" data-lang-ru="Ваш опыт">Ваш опыт</h3>
                 
                 <div className="form-group">
-                  <label htmlFor="creatorExperience" data-lang-en="AI Generation Experience" data-lang-ru="Опыт работы с AI-генерацией">AI Generation Experience</label>
+                  <label htmlFor="creatorExperience" data-lang-en="AI Generation Experience" data-lang-ru="Опыт работы с AI-генерацией">Опыт работы с AI-генерацией</label>
                   <CustomDropdown
                     options={aiExperienceOptions}
                     value={formData.aiExperience}
@@ -423,7 +423,7 @@ export default function CreatorLeadPage() {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="creatorSpecialization" data-lang-en="Primary Specialization" data-lang-ru="Основная специализация">Primary Specialization</label>
+                  <label htmlFor="creatorSpecialization" data-lang-en="Primary Specialization" data-lang-ru="Основная специализация">Основная специализация</label>
                   <CustomDropdown
                     options={specializationOptions}
                     value={formData.specialization}
@@ -434,7 +434,7 @@ export default function CreatorLeadPage() {
                 
                 <div className="form-group">
                   <label data-lang-en="Platforms You Currently Use (select all that apply)" data-lang-ru="Платформы, которые вы используете (выберите все подходящие)">
-                    Platforms You Currently Use (select all that apply)
+                    Платформы, которые вы используете (выберите все подходящие)
                   </label>
                   <div className="checkbox-group platforms-grid" style={{marginTop: '0.5rem'}}>
                     <label style={{display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer'}}>
@@ -535,22 +535,22 @@ export default function CreatorLeadPage() {
                         checked={formData.platforms.includes('other')}
                     onChange={handleInputChange}
                       />
-                      <span data-lang-en="Other tools" data-lang-ru="Другие инструменты">Other tools</span>
+                      <span data-lang-en="Other tools" data-lang-ru="Другие инструменты">Другие инструменты</span>
                     </label>
                   </div>
                 </div>
                 <div className="wizard-actions">
-                  <button type="button" className="btn outline" onClick={() => setStep(0)} data-lang-en="Back" data-lang-ru="Назад">Back</button>
-                  <button type="button" className="btn primary" onClick={() => setStep(2)} data-lang-en="Continue" data-lang-ru="Продолжить">Continue</button>
+                  <button type="button" className="btn outline" onClick={() => setStep(0)} data-lang-en="Back" data-lang-ru="Назад">Назад</button>
+                  <button type="button" className="btn primary" onClick={() => setStep(2)} data-lang-en="Continue" data-lang-ru="Продолжить">Продолжить</button>
                 </div>
               </div>
 
               {/* Business Expectations */}
               <div className={`form-section wizard-panel ${step===2 ? 'show' : ''}`}>
-                <h3 className="form-section-title" data-lang-en="Your Goals" data-lang-ru="Ваши цели">Your Goals</h3>
+                <h3 className="form-section-title" data-lang-en="Your Goals" data-lang-ru="Ваши цели">Ваши цели</h3>
                 
                 <div className="form-group">
-                  <label htmlFor="creatorIncome" data-lang-en="Expected Monthly Income (USD)" data-lang-ru="Ожидаемый ежемесячный доход (USD)">Expected Monthly Income (USD)</label>
+                  <label htmlFor="creatorIncome" data-lang-en="Expected Monthly Income (USD)" data-lang-ru="Ожидаемый ежемесячный доход (USD)">Ожидаемый ежемесячный доход (USD)</label>
                   <CustomDropdown
                     options={incomeOptions}
                     value={formData.expectedMonthlyIncome}
@@ -560,7 +560,7 @@ export default function CreatorLeadPage() {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="creatorReadyContent" data-lang-en="Ready Content You Can Publish" data-lang-ru="Готовый контент для публикации">Ready Content You Can Publish</label>
+                  <label htmlFor="creatorReadyContent" data-lang-en="Ready Content You Can Publish" data-lang-ru="Готовый контент для публикации">Готовый контент для публикации</label>
                   <CustomDropdown
                     options={readyContentOptions}
                     value={formData.readyContentCount}
@@ -570,7 +570,7 @@ export default function CreatorLeadPage() {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="creatorProduction" data-lang-en="Monthly Production Capacity" data-lang-ru="Ежемесячный объём производства">Monthly Production Capacity</label>
+                  <label htmlFor="creatorProduction" data-lang-en="Monthly Production Capacity" data-lang-ru="Ежемесячный объём производства">Ежемесячный объём производства</label>
                   <CustomDropdown
                     options={productionOptions}
                     value={formData.monthlyProductionCapacity}
@@ -580,7 +580,7 @@ export default function CreatorLeadPage() {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="creatorSource" data-lang-en="How did you hear about us?" data-lang-ru="Как вы узнали о нас?">How did you hear about us?</label>
+                  <label htmlFor="creatorSource" data-lang-en="How did you hear about us?" data-lang-ru="Как вы узнали о нас?">Как вы узнали о нас?</label>
                   <CustomDropdown
                     options={sourceOptions}
                     value={formData.source}

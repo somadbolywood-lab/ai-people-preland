@@ -7,9 +7,11 @@ import LanguageSelector from "../../components/LanguageSelector";
 import CustomDropdown from "../../components/CustomDropdown";
 import Script from "next/script";
 import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export default function CreatorLeadPage() {
   useHamburgerMenu();
+  useLanguage();
   
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);

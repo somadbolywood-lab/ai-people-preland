@@ -6,8 +6,11 @@ import Head from "next/head";
 import Script from "next/script";
 import Footer from "../components/Footer";
 import HeaderWithMenu from "../components/HeaderWithMenu";
+import { useLanguage } from "../hooks/useLanguage";
 
 export default function Page() {
+  useLanguage();
+  
   // Initialize collapsible sections
   useEffect(() => {
     if (typeof window === 'undefined') return;

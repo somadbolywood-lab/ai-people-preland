@@ -2,11 +2,13 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useScrollBorder } from "./hooks/useScrollBorder";
+import { useLanguage } from "./hooks/useLanguage";
 import Footer from "./components/Footer";
 import VideoModal from "./components/VideoModal";
 import HeaderWithMenu from "./components/HeaderWithMenu";
 
 export default function Page() {
+  useLanguage();
   const { buyerRef, creatorRef } = useScrollBorder();
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
