@@ -204,7 +204,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
   
-  // Legal pages (English only for now)
+  // Legal pages
   const legalPages = [
     {
       url: `${baseUrl}/legal/terms`,
@@ -217,6 +217,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'yearly' as const,
       priority: 0.3,
+      alternates: { languages: { ru: `${baseUrl}/ru/legal/privacy` } },
     },
     {
       url: `${baseUrl}/legal/cookies`,

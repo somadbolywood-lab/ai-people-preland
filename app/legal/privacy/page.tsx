@@ -6,6 +6,7 @@ import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSelector from "../../components/LanguageSelector";
 import Image from "next/image";
 import Head from "next/head";
+import HreflangLinks from "../../components/HreflangLinks";
 
 export default function PrivacyPolicyPage() {
   useHamburgerMenu();
@@ -18,6 +19,17 @@ export default function PrivacyPolicyPage() {
         <meta name="keywords" content="AI-People privacy, GDPR compliance, CCPA privacy policy, data protection AI marketplace, email privacy" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ai-people.io/legal/privacy" />
+        <link rel="alternate" href="https://ai-people.io/legal/privacy" hrefLang="en" />
+        <link rel="alternate" href="https://ai-people.io/ru/legal/privacy" hrefLang="ru" />
+        <meta property="og:title" content="Privacy Policy — AI-PEOPLE.IO" />
+        <meta property="og:description" content="How AI-PEOPLE.IO collects, uses and protects your data. Effective October 2025." />
+        <meta property="og:url" content="https://ai-people.io/legal/privacy" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://ai-people.io/assets/models/model-01.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Privacy Policy — AI-PEOPLE.IO" />
+        <meta name="twitter:description" content="How AI-PEOPLE.IO collects, uses and protects your data." />
+        <meta name="twitter:image" content="https://ai-people.io/assets/models/model-01.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -60,7 +72,20 @@ export default function PrivacyPolicyPage() {
             })
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Политика конфиденциальности — AI-PEOPLE.IO",
+              "inLanguage": "ru",
+              "url": "https://ai-people.io/ru/legal/privacy"
+            })
+          }}
+        />
       </Head>
+      <HreflangLinks currentPath="/legal/privacy" locale="en" />
     <div className="container">
       <header className="topbar">
         <div className="brand">
