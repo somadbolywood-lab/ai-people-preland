@@ -44,6 +44,29 @@ export default function TermsOfServicePage() {
             })
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CreativeWork",
+              "name": "AI-PEOPLE.IO Terms of Service",
+              "url": "https://ai-people.io/legal/terms",
+              "inLanguage": "en",
+              "version": "2025-10",
+              "publisher": {
+                "@type": "Organization",
+                "name": "AI-PEOPLE.IO",
+                "url": "https://ai-people.io"
+              },
+              "isPartOf": {
+                "@type": "WebSite",
+                "name": "AI-PEOPLE.IO",
+                "url": "https://ai-people.io"
+              }
+            })
+          }}
+        />
       </Head>
       <HreflangLinks currentPath="/legal/terms" locale="en" />
     <div className="container">

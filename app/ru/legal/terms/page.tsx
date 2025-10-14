@@ -25,6 +25,29 @@ export default function TermsRuPage() {
         <meta property="og:image" content="https://ai-people.io/assets/models/model-02.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            "name": "Пользовательское соглашение AI-PEOPLE.IO",
+            "url": "https://ai-people.io/ru/legal/terms",
+            "inLanguage": "ru",
+            "version": "2025-10",
+            "publisher": {
+              "@type": "Organization",
+              "name": "AI-PEOPLE.IO",
+              "url": "https://ai-people.io"
+            },
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "AI-PEOPLE.IO",
+              "url": "https://ai-people.io"
+            }
+          })
+        }}
+      />
       <HreflangLinks currentPath="/ru/legal/terms" locale="ru" />
 
       <div className="container">
