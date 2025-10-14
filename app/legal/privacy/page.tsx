@@ -92,15 +92,15 @@ export default function PrivacyPolicyPage() {
 
       <main className="legal-main">
         <div className="legal-container">
-              <h1 className="legal-title">
+          <h1 className="legal-title">
                 <span className="gradient-text" data-lang-en="Privacy Policy — AI-PEOPLE.IO" data-lang-ru="Политика конфиденциальности — AI-PEOPLE.IO">Privacy Policy — AI-PEOPLE.IO</span>
-              </h1>
-              <p className="legal-subtitle">
+          </h1>
+          <p className="legal-subtitle">
                 <span data-lang-en="Effective Date: October 2025 • Location: New York, USA • Contact: support@ai-people.io" data-lang-ru="Дата вступления в силу: Октябрь 2025 • Локация: Нью‑Йорк, США • Контакт: support@ai-people.io">Effective Date: October 2025 • Location: New York, USA • Contact: support@ai-people.io</span>
-              </p>
+          </p>
 
           <div className="legal-content">
-              <section>
+            <section>
                 <h2 data-lang-en="1. Information We Collect" data-lang-ru="1. Какие данные мы собираем">1. Information We Collect</h2>
                 <p data-lang-en="We collect information in order to provide better services to our users, including:" data-lang-ru="Мы собираем только ту информацию, которая необходима для предоставления качественных услуг:">We collect information in order to provide better services to our users, including:</p>
               <ul>
@@ -110,7 +110,7 @@ export default function PrivacyPolicyPage() {
               </ul>
             </section>
 
-              <section>
+            <section>
                 <h2 data-lang-en="2. How We Use Your Information" data-lang-ru="2. Как мы используем полученные данные">2. How We Use Your Information</h2>
               <ul>
                   <li data-lang-en="Operate and improve our platform and services." data-lang-ru="Обеспечение работы и улучшение платформы.">Operate and improve our platform and services.</li>
@@ -121,17 +121,17 @@ export default function PrivacyPolicyPage() {
               </ul>
             </section>
 
-              <section>
+            <section>
                 <h2 data-lang-en="3. Membership Access" data-lang-ru="3. Членский доступ (Membership Access)">3. Membership Access</h2>
                 <p data-lang-en="Registration on AI-PEOPLE.IO is free. Access to AI model catalogs and premium content is available through a membership plan, which provides exclusive features, advanced tools, and early access to new creators. Membership pricing is transparent, with no hidden fees." data-lang-ru="Регистрация на AI-PEOPLE.IO бесплатна. Доступ к каталогам AI-моделей и премиум-контенту предоставляется через членскую подписку, которая открывает эксклюзивные возможности, расширенные инструменты и ранний доступ к новым креаторам. Стоимость подписки прозрачна, скрытые комиссии отсутствуют.">Registration on AI-PEOPLE.IO is free. Access to AI model catalogs and premium content is available through a membership plan, which provides exclusive features, advanced tools, and early access to new creators. Membership pricing is transparent, with no hidden fees.</p>
             </section>
 
-              <section>
+            <section>
                 <h2 data-lang-en="4. Data Protection and Storage" data-lang-ru="4. Защита и хранение данных">4. Data Protection and Storage</h2>
                 <p data-lang-en="We implement security measures designed to protect your personal data from unauthorized access, disclosure, alteration, or destruction. Data may be stored on secure servers in the United States or other locations that comply with international privacy standards." data-lang-ru="Мы применяем современные меры безопасности для защиты персональных данных от несанкционированного доступа, изменения или удаления. Данные могут храниться на защищённых серверах в США или других странах, соблюдающих международные стандарты защиты информации.">We implement security measures designed to protect your personal data from unauthorized access, disclosure, alteration, or destruction. Data may be stored on secure servers in the United States or other locations that comply with international privacy standards.</p>
             </section>
 
-              <section>
+            <section>
                 <h2 data-lang-en="5. Data Sharing and Third Parties" data-lang-ru="5. Передача данных третьим лицам">5. Data Sharing and Third Parties</h2>
                 <p data-lang-en="We do not sell your personal data. We may share data only with:" data-lang-ru="Мы не продаём персональные данные пользователей. Передача возможна только в следующих случаях:">We do not sell your personal data. We may share data only with:</p>
               <ul>
@@ -141,12 +141,12 @@ export default function PrivacyPolicyPage() {
               </ul>
             </section>
 
-              <section>
+            <section>
                 <h2 data-lang-en="6. Cookies and Analytics" data-lang-ru="6. Cookies и аналитика">6. Cookies and Analytics</h2>
                 <p data-lang-en="We use cookies to personalize content, analyze traffic, and track marketing effectiveness. You can manage or disable cookies through your browser settings." data-lang-ru="Мы используем cookies для персонализации контента, анализа трафика и оценки эффективности рекламы. Вы можете самостоятельно управлять настройками cookies в параметрах браузера.">We use cookies to personalize content, analyze traffic, and track marketing effectiveness. You can manage or disable cookies through your browser settings.</p>
             </section>
 
-              <section>
+            <section>
                 <h2 data-lang-en="7. Your Rights" data-lang-ru="7. Ваши права">7. Your Rights</h2>
                 <p data-lang-en="Depending on your location, you may have the right to:" data-lang-ru="Вы имеете право:">Depending on your location, you may have the right to:</p>
               <ul>
@@ -157,17 +157,17 @@ export default function PrivacyPolicyPage() {
                 <p data-lang-en="To exercise these rights, contact us at support@ai-people.io." data-lang-ru="Для реализации прав напишите на support@ai-people.io.">To exercise these rights, contact us at support@ai-people.io.</p>
             </section>
 
-              <section>
+            <section>
                 <h2 data-lang-en="8. Children’s Privacy" data-lang-ru="8. Конфиденциальность несовершеннолетних">8. Children’s Privacy</h2>
                 <p data-lang-en="AI-PEOPLE.IO is not intended for individuals under 18 years of age. We do not knowingly collect data from minors." data-lang-ru="AI-PEOPLE.IO не предназначен для лиц младше 18 лет. Мы сознательно не собираем и не обрабатываем данные несовершеннолетних пользователей.">AI-PEOPLE.IO is not intended for individuals under 18 years of age. We do not knowingly collect data from minors.</p>
             </section>
 
-              <section>
+            <section>
                 <h2 data-lang-en="9. Changes to This Policy" data-lang-ru="9. Изменения политики">9. Changes to This Policy</h2>
                 <p data-lang-en="We may update this Privacy Policy from time to time. The latest version will always be available on this page, with the updated ‘Effective Date’." data-lang-ru="Мы можем периодически обновлять данную Политику конфиденциальности. Актуальная версия всегда доступна на этой странице, дата обновления указывается вверху документа.">We may update this Privacy Policy from time to time. The latest version will always be available on this page, with the updated ‘Effective Date’.</p>
             </section>
 
-              <section>
+            <section>
                 <h2 data-lang-en="10. Contact Us" data-lang-ru="10. Контакты">10. Contact Us</h2>
                 <p data-lang-en="For questions, concerns, or privacy requests, please contact: support@ai-people.io" data-lang-ru="По всем вопросам, связанным с конфиденциальностью, обращайтесь: support@ai-people.io">For questions, concerns, or privacy requests, please contact: support@ai-people.io</p>
                 <p data-lang-en="New York, USA" data-lang-ru="Нью-Йорк, США">New York, USA</p>
