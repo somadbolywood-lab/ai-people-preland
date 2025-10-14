@@ -4,12 +4,32 @@ import Image from "next/image";
 import Head from "next/head";
 import Script from "next/script";
 import { useHamburgerMenu } from "../hooks/useHamburgerMenu";
+import { useEffect } from "react";
 import Footer from "../components/Footer";
 import ThemeToggle from "../components/ThemeToggle";
 import LanguageSelector from "../components/LanguageSelector";
 
 export default function Page() {
   useHamburgerMenu();
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const timer = setTimeout(() => {
+      const headers = document.querySelectorAll('.collapsible-header');
+      headers.forEach(header => {
+        if (header.hasAttribute('data-collapsible-initialized')) return;
+        header.setAttribute('data-collapsible-initialized', 'true');
+        header.addEventListener('click', function (this: Element) {
+          const targetId = this.getAttribute('data-collapsible');
+          const content = document.getElementById(targetId || '');
+          if (content) {
+            this.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+          }
+        });
+      });
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="container home-page">
@@ -94,14 +114,69 @@ export default function Page() {
       </div>
 
       <main>
+        {/* Hero (cloned from FAQ) */}
         <section className="hero">
-          <h1 className="title"><span className="gradient-text" data-lang-en="About" data-lang-ru="О нас">About</span></h1>
-          <h2 className="hero-subtitle" data-lang-en="Learn more about AI-People" data-lang-ru="Узнайте больше об AI-People">Learn more about AI-People</h2>
-          <h3 className="hero-description" data-lang-en="This page is intentionally left minimal and will be filled later." data-lang-ru="Страница пока пустая и будет заполнена позже.">This page is intentionally left minimal and will be filled later.</h3>
+          <h1 className="title"><span className="gradient-text" data-lang-en="FAQ" data-lang-ru="FAQ">FAQ</span></h1>
+          <h2 className="hero-subtitle" data-lang-en="Everything about the marketplace of already ready virtual AI models" data-lang-ru="Всё о маркетплейсе уже готовых виртуальных AI-моделей">Everything about the marketplace of already ready virtual AI models</h2>
+          <h3 className="hero-description" data-lang-en="How technology, creativity and monetization unite in one AI space. Create, own and earn from digital personas of the future using the power of AI." data-lang-ru="Как технологии, креатив и монетизация объединяются в одном AI-пространстве. Создавай, владей и зарабатывай на цифровых образах будущего, используя потенциал AI.">How technology, creativity and monetization unite in one AI space. Create, own and earn from digital personas of the future using the power of AI.</h3>
         </section>
 
-        <section className="content-section" style={{maxWidth: '1200px', margin: '0 auto', padding: '2rem 1rem'}}>
-          {/* Empty content by request */}
+        {/* Q1 */}
+        <section className="features">
+          <h2 className="section-title collapsible-header" data-collapsible="faq-1" data-lang-en="What is AI-People and who is it for?" data-lang-ru="Что такое AI-People и для кого он предназначен?"></h2>
+          <div className="collapsible-content" id="faq-1">
+            <div className="features-grid">
+              <div className="feature-item">
+                <div className="feature-icon">🤖</div>
+                <h3 className="gradient-text" data-lang-en="AI Content Marketplace" data-lang-ru="AI-маркетплейс контента">AI Content Marketplace</h3>
+                <p data-lang-en="Our platform is the world's first marketplace for ready-made AI-generated photo and video packages with virtual models. We connect buyers with premium AI content creators in a seamless, secure environment." data-lang-ru="Наша платформа — первый в мире маркетплейс готовых фото- и видео-пакетов с виртуальными AI-моделями. Мы связываем покупателей с премиум AI-креаторами в безопасной среде.">Our platform is the world's first marketplace for ready-made AI-generated photo and video packages with virtual models. We connect buyers with premium AI content creators in a seamless, secure environment.</p>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">👥</div>
+                <h3 className="gradient-text" data-lang-en="For Content Buyers" data-lang-ru="Для покупателей контента">For Content Buyers</h3>
+                <p data-lang-en="Perfect for businesses, marketers, and content creators who need high-quality images and videos for advertising, social media, and presentations. Get professional content instantly without expensive photoshoots." data-lang-ru="Идеально для бизнеса, маркетологов и создателей контента, которым нужны качественные изображения и видео для рекламы, соцсетей и презентаций. Получайте профессиональный контент мгновенно без дорогих фотосессий.">Perfect for businesses, marketers, and content creators who need high-quality images and videos for advertising, social media, and presentations. Get professional content instantly without expensive photoshoots.</p>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">🎨</div>
+                <h3 className="gradient-text" data-lang-en="For AI Creators" data-lang-ru="Для AI-креаторов">For AI Creators</h3>
+                <p data-lang-en="Ideal for designers, photographers, and AI artists who create and sell their AI packages. Monetize your creativity with up to 75% commission and reach a global audience of content buyers." data-lang-ru="Идеально для дизайнеров, фотографов и AI-художников, которые создают и продают свои AI-пакеты. Монетизируйте свое творчество с комиссией до 75% и охватите глобальную аудиторию покупателей контента.">Ideal for designers, photographers, and AI artists who create and sell their AI packages. Monetize your creativity with up to 75% commission and reach a global audience of content buyers.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Q2 */}
+        <section className="features">
+          <h2 className="section-title collapsible-header" data-collapsible="faq-2" data-lang-en="What content can I buy on the platform?" data-lang-ru="Какой контент я могу купить на платформе?"></h2>
+          <div className="collapsible-content" id="faq-2">
+            <div className="features-grid">
+              <div className="feature-item">
+                <div className="feature-icon">📸</div>
+                <h3 className="gradient-text" data-lang-en="Photo Packages" data-lang-ru="Фото-пакеты">Photo Packages</h3>
+                <p data-lang-en="Get complete photo sets with 25+ high-resolution images featuring AI models in various poses, outfits, and settings. Perfect for social media, advertising, and marketing campaigns." data-lang-ru="Получайте полные фото-наборы с 25+ изображениями высокого разрешения с AI-моделями в различных позах, нарядах и обстановке. Идеально для соцсетей, рекламы и маркетинговых кампаний.">Get complete photo sets with 25+ high-resolution images featuring AI models in various poses, outfits, and settings. Perfect for social media, advertising, and marketing campaigns.</p>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">🎥</div>
+                <h3 className="gradient-text" data-lang-en="Video Content" data-lang-ru="Видео-контент">Video Content</h3>
+                <p data-lang-en="Access short promotional videos (1-3 clips) showcasing AI models in action. These preview videos help you evaluate quality before purchasing complete packages." data-lang-ru="Получайте доступ к коротким рекламным видео (1-3 клипа) с AI-моделями в действии. Эти превью-видео помогают оценить качество перед покупкой полных пакетов.">Access short promotional videos (1-3 clips) showcasing AI models in action. These preview videos help you evaluate quality before purchasing complete packages.</p>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">🎯</div>
+                <h3 className="gradient-text" data-lang-en="Custom Orders" data-lang-ru="Индивидуальные заказы">Custom Orders</h3>
+                <p data-lang-en="Request personalized content packages tailored to your specific needs. Specify style, format, quantity, and requirements to get unique content created just for your brand." data-lang-ru="Заказывайте персонализированные пакеты контента, адаптированные под ваши потребности. Указывайте стиль, формат, количество и требования для получения уникального контента, созданного специально для вашего бренда.">Request personalized content packages tailored to your specific needs. Specify style, format, quantity, and requirements to get unique content created just for your brand.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA (cloned) */}
+        <section style={{padding: '2rem 0'}}>
+          <div className="call-to-action" style={{textAlign: 'center'}}>
+            <h2 data-lang-en="Join the AI Content Revolution" data-lang-ru="Присоединяйтесь к революции AI-контента">Join the AI Content Revolution</h2>
+            <p data-lang-en="Whether you're a business looking for cost-effective, high-quality visuals, or a creator ready to showcase your AI mastery, AI-People is your launchpad. Subscribe now for early access, exclusive features, and special perks reserved for our founding community." data-lang-ru="Независимо от того, являетесь ли вы бизнесом, ищущим экономически эффективные высококачественные визуалы, или креатором, готовым продемонстрировать мастерство в AI, AI-People — ваша стартовая площадка. Подпишитесь сейчас для раннего доступа, эксклюзивных функций и специальных привилегий нашего сообщества основателей.">Whether you're a business looking for cost-effective, high-quality visuals, or a creator ready to showcase your AI mastery, AI-People is your launchpad. Subscribe now for early access, exclusive features, and special perks reserved for our founding community.</p>
+            <p data-lang-en="Have questions? Visit our " data-lang-ru="Есть вопросы? Посетите наш ">Have questions? Visit our <a href="/faq" style={{color: '#1e40af', textDecoration: 'underline', fontWeight: '700'}} data-lang-en="FAQ page" data-lang-ru="раздел FAQ">FAQ page</a> <span data-lang-en=" or explore our " data-lang-ru=" или изучите наш "> or explore our </span><a href="/blog" style={{color: '#1e40af', textDecoration: 'underline', fontWeight: '700'}} data-lang-en="expert insights on AI models and virtual influencers" data-lang-ru="экспертные инсайты по AI-моделям и виртуальным инфлюенсерам">expert insights on AI models and virtual influencers</a>.</p>
+            <a href="/auth/role" className="btn primary" style={{marginTop: '1.5rem', display: 'inline-block'}}><span data-lang-en="Join the Waiting List" data-lang-ru="Присоединиться к списку ожидания">Join the Waiting List</span></a>
+          </div>
         </section>
       </main>
 

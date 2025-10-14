@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Head from "next/head";
 import Script from "next/script";
-import { useEffect, useState } from "react";
 import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
+import { useEffect } from "react";
 import Footer from "../../components/Footer";
 import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSelector from "../../components/LanguageSelector";
@@ -12,6 +12,25 @@ import LanguageSelector from "../../components/LanguageSelector";
 export default function Page() {
   useHamburgerMenu();
   // Независимая статичная страница: без динамической зависимости от FAQ
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const timer = setTimeout(() => {
+      const headers = document.querySelectorAll('.collapsible-header');
+      headers.forEach(header => {
+        if (header.hasAttribute('data-collapsible-initialized')) return;
+        header.setAttribute('data-collapsible-initialized', 'true');
+        header.addEventListener('click', function (this: Element) {
+          const targetId = this.getAttribute('data-collapsible');
+          const content = document.getElementById(targetId || '');
+          if (content) {
+            this.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+          }
+        });
+      });
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="container home-page">
@@ -96,10 +115,45 @@ export default function Page() {
       </div>
 
       <main>
-        {/* Статичный независимый контент для About */}
-        <section className="content-section" style={{maxWidth: '1200px', margin: '0 auto', padding: '2rem 1rem'}}>
-          <h1 className="title"><span className="gradient-text" data-lang-en="About" data-lang-ru="О нас">О нас</span></h1>
-          <p data-lang-en="This is an independent static page. FAQ updates won't affect this content." data-lang-ru="Это независимая статичная страница. Обновления FAQ не повлияют на этот контент.">Это независимая статичная страница. Обновления FAQ не повлияют на этот контент.</p>
+        {/* Hero (RU FAQ clone) */}
+        <section className="hero">
+          <h1 className="title"><span className="gradient-text" data-lang-en="FAQ" data-lang-ru="FAQ">FAQ</span></h1>
+          <h2 className="hero-subtitle" data-lang-en="Everything about the marketplace of already ready virtual AI models" data-lang-ru="Всё о маркетплейсе уже готовых виртуальных AI-моделей">Всё о маркетплейсе уже готовых виртуальных AI-моделей</h2>
+          <h3 className="hero-description" data-lang-en="How technology, creativity and monetization unite in one AI space. Create, own and earn from digital personas of the future using the power of AI." data-lang-ru="Как технологии, креатив и монетизация объединяются в одном AI-пространстве. Создавай, владей и зарабатывай на цифровых образах будущего, используя потенциал AI.">Как технологии, креатив и монетизация объединяются в одном AI-пространстве. Создавай, владей и зарабатывай на цифровых образах будущего, используя потенциал AI.</h3>
+        </section>
+
+        {/* Вставка первых блоков RU FAQ (образец). При необходимости можно расширить до полного 1:1 */}
+        <section className="features">
+          <h2 className="section-title collapsible-header" data-collapsible="faq-1" data-lang-en="What is AI-People and who is it for?" data-lang-ru="Что такое AI-People и для кого он предназначен?"></h2>
+          <div className="collapsible-content" id="faq-1">
+            <div className="features-grid">
+              <div className="feature-item">
+                <div className="feature-icon">🤖</div>
+                <h3 className="gradient-text" data-lang-en="AI Content Marketplace" data-lang-ru="AI-маркетплейс контента">AI Content Marketplace</h3>
+                <p data-lang-en="Our platform is the world's first marketplace for ready-made AI-generated photo and video packages with virtual models. We connect buyers with premium AI content creators in a seamless, secure environment." data-lang-ru="Наша платформа — первый в мире маркетплейс готовых фото- и видео-пакетов с виртуальными AI-моделями. Мы связываем покупателей с премиум AI-креаторами в безопасной среде.">Наша платформа — первый в мире маркетплейс готовых фото- и видео-пакетов с виртуальными AI-моделями. Мы связываем покупателей с премиум AI-креаторами в безопасной среде.</p>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">👥</div>
+                <h3 className="gradient-text" data-lang-en="For Content Buyers" data-lang-ru="Для покупателей контента">Для покупателей контента</h3>
+                <p data-lang-en="Perfect for businesses, marketers, and content creators who need high-quality images and videos for advertising, social media, and presentations. Get professional content instantly without expensive photoshoots." data-lang-ru="Идеально для бизнеса, маркетологов и создателей контента, которым нужны качественные изображения и видео для рекламы, соцсетей и презентаций. Получайте профессиональный контент мгновенно без дорогих фотосессий.">Идеально для бизнеса, маркетологов и создателей контента, которым нужны качественные изображения и видео для рекламы, соцсетей и презентаций. Получайте профессиональный контент мгновенно без дорогих фотосессий.</p>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">🎨</div>
+                <h3 className="gradient-text" data-lang-en="For AI Creators" data-lang-ru="Для AI-креаторов">Для AI-креаторов</h3>
+                <p data-lang-en="Ideal for designers, photographers, and AI artists who create and sell their AI packages. Monetize your creativity with up to 75% commission and reach a global audience of content buyers." data-lang-ru="Идеально для дизайнеров, фотографов и AI-художников, которые создают и продают свои AI-пакеты. Монетизируйте свое творчество с комиссией до 75% и охватите глобальную аудиторию покупателей контента.">Идеально для дизайнеров, фотографов и AI-художников, которые создают и продают свои AI-пакеты. Монетизируйте свое творчество с комиссией до 75% и охватите глобальную аудиторию покупателей контента.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA RU */}
+        <section style={{padding: '2rem 0'}}>
+          <div className="call-to-action" style={{textAlign: 'center'}}>
+            <h2 data-lang-en="Join the AI Content Revolution" data-lang-ru="Присоединяйтесь к революции AI-контента">Присоединяйтесь к революции AI-контента</h2>
+            <p data-lang-en="Whether you're a business looking for cost-effective, high-quality visuals, or a creator ready to showcase your AI mastery, AI-People is your launchpad. Subscribe now for early access, exclusive features, and special perks reserved for our founding community." data-lang-ru="Независимо от того, являетесь ли вы бизнесом, ищущим экономически эффективные высококачественные визуалы, или креатором, готовым продемонстрировать мастерство в AI, AI-People — ваша стартовая площадка. Подпишитесь сейчас для раннего доступа, эксклюзивных функций и специальных привилегий нашего сообщества основателей.">Независимо от того, являетесь ли вы бизнесом, ищущим экономически эффективные высококачественные визуалы, или креатором, готовым продемонстрировать мастерство в AI, AI-People — ваша стартовая площадка. Подпишитесь сейчас для раннего доступа, эксклюзивных функций и специальных привилегий нашего сообщества основателей.</p>
+            <p data-lang-en="Have questions? Visit our " data-lang-ru="Есть вопросы? Посетите наш ">Есть вопросы? Посетите наш <a href="/ru/faq" style={{color: '#1e40af', textDecoration: 'underline', fontWeight: '700'}} data-lang-en="FAQ page" data-lang-ru="раздел FAQ">раздел FAQ</a> <span data-lang-en=" or explore our " data-lang-ru=" или изучите наш "> или изучите наш </span><a href="/ru/blog" style={{color: '#1e40af', textDecoration: 'underline', fontWeight: '700'}} data-lang-en="expert insights on AI models and virtual influencers" data-lang-ru="экспертные инсайты по AI-моделям и виртуальным инфлюенсерам">экспертные инсайты по AI-моделям и виртуальным инфлюенсерам</a>.</p>
+            <a href="/ru/auth/role" className="btn primary" style={{marginTop: '1.5rem', display: 'inline-block'}}><span data-lang-en="Join the Waiting List" data-lang-ru="Присоединиться к списку ожидания">Присоединиться к списку ожидания</span></a>
+          </div>
         </section>
 
         {/* Schema.org - About Page RU */}
