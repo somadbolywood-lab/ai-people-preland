@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Footer from "../components/Footer";
 import ThemeToggle from "../components/ThemeToggle";
 import LanguageSelector from "../components/LanguageSelector";
+import HreflangLinks from "../components/HreflangLinks";
 
 export default function Page() {
   useHamburgerMenu();
@@ -42,8 +43,12 @@ export default function Page() {
         <meta property="og:description" content="The first curated marketplace for hyperrealistic AI models and virtual influencers." />
         <meta property="og:url" content="https://ai-people.io/about" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://ai-people.io/faq/AI-people%20Logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About AI-People" />
         <meta name="twitter:description" content="The first curated marketplace for hyperrealistic AI models and virtual influencers." />
+        <meta name="twitter:image" content="https://ai-people.io/faq/AI-people%20Logo.png" />
+        <HreflangLinks currentPath="/about" locale="en" />
       </Head>
       <header className="topbar">
         <div className="brand">
