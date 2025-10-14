@@ -7,8 +7,12 @@ import { useEffect } from "react";
 import Footer from "../../components/Footer";
 import HreflangLinks from "../../components/HreflangLinks";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export default function Page() {
+  // Use unified language hook with forced Russian language
+  useLanguage({ forceLanguage: 'ru' });
+  
   // Независимая статичная страница: без динамической зависимости от FAQ
   useEffect(() => {
     if (typeof window === 'undefined') return;

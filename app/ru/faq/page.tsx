@@ -5,56 +5,11 @@ import Script from "next/script";
 import Footer from "../../components/Footer";
 import Head from "next/head";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export default function Page() {
-
-  // Set Russian language by default on mount
-  useEffect(() => {
-    localStorage.setItem('selectedLanguage', 'ru');
-    
-    // Apply Russian language immediately
-    const elements = document.querySelectorAll('[data-lang-en], [data-lang-ru]');
-    elements.forEach(element => {
-      const ruText = element.getAttribute('data-lang-ru');
-      if (!ruText) return;
-      
-      const spanElement = element.querySelector('span');
-      if (spanElement) {
-        spanElement.textContent = ruText;
-      } else {
-        while (element.firstChild) {
-          element.removeChild(element.firstChild);
-        }
-        element.appendChild(document.createTextNode(ruText));
-      }
-    });
-    
-    // Update language selector button
-    const langButton = document.querySelector('.language-text');
-    if (langButton) {
-      langButton.textContent = 'RU';
-    }
-    
-    // Update active state in language menu
-    const menuItems = document.querySelectorAll('.language-item');
-    menuItems?.forEach(item => {
-      item.classList.remove('active');
-      if (item.textContent === 'RU') {
-        item.classList.add('active');
-      }
-    });
-
-    // Ensure hamburger menu works after language change
-    setTimeout(() => {
-      const hamburger = document.getElementById('hamburger');
-      const menuPanel = document.getElementById('menuPanel');
-      if (hamburger && menuPanel) {
-        if (!hamburger.hasAttribute('data-menu-initialized')) {
-          console.log('[RU FAQ] Re-initializing hamburger menu');
-        }
-      }
-    }, 200);
-  }, []);
+  // Use unified language hook with forced Russian language
+  useLanguage({ forceLanguage: 'ru' });
 
   // FAQ Schema.org structured data
   const faqSchema = {

@@ -6,59 +6,14 @@ import { useScrollBorder } from "../hooks/useScrollBorder";
 import Footer from "../components/Footer";
 import VideoModal from "../components/VideoModal";
 import HeaderWithMenu from "../components/HeaderWithMenu";
+import { useLanguage } from "../hooks/useLanguage";
 
 export default function Page() {
   const { buyerRef, creatorRef } = useScrollBorder();
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-
-  // Set Russian language by default on mount
-  useEffect(() => {
-    localStorage.setItem('selectedLanguage', 'ru');
-    
-    // Apply Russian language immediately
-    const elements = document.querySelectorAll('[data-lang-en], [data-lang-ru]');
-    elements.forEach(element => {
-      const ruText = element.getAttribute('data-lang-ru');
-      if (!ruText) return;
-      
-      const spanElement = element.querySelector('span');
-      if (spanElement) {
-        spanElement.textContent = ruText;
-      } else {
-        while (element.firstChild) {
-          element.removeChild(element.firstChild);
-        }
-        element.appendChild(document.createTextNode(ruText));
-      }
-    });
-    
-    // Update language selector button
-    const langButton = document.querySelector('.language-text');
-    if (langButton) {
-      langButton.textContent = 'RU';
-    }
-    
-    // Update active state in language menu
-    const menuItems = document.querySelectorAll('.language-item');
-    menuItems?.forEach(item => {
-      item.classList.remove('active');
-      if (item.textContent === 'RU') {
-        item.classList.add('active');
-      }
-    });
-
-    // Ensure hamburger menu works after language change
-    setTimeout(() => {
-      const hamburger = document.getElementById('hamburger');
-      const menuPanel = document.getElementById('menuPanel');
-      if (hamburger && menuPanel) {
-        // Re-initialize if needed
-        if (!hamburger.hasAttribute('data-menu-initialized')) {
-          console.log('[RU Page] Re-initializing hamburger menu');
-        }
-      }
-    }, 200);
-  }, []);
+  
+  // Use unified language hook with forced Russian language
+  useLanguage({ forceLanguage: 'ru' });
 
   // Schema.org structured data for homepage (Russian version)
   const homepageSchema = {

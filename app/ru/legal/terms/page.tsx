@@ -4,8 +4,12 @@ import Footer from "../../../components/Footer";
 import Head from "next/head";
 import HreflangLinks from "../../../components/HreflangLinks";
 import HeaderWithMenu from "../../../components/HeaderWithMenu";
+import { useLanguage } from "../../../hooks/useLanguage";
 
 export default function TermsRuPage() {
+  // Use unified language hook with forced Russian language
+  useLanguage({ forceLanguage: 'ru' });
+
   return (
     <>
       <Head>

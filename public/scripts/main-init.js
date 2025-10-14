@@ -14,15 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('[Main] ✅ Theme initialized');
         }
         
-        // 2. Language 
-        if (typeof applySavedLanguage === 'function') {
-            applySavedLanguage();
-            console.log('[Main] ✅ Language initialized');
-        }
+        // 2. Language (disabled - now handled by React useLanguage hook)
+        // if (typeof applySavedLanguage === 'function') {
+        //     applySavedLanguage();
+        //     console.log('[Main] ✅ Language initialized');
+        // }
         
-        if (typeof initLanguageSelector === 'function') {
-            initLanguageSelector();
-        }
+        // if (typeof initLanguageSelector === 'function') {
+        //     initLanguageSelector();
+        // }
         
         // 3. UI Components
         if (typeof initMobileMenu === 'function') {
@@ -80,10 +80,10 @@ document.addEventListener('DOMContentLoaded', function() {
 if (typeof window !== 'undefined') {
     window.addEventListener('popstate', function() {
         console.log('[Main] Re-initializing after navigation...');
-        // Re-apply language and theme
-        if (typeof applySavedLanguage === 'function') {
-            applySavedLanguage();
-        }
+        // Re-apply theme only (language now handled by React)
+        // if (typeof applySavedLanguage === 'function') {
+        //     applySavedLanguage();
+        // }
     });
 }
 

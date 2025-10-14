@@ -5,11 +5,14 @@ import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
 import ThankYouModal from "../../../components/ThankYouModal";
 import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
+import { useLanguage } from "../../../hooks/useLanguage";
 import CustomDropdown from "../../../components/CustomDropdown";
 import Script from "next/script";
 
 export default function CreatorLeadPage() {
   useHamburgerMenu();
+  // Use unified language hook with forced Russian language
+  useLanguage({ forceLanguage: 'ru' });
   
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);

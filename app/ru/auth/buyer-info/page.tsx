@@ -3,8 +3,11 @@
 import Image from "next/image";
 import Footer from "../../../components/Footer";
 import HeaderWithMenu from "../../../components/HeaderWithMenu";
+import { useLanguage } from "../../../hooks/useLanguage";
 
 export default function BuyerInfoPage() {
+  // Use unified language hook with forced Russian language
+  useLanguage({ forceLanguage: 'ru' });
 
   return (
     <div className="container home-page">

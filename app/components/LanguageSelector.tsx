@@ -1,71 +1,28 @@
 "use client";
 
 import React, { useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useLanguage } from '../hooks/useLanguage';
 
 export default function LanguageSelector() {
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const router = useRouter();
+  const { currentLanguage, switchLanguage } = useLanguage({ skipInitialization: true });
 
-  const switchLanguage = (lang: string) => {
-    const elements = document.querySelectorAll('[data-lang-en], [data-lang-ru]');
-    elements.forEach(element => {
-      const enText = element.getAttribute('data-lang-en');
-      const ruText = element.getAttribute('data-lang-ru');
-      
-      if (!enText || !ruText) return;
-      
-      // For menu items with SVG, only update the span text
-      const spanElement = element.querySelector('span');
-      if (spanElement) {
-        if (lang === 'ru' && ruText) {
-          spanElement.textContent = ruText;
-        } else if (lang === 'en' && enText) {
-          spanElement.textContent = enText;
-        }
-      } else {
-        // For elements without spans, set innerHTML to preserve structure
-        const textToSet = lang === 'ru' ? ruText : enText;
-        if (textToSet) {
-          // Clear existing content and set new text
-          while (element.firstChild) {
-            element.removeChild(element.firstChild);
-          }
-          element.appendChild(document.createTextNode(textToSet));
-        }
-      }
-    });
+  const handleLanguageSwitch = (lang: 'en' | 'ru') => {
+    // Use the unified language switching function
+    switchLanguage(lang);
     
-    // Update button text
-    if (buttonRef.current) {
-      const textSpan = buttonRef.current.querySelector('.language-text');
-      if (textSpan) {
-        textSpan.textContent = lang.toUpperCase();
-      }
-    }
-    
-    // Update active state
-    const menuItems = menuRef.current?.querySelectorAll('.language-item');
-    menuItems?.forEach(item => {
-      item.classList.remove('active');
-      if (item.textContent === lang.toUpperCase()) {
-        item.classList.add('active');
-      }
-    });
-    
-    localStorage.setItem('selectedLanguage', lang);
-    
-    // Dispatch language change event
-    window.dispatchEvent(new CustomEvent('languageChange'));
-    
-    // Navigate to locale-specific route if counterpart exists by path convention
+    // Navigate to locale-specific route using Next.js router (no page reload)
     try {
       const currentPath = window.location.pathname;
       const cleanPath = currentPath.replace(/^\/ru/, '') || '/';
       const targetPath = lang === 'ru' ? `/ru${cleanPath === '/' ? '' : cleanPath}` : cleanPath;
       const targetUrl = `${targetPath}${window.location.search}${window.location.hash}`;
       if (targetUrl !== currentPath + window.location.search + window.location.hash) {
-        window.location.assign(targetUrl);
-        return; // stop further UI tweaks; full navigation will happen
+        router.push(targetUrl);
+        return; // stop further UI tweaks; SPA navigation will happen
       }
     } catch {}
     
@@ -76,16 +33,23 @@ export default function LanguageSelector() {
   };
 
   useEffect(() => {
-    // Initialize language from localStorage on component mount
-    const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+    // Update button text and active state based on current language
+    if (buttonRef.current) {
+      const textSpan = buttonRef.current.querySelector('.language-text');
+      if (textSpan) {
+        textSpan.textContent = currentLanguage.toUpperCase();
+      }
+    }
     
-    // Small delay to ensure DOM is ready
-    const timer = setTimeout(() => {
-      switchLanguage(savedLanguage);
-    }, 100);
-    
-    return () => clearTimeout(timer);
-  }, []);
+    // Update active state
+    const menuItems = menuRef.current?.querySelectorAll('.language-item');
+    menuItems?.forEach(item => {
+      item.classList.remove('active');
+      if (item.textContent === currentLanguage.toUpperCase()) {
+        item.classList.add('active');
+      }
+    });
+  }, [currentLanguage]);
 
   const toggleMenu = () => {
     if (menuRef.current) {
@@ -109,13 +73,13 @@ export default function LanguageSelector() {
       <div ref={menuRef} className="language-menu">
         <button 
           className="language-item active"
-          onClick={() => switchLanguage('en')}
+          onClick={() => handleLanguageSwitch('en')}
         >
           EN
         </button>
         <button 
           className="language-item"
-          onClick={() => switchLanguage('ru')}
+          onClick={() => handleLanguageSwitch('ru')}
         >
           RU
         </button>
