@@ -1,16 +1,11 @@
 "use client";
 
-import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
 import Footer from "../../components/Footer";
-import ThemeToggle from "../../components/ThemeToggle";
-import LanguageSelector from "../../components/LanguageSelector";
-import Image from "next/image";
 import Head from "next/head";
 import HreflangLinks from "../../components/HreflangLinks";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
 
 export default function TermsOfServicePage() {
-  useHamburgerMenu();
 
   return (
     <>
