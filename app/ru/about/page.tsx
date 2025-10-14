@@ -63,6 +63,14 @@ export default function Page() {
           </svg>
           <span>Главная</span>
         </a>
+        <a href="/ru/about" role="menuitem" data-lang-en="About" data-lang-ru="О нас">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <circle cx="12" cy="16" r="1"/>
+          </svg>
+          <span>О нас</span>
+        </a>
         <a href="/ru/faq" role="menuitem" data-lang-en="FAQ" data-lang-ru="FAQ">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="12" cy="12" r="10"/>
@@ -113,6 +121,29 @@ export default function Page() {
           }}
         />
       </main>
+
+      {/* Schema.org - About (RU) */}
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "О нас — AI-People",
+            "url": "https://ai-people.io/ru/about",
+            "inLanguage": ["ru", "en"],
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "AI-People",
+              "url": "https://ai-people.io"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "AI-People"
+            }
+          })
+        }}
+      />
 
       <Footer />
     </div>

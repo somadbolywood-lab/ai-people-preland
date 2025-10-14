@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Head from "next/head";
+import Script from "next/script";
 import { useHamburgerMenu } from "../hooks/useHamburgerMenu";
 import Footer from "../components/Footer";
 import ThemeToggle from "../components/ThemeToggle";
@@ -11,6 +13,18 @@ export default function Page() {
 
   return (
     <div className="container home-page">
+      <Head>
+        <title>About AI-People | Curated AI Models & Virtual Influencers</title>
+        <meta name="description" content="About AI-People — the first curated marketplace for hyperrealistic AI models and virtual influencers. Learn our mission, what we build, and how we empower creators and brands." />
+        <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+        <link rel="canonical" href="https://ai-people.io/about" />
+        <meta property="og:title" content="About AI-People" />
+        <meta property="og:description" content="The first curated marketplace for hyperrealistic AI models and virtual influencers." />
+        <meta property="og:url" content="https://ai-people.io/about" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="About AI-People" />
+        <meta name="twitter:description" content="The first curated marketplace for hyperrealistic AI models and virtual influencers." />
+      </Head>
       <header className="topbar">
         <div className="brand">
           <a href="/" className="brand-link">
@@ -47,6 +61,14 @@ export default function Page() {
           </svg>
           <span>Home</span>
         </a>
+        <a href="/about" role="menuitem" data-lang-en="About" data-lang-ru="О нас">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <circle cx="12" cy="16" r="1"/>
+          </svg>
+          <span>About</span>
+        </a>
         <a href="/faq" role="menuitem" data-lang-en="FAQ" data-lang-ru="FAQ">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="12" cy="12" r="10"/>
@@ -82,6 +104,29 @@ export default function Page() {
           {/* Empty content by request */}
         </section>
       </main>
+
+      {/* Schema.org - About (EN) */}
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About AI-People",
+            "url": "https://ai-people.io/about",
+            "inLanguage": ["en", "ru"],
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "AI-People",
+              "url": "https://ai-people.io"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "AI-People"
+            }
+          })
+        }}
+      />
 
       <Footer />
     </div>
