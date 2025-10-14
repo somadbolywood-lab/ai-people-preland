@@ -18,6 +18,8 @@ export default function TermsRuPage() {
         <link rel="canonical" href="https://ai-people.io/ru/legal/terms" />
         <link rel="alternate" href="https://ai-people.io/legal/terms" hrefLang="en" />
         <link rel="alternate" href="https://ai-people.io/ru/legal/terms" hrefLang="ru" />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:locale:alternate" content="en_US" />
         <meta property="og:title" content="Пользовательское соглашение — AI-PEOPLE.IO" />
         <meta property="og:description" content="Основные условия использования маркетплейса AI-PEOPLE.IO." />
         <meta property="og:url" content="https://ai-people.io/ru/legal/terms" />

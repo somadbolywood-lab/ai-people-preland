@@ -20,6 +20,8 @@ export default function TermsOfServicePage() {
         <link rel="canonical" href="https://ai-people.io/legal/terms" />
         <link rel="alternate" href="https://ai-people.io/legal/terms" hrefLang="en" />
         <link rel="alternate" href="https://ai-people.io/ru/legal/terms" hrefLang="ru" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="ru_RU" />
         <meta property="og:title" content="Terms of Service — AI-PEOPLE.IO" />
         <meta property="og:description" content="Terms governing the use of AI-PEOPLE.IO marketplace." />
         <meta property="og:url" content="https://ai-people.io/legal/terms" />
