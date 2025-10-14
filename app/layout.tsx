@@ -176,7 +176,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
     <body suppressHydrationWarning>
       <ErrorBoundary>
-        <LanguageProvider>
+        <LanguageProvider forceLanguage={typeof window !== 'undefined' && window.location.pathname.startsWith('/ru') ? 'ru' : undefined}>
           <ThemeInitializer />
           {children}
         </LanguageProvider>

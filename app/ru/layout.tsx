@@ -119,9 +119,7 @@ export default function RuLayout({ children }: { children: React.ReactNode }) {
         }}
       />
       <HreflangLinks currentPath="/ru" locale="ru" />
-      <LanguageProvider forceLanguage="ru">
-        {children}
-      </LanguageProvider>
+      {children}
     </>
   );
 }
