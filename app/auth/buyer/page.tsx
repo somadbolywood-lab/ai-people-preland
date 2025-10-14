@@ -8,10 +8,12 @@ import LanguageSelector from "../../components/LanguageSelector";
 import CustomDropdown from "../../components/CustomDropdown";
 import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
 import { useLanguage } from "../../hooks/useLanguage";
+import { useDropdownOptions } from "../../hooks/useDropdownOptions";
 
 export default function BuyerLeadPage() {
   useHamburgerMenu();
   useLanguage();
+  const { getTranslatedOptions } = useDropdownOptions();
   
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -101,50 +103,50 @@ export default function BuyerLeadPage() {
   ];
 
   const roleOptions = [
-    { value: "business_owner", label: "Business Owner / CEO" },
-    { value: "marketer", label: "Marketing Professional" },
-    { value: "freelancer", label: "Freelancer / Individual" },
-    { value: "agency", label: "Agency" },
-    { value: "startup", label: "Startup" },
-    { value: "other", label: "Other" }
+    { value: "business_owner", label: "Business Owner / CEO", labelRu: "Владелец бизнеса / CEO" },
+    { value: "marketer", label: "Marketing Professional", labelRu: "Маркетолог" },
+    { value: "freelancer", label: "Freelancer / Individual", labelRu: "Фрилансер / Частное лицо" },
+    { value: "agency", label: "Agency", labelRu: "Агентство" },
+    { value: "startup", label: "Startup", labelRu: "Стартап" },
+    { value: "other", label: "Other", labelRu: "Другое" }
   ];
 
   const teamSizeOptions = [
-    { value: "1-10", label: "1-10 people" },
-    { value: "11-50", label: "11-50 people" },
-    { value: "51-200", label: "51-200 people" },
-    { value: "200+", label: "200+ people" }
+    { value: "1-10", label: "1-10 people", labelRu: "1-10 человек" },
+    { value: "11-50", label: "11-50 people", labelRu: "11-50 человек" },
+    { value: "51-200", label: "51-200 people", labelRu: "51-200 человек" },
+    { value: "200+", label: "200+ people", labelRu: "200+ человек" }
   ];
 
   const useCaseOptions = [
-    { value: "advertising", label: "Advertising campaigns" },
-    { value: "social_media", label: "Social media content" },
-    { value: "branding", label: "Branding & design" },
-    { value: "ecommerce", label: "E-commerce" },
-    { value: "other", label: "Other" }
+    { value: "advertising", label: "Advertising campaigns", labelRu: "Рекламные кампании" },
+    { value: "social_media", label: "Social media content", labelRu: "Контент для соцсетей" },
+    { value: "branding", label: "Branding & design", labelRu: "Брендинг и дизайн" },
+    { value: "ecommerce", label: "E-commerce", labelRu: "Электронная коммерция" },
+    { value: "other", label: "Other", labelRu: "Другое" }
   ];
 
   const budgetOptions = [
-    { value: "0-100", label: "$0 - $100" },
-    { value: "100-500", label: "$100 - $500" },
-    { value: "500-1000", label: "$500 - $1,000" },
-    { value: "1000-5000", label: "$1,000 - $5,000" },
-    { value: "5000+", label: "$5,000+" }
+    { value: "0-100", label: "$0 - $100", labelRu: "$0 - $100" },
+    { value: "100-500", label: "$100 - $500", labelRu: "$100 - $500" },
+    { value: "500-1000", label: "$500 - $1,000", labelRu: "$500 - $1,000" },
+    { value: "1000-5000", label: "$1,000 - $5,000", labelRu: "$1,000 - $5,000" },
+    { value: "5000+", label: "$5,000+", labelRu: "$5,000+" }
   ];
 
   const experienceOptions = [
-    { value: "never_used", label: "Never used AI tools" },
-    { value: "beginner", label: "Beginner" },
-    { value: "intermediate", label: "Intermediate" },
-    { value: "advanced", label: "Advanced user" }
+    { value: "never_used", label: "Never used AI tools", labelRu: "Никогда не использовал AI инструменты" },
+    { value: "beginner", label: "Beginner", labelRu: "Начинающий" },
+    { value: "intermediate", label: "Intermediate", labelRu: "Средний уровень" },
+    { value: "advanced", label: "Advanced user", labelRu: "Продвинутый пользователь" }
   ];
 
   const sourceOptions = [
-    { value: "google", label: "Google search" },
-    { value: "social_media", label: "Social media" },
-    { value: "friend", label: "Friend / Colleague" },
-    { value: "blog", label: "Blog / Article" },
-    { value: "other", label: "Other" }
+    { value: "google", label: "Google search", labelRu: "Поиск в Google" },
+    { value: "social_media", label: "Social media", labelRu: "Социальные сети" },
+    { value: "friend", label: "Friend / Colleague", labelRu: "Друг / Коллега" },
+    { value: "blog", label: "Blog / Article", labelRu: "Блог / Статья" },
+    { value: "other", label: "Other", labelRu: "Другое" }
   ];
 
   useEffect(() => {
@@ -338,7 +340,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerRole" data-lang-en="Your Role" data-lang-ru="Ваша роль">Your Role</label>
                   <CustomDropdown
-                    options={roleOptions}
+                    options={getTranslatedOptions(roleOptions)}
                     value={formData.role}
                     onChange={(value) => setFormData(prev => ({ ...prev, role: value as string }))}
                     placeholder="Select your role"
@@ -360,7 +362,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerTeamSize" data-lang-en="Team Size" data-lang-ru="Размер команды">Team Size</label>
                   <CustomDropdown
-                    options={teamSizeOptions}
+                    options={getTranslatedOptions(teamSizeOptions)}
                     value={formData.teamSize}
                     onChange={(value) => setFormData(prev => ({ ...prev, teamSize: value as string }))}
                     placeholder="Select team size"
@@ -379,7 +381,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerUseCase" data-lang-en="Primary Use Case" data-lang-ru="Основное использование">Primary Use Case</label>
                   <CustomDropdown
-                    options={useCaseOptions}
+                    options={getTranslatedOptions(useCaseOptions)}
                     value={formData.useCase}
                     onChange={(value) => setFormData(prev => ({ ...prev, useCase: value as string }))}
                     placeholder="What will you use AI models for?"
@@ -389,7 +391,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerBudget" data-lang-en="Monthly Content Budget (USD)" data-lang-ru="Месячный бюджет на контент (USD)">Monthly Content Budget (USD)</label>
                   <CustomDropdown
-                    options={budgetOptions}
+                    options={getTranslatedOptions(budgetOptions)}
                     value={formData.monthlyBudget}
                     onChange={(value) => setFormData(prev => ({ ...prev, monthlyBudget: value as string }))}
                     placeholder="Select budget range"
@@ -399,7 +401,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerExperience" data-lang-en="AI Tools Experience" data-lang-ru="Опыт с AI инструментами">AI Tools Experience</label>
                   <CustomDropdown
-                    options={experienceOptions}
+                    options={getTranslatedOptions(experienceOptions)}
                     value={formData.aiExperience}
                     onChange={(value) => setFormData(prev => ({ ...prev, aiExperience: value as string }))}
                     placeholder="Your AI experience level"
@@ -409,7 +411,7 @@ export default function BuyerLeadPage() {
                 <div className="form-group">
                   <label htmlFor="buyerSource" data-lang-en="How did you hear about us?" data-lang-ru="Как вы узнали о нас?">How did you hear about us?</label>
                   <CustomDropdown
-                    options={sourceOptions}
+                    options={getTranslatedOptions(sourceOptions)}
                     value={formData.source}
                     onChange={(value) => setFormData(prev => ({ ...prev, source: value as string }))}
                     placeholder="Select source"

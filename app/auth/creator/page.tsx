@@ -8,10 +8,12 @@ import CustomDropdown from "../../components/CustomDropdown";
 import Script from "next/script";
 import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
 import { useLanguage } from "../../hooks/useLanguage";
+import { useDropdownOptions } from "../../hooks/useDropdownOptions";
 
 export default function CreatorLeadPage() {
   useHamburgerMenu();
   useLanguage();
+  const { getTranslatedOptions } = useDropdownOptions();
   
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -103,48 +105,48 @@ export default function CreatorLeadPage() {
   ];
 
   const aiExperienceOptions = [
-    { value: "beginner", label: "Beginner (0-6 months)" },
-    { value: "intermediate", label: "Intermediate (6 months - 1 year)" },
-    { value: "1-2years", label: "1-2 years experience" },
-    { value: "3plus_years", label: "3+ years experience" }
+    { value: "beginner", label: "Beginner (0-6 months)", labelRu: "Начинающий (0-6 месяцев)" },
+    { value: "intermediate", label: "Intermediate (6 months - 1 year)", labelRu: "Средний уровень (6 месяцев - 1 год)" },
+    { value: "1-2years", label: "1-2 years experience", labelRu: "1-2 года опыта" },
+    { value: "3plus_years", label: "3+ years experience", labelRu: "3+ года опыта" }
   ];
 
   const specializationOptions = [
-    { value: "photo", label: "AI Photography" },
-    { value: "video", label: "AI Video" },
-    { value: "3d", label: "3D / CGI" },
-    { value: "mixed", label: "Mixed media" },
-    { value: "other", label: "Other" }
+    { value: "photo", label: "AI Photography", labelRu: "AI Фотография" },
+    { value: "video", label: "AI Video", labelRu: "AI Видео" },
+    { value: "3d", label: "3D / CGI", labelRu: "3D / CGI" },
+    { value: "mixed", label: "Mixed media", labelRu: "Смешанные медиа" },
+    { value: "other", label: "Other", labelRu: "Другое" }
   ];
 
   const incomeOptions = [
-    { value: "0-500", label: "$0 - $500" },
-    { value: "500-1000", label: "$500 - $1,000" },
-    { value: "1000-3000", label: "$1,000 - $3,000" },
-    { value: "3000-5000", label: "$3,000 - $5,000" },
-    { value: "5000+", label: "$5,000+" }
+    { value: "0-500", label: "$0 - $500", labelRu: "$0 - $500" },
+    { value: "500-1000", label: "$500 - $1,000", labelRu: "$500 - $1,000" },
+    { value: "1000-3000", label: "$1,000 - $3,000", labelRu: "$1,000 - $3,000" },
+    { value: "3000-5000", label: "$3,000 - $5,000", labelRu: "$3,000 - $5,000" },
+    { value: "5000+", label: "$5,000+", labelRu: "$5,000+" }
   ];
 
   const readyContentOptions = [
-    { value: "0-1", label: "0-1 set" },
-    { value: "2-5", label: "2-5 sets" },
-    { value: "6-10", label: "6-10 sets" },
-    { value: "11+", label: "11+ sets" }
+    { value: "0-1", label: "0-1 set", labelRu: "0-1 набор" },
+    { value: "2-5", label: "2-5 sets", labelRu: "2-5 наборов" },
+    { value: "6-10", label: "6-10 sets", labelRu: "6-10 наборов" },
+    { value: "11+", label: "11+ sets", labelRu: "11+ наборов" }
   ];
 
   const productionOptions = [
-    { value: "0-1", label: "0-1 set/month" },
-    { value: "2-3", label: "2-3 sets/month" },
-    { value: "4-6", label: "4-6 sets/month" },
-    { value: "7+", label: "7+ sets/month" }
+    { value: "0-1", label: "0-1 set/month", labelRu: "0-1 набор/месяц" },
+    { value: "2-3", label: "2-3 sets/month", labelRu: "2-3 набора/месяц" },
+    { value: "4-6", label: "4-6 sets/month", labelRu: "4-6 наборов/месяц" },
+    { value: "7+", label: "7+ sets/month", labelRu: "7+ наборов/месяц" }
   ];
 
   const sourceOptions = [
-    { value: "google", label: "Google search" },
-    { value: "social_media", label: "Social media" },
-    { value: "friend", label: "Friend / Colleague" },
-    { value: "ai_community", label: "AI community / Forum" },
-    { value: "other", label: "Other" }
+    { value: "google", label: "Google search", labelRu: "Поиск в Google" },
+    { value: "social_media", label: "Social media", labelRu: "Социальные сети" },
+    { value: "friend", label: "Friend / Colleague", labelRu: "Друг / Коллега" },
+    { value: "ai_community", label: "AI community / Forum", labelRu: "AI сообщество / Форум" },
+    { value: "other", label: "Other", labelRu: "Другое" }
   ];
 
   useEffect(() => {
@@ -377,7 +379,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorExperience" data-lang-en="AI Generation Experience" data-lang-ru="Опыт работы с AI-генерацией">AI Generation Experience</label>
                   <CustomDropdown
-                    options={aiExperienceOptions}
+                    options={getTranslatedOptions(aiExperienceOptions)}
                     value={formData.aiExperience}
                     onChange={(value) => setFormData(prev => ({ ...prev, aiExperience: value as string }))}
                     placeholder="Select your experience level"
@@ -387,7 +389,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorSpecialization" data-lang-en="Primary Specialization" data-lang-ru="Основная специализация">Primary Specialization</label>
                   <CustomDropdown
-                    options={specializationOptions}
+                    options={getTranslatedOptions(specializationOptions)}
                     value={formData.specialization}
                     onChange={(value) => setFormData(prev => ({ ...prev, specialization: value as string }))}
                     placeholder="What do you create?"
@@ -514,7 +516,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorIncome" data-lang-en="Expected Monthly Income (USD)" data-lang-ru="Ожидаемый ежемесячный доход (USD)">Expected Monthly Income (USD)</label>
                   <CustomDropdown
-                    options={incomeOptions}
+                    options={getTranslatedOptions(incomeOptions)}
                     value={formData.expectedMonthlyIncome}
                     onChange={(value) => setFormData(prev => ({ ...prev, expectedMonthlyIncome: value as string }))}
                     placeholder="What are your income goals?"
@@ -524,7 +526,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorReadyContent" data-lang-en="Ready Content You Can Publish" data-lang-ru="Готовый контент для публикации">Ready Content You Can Publish</label>
                   <CustomDropdown
-                    options={readyContentOptions}
+                    options={getTranslatedOptions(readyContentOptions)}
                     value={formData.readyContentCount}
                     onChange={(value) => setFormData(prev => ({ ...prev, readyContentCount: value as string }))}
                     placeholder="How many sets ready to upload?"
@@ -534,7 +536,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorProduction" data-lang-en="Monthly Production Capacity" data-lang-ru="Ежемесячный объём производства">Monthly Production Capacity</label>
                   <CustomDropdown
-                    options={productionOptions}
+                    options={getTranslatedOptions(productionOptions)}
                     value={formData.monthlyProductionCapacity}
                     onChange={(value) => setFormData(prev => ({ ...prev, monthlyProductionCapacity: value as string }))}
                     placeholder="How many new sets can you create per month?"
@@ -544,7 +546,7 @@ export default function CreatorLeadPage() {
                 <div className="form-group">
                   <label htmlFor="creatorSource" data-lang-en="How did you hear about us?" data-lang-ru="Как вы узнали о нас?">How did you hear about us?</label>
                   <CustomDropdown
-                    options={sourceOptions}
+                    options={getTranslatedOptions(sourceOptions)}
                     value={formData.source}
                     onChange={(value) => setFormData(prev => ({ ...prev, source: value as string }))}
                     placeholder="Select source"
