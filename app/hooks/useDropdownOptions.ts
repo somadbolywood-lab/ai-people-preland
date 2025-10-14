@@ -19,10 +19,14 @@ export function useDropdownOptions() {
 
   const getTranslatedOptions = useMemo(() => {
     return (options: DropdownOption[]): TranslatedOption[] => {
-      return options.map(option => ({
+      console.log('[useDropdownOptions] currentLanguage:', currentLanguage);
+      console.log('[useDropdownOptions] options count:', options.length);
+      const translated = options.map(option => ({
         value: option.value,
         label: currentLanguage === 'ru' && option.labelRu ? option.labelRu : option.label
       }));
+      console.log('[useDropdownOptions] translated options:', translated.slice(0, 3)); // Show first 3
+      return translated;
     };
   }, [currentLanguage]);
 

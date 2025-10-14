@@ -26,6 +26,13 @@ export default function CustomDropdown({
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const selectedOption = options.find(option => option.value === value);
+  
+  // Debug logging
+  useEffect(() => {
+    console.log('[CustomDropdown] Options updated:', options.length, 'options');
+    console.log('[CustomDropdown] Current value:', value);
+    console.log('[CustomDropdown] Selected option:', selectedOption);
+  }, [options, value, selectedOption]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

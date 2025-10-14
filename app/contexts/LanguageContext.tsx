@@ -23,9 +23,18 @@ export function LanguageProvider({
   forceLanguage 
 }: LanguageProviderProps) {
   const [currentLanguage, setCurrentLanguage] = useState<'en' | 'ru'>(() => {
-    if (forceLanguage) return forceLanguage;
-    if (typeof window === 'undefined') return defaultLanguage;
-    return (localStorage.getItem('selectedLanguage') as 'en' | 'ru') || defaultLanguage;
+    if (forceLanguage) {
+      console.log('[LanguageProvider] Initializing with forceLanguage:', forceLanguage);
+      return forceLanguage;
+    }
+    if (typeof window === 'undefined') {
+      console.log('[LanguageProvider] Server-side, using defaultLanguage:', defaultLanguage);
+      return defaultLanguage;
+    }
+    const stored = localStorage.getItem('selectedLanguage') as 'en' | 'ru';
+    const result = stored || defaultLanguage;
+    console.log('[LanguageProvider] Client-side, using language:', result);
+    return result;
   });
 
   const switchLanguage = (lang: 'en' | 'ru') => {
@@ -104,11 +113,15 @@ export function LanguageProvider({
 
     // Apply language with a small delay to ensure DOM is ready
     const timer = setTimeout(() => {
-      switchLanguage(currentLanguage);
+      // Only apply language if it's different from what's already applied
+      const currentLang = forceLanguage || (localStorage.getItem('selectedLanguage') as 'en' | 'ru') || defaultLanguage;
+      if (currentLang !== currentLanguage) {
+        switchLanguage(currentLang);
+      }
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [currentLanguage, forceLanguage]);
+  }, [forceLanguage, defaultLanguage]); // Removed currentLanguage dependency
 
   // Listen for language change events from other components
   useEffect(() => {
