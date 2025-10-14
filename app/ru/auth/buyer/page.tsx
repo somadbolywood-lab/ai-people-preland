@@ -39,9 +39,8 @@ export default function BuyerLeadPage() {
     termsAccepted: false
   });
   
-  // Set Russian language by default on mount
+  // Apply Russian language on mount (without affecting global localStorage)
   useEffect(() => {
-    localStorage.setItem('selectedLanguage', 'ru');
     
     // Apply Russian language immediately
     const elements = document.querySelectorAll('[data-lang-en], [data-lang-ru]');

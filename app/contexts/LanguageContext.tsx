@@ -31,20 +31,16 @@ export function LanguageProvider({
       console.log('[LanguageProvider] Server-side, using defaultLanguage:', defaultLanguage);
       return defaultLanguage;
     }
-    const stored = localStorage.getItem('selectedLanguage') as 'en' | 'ru';
-    const result = stored || defaultLanguage;
-    console.log('[LanguageProvider] Client-side, using language:', result);
-    return result;
+    // Always prefer defaultLanguage over localStorage to ensure English is primary
+    console.log('[LanguageProvider] Client-side, using defaultLanguage:', defaultLanguage);
+    return defaultLanguage;
   });
 
   const switchLanguage = (lang: 'en' | 'ru') => {
     if (typeof window === 'undefined') return;
     if (lang === currentLanguage) return;
 
-    // Update localStorage
-    localStorage.setItem('selectedLanguage', lang);
-    
-    // Update state
+    // Update state (don't update localStorage to avoid global conflicts)
     setCurrentLanguage(lang);
 
     // Apply language to DOM elements
@@ -106,15 +102,10 @@ export function LanguageProvider({
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Set forced language if provided
-    if (forceLanguage) {
-      localStorage.setItem('selectedLanguage', forceLanguage);
-    }
-
     // Apply language with a small delay to ensure DOM is ready
     const timer = setTimeout(() => {
       // Only apply language if it's different from what's already applied
-      const currentLang = forceLanguage || (localStorage.getItem('selectedLanguage') as 'en' | 'ru') || defaultLanguage;
+      const currentLang = forceLanguage || defaultLanguage;
       if (currentLang !== currentLanguage) {
         switchLanguage(currentLang);
       }
@@ -131,7 +122,6 @@ export function LanguageProvider({
       const newLang = event.detail?.language;
       if (newLang && newLang !== currentLanguage) {
         // Language was changed by another component, update our state
-        localStorage.setItem('selectedLanguage', newLang);
         setCurrentLanguage(newLang);
       }
     };

@@ -35,10 +35,7 @@ export function useLanguage(options: UseLanguageOptions = {}) {
     // Prevent unnecessary switches
     if (lang === currentLanguage) return;
 
-    // Update localStorage
-    localStorage.setItem('selectedLanguage', lang);
-    
-    // Update state to trigger re-render
+    // Update state to trigger re-render (don't update localStorage to avoid global conflicts)
     setLanguageState(lang);
 
     // Apply language to DOM elements
@@ -108,10 +105,7 @@ export function useLanguage(options: UseLanguageOptions = {}) {
       return;
     }
 
-    // Set forced language if provided
-    if (forceLanguage) {
-      localStorage.setItem('selectedLanguage', forceLanguage);
-    }
+    // Don't set localStorage to avoid global state conflicts
 
     // Apply language with a small delay to ensure DOM is ready
     const timer = setTimeout(() => {
@@ -130,8 +124,7 @@ export function useLanguage(options: UseLanguageOptions = {}) {
     const handleLanguageChange = (event: CustomEvent) => {
       const newLang = event.detail?.language;
       if (newLang && newLang !== currentLanguage) {
-        // Language was changed by another component, update our state
-        localStorage.setItem('selectedLanguage', newLang);
+        // Language was changed by another component, update our state (don't update localStorage)
         setLanguageState(newLang);
       }
     };
