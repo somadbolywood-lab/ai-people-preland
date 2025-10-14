@@ -3,7 +3,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { useScrollBorder } from "../hooks/useScrollBorder";
-import Footer from "../components/Footer";
+import FooterRU from "../components/FooterRU";
 import VideoModal from "../components/VideoModal";
 import HeaderWithMenu from "../components/HeaderWithMenu";
 import { useLanguage } from "../hooks/useLanguage";
@@ -237,7 +237,7 @@ export default function Page() {
         </section>
       </main>
 
-      <Footer />
+      <FooterRU />
       
       {/* Schema.org Structured Data - Russian Version */}
       <Script

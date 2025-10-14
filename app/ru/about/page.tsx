@@ -4,7 +4,7 @@ import Image from "next/image";
 import Head from "next/head";
 import Script from "next/script";
 import { useEffect } from "react";
-import Footer from "../../components/Footer";
+import FooterRU from "../../components/FooterRU";
 import HreflangLinks from "../../components/HreflangLinks";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
 import { useLanguage } from "../../hooks/useLanguage";
@@ -326,7 +326,7 @@ export default function Page() {
         }}
       />
 
-      <Footer />
+             <FooterRU />
     </div>
   );
 }

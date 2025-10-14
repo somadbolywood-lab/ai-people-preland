@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
-import Footer from "../../../components/Footer";
+import FooterRU from "../../../components/FooterRU";
 import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
 
@@ -2457,7 +2457,7 @@ export default function BlogArticlePage() {
         </section>
       </main>
 
-      <Footer />
+      <FooterRU />
     </div>
   );
 }

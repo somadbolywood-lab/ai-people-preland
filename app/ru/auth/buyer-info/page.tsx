@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Footer from "../../../components/Footer";
+import FooterRU from "../../../components/FooterRU";
 import HeaderWithMenu from "../../../components/HeaderWithMenu";
 import { useLanguage } from "../../../hooks/useLanguage";
 
@@ -114,7 +114,7 @@ export default function BuyerInfoPage() {
         </section>
       </main>
 
-      <Footer />
+      <FooterRU />
     </div>
   );
 }

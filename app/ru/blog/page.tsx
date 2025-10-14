@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import Script from "next/script";
-import Footer from "../../components/Footer";
+import FooterRU from "../../components/FooterRU";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
 import { useLanguage } from "../../hooks/useLanguage";
 
@@ -236,7 +236,7 @@ export default function BlogPage() {
         </section>
       </main>
 
-      <Footer />
+      <FooterRU />
       
       {/* Schema.org Blog Structured Data - Russian */}
       <Script

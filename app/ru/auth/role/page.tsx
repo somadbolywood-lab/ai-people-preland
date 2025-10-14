@@ -3,7 +3,7 @@
 import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
 import Image from "next/image";
 import Script from "next/script";
-import Footer from "../../../components/Footer";
+import FooterRU from "../../../components/FooterRU";
 import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
 import Head from "next/head";
@@ -175,7 +175,7 @@ export default function RoleSelectionPage() {
         </div>
       </main>
 
-      <Footer />
+      <FooterRU />
       
       {/* Schema.org Service Structured Data - Russian */}
       <Script

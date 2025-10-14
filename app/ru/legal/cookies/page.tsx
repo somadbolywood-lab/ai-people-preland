@@ -1,6 +1,6 @@
 "use client";
 
-import Footer from "../../../components/Footer";
+import FooterRU from "../../../components/FooterRU";
 import Head from "next/head";
 import HreflangLinks from "../../../components/HreflangLinks";
 import HeaderWithMenu from "../../../components/HeaderWithMenu";
@@ -95,7 +95,7 @@ export default function CookiePolicyRuPage() {
           </div>
         </main>
 
-        <Footer />
+        <FooterRU />
       </div>
     </>
   );

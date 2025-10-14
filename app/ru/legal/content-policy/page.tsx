@@ -1,7 +1,7 @@
 "use client";
 
 import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
-import Footer from "../../../components/Footer";
+import FooterRU from "../../../components/FooterRU";
 import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
 import Image from "next/image";
@@ -104,7 +104,7 @@ export default function ContentPolicyRuPage() {
           </div>
         </main>
 
-        <Footer />
+        <FooterRU />
       </div>
     </>
   );

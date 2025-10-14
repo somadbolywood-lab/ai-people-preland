@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Script from "next/script";
-import Footer from "../../components/Footer";
+import FooterRU from "../../components/FooterRU";
 import Head from "next/head";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
 import { useLanguage } from "../../hooks/useLanguage";
@@ -199,7 +199,7 @@ export default function Page() {
         </section>
       </main>
 
-      <Footer />
+      <FooterRU />
       
       {/* Schema.org FAQ Structured Data - Russian */}
       <Script
