@@ -3193,11 +3193,10 @@ a.visible-link {
 
 /* Menu Legal Policies Section */
 .menu-legal-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem 1rem;
+    justify-items: start;
     margin-top: 12px;
     padding-top: 12px;
     border-top: 1px solid rgba(255,255,255,0.1);
@@ -3210,13 +3209,19 @@ a.visible-link {
     padding: 2px 4px;
     border-radius: 4px;
     transition: all 0.2s ease;
-    white-space: nowrap;
+    white-space: normal;
+    text-align: left;
 }
 
 .menu-legal-section a:hover {
     color: var(--accent);
     background: rgba(139, 92, 246, 0.1);
-    transform: scale(1.05);
+}
+
+@media (min-width: 1024px) {
+    .menu-legal-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* Style for separator dots in menu legal section */
