@@ -8,9 +8,11 @@ import LanguageSelector from "../../components/LanguageSelector";
 import CustomDropdown from "../../components/CustomDropdown";
 import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
 import { useDropdownOptions } from "../../hooks/useDropdownOptions";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export default function BuyerLeadPage() {
   useHamburgerMenu();
+  useLanguage(); // Enable language switching
   const { getTranslatedOptions } = useDropdownOptions();
   
   const [showModal, setShowModal] = useState(false);
