@@ -10,7 +10,14 @@ import CustomDropdown from "../../../components/CustomDropdown";
 import Script from "next/script";
 
 export default function CreatorLeadPage() {
-  console.log('[CreatorLeadPage] Component rendering...');
+  // Force client-side execution
+  if (typeof window !== 'undefined') {
+    console.log('[CreatorLeadPage] CLIENT-SIDE: Component rendering...');
+    console.log('[CreatorLeadPage] CLIENT-SIDE: Window object available');
+  } else {
+    console.log('[CreatorLeadPage] SERVER-SIDE: Component rendering...');
+  }
+  
   useHamburgerMenu();
   const { getTranslatedOptions } = useDropdownOptions();
   console.log('[CreatorLeadPage] useDropdownOptions hook executed');
@@ -18,6 +25,13 @@ export default function CreatorLeadPage() {
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [step, setStep] = useState<number>(0);
+  
+  // Debug useEffect
+  useEffect(() => {
+    console.log('[CreatorLeadPage] useEffect executed - component mounted');
+    console.log('[CreatorLeadPage] Current step:', step);
+  }, [step]);
+  
   const steps = [
     { key: 'basic', titleEn: 'Basic info', titleRu: 'Базовая информация' },
     { key: 'expertise', titleEn: 'Expertise', titleRu: 'Опыт' },
