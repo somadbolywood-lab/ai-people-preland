@@ -156,48 +156,48 @@ export default function CreatorLeadPage() {
   ];
 
   const aiExperienceOptions = [
-    { value: "beginner", label: "Beginner (0-6 months)" },
-    { value: "intermediate", label: "Intermediate (6 months - 1 year)" },
-    { value: "1-2years", label: "1-2 years experience" },
-    { value: "3plus_years", label: "3+ years experience" }
+    { value: "beginner", label: "Beginner (0-6 months)", labelRu: "Начинающий (0-6 месяцев)" },
+    { value: "intermediate", label: "Intermediate (6 months - 1 year)", labelRu: "Средний (6 месяцев - 1 год)" },
+    { value: "1-2years", label: "1-2 years experience", labelRu: "1-2 года опыта" },
+    { value: "3plus_years", label: "3+ years experience", labelRu: "3+ года опыта" }
   ];
 
   const specializationOptions = [
-    { value: "photo", label: "AI Photography" },
-    { value: "video", label: "AI Video" },
-    { value: "3d", label: "3D / CGI" },
-    { value: "mixed", label: "Mixed media" },
-    { value: "other", label: "Other" }
+    { value: "photo", label: "AI Photography", labelRu: "AI Фотография" },
+    { value: "video", label: "AI Video", labelRu: "AI Видео" },
+    { value: "3d", label: "3D / CGI", labelRu: "3D / CGI" },
+    { value: "mixed", label: "Mixed media", labelRu: "Смешанные медиа" },
+    { value: "other", label: "Other", labelRu: "Другое" }
   ];
 
   const incomeOptions = [
-    { value: "0-500", label: "$0 - $500" },
-    { value: "500-1000", label: "$500 - $1,000" },
-    { value: "1000-3000", label: "$1,000 - $3,000" },
-    { value: "3000-5000", label: "$3,000 - $5,000" },
-    { value: "5000+", label: "$5,000+" }
+    { value: "0-500", label: "$0 - $500", labelRu: "$0 - $500" },
+    { value: "500-1000", label: "$500 - $1,000", labelRu: "$500 - $1,000" },
+    { value: "1000-3000", label: "$1,000 - $3,000", labelRu: "$1,000 - $3,000" },
+    { value: "3000-5000", label: "$3,000 - $5,000", labelRu: "$3,000 - $5,000" },
+    { value: "5000+", label: "$5,000+", labelRu: "$5,000+" }
   ];
 
   const readyContentOptions = [
-    { value: "0-1", label: "0-1 set" },
-    { value: "2-5", label: "2-5 sets" },
-    { value: "6-10", label: "6-10 sets" },
-    { value: "11+", label: "11+ sets" }
+    { value: "0-1", label: "0-1 set", labelRu: "0-1 набор" },
+    { value: "2-5", label: "2-5 sets", labelRu: "2-5 наборов" },
+    { value: "6-10", label: "6-10 sets", labelRu: "6-10 наборов" },
+    { value: "11+", label: "11+ sets", labelRu: "11+ наборов" }
   ];
 
   const productionOptions = [
-    { value: "0-1", label: "0-1 set/month" },
-    { value: "2-3", label: "2-3 sets/month" },
-    { value: "4-6", label: "4-6 sets/month" },
-    { value: "7+", label: "7+ sets/month" }
+    { value: "0-1", label: "0-1 set/month", labelRu: "0-1 набор/месяц" },
+    { value: "2-3", label: "2-3 sets/month", labelRu: "2-3 набора/месяц" },
+    { value: "4-6", label: "4-6 sets/month", labelRu: "4-6 наборов/месяц" },
+    { value: "7+", label: "7+ sets/month", labelRu: "7+ наборов/месяц" }
   ];
 
   const sourceOptions = [
-    { value: "google", label: "Google search" },
-    { value: "social_media", label: "Social media" },
-    { value: "friend", label: "Friend / Colleague" },
-    { value: "ai_community", label: "AI community / Forum" },
-    { value: "other", label: "Other" }
+    { value: "google", label: "Google search", labelRu: "Поиск Google" },
+    { value: "social_media", label: "Social media", labelRu: "Социальные сети" },
+    { value: "friend", label: "Friend / Colleague", labelRu: "Друг / Коллега" },
+    { value: "ai_community", label: "AI community / Forum", labelRu: "AI сообщество / Форум" },
+    { value: "other", label: "Other", labelRu: "Другое" }
   ];
 
   useEffect(() => {

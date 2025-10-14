@@ -138,7 +138,7 @@ export function LanguageProvider({
 
     window.addEventListener('languageChange', handleLanguageChange as EventListener);
     return () => window.removeEventListener('languageChange', handleLanguageChange as EventListener);
-  }, [currentLanguage]);
+  }, []); // Remove currentLanguage dependency to prevent infinite loop
 
   const value = {
     currentLanguage,
