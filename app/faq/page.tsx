@@ -633,219 +633,75 @@ export default function Page() {
 
         {/* FAQ Question 1 */}
         <section className="features">
-          <h2 className="section-title collapsible-header" data-collapsible="faq-1" data-lang-en="What is AI-People and who is it for?" data-lang-ru="Что такое AI-People и для кого он предназначен?"></h2>
+          <h2 className="section-title collapsible-header" data-collapsible="faq-1" data-lang-en="What is AI-PEOPLE?" data-lang-ru="Что такое AI-PEOPLE?"></h2>
           <div className="collapsible-content" id="faq-1">
-            <div className="features-grid">
-              <div className="feature-item">
-                <div className="feature-icon">🤖</div>
-                <h3 className="gradient-text" data-lang-en="AI Content Marketplace" data-lang-ru="AI-маркетплейс контента">AI Content Marketplace</h3>
-                <p data-lang-en="Our platform is the world's first marketplace for ready-made AI-generated photo and video packages with virtual models. We connect buyers with premium AI content creators in a seamless, secure environment." data-lang-ru="Наша платформа — первый в мире маркетплейс готовых фото- и видео-пакетов с виртуальными AI-моделями. Мы связываем покупателей с премиум AI-креаторами в безопасной среде.">Our platform is the world's first marketplace for ready-made AI-generated photo and video packages with virtual models. We connect buyers with premium AI content creators in a seamless, secure environment.</p>
-                  </div>
-              <div className="feature-item">
-                <div className="feature-icon">👥</div>
-                <h3 className="gradient-text" data-lang-en="For Content Buyers" data-lang-ru="Для покупателей контента">For Content Buyers</h3>
-                <p data-lang-en="Perfect for businesses, marketers, and content creators who need high-quality images and videos for advertising, social media, and presentations. Get professional content instantly without expensive photoshoots." data-lang-ru="Идеально для бизнеса, маркетологов и создателей контента, которым нужны качественные изображения и видео для рекламы, соцсетей и презентаций. Получайте профессиональный контент мгновенно без дорогих фотосессий.">Perfect for businesses, marketers, and content creators who need high-quality images and videos for advertising, social media, and presentations. Get professional content instantly without expensive photoshoots.</p>
-                </div>
-              <div className="feature-item">
-                <div className="feature-icon">🎨</div>
-                <h3 className="gradient-text" data-lang-en="For AI Creators" data-lang-ru="Для AI-креаторов">For AI Creators</h3>
-                <p data-lang-en="Ideal for designers, photographers, and AI artists who create and sell their AI packages. Monetize your creativity with up to 75% commission and reach a global audience of content buyers." data-lang-ru="Идеально для дизайнеров, фотографов и AI-художников, которые создают и продают свои AI-пакеты. Монетизируйте свое творчество с комиссией до 75% и охватите глобальную аудиторию покупателей контента.">Ideal for designers, photographers, and AI artists who create and sell their AI packages. Monetize your creativity with up to 75% commission and reach a global audience of content buyers.</p>
-                  </div>
-                </div>
+            <p data-lang-en="AI-PEOPLE is a next-generation marketplace for AI-generated models and digital humans. It connects creators who make AI models, photos, and videos — with businesses and individuals who want to use them for marketing, content, and branding." data-lang-ru="AI-PEOPLE — это инновационный маркетплейс AI-моделей и цифровых личностей, который объединяет креаторов (создателей AI-контента) и покупателей — компании или частных пользователей, желающих использовать модели в рекламе, контенте или личном продвижении.">AI-PEOPLE is a next-generation marketplace for AI-generated models and digital humans. It connects creators who make AI models, photos, and videos — with businesses and individuals who want to use them for marketing, content, and branding.</p>
           </div>
         </section>
 
         {/* FAQ Question 2 */}
         <section className="features">
-          <h2 className="section-title collapsible-header" data-collapsible="faq-2" data-lang-en="What content can I buy on the platform?" data-lang-ru="Какой контент я могу купить на платформе?"></h2>
+          <h2 className="section-title collapsible-header" data-collapsible="faq-2" data-lang-en="Who can use AI-PEOPLE?" data-lang-ru="Кто может использовать AI-PEOPLE?"></h2>
           <div className="collapsible-content" id="faq-2">
-            <div className="features-grid">
-              <div className="feature-item">
-                <div className="feature-icon">📸</div>
-                <h3 className="gradient-text" data-lang-en="Photo Packages" data-lang-ru="Фото-пакеты">Photo Packages</h3>
-                <p data-lang-en="Get complete photo sets with 25+ high-resolution images featuring AI models in various poses, outfits, and settings. Perfect for social media, advertising, and marketing campaigns." data-lang-ru="Получайте полные фото-наборы с 25+ изображениями высокого разрешения с AI-моделями в различных позах, нарядах и обстановке. Идеально для соцсетей, рекламы и маркетинговых кампаний.">Get complete photo sets with 25+ high-resolution images featuring AI models in various poses, outfits, and settings. Perfect for social media, advertising, and marketing campaigns.</p>
-                  </div>
-              <div className="feature-item">
-                <div className="feature-icon">🎥</div>
-                <h3 className="gradient-text" data-lang-en="Video Content" data-lang-ru="Видео-контент">Video Content</h3>
-                <p data-lang-en="Access short promotional videos (1-3 clips) showcasing AI models in action. These preview videos help you evaluate quality before purchasing complete packages." data-lang-ru="Получайте доступ к коротким рекламным видео (1-3 клипа) с AI-моделями в действии. Эти превью-видео помогают оценить качество перед покупкой полных пакетов.">Access short promotional videos (1-3 clips) showcasing AI models in action. These preview videos help you evaluate quality before purchasing complete packages.</p>
-                </div>
-              <div className="feature-item">
-                <div className="feature-icon">🎯</div>
-                <h3 className="gradient-text" data-lang-en="Custom Orders" data-lang-ru="Индивидуальные заказы">Custom Orders</h3>
-                <p data-lang-en="Request personalized content packages tailored to your specific needs. Specify style, format, quantity, and requirements to get unique content created just for your brand." data-lang-ru="Заказывайте персонализированные пакеты контента, адаптированные под ваши потребности. Указывайте стиль, формат, количество и требования для получения уникального контента, созданного специально для вашего бренда.">Request personalized content packages tailored to your specific needs. Specify style, format, quantity, and requirements to get unique content created just for your brand.</p>
-              </div>
-                  </div>
-                </div>
+            <p data-lang-en="Anyone. AI-PEOPLE is designed for brands, creators, marketers, influencers, and individuals who want ready-to-use visual assets powered by AI. You can buy, sell, or customize AI models for your projects — from digital ads to personal branding." data-lang-ru="Платформа открыта для всех — брендов, фрилансеров, маркетологов, инфлюенсеров и частных пользователей. Вы можете покупать, продавать или заказывать кастомные AI-модели для любых целей: от рекламы до личного бренда.">Anyone. AI-PEOPLE is designed for brands, creators, marketers, influencers, and individuals who want ready-to-use visual assets powered by AI. You can buy, sell, or customize AI models for your projects — from digital ads to personal branding.</p>
+          </div>
         </section>
 
         {/* FAQ Question 3 */}
         <section className="features">
-          <h2 className="section-title collapsible-header" data-collapsible="faq-3" data-lang-en="Who can become a creator and sell content?" data-lang-ru="Кто может стать креатором и продавать контент?"></h2>
+          <h2 className="section-title collapsible-header" data-collapsible="faq-3" data-lang-en="Can I sell my own AI models here?" data-lang-ru="Могу ли я продавать свои AI-модели на платформе?"></h2>
           <div className="collapsible-content" id="faq-3">
-            <div className="features-grid">
-              <div className="feature-item">
-                <div className="feature-icon">🎨</div>
-                <h3 className="gradient-text" data-lang-en="AI Artists & Designers" data-lang-ru="AI-художники и дизайнеры">AI Artists & Designers</h3>
-                <p data-lang-en="Perfect for anyone skilled with AI tools like Stable Diffusion, MidJourney, DALL-E, and other AI art platforms. If you can create high-quality AI content, you can monetize it on our platform." data-lang-ru="Идеально для всех, кто умеет работать с AI-инструментами, такими как Stable Diffusion, MidJourney, DALL-E и другими AI-платформами для искусства. Если вы можете создавать качественный AI-контент, вы можете монетизировать его на нашей платформе.">Perfect for anyone skilled with AI tools like Stable Diffusion, MidJourney, DALL-E, and other AI art platforms. If you can create high-quality AI content, you can monetize it on our platform.</p>
-                  </div>
-              <div className="feature-item">
-                <div className="feature-icon">📸</div>
-                <h3 className="gradient-text" data-lang-en="Photographers & Creatives" data-lang-ru="Фотографы и креаторы">Photographers & Creatives</h3>
-                <p data-lang-en="Traditional photographers and creative professionals can leverage AI to expand their portfolios and reach new markets. Transform your creative vision into scalable digital content." data-lang-ru="Традиционные фотографы и креативные профессионалы могут использовать AI для расширения своих портфолио и выхода на новые рынки. Превратите свое творческое видение в масштабируемый цифровой контент.">Traditional photographers and creative professionals can leverage AI to expand their portfolios and reach new markets. Transform your creative vision into scalable digital content.</p>
-                </div>
-              <div className="feature-item">
-                <div className="feature-icon">🌍</div>
-                <h3 className="gradient-text" data-lang-en="Global Access" data-lang-ru="Глобальный доступ">Global Access</h3>
-                <p data-lang-en="Registration is open to creators from any country worldwide. Our platform supports multiple languages and currencies, making it accessible to creators everywhere." data-lang-ru="Регистрация открыта для креаторов из любой страны мира. Наша платформа поддерживает несколько языков и валют, делая её доступной для креаторов повсюду.">Registration is open to creators from any country worldwide. Our platform supports multiple languages and currencies, making it accessible to creators everywhere.</p>
-              </div>
-                  </div>
-                </div>
+            <p data-lang-en="Yes! Creators can upload and monetize their AI-generated models, image packs, or videos. You keep full creative control and earn from every download or license purchase." data-lang-ru="Да! Креаторы могут загружать свои AI-модели, фото-пакеты и видео, сохраняя полное авторское право и получая доход от каждой покупки или лицензии.">Yes! Creators can upload and monetize their AI-generated models, image packs, or videos. You keep full creative control and earn from every download or license purchase.</p>
+          </div>
         </section>
 
         {/* FAQ Question 4 */}
-      <section className="features">
-          <h2 className="section-title collapsible-header" data-collapsible="faq-4" data-lang-en="How much do creators earn?" data-lang-ru="Сколько зарабатывают креаторы?"></h2>
+        <section className="features">
+          <h2 className="section-title collapsible-header" data-collapsible="faq-4" data-lang-en="Is it legal to use AI-generated people in content?" data-lang-ru="Законно ли использовать AI‑сгенерированных людей в контенте?"></h2>
           <div className="collapsible-content" id="faq-4">
-          <div className="features-grid">
-            <div className="feature-item">
-              <div className="feature-icon">💰</div>
-                <h3 className="gradient-text" data-lang-en="Up to 75% Commission" data-lang-ru="До 75% комиссии">Up to 75% Commission</h3>
-                <p data-lang-en="Creators earn up to 75% of each package sale price. The higher the quality of your AI models and content demand, the more you earn. Top creators can generate substantial monthly income." data-lang-ru="Креаторы получают до 75% от цены продажи каждого пакета. Чем выше качество ваших AI-моделей и спрос на контент, тем больше вы зарабатываете. Топовые креаторы могут генерировать существенный месячный доход.">Creators earn up to 75% of each package sale price. The higher the quality of your AI models and content demand, the more you earn. Top creators can generate substantial monthly income.</p>
-            </div>
-            <div className="feature-item">
-                <div className="feature-icon">📈</div>
-                <h3 className="gradient-text" data-lang-en="Quality-Based Earnings" data-lang-ru="Доходы на основе качества">Quality-Based Earnings</h3>
-                <p data-lang-en="Premium content creators with high-quality, in-demand AI models earn significantly more. Focus on creating unique, professional-grade content to maximize your earnings potential." data-lang-ru="Премиум-креаторы с высококачественными, востребованными AI-моделями зарабатывают значительно больше. Сосредоточьтесь на создании уникального, профессионального контента для максимизации вашего потенциала заработка.">Premium content creators with high-quality, in-demand AI models earn significantly more. Focus on creating unique, professional-grade content to maximize your earnings potential.</p>
-            </div>
-            <div className="feature-item">
-                <div className="feature-icon">🚀</div>
-                <h3 className="gradient-text" data-lang-en="Scalable Income" data-lang-ru="Масштабируемый доход">Scalable Income</h3>
-                <p data-lang-en="Once you create and upload content packages, they can generate passive income for months or years. Build a portfolio of popular AI models and watch your earnings grow over time." data-lang-ru="Как только вы создаете и загружаете пакеты контента, они могут генерировать пассивный доход месяцами или годами. Создавайте портфолио популярных AI-моделей и наблюдайте, как растут ваши доходы со временем.">Once you create and upload content packages, they can generate passive income for months or years. Build a portfolio of popular AI models and watch your earnings grow over time.</p>
-                  </div>
-                </div>
-        </div>
-      </section>
+            <p data-lang-en="Absolutely. All AI models on AI-PEOPLE come with a clear usage license. We focus on ethical, copyright-safe, and commercial-ready AI content." data-lang-ru="Да, полностью легально. Все AI-модели на платформе сопровождаются чёткой лицензией использования. Мы обеспечиваем этичный и безопасный для коммерческого применения контент.">Absolutely. All AI models on AI-PEOPLE come with a clear usage license. We focus on ethical, copyright-safe, and commercial-ready AI content.</p>
+          </div>
+        </section>
 
         {/* FAQ Question 5 */}
-      <section className="features">
-          <h2 className="section-title collapsible-header" data-collapsible="faq-5" data-lang-en="How is legal compliance ensured?" data-lang-ru="Как обеспечивается правовое соответствие?"></h2>
+        <section className="features">
+          <h2 className="section-title collapsible-header" data-collapsible="faq-5" data-lang-en="Can I order a custom AI model or campaign?" data-lang-ru="Могу ли я заказать кастомную AI‑модель или кампанию?"></h2>
           <div className="collapsible-content" id="faq-5">
-          <div className="features-grid">
-              <div className="feature-item">
-                <div className="feature-icon">🛡️</div>
-                <h3 className="gradient-text" data-lang-en="Content Moderation" data-lang-ru="Модерация контента">Content Moderation</h3>
-                <p data-lang-en="All content undergoes strict moderation before publication. We ensure all materials are original AI-generated creations and comply with platform policies and legal requirements." data-lang-ru="Весь контент проходит строгую модерацию перед публикацией. Мы гарантируем, что все материалы являются оригинальными AI-творениями и соответствуют политикам платформы и правовым требованиям.">All content undergoes strict moderation before publication. We ensure all materials are original AI-generated creations and comply with platform policies and legal requirements.</p>
-            </div>
-              <div className="feature-item">
-                <div className="feature-icon">❌</div>
-                <h3 className="gradient-text" data-lang-en="Prohibited Content" data-lang-ru="Запрещенный контент">Prohibited Content</h3>
-                <p data-lang-en="We strictly prohibit: content with real people without consent, copyrighted material copies, illegal or discriminatory content. Only original AI-generated packages created by our creators are accepted." data-lang-ru="Мы строго запрещаем: контент с реальными людьми без согласия, копии защищенных авторским правом материалов, незаконный или дискриминационный контент. Принимаются только оригинальные AI-пакеты, созданные нашими креаторами.">We strictly prohibit: content with real people without consent, copyrighted material copies, illegal or discriminatory content. Only original AI-generated packages created by our creators are accepted.</p>
-            </div>
-              <div className="feature-item">
-                <div className="feature-icon">✅</div>
-                <h3 className="gradient-text" data-lang-en="AI-Generated Only" data-lang-ru="Только AI-генерированный">AI-Generated Only</h3>
-                <p data-lang-en="We accept exclusively original AI-generated content packages created by our registered creators. This ensures legal clarity and protects both creators and buyers from copyright issues." data-lang-ru="Мы принимаем исключительно оригинальные AI-пакеты контента, созданные нашими зарегистрированными креаторами. Это обеспечивает правовую ясность и защищает как креаторов, так и покупателей от проблем с авторским правом.">We accept exclusively original AI-generated content packages created by our registered creators. This ensures legal clarity and protects both creators and buyers from copyright issues.</p>
-              </div>
-            </div>
+            <p data-lang-en="Yes — you can request custom model creation or order a full AI-driven ad campaign with a chosen model. Our platform connects you directly with creators for custom work." data-lang-ru="Да, вы можете заказать создание индивидуальной AI‑модели или полноценную рекламную кампанию с выбранной моделью. AI-PEOPLE напрямую связывает заказчиков с креаторами для кастомных проектов.">Yes — you can request custom model creation or order a full AI-driven ad campaign with a chosen model. Our platform connects you directly with creators for custom work.</p>
           </div>
         </section>
 
         {/* FAQ Question 6 */}
         <section className="features">
-          <h2 className="section-title collapsible-header" data-collapsible="faq-6" data-lang-en="Can I upload or buy 18+ content?" data-lang-ru="Могу ли я загружать или покупать 18+ контент?"></h2>
+          <h2 className="section-title collapsible-header" data-collapsible="faq-6" data-lang-en="Does AI-PEOPLE include 18+ content?" data-lang-ru="Есть ли на AI‑PEOPLE контент 18+?"></h2>
           <div className="collapsible-content" id="faq-6">
-            <div className="features-grid">
-              <div className="feature-item">
-                <div className="feature-icon">🔞</div>
-                <h3 className="gradient-text" data-lang-en="Separate 18+ Section" data-lang-ru="Отдельная секция 18+">Separate 18+ Section</h3>
-                <p data-lang-en="Yes, we plan to launch a dedicated 18+ section with additional requirements for both creators and buyers, including age verification and content restrictions." data-lang-ru="Да, мы планируем запустить специальную секцию 18+ с дополнительными требованиями как для креаторов, так и для покупателей, включая проверку возраста и ограничения контента.">Yes, we plan to launch a dedicated 18+ section with additional requirements for both creators and buyers, including age verification and content restrictions.</p>
-              </div>
-              <div className="feature-item">
-                <div className="feature-icon">🎭</div>
-                <h3 className="gradient-text" data-lang-en="High-Quality Content" data-lang-ru="Высококачественный контент">High-Quality Content</h3>
-                <p data-lang-en="The 18+ section will feature realistic AI-generated content with lifestyle themes, maintaining the same high standards as our main marketplace." data-lang-ru="Секция 18+ будет содержать реалистичный AI-контент с лайфстайл тематикой, поддерживая те же высокие стандарты, что и наш основной маркетплейс.">The 18+ section will feature realistic AI-generated content with lifestyle themes, maintaining the same high standards as our main marketplace.</p>
-              </div>
-              <div className="feature-item">
-                <div className="feature-icon">🔐</div>
-                <h3 className="gradient-text" data-lang-en="Age Verification" data-lang-ru="Проверка возраста">Age Verification</h3>
-                <p data-lang-en="Both creators and buyers will need to complete age verification to access the 18+ section, ensuring compliance with legal requirements and platform safety." data-lang-ru="Как креаторы, так и покупатели должны будут пройти проверку возраста для доступа к секции 18+, обеспечивая соответствие правовым требованиям и безопасность платформы.">Both creators and buyers will need to complete age verification to access the 18+ section, ensuring compliance with legal requirements and platform safety.</p>
-            </div>
+            <p data-lang-en="AI-PEOPLE operates under clear content rules. A separate restricted section (18+) will be available later for licensed and verified users, following all legal and ethical guidelines." data-lang-ru="На платформе действуют строгие правила контента. Отдельный раздел (18+) будет запущен позже и станет доступен только для проверенных и лицензированных пользователей, в соответствии с законодательством и этическими нормами.">AI-PEOPLE operates under clear content rules. A separate restricted section (18+) will be available later for licensed and verified users, following all legal and ethical guidelines.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* FAQ Question 7 */}
-      <section className="features">
-          <h2 className="section-title collapsible-header" data-collapsible="faq-7" data-lang-en="How do payments and withdrawals work?" data-lang-ru="Как работают платежи и вывод средств?"></h2>
+        <section className="features">
+          <h2 className="section-title collapsible-header" data-collapsible="faq-7" data-lang-en="Is AI-PEOPLE free to use?" data-lang-ru="Бесплатна ли AI‑PEOPLE?"></h2>
           <div className="collapsible-content" id="faq-7">
-          <div className="features-grid">
-            <div className="feature-item">
-                <div className="feature-icon">💳</div>
-                <h3 className="gradient-text" data-lang-en="Cryptocurrency Payments" data-lang-ru="Криптовалютные платежи">Cryptocurrency Payments</h3>
-                <p data-lang-en="Buyers pay using USDT on Tron or BSC networks for fast, secure transactions. We're planning to add traditional payment methods like cards and PayPal in the future." data-lang-ru="Покупатели платят с помощью USDT в сетях Tron или BSC для быстрых, безопасных транзакций. Мы планируем добавить традиционные методы оплаты, такие как карты и PayPal в будущем.">Buyers pay using USDT on Tron or BSC networks for fast, secure transactions. We're planning to add traditional payment methods like cards and PayPal in the future.</p>
-            </div>
-            <div className="feature-item">
-                <div className="feature-icon">💰</div>
-                <h3 className="gradient-text" data-lang-en="Creator Payouts" data-lang-ru="Выплаты креаторам">Creator Payouts</h3>
-                <p data-lang-en="Creators receive payments directly to their USDT wallets. Fast, secure payouts with transparent fee structure and regular payment schedules." data-lang-ru="Креаторы получают платежи напрямую на свои USDT кошельки. Быстрые, безопасные выплаты с прозрачной структурой комиссий и регулярными графиками платежей.">Creators receive payments directly to their USDT wallets. Fast, secure payouts with transparent fee structure and regular payment schedules.</p>
-            </div>
-            <div className="feature-item">
-                <div className="feature-icon">🔮</div>
-                <h3 className="gradient-text" data-lang-en="Future Payment Options" data-lang-ru="Будущие варианты оплаты">Future Payment Options</h3>
-                <p data-lang-en="We're working on adding fiat payment methods including credit cards and PayPal to make the platform accessible to users who prefer traditional payment options." data-lang-ru="Мы работаем над добавлением фиатных методов оплаты, включая кредитные карты и PayPal, чтобы сделать платформу доступной для пользователей, которые предпочитают традиционные варианты оплаты.">We're working on adding fiat payment methods including credit cards and PayPal to make the platform accessible to users who prefer traditional payment options.</p>
-            </div>
+            <p data-lang-en="Registration is free. Access to AI model catalogs and premium content will be available through a membership plan, offering exclusive features and early access to new creators. Transparent pricing — no hidden fees." data-lang-ru="Регистрация бесплатна. Доступ к каталогам AI-моделей и премиум-контенту предоставляется через членскую подписку, которая открывает эксклюзивные функции и ранний доступ к новым креаторам. Прозрачная система оплаты — без скрытых комиссий.">Registration is free. Access to AI model catalogs and premium content will be available through a membership plan, offering exclusive features and early access to new creators. Transparent pricing — no hidden fees.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* FAQ Question 8 */}
-      <section className="features">
-          <h2 className="section-title collapsible-header" data-collapsible="faq-8" data-lang-en="Where can I use purchased content?" data-lang-ru="Где я могу использовать купленный контент?"></h2>
+        <section className="features">
+          <h2 className="section-title collapsible-header" data-collapsible="faq-8" data-lang-en="Where is AI-PEOPLE based?" data-lang-ru="Где расположена AI‑PEOPLE?"></h2>
           <div className="collapsible-content" id="faq-8">
-          <div className="features-grid">
-              <div className="feature-item">
-                <div className="feature-icon">📄</div>
-                <h3 className="gradient-text" data-lang-en="Commercial License" data-lang-ru="Коммерческая лицензия">Commercial License</h3>
-                <p data-lang-en="All content packages come with full commercial licensing. Use purchased photos and videos in advertising, social media, presentations, websites, and print materials without restrictions." data-lang-ru="Все пакеты контента поставляются с полной коммерческой лицензией. Используйте купленные фото и видео в рекламе, соцсетях, презентациях, веб-сайтах и печатных материалах без ограничений.">All content packages come with full commercial licensing. Use purchased photos and videos in advertising, social media, presentations, websites, and print materials without restrictions.</p>
-            </div>
-              <div className="feature-item">
-                <div className="feature-icon">🔄</div>
-                <h3 className="gradient-text" data-lang-en="Resale Rights" data-lang-ru="Права на перепродажу">Resale Rights</h3>
-                <p data-lang-en="You can resell the content you purchase, giving you additional monetization opportunities. Perfect for agencies and content creators who want to offer services to their clients." data-lang-ru="Вы можете перепродавать купленный контент, предоставляя дополнительные возможности монетизации. Идеально для агентств и создателей контента, которые хотят предлагать услуги своим клиентам.">You can resell the content you purchase, giving you additional monetization opportunities. Perfect for agencies and content creators who want to offer services to their clients.</p>
-            </div>
-              <div className="feature-item">
-                <div className="feature-icon">🎯</div>
-                <h3 className="gradient-text" data-lang-en="Unlimited Usage" data-lang-ru="Неограниченное использование">Unlimited Usage</h3>
-                <p data-lang-en="No usage limits or expiration dates. Once you purchase content, you own the rights to use it indefinitely across all your projects and campaigns." data-lang-ru="Никаких ограничений использования или сроков действия. Как только вы покупаете контент, вы владеете правами на его использование неограниченно во всех ваших проектах и кампаниях.">No usage limits or expiration dates. Once you purchase content, you own the rights to use it indefinitely across all your projects and campaigns.</p>
-            </div>
+            <p data-lang-en="AI-PEOPLE operates globally, with headquarters in New York, USA. Our mission is to make AI-powered creativity accessible to everyone, everywhere." data-lang-ru="AI-PEOPLE работает по всему миру, главный офис расположен в Нью-Йорке (США). Наша цель — сделать AI‑творчество доступным каждому.">AI-PEOPLE operates globally, with headquarters in New York, USA. Our mission is to make AI-powered creativity accessible to everyone, everywhere.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* FAQ Question 9 */}
-      <section className="features">
-          <h2 className="section-title collapsible-header" data-collapsible="faq-9" data-lang-en="Can I request custom content?" data-lang-ru="Могу ли я заказать индивидуальный контент?"></h2>
+        <section className="features">
+          <h2 className="section-title collapsible-header" data-collapsible="faq-9" data-lang-en="How can I contact you?" data-lang-ru="Как с вами связаться?"></h2>
           <div className="collapsible-content" id="faq-9">
-          <div className="features-grid">
-            <div className="feature-item">
-                <div className="feature-icon">✍️</div>
-                <h3 className="gradient-text" data-lang-en="Detailed Specifications" data-lang-ru="Детальные спецификации">Detailed Specifications</h3>
-                <p data-lang-en="Yes! You can provide detailed text descriptions, specify style preferences, format requirements, and quantity. Our creators will create unique content packages tailored to your exact needs." data-lang-ru="Да! Вы можете предоставить детальные текстовые описания, указать стилевые предпочтения, требования к формату и количество. Наши креаторы создадут уникальные пакеты контента, адаптированные под ваши точные потребности.">Yes! You can provide detailed text descriptions, specify style preferences, format requirements, and quantity. Our creators will create unique content packages tailored to your exact needs.</p>
-            </div>
-            <div className="feature-item">
-                <div className="feature-icon">🎨</div>
-                <h3 className="gradient-text" data-lang-en="Custom Style & Format" data-lang-ru="Индивидуальный стиль и формат">Custom Style & Format</h3>
-                <p data-lang-en="Request specific styles, themes, or formats that match your brand identity. Whether you need corporate, lifestyle, artistic, or any other style, our creators can deliver." data-lang-ru="Заказывайте конкретные стили, темы или форматы, которые соответствуют идентичности вашего бренда. Нужен ли вам корпоративный, лайфстайл, художественный или любой другой стиль, наши креаторы могут это обеспечить.">Request specific styles, themes, or formats that match your brand identity. Whether you need corporate, lifestyle, artistic, or any other style, our creators can deliver.</p>
-            </div>
-            <div className="feature-item">
-                <div className="feature-icon">📦</div>
-                <h3 className="gradient-text" data-lang-en="Flexible Packages" data-lang-ru="Гибкие пакеты">Flexible Packages</h3>
-                <p data-lang-en="Order custom photo sets, video packages, or mixed content bundles. Specify the exact number of images and videos you need, along with any special requirements or preferences." data-lang-ru="Заказывайте индивидуальные фото-наборы, видео-пакеты или смешанные контент-бандлы. Указывайте точное количество изображений и видео, которые вам нужны, вместе с любыми особыми требованиями или предпочтениями.">Order custom photo sets, video packages, or mixed content bundles. Specify the exact number of images and videos you need, along with any special requirements or preferences.</p>
-            </div>
+            <p data-lang-en="You can reach us via the Contact form on the website or by email at contact@ai-people.io. We reply to every inquiry — creators, partners, and press are always welcome." data-lang-ru="Связаться с нами можно через форму обратной связи на сайте или по email contact@ai-people.io. Мы открыты для креаторов, партнёров и СМИ.">You can reach us via the Contact form on the website or by email at contact@ai-people.io. We reply to every inquiry — creators, partners, and press are always welcome.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* FAQ Question 10 */}
       <section className="features">
@@ -892,46 +748,15 @@ export default function Page() {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is AI-People marketplace?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "AI-People is the world's first curated marketplace for hyperrealistic AI models and virtual influencers. We connect creators who generate AI content with businesses seeking cost-effective, high-quality visuals for marketing campaigns."
-                }
-              },
-              {
-                "@type": "Question", 
-                "name": "How much can creators earn on AI-People?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Successful creators on our platform are already earning between $5,000 to $25,000 per month by selling hyperrealistic AI models and virtual influencer content. Earnings depend on the quality of your content and marketing efforts."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What types of AI models can I buy and sell?",
-                "acceptedAnswer": {
-                  "@type": "Answer", 
-                  "text": "You can buy and sell hyperrealistic AI models, virtual influencers, digital humans, AI-generated artwork, and custom content packages. All content comes with full commercial licensing rights."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "When does AI-People launch?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "AI-People officially launches on November 1, 2025. Early subscribers get exclusive access, special features, and founding member privileges."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How do I get started as a creator?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Simply join our waiting list, create your creator profile, upload your hyperrealistic AI models, set your prices, and start earning from every sale. We provide marketing support and customer service."
-                }
-              }
+              {"@type":"Question","name":"What is AI-PEOPLE?","acceptedAnswer":{"@type":"Answer","text":"AI-PEOPLE is a next-generation marketplace for AI-generated models and digital humans. It connects creators who make AI models, photos, and videos — with businesses and individuals who want to use them for marketing, content, and branding."}},
+              {"@type":"Question","name":"Who can use AI-PEOPLE?","acceptedAnswer":{"@type":"Answer","text":"Anyone. AI-PEOPLE is designed for brands, creators, marketers, influencers, and individuals who want ready-to-use visual assets powered by AI. You can buy, sell, or customize AI models for your projects — from digital ads to personal branding."}},
+              {"@type":"Question","name":"Can I sell my own AI models here?","acceptedAnswer":{"@type":"Answer","text":"Yes! Creators can upload and monetize their AI-generated models, image packs, or videos. You keep full creative control and earn from every download or license purchase."}},
+              {"@type":"Question","name":"Is it legal to use AI-generated people in content?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. All AI models on AI-PEOPLE come with a clear usage license. We focus on ethical, copyright-safe, and commercial-ready AI content."}},
+              {"@type":"Question","name":"Can I order a custom AI model or campaign?","acceptedAnswer":{"@type":"Answer","text":"Yes — you can request custom model creation or order a full AI-driven ad campaign with a chosen model. Our platform connects you directly with creators for custom work."}},
+              {"@type":"Question","name":"Does AI-PEOPLE include 18+ content?","acceptedAnswer":{"@type":"Answer","text":"AI-PEOPLE operates under clear content rules. A separate restricted section (18+) will be available later for licensed and verified users, following all legal and ethical guidelines."}},
+              {"@type":"Question","name":"Is AI-PEOPLE free to use?","acceptedAnswer":{"@type":"Answer","text":"Registration is free. Access to AI model catalogs and premium content will be available through a membership plan, offering exclusive features and early access to new creators. Transparent pricing — no hidden fees."}},
+              {"@type":"Question","name":"Where is AI-PEOPLE based?","acceptedAnswer":{"@type":"Answer","text":"AI-PEOPLE operates globally, with headquarters in New York, USA. Our mission is to make AI-powered creativity accessible to everyone, everywhere."}},
+              {"@type":"Question","name":"How can I contact you?","acceptedAnswer":{"@type":"Answer","text":"You can reach us via the Contact form on the website or by email at contact@ai-people.io. We reply to every inquiry — creators, partners, and press are always welcome."}}
             ]
           })
         }}
