@@ -22,6 +22,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+      alternates: {
+        languages: {
+          ru: `${baseUrl}/ru/about`,
+        },
+      },
+    },
+    {
       url: `${baseUrl}/faq`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
@@ -66,6 +77,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: {
         languages: {
           en: baseUrl,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/ru/about`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/about`,
         },
       },
     },
