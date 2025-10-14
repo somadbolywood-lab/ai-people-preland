@@ -13,7 +13,7 @@ import { useLanguage } from "../../hooks/useLanguage";
 export default function CreatorLeadPage() {
   useHamburgerMenu();
   useLanguage({ forceLanguage: 'en' }); // Force English language
-  const { getTranslatedOptions } = useDropdownOptions();
+  const { getTranslatedOptions } = useDropdownOptions('en');
   
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);

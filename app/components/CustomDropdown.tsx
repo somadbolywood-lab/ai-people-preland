@@ -30,9 +30,11 @@ export default function CustomDropdown({
   // Debug logging
   useEffect(() => {
     console.log('[CustomDropdown] Options updated:', options.length, 'options');
-    console.log('[CustomDropdown] Current value:', value);
+    console.log('[CustomDropdown] Current value:', value, '(type:', typeof value, ')');
     console.log('[CustomDropdown] Selected option:', selectedOption);
-  }, [options, value, selectedOption]);
+    console.log('[CustomDropdown] Placeholder:', placeholder);
+    console.log('[CustomDropdown] Will show:', selectedOption ? selectedOption.label : placeholder);
+  }, [options, value, selectedOption, placeholder]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
