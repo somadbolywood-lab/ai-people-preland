@@ -3171,6 +3171,15 @@ a.visible-link {
     touch-action: manipulation;
 }
 
+/* Show full labels on desktop, short labels on mobile */
+.label-mobile { display: none; }
+.label-desktop { display: inline; }
+
+@media (max-width: 480px) {
+  .label-mobile { display: inline; }
+  .label-desktop { display: none; }
+}
+
 .menu-panel a svg {
     flex-shrink: 0;
     width: 18px;

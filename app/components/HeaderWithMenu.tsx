@@ -134,10 +134,22 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
         {/* Legal Policies Section */}
         <div className="menu-legal-section">
           <div className="policies-grid">
-            <a href={homeHref === "/ru" ? "/ru/legal/terms" : "/legal/terms"} data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">{homeHref === "/ru" ? "Условия обслуживания" : "Terms of Service"}</a>
-            <a href={homeHref === "/ru" ? "/ru/legal/privacy" : "/legal/privacy"} data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">{homeHref === "/ru" ? "Политика конфиденциальности" : "Privacy Policy"}</a>
-            <a href={homeHref === "/ru" ? "/ru/legal/cookies" : "/legal/cookies"} data-lang-en="Cookie Policy" data-lang-ru="Политика файлов cookie">{homeHref === "/ru" ? "Политика файлов cookie" : "Cookie Policy"}</a>
-            <a href={homeHref === "/ru" ? "/ru/legal/content-policy" : "/legal/content-policy"} data-lang-en="Content & 18+ Policy" data-lang-ru="Политика контента и 18+">{homeHref === "/ru" ? "Политика контента и 18+" : "Content & 18+ Policy"}</a>
+            <a href={homeHref === "/ru" ? "/ru/legal/terms" : "/legal/terms"} data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">
+              <span className="label-desktop">{homeHref === "/ru" ? "Условия обслуживания" : "Terms of Service"}</span>
+              <span className="label-mobile" data-lang-skip="true">{homeHref === "/ru" ? "Полит. обслуж." : "Terms of Service"}</span>
+            </a>
+            <a href={homeHref === "/ru" ? "/ru/legal/privacy" : "/legal/privacy"} data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">
+              <span className="label-desktop">{homeHref === "/ru" ? "Политика конфиденциальности" : "Privacy Policy"}</span>
+              <span className="label-mobile" data-lang-skip="true">{homeHref === "/ru" ? "Полит. конфиденц." : "Privacy Policy"}</span>
+            </a>
+            <a href={homeHref === "/ru" ? "/ru/legal/cookies" : "/legal/cookies"} data-lang-en="Cookie Policy" data-lang-ru="Политика файлов cookie">
+              <span className="label-desktop">{homeHref === "/ru" ? "Политика файлов cookie" : "Cookie Policy"}</span>
+              <span className="label-mobile" data-lang-skip="true">{homeHref === "/ru" ? "Полит. cookie" : "Cookie Policy"}</span>
+            </a>
+            <a href={homeHref === "/ru" ? "/ru/legal/content-policy" : "/legal/content-policy"} data-lang-en="Content & 18+ Policy" data-lang-ru="Политика контента и 18+">
+              <span className="label-desktop">{homeHref === "/ru" ? "Политика контента и 18+" : "Content & 18+ Policy"}</span>
+              <span className="label-mobile" data-lang-skip="true">{homeHref === "/ru" ? "Полит. контента" : "Content Policy"}</span>
+            </a>
           </div>
         </div>
       </div>

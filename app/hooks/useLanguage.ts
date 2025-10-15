@@ -43,24 +43,29 @@ export function useLanguage(options: UseLanguageOptions = {}) {
     elements.forEach(element => {
       const enText = element.getAttribute('data-lang-en');
       const ruText = element.getAttribute('data-lang-ru');
-      
       if (!enText || !ruText) return;
-      
-      // For menu items with SVG, update all span elements
-      const spanElements = element.querySelectorAll('span');
+
+      const textToSet = lang === 'ru' ? ruText : enText;
+
+      // Prefer updating only desktop labels to avoid overwriting mobile-short labels
+      const desktopLabels = element.querySelectorAll('span.label-desktop');
+      if (desktopLabels.length > 0) {
+        desktopLabels.forEach(span => {
+          if (span.getAttribute('data-lang-skip') === 'true') return;
+          span.textContent = textToSet;
+        });
+        return;
+      }
+
+      // Fallback: update spans that are not marked to skip
+      const spanElements = element.querySelectorAll('span:not([data-lang-skip])');
       if (spanElements.length > 0) {
-        const textToSet = lang === 'ru' ? ruText : enText;
         spanElements.forEach(span => {
-          // Only update spans that contain text (not icons or other elements)
-          if (span.textContent && span.textContent.trim() && !span.querySelector('svg')) {
-            span.textContent = textToSet;
-          }
+          if (span.querySelector('svg')) return;
+          span.textContent = textToSet;
         });
       } else {
-        // For elements without spans, set innerHTML to preserve structure
-        const textToSet = lang === 'ru' ? ruText : enText;
         if (textToSet) {
-          // Clear existing content and set new text
           while (element.firstChild) {
             element.removeChild(element.firstChild);
           }
