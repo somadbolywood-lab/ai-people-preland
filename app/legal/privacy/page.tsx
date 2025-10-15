@@ -2,12 +2,9 @@
 
 import Footer from "../../components/Footer";
 import { useLanguage } from "../../hooks/useLanguage";
-import { useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
 import Head from "next/head";
 import HreflangLinks from "../../components/HreflangLinks";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
-import { useLanguage } from "../../hooks/useLanguage";
 
 export default function PrivacyPolicyPage() {
   useLanguage({ forceLanguage: 'en' });

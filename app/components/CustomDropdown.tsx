@@ -12,6 +12,8 @@ interface CustomDropdownProps {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  placeholderEn?: string;
+  placeholderRu?: string;
   disabled?: boolean;
 }
 
@@ -20,6 +22,8 @@ export default function CustomDropdown({
   value, 
   onChange, 
   placeholder = "Select an option",
+  placeholderEn,
+  placeholderRu,
   disabled = false 
 }: CustomDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
