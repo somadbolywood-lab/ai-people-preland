@@ -3236,6 +3236,8 @@ a.visible-link {
     gap: 0; /* use .policies-grid gap */
     margin-top: 12px;
     padding-top: 12px;
+    padding-left: 7px;
+    padding-right: 7px;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -3247,24 +3249,6 @@ a.visible-link {
     border-radius: 4px;
     transition: all 0.2s ease;
     white-space: nowrap; /* no wrapping as requested */
-}
-
-/* Desktop-only: increase side paddings by +5px each (unified across pages) */
-@media (min-width: 481px) {
-  .menu-legal-section a {
-    padding: 10px 17px;
-  }
-  
-  /* Further increase by +3px each, except on About pages */
-  .menu-legal-section a {
-    padding: 10px 23px;
-  }
-  
-  /* Reset to 17px for About pages only */
-  body:has([href*="/about"]) .menu-legal-section a,
-  .about-page .menu-legal-section a {
-    padding: 10px 17px;
-  }
 }
 
 .menu-legal-section a:hover {
