@@ -1,8 +1,11 @@
 "use client";
 
 import dynamic from 'next/dynamic';
+import { useLanguageContext } from '../contexts/LanguageContext';
 
 const FooterContent = dynamic(() => Promise.resolve(function FooterContent() {
+  const { currentLanguage } = useLanguageContext();
+  const localePrefix = currentLanguage === 'ru' ? '/ru' : '';
   return (
     <footer className="foot">
       <div className="foot-social">
@@ -38,12 +41,12 @@ const FooterContent = dynamic(() => Promise.resolve(function FooterContent() {
           </svg>
         </a>
       </div>
-      <div className="footer-legal">
-        <a href="/legal/terms" data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">Terms of Service</a> · 
-        <a href="/legal/privacy" data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">Privacy Policy</a> · 
-        <a href="/legal/cookies" data-lang-en="Cookie Policy" data-lang-ru="Политика файлов cookie">Cookie Policy</a> · 
-        <a href="/legal/content-policy" data-lang-en="Content & 18+ Policy" data-lang-ru="Политика контента и 18+">Content & 18+ Policy</a>
-      </div>
+            <div className="footer-legal">
+              <a href={`${localePrefix}/legal/terms`} data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">Terms of Service</a> ·
+              <a href={`${localePrefix}/legal/privacy`} data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">Privacy Policy</a> ·
+              <a href={`${localePrefix}/legal/cookies`} data-lang-en="Cookie Policy" data-lang-ru="Политика файлов cookie">Cookie Policy</a> ·
+              <a href={`${localePrefix}/legal/content-policy`} data-lang-en="Content & 18+ Policy" data-lang-ru="Политика контента и 18+">Content & 18+ Policy</a>
+            </div>
       <p className="footer-rights" data-lang-en="All rights reserved. Unauthorized reproduction or distribution of content is prohibited." data-lang-ru="Все права защищены. Несанкционированное воспроизведение или распространение контента запрещено.">
         All rights reserved. Unauthorized reproduction or distribution of content is prohibited.
       </p>
