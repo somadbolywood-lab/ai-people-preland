@@ -352,8 +352,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(countryOptions)}
                     value={formData.country}
                     onChange={(value) => setFormData(prev => ({ ...prev, country: value as string }))}
-                    placeholderEn="Select your country"
-                    placeholderRu="Выберите вашу страну"
+                    placeholder="Select your country"
                   />
                 </div>
                 
@@ -383,8 +382,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(aiExperienceOptions)}
                     value={formData.aiExperience}
                     onChange={(value) => setFormData(prev => ({ ...prev, aiExperience: value as string }))}
-                    placeholderEn="Select your experience level"
-                    placeholderRu="Выберите ваш уровень опыта"
+                    placeholder="Select your experience level"
                   />
                 </div>
                 
@@ -394,8 +392,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(specializationOptions)}
                     value={formData.specialization}
                     onChange={(value) => setFormData(prev => ({ ...prev, specialization: value as string }))}
-                    placeholderEn="What do you create?"
-                    placeholderRu="Что вы создаете?"
+                    placeholder="What do you create?"
                   />
                 </div>
                 
@@ -522,8 +519,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(incomeOptions)}
                     value={formData.expectedMonthlyIncome}
                     onChange={(value) => setFormData(prev => ({ ...prev, expectedMonthlyIncome: value as string }))}
-                    placeholderEn="What are your income goals?"
-                    placeholderRu="Какие у вас цели по доходу?"
+                    placeholder="What are your income goals?"
                   />
                 </div>
                 
@@ -533,8 +529,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(readyContentOptions)}
                     value={formData.readyContentCount}
                     onChange={(value) => setFormData(prev => ({ ...prev, readyContentCount: value as string }))}
-                    placeholderEn="How many sets ready to upload?"
-                    placeholderRu="Сколько наборов готово к загрузке?"
+                    placeholder="How many sets ready to upload?"
                   />
                 </div>
                 
@@ -544,8 +539,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(productionOptions)}
                     value={formData.monthlyProductionCapacity}
                     onChange={(value) => setFormData(prev => ({ ...prev, monthlyProductionCapacity: value as string }))}
-                    placeholderEn="How many new sets can you create per month?"
-                    placeholderRu="Сколько новых наборов вы можете создать в месяц?"
+                    placeholder="How many new sets can you create per month?"
                   />
                 </div>
                 
@@ -555,8 +549,7 @@ export default function CreatorLeadPage() {
                     options={getTranslatedOptions(sourceOptions)}
                     value={formData.source}
                     onChange={(value) => setFormData(prev => ({ ...prev, source: value as string }))}
-                    placeholderEn="Select source"
-                    placeholderRu="Выберите источник"
+                    placeholder="Select source"
                   />
                 </div>
                 <div className="wizard-actions">
