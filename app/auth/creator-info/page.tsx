@@ -44,7 +44,7 @@ export default function CreatorInfoPage() {
               You bring the art — we bring the audience. Our platform connects skilled AI creators with global buyers: agencies, brands, influencers, and entrepreneurs seeking high-quality AI content for marketing, social media, and digital storytelling. You focus on creation. We handle the rest — marketing, promotion, and guaranteed crypto payments.
             </p>
             
-            <h3 style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="What You Get" data-lang-ru="Что вы получаете">What You Get</h3>
+            <h3 className="gradient-text" style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="What You Get" data-lang-ru="Что вы получаете">What You Get</h3>
             <div className="role-benefits" style={{display: 'grid', gap: '1rem', marginBottom: '2rem'}}>
               <div className="benefit-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -90,7 +90,7 @@ export default function CreatorInfoPage() {
               </div>
             </div>
 
-            <h3 style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="Why It's Profitable for You" data-lang-ru="Почему это прибыльно для вас">Why It's Profitable for You</h3>
+            <h3 className="gradient-text" style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="Why It's Profitable for You" data-lang-ru="Почему это прибыльно для вас">Why It's Profitable for You</h3>
             <ul style={{marginLeft: '1.5rem', marginBottom: '2rem', lineHeight: '1.8'}}>
               <li data-lang-en="Monetize without limits — upload your AI content once, and earn repeatedly from every sale." data-lang-ru="Монетизируйте без ограничений — загрузите ваш AI-контент один раз и зарабатывайте повторно с каждой продажи.">Monetize without limits — upload your AI content once, and earn repeatedly from every sale.</li>
               <li data-lang-en="Work from anywhere — all payments are in crypto, no banking restrictions or geo limits." data-lang-ru="Работайте из любой точки мира — все платежи в криптовалюте, никаких банковских ограничений или географических лимитов.">Work from anywhere — all payments are in crypto, no banking restrictions or geo limits.</li>
@@ -100,7 +100,7 @@ export default function CreatorInfoPage() {
               <li data-lang-en="Build a personal brand — become a recognized AI creator with a global audience." data-lang-ru="Создавайте личный бренд — станьте признанным AI-креатором с глобальной аудиторией.">Build a personal brand — become a recognized AI creator with a global audience.</li>
             </ul>
 
-            <h3 style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="Your Role as a Creator" data-lang-ru="Ваша роль как креатора">Your Role as a Creator</h3>
+            <h3 className="gradient-text" style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="Your Role as a Creator" data-lang-ru="Ваша роль как креатора">Your Role as a Creator</h3>
             <ul style={{marginLeft: '1.5rem', marginBottom: '2rem', lineHeight: '1.8'}}>
               <li data-lang-en="Produce original, high-quality AI-generated content — models, photos, or videos that meet platform standards." data-lang-ru="Создавайте оригинальный, высококачественный AI-контент — модели, фото или видео, соответствующие стандартам платформы.">Produce original, high-quality AI-generated content — models, photos, or videos that meet platform standards.</li>
               <li data-lang-en="Deliver custom orders on time and per client specifications." data-lang-ru="Выполняйте индивидуальные заказы в срок и согласно требованиям клиента.">Deliver custom orders on time and per client specifications.</li>
@@ -111,7 +111,7 @@ export default function CreatorInfoPage() {
             
             <p className="role-cta-text" style={{fontSize: '1.1rem', marginBottom: '2rem'}} data-lang-en="Whether you're an AI artist, designer, or digital visionary — this is your space to turn creativity into income and talent into recognition. AI People empowers you to work independently, earn globally, and grow as part of a pioneering creator community." data-lang-ru="Будь вы AI-художником, дизайнером или цифровым визионером — это ваше пространство для превращения творчества в доход, а таланта в признание. AI People дает вам возможность работать независимо, зарабатывать глобально и развиваться как часть пионерского сообщества креаторов.">Whether you're an AI artist, designer, or digital visionary — this is your space to turn creativity into income and talent into recognition. AI People empowers you to work independently, earn globally, and grow as part of a pioneering creator community.</p>
 
-            <h3 style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="Creator Commitments" data-lang-ru="Обязательства креатора">Creator Commitments</h3>
+            <h3 className="gradient-text" style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="Creator Commitments" data-lang-ru="Обязательства креатора">Creator Commitments</h3>
             <ul style={{marginLeft: '1.5rem', marginBottom: '2rem', lineHeight: '1.8'}}>
               <li data-lang-en="Create only original and compliant AI content." data-lang-ru="Создавайте только оригинальный и соответствующий требованиям AI-контент.">Create only original and compliant AI content.</li>
               <li data-lang-en="Respect all intellectual property and copyright laws." data-lang-ru="Уважайте все права интеллектуальной собственности и законы об авторском праве.">Respect all intellectual property and copyright laws.</li>
@@ -122,7 +122,7 @@ export default function CreatorInfoPage() {
               <li data-lang-en="Maintain a portfolio that reflects ongoing quality and improvement." data-lang-ru="Поддерживайте портфолио, отражающее постоянное качество и улучшения.">Maintain a portfolio that reflects ongoing quality and improvement.</li>
             </ul>
 
-            <h3 style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="Your Future Starts Here" data-lang-ru="Ваше будущее начинается здесь">Your Future Starts Here</h3>
+            <h3 className="gradient-text" style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="Your Future Starts Here" data-lang-ru="Ваше будущее начинается здесь">Your Future Starts Here</h3>
             <p className="role-cta-text" style={{fontSize: '1.1rem', marginBottom: '2rem'}} data-lang-en="🌍 Join the Waiting List Now. Be among the first creators to get early access, earn crypto from your AI models, and build your name in the world's fastest-growing digital market." data-lang-ru="🌍 Присоединяйтесь к списку ожидания прямо сейчас. Станьте одним из первых креаторов, получивших ранний доступ, зарабатывайте криптовалюту на ваших AI-моделях и создавайте свое имя на самом быстрорастущем цифровом рынке мира.">🌍 Join the Waiting List Now. Be among the first creators to get early access, earn crypto from your AI models, and build your name in the world's fastest-growing digital market.</p>
 
             <div className="call-to-action" style={{textAlign: 'center', marginTop: '3rem'}}>
