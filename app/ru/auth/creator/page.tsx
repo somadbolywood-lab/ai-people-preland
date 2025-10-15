@@ -635,9 +635,9 @@ export default function CreatorLeadPage() {
                   />
                   <label htmlFor="creatorTerms">
                     <span data-lang-en="I agree to the " data-lang-ru="Я согласен с ">Я согласен с </span>
-                    <a href="/ru/legal/terms" className="link" data-lang-en="Terms of Service" data-lang-ru="Условиями использования">Условиями использования</a>
+                    <a href="/legal/terms" className="link" data-lang-en="Terms of Service" data-lang-ru="Условиями использования">Условиями использования</a>
                     <span data-lang-en=" and " data-lang-ru=" и "> и </span>
-                    <a href="/ru/legal/privacy" className="link" data-lang-en="Privacy Policy" data-lang-ru="Политикой конфиденциальности">Политикой конфиденциальности</a>
+                    <a href="/legal/privacy" className="link" data-lang-en="Privacy Policy" data-lang-ru="Политикой конфиденциальности">Политикой конфиденциальности</a>
                   </label>
                 </div>
                 
