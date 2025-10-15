@@ -3249,6 +3249,13 @@ a.visible-link {
     white-space: nowrap; /* no wrapping as requested */
 }
 
+/* Desktop-only: increase side paddings by +5px each (unified across pages) */
+@media (min-width: 481px) {
+  .menu-legal-section a {
+    padding: 10px 17px;
+  }
+}
+
 .menu-legal-section a:hover {
     color: var(--accent);
     background: rgba(139, 92, 246, 0.1);
