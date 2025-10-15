@@ -137,13 +137,13 @@ export default function RoleSelectionPage() {
               </svg>
             </div>
             <div className="notice-content">
-              <h4 data-lang-en="Legal Compliance Notice" data-lang-ru="Правовое уведомление">Правовое уведомление</h4>
+              <h3 className="gradient-text" data-lang-en="Legal Compliance Notice" data-lang-ru="Правовое уведомление">Правовое уведомление</h3>
               <p data-lang-en="All AI-generated content on the AI-People marketplace must be used exclusively for legal and legitimate purposes. AI content creators and buyers bear full responsibility for ensuring that the use or creation of hyperrealistic AI models complies with all applicable laws, regulations, and ethical standards in their jurisdiction." data-lang-ru="Весь AI-сгенерированный контент на маркетплейсе AI-People должен использоваться исключительно в законных и легитимных целях. AI-креаторы контента и покупатели несут полную ответственность за то, чтобы использование или создание гиперреалистичных AI-моделей соответствовало всем применимым законам, нормам и этическим стандартам их юрисдикции.">
                 <strong>Весь AI-сгенерированный контент на маркетплейсе AI-People</strong> должен использоваться исключительно в законных и легитимных целях. AI-креаторы контента и покупатели несут полную ответственность за то, чтобы использование или создание гиперреалистичных AI-моделей соответствовало всем применимым законам, нормам и этическим стандартам их юрисдикции.
               </p>
               
               <div className="legal-list">
-                <h5 data-lang-en="Required Compliance Areas:" data-lang-ru="Обязательные области соблюдения:"><strong>Обязательные области соблюдения:</strong></h5>
+                <h4 className="gradient-text" data-lang-en="Required Compliance Areas:" data-lang-ru="Обязательные области соблюдения:">Обязательные области соблюдения:</h4>
                 <ul>
                   <li data-lang-en="Copyright & intellectual property rights for AI-generated models" data-lang-ru="Авторские и интеллектуальные права на AI-сгенерированные модели"><strong>Авторские и интеллектуальные права</strong> на AI-сгенерированные модели</li>
                   <li data-lang-en="Data protection standards (GDPR, CCPA) and privacy requirements" data-lang-ru="Стандарты защиты данных (GDPR, CCPA) и требования конфиденциальности"><strong>Стандарты защиты данных</strong> (GDPR, CCPA) и требования конфиденциальности</li>
@@ -153,13 +153,13 @@ export default function RoleSelectionPage() {
                 </ul>
               </div>
 
-              <h5 data-lang-en="AI-People Marketplace Platform Role:" data-lang-ru="Роль маркетплейс-платформы AI-People:"><strong>Роль маркетплейс-платформы AI-People:</strong></h5>
+              <h4 className="gradient-text" data-lang-en="AI-People Marketplace Platform Role:" data-lang-ru="Роль маркетплейс-платформы AI-People:">Роль маркетплейс-платформы AI-People:</h4>
               <p data-lang-en="AI-People acts exclusively as an intermediary marketplace platform and transaction guarantor between AI content creators and buyers." data-lang-ru="AI-People выступает исключительно как посредническая маркетплейс-платформа и гарант сделок между AI-креаторами контента и покупателями.">
                 <strong>AI-People выступает исключительно как посредническая маркетплейс-платформа</strong> и гарант сделок между AI-креаторами контента и покупателями.
               </p>
               
               <div className="legal-list">
-                <h5 data-lang-en="Platform Limitations:" data-lang-ru="Ограничения платформы:"><strong>Ограничения платформы:</strong></h5>
+                <h4 className="gradient-text" data-lang-en="Platform Limitations:" data-lang-ru="Ограничения платформы:">Ограничения платформы:</h4>
                 <ul>
                   <li data-lang-en="Does not bear responsibility for legal compliance or consequences of AI content use" data-lang-ru="Не несёт ответственности за юридическое соответствие или последствия использования AI-контента">Не несёт ответственности за юридическое соответствие или последствия использования AI-контента</li>
                   <li data-lang-en="Does not control further use of purchased AI models outside the marketplace" data-lang-ru="Не контролирует дальнейшее использование купленных AI-моделей за пределами маркетплейса">Не контролирует дальнейшее использование купленных AI-моделей за пределами маркетплейса</li>
