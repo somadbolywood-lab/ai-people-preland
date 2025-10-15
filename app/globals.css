@@ -10045,12 +10045,12 @@ a.visible-link {
 }
 
 /* ========================================
-   UNIFIED H1 STYLES - UNIVERSAL HEADINGS
+   УНИФИЦИРОВАННЫЕ ЗАГОЛОВКИ H1
    ======================================== */
 
-/* Base unified H1 styles for all pages */
+/* Базовые стили для унифицированного H1 */
 .unified-h1 {
-  font-size: clamp(32px, 6vw, 48px);
+  font-size: clamp(36px, 7vw, 56px);
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 1rem 0;
@@ -10064,127 +10064,66 @@ a.visible-link {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: inherit;
+  font-weight: 800;
 }
 
-/* Special styles for home page - larger for impact */
+/* Специальные стили для главной страницы */
 .home-page .unified-h1 {
-  font-size: clamp(40px, 8vw, 64px);
+  font-size: clamp(48px, 9vw, 72px);
 }
 
-/* Legal pages - centered and slightly different styling */
-.legal-page .unified-h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-/* Auth pages - specific styling for registration forms */
-.auth-page .unified-h1 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-/* Blog pages - specific styling for blog content */
-.blog-page .unified-h1 {
-  margin-bottom: 1.5rem;
-}
-
-/* Article pages - specific styling for individual articles */
-.article-page .unified-h1 {
-  margin-bottom: 2rem;
-  line-height: 1.1;
-}
-
-/* Russian language optimization */
+/* Оптимизация для русского языка */
 .unified-h1 [data-lang-ru] {
   line-height: 1.3;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
-/* Responsive breakpoints for unified H1 */
-
-/* Tablet */
+/* Адаптивность для планшета */
 @media (max-width: 768px) {
   .unified-h1 {
+    font-size: clamp(32px, 6vw, 48px);
+    margin: 0 0 0.75rem 0;
+  }
+  
+  .home-page .unified-h1 {
+    font-size: clamp(40px, 8vw, 64px);
+  }
+  
+  .unified-h1 [data-lang-ru] {
+    line-height: 1.25;
+  }
+}
+
+/* Адаптивность для мобильного */
+@media (max-width: 480px) {
+  .unified-h1 {
     font-size: clamp(28px, 5.5vw, 40px);
-    margin-bottom: 0.8rem;
+    margin: 0 0 0.5rem 0;
   }
   
   .home-page .unified-h1 {
     font-size: clamp(36px, 7vw, 56px);
   }
   
-  .legal-page .unified-h1 {
-    margin-bottom: 1.2rem;
-  }
-  
-  .auth-page .unified-h1 {
-    margin-bottom: 0.8rem;
-  }
-  
-  .blog-page .unified-h1 {
-    margin-bottom: 1.2rem;
-  }
-  
-  .article-page .unified-h1 {
-    margin-bottom: 1.5rem;
+  .unified-h1 [data-lang-ru] {
+    line-height: 1.2;
   }
 }
 
-/* Mobile */
-@media (max-width: 480px) {
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 320px) {
   .unified-h1 {
     font-size: clamp(24px, 5vw, 32px);
-    margin-bottom: 0.6rem;
+    margin: 0 0 0.5rem 0;
   }
   
   .home-page .unified-h1 {
     font-size: clamp(32px, 6vw, 48px);
   }
   
-  .legal-page .unified-h1 {
-    margin-bottom: 1rem;
-  }
-  
-  .auth-page .unified-h1 {
-    margin-bottom: 0.6rem;
-  }
-  
-  .blog-page .unified-h1 {
-    margin-bottom: 1rem;
-  }
-  
-  .article-page .unified-h1 {
-    margin-bottom: 1.2rem;
-  }
-}
-
-/* Very small screens */
-@media (max-width: 320px) {
-  .unified-h1 {
-    font-size: clamp(20px, 4.5vw, 28px);
-    margin-bottom: 0.5rem;
-  }
-  
-  .home-page .unified-h1 {
-    font-size: clamp(28px, 5.5vw, 40px);
-  }
-  
-  .legal-page .unified-h1 {
-    margin-bottom: 0.8rem;
-  }
-  
-  .auth-page .unified-h1 {
-    margin-bottom: 0.5rem;
-  }
-  
-  .blog-page .unified-h1 {
-    margin-bottom: 0.8rem;
-  }
-  
-  .article-page .unified-h1 {
-    margin-bottom: 1rem;
+  .unified-h1 [data-lang-ru] {
+    line-height: 1.15;
   }
 }
 
