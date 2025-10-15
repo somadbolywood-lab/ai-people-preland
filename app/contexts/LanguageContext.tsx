@@ -58,14 +58,16 @@ export function LanguageProvider({
       
       if (!enText || !ruText) return;
       
-      // For menu items with SVG, only update the span text
-      const spanElement = element.querySelector('span');
-      if (spanElement) {
-        if (lang === 'ru' && ruText) {
-          spanElement.textContent = ruText;
-        } else if (lang === 'en' && enText) {
-          spanElement.textContent = enText;
-        }
+      // For menu items with SVG, update all span elements
+      const spanElements = element.querySelectorAll('span');
+      if (spanElements.length > 0) {
+        const textToSet = lang === 'ru' ? ruText : enText;
+        spanElements.forEach(span => {
+          // Only update spans that contain text (not icons or other elements)
+          if (span.textContent && span.textContent.trim() && !span.querySelector('svg')) {
+            span.textContent = textToSet;
+          }
+        });
       } else {
         // For elements without spans, set innerHTML to preserve structure
         const textToSet = lang === 'ru' ? ruText : enText;

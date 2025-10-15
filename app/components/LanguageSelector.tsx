@@ -17,20 +17,22 @@ export default function LanguageSelector() {
     // Persist selection
     try { localStorage.setItem('selectedLanguage', lang); } catch {}
 
-    // Route to locale-specific path if needed
-    const pathname = window.location?.pathname || '/';
-    if (lang === 'ru' && !pathname.startsWith('/ru')) {
-      const target = pathname === '/' ? '/ru' : `/ru${pathname}`;
-      router.push(target);
-    } else if (lang === 'en' && pathname.startsWith('/ru')) {
-      const target = pathname.replace(/^\/ru/, '') || '/';
-      router.push(target);
-    }
-
-    // Close menu
+    // Close menu first
     if (menuRef.current) {
       menuRef.current.classList.remove('show');
     }
+
+    // Route to locale-specific path if needed (with small delay to allow DOM update)
+    const pathname = window.location?.pathname || '/';
+    setTimeout(() => {
+      if (lang === 'ru' && !pathname.startsWith('/ru')) {
+        const target = pathname === '/' ? '/ru' : `/ru${pathname}`;
+        router.push(target);
+      } else if (lang === 'en' && pathname.startsWith('/ru')) {
+        const target = pathname.replace(/^\/ru/, '') || '/';
+        router.push(target);
+      }
+    }, 150); // Small delay to allow DOM to update
   };
 
   useEffect(() => {

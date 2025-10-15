@@ -45,7 +45,7 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
             <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
             <polyline points="9,22 9,12 15,12 15,22"/>
           </svg>
-          <span></span>
+          <span>Home</span>
         </a>
         <a href={homeHref === "/ru" ? "/ru/about" : "/about"} role="menuitem" data-lang-en="About" data-lang-ru="О нас">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -53,14 +53,14 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
             <line x1="12" y1="8" x2="12" y2="12"/>
             <circle cx="12" cy="16" r="1"/>
           </svg>
-          <span></span>
+          <span>About</span>
         </a>
         <a href={homeHref === "/ru" ? "/ru/faq" : "/faq"} role="menuitem" data-lang-en="FAQ" data-lang-ru="FAQ">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="12" cy="12" r="10"/>
             <path d="m9 12 2 2 4-4"/>
           </svg>
-          <span></span>
+          <span>FAQ</span>
         </a>
         <a href={homeHref === "/ru" ? "/ru/blog" : "/blog"} role="menuitem" data-lang-en="Blog" data-lang-ru="Блог">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -70,7 +70,7 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
             <line x1="16" y1="17" x2="8" y2="17"/>
             <line x1="10" y1="9" x2="8" y2="9"/>
           </svg>
-          <span></span>
+          <span>Blog</span>
         </a>
 
         <a href={homeHref === "/ru" ? "/ru/auth/role" : "/auth/role"} role="menuitem" data-lang-en="Get Started" data-lang-ru="Начать">
@@ -80,7 +80,7 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
             <line x1="19" y1="8" x2="19" y2="14"/>
             <line x1="22" y1="11" x2="16" y2="11"/>
           </svg>
-          <span></span>
+          <span>Get Started</span>
         </a>
 
         {/* Coming Soon Section */}
@@ -92,8 +92,8 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
             <circle cx="12" cy="7" r="4"/>
             <path d="m15 14 3 3 3-3"/>
           </svg>
-          <span></span>
-          <span className="soon-label"></span>
+          <span data-lang-en="Creator Admin Panel" data-lang-ru="Админ. панель Креатора">Creator Admin Panel</span>
+          <span className="soon-label" data-lang-en="Soon" data-lang-ru="Скоро">Soon</span>
         </a>
 
         <a href="#" role="menuitem" aria-disabled="true" data-lang-en="Buyer Admin Panel" data-lang-ru="Админ. панель Покупателя">
@@ -106,8 +106,8 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
             <path d="M9 15v.01"/>
             <path d="M9 18v.01"/>
           </svg>
-          <span></span>
-          <span className="soon-label"></span>
+          <span data-lang-en="Buyer Admin Panel" data-lang-ru="Админ. панель Покупателя">Buyer Admin Panel</span>
+          <span className="soon-label" data-lang-en="Soon" data-lang-ru="Скоро">Soon</span>
         </a>
 
         <a href="#" role="menuitem" aria-disabled="true" data-lang-en="Catalog" data-lang-ru="Каталог">
@@ -118,8 +118,8 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
             <path d="M8 11h8"/>
             <path d="M8 15h4"/>
           </svg>
-          <span></span>
-          <span className="soon-label"></span>
+          <span data-lang-en="Catalog" data-lang-ru="Каталог">Catalog</span>
+          <span className="soon-label" data-lang-en="Soon" data-lang-ru="Скоро">Soon</span>
         </a>
 
         <a href="#" role="menuitem" aria-disabled="true" data-lang-en="Prices" data-lang-ru="Цены">
@@ -127,17 +127,17 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
             <line x1="12" y1="1" x2="12" y2="23"/>
             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
           </svg>
-          <span></span>
-          <span className="soon-label"></span>
+          <span data-lang-en="Prices" data-lang-ru="Цены">Prices</span>
+          <span className="soon-label" data-lang-en="Soon" data-lang-ru="Скоро">Soon</span>
         </a>
 
         {/* Legal Policies Section */}
         <div className="menu-legal-section">
           <div className="policies-grid">
-            <a href="/legal/terms" data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">Terms of Service</a>
-            <a href="/legal/privacy" data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">Privacy Policy</a>
-            <a href="/legal/cookies" data-lang-en="Cookie Policy" data-lang-ru="Политика файлов cookie">Cookie Policy</a>
-            <a href="/legal/content-policy" data-lang-en="Content & 18+ Policy" data-lang-ru="Политика контента и 18+">Content & 18+ Policy</a>
+            <a href={homeHref === "/ru" ? "/ru/legal/terms" : "/legal/terms"} data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">Terms of Service</a>
+            <a href={homeHref === "/ru" ? "/ru/legal/privacy" : "/legal/privacy"} data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">Privacy Policy</a>
+            <a href={homeHref === "/ru" ? "/ru/legal/cookies" : "/legal/cookies"} data-lang-en="Cookie Policy" data-lang-ru="Политика файлов cookie">Cookie Policy</a>
+            <a href={homeHref === "/ru" ? "/ru/legal/content-policy" : "/legal/content-policy"} data-lang-en="Content & 18+ Policy" data-lang-ru="Политика контента и 18+">Content & 18+ Policy</a>
           </div>
         </div>
       </div>

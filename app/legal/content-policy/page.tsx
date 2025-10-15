@@ -1,19 +1,14 @@
 "use client";
 
-import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
-import Footer from "../../components/Footer";
-import ThemeToggle from "../../components/ThemeToggle";
-import LanguageSelector from "../../components/LanguageSelector";
-import Image from "next/image";
 import Head from "next/head";
 import HreflangLinks from "../../components/HreflangLinks";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
+import Footer from "../../components/Footer";
 import { useLanguage } from "../../hooks/useLanguage";
 import { useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
 export default function ContentPolicyPage() {
-  useHamburgerMenu();
   const { currentLanguage } = useLanguage();
   const router = useRouter();
   const pathname = usePathname();

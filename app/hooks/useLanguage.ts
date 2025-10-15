@@ -46,14 +46,16 @@ export function useLanguage(options: UseLanguageOptions = {}) {
       
       if (!enText || !ruText) return;
       
-      // For menu items with SVG, update the first span text (main text)
-      const spanElement = element.querySelector('span:not(.soon-label)');
-      if (spanElement) {
-        if (lang === 'ru' && ruText) {
-          spanElement.textContent = ruText;
-        } else if (lang === 'en' && enText) {
-          spanElement.textContent = enText;
-        }
+      // For menu items with SVG, update all span elements
+      const spanElements = element.querySelectorAll('span');
+      if (spanElements.length > 0) {
+        const textToSet = lang === 'ru' ? ruText : enText;
+        spanElements.forEach(span => {
+          // Only update spans that contain text (not icons or other elements)
+          if (span.textContent && span.textContent.trim() && !span.querySelector('svg')) {
+            span.textContent = textToSet;
+          }
+        });
       } else {
         // For elements without spans, set innerHTML to preserve structure
         const textToSet = lang === 'ru' ? ruText : enText;
@@ -64,16 +66,6 @@ export function useLanguage(options: UseLanguageOptions = {}) {
           }
           element.appendChild(document.createTextNode(textToSet));
         }
-      }
-    });
-    
-    // Update "Soon" labels in menu items
-    const soonLabels = document.querySelectorAll('.soon-label');
-    soonLabels.forEach(label => {
-      if (lang === 'ru') {
-        label.textContent = 'Скоро';
-      } else {
-        label.textContent = 'Soon';
       }
     });
     
