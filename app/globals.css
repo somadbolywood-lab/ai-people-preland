@@ -3257,7 +3257,7 @@ a.visible-link {
   
   /* Further increase by +3px each, except on About pages */
   .menu-legal-section a {
-    padding: 10px 20px;
+    padding: 10px 23px;
   }
   
   /* Reset to 17px for About pages only */
