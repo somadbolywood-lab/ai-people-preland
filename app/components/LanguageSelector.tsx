@@ -11,9 +11,22 @@ export default function LanguageSelector() {
   const { currentLanguage, switchLanguage } = useLanguageContext();
 
   const handleLanguageSwitch = (lang: 'en' | 'ru') => {
-    // Use the unified language switching function
+    // Switch language globally
     switchLanguage(lang);
-    
+
+    // Persist selection
+    try { localStorage.setItem('selectedLanguage', lang); } catch {}
+
+    // Route to locale-specific path if needed
+    const pathname = window.location?.pathname || '/';
+    if (lang === 'ru' && !pathname.startsWith('/ru')) {
+      const target = pathname === '/' ? '/ru' : `/ru${pathname}`;
+      router.push(target);
+    } else if (lang === 'en' && pathname.startsWith('/ru')) {
+      const target = pathname.replace(/^\/ru/, '') || '/';
+      router.push(target);
+    }
+
     // Close menu
     if (menuRef.current) {
       menuRef.current.classList.remove('show');

@@ -31,7 +31,13 @@ export function LanguageProvider({
       console.log('[LanguageProvider] Server-side, using defaultLanguage:', defaultLanguage);
       return defaultLanguage;
     }
-    // Always prefer defaultLanguage over localStorage to ensure English is primary
+    // Prefer URL prefix (/ru) or stored selection; fallback to defaultLanguage
+    try {
+      const pathname = window.location?.pathname || '/';
+      if (pathname.startsWith('/ru')) return 'ru';
+      const stored = localStorage.getItem('selectedLanguage') as 'en' | 'ru' | null;
+      if (stored === 'en' || stored === 'ru') return stored;
+    } catch {}
     console.log('[LanguageProvider] Client-side, using defaultLanguage:', defaultLanguage);
     return defaultLanguage;
   });
@@ -40,8 +46,9 @@ export function LanguageProvider({
     if (typeof window === 'undefined') return;
     if (lang === currentLanguage) return;
 
-    // Update state (don't update localStorage to avoid global conflicts)
+    // Update state and persist selection
     setCurrentLanguage(lang);
+    try { localStorage.setItem('selectedLanguage', lang); } catch {}
 
     // Apply language to DOM elements
     const elements = document.querySelectorAll('[data-lang-en], [data-lang-ru]');
@@ -104,8 +111,16 @@ export function LanguageProvider({
 
     // Apply language with a small delay to ensure DOM is ready
     const timer = setTimeout(() => {
+      // Determine initial language from URL or storage
+      let currentLang: 'en' | 'ru' = forceLanguage || defaultLanguage;
+      try {
+        const pathname = window.location?.pathname || '/';
+        if (pathname.startsWith('/ru')) currentLang = 'ru';
+        const stored = localStorage.getItem('selectedLanguage') as 'en' | 'ru' | null;
+        if (stored === 'en' || stored === 'ru') currentLang = stored;
+      } catch {}
+
       // Only apply language if it's different from what's already applied
-      const currentLang = forceLanguage || defaultLanguage;
       if (currentLang !== currentLanguage) {
         switchLanguage(currentLang);
       }
