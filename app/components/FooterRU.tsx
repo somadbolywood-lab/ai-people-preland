@@ -55,3 +55,4 @@ const FooterContent = dynamic(() => Promise.resolve(function FooterContent() {
 export default function FooterRU() {
   return <FooterContent />;
 }
+
