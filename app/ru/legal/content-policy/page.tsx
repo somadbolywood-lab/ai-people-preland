@@ -13,19 +13,7 @@ import HeaderWithMenu from "../../../components/HeaderWithMenu";
 import { useLanguage } from "../../../hooks/useLanguage";
 
 export default function ContentPolicyRuPage() {
-  // Initialize language from global context/URL (no force)
-  const { currentLanguage } = useLanguage();
-  const router = useRouter();
-  const pathname = usePathname();
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (currentLanguage === 'ru' && !pathname.startsWith('/ru')) {
-      router.push(`/ru${pathname}`);
-    } else if (currentLanguage === 'en' && pathname.startsWith('/ru')) {
-      router.push(pathname.substring(3) || '/');
-    }
-  }, [currentLanguage, pathname, router]);
+  useLanguage({ forceLanguage: 'ru' });
 
   return (
     <>
