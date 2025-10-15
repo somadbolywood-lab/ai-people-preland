@@ -116,7 +116,7 @@ export default function RoleSelectionPage() {
       <main className="auth-main">
         <div className="auth-container">
           <div className="auth-header">
-            <h1 className="title">
+            <h1 className="unified-h1">
               <span className="gradient-text" data-lang-en="Join AI-People" data-lang-ru="Присоединяйтесь к AI-People">Join AI-People</span>
             </h1>
             <h2 className="hero-subtitle" data-lang-en="Choose your role and start your journey in the world of hyperrealistic AI models" data-lang-ru="Выберите свою роль и начните свой путь в мире гиперреалистичных AI-моделей">Choose your role and start your journey in the world of hyperrealistic AI models</h2>
@@ -143,12 +143,6 @@ export default function RoleSelectionPage() {
 
           <div className="legal-notice" itemScope itemType="https://schema.org/LegalValueSpecification">
             <meta itemProp="name" content="AI-People Legal Compliance Notice" />
-            <div className="notice-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="M9 12l2 2 4-4"/>
-              </svg>
-            </div>
             <div className="notice-content">
               <h3 className="gradient-text" data-lang-en="Legal Compliance Notice" data-lang-ru="Правовое уведомление">Legal Compliance Notice</h3>
               <p data-lang-en="All AI-generated content on the AI-People marketplace must be used exclusively for legal and legitimate purposes. AI content creators and buyers bear full responsibility for ensuring that the use or creation of hyperrealistic AI models complies with all applicable laws, regulations, and ethical standards in their jurisdiction." data-lang-ru="Весь AI-сгенерированный контент на маркетплейсе AI-People должен использоваться исключительно в законных и легитимных целях. AI-креаторы контента и покупатели несут полную ответственность за то, чтобы использование или создание гиперреалистичных AI-моделей соответствовало всем применимым законам, нормам и этическим стандартам их юрисдикции.">
