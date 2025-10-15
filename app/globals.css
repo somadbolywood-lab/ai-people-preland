@@ -3114,9 +3114,8 @@ a.visible-link {
     top: 50px; 
     right: 8px; 
     left: auto;
-    min-width: 240px;
-    max-width: calc(100vw - 16px);
-    width: auto;
+    width: 320px;
+    max-height: 600px;
     display: none; 
     flex-direction: column; 
     gap: 6px; 
