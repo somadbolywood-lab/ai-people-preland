@@ -3114,7 +3114,7 @@ a.visible-link {
     top: 50px; 
     right: 8px; 
     left: auto;
-    width: 360px;
+    width: 395px;
     max-height: 600px;
     display: none; 
     flex-direction: column; 
@@ -3278,12 +3278,13 @@ a.visible-link {
         white-space: nowrap;
     }
     
-    /* Mobile: policies in single row */
+    /* Mobile: enforce consistent 2x2 grid */
     .policies-grid {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
-        justify-content: center;
+        width: 100%;
+        justify-items: center;
     }
 }
 
