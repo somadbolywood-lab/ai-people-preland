@@ -325,7 +325,8 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(countryOptions)}
                     value={formData.country}
                     onChange={(value) => setFormData(prev => ({ ...prev, country: value as string }))}
-                    placeholder="Select your country"
+                    placeholderEn="Select your country"
+                    placeholderRu="Выберите вашу страну"
                   />
                 </div>
                 <div className="wizard-actions">
@@ -343,7 +344,8 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(roleOptions)}
                     value={formData.role}
                     onChange={(value) => setFormData(prev => ({ ...prev, role: value as string }))}
-                    placeholder="Select your role"
+                    placeholderEn="Select your role"
+                    placeholderRu="Выберите вашу роль"
                   />
                 </div>
                 
@@ -365,7 +367,8 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(teamSizeOptions)}
                     value={formData.teamSize}
                     onChange={(value) => setFormData(prev => ({ ...prev, teamSize: value as string }))}
-                    placeholder="Select team size"
+                    placeholderEn="Select team size"
+                    placeholderRu="Выберите размер команды"
                   />
                 </div>
                 <div className="wizard-actions">
@@ -384,7 +387,8 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(useCaseOptions)}
                     value={formData.useCase}
                     onChange={(value) => setFormData(prev => ({ ...prev, useCase: value as string }))}
-                    placeholder="What will you use AI models for?"
+                    placeholderEn="What will you use AI models for?"
+                    placeholderRu="Для чего вы будете использовать AI модели?"
                   />
                 </div>
 
@@ -394,7 +398,8 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(budgetOptions)}
                     value={formData.monthlyBudget}
                     onChange={(value) => setFormData(prev => ({ ...prev, monthlyBudget: value as string }))}
-                    placeholder="Select budget range"
+                    placeholderEn="Select budget range"
+                    placeholderRu="Выберите диапазон бюджета"
                   />
                 </div>
 
@@ -404,7 +409,8 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(experienceOptions)}
                     value={formData.aiExperience}
                     onChange={(value) => setFormData(prev => ({ ...prev, aiExperience: value as string }))}
-                    placeholder="Your AI experience level"
+                    placeholderEn="Your AI experience level"
+                    placeholderRu="Ваш уровень опыта с AI"
                   />
                 </div>
 
@@ -414,7 +420,8 @@ export default function BuyerLeadPage() {
                     options={getTranslatedOptions(sourceOptions)}
                     value={formData.source}
                     onChange={(value) => setFormData(prev => ({ ...prev, source: value as string }))}
-                    placeholder="Select source"
+                    placeholderEn="Select source"
+                    placeholderRu="Выберите источник"
                   />
                 </div>
                 <div className="wizard-actions">
