@@ -34,7 +34,7 @@ export default function BuyerInfoPage() {
 
       <main>
         <section className="hero">
-          <h1 className="title"><span className="gradient-text">Присоединяйтесь как Покупатель</span></h1>
+          <h1 className="unified-h1"><span className="gradient-text">Присоединяйтесь как Покупатель</span></h1>
           <h2 className="hero-subtitle">Доступ к премиум AI-моделям и гиперреалистичным виртуальным инфлюенсерам для вашего бизнеса</h2>
           <h3 className="hero-description">Откройте для себя первый в мире курируемый маркетплейс профессионального AI-контента. Получайте готовые пакеты или заказывайте индивидуальный контент для ваших маркетинговых кампаний.</h3>
         </section>

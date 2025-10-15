@@ -103,7 +103,7 @@ export default function RoleSelectionPage() {
       <main className="auth-main">
         <div className="auth-container">
           <div className="auth-header">
-            <h1 className="title">
+            <h1 className="unified-h1">
               <span className="gradient-text" data-lang-en="Join AI-People" data-lang-ru="Присоединяйтесь к AI-People">Присоединяйтесь к AI-People</span>
             </h1>
             <h2 className="hero-subtitle" data-lang-en="Choose your role and start your journey in the world of hyperrealistic AI models" data-lang-ru="Выберите свою роль и начните свой путь в мире гиперреалистичных AI-моделей">Выберите свою роль и начните свой путь в мире гиперреалистичных AI-моделей</h2>

@@ -347,7 +347,7 @@ export default function CreatorLeadPage() {
       <main className="auth-main">
         <div className="auth-container">
           <div className="auth-header">
-            <h1 className="auth-title">
+            <h1 className="unified-h1">
               <span className="gradient-text" data-lang-en="Join as " data-lang-ru="Присоединиться как ">Присоединиться как </span>
               <span className="role-em" data-lang-en=" Creator" data-lang-ru=" креатор"> креатор</span>
             </h1>

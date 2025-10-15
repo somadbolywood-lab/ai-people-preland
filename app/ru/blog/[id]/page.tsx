@@ -2355,7 +2355,7 @@ export default function BlogArticlePage() {
               </div>
             </div>
 
-            <h1 className="article-title" data-lang-en={article.title} data-lang-ru={article.titleRu}>{article.title}</h1>
+            <h1 className="unified-h1" data-lang-en={article.title} data-lang-ru={article.titleRu}>{article.title}</h1>
 
             <div className="article-author">
               <div className="author-info">

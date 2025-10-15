@@ -34,7 +34,7 @@ export default function CreatorInfoPage() {
 
       <main>
         <section className="hero">
-          <h1 className="title"><span className="gradient-text" data-lang-en="Join as Creator" data-lang-ru="Присоединяйтесь как Креатор">Присоединяйтесь как Креатор</span></h1>
+          <h1 className="unified-h1"><span className="gradient-text" data-lang-en="Join as Creator" data-lang-ru="Присоединяйтесь как Креатор">Присоединяйтесь как Креатор</span></h1>
           <h2 className="hero-subtitle" data-lang-en="Monetize your AI art and build your brand on the world's first curated AI marketplace" data-lang-ru="Монетизируйте ваше AI-искусство и развивайте бренд на первом в мире курируемом AI маркетплейсе">Монетизируйте ваше AI-искусство и развивайте бренд на первом в мире курируемом AI маркетплейсе</h2>
           <h3 className="hero-description" data-lang-en="Earn from your hyperrealistic AI models with 75% commission, secure payments, and full marketing support." data-lang-ru="Зарабатывайте на гиперреалистичных AI-моделях с комиссией 75%, безопасными платежами и полной маркетинговой поддержкой.">Зарабатывайте на гиперреалистичных AI-моделях с комиссией 75%, безопасными платежами и полной маркетинговой поддержкой.</h3>
         </section>
