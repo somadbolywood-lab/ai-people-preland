@@ -6,8 +6,8 @@ import HeaderWithMenu from "../../../components/HeaderWithMenu";
 import { useLanguage } from "../../../hooks/useLanguage";
 
 export default function BuyerInfoPage() {
-  // Use unified language hook with forced Russian language
-  useLanguage({ forceLanguage: 'ru' });
+  // Use unified language hook - language determined by URL prefix and global state
+  useLanguage();
 
   return (
     <div className="container home-page">

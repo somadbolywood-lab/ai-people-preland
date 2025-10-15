@@ -6,7 +6,7 @@ import HeaderWithMenu from "../../components/HeaderWithMenu";
 import { useLanguage } from "../../hooks/useLanguage";
 
 export default function BuyerInfoPage() {
-  useLanguage({ forceLanguage: 'en' });
+  useLanguage();
 
   return (
     <div className="container home-page">
