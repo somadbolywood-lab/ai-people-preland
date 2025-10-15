@@ -2,6 +2,8 @@
 
 import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
 import FooterRU from "../../../components/FooterRU";
+import { useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
 import Image from "next/image";
@@ -12,7 +14,18 @@ import { useLanguage } from "../../../hooks/useLanguage";
 
 export default function ContentPolicyRuPage() {
   // Initialize language from global context/URL (no force)
-  useLanguage();
+  const { currentLanguage } = useLanguage();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (currentLanguage === 'ru' && !pathname.startsWith('/ru')) {
+      router.push(`/ru${pathname}`);
+    } else if (currentLanguage === 'en' && pathname.startsWith('/ru')) {
+      router.push(pathname.substring(3) || '/');
+    }
+  }, [currentLanguage, pathname, router]);
 
   return (
     <>

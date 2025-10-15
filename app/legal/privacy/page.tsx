@@ -1,13 +1,27 @@
 "use client";
 
 import Footer from "../../components/Footer";
+import { useLanguage } from "../../hooks/useLanguage";
+import { useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import Head from "next/head";
 import HreflangLinks from "../../components/HreflangLinks";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
 import { useLanguage } from "../../hooks/useLanguage";
 
 export default function PrivacyPolicyPage() {
-  useLanguage();
+  const { currentLanguage } = useLanguage();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (currentLanguage === 'ru' && !pathname.startsWith('/ru')) {
+      router.push(`/ru${pathname}`);
+    } else if (currentLanguage === 'en' && pathname.startsWith('/ru')) {
+      router.push(pathname.substring(3) || '/');
+    }
+  }, [currentLanguage, pathname, router]);
 
   return (
     <>
