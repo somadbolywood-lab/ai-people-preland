@@ -19,16 +19,10 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
             <Image 
               src="/faq/AI-people Logo.png" 
               alt="AI-People" 
-              className="logo-img" 
+              className="logo-img logo-loading" 
               width={180} 
               height={75} 
               priority
-              style={{ 
-                width: 'auto', 
-                height: 'auto',
-                opacity: 0,
-                animation: 'logoFadeIn 0.6s ease-out 0.2s forwards'
-              }}
             />
           </a>
         </div>

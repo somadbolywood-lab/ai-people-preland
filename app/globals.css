@@ -1589,13 +1589,16 @@ a.visible-link {
     }
 }
 
-/* Logo loading state */
-.logo-img[style*="opacity: 0"] {
-    visibility: hidden;
+/* Logo loading animation class */
+.logo-loading {
+    opacity: 0;
+    animation: logoFadeIn 0.6s ease-out 0.2s forwards;
 }
 
-.logo-img[style*="opacity: 1"] {
-    visibility: visible;
+/* Logo loaded state */
+.logo-img:not(.logo-loading) {
+    opacity: 1;
+    transform: scale(1);
 }
 .actions { 
     display: flex; 
