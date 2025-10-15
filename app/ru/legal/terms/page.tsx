@@ -7,8 +7,8 @@ import HeaderWithMenu from "../../../components/HeaderWithMenu";
 import { useLanguage } from "../../../hooks/useLanguage";
 
 export default function TermsRuPage() {
-  // Use unified language hook with forced Russian language
-  useLanguage({ forceLanguage: 'ru' });
+  // Initialize language from global context/URL (no force)
+  useLanguage();
 
   return (
     <>
@@ -57,7 +57,7 @@ export default function TermsRuPage() {
 
         <main className="legal-main">
           <div className="legal-container">
-            <h1 className="unified-h1"><span className="gradient-text">Пользовательское соглашение — AI-PEOPLE.IO</span></h1>
+            <h1 className="unified-h1"><span className="gradient-text">Пользовательское соглашение</span></h1>
             <p className="legal-subtitle">Дата вступления в силу: Октябрь 2025 • Локация: Нью‑Йорк, США • Контакт: support@ai-people.io</p>
 
             <div className="legal-content">

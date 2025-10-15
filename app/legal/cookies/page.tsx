@@ -4,8 +4,10 @@ import Footer from "../../components/Footer";
 import Head from "next/head";
 import HreflangLinks from "../../components/HreflangLinks";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export default function CookiePolicyPage() {
+  useLanguage();
 
   return (
     <>
@@ -47,9 +49,9 @@ export default function CookiePolicyPage() {
 
       <main className="legal-main">
         <div className="legal-container">
-          <h1 className="legal-title">
-            <span className="gradient-text">Cookie Policy — AI-PEOPLE.IO</span>
-          </h1>
+      <h1 className="unified-h1">
+        <span className="gradient-text">Cookie Policy</span>
+      </h1>
           <p className="legal-subtitle">Effective Date: October 2025 • Location: New York, USA • Contact: support@ai-people.io</p>
 
           <div className="legal-content">

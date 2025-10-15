@@ -4,8 +4,10 @@ import Footer from "../../components/Footer";
 import Head from "next/head";
 import HreflangLinks from "../../components/HreflangLinks";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export default function PrivacyPolicyPage() {
+  useLanguage();
 
   return (
     <>
@@ -87,8 +89,8 @@ export default function PrivacyPolicyPage() {
 
       <main className="legal-main">
         <div className="legal-container">
-          <h1 className="legal-title">
-                <span className="gradient-text" data-lang-en="Privacy Policy — AI-PEOPLE.IO" data-lang-ru="Политика конфиденциальности — AI-PEOPLE.IO">Privacy Policy — AI-PEOPLE.IO</span>
+          <h1 className="unified-h1">
+                <span className="gradient-text" data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">Privacy Policy</span>
           </h1>
           <p className="legal-subtitle">
                 <span data-lang-en="Effective Date: October 2025 • Location: New York, USA • Contact: support@ai-people.io" data-lang-ru="Дата вступления в силу: Октябрь 2025 • Локация: Нью‑Йорк, США • Контакт: support@ai-people.io">Effective Date: October 2025 • Location: New York, USA • Contact: support@ai-people.io</span>
