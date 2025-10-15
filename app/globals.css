@@ -1571,6 +1571,9 @@ a.visible-link {
     backface-visibility: hidden;
     -webkit-font-smoothing: subpixel-antialiased;
     transition: all 0.3s ease;
+    /* Critical CSS - анимация загружается сразу */
+    opacity: 0;
+    animation: logoFadeIn 0.6s ease-out 0.2s forwards;
 }
 
 /* Logo animation keyframes */
@@ -1589,16 +1592,11 @@ a.visible-link {
     }
 }
 
-/* Logo loading animation class */
-.logo-loading {
-    opacity: 0;
-    animation: logoFadeIn 0.6s ease-out 0.2s forwards;
-}
-
-/* Logo loaded state */
-.logo-img:not(.logo-loading) {
+/* Logo loaded state - анимация завершена */
+.logo-img.animation-complete {
     opacity: 1;
     transform: scale(1);
+    animation: none;
 }
 .actions { 
     display: flex; 

@@ -19,7 +19,7 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
             <Image 
               src="/faq/AI-people Logo.png" 
               alt="AI-People" 
-              className="logo-img logo-loading" 
+              className="logo-img" 
               width={180} 
               height={75} 
               priority
