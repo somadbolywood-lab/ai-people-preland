@@ -16,7 +16,14 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
       <header className="topbar">
         <div className="brand">
           <a href={homeHref} className="brand-link">
-            <Image src="/faq/AI-people Logo.png" alt="AI-People" className="logo-img" width={75} height={75} />
+            <Image 
+              src="/faq/AI-people Logo.png" 
+              alt="AI-People" 
+              className="logo-img" 
+              width={180} 
+              height={75} 
+              priority
+            />
           </a>
         </div>
         <div className="actions">
