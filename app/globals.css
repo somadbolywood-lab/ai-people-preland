@@ -3233,7 +3233,7 @@ a.visible-link {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0; /* use .policies-grid gap */
     margin-top: 12px;
     padding-top: 12px;
     border-top: 1px solid rgba(255,255,255,0.1);
@@ -3242,11 +3242,11 @@ a.visible-link {
 .menu-legal-section a {
     color: var(--subtext);
     text-decoration: none;
-    font-size: 12px !important;
-    padding: 2px 4px;
+    font-size: 15px; /* match top menu */
+    padding: 10px 12px; /* match top menu horizontal padding */
     border-radius: 4px;
     transition: all 0.2s ease;
-    white-space: nowrap;
+    white-space: nowrap; /* no wrapping as requested */
 }
 
 .menu-legal-section a:hover {
