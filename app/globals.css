@@ -3254,6 +3254,17 @@ a.visible-link {
   .menu-legal-section a {
     padding: 10px 17px;
   }
+  
+  /* Further increase by +3px each, except on About pages */
+  .menu-legal-section a {
+    padding: 10px 20px;
+  }
+  
+  /* Reset to 17px for About pages only */
+  body:has([href*="/about"]) .menu-legal-section a,
+  .about-page .menu-legal-section a {
+    padding: 10px 17px;
+  }
 }
 
 .menu-legal-section a:hover {
