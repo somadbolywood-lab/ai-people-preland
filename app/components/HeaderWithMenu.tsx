@@ -3,7 +3,6 @@
 import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSelector from "./LanguageSelector";
-import { useLanguageContext } from "../contexts/LanguageContext";
 import { useHamburgerMenu } from "../hooks/useHamburgerMenu";
 
 interface HeaderWithMenuProps {
@@ -12,14 +11,25 @@ interface HeaderWithMenuProps {
 
 export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
   useHamburgerMenu();
-  const { currentLanguage } = useLanguageContext();
-  const localePrefix = currentLanguage === 'ru' ? '/ru' : '';
   return (
     <>
       <header className="topbar">
         <div className="brand">
           <a href={homeHref} className="brand-link">
-            <Image src="/faq/AI-people Logo.png" alt="AI-People" className="logo-img" width={75} height={75} />
+            <Image 
+              src="/faq/AI-people Logo.png" 
+              alt="AI-People" 
+              className="logo-img" 
+              width={180} 
+              height={75} 
+              priority
+              style={{ 
+                width: 'auto', 
+                height: 'auto',
+                opacity: 0,
+                animation: 'logoFadeIn 0.6s ease-out 0.2s forwards'
+              }}
+            />
           </a>
         </div>
         <div className="actions">
@@ -128,12 +138,12 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
         </a>
 
         {/* Legal Policies Section */}
-              <div className="menu-legal-section">
+        <div className="menu-legal-section">
           <div className="policies-grid">
-                  <a href={`${localePrefix}/legal/terms`} data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">Terms of Service</a>
-                  <a href={`${localePrefix}/legal/privacy`} data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">Privacy Policy</a>
-                  <a href={`${localePrefix}/legal/cookies`} data-lang-en="Cookie Policy" data-lang-ru="Политика файлов cookie">Cookie Policy</a>
-                  <a href={`${localePrefix}/legal/content-policy`} data-lang-en="Content & 18+ Policy" data-lang-ru="Политика контента и 18+">Content & 18+ Policy</a>
+            <a href="/legal/terms" data-lang-en="Terms of Service" data-lang-ru="Условия обслуживания">Terms of Service</a>
+            <a href="/legal/privacy" data-lang-en="Privacy Policy" data-lang-ru="Политика конфиденциальности">Privacy Policy</a>
+            <a href="/legal/cookies" data-lang-en="Cookie Policy" data-lang-ru="Политика файлов cookie">Cookie Policy</a>
+            <a href="/legal/content-policy" data-lang-en="Content & 18+ Policy" data-lang-ru="Политика контента и 18+">Content & 18+ Policy</a>
           </div>
         </div>
       </div>
