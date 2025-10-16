@@ -332,10 +332,10 @@ html, body { height: 100%; }
     /* Match homepage CTA button size for info pages only, without changing styles/animations */
     .buyer-info-page .call-to-action .btn.primary,
     .creator-info-page .call-to-action .btn.primary {
-        padding: 8px 12px !important; /* same as mobile base on 768px breakpoint */
-        font-size: 13px !important;   /* align to homepage CTA perceived size */
-        min-height: 40px !important;
-        min-width: 40px !important;
+        padding: 9px 14px !important; /* increased by 15% from 8px 12px */
+        font-size: 15px !important;   /* increased by 15% from 13px */
+        min-height: 46px !important;  /* increased by 15% from 40px */
+        min-width: 46px !important;   /* increased by 15% from 40px */
     }
     
     .feedback-btn {
