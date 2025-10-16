@@ -7096,6 +7096,7 @@ a.visible-link {
     justify-content: center;
     gap: 0.5rem;
     margin-top: 0.5rem;
+    align-items: center;
 }
 
 .footer-legal a {
@@ -7127,6 +7128,21 @@ a.visible-link {
     .footer-legal a {
         font-size: 12px !important;
         white-space: nowrap;
+    }
+    
+    /* Hide separators on mobile */
+    .footer-legal::before,
+    .footer-legal::after {
+        display: none;
+    }
+    
+    /* Hide separator dots in footer legal links on mobile */
+    .footer-legal {
+        font-size: 0;
+    }
+    
+    .footer-legal a {
+        font-size: 12px !important;
     }
 }
 
