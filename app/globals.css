@@ -8593,6 +8593,40 @@ a.visible-link {
   }
 }
 
+/* Make Continue to Registration buttons same as CTA buttons on mobile */
+@media (max-width: 768px) {
+  .content-block .call-to-action .btn.primary {
+    background: white !important;
+    color: var(--accent) !important;
+    font-weight: 700 !important;
+    padding: 0.65rem 1.2rem !important;
+    font-size: 0.95rem !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    z-index: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: fit-content !important;
+    margin: 1.5rem auto 0 !important;
+  }
+  
+  .content-block .call-to-action .btn.primary:hover {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.4) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-block .call-to-action .btn.primary {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
 /* ===== THANK YOU MODAL STYLES ===== */
 .modal-overlay {
   position: fixed;
