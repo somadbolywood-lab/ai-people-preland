@@ -92,6 +92,7 @@ html, body { height: 100%; }
     
     .marquee {
         margin: 8px 0 !important;
+        padding: 4px 0 !important;
     }
     
     .marquee-item {
@@ -327,7 +328,7 @@ html, body { height: 100%; }
         min-height: 36px;
         min-width: 36px;
     }
-
+    
     /* Match homepage CTA button size for info pages only, without changing styles/animations */
     .buyer-info-page .call-to-action .btn.primary,
     .creator-info-page .call-to-action .btn.primary {
@@ -9172,14 +9173,14 @@ a.visible-link {
   position: relative;
 }
 
-.blog-marquee-section .marquee-track {
+.marquee-track {
   display: flex;
   gap: 1.5rem;
   animation: marquee 60s linear infinite;
   width: fit-content;
 }
 
-.blog-marquee-section .marquee-track:hover {
+.marquee-track:hover {
   animation-play-state: paused;
 }
 
@@ -9192,7 +9193,7 @@ a.visible-link {
   }
 }
 
-.blog-marquee-section .marquee-card {
+.marquee-card {
   flex-shrink: 0;
   width: 320px;
   height: 420px;
@@ -9206,38 +9207,38 @@ a.visible-link {
   flex-direction: column;
 }
 
-.blog-marquee-section .marquee-card:hover {
+.marquee-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   border-color: var(--accent);
 }
 
-.blog-marquee-section .marquee-image {
+.marquee-image {
   position: relative;
   width: 100%;
   height: 200px;
   overflow: hidden;
 }
 
-.blog-marquee-section .marquee-img {
+.marquee-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.blog-marquee-section .marquee-card:hover .marquee-img {
+.marquee-card:hover .marquee-img {
   transform: scale(1.1);
 }
 
-.blog-marquee-section .marquee-content {
+.marquee-content {
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.blog-marquee-section .marquee-category {
+.marquee-category {
   display: inline-block;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
@@ -9249,7 +9250,7 @@ a.visible-link {
   width: fit-content;
 }
 
-.blog-marquee-section .marquee-title {
+.marquee-title {
   font-size: 1.1rem;
   font-weight: 600;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -9266,7 +9267,7 @@ a.visible-link {
   flex: 1;
 }
 
-.blog-marquee-section .marquee-meta {
+.marquee-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9275,28 +9276,28 @@ a.visible-link {
   color: var(--text-secondary);
 }
 
-.blog-marquee-section .marquee-date {
+.marquee-date {
   font-weight: 500;
 }
 
-.blog-marquee-section .marquee-read-time {
+.marquee-read-time {
   font-weight: 500;
 }
 
-.blog-marquee-section .marquee-footer {
+.marquee-footer {
   display: flex;
   justify-content: flex-end;
   margin-top: auto;
 }
 
-.blog-marquee-section .marquee-read-more {
+.marquee-read-more {
   color: var(--accent);
   font-weight: 600;
   font-size: 0.9rem;
   transition: color 0.3s ease;
 }
 
-.blog-marquee-section .marquee-card:hover .marquee-read-more {
+.marquee-card:hover .marquee-read-more {
   color: var(--accent-2);
 }
 
@@ -10090,26 +10091,33 @@ a.visible-link {
 }
 
 @media (max-width: 768px) {
-  .blog-marquee-section .marquee-card {
-    width: 250px !important;
-    height: 350px !important;
+  .marquee-card {
+    width: 280px;
+    height: 380px;
   }
   
-  .blog-marquee-section .marquee-image {
-    height: 156px !important;
+  .marquee-image {
+    height: 180px;
   }
   
-  .blog-marquee-section .marquee-track {
-    gap: 1rem !important;
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-card {
+    width: 240px;
+    height: 320px;
   }
   
-  .blog-marquee-section .marquee-content {
-    padding: 0.75rem !important;
+  .marquee-image {
+    height: 150px;
   }
   
-  
-  .blog-marquee-section .marquee-track {
-    animation: marquee 45s linear infinite;
+  .marquee-track {
+    gap: 0.75rem;
   }
 }
 
