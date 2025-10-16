@@ -105,6 +105,10 @@ html, body { height: 100%; }
         height: 225px !important;
     }
     
+    .marquee-track {
+        animation: slide 81s linear infinite; /* 30s × 2.7 = 81s для визуальной унификации */
+    }
+    
     .section {
         padding: 8px 4px !important;
         margin: 8px 0 !important;
@@ -200,6 +204,10 @@ html, body { height: 100%; }
     .marquee-item img {
         width: 300px !important;
         height: 180px !important;
+    }
+    
+    .marquee-track {
+        animation: slide 69s linear infinite; /* 30s × 2.3 = 69s для визуальной унификации */
     }
     
     .section h2 {
