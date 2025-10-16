@@ -3932,8 +3932,9 @@ a.visible-link {
     display: flex; 
     gap: 6px; 
     align-items: center; 
-    padding: 6px; 
-    animation: slide 10s linear infinite; 
+    padding: 0; 
+    animation: slide 3.333s linear infinite; 
+    will-change: transform;
 }
 .marquee:hover .marquee-track { 
     animation-play-state: paused; 
