@@ -9,7 +9,7 @@ export default function BuyerInfoPage() {
   useLanguage();
 
   return (
-    <div className="container home-page">
+    <div className="container home-page buyer-info-page">
       <HeaderWithMenu homeHref="/" />
 
       <div className="notification-banner">
@@ -44,7 +44,7 @@ export default function BuyerInfoPage() {
             <p data-lang-en="Imagine having an entire team of elite AI models ready to create content, promote your business, and fuel your marketing 24/7 — no contracts, no downtime, no limits. This isn’t just digital imagery. It’s a new economy of creativity, where your campaigns are faster, smarter, and endlessly scalable." data-lang-ru="Представьте целую команду элитных AI‑моделей, готовых создавать контент, продвигать ваш бизнес и питать маркетинг 24/7 — без контрактов, простоев и ограничений. Это не просто цифровые изображения. Это новая экономика креатива, где ваши кампании становятся быстрее, умнее и бесконечно масштабируемыми.">
               Imagine having an entire team of elite AI models ready to create content, promote your business, and fuel your marketing 24/7 — no contracts, no downtime, no limits. This isn’t just digital imagery. It’s a new economy of creativity, where your campaigns are faster, smarter, and endlessly scalable.
             </p>
-
+            
             <h3 className="gradient-text" style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="What You Get" data-lang-ru="Что вы получаете">What You Get</h3>
             <div className="role-benefits" style={{display: 'grid', gap: '1rem', marginBottom: '2rem'}}>
               <div className="benefit-item">
@@ -95,7 +95,7 @@ export default function BuyerInfoPage() {
             </ul>
             <h3 className="gradient-text" style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="Your Advantage" data-lang-ru="Ваше преимущество">Your Advantage</h3>
             <p className="role-cta-text" style={{fontSize: '1.1rem', marginBottom: '2rem'}} data-lang-en="AI People isn’t just a content hub — it’s your strategic growth engine. From digital marketing to entertainment, from startups to established brands — you gain instant creative power that works while you sleep." data-lang-ru="AI People — это не просто хаб контента, а ваш стратегический двигатель роста. От цифрового маркетинга до индустрии развлечений, от стартапов до зрелых брендов — вы получаете мгновенную креативную мощность, которая работает, пока вы спите.">AI People isn’t just a content hub — it’s your strategic growth engine. From digital marketing to entertainment, from startups to established brands — you gain instant creative power that works while you sleep.</p>
-
+            
             <h3 className="gradient-text" style={{marginTop: '2rem', marginBottom: '1rem', fontSize: '1.5rem'}} data-lang-en="Join the Waiting List Now" data-lang-ru="Присоединяйтесь к списку ожидания сейчас">Join the Waiting List Now</h3>
             <p className="role-cta-text" style={{fontSize: '1.1rem', marginBottom: '2rem'}} data-lang-en="Be among the first to access premium content, exclusive models, and early-release packages before the marketplace goes live." data-lang-ru="Будьте среди первых, кто получит доступ к премиум‑контенту, эксклюзивным моделям и ранним пакетам до запуска маркетплейса.">Be among the first to access premium content, exclusive models, and early-release packages before the marketplace goes live.</p>
 

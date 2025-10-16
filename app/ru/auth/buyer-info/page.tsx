@@ -10,7 +10,7 @@ export default function BuyerInfoPage() {
   useLanguage();
 
   return (
-    <div className="container home-page">
+    <div className="container home-page buyer-info-page">
       <HeaderWithMenu homeHref="/ru" />
 
       <div className="notification-banner">

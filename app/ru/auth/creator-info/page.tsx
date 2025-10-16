@@ -10,7 +10,7 @@ export default function CreatorInfoPage() {
   useLanguage();
 
   return (
-    <div className="container home-page">
+    <div className="container home-page creator-info-page">
       <HeaderWithMenu homeHref="/ru" />
 
       <div className="notification-banner">
