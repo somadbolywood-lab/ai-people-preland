@@ -105,8 +105,8 @@ html, body { height: 100%; }
         height: 225px !important;
     }
     
-    .marquee-track {
-        animation: slide 81s linear infinite; /* 30s × 2.7 = 81s для визуальной унификации */
+    .marquee .marquee-track {
+        animation: slide 81s linear infinite !important; /* 30s × 2.7 = 81s для визуальной унификации */
     }
     
     .section {
@@ -206,8 +206,8 @@ html, body { height: 100%; }
         height: 180px !important;
     }
     
-    .marquee-track {
-        animation: slide 69s linear infinite; /* 30s × 2.3 = 69s для визуальной унификации */
+    .marquee .marquee-track {
+        animation: slide 69s linear infinite !important; /* 30s × 2.3 = 69s для визуальной унификации */
     }
     
     .section h2 {
