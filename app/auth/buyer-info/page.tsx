@@ -51,19 +51,19 @@ export default function BuyerInfoPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M20 6L9 17l-5-5"/>
                 </svg>
-                <span data-lang-en="Access to 18+ exclusive AI models — each with a distinct look, personality, and style. Perfect for OnlyFans, Patreon, TikTok, or any digital brand." data-lang-ru="Доступ к 18+ эксклюзивным AI‑моделям — каждая с уникальной внешностью, характером и стилем. Идеально для OnlyFans, Patreon, TikTok или любого цифрового бренда.">Access to 18+ exclusive AI models — each with a distinct look, personality, and style. Perfect for OnlyFans, Patreon, TikTok, or any digital brand.</span>
+                <span data-lang-en="Access to 18+ exclusive AI models — each with a unique appearance, character and style. Perfect for OnlyFans, Funvue, Fansly, Patreon, TikTok or any digital brand." data-lang-ru="Доступ к 18+ эксклюзивным AI‑моделям — каждая с уникальной внешностью, характером и стилем. Идеально для OnlyFans, Funvue, Fansly, Patreon, TikTok или любого цифрового бренда.">Access to 18+ exclusive AI models — each with a unique appearance, character and style. Perfect for OnlyFans, Funvue, Fansly, Patreon, TikTok or any digital brand.</span>
               </div>
               <div className="benefit-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M20 6L9 17l-5-5"/>
                 </svg>
-                <span data-lang-en="Over 500 ready-made photos in top-performing niches: lifestyle, fitness, business, fashion, gaming, and romance — ideal for ads, social media, or resale." data-lang-ru="Более 500 готовых фото в топовых нишах: лайфстайл, фитнес, бизнес, мода, гейминг и романтика — идеально для рекламы, соцсетей или перепродажи.">Over 500 ready-made photos in top-performing niches: lifestyle, fitness, business, fashion, gaming, and romance — ideal for ads, social media, or resale.</span>
+                <span data-lang-en="Thousands of photos in top niches: lifestyle, fitness, business, fashion, gaming and romance — perfect for advertising, social media or resale." data-lang-ru="Тысячи фото в топовых нишах: лайфстайл, фитнес, бизнес, мода, гейминг и романтика — идеально для рекламы, соцсетей или перепродажи.">Thousands of photos in top niches: lifestyle, fitness, business, fashion, gaming and romance — perfect for advertising, social media or resale.</span>
               </div>
               <div className="benefit-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M20 6L9 17l-5-5"/>
                 </svg>
-                <span data-lang-en="100+ premium videos built for engagement — use them to power up brand visibility, social growth, or subscription-based monetization." data-lang-ru="100+ премиум‑видео, созданных для вовлечения — усиливайте видимость бренда, рост в соцсетях или монетизацию по подписке.">100+ premium videos built for engagement — use them to power up brand visibility, social growth, or subscription-based monetization.</span>
+                <span data-lang-en="Thousands of premium videos created for engagement — boost brand visibility, social growth or subscription monetization." data-lang-ru="Тысячи премиум‑видео, созданных для вовлечения — усиливайте видимость бренда, рост в соцсетях или монетизацию по подписке.">Thousands of premium videos created for engagement — boost brand visibility, social growth or subscription monetization.</span>
               </div>
               <div className="benefit-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

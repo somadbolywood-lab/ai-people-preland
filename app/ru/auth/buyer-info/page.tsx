@@ -52,19 +52,19 @@ export default function BuyerInfoPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M20 6L9 17l-5-5"/>
                 </svg>
-                <span>Доступ к 18+ эксклюзивным AI‑моделям — каждая с уникальной внешностью, характером и стилем. Идеально для OnlyFans, Patreon, TikTok или любого цифрового бренда.</span>
+                <span>Доступ к 18+ эксклюзивным AI‑моделям — каждая с уникальной внешностью, характером и стилем. Идеально для OnlyFans, Funvue, Fansly, Patreon, TikTok или любого цифрового бренда.</span>
               </div>
               <div className="benefit-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M20 6L9 17l-5-5"/>
                 </svg>
-                <span>Более 500 готовых фото в топовых нишах: лайфстайл, фитнес, бизнес, мода, гейминг и романтика — идеально для рекламы, соцсетей или перепродажи.</span>
+                <span>Тысячи фото в топовых нишах: лайфстайл, фитнес, бизнес, мода, гейминг и романтика — идеально для рекламы, соцсетей или перепродажи.</span>
               </div>
               <div className="benefit-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M20 6L9 17l-5-5"/>
                 </svg>
-                <span>100+ премиум‑видео, созданных для вовлечения — усиливайте видимость бренда, рост в соцсетях или монетизацию по подписке.</span>
+                <span>Тысячи премиум‑видео, созданных для вовлечения — усиливайте видимость бренда, рост в соцсетях или монетизацию по подписке.</span>
               </div>
               <div className="benefit-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
