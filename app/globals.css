@@ -96,8 +96,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 360px !important;
-        height: 225px !important;
+        width: 132px;
+        height: 88px;
     }
     
     .marquee-item img {
@@ -193,8 +193,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 300px !important;
-        height: 180px !important;
+        width: 120px;
+        height: 80px;
     }
     
     .marquee-item img {
@@ -264,8 +264,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 240px !important;
-        height: 150px !important;
+        width: 110px;
+        height: 72px;
     }
     
     .marquee-item img {
@@ -377,7 +377,7 @@ html, body { height: 100%; }
     
     .marquee-item {
         width: 110px;
-        height: 77px;
+        height: 72px;
     }
     
     .card {
