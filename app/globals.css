@@ -92,7 +92,6 @@ html, body { height: 100%; }
     
     .marquee {
         margin: 8px 0 !important;
-        padding: 4px 0 !important;
     }
     
     .marquee-item {
