@@ -51,13 +51,13 @@ html, body { height: 100%; }
     }
     
     .title {
-        font-size: clamp(20px, 4.5vw, 32px) !important;
-        margin: 6px 0 4px !important;
-        line-height: 1.2 !important;
+        font-size: clamp(20px, 4.5vw, 32px);
+        margin: 6px 0 4px;
+        line-height: 1.2;
     }
     
     .title .gradient-text {
-        font-size: clamp(24px, 5vw, 36px) !important;
+        font-size: clamp(24px, 5vw, 36px);
         display: block;
         margin-bottom: 0.25rem;
     }
@@ -103,6 +103,10 @@ html, body { height: 100%; }
     .marquee-item img {
         width: 360px !important;
         height: 225px !important;
+    }
+    
+    .marquee .marquee-track {
+        animation: slide 81s linear infinite !important; /* 30s × 2.7 = 81s для визуальной унификации */
     }
     
     .section {
@@ -163,12 +167,12 @@ html, body { height: 100%; }
     }
     
     .title {
-        font-size: clamp(18px, 4vw, 28px) !important;
-        margin: 4px 0 2px !important;
+        font-size: clamp(18px, 4vw, 28px);
+        margin: 4px 0 2px;
     }
     
     .title .gradient-text {
-        font-size: clamp(20px, 4.5vw, 30px) !important;
+        font-size: clamp(20px, 4.5vw, 30px);
     }
     
     /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
@@ -200,6 +204,10 @@ html, body { height: 100%; }
     .marquee-item img {
         width: 300px !important;
         height: 180px !important;
+    }
+    
+    .marquee .marquee-track {
+        animation: slide 69s linear infinite !important; /* 30s × 2.3 = 69s для визуальной унификации */
     }
     
     .section h2 {
@@ -235,12 +243,12 @@ html, body { height: 100%; }
     }
     
     .title {
-        font-size: clamp(16px, 3.5vw, 24px) !important;
-        margin: 2px 0 1px !important;
+        font-size: clamp(16px, 3.5vw, 24px);
+        margin: 2px 0 1px;
     }
     
     .title .gradient-text {
-        font-size: clamp(18px, 4vw, 26px) !important;
+        font-size: clamp(18px, 4vw, 26px);
     }
     
     /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
@@ -319,6 +327,7 @@ html, body { height: 100%; }
     .logo-img {
         height: 36px;
         max-width: 100px;
+        transition: all 0.3s ease;
     }
     
     .btn {
@@ -326,6 +335,15 @@ html, body { height: 100%; }
         font-size: 12px;
         min-height: 36px;
         min-width: 36px;
+    }
+    
+    /* Match homepage CTA button size for info pages only, without changing styles/animations */
+    .buyer-info-page .call-to-action .btn.primary,
+    .creator-info-page .call-to-action .btn.primary {
+        padding: 9px 14px !important; /* increased by 15% from 8px 12px */
+        font-size: 15px !important;   /* increased by 15% from 13px */
+        min-height: 46px !important;  /* increased by 15% from 40px */
+        min-width: 46px !important;   /* increased by 15% from 40px */
     }
     
     .feedback-btn {
@@ -947,6 +965,12 @@ a.visible-link {
   border: 1px solid rgba(139, 92, 246, 0.1);
 }
 
+.legal-notice h3 {
+  font-size: clamp(18px, 4vw, 22px) !important;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .notice-icon {
   flex-shrink: 0;
   color: #8b5cf6;
@@ -1357,7 +1381,7 @@ a.visible-link {
   
   .legal-notice {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
   }
   
   .form-group input,
@@ -1569,6 +1593,33 @@ a.visible-link {
     -ms-interpolation-mode: nearest-neighbor;
     backface-visibility: hidden;
     -webkit-font-smoothing: subpixel-antialiased;
+    transition: all 0.3s ease;
+    /* Critical CSS - анимация загружается сразу */
+    opacity: 0;
+    animation: logoFadeIn 0.6s ease-out 0.2s forwards;
+}
+
+/* Logo animation keyframes */
+@keyframes logoFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Logo loaded state - анимация завершена */
+.logo-img.animation-complete {
+    opacity: 1;
+    transform: scale(1);
+    animation: none;
 }
 .actions { 
     display: flex; 
@@ -1603,7 +1654,7 @@ a.visible-link {
 .btn.primary { 
     background: linear-gradient(135deg, var(--accent), var(--accent-2)); 
     border: none; 
-    color: white; 
+    color: white !important; 
     font-weight: 700; 
     transition: all 0.3s ease;
     position: relative;
@@ -3086,9 +3137,8 @@ a.visible-link {
     top: 50px; 
     right: 8px; 
     left: auto;
-    min-width: 240px;
-    max-width: calc(100vw - 16px);
-    width: auto;
+    width: 395px;
+    max-height: 600px;
     display: none; 
     flex-direction: column; 
     gap: 6px; 
@@ -3144,6 +3194,15 @@ a.visible-link {
     touch-action: manipulation;
 }
 
+/* Show full labels on desktop, short labels on mobile */
+.label-mobile { display: none; }
+.label-desktop { display: inline; }
+
+@media (max-width: 480px) {
+  .label-mobile { display: inline; }
+  .label-desktop { display: none; }
+}
+
 .menu-panel a svg {
     flex-shrink: 0;
     width: 18px;
@@ -3197,20 +3256,22 @@ a.visible-link {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0; /* use .policies-grid gap */
     margin-top: 12px;
     padding-top: 12px;
+    padding-left: 7px;
+    padding-right: 7px;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .menu-legal-section a {
     color: var(--subtext);
     text-decoration: none;
-    font-size: 12px !important;
-    padding: 2px 4px;
+    font-size: 11px;
+    padding: 10px 12px; /* match top menu horizontal padding */
     border-radius: 4px;
     transition: all 0.2s ease;
-    white-space: nowrap;
+    white-space: nowrap; /* no wrapping as requested */
 }
 
 .menu-legal-section a:hover {
@@ -3228,6 +3289,14 @@ a.visible-link {
     vertical-align: middle;
 }
 
+/* Policies Grid - Desktop 2x2 layout */
+.policies-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    width: 100%;
+}
+
 /* Mobile responsive for menu legal */
 @media (max-width: 480px) {
     .menu-legal-section {
@@ -3241,6 +3310,14 @@ a.visible-link {
     .menu-legal-section a {
         font-size: 12px !important;
         white-space: nowrap;
+    }
+    
+    /* Mobile: policies in single row */
+    .policies-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        width: 100%;
     }
 }
 
@@ -4299,6 +4376,7 @@ a.visible-link {
         height: 32px;
         width: auto;
         max-width: 90px;
+        transition: all 0.3s ease;
     }
     
     .btn {
@@ -4390,7 +4468,10 @@ a.visible-link {
     .nav { display: flex; }
     .topbar { gap: 12px; padding: 8px 72px; min-height: 72px !important; height: 72px !important; }
     body { padding-top: 80px !important; }
-    .logo-img { height: 44px; }
+    .logo-img { 
+        height: 44px; 
+        transition: all 0.3s ease;
+    }
     .social-link { width: 36px; height: 36px; }
     
     .feedback-btn {
@@ -4421,7 +4502,11 @@ a.visible-link {
     .container { padding: 20px; }
     .topbar { gap: 16px; padding: 8px 72px; min-height: 72px !important; height: 72px !important; }
     body { padding-top: 80px !important; }
-    .logo-img { height: 75px !important; max-width: 180px !important; }
+    .logo-img { 
+        height: 75px !important; 
+        max-width: 180px !important; 
+        transition: all 0.3s ease;
+    }
     .marquee-item { width: 220px; height: 132px; }
     
     .feedback-btn {
@@ -8844,7 +8929,7 @@ a.visible-link {
   }
   
   .content-block h2 {
-    font-size: 1.5rem;
+    font-size: clamp(18px, 4vw, 22px) !important;
   }
   
   .content-block h3 {
@@ -9094,6 +9179,7 @@ a.visible-link {
 .marquee-container {
   overflow: hidden;
   position: relative;
+  padding-top: 12px; /* Компенсация для translateY(-8px) hover-эффекта карточек */
 }
 
 .marquee-track {
@@ -10015,16 +10101,120 @@ a.visible-link {
 
 @media (max-width: 768px) {
   .marquee-card {
-    width: 840px;
-    height: 1140px;
+    width: 280px;
+    height: 380px;
   }
   
   .marquee-image {
-    height: 540px;
+    height: 180px;
   }
   
   .marquee-track {
-    animation: marquee 40s linear infinite;
+    animation: marquee 30s linear infinite;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-card {
+    width: 240px;
+    height: 320px;
+  }
+  
+  .marquee-image {
+    height: 150px;
+  }
+  
+  .marquee-track {
+    gap: 0.75rem;
+  }
+  
+  .marquee-container {
+    padding-top: 10px; /* Меньше для мобильных устройств */
+  }
+}
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ ЗАГОЛОВКИ H1
+   ======================================== */
+
+/* Базовые стили для унифицированного H1 */
+.unified-h1 {
+  font-size: clamp(36px, 7vw, 56px) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  margin: 0 0 1rem 0 !important;
+  color: var(--text) !important;
+  letter-spacing: -0.5px !important;
+  text-align: center;
+}
+
+.unified-h1 .gradient-text {
+  font-size: inherit !important;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-weight: 800 !important;
+}
+
+/* Специальные стили для главной страницы */
+.home-page .unified-h1 {
+  font-size: clamp(48px, 9vw, 72px) !important;
+}
+
+/* Оптимизация для русского языка */
+.unified-h1 [data-lang-ru] {
+  line-height: 1.3 !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Адаптивность для планшета */
+@media (max-width: 768px) {
+  .unified-h1 {
+    font-size: clamp(32px, 6vw, 48px) !important;
+    margin: 0 0 0.75rem 0 !important;
+  }
+  
+  .home-page .unified-h1 {
+    font-size: clamp(40px, 8vw, 64px) !important;
+  }
+  
+  .unified-h1 [data-lang-ru] {
+    line-height: 1.25 !important;
+  }
+}
+
+/* Адаптивность для мобильного */
+@media (max-width: 480px) {
+  .unified-h1 {
+    font-size: clamp(28px, 5.5vw, 40px) !important;
+    margin: 0 0 0.5rem 0 !important;
+  }
+  
+  .home-page .unified-h1 {
+    font-size: clamp(36px, 7vw, 56px) !important;
+  }
+  
+  .unified-h1 [data-lang-ru] {
+    line-height: 1.2 !important;
+  }
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 320px) {
+  .unified-h1 {
+    font-size: clamp(24px, 5vw, 32px) !important;
+    margin: 0 0 0.5rem 0 !important;
+  }
+  
+  .home-page .unified-h1 {
+    font-size: clamp(32px, 6vw, 48px) !important;
+  }
+  
+  .unified-h1 [data-lang-ru] {
+    line-height: 1.15 !important;
   }
 }
 
