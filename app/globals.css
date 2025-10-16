@@ -96,8 +96,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 132px;
-        height: 88px;
+        width: 360px !important;
+        height: 225px !important;
     }
     
     .marquee-item img {
@@ -193,8 +193,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 120px;
-        height: 80px;
+        width: 300px !important;
+        height: 180px !important;
     }
     
     .marquee-item img {
@@ -264,8 +264,8 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 110px;
-        height: 72px;
+        width: 240px !important;
+        height: 150px !important;
     }
     
     .marquee-item img {
@@ -377,7 +377,7 @@ html, body { height: 100%; }
     
     .marquee-item {
         width: 110px;
-        height: 72px;
+        height: 77px;
     }
     
     .card {
@@ -3932,9 +3932,8 @@ a.visible-link {
     display: flex; 
     gap: 6px; 
     align-items: center; 
-    padding: 0; 
-    animation: slide 3.333s linear infinite; 
-    will-change: transform;
+    padding: 6px; 
+    animation: slide 30s linear infinite; 
 }
 .marquee:hover .marquee-track { 
     animation-play-state: paused; 
