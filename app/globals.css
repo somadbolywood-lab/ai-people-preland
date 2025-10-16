@@ -9171,6 +9171,7 @@ a.visible-link {
 .marquee-container {
   overflow: hidden;
   position: relative;
+  padding-top: 12px; /* Компенсация для translateY(-8px) hover-эффекта карточек */
 }
 
 .marquee-track {
@@ -10118,6 +10119,10 @@ a.visible-link {
   
   .marquee-track {
     gap: 0.75rem;
+  }
+  
+  .marquee-container {
+    padding-top: 10px; /* Меньше для мобильных устройств */
   }
 }
 
