@@ -14,8 +14,8 @@ TAGS: AI models, digital marketing, virtual humans, content creation
 META_DESCRIPTION_EN: How AI virtual models are transforming digital marketing in 2025. Learn about cost savings, creative possibilities, and the future of content creation.
 META_DESCRIPTION_RU: Как AI виртуальные модели трансформируют цифровой маркетинг в 2025. Узнайте о снижении затрат, творческих возможностях и будущем контент-маркетинга.
 OG_IMAGE: ./hero.png
-PUBLISHED_AT: 2025-01-15
-UPDATED_AT: 2025-01-20
+PUBLISHED_AT: 2025-10-01
+UPDATED_AT: 2025-10-20
 
 ---
 

@@ -14,7 +14,7 @@ TAGS: virtual influencers, social media, AI technology, digital marketing
 META_DESCRIPTION_EN: Virtual influencers dominate social media in 2025. Discover how AI personalities are changing brand engagement and marketing strategies.
 META_DESCRIPTION_RU: Виртуальные инфлюенсеры доминируют в социальных сетях в 2025. Узнайте, как AI-персоны меняют взаимодействие брендов и маркетинговые стратегии.
 OG_IMAGE: ./hero.jpg
-PUBLISHED_AT: 2025-01-18
+PUBLISHED_AT: 2025-10-01
 UPDATED_AT: 2025-01-22
 
 ---

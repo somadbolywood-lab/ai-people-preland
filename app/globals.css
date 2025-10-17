@@ -9582,7 +9582,7 @@ a.visible-link {
 
 /* Article Title Section - Full Width Above Hero */
 .article-title-section {
-  padding: 2rem 0 0.5rem;
+  padding: 1rem 0 0.5rem;
   background: transparent;
 }
 
@@ -9746,6 +9746,7 @@ a.visible-link {
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   letter-spacing: -0.01em;
   text-align: center;
@@ -10432,7 +10433,7 @@ a.visible-link {
   }
   
   .article-title-section {
-    padding: 1.5rem 0 0.5rem;
+    padding: 0.75rem 0 0.5rem;
   }
 
   .article-title-section .article-title {
