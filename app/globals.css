@@ -9607,27 +9607,19 @@ a.visible-link {
 }
 
 .article-hero-layout {
-  position: relative;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
 }
 
 .article-hero-content {
-  position: relative;
+  flex: 1;
+  min-width: 0;
 }
 
-/* Desktop: Align text content with top of hero image */
-@media (min-width: 769px) {
-  .article-hero-content {
-    align-self: flex-start;
-    margin-top: 0;
-  }
-}
-
-/* Hero Image Floating Left - 50% width */
+/* Hero Image - 50% width with flexbox */
 .article-hero-image-float {
-  float: left;
-  margin: 0 2rem 1.5rem 0;
-  width: 50%;
-  max-width: 50%;
+  flex: 0 0 50%;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -10442,11 +10434,14 @@ a.visible-link {
     padding: 1rem 0 1rem;
   }
 
+  .article-hero-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
   .article-hero-image-float {
-    float: none;
+    flex: none;
     width: 100%;
-    max-width: 100%;
-    margin: 1.5rem 0;
   }
 
   .article-footer {
