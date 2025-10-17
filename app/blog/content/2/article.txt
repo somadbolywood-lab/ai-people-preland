@@ -23,8 +23,6 @@ CONTENT_EN:
 
 ## Virtual Influencers in 2025: The Future of Social Media Marketing
 
-## Introduction
-
 Virtual influencers have evolved from novelty to mainstream marketing powerhouses in 2025. These AI-powered digital personalities command millions of followers, secure brand partnerships worth millions, and reshape how companies approach social media engagement. The question is no longer if brands should work with virtual influencers, but how to do it effectively.
 
 ## The Virtual Influencer Revolution
@@ -59,8 +57,6 @@ Join AI-PEOPLE — the first AI Model Marketplace and create your own virtual in
 ---
 
 CONTENT_RU:
-
-## Введение
 
 Виртуальные инфлюенсеры эволюционировали от новинки до мейнстримных маркетинговых гигантов в 2025 году. Эти AI-персоны собирают миллионы подписчиков, заключают партнёрства с брендами на миллионы и меняют подход компаний к социальным сетям. Вопрос уже не в том, стоит ли брендам работать с виртуальными инфлюенсерами, а как делать это эффективно.
 
