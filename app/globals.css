@@ -8959,14 +8959,7 @@ a.visible-link {
 
 /* ==================== Breadcrumbs Styles ==================== */
 .breadcrumbs {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  padding: 0.5rem 0;
+  display: none;
 }
 
 .breadcrumb-item {
@@ -8996,11 +8989,6 @@ a.visible-link {
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  .breadcrumbs {
-    display: none;
-  }
-}
 
 /* ===== BLOG PAGE STYLES ===== */
 .blog-page {
