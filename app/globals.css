@@ -9595,7 +9595,8 @@ a.visible-link {
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  margin: 0;
+  margin-top: 2rem;
+  margin-bottom: 0;
   max-width: 100%;
   text-align: center;
 }
