@@ -9632,11 +9632,13 @@ a.visible-link {
 }
 
 .article-excerpt {
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1.25rem;
+  line-height: 1.6;
   color: var(--text-secondary);
-  margin-top: 0;
-  text-align: justify;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
 }
 
 .article-main {
@@ -10467,7 +10469,9 @@ a.visible-link {
   }
   
   .article-excerpt {
-    font-size: 0.9375rem !important;
+    font-size: 1.125rem !important;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
   }
   
   .article-content .lead {

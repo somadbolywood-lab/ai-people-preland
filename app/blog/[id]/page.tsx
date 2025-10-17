@@ -229,6 +229,11 @@ export default function BlogArticlePage() {
           <h1 className="article-title">
             {currentLang === 'ru' ? article.title.ru : article.title.en}
           </h1>
+          
+          {/* Excerpt/Description as H2 */}
+          <h2 className="article-excerpt">
+            {currentLang === 'ru' ? article.excerpt.ru : article.excerpt.en}
+          </h2>
         </div>
       </div>
 
@@ -250,10 +255,7 @@ export default function BlogArticlePage() {
             </div>
 
             <div className="article-hero-content">
-              {/* Excerpt/Description */}
-              <p className="article-excerpt">
-                {currentLang === 'ru' ? article.excerpt.ru : article.excerpt.en}
-              </p>
+              {/* Content placeholder for future use */}
             </div>
           </div>
             </div>
