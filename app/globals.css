@@ -9614,12 +9614,12 @@ a.visible-link {
   position: relative;
 }
 
-/* Desktop: Align text content with top of hero image */
+/* Desktop: Align article content with top of hero image */
 @media (min-width: 769px) {
-  .article-hero-content {
+  .article-content {
     margin-top: 0;
+    margin-left: calc(50% + 2rem); /* 50% image width + 2rem margin */
     padding-top: 0;
-    vertical-align: top;
   }
 }
 
