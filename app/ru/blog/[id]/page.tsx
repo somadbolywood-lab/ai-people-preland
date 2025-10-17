@@ -193,6 +193,18 @@ export default function BlogArticlePage() {
       {/* Article Title - Full Width */}
       <div className="article-title-section">
         <div className="article-container">
+          <div className="article-meta-top">
+            <span className="article-category">
+              {currentLang === 'ru' ? article.category.ru : article.category.en}
+            </span>
+            <div className="article-meta-info">
+              <time className="article-date">{new Date(article.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US')}</time>
+              <span className="meta-separator">•</span>
+              <span className="article-read-time">
+                {currentLang === 'ru' ? article.readTime.ru : article.readTime.en}
+              </span>
+            </div>
+          </div>
           <h1 className="article-title">
             {currentLang === 'ru' ? article.title.ru : article.title.en}
           </h1>
@@ -202,18 +214,6 @@ export default function BlogArticlePage() {
       {/* Article Hero Section with Floating Image */}
       <div className="article-hero-section">
         <div className="article-container">
-            <div className="article-meta-top">
-            <span className="article-category">
-              {currentLang === 'ru' ? article.category.ru : article.category.en}
-            </span>
-              <div className="article-meta-info">
-              <time className="article-date">{new Date(article.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US')}</time>
-              <span className="meta-separator">•</span>
-              <span className="article-read-time">
-                {currentLang === 'ru' ? article.readTime.ru : article.readTime.en}
-              </span>
-              </div>
-            </div>
 
           <div className="article-hero-layout">
             {/* Hero Image - Floating Left */}
