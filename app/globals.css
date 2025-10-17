@@ -10731,3 +10731,154 @@ a.visible-link {
   }
 }
 
+/* ========================================
+   СКЕЛЕТОН ДЛЯ СТРАНИЦЫ БЛОГА
+   ======================================== */
+
+.skeleton {
+  background: linear-gradient(90deg, var(--muted) 25%, var(--bg-hover) 50%, var(--muted) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Скелетон для заголовка статьи */
+.skeleton-title {
+  height: 32px;
+  width: 80%;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+/* Скелетон для метаданных */
+.skeleton-meta {
+  height: 20px;
+  width: 40%;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Скелетон для категории */
+.skeleton-category {
+  height: 28px;
+  width: 120px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+/* Скелетон для изображения */
+.skeleton-image {
+  height: 300px;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+/* Скелетон для текста */
+.skeleton-text {
+  height: 16px;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-text.short {
+  width: 75%;
+}
+
+.skeleton-text.medium {
+  width: 90%;
+}
+
+/* Скелетон для FAQ */
+.skeleton-faq-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.skeleton-faq-question {
+  height: 20px;
+  width: 60%;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-faq-answer {
+  height: 16px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-faq-answer:last-child {
+  width: 80%;
+  margin-bottom: 0;
+}
+
+/* Скелетон для кнопки */
+.skeleton-button {
+  height: 48px;
+  width: 200px;
+  border-radius: 12px;
+  margin: 2rem auto;
+}
+
+/* Контейнер скелетона */
+.article-skeleton {
+  padding: 2rem 0;
+}
+
+.article-skeleton .article-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Мобильные стили для скелетона */
+@media (max-width: 768px) {
+  .skeleton-title {
+    height: 28px;
+    width: 90%;
+  }
+  
+  .skeleton-image {
+    height: 200px;
+  }
+  
+  .skeleton-text {
+    height: 14px;
+  }
+  
+  .skeleton-faq-question {
+    height: 18px;
+  }
+  
+  .skeleton-faq-answer {
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeleton-title {
+    height: 24px;
+    width: 95%;
+  }
+  
+  .skeleton-image {
+    height: 180px;
+  }
+  
+  .skeleton-category {
+    height: 24px;
+    width: 100px;
+  }
+}
+

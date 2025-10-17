@@ -121,16 +121,74 @@ export default function BlogArticlePage() {
 
 
   if (!article) {
-  return (
+    return (
       <div className="blog-article-page">
         <HeaderWithMenu homeHref="/ru" />
-        <div className="article-container">
-          <div className="article-not-found">
-            <h1>Статья не найдена</h1>
-            <p>Запрашиваемая статья не найдена.</p>
-            <a href="/ru/blog" className="btn primary">Вернуться к блогу</a>
+        
+        {/* Breadcrumbs Skeleton */}
+        <div className="article-breadcrumb">
+          <div className="article-container">
+            <div className="skeleton skeleton-meta" style={{width: '200px'}}></div>
+          </div>
         </div>
+
+        {/* Article Title Skeleton */}
+        <div className="article-title-section">
+          <div className="article-container">
+            <div className="article-meta-top">
+              <div className="skeleton skeleton-category"></div>
+              <div className="article-meta-info">
+                <div className="skeleton skeleton-meta" style={{width: '100px'}}></div>
+                <span className="meta-separator">•</span>
+                <div className="skeleton skeleton-meta" style={{width: '80px'}}></div>
+              </div>
+              <div className="skeleton" style={{width: '40px', height: '40px', borderRadius: '50%'}}></div>
+            </div>
+            <div className="skeleton skeleton-title"></div>
+          </div>
         </div>
+
+        {/* Article Content Skeleton */}
+        <div className="article-skeleton">
+          <div className="article-container">
+            <div className="skeleton skeleton-image"></div>
+            
+            <div className="skeleton-text"></div>
+            <div className="skeleton-text medium"></div>
+            <div className="skeleton-text short"></div>
+            <div className="skeleton-text"></div>
+            <div className="skeleton-text medium"></div>
+            <div className="skeleton-text"></div>
+            <div className="skeleton-text short"></div>
+            
+            <div style={{marginTop: '3rem'}}>
+              <div className="skeleton-text" style={{width: '50%', height: '24px', marginBottom: '2rem'}}></div>
+              
+              <div className="skeleton-faq-item">
+                <div className="skeleton skeleton-faq-question"></div>
+                <div className="skeleton skeleton-faq-answer"></div>
+                <div className="skeleton skeleton-faq-answer"></div>
+                <div className="skeleton skeleton-faq-answer"></div>
+              </div>
+              
+              <div className="skeleton-faq-item">
+                <div className="skeleton skeleton-faq-question"></div>
+                <div className="skeleton skeleton-faq-answer"></div>
+                <div className="skeleton skeleton-faq-answer"></div>
+              </div>
+              
+              <div className="skeleton-faq-item">
+                <div className="skeleton skeleton-faq-question"></div>
+                <div className="skeleton skeleton-faq-answer"></div>
+                <div className="skeleton skeleton-faq-answer"></div>
+                <div className="skeleton skeleton-faq-answer"></div>
+              </div>
+            </div>
+            
+            <div className="skeleton-button"></div>
+          </div>
+        </div>
+        
         <FooterRU />
       </div>
     );
