@@ -255,26 +255,16 @@ export default function BlogArticlePage() {
             </div>
 
             <div className="article-hero-content">
-              {/* Content placeholder for future use */}
+              <div 
+                className="article-body" 
+                dangerouslySetInnerHTML={{ 
+                  __html: currentLang === 'ru' ? article.content.ru : article.content.en 
+                }}
+              />
             </div>
           </div>
-            </div>
-          </div>
-
-          {/* Article Content */}
-      <main className="article-main">
-        <div className="article-container">
-          <article className="article-content">
-            <div 
-              className="article-body" 
-              dangerouslySetInnerHTML={{ 
-                __html: currentLang === 'ru' ? article.content.ru : article.content.en 
-              }}
-            />
-
-        </article>
         </div>
-      </main>
+      </div>
 
       {/* FAQ Section */}
       {faqItems && faqItems.length > 0 && (
