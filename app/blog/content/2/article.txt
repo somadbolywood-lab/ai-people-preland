@@ -2,7 +2,7 @@ META:
 TITLE_EN: Virtual Influencers in 2025: The Future of Social Media Marketing
 TITLE_RU: Виртуальные инфлюенсеры в 2025: Будущее социального медиа-маркетинга
 CATEGORY_EN: AI & Creativity
-CATEGORY_RU: AI и креативность
+CATEGORY_RU: AI и креатив
 AUTHOR_EN: AI-PEOPLE Editorial Team
 AUTHOR_RU: Редакция AI-PEOPLE
 READ_TIME_EN: 6 min read
