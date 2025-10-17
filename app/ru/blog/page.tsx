@@ -2,117 +2,51 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Script from "next/script";
 import FooterRU from "../../components/FooterRU";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
 import { useLanguage } from "../../hooks/useLanguage";
 
+export interface BlogPost {
+  id: number;
+  category: string;
+  categoryRu: string;
+  title: string;
+  titleRu: string;
+  excerpt: string;
+  excerptRu: string;
+  date: string;
+  readTime: string;
+  readTimeRu: string;
+  image: string;
+  featured: boolean;
+}
+
 export default function BlogPage() {
   // Use unified language hook with forced Russian language
   useLanguage({ forceLanguage: 'ru' });
+  
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);
 
-  // SEO-optimized blog posts data
-  const blogPosts = [
-    {
-      id: 1,
-      category: "AI Technology",
-      categoryRu: "AI Технологии",
-      title: "AI-Generated Content Marketing 2025: Virtual Models Cut Costs 90%",
-      titleRu: "AI-контент маркетинг 2025: Виртуальные модели снижают затраты на 90%",
-      excerpt: "How hyperrealistic AI models are revolutionizing digital marketing—discover why Fortune 500 brands are switching to AI-generated content and reducing production costs by 90%.",
-      excerptRu: "Как гиперреалистичные AI-модели революционизируют цифровой маркетинг—узнайте почему бренды Fortune 500 переходят на AI-контент и снижают затраты на производство на 90%.",
-      date: "2025-09-01",
-      readTime: "8 min read",
-      readTimeRu: "8 мин чтения",
-      image: "/assets/models/model-01.png",
-      featured: true
-    },
-    {
-      id: 2,
-      category: "Business Guide",
-      categoryRu: "Бизнес-гайд",
-      title: "How to Make Money with AI Art: $5K-$25K/Month Creator Guide 2025",
-      titleRu: "Как зарабатывать на AI-искусстве: Гайд креатора $5K-$25K/месяц 2025",
-      excerpt: "Proven strategies to make money selling AI-generated images—real creators earning $5,000-$25,000/month share their monetization methods, pricing strategies, and growth tactics.",
-      excerptRu: "Проверенные стратегии заработка на продаже AI-изображений—реальные креаторы, зарабатывающие $5,000-$25,000/месяц, делятся методами монетизации, ценовыми стратегиями и тактиками роста.",
-      date: "2025-09-15",
-      readTime: "12 min read",
-      readTimeRu: "12 мин чтения",
-      image: "/assets/models/model-02.png",
-      featured: true
-    },
-    {
-      id: 3,
-      category: "Industry Trends",
-      categoryRu: "Тренды индустрии",
-      title: "Why Top Brands Are Switching to Virtual Influencers: Market Analysis 2025",
-      titleRu: "Почему топовые бренды переходят на виртуальных инфлюенсеров: Анализ рынка 2025",
-      excerpt: "Explore the explosive growth of virtual influencer marketing and why Fortune 500 companies are investing millions in AI-generated brand ambassadors.",
-      excerptRu: "Исследуйте взрывной рост маркетинга виртуальных инфлюенсеров и почему компании Fortune 500 инвестируют миллионы в AI-сгенерированных амбассадоров.",
-      date: "2025-09-28",
-      readTime: "10 min read",
-      readTimeRu: "10 мин чтения",
-      image: "/assets/models/model-03.png",
-      featured: true
-    },
-    {
-      id: 4,
-      category: "AI Models",
-      categoryRu: "AI Модели",
-      title: "AI Instagram Model Kion Signs Million-Dollar Brand Deals: Virtual Influencer Revolution",
-      titleRu: "AI Instagram-модель Kion подписывает многомиллионные контракты: Революция виртуальных инфлюенсеров",
-      excerpt: "How AI Instagram model Kion is signing luxury brand deals with Bugatti and Fendi—the virtual influencer phenomenon reshaping fashion marketing and brand partnerships in 2025.",
-      excerptRu: "Как AI Instagram-модель Kion подписывает контракты с люксовыми брендами Bugatti и Fendi—феномен виртуальных инфлюенсеров меняет модный маркетинг и брендовые партнерства в 2025.",
-      date: "2025-10-06",
-      readTime: "7 min read",
-      readTimeRu: "7 мин чтения",
-      image: "/assets/models/model-04.png",
-      featured: true
-    },
-    {
-      id: 5,
-      category: "Case Study",
-      categoryRu: "Кейс-стади",
-      title: "From Zero to $10K/Month: Real Creator Success Story on AI-People",
-      titleRu: "От нуля до $10K/месяц: Реальная история успеха креатора на AI-People",
-      excerpt: "How one digital artist built a thriving business selling AI-generated content packages in just 6 months.",
-      excerptRu: "Как один цифровой художник построил процветающий бизнес, продавая пакеты AI-контента всего за 6 месяцев.",
-      date: "2025-10-03",
-      readTime: "7 min read",
-      readTimeRu: "7 мин чтения",
-      image: "/assets/models/model-05.png",
-      featured: false
-    },
-    {
-      id: 6,
-      category: "Creator Guide",
-      categoryRu: "Гайд для креаторов",
-      title: "How to Monetize AI Models: What US Creators Need to Know in 2025",
-      titleRu: "Как монетизировать AI-модели: что должны знать креаторы в США в 2025 году",
-      excerpt: "Complete guide to building a profitable AI content business in the US—legal framework, tax considerations, revenue models, and real earning potential.",
-      excerptRu: "Полный гайд по построению прибыльного AI-контент бизнеса в США—юридические рамки, налоговые соображения, модели дохода и реальный потенциал заработка.",
-      date: "2025-10-05",
-      readTime: "9 min read",
-      readTimeRu: "9 мин чтения",
-      image: "/assets/models/model-06.png",
-      featured: false
-    },
-    {
-      id: 7,
-      category: "Future Trends",
-      categoryRu: "Тренды будущего",
-      title: "Top 5 Virtual Influencer Trends for 2026-2027: The Future of AI Social Media",
-      titleRu: "Топ-5 трендов виртуальных инфлюенсеров на 2026–2027: Будущее AI в соцсетях",
-      excerpt: "Exclusive predictions: metaverse integration, AI voice cloning, blockchain authenticity, and interactive virtual personalities—discover the 5 game-changing trends reshaping influencer marketing.",
-      excerptRu: "Эксклюзивные прогнозы: интеграция с метавселенной, AI-клонирование голоса, блокчейн-аутентичность и интерактивные виртуальные личности—откройте 5 революционных трендов, меняющих инфлюенсер-маркетинг.",
-      date: "2025-10-06",
-      readTime: "10 min read",
-      readTimeRu: "10 мин чтения",
-      image: "/assets/models/model-07.png",
-      featured: true
-    }
-  ];
+  useEffect(() => {
+    // Load blog posts from API
+    const loadBlogs = async () => {
+      try {
+        const response = await fetch('/api/blog');
+        const posts = await response.json();
+        setBlogPosts(posts);
+        setFeaturedPosts(posts.filter((post: BlogPost) => post.featured).slice(0, 3));
+      } catch (error) {
+        console.error('Error loading blog posts:', error);
+        setBlogPosts([]);
+        setFeaturedPosts([]);
+      }
+    };
+
+    loadBlogs();
+  }, []);
 
 
   return (
@@ -159,7 +93,7 @@ export default function BlogPage() {
           <div className="blog-container">
             <h2 className="section-title" data-lang-en="Featured Articles" data-lang-ru="Избранные статьи">Featured Articles</h2>
             <div className="featured-grid">
-              {blogPosts.filter(post => post.featured).slice(0, 3).map((post) => (
+              {featuredPosts.map((post) => (
                 <article key={post.id} className="featured-card">
                   <div className="featured-image">
                     <Image 

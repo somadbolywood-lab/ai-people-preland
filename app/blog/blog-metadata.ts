@@ -1,47 +1,7 @@
 import { Metadata } from 'next';
 
-// Blog articles metadata
-export const blogArticles: Record<string, {
-  id: number;
-  category: string;
-  categoryRu: string;
-  title: string;
-  titleRu: string;
-  excerpt: string;
-  excerptRu: string;
-  date: string;
-  author: string;
-  authorRu: string;
-  image: string;
-}> = {
-  "1": {
-    id: 1,
-    category: "AI Technology",
-    categoryRu: "AI Технологии",
-    title: "AI-Generated Content Marketing 2025: Virtual Models Cut Costs 90%",
-    titleRu: "AI-контент маркетинг 2025: Виртуальные модели снижают затраты на 90%",
-    excerpt: "How hyperrealistic AI models are revolutionizing digital marketing—discover why Fortune 500 brands are switching to AI-generated content and reducing production costs by 90%.",
-    excerptRu: "Как гиперреалистичные AI-модели революционизируют цифровой маркетинг—узнайте почему бренды Fortune 500 переходят на AI-контент и снижают затраты на производство на 90%.",
-    date: "2025-09-01",
-    author: "Sarah Chen",
-    authorRu: "Сара Чен",
-    image: "/assets/models/model-01.png",
-  },
-  "2": {
-    id: 2,
-    category: "Business Guide",
-    categoryRu: "Бизнес-гайд",
-    title: "How to Make Money with AI Art: $5K-$25K/Month Creator Guide 2025",
-    titleRu: "Как зарабатывать на AI-искусстве: Гайд креатора $5K-$25K/месяц 2025",
-    excerpt: "Proven strategies to make money selling AI-generated images—real creators earning $5,000-$25,000/month share their monetization methods, pricing strategies, and growth tactics.",
-    excerptRu: "Проверенные стратегии заработка на продаже AI-изображений—реальные креаторы, зарабатывающие $5,000-$25,000/месяц, делятся методами монетизации, ценовыми стратегиями и тактиками роста.",
-    date: "2025-09-15",
-    author: "Marcus Rodriguez",
-    authorRu: "Маркус Родригес",
-    image: "/assets/models/model-02.png",
-  },
-  // ... add more articles
-};
+// Blog articles metadata - will be loaded dynamically from content files
+export const blogArticles: Record<string, any> = {};
 
 export function generateBlogMetadata(id: string): Metadata {
   const article = blogArticles[id];
