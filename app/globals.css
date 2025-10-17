@@ -10159,20 +10159,13 @@ a.visible-link {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.share-btn svg {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+.share-btn {
+  color: var(--accent);
 }
 
-.share-btn:hover svg {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+.share-btn:hover {
+  color: var(--accent-2);
+  border-color: var(--accent);
 }
 
 .faq-section-title {
