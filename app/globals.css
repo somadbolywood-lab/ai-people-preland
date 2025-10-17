@@ -9617,6 +9617,14 @@ a.visible-link {
   min-width: 0;
 }
 
+.hero-intro-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+  padding: 0;
+}
+
 /* Hero Image - 50% width with flexbox */
 .article-hero-image-float {
   flex: 0 0 50%;

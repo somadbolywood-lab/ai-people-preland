@@ -21,10 +21,6 @@ UPDATED_AT: 2025-01-22
 
 CONTENT_EN:
 
-## Virtual Influencers in 2025: The Future of Social Media Marketing
-
-Virtual influencers have evolved from novelty to mainstream marketing powerhouses in 2025. These AI-powered digital personalities command millions of followers, secure brand partnerships worth millions, and reshape how companies approach social media engagement. The question is no longer if brands should work with virtual influencers, but how to do it effectively.
-
 ## The Virtual Influencer Revolution
 
 Virtual influencers like Lil Miquela, Imma, and newer AI personalities have proven that authenticity doesn't require physical existence. Their carefully crafted personas resonate with audiences seeking consistency, creativity, and ethical values. Unlike human influencers, virtual personalities never have scandals, always stay on-brand, and offer complete creative control.
@@ -57,8 +53,6 @@ Join AI-PEOPLE — the first AI Model Marketplace and create your own virtual in
 ---
 
 CONTENT_RU:
-
-Виртуальные инфлюенсеры эволюционировали от новинки до мейнстримных маркетинговых гигантов в 2025 году. Эти AI-персоны собирают миллионы подписчиков, заключают партнёрства с брендами на миллионы и меняют подход компаний к социальным сетям. Вопрос уже не в том, стоит ли брендам работать с виртуальными инфлюенсерами, а как делать это эффективно.
 
 ## Революция виртуальных инфлюенсеров
 

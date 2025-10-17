@@ -21,8 +21,6 @@ UPDATED_AT: 2025-01-20
 
 CONTENT_EN:
 
-The digital marketing landscape is undergoing a revolutionary transformation in 2025, driven by AI-generated virtual models and hyperrealistic digital humans. Brands are discovering unprecedented creative freedom while slashing production costs by up to 90%. Welcome to the new era of content marketing.
-
 ## The Rise of AI Virtual Models
 
 Virtual models created by artificial intelligence are no longer science fiction—they're reshaping how brands connect with audiences. Unlike traditional photoshoots that require models, photographers, locations, and extensive post-production, AI-generated content can be produced in hours, not weeks.
@@ -55,8 +53,6 @@ Join AI-PEOPLE — the first AI Model Marketplace and explore the next generatio
 ---
 
 CONTENT_RU:
-
-Ландшафт цифрового маркетинга переживает революционную трансформацию в 2025 году благодаря AI-моделям и гиперреалистичным цифровым людям. Бренды открывают беспрецедентную творческую свободу, одновременно снижая производственные затраты до 90%. Добро пожаловать в новую эру контент-маркетинга.
 
 ## Подъём AI виртуальных моделей
 
