@@ -23,8 +23,6 @@ CONTENT_EN:
 
 ## The Rise of AI Virtual Models
 
-Virtual models created by artificial intelligence are no longer science fiction—they're reshaping how brands connect with audiences. Unlike traditional photoshoots that require models, photographers, locations, and extensive post-production, AI-generated content can be produced in hours, not weeks.
-
 Major brands like Nike, L'Oréal, and Samsung are already leveraging AI models for campaigns, achieving results that match or exceed traditional methods. The technology enables instant iteration, A/B testing at scale, and personalization impossible with human models.
 
 ## Cost Savings and Efficiency
@@ -55,8 +53,6 @@ Join AI-PEOPLE — the first AI Model Marketplace and explore the next generatio
 CONTENT_RU:
 
 ## Подъём AI виртуальных моделей
-
-Виртуальные модели, созданные искусственным интеллектом, больше не научная фантастика — они меняют способ взаимодействия брендов с аудиторией. В отличие от традиционных фотосессий, требующих моделей, фотографов, локаций и обширной постобработки, AI-контент создаётся за часы, а не недели.
 
 Крупные бренды, такие как Nike, L'Oréal и Samsung, уже используют AI-модели для кампаний, достигая результатов, сопоставимых или превосходящих традиционные методы. Технология обеспечивает мгновенную итерацию, A/B-тестирование в масштабе и персонализацию, невозможную с живыми моделями.
 
