@@ -10221,7 +10221,7 @@ a.visible-link {
 
 .faq-card {
   background: var(--panel);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
   transition: all 0.3s ease;
@@ -10229,9 +10229,9 @@ a.visible-link {
 }
 
 .faq-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  border-color: rgba(139, 92, 246, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+  border-color: var(--accent);
 }
 
 .faq-question {
