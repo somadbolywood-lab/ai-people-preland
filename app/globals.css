@@ -9632,13 +9632,13 @@ a.visible-link {
 }
 
 .article-excerpt {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--text-secondary);
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .article-main {
@@ -10469,7 +10469,7 @@ a.visible-link {
   }
   
   .article-excerpt {
-    font-size: 1.125rem !important;
+    font-size: 0.9375rem !important;
     margin-top: 0.75rem;
     margin-bottom: 1rem;
   }
