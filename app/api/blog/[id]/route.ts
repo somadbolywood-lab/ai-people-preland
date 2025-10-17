@@ -281,10 +281,26 @@ function loadBlogArticle(articleId: string): BlogArticle | null {
   const articleContent = fs.readFileSync(articleFile, 'utf-8');
   const { metadata, content, faq, cta } = parseArticleFile(articleContent);
   
-  // Load images
-  const heroImage = fs.existsSync(path.join(contentDir, 'hero.jpg')) 
-    ? `/assets/models/model-01.png`
-    : `/assets/models/model-01.png`;
+  // Load hero image - support both PNG and JPG formats
+  let heroImage = '/assets/models/model-01.png'; // fallback
+  
+  // Check for PNG first, then JPG, then use metadata OG_IMAGE
+  if (metadata.ogImage && metadata.ogImage !== './hero.jpg' && metadata.ogImage !== './hero.png') {
+    // Custom image path from metadata
+    const customImagePath = metadata.ogImage.replace('./', '');
+    heroImage = `/blog/content/${articleId}/${customImagePath}`;
+  } else {
+    // Auto-detect PNG or JPG in content directory
+    if (fs.existsSync(path.join(contentDir, 'hero.png'))) {
+      heroImage = `/blog/content/${articleId}/hero.png`;
+    } else if (fs.existsSync(path.join(contentDir, 'hero.jpg'))) {
+      heroImage = `/blog/content/${articleId}/hero.jpg`;
+    } else if (fs.existsSync(path.join(contentDir, 'hero.jpeg'))) {
+      heroImage = `/blog/content/${articleId}/hero.jpeg`;
+    } else if (fs.existsSync(path.join(contentDir, 'hero.webp'))) {
+      heroImage = `/blog/content/${articleId}/hero.webp`;
+    }
+  }
     
   const galleryDir = path.join(contentDir, 'gallery');
   const gallery = loadImages(galleryDir, articleId);

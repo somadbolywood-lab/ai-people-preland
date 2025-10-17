@@ -175,6 +175,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }} />
       </head>
     <body suppressHydrationWarning>
+      {/* Global SVG Gradients for Share Icons */}
+      <svg style={{ position: 'absolute', width: 0, height: 0 }} aria-hidden="true">
+        <defs>
+          <linearGradient id="shareGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style={{ stopColor: '#8b5cf6', stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: '#ec4899', stopOpacity: 1 }} />
+          </linearGradient>
+          <linearGradient id="shareGradientHover" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style={{ stopColor: '#ec4899', stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: '#8b5cf6', stopOpacity: 1 }} />
+          </linearGradient>
+        </defs>
+      </svg>
+      
       <ErrorBoundary>
         <LanguageProvider defaultLanguage="en">
           <ThemeInitializer />
