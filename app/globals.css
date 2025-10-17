@@ -10732,153 +10732,106 @@ a.visible-link {
 }
 
 /* ========================================
-   СКЕЛЕТОН ДЛЯ СТРАНИЦЫ БЛОГА
+   ГРАДИЕНТНЫЙ СПИННЕР ДЛЯ ЗАГРУЗКИ
    ======================================== */
 
-.skeleton {
-  background: linear-gradient(90deg, var(--muted) 25%, var(--bg-hover) 50%, var(--muted) 75%);
-  background-size: 200% 100%;
-  animation: skeleton-loading 1.5s infinite;
-  border-radius: 4px;
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 2rem;
 }
 
-@keyframes skeleton-loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-/* Скелетон для заголовка статьи */
-.skeleton-title {
-  height: 32px;
-  width: 80%;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-}
-
-/* Скелетон для метаданных */
-.skeleton-meta {
-  height: 20px;
-  width: 40%;
-  margin-bottom: 0.5rem;
-  border-radius: 4px;
-}
-
-/* Скелетон для категории */
-.skeleton-category {
-  height: 28px;
-  width: 120px;
-  border-radius: 20px;
-  margin-bottom: 1rem;
-}
-
-/* Скелетон для изображения */
-.skeleton-image {
-  height: 300px;
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-}
-
-/* Скелетон для текста */
-.skeleton-text {
-  height: 16px;
-  width: 100%;
-  margin-bottom: 0.75rem;
-}
-
-.skeleton-text.short {
-  width: 75%;
-}
-
-.skeleton-text.medium {
-  width: 90%;
-}
-
-/* Скелетон для FAQ */
-.skeleton-faq-item {
+.gradient-spinner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 1.5rem;
-  padding: 1rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
 }
 
-.skeleton-faq-question {
-  height: 20px;
-  width: 60%;
-  margin-bottom: 0.75rem;
+.spinner-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  animation: spinner-bounce 1.4s ease-in-out infinite both;
 }
 
-.skeleton-faq-answer {
-  height: 16px;
-  width: 100%;
-  margin-bottom: 0.5rem;
+.spinner-dot:nth-child(1) {
+  animation-delay: -0.32s;
 }
 
-.skeleton-faq-answer:last-child {
-  width: 80%;
-  margin-bottom: 0;
+.spinner-dot:nth-child(2) {
+  animation-delay: -0.16s;
 }
 
-/* Скелетон для кнопки */
-.skeleton-button {
-  height: 48px;
-  width: 200px;
-  border-radius: 12px;
-  margin: 2rem auto;
+.spinner-dot:nth-child(3) {
+  animation-delay: 0s;
 }
 
-/* Контейнер скелетона */
-.article-skeleton {
-  padding: 2rem 0;
+.spinner-dot:nth-child(4) {
+  animation-delay: 0.16s;
 }
 
-.article-skeleton .article-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1rem;
+@keyframes spinner-bounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 }
 
-/* Мобильные стили для скелетона */
+.loading-text {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+/* Мобильные стили для спиннера */
 @media (max-width: 768px) {
-  .skeleton-title {
-    height: 28px;
-    width: 90%;
+  .loading-container {
+    min-height: 300px;
+    padding: 1.5rem;
   }
   
-  .skeleton-image {
-    height: 200px;
+  .spinner-dot {
+    width: 10px;
+    height: 10px;
   }
   
-  .skeleton-text {
-    height: 14px;
+  .gradient-spinner {
+    gap: 6px;
   }
   
-  .skeleton-faq-question {
-    height: 18px;
-  }
-  
-  .skeleton-faq-answer {
-    height: 14px;
+  .loading-text {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .skeleton-title {
-    height: 24px;
-    width: 95%;
+  .loading-container {
+    min-height: 250px;
+    padding: 1rem;
   }
   
-  .skeleton-image {
-    height: 180px;
+  .spinner-dot {
+    width: 8px;
+    height: 8px;
   }
   
-  .skeleton-category {
-    height: 24px;
-    width: 100px;
+  .gradient-spinner {
+    gap: 5px;
+  }
+  
+  .loading-text {
+    font-size: 0.85rem;
   }
 }
 

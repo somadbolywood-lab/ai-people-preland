@@ -124,71 +124,17 @@ export default function BlogArticlePage() {
     return (
       <div className="blog-article-page">
         <HeaderWithMenu homeHref="/" />
-        
-        {/* Breadcrumbs Skeleton */}
-        <div className="article-breadcrumb">
-          <div className="article-container">
-            <div className="skeleton skeleton-meta" style={{width: '200px'}}></div>
-          </div>
-        </div>
-
-        {/* Article Title Skeleton */}
-        <div className="article-title-section">
-          <div className="article-container">
-            <div className="article-meta-top">
-              <div className="skeleton skeleton-category"></div>
-              <div className="article-meta-info">
-                <div className="skeleton skeleton-meta" style={{width: '100px'}}></div>
-                <span className="meta-separator">•</span>
-                <div className="skeleton skeleton-meta" style={{width: '80px'}}></div>
-              </div>
-              <div className="skeleton" style={{width: '40px', height: '40px', borderRadius: '50%'}}></div>
+        <div className="article-container">
+          <div className="loading-container">
+            <div className="gradient-spinner">
+              <div className="spinner-dot"></div>
+              <div className="spinner-dot"></div>
+              <div className="spinner-dot"></div>
+              <div className="spinner-dot"></div>
             </div>
-            <div className="skeleton skeleton-title"></div>
+            <p className="loading-text">Loading article...</p>
           </div>
         </div>
-
-        {/* Article Content Skeleton */}
-        <div className="article-skeleton">
-          <div className="article-container">
-            <div className="skeleton skeleton-image"></div>
-            
-            <div className="skeleton-text"></div>
-            <div className="skeleton-text medium"></div>
-            <div className="skeleton-text short"></div>
-            <div className="skeleton-text"></div>
-            <div className="skeleton-text medium"></div>
-            <div className="skeleton-text"></div>
-            <div className="skeleton-text short"></div>
-            
-            <div style={{marginTop: '3rem'}}>
-              <div className="skeleton-text" style={{width: '50%', height: '24px', marginBottom: '2rem'}}></div>
-              
-              <div className="skeleton-faq-item">
-                <div className="skeleton skeleton-faq-question"></div>
-                <div className="skeleton skeleton-faq-answer"></div>
-                <div className="skeleton skeleton-faq-answer"></div>
-                <div className="skeleton skeleton-faq-answer"></div>
-              </div>
-              
-              <div className="skeleton-faq-item">
-                <div className="skeleton skeleton-faq-question"></div>
-                <div className="skeleton skeleton-faq-answer"></div>
-                <div className="skeleton skeleton-faq-answer"></div>
-              </div>
-              
-              <div className="skeleton-faq-item">
-                <div className="skeleton skeleton-faq-question"></div>
-                <div className="skeleton skeleton-faq-answer"></div>
-                <div className="skeleton skeleton-faq-answer"></div>
-                <div className="skeleton skeleton-faq-answer"></div>
-              </div>
-            </div>
-            
-            <div className="skeleton-button"></div>
-          </div>
-        </div>
-        
         <Footer />
       </div>
     );
