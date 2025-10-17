@@ -284,7 +284,7 @@ export default function BlogArticlePage() {
             <div className="faq-grid">
               {faqItems.map((item, index) => (
                 <div key={index} className="faq-card">
-                  <h3 className="faq-question">{item.question}</h3>
+                  <h3 className="faq-question gradient-text">{item.question}</h3>
                   <p className="faq-answer">{item.answer}</p>
                 </div>
               ))}
