@@ -9608,21 +9608,24 @@ a.visible-link {
 
 .article-hero-layout {
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
 }
 
 .article-hero-content {
   position: relative;
-  flex: 1;
-  align-self: flex-start;
-  padding-top: 0;
+}
+
+/* Desktop: Align text content with top of hero image */
+@media (min-width: 769px) {
+  .article-hero-content {
+    align-self: flex-start;
+    margin-top: 0;
+  }
 }
 
 /* Hero Image Floating Left - 50% width */
 .article-hero-image-float {
-  flex: 0 0 50%;
+  float: left;
+  margin: 0 2rem 1.5rem 0;
   width: 50%;
   max-width: 50%;
   border-radius: 12px;
