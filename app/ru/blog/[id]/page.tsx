@@ -255,12 +255,7 @@ export default function BlogArticlePage() {
             </div>
 
             <div className="article-hero-content">
-              <p className="hero-intro-text">
-                {currentLang === 'ru' ? 
-                  article.content.ru.split('\n\n')[0] : 
-                  article.content.en.split('\n\n')[0]
-                }
-              </p>
+              {/* Content placeholder for future use */}
             </div>
           </div>
             </div>
