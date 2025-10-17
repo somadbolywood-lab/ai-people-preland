@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import HeaderWithMenu from "../../components/HeaderWithMenu";
@@ -72,6 +72,7 @@ export interface BlogPost {
 
 export default function BlogArticlePage() {
   const params = useParams();
+  const router = useRouter();
   const articleId = params.id;
   const [currentLang, setCurrentLang] = useState('en');
   const [article, setArticle] = useState<BlogArticle | null>(null);
@@ -204,6 +205,22 @@ export default function BlogArticlePage() {
                 {currentLang === 'ru' ? article.readTime.ru : article.readTime.en}
               </span>
             </div>
+            <button 
+              className="back-button"
+              onClick={() => router.back()}
+              aria-label={currentLang === 'ru' ? 'Назад' : 'Back'}
+              title={currentLang === 'ru' ? 'Назад' : 'Back'}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path 
+                  d="M19 12H5M12 19L5 12L12 5" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
           </div>
           <h1 className="article-title">
             {currentLang === 'ru' ? article.title.ru : article.title.en}

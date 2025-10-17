@@ -9663,6 +9663,41 @@ a.visible-link {
   gap: 1rem;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.back-button {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.back-button:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateX(-2px);
+}
+
+.back-button:active {
+  transform: translateX(-1px) scale(0.95);
+}
+
+.back-button svg {
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover svg {
+  transform: translateX(-1px);
 }
 
 .article-category {
@@ -10661,6 +10696,38 @@ a.visible-link {
   
   .unified-h1 [data-lang-ru] {
     line-height: 1.15 !important;
+  }
+}
+
+/* ========================================
+   МОБИЛЬНЫЕ СТИЛИ ДЛЯ КНОПКИ "НАЗАД"
+   ======================================== */
+
+@media (max-width: 768px) {
+  .back-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .back-button svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .article-meta-top {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .back-button svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
