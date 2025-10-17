@@ -10461,7 +10461,11 @@ a.visible-link {
   }
   
   .article-content {
-    font-size: 0.9375rem;
+    font-size: 0.9375rem !important;
+  }
+  
+  .article-excerpt {
+    font-size: 0.9375rem !important;
   }
   
   .article-content .lead {
