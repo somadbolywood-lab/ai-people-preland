@@ -7,8 +7,8 @@ AUTHOR_EN: AI-PEOPLE Editorial Team
 AUTHOR_RU: Редакция AI-PEOPLE
 READ_TIME_EN: 6 min read
 READ_TIME_RU: 6 мин чтения
-EXCERPT_EN: Virtual influencers are transforming social media. Explore how AI-powered digital personalities are reshaping brand engagement.
-EXCERPT_RU: Виртуальные инфлюенсеры трансформируют социальные сети. Узнайте, как AI-персоны меняют взаимодействие брендов с аудиторией.
+EXCERPT_EN: Virtual influencers are transforming social media. Explore how AI-powered digital personalities are reshaping brand engagement
+EXCERPT_RU: Виртуальные инфлюенсеры трансформируют социальные сети. Узнайте, как AI-персоны меняют взаимодействие брендов с аудиторией
 FEATURED: true
 TAGS: virtual influencers, social media, AI technology, digital marketing
 META_DESCRIPTION_EN: Virtual influencers dominate social media in 2025. Discover how AI personalities are changing brand engagement and marketing strategies.
