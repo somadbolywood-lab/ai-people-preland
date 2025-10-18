@@ -4540,11 +4540,11 @@ a.visible-link {
         padding: 0; 
     }
     .foot { 
+        margin: 40px 0 1rem;
         flex-direction: row; 
         justify-content: space-between; 
         text-align: left; 
-        padding: 0;
-        margin: 40px 0 1rem;
+        padding: 0; 
     }
     .notice { 
         padding: 0; 
