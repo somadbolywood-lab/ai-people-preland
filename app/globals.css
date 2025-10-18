@@ -9837,6 +9837,7 @@ a.visible-link {
 .article-body {
   margin: 0 auto;
   max-width: 100%;
+  font-size: 0.875rem;
 }
 
 /* Fix text rendering - clean display */
@@ -10431,6 +10432,7 @@ a.visible-link {
   
   .article-body {
     max-width: 100%;
+    font-size: 0.875rem;
   }
   
   .article-title-section {
