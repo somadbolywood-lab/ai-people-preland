@@ -10483,7 +10483,7 @@ a.visible-link {
   .article-excerpt {
     font-size: 0.9375rem !important;
     margin-top: 0.75rem;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.56rem;
   }
   
   .article-content .lead {
@@ -10598,19 +10598,19 @@ a.visible-link {
   
   .article-faq-section,
   .article-cta-section {
-    padding: 1.75rem 0;
+    padding: 1.4rem 0;
   }
   
   .related-articles-section {
-    padding: 1.25rem 0;
+    padding: 0.875rem 0;
   }
   
   .article-footer-section {
-    padding: 2.1rem 0;
+    padding: 1.68rem 0;
   }
   
   .blog-cta-section {
-    padding: 2rem 0;
+    padding: 1.4rem 0;
   }
 }
 
