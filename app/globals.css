@@ -7020,7 +7020,7 @@ a.visible-link {
     }
 }
 .foot { 
-    margin: 40px 0 12px; 
+    margin: 40px 0 1rem; 
     display: flex; 
     flex-direction: column;
     gap: 12px; 
@@ -10483,7 +10483,7 @@ a.visible-link {
   .article-excerpt {
     font-size: 0.9375rem !important;
     margin-top: 0.75rem;
-    margin-bottom: 0.56rem;
+    margin-bottom: 0.7rem;
   }
   
   .article-content .lead {
@@ -10598,19 +10598,19 @@ a.visible-link {
   
   .article-faq-section,
   .article-cta-section {
-    padding: 1.4rem 0;
+    padding: 1.75rem 0;
   }
   
   .related-articles-section {
-    padding: 0.875rem 0;
+    padding: 1.25rem 0;
   }
   
   .article-footer-section {
-    padding: 1.68rem 0;
+    padding: 2.1rem 0;
   }
   
   .blog-cta-section {
-    padding: 1.4rem 0;
+    padding: 2rem 0;
   }
 }
 
