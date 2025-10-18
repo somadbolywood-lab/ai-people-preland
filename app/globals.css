@@ -131,7 +131,7 @@ html, body { height: 100%; }
     }
     
     .call-to-action h2 {
-        font-size: clamp(18px, 4vw, 22px) !important;
+        font-size: 1.6rem !important; /* 25.6px - как H2 в основном тексте блога */
         margin: 8px 0 6px !important;
     }
     
@@ -8946,7 +8946,7 @@ a.visible-link {
   }
   
   .content-block h2 {
-    font-size: clamp(18px, 4vw, 22px) !important;
+    font-size: 1.6rem !important; /* 25.6px - как H2 в основном тексте блога */
   }
   
   .content-block h3 {
@@ -9523,7 +9523,7 @@ a.visible-link {
   /* ЗАДАЧА: Увеличение размера заголовков Featured Articles и Latest Articles на мобильных */
   .blog-page .section-title,
   .blog-marquee-title {
-    font-size: clamp(18px, 4vw, 22px) !important;
+    font-size: 1.6rem !important; /* 25.6px - как H2 в основном тексте блога */
   }
 }
 
@@ -9563,7 +9563,7 @@ a.visible-link {
   /* ЗАДАЧА: Увеличение размера заголовков Featured Articles и Latest Articles на мобильных */
   .blog-page .section-title,
   .blog-marquee-title {
-    font-size: clamp(18px, 4vw, 22px) !important;
+    font-size: 1.6rem !important; /* 25.6px - как H2 в основном тексте блога */
   }
 }
 
@@ -10543,7 +10543,7 @@ a.visible-link {
   
   /* ЗАДАЧА: Увеличение размера заголовков Featured Articles и Latest Articles на мобильных - ПОВЫШЕННАЯ СПЕЦИФИЧНОСТЬ */
   .blog-page .section-title {
-    font-size: clamp(18px, 4vw, 22px) !important;
+    font-size: 1.6rem !important; /* 25.6px - как H2 в основном тексте блога */
   }
 }
 
@@ -10598,9 +10598,9 @@ a.visible-link {
     font-size: 1.5rem;
   }
   
-  /* ЗАДАЧА: Увеличение размера заголовков Featured Articles и Latest Articles на мобильных - ПОВЫШЕННАЯ СПЕЦИФИЧНОСТЬ */
+  /* ЗАДАЧА: Увеличение размера заголовков Featured Articles и Latest Articles на мобильных - ПРАВИЛЬНЫЕ РАЗМЕРЫ H2 */
   .blog-page .section-title {
-    font-size: clamp(18px, 4vw, 22px) !important;
+    font-size: 1.4rem !important; /* 22.4px - как H2 в основном тексте блога для мобильных */
   }
   
   .faq-card {
