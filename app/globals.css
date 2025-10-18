@@ -3888,7 +3888,7 @@ a.visible-link {
     color: var(--text);
     font-size: clamp(12px, 2.5vw, 16px);
     line-height: 1.5;
-    margin: 8px 0 16px;
+    margin: 8px 0 8px;
     max-width: 100%;
     opacity: 0.9;
 }
@@ -9003,7 +9003,7 @@ a.visible-link {
 /* Blog Hero */
 .blog-hero {
   text-align: center;
-  padding: 2rem 1rem 3rem;
+  padding: 2rem 1rem 1.5rem;
   background: linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(139, 92, 246, 0.01) 50%, transparent 100%);
 }
 
