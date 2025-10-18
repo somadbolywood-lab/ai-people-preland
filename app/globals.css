@@ -9519,6 +9519,12 @@ a.visible-link {
   .newsletter-btn {
     width: 100%;
   }
+  
+  /* ЗАДАЧА: Увеличение размера заголовков Featured Articles и Latest Articles на мобильных */
+  .blog-page .section-title,
+  .blog-marquee-title {
+    font-size: clamp(18px, 4vw, 22px) !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -9552,6 +9558,12 @@ a.visible-link {
   .newsletter-title {
     font-size: 1.3rem;
     text-align: center;
+  }
+  
+  /* ЗАДАЧА: Увеличение размера заголовков Featured Articles и Latest Articles на мобильных */
+  .blog-page .section-title,
+  .blog-marquee-title {
+    font-size: clamp(18px, 4vw, 22px) !important;
   }
 }
 
