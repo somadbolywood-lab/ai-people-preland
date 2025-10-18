@@ -4544,7 +4544,7 @@ a.visible-link {
         padding: 0 0 40px 0;
         flex-direction: row; 
         justify-content: space-between; 
-        text-align: left; 
+        text-align: left;
     }
     .notice { 
         padding: 0; 
@@ -8927,7 +8927,7 @@ a.visible-link {
 }
 
 .content-block ul {
-  list-style: none;
+  list-style-type: disc;
   padding-left: 1.5rem;
 }
 
