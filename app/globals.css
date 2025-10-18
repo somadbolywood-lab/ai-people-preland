@@ -4543,7 +4543,8 @@ a.visible-link {
         flex-direction: row; 
         justify-content: space-between; 
         text-align: left; 
-        padding: 0; 
+        padding: 0;
+        margin: 40px 0 1rem;
     }
     .notice { 
         padding: 0; 
