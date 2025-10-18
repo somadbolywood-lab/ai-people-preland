@@ -6,8 +6,18 @@
 // Force theme initialization (call immediately)
 function forceThemeInit() {
     const body = document.body;
-    const currentTheme = localStorage.getItem('theme') || 'light';
     
+    // 1. Check localStorage first (user preference)
+    let currentTheme = localStorage.getItem('theme');
+    
+    // 2. If no saved preference, detect system theme
+    if (!currentTheme) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        currentTheme = prefersDark ? 'dark' : 'light';
+        // Don't save to localStorage yet - let user explicitly choose
+    }
+    
+    // 3. Apply theme
     if (currentTheme === 'light') {
         body.classList.add('light');
     } else {
@@ -29,8 +39,12 @@ function initThemeToggle() {
     const newThemeToggle = themeToggle.cloneNode(true);
     themeToggle.parentNode.replaceChild(newThemeToggle, themeToggle);
     
-    // Check for saved theme preference or default to 'light'
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    // Check for saved theme preference or detect system theme
+    let currentTheme = localStorage.getItem('theme');
+    if (!currentTheme) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        currentTheme = prefersDark ? 'dark' : 'light';
+    }
     
     // Apply theme immediately but safely
     if (currentTheme === 'light') {

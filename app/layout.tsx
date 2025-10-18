@@ -77,6 +77,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        {/* Blocking theme initialization script - prevents white flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (!theme) {
+                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    theme = prefersDark ? 'dark' : 'light';
+                  }
+                  if (theme === 'light') {
+                    document.documentElement.classList.add('light');
+                    document.body.classList.add('light');
+                  }
+                } catch (e) {}
+              })();
+            `
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
