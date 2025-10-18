@@ -4540,7 +4540,7 @@ a.visible-link {
         padding: 0; 
     }
     .foot { 
-        margin: 40px 0 1rem;
+        margin: 40px 0 40px;
         flex-direction: row; 
         justify-content: space-between; 
         text-align: left; 
@@ -7021,7 +7021,7 @@ a.visible-link {
     }
 }
 .foot { 
-    margin: 40px 0 1rem; 
+    margin: 40px 0 40px; 
     display: flex; 
     flex-direction: column;
     gap: 12px; 
