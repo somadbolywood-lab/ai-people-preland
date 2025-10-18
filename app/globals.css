@@ -10540,6 +10540,11 @@ a.visible-link {
   .related-articles-section {
     padding: 3rem 0;
   }
+  
+  /* ЗАДАЧА: Увеличение размера заголовков Featured Articles и Latest Articles на мобильных - ПОВЫШЕННАЯ СПЕЦИФИЧНОСТЬ */
+  .blog-page .section-title {
+    font-size: clamp(18px, 4vw, 22px) !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -10591,6 +10596,11 @@ a.visible-link {
   .cta-title,
   .section-title {
     font-size: 1.5rem;
+  }
+  
+  /* ЗАДАЧА: Увеличение размера заголовков Featured Articles и Latest Articles на мобильных - ПОВЫШЕННАЯ СПЕЦИФИЧНОСТЬ */
+  .blog-page .section-title {
+    font-size: clamp(18px, 4vw, 22px) !important;
   }
   
   .faq-card {
