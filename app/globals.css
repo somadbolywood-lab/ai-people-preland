@@ -10143,10 +10143,13 @@ a.visible-link {
   box-shadow: 0 2px 8px rgba(139, 92, 246, 0.25);
 }
 
-.article-meta-info {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.article-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.article-read-time {
   font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 500;
@@ -11238,12 +11241,14 @@ a.visible-link {
     align-items: center;
   }
   
-  .article-meta-info {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  .article-date {
+    font-size: 0.8rem;
+  }
+  
+  .article-read-time {
+    font-size: 0.8rem;
     flex: 1;
-    justify-content: center;
+    text-align: center;
   }
   
   .back-button {
@@ -11275,13 +11280,14 @@ a.visible-link {
     align-items: center;
   }
   
-  .article-meta-info {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    flex: 1;
-    justify-content: center;
+  .article-date {
     font-size: 0.75rem;
+  }
+  
+  .article-read-time {
+    font-size: 0.75rem;
+    flex: 1;
+    text-align: center;
   }
   
   .back-button {

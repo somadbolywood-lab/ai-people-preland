@@ -227,13 +227,10 @@ export default function BlogArticlePage() {
       <div className="article-title-section">
         <div className="article-container">
           <div className="article-meta-top">
-            <div className="article-meta-info">
-              <time className="article-date">{new Date(article.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US')}</time>
-              <span className="meta-separator">•</span>
-              <span className="article-read-time">
-                {currentLang === 'ru' ? article.readTime.ru : article.readTime.en}
-              </span>
-            </div>
+            <time className="article-date">{new Date(article.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US')}</time>
+            <span className="article-read-time">
+              {currentLang === 'ru' ? article.readTime.ru : article.readTime.en}
+            </span>
             <button 
               className="back-button"
               onClick={() => router.back()}
