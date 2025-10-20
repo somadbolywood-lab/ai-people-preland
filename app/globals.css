@@ -10027,7 +10027,8 @@ a.visible-link {
 
 .article-hero-content {
   position: relative;
-  margin-top: -330px;
+  margin-top: 0;
+  padding-top: 1.5rem;
 }
 
 /* Desktop: Align text content with top of hero image */
@@ -10867,7 +10868,18 @@ a.visible-link {
     float: none;
     width: 100%;
     max-width: 100%;
-    margin: 1.5rem 0;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .article-hero-content {
+    margin-top: 0;
+    padding-top: 0;
+    clear: both;
+  }
+  
+  .article-hero-layout {
+    display: flex;
+    flex-direction: column;
   }
 
 
@@ -10977,6 +10989,24 @@ a.visible-link {
   
   .article-content {
     font-size: 0.875rem;
+  }
+  
+  .article-hero-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .article-hero-image-float {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1rem 0;
+  }
+  
+  .article-hero-content {
+    margin-top: 0;
+    padding-top: 0;
+    clear: both;
   }
   
   .article-content .lead {
