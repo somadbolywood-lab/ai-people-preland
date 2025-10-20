@@ -10160,7 +10160,7 @@ a.visible-link {
 }
 
 .article-category {
-  display: inline-block;
+  display: block;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
   padding: 0.3rem 0.7rem;
@@ -11261,8 +11261,9 @@ a.visible-link {
     margin-bottom: 0.75rem;
     text-align: center;
     width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
   }
 }
 
@@ -11304,8 +11305,9 @@ a.visible-link {
     margin-bottom: 0.5rem;
     text-align: center;
     width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
   }
 }
 
