@@ -227,9 +227,6 @@ export default function BlogArticlePage() {
       <div className="article-title-section">
         <div className="article-container">
           <div className="article-meta-top">
-            <span className="article-category">
-              {currentLang === 'ru' ? article.category.ru : article.category.en}
-            </span>
             <div className="article-meta-info">
               <time className="article-date">{new Date(article.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US')}</time>
               <span className="meta-separator">•</span>
@@ -254,6 +251,9 @@ export default function BlogArticlePage() {
               </svg>
             </button>
           </div>
+          <span className="article-category">
+            {currentLang === 'ru' ? article.category.ru : article.category.en}
+          </span>
           <h1 className="article-title">
             {currentLang === 'ru' ? article.title.ru : article.title.en}
           </h1>

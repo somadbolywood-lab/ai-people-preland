@@ -10092,7 +10092,7 @@ a.visible-link {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -10156,6 +10156,23 @@ a.visible-link {
   opacity: 0.5;
 }
 
+.article-category {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .article-title {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
@@ -10165,7 +10182,7 @@ a.visible-link {
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  margin-top: 2rem;
+  margin-top: 0;
   margin-bottom: 1rem;
   letter-spacing: -0.01em;
   text-align: center;
@@ -11216,7 +11233,13 @@ a.visible-link {
   
   .article-meta-top {
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .article-category {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+    margin-bottom: 0.75rem;
   }
 }
 
