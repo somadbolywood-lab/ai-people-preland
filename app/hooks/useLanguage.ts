@@ -32,9 +32,6 @@ export function useLanguage(options: UseLanguageOptions = {}) {
   const switchLanguage = useCallback((lang: 'en' | 'ru') => {
     if (typeof window === 'undefined') return;
 
-    // Prevent unnecessary switches
-    if (lang === currentLanguage) return;
-
     // Update state to trigger re-render (don't update localStorage to avoid global conflicts)
     setLanguageState(lang);
 
@@ -104,6 +101,14 @@ export function useLanguage(options: UseLanguageOptions = {}) {
   useEffect(() => {
     if (skipInitialization) return;
     if (typeof window === 'undefined') return;
+
+    // Apply language immediately for forceLanguage
+    if (forceLanguage) {
+      const timer = setTimeout(() => {
+        switchLanguage(forceLanguage);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
 
     // Check if language has already been initialized to prevent double initialization
     const initKey = 'language-initialized';

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import ThemeToggle from '../components/ThemeToggle';
 import LanguageSelector from '../components/LanguageSelector';
 import HreflangLinks from '../components/HreflangLinks';
-import { LanguageProvider } from '../contexts/LanguageContext';
+// LanguageProvider removed - using useLanguage hook in components instead
 
 export const metadata = {
   title: 'Первый в мире курируемый маркетплейс AI-моделей | AI-People',
@@ -119,9 +119,7 @@ export default function RuLayout({ children }: { children: React.ReactNode }) {
         }}
       />
       <HreflangLinks currentPath="/ru" locale="ru" />
-      <LanguageProvider defaultLanguage="ru">
-        {children}
-      </LanguageProvider>
+      {children}
     </>
   );
 }

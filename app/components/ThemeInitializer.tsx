@@ -4,18 +4,10 @@ import { useEffect } from 'react';
 
 export default function ThemeInitializer() {
   useEffect(() => {
-    // Initialize theme from localStorage or system preference
+    // Initialize theme from localStorage
     if (typeof window !== 'undefined') {
-      // Check localStorage first (user preference)
-      let savedTheme = localStorage.getItem('theme');
+      const savedTheme = localStorage.getItem('theme') || 'light';
       
-      // If no saved preference, detect system theme
-      if (!savedTheme) {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        savedTheme = prefersDark ? 'dark' : 'light';
-      }
-      
-      // Apply theme
       if (savedTheme === 'light') {
         document.body.classList.add('light');
       } else {

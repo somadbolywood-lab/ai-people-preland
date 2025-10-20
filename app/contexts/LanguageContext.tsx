@@ -135,7 +135,7 @@ export function LanguageProvider({
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [forceLanguage, defaultLanguage]); // Removed currentLanguage dependency
+  }, [forceLanguage, defaultLanguage, currentLanguage, switchLanguage]);
 
   // Listen for language change events from other components
   useEffect(() => {

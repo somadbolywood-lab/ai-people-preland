@@ -62,7 +62,6 @@ export interface BlogArticle extends BlogMetadata {
   faq: BlogFAQ;
   cta: BlogCTA;
   image: string;
-  gallery: string[];
 }
 
 // Parse article.txt file
@@ -116,8 +115,24 @@ function parseArticleFile(content: string): { metadata: Partial<BlogMetadata>, c
       continue;
     }
     
-    // Check for FAQ section
+    // Check for FAQ sections (new format: FAQ_EN: / FAQ_RU:)
+    if (line === 'FAQ_EN:') {
+      currentLang = 'en';
+      currentSection = 'faq';
+      inFAQ = true;
+      inCTA = false;
+      continue;
+    } else if (line === 'FAQ_RU:') {
+      currentLang = 'ru';
+      currentSection = 'faq';
+      inFAQ = true;
+      inCTA = false;
+      continue;
+    }
+    
+    // Check for FAQ section (old format: FAQ: inside content)
     if (line === 'FAQ:') {
+      currentSection = 'faq'; // Change section to prevent FAQ from being added to content
       inFAQ = true;
       inCTA = false;
       continue;
@@ -175,26 +190,29 @@ function parseArticleFile(content: string): { metadata: Partial<BlogMetadata>, c
       }
     }
     
-    if (currentSection === 'content' && currentLang) {
-      if (inFAQ) {
-        // Parse FAQ items
-        if (line.startsWith('Q') && line.includes(':')) {
-          const questionText = line.substring(line.indexOf(':') + 1).trim();
-          // Look ahead for the answer
-          if (i + 1 < lines.length) {
-            i++;
-            const answerLine = lines[i].trim();
-            if (answerLine.startsWith('A') && answerLine.includes(':')) {
-              const answerText = answerLine.substring(answerLine.indexOf(':') + 1).trim();
-              if (currentLang === 'en') {
-                faqParts.en.push({ question: questionText, answer: answerText });
-              } else if (currentLang === 'ru') {
-                faqParts.ru.push({ question: questionText, answer: answerText });
-              }
+    // Parse FAQ items (works in both content and faq sections)
+    if (inFAQ && currentLang) {
+      if (line.startsWith('Q') && line.includes(':')) {
+        const questionText = line.substring(line.indexOf(':') + 1).trim();
+        // Look ahead for the answer
+        if (i + 1 < lines.length) {
+          i++;
+          const answerLine = lines[i].trim();
+          if (answerLine.startsWith('A') && answerLine.includes(':')) {
+            const answerText = answerLine.substring(answerLine.indexOf(':') + 1).trim();
+            if (currentLang === 'en') {
+              faqParts.en.push({ question: questionText, answer: answerText });
+            } else if (currentLang === 'ru') {
+              faqParts.ru.push({ question: questionText, answer: answerText });
             }
           }
         }
-      } else if (inCTA) {
+      }
+      continue;
+    }
+    
+    if (currentSection === 'content' && currentLang) {
+      if (inCTA) {
         // Parse CTA text
         if (line) {
           if (currentLang === 'en') {
@@ -259,15 +277,6 @@ function convertToHTML(text: string): string {
   return html;
 }
 
-// Load images from a directory
-function loadImages(dirPath: string, articleId: string): string[] {
-  if (!fs.existsSync(dirPath)) return [];
-  
-  const files = fs.readdirSync(dirPath);
-  return files
-    .filter(file => /\.(jpg|jpeg|png|gif|webp|svg|bmp|tiff)$/i.test(file))
-    .map(file => `/api/blog/content/${articleId}/gallery/${file}`);
-}
 
 // Load single blog article
 function loadBlogArticle(articleId: string): BlogArticle | null {
@@ -284,26 +293,39 @@ function loadBlogArticle(articleId: string): BlogArticle | null {
   // Load hero image - support both PNG and JPG formats
   let heroImage = '/assets/models/model-01.png'; // fallback
   
+  // Get file modification time for cache busting
+  const getImageWithCacheBuster = (imagePath: string): string => {
+    try {
+      const fullPath = path.join(contentDir, imagePath);
+      if (fs.existsSync(fullPath)) {
+        const stats = fs.statSync(fullPath);
+        const timestamp = stats.mtimeMs;
+        return `/api/blog/content/${articleId}/${imagePath}?v=${timestamp}`;
+      }
+    } catch (e) {
+      // Fallback without cache buster
+    }
+    return `/api/blog/content/${articleId}/${imagePath}`;
+  };
+  
   // Check for PNG first, then JPG, then use metadata OG_IMAGE
   if (metadata.ogImage && metadata.ogImage !== './hero.jpg' && metadata.ogImage !== './hero.png') {
     // Custom image path from metadata
     const customImagePath = metadata.ogImage.replace('./', '');
-    heroImage = `/api/blog/content/${articleId}/${customImagePath}`;
+    heroImage = getImageWithCacheBuster(customImagePath);
   } else {
     // Auto-detect PNG or JPG in content directory
     if (fs.existsSync(path.join(contentDir, 'hero.png'))) {
-      heroImage = `/api/blog/content/${articleId}/hero.png`;
+      heroImage = getImageWithCacheBuster('hero.png');
     } else if (fs.existsSync(path.join(contentDir, 'hero.jpg'))) {
-      heroImage = `/api/blog/content/${articleId}/hero.jpg`;
+      heroImage = getImageWithCacheBuster('hero.jpg');
     } else if (fs.existsSync(path.join(contentDir, 'hero.jpeg'))) {
-      heroImage = `/api/blog/content/${articleId}/hero.jpeg`;
+      heroImage = getImageWithCacheBuster('hero.jpeg');
     } else if (fs.existsSync(path.join(contentDir, 'hero.webp'))) {
-      heroImage = `/api/blog/content/${articleId}/hero.webp`;
+      heroImage = getImageWithCacheBuster('hero.webp');
     }
   }
     
-  const galleryDir = path.join(contentDir, 'gallery');
-  const gallery = loadImages(galleryDir, articleId);
   
   return {
     id: parseInt(articleId),
@@ -323,8 +345,7 @@ function loadBlogArticle(articleId: string): BlogArticle | null {
     content,
     faq,
     cta,
-    image: heroImage,
-    gallery
+    image: heroImage
   };
 }
 

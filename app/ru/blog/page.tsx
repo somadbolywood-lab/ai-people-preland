@@ -29,11 +29,13 @@ export default function BlogPage() {
   
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Load blog posts from API
     const loadBlogs = async () => {
       try {
+        setIsLoading(true);
         const response = await fetch('/api/blog');
         const posts = await response.json();
         setBlogPosts(posts);
@@ -42,12 +44,31 @@ export default function BlogPage() {
         console.error('Error loading blog posts:', error);
         setBlogPosts([]);
         setFeaturedPosts([]);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     loadBlogs();
   }, []);
 
+  if (isLoading) {
+    return (
+      <div className="container blog-page ru-optimized">
+        <HeaderWithMenu homeHref="/ru" />
+        <div className="loading-container">
+          <div className="gradient-spinner">
+            <div className="spinner-dot"></div>
+            <div className="spinner-dot"></div>
+            <div className="spinner-dot"></div>
+            <div className="spinner-dot"></div>
+          </div>
+          <p className="loading-text" data-lang-en="Loading blog..." data-lang-ru="Загрузка блога...">Загрузка блога...</p>
+        </div>
+        <FooterRU />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -156,6 +177,20 @@ export default function BlogPage() {
           </div>
         </section>
 
+
+        {/* All Blogs Button */}
+        <section className="all-blogs-section">
+          <div className="blog-container">
+            <div className="all-blogs-btn-container">
+              <a href="/ru/all-blogs" className="all-blogs-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="list-icon">
+                  <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+                </svg>
+                <span data-lang-en="All Blogs" data-lang-ru="Все блоги">Все блоги</span>
+              </a>
+            </div>
+          </div>
+        </section>
 
         {/* Call to Action - Join the revolution block */}
         <section className="blog-newsletter">

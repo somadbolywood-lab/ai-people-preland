@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { useEffect, useState } from "react";
-import Footer from "../components/Footer";
-import HeaderWithMenu from "../components/HeaderWithMenu";
-import { useLanguage } from "../hooks/useLanguage";
+import FooterRU from "../../components/FooterRU";
+import HeaderWithMenu from "../../components/HeaderWithMenu";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export interface BlogPost {
   id: number;
@@ -23,12 +23,13 @@ export interface BlogPost {
   featured: boolean;
 }
 
-export default function BlogPage() {
-  useLanguage({ forceLanguage: 'en' });
+export default function AllBlogsPage() {
+  useLanguage({ forceLanguage: 'ru' });
 
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
-  const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
+  const postsPerPage = 4; // 2x2 grid for better pagination testing
 
   useEffect(() => {
     // Load blog posts from API
@@ -38,11 +39,9 @@ export default function BlogPage() {
         const response = await fetch('/api/blog');
         const posts = await response.json();
         setBlogPosts(posts);
-        setFeaturedPosts(posts.filter((post: BlogPost) => post.featured).slice(0, 3));
       } catch (error) {
         console.error('Error loading blog posts:', error);
         setBlogPosts([]);
-        setFeaturedPosts([]);
       } finally {
         setIsLoading(false);
       }
@@ -51,10 +50,21 @@ export default function BlogPage() {
     loadBlogs();
   }, []);
 
+  // Calculate pagination
+  const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
+  const currentPosts = blogPosts.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   if (isLoading) {
     return (
-      <div className="container blog-page">
-        <HeaderWithMenu homeHref="/" />
+      <div className="container all-blogs-page">
+        <HeaderWithMenu homeHref="/ru" />
         <div className="loading-container">
           <div className="gradient-spinner">
             <div className="spinner-dot"></div>
@@ -62,16 +72,91 @@ export default function BlogPage() {
             <div className="spinner-dot"></div>
             <div className="spinner-dot"></div>
           </div>
-          <p className="loading-text" data-lang-en="Loading blog..." data-lang-ru="Загрузка блога...">Loading blog...</p>
+          <p className="loading-text" data-lang-en="Loading all blogs..." data-lang-ru="Загрузка всех блогов...">Загрузка всех блогов...</p>
         </div>
-        <Footer />
+        <FooterRU />
       </div>
     );
   }
 
+  const renderPagination = () => {
+    if (totalPages <= 1) return null;
+
+    const pages = [];
+    const maxVisiblePages = 5;
+
+    // Calculate start and end page numbers
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+    let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+    // Adjust start page if we're near the end
+    if (endPage - startPage + 1 < maxVisiblePages) {
+      startPage = Math.max(1, endPage - maxVisiblePages + 1);
+    }
+
+    // Add previous button
+    if (currentPage > 1) {
+      pages.push(
+        <button
+          key="prev"
+          onClick={() => handlePageChange(currentPage - 1)}
+          className="pagination-btn pagination-prev"
+          aria-label="Previous page"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+      );
+    }
+
+    // Add page numbers
+    for (let i = startPage; i <= endPage; i++) {
+      pages.push(
+        <button
+          key={i}
+          onClick={() => handlePageChange(i)}
+          className={`pagination-btn pagination-number ${i === currentPage ? 'active' : ''}`}
+          aria-label={`Page ${i}`}
+        >
+          {i}
+        </button>
+      );
+    }
+
+    // Add next button
+    if (currentPage < totalPages) {
+      pages.push(
+        <button
+          key="next"
+          onClick={() => handlePageChange(currentPage + 1)}
+          className="pagination-btn pagination-next"
+          aria-label="Next page"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+          </svg>
+        </button>
+      );
+    }
+
+    return (
+      <div className="pagination-container">
+        <div className="pagination">
+          {pages}
+        </div>
+        <div className="pagination-info">
+          <span data-lang-en={`Page ${currentPage} of ${totalPages}`} data-lang-ru={`Страница ${currentPage} из ${totalPages}`}>
+            Page {currentPage} of {totalPages}
+          </span>
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <div className="container blog-page">
-      <HeaderWithMenu homeHref="/" />
+    <div className="container all-blogs-page ru-optimized">
+        <HeaderWithMenu homeHref="/ru" />
 
       {/* Pre-launch Notification Banner */}
       <div className="notification-banner">
@@ -94,37 +179,36 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <main className="blog-main">
+      <main className="all-blogs-main">
 
-        {/* Blog Hero */}
-        <section className="blog-hero">
-          <div className="blog-hero-content">
-            <h1 className="blog-hero-title">
-              <span className="gradient-text" data-lang-en="Blog" data-lang-ru="Блог">Blog</span>
+        {/* All Blogs Hero */}
+        <section className="all-blogs-hero">
+          <div className="all-blogs-hero-content">
+            <h1 className="all-blogs-hero-title">
+              <span className="gradient-text" data-lang-en="All Blogs" data-lang-ru="Все блоги">All Blogs</span>
             </h1>
-            <h2 className="blog-hero-subtitle" data-lang-en="Virtual influencer trends, monetization strategies, success stories of creators" data-lang-ru="Тренды виртуальных инфлюэнсеров, стратегии монетизации, истории успеха креаторов">Virtual influencer trends, monetization strategies, success stories of creators</h2>
-            <h3 className="blog-hero-description" data-lang-en="Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you." data-lang-ru="Создавай, исследуй и монетизируй цифровые образы созданные креаторами нового поколения. Сегодня то время, когда виртуальные люди имеют реальное влияние. AI-реализм, который работает на тебя.">Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you.</h3>
+            <h2 className="all-blogs-hero-subtitle" data-lang-en="Explore our complete collection of articles about AI models, virtual influencers, and digital marketing" data-lang-ru="Изучите нашу полную коллекцию статей об AI-моделях, виртуальных инфлюенсерах и цифровом маркетинге">Explore our complete collection of articles about AI models, virtual influencers, and digital marketing</h2>
+            <h3 className="all-blogs-hero-description" data-lang-en="Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you." data-lang-ru="Создавай, исследуй и монетизируй цифровые образы созданные креаторами нового поколения. Сегодня то время, когда виртуальные люди имеют реальное влияние. AI-реализм, который работает на тебя.">Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you.</h3>
           </div>
         </section>
 
-        {/* Featured Posts */}
-        <section className="blog-featured">
-          <div className="blog-container">
-            <h2 className="section-title" data-lang-en="Featured Articles" data-lang-ru="Избранные статьи">Featured Articles</h2>
-            <div className="featured-grid">
-              {featuredPosts.map((post) => (
-                <article key={post.id} className="featured-card">
-                  <div className="featured-image">
+        {/* All Blogs Grid */}
+        <section className="all-blogs-grid-section">
+          <div className="all-blogs-container">
+            <div className="all-blogs-grid">
+              {currentPosts.map((post) => (
+                <article key={post.id} className="all-blogs-card">
+                  <div className="all-blogs-image">
                     <Image 
                       src={post.image} 
                       alt={post.title} 
-                      width={600} 
-                      height={400}
+                      width={400} 
+                      height={250}
                       className="post-image"
                     />
                     <span className="post-category" data-lang-en={post.category} data-lang-ru={post.categoryRu}>{post.category}</span>
                   </div>
-                  <div className="featured-content">
+                  <div className="all-blogs-content">
                     <h3 className="post-title" data-lang-en={post.title} data-lang-ru={post.titleRu}>{post.title}</h3>
                     <p className="post-excerpt" data-lang-en={post.excerpt} data-lang-ru={post.excerptRu}>{post.excerpt}</p>
                     <div className="post-meta">
@@ -137,62 +221,15 @@ export default function BlogPage() {
                 </article>
               ))}
             </div>
-          </div>
-        </section>
 
-        {/* Marquee with Latest Posts */}
-        <section className="blog-marquee-section">
-          <div className="blog-container">
-            <h2 className="section-title" data-lang-en="Latest Articles" data-lang-ru="Последние статьи">Latest Articles</h2>
-          </div>
-          <div className="marquee-container">
-            <div className="marquee-track">
-              {[...blogPosts, ...blogPosts].map((post, index) => (
-                <a href={`/blog/${post.id}`} key={`marquee-${index}`} className="marquee-card">
-                  <div className="marquee-image">
-                    <Image 
-                      src={post.image} 
-                      alt={post.title} 
-                      width={300} 
-                      height={180}
-                      className="marquee-img"
-                    />
-                  </div>
-                  <div className="marquee-content">
-                    <span className="marquee-category" data-lang-en={post.category} data-lang-ru={post.categoryRu}>{post.category}</span>
-                    <h3 className="marquee-title" data-lang-en={post.title} data-lang-ru={post.titleRu}>{post.title}</h3>
-                    <div className="marquee-meta">
-                      <time className="marquee-date">{new Date(post.date).toLocaleDateString('ru-RU', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
-                      <span className="marquee-read-time" data-lang-en={post.readTime} data-lang-ru={post.readTimeRu}>{post.readTime}</span>
-                    </div>
-                    <div className="marquee-footer">
-                      <span className="marquee-read-more" data-lang-en="Read more →" data-lang-ru="Читать далее →">Читать далее →</span>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-
-        {/* All Blogs Button */}
-        <section className="all-blogs-section">
-          <div className="blog-container">
-            <div className="all-blogs-btn-container">
-              <a href="/all-blogs" className="all-blogs-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="list-icon">
-                  <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
-                </svg>
-                <span data-lang-en="All Blogs" data-lang-ru="Все блоги">All Blogs</span>
-              </a>
-            </div>
+            {/* Pagination */}
+            {renderPagination()}
           </div>
         </section>
 
         {/* Call to Action - Join the revolution block */}
-        <section className="blog-newsletter">
-          <div className="blog-container">
+        <section className="all-blogs-newsletter">
+          <div className="all-blogs-container">
             <div className="call-to-action" style={{marginTop: '1rem', textAlign: 'center'}}>
               <h2 data-lang-en="Join the AI-Content Revolution" data-lang-ru="Присоединяйтесь к революции AI-контента">Join the AI-Content Revolution</h2>
               <p data-lang-en="Whether you're a brand searching for cost-effective, high-quality visuals, or a creator ready to showcase your AI mastery — AI-PEOPLE is your launchpad. Get early access to exclusive features, creator opportunities, and community benefits." data-lang-ru="Независимо от того, являетесь ли вы бизнесом, ищущим экономически выгодные и качественные визуалы, или креатором, готовым продемонстрировать своё мастерство в сфере AI, — AI-PEOPLE ваша стартовая площадка. Подпишитесь на ранний доступ, чтобы получить эксклюзивные функции, бонусы и возможности нашего сообщества.">Whether you're a brand searching for cost-effective, high-quality visuals, or a creator ready to showcase your AI mastery — AI-PEOPLE is your launchpad. Get early access to exclusive features, creator opportunities, and community benefits.</p>
@@ -203,7 +240,7 @@ export default function BlogPage() {
         </section>
       </main>
 
-      <Footer />
+      <FooterRU />
       
       {/* Schema.org Blog Structured Data */}
       <Script
@@ -212,9 +249,9 @@ export default function BlogPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Blog",
-            "name": "AI-People Blog",
-            "description": "Expert insights on AI models, virtual influencers, and the future of AI-generated content",
-            "url": "https://ai-people.com/blog",
+            "name": "AI-People All Blogs",
+            "description": "Complete collection of expert insights on AI models, virtual influencers, and the future of AI-generated content",
+            "url": "https://ai-people.com/all-blogs",
             "publisher": {
               "@type": "Organization",
               "name": "AI-People",
@@ -223,41 +260,17 @@ export default function BlogPage() {
                 "url": "https://ai-people.com/faq/AI-people%20Logo.png"
               }
             },
-            "blogPost": [
-              {
-                "@type": "BlogPosting",
-                "headline": "The Future of AI-Generated Content Marketing",
-                "description": "Explore how AI-generated content is revolutionizing digital marketing and what it means for businesses in 2025.",
-                "url": "https://ai-people.com/blog/1",
-                "datePublished": "2025-10-08",
-                "author": {
-                  "@type": "Person",
-                  "name": "AI-People Team"
-                }
-              },
-              {
-                "@type": "BlogPosting", 
-                "headline": "How to Create Hyperrealistic Virtual Influencers",
-                "description": "A comprehensive guide to creating hyperrealistic virtual influencers that engage audiences and drive conversions.",
-                "url": "https://ai-people.com/blog/2",
-                "datePublished": "2025-10-07",
-                "author": {
-                  "@type": "Person",
-                  "name": "AI-People Team"
-                }
-              },
-              {
-                "@type": "BlogPosting",
-                "headline": "AI Models Marketplace: What Creators Need to Know",
-                "description": "Everything creators need to know about selling AI models and virtual influencer content in 2025.",
-                "url": "https://ai-people.com/blog/3",
-                "datePublished": "2025-10-06",
-                "author": {
-                  "@type": "Person",
-                  "name": "AI-People Team"
-                }
+            "blogPost": blogPosts.map(post => ({
+              "@type": "BlogPosting",
+              "headline": post.title,
+              "description": post.excerpt,
+              "url": `https://ai-people.com/blog/${post.id}`,
+              "datePublished": post.date,
+              "author": {
+                "@type": "Person",
+                "name": "AI-People Team"
               }
-            ]
+            }))
           })
         }}
       />

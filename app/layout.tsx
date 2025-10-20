@@ -6,7 +6,7 @@ import Image from 'next/image';
 import ThemeToggle from './components/ThemeToggle';
 import LanguageSelector from './components/LanguageSelector';
 import HreflangLinks from './components/HreflangLinks';
-import { LanguageProvider } from './contexts/LanguageContext';
+// LanguageProvider removed - using useLanguage hook in components instead
 
 export const metadata = {
   title: "World's First Curated AI Models Marketplace | AI-People",
@@ -210,10 +210,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </svg>
       
       <ErrorBoundary>
-        <LanguageProvider defaultLanguage="en">
-          <ThemeInitializer />
-          {children}
-        </LanguageProvider>
+        <ThemeInitializer />
+        {children}
       </ErrorBoundary>
       {/* Optimized modular script loading */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />

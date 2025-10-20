@@ -1,26 +1,49 @@
 "use client";
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useLanguageContext } from '../contexts/LanguageContext';
 
 export default function LanguageSelector() {
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const router = useRouter();
-  const { currentLanguage, switchLanguage } = useLanguageContext();
+  
+  // Local state for language management
+  const [currentLanguage, setCurrentLanguage] = useState<'en' | 'ru'>(() => {
+    if (typeof window === 'undefined') return 'en';
+    try {
+      const pathname = window.location?.pathname || '/';
+      if (pathname.startsWith('/ru')) return 'ru';
+      return 'en';
+    } catch {
+      return 'en';
+    }
+  });
+
+  // applyLanguageToDOM function removed - useLanguage handles DOM updates
+
+  const switchLanguage = (lang: 'en' | 'ru') => {
+    if (typeof window === 'undefined') return;
+    if (lang === currentLanguage) return;
+
+    setCurrentLanguage(lang);
+    try { 
+      localStorage.setItem('selectedLanguage', lang); 
+    } catch {}
+
+    // Don't apply language to DOM here - useLanguage will handle it
+    // Just dispatch the event for useLanguage to handle
+    window.dispatchEvent(new CustomEvent('languageChange', { detail: { language: lang } }));
+  };
 
   const handleLanguageSwitch = (lang: 'en' | 'ru') => {
-    // Switch language globally
-    switchLanguage(lang);
-
-    // Persist selection
-    try { localStorage.setItem('selectedLanguage', lang); } catch {}
-
     // Close menu first
     if (menuRef.current) {
       menuRef.current.classList.remove('show');
     }
+
+    // Switch language globally (this will also persist to localStorage)
+    switchLanguage(lang);
 
     // Route to locale-specific path if needed (with small delay to allow DOM update)
     const pathname = window.location?.pathname || '/';
@@ -34,6 +57,37 @@ export default function LanguageSelector() {
       }
     }, 150); // Small delay to allow DOM to update
   };
+
+  useEffect(() => {
+    // Listen for language change events from useLanguage hook
+    const handleLanguageChange = (event: CustomEvent) => {
+      const newLang = event.detail?.language;
+      if (newLang && newLang !== currentLanguage) {
+        setCurrentLanguage(newLang);
+        // Don't apply to DOM here - useLanguage already does it
+      }
+    };
+
+    window.addEventListener('languageChange', handleLanguageChange as EventListener);
+    
+    // Initialize language on mount - only update state, don't apply to DOM
+    const timer = setTimeout(() => {
+      // Determine initial language from URL
+      let initialLang: 'en' | 'ru' = 'en';
+      try {
+        const pathname = window.location?.pathname || '/';
+        if (pathname.startsWith('/ru')) initialLang = 'ru';
+      } catch {}
+
+      // Only update state - useLanguage will handle DOM updates
+      setCurrentLanguage(initialLang);
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('languageChange', handleLanguageChange as EventListener);
+    };
+  }, [currentLanguage]);
 
   useEffect(() => {
     // Update button text and active state based on current language

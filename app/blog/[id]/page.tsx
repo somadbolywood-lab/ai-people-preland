@@ -50,7 +50,6 @@ export interface BlogArticle {
   };
   image: string;
   ogImage: string;
-  gallery: string[];
   publishedAt: string;
   updatedAt: string;
 }
@@ -68,6 +67,35 @@ export interface BlogPost {
   readTimeRu: string;
   image: string;
   featured: boolean;
+}
+
+// Function to translate tags
+function translateTag(tag: string, lang: string): string {
+  const tagTranslations: { [key: string]: { en: string; ru: string } } = {
+    'AI Marketing': { en: 'AI Marketing', ru: 'AI-маркетинг' },
+    'Virtual Models': { en: 'Virtual Models', ru: 'Виртуальные модели' },
+    'Synthetic Media': { en: 'Synthetic Media', ru: 'Синтетические медиа' },
+    'Cost Reduction': { en: 'Cost Reduction', ru: 'Снижение затрат' },
+    'Digital Advertising': { en: 'Digital Advertising', ru: 'Цифровая реклама' },
+    'AI Models': { en: 'AI Models', ru: 'AI-модели' },
+    'Digital Marketing': { en: 'Digital Marketing', ru: 'Цифровой маркетинг' },
+    'Virtual Influencers': { en: 'Virtual Influencers', ru: 'Виртуальные инфлюенсеры' },
+    'Brand Strategy': { en: 'Brand Strategy', ru: 'Стратегия бренда' },
+    'Social Media Strategy': { en: 'Social Media Strategy', ru: 'Стратегия соцсетей' },
+    'AI Influencers': { en: 'AI Influencers', ru: 'AI-инфлюенсеры' },
+    'Real Influencers': { en: 'Real Influencers', ru: 'Настоящие инфлюенсеры' },
+    'E-Commerce': { en: 'E-Commerce', ru: 'Электронная коммерция' },
+    'Product Photography': { en: 'Product Photography', ru: 'Предметная фотография' },
+    'Digital Retail': { en: 'Digital Retail', ru: 'Цифровая розница' }
+  };
+
+  const translation = tagTranslations[tag];
+  if (translation) {
+    return lang === 'ru' ? translation.ru : translation.en;
+  }
+  
+  // If no translation found, return original tag
+  return tag;
 }
 
 export default function BlogArticlePage() {
@@ -254,6 +282,7 @@ export default function BlogArticlePage() {
               />
             </div>
 
+
             <div className="article-hero-content">
               <div 
                 className="article-body" 
@@ -266,7 +295,8 @@ export default function BlogArticlePage() {
         </div>
       </div>
 
-      {/* FAQ Section */}
+      {/* FAQ Section - Clear floats */}
+      <div style={{ clear: 'both' }}></div>
       {faqItems && faqItems.length > 0 && (
         <section className="article-faq-section">
           <div className="article-container">
@@ -295,9 +325,13 @@ export default function BlogArticlePage() {
                   {currentLang === 'ru' ? 'Темы:' : 'Topics:'}
                 </span>
                 <div className="topics-list">
-                  {article.tags.map((tag, index) => (
-                    <span key={index} className="topic-tag">{tag}</span>
-                  ))}
+                  {article.tags.map((tag, index) => {
+                    // Translate tags based on current language
+                    const translatedTag = translateTag(tag, currentLang);
+                    return (
+                      <span key={index} className="topic-tag">{translatedTag}</span>
+                    );
+                  })}
                 </div>
               </div>
               
