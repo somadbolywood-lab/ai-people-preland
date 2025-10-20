@@ -7608,9 +7608,8 @@ a.visible-link {
 }
 
 .all-blogs-image .post-category {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+  position: static;
+  display: inline-block;
   background: var(--accent);
   color: white;
   padding: 0.5rem 1rem;
@@ -7619,6 +7618,7 @@ a.visible-link {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-bottom: 1rem;
 }
 
 .all-blogs-content {
@@ -9499,18 +9499,17 @@ a.visible-link {
 }
 
 .post-category {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+  position: static;
+  display: inline-block;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  z-index: 1;
+  margin-bottom: 1rem;
 }
 
 .featured-content {
@@ -10785,16 +10784,16 @@ a.visible-link {
 }
 
 .related-category {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+  position: static;
+  display: inline-block;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
+  margin-bottom: 0.75rem;
   letter-spacing: 0.5px;
   z-index: 1;
 }
@@ -11071,6 +11070,14 @@ a.visible-link {
   
   .marquee-track {
     gap: 0.75rem;
+  }
+  
+  /* Улучшение читаемости категорий на мобильных */
+  .post-category,
+  .marquee-category,
+  .related-category {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
   }
   
   .marquee-container {

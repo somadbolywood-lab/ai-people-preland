@@ -206,9 +206,9 @@ export default function AllBlogsPage() {
                       height={250}
                       className="post-image"
                     />
-                    <span className="post-category" data-lang-en={post.category} data-lang-ru={post.categoryRu}>{post.category}</span>
                   </div>
                   <div className="all-blogs-content">
+                    <span className="post-category" data-lang-en={post.category} data-lang-ru={post.categoryRu}>{post.category}</span>
                     <h3 className="post-title" data-lang-en={post.title} data-lang-ru={post.titleRu}>{post.title}</h3>
                     <p className="post-excerpt" data-lang-en={post.excerpt} data-lang-ru={post.excerptRu}>{post.excerpt}</p>
                     <div className="post-meta">

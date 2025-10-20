@@ -446,11 +446,11 @@ export default function BlogArticlePage() {
                         className="related-img"
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       />
+                    </div>
+                    <div className="related-content">
                     <span className="related-category">
                       {currentLang === 'ru' ? relatedArticle.categoryRu : relatedArticle.category}
                     </span>
-                    </div>
-                    <div className="related-content">
                     <h3 className="related-title">
                       {currentLang === 'ru' ? relatedArticle.titleRu : relatedArticle.title}
                     </h3>
