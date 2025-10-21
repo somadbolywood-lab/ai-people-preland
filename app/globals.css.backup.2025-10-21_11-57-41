@@ -7528,7 +7528,13 @@ a.visible-link {
   padding: 0 2rem;
 }
 
-/* .all-blogs-hero-title styles removed - now using .unified-h1 */
+.all-blogs-hero-title {
+  font-size: clamp(28px, 6vw, 56px);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
 
 .all-blogs-hero-subtitle {
   font-size: clamp(14px, 3vw, 28px);
@@ -7738,7 +7744,9 @@ a.visible-link {
     gap: 1.5rem;
   }
   
-  /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
+  .all-blogs-hero-title {
+    font-size: clamp(24px, 5.5vw, 40px);
+  }
   
   .all-blogs-hero-subtitle {
     font-size: clamp(20px, 4.5vw, 30px);
@@ -7760,7 +7768,9 @@ a.visible-link {
     background: linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(139, 92, 246, 0.01) 50%, transparent 100%);
   }
   
-  /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
+  .all-blogs-hero-title {
+    font-size: clamp(20px, 5vw, 36px);
+  }
   
   .all-blogs-hero-subtitle {
     font-size: clamp(18px, 4vw, 26px);
@@ -7790,7 +7800,9 @@ a.visible-link {
 }
 
 @media (max-width: 480px) {
-  /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
+  .all-blogs-hero-title {
+    font-size: clamp(26px, 6vw, 44px);
+  }
   
   .all-blogs-hero-subtitle {
     font-size: clamp(24px, 5vw, 36px);
@@ -9402,7 +9414,17 @@ a.visible-link {
   margin: 0 auto;
 }
 
-/* .blog-hero-title styles removed - now using .unified-h1 */
+.blog-hero-title {
+  font-size: clamp(28px, 6vw, 56px);
+  font-weight: 700;
+  margin: 12px 0 0px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.blog-hero-title .gradient-text {
+  font-size: inherit;
+}
 
 .blog-title-white {
   color: white;
@@ -9854,7 +9876,14 @@ a.visible-link {
     padding: 1.5rem 1rem 2.5rem;
   }
   
-  /* .blog-hero-title media queries removed - now using .unified-h1 */
+  .blog-hero-title {
+    font-size: clamp(24px, 5.5vw, 40px);
+    margin: 8px 0 0px;
+  }
+  
+  .blog-hero-title .gradient-text {
+    font-size: clamp(30px, 6.5vw, 52px);
+  }
   
   .blog-hero-subtitle {
     font-size: 1.125rem;
@@ -9900,7 +9929,14 @@ a.visible-link {
 }
 
 @media (max-width: 480px) {
-  /* .blog-hero-title media queries removed - now using .unified-h1 */
+  .blog-hero-title {
+    font-size: clamp(20px, 5vw, 36px);
+    margin: 6px 0 0px;
+  }
+  
+  .blog-hero-title .gradient-text {
+    font-size: clamp(26px, 6vw, 44px);
+  }
   
   .blog-hero-subtitle {
     font-size: 1rem;

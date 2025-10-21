@@ -99,7 +99,7 @@ export default function BlogPage() {
         {/* Blog Hero */}
         <section className="blog-hero">
           <div className="blog-hero-content">
-            <h1 className="blog-hero-title">
+            <h1 className="unified-h1">
               <span className="gradient-text" data-lang-en="Blog" data-lang-ru="Блог">Blog</span>
             </h1>
             <h2 className="blog-hero-subtitle" data-lang-en="Virtual influencer trends, monetization strategies, success stories of creators" data-lang-ru="Тренды виртуальных инфлюэнсеров, стратегии монетизации, истории успеха креаторов">Virtual influencer trends, monetization strategies, success stories of creators</h2>

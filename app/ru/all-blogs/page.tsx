@@ -184,8 +184,8 @@ export default function AllBlogsPage() {
         {/* All Blogs Hero */}
         <section className="all-blogs-hero">
           <div className="all-blogs-hero-content">
-            <h1 className="all-blogs-hero-title">
-              <span className="gradient-text" data-lang-en="All Blogs" data-lang-ru="Все блоги">All Blogs</span>
+            <h1 className="unified-h1">
+              <span className="gradient-text" data-lang-en="All Blogs" data-lang-ru="Все блоги">Все блоги</span>
             </h1>
             <h2 className="all-blogs-hero-subtitle" data-lang-en="Explore our complete collection of articles about AI models, virtual influencers, and digital marketing" data-lang-ru="Изучите нашу полную коллекцию статей об AI-моделях, виртуальных инфлюенсерах и цифровом маркетинге">Explore our complete collection of articles about AI models, virtual influencers, and digital marketing</h2>
             <h3 className="all-blogs-hero-description" data-lang-en="Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you." data-lang-ru="Создавай, исследуй и монетизируй цифровые образы созданные креаторами нового поколения. Сегодня то время, когда виртуальные люди имеют реальное влияние. AI-реализм, который работает на тебя.">Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you.</h3>

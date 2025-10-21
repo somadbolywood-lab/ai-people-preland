@@ -24,9 +24,9 @@ export function useLanguage(options: UseLanguageOptions = {}) {
 
   // Memoized language value to prevent unnecessary re-renders
   const currentLanguage = useMemo(() => {
-    if (forceLanguage) return forceLanguage;
+    // Always use languageState for dynamic switching, forceLanguage only for initial load
     return languageState;
-  }, [forceLanguage, languageState]);
+  }, [languageState]);
 
   // Memoized language switching function
   const switchLanguage = useCallback((lang: 'en' | 'ru') => {
@@ -95,20 +95,12 @@ export function useLanguage(options: UseLanguageOptions = {}) {
     
     // Dispatch language change event
     window.dispatchEvent(new CustomEvent('languageChange', { detail: { language: lang } }));
-  }, [currentLanguage]);
+  }, []); // Remove currentLanguage dependency to avoid circular dependency
 
   // Initialize language on mount (only if not skipped)
   useEffect(() => {
     if (skipInitialization) return;
     if (typeof window === 'undefined') return;
-
-    // Apply language immediately for forceLanguage
-    if (forceLanguage) {
-      const timer = setTimeout(() => {
-        switchLanguage(forceLanguage);
-      }, 100);
-      return () => clearTimeout(timer);
-    }
 
     // Check if language has already been initialized to prevent double initialization
     const initKey = 'language-initialized';
@@ -117,17 +109,17 @@ export function useLanguage(options: UseLanguageOptions = {}) {
       return;
     }
 
-    // Don't set localStorage to avoid global state conflicts
-
     // Apply language with a small delay to ensure DOM is ready
     const timer = setTimeout(() => {
-      switchLanguage(currentLanguage);
+      // Use forceLanguage for initial load, then allow dynamic switching
+      const initialLanguage = forceLanguage || languageState;
+      switchLanguage(initialLanguage);
       // Mark as initialized
       document.body.setAttribute(initKey, 'true');
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [currentLanguage, forceLanguage, skipInitialization, switchLanguage]);
+  }, [forceLanguage, skipInitialization, switchLanguage, languageState]);
 
   // Listen for language change events from other components
   useEffect(() => {
@@ -135,15 +127,17 @@ export function useLanguage(options: UseLanguageOptions = {}) {
 
     const handleLanguageChange = (event: CustomEvent) => {
       const newLang = event.detail?.language;
-      if (newLang && newLang !== currentLanguage) {
-        // Language was changed by another component, update our state (don't update localStorage)
+      if (newLang && newLang !== languageState) {
+        // Language was changed by another component, update our state
         setLanguageState(newLang);
+        // Apply the language change to DOM
+        switchLanguage(newLang);
       }
     };
 
     window.addEventListener('languageChange', handleLanguageChange as EventListener);
     return () => window.removeEventListener('languageChange', handleLanguageChange as EventListener);
-  }, [currentLanguage]);
+  }, [languageState, switchLanguage]);
 
   return {
     currentLanguage,
