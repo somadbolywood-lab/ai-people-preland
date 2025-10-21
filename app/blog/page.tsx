@@ -25,7 +25,7 @@ export interface BlogPost {
 }
 
 export default function BlogPage() {
-  useLanguage({ forceLanguage: 'en' });
+  useLanguage();
 
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);

@@ -25,7 +25,7 @@ export interface BlogPost {
 }
 
 export default function AllBlogsPage() {
-  useLanguage({ forceLanguage: 'en' });
+  useLanguage();
 
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [currentPage, setCurrentPage] = useState(1);

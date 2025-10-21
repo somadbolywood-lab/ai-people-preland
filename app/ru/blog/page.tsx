@@ -25,8 +25,8 @@ export interface BlogPost {
 }
 
 export default function BlogPage() {
-  // Use unified language hook with forced Russian language
-  useLanguage({ forceLanguage: 'ru' });
+  // Use unified language hook with dynamic language switching
+  useLanguage();
   
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);
