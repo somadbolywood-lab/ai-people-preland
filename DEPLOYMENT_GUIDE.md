@@ -2,14 +2,14 @@
 
 ## 📁 ПРАВИЛЬНАЯ РАБОЧАЯ ДИРЕКТОРИЯ
 ```bash
-C:\Users\HP\Desktop\AI-PEOPLE Preland 06.10.25\aipeople-next
+C:\Users\HP\Desktop\AI-PEOPLE Preland 15.10.25 (2)\aipeople-next
 ```
 
 ## 🔧 ПОШАГОВЫЕ КОМАНДЫ
 
 ### 1. ПЕРЕХОД В ПРАВИЛЬНУЮ ПАПКУ
 ```bash
-cd "C:\Users\HP\Desktop\AI-PEOPLE Preland 06.10.25\aipeople-next"
+cd "C:\Users\HP\Desktop\AI-PEOPLE Preland 15.10.25 (2)\aipeople-next"
 ```
 
 ### 2. ПРОВЕРКА ЧТО МЫ В ПРАВИЛЬНОЙ ПАПКЕ
@@ -50,7 +50,24 @@ git push
 
 ## ⚡ БЫСТРАЯ КОМАНДА (ВСЕ В ОДНУ)
 ```bash
-cd "C:\Users\HP\Desktop\AI-PEOPLE Preland 06.10.25\aipeople-next" && dir package.json && npm run build && git add . && git commit -m "описание изменений" && git push
+cd "C:\Users\HP\Desktop\AI-PEOPLE Preland 15.10.25 (2)\aipeople-next" && dir package.json && npm run build && git add . && git commit -m "описание изменений" && git push
+```
+
+## 🔄 ПЕРЕЗАПУСК DEV-СЕРВЕРА
+```bash
+# Остановить все процессы Node.js
+taskkill /f /im node.exe
+
+# Очистить кэш Next.js
+Remove-Item -Recurse -Force .next
+
+# Запустить dev-сервер
+npm run dev
+```
+
+## 💾 СОЗДАНИЕ БЭКАПА CSS
+```bash
+copy "app\globals.css" "app\globals.css.backup.$(Get-Date -Format 'yyyy-MM-dd_HH-mm-ss')"
 ```
 
 ## 🔍 ДОПОЛНИТЕЛЬНЫЕ КОМАНДЫ ДЛЯ ПРОВЕРКИ
