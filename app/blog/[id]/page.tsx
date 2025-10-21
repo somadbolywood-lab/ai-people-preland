@@ -226,7 +226,7 @@ export default function BlogArticlePage() {
       {/* Article Title - Full Width */}
       <div className="article-title-section" data-category={currentLang === 'ru' ? article.category.ru : article.category.en}>
         <div className="article-container">
-          <div className="article-meta-top" data-read-time={currentLang === 'ru' ? article.readTime.ru : article.readTime.en}>
+          <div className="article-meta-top" data-read-time={currentLang === 'ru' ? article.readTime.ru : article.readTime.en} data-date={new Date(article.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US')}>
             <span className="article-category">
               {currentLang === 'ru' ? article.category.ru : article.category.en}
             </span>

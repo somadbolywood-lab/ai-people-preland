@@ -11267,6 +11267,18 @@ a.visible-link {
     font-weight: 500;
   }
   
+  /* Мобильная дата справа */
+  .article-meta-top::before {
+    content: attr(data-date);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
   /* Мобильная категория под временем чтения */
   .article-title-section::after {
     content: attr(data-category);
@@ -11324,6 +11336,18 @@ a.visible-link {
     font-weight: 500;
   }
   
+  /* Мобильная дата справа для 480px */
+  .article-meta-top::before {
+    content: attr(data-date);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
   /* Мобильная категория для 480px */
   .article-title-section::after {
     content: attr(data-category);
@@ -11376,6 +11400,18 @@ a.visible-link {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
+  /* Мобильная дата справа для 375px */
+  .article-meta-top::before {
+    content: attr(data-date);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 0.7rem;
     color: var(--text-secondary);
     font-weight: 500;
