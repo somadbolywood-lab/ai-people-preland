@@ -6,6 +6,7 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import HeaderWithMenu from "../components/HeaderWithMenu";
+import MetaTags from "../components/MetaTags";
 import { useLanguage } from "../hooks/useLanguage";
 
 export interface BlogPost {
@@ -155,8 +156,18 @@ export default function AllBlogsPage() {
   };
 
   return (
-    <div className="container all-blogs-page">
-      <HeaderWithMenu homeHref="/" />
+    <>
+      <MetaTags
+        title="All AI-People Blog Articles - Complete Collection"
+        description="Browse our complete collection of articles about AI models, virtual influencers, and digital marketing. Expert insights, trends, and success stories."
+        keywords="AI articles, virtual influencer blog, AI models collection, digital marketing insights, AI-generated content"
+        url="https://ai-people.com/all-blogs"
+        locale="en"
+        alternateLocale="ru"
+        alternateUrl="https://ai-people.com/ru/all-blogs"
+      />
+      <div className="container all-blogs-page">
+        <HeaderWithMenu homeHref="/" />
 
       {/* Pre-launch Notification Banner */}
       <div className="notification-banner">
@@ -187,8 +198,8 @@ export default function AllBlogsPage() {
             <h1 className="unified-h1">
               <span className="gradient-text" data-lang-en="All Blogs" data-lang-ru="Все блоги">All Blogs</span>
             </h1>
-            <h2 className="all-blogs-hero-subtitle" data-lang-en="Explore our complete collection of articles about AI models, virtual influencers, and digital marketing" data-lang-ru="Изучите нашу полную коллекцию статей об AI-моделях, виртуальных инфлюенсерах и цифровом маркетинге">Explore our complete collection of articles about AI models, virtual influencers, and digital marketing</h2>
-            <h3 className="all-blogs-hero-description" data-lang-en="Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you." data-lang-ru="Создавай, исследуй и монетизируй цифровые образы созданные креаторами нового поколения. Сегодня то время, когда виртуальные люди имеют реальное влияние. AI-реализм, который работает на тебя.">Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you.</h3>
+            <h2 className="hero-subtitle" data-lang-en="Explore our complete collection of articles about AI models, virtual influencers, and digital marketing" data-lang-ru="Изучите нашу полную коллекцию статей об AI-моделях, виртуальных инфлюенсерах и цифровом маркетинге">Explore our complete collection of articles about AI models, virtual influencers, and digital marketing</h2>
+            <h3 className="hero-description" data-lang-en="Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you." data-lang-ru="Создавай, исследуй и монетизируй цифровые образы созданные креаторами нового поколения. Сегодня то время, когда виртуальные люди имеют реальное влияние. AI-реализм, который работает на тебя.">Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you.</h3>
           </div>
         </section>
 
@@ -274,6 +285,7 @@ export default function AllBlogsPage() {
           })
         }}
       />
-    </div>
+      </div>
+    </>
   );
 }

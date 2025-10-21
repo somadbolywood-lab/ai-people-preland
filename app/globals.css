@@ -71,8 +71,9 @@ html, body { height: 100%; }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
-    .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .blog-page .hero-subtitle,
+    .all-blogs-page .hero-subtitle {
         font-size: clamp(24px, 5vw, 36px) !important;
         text-align: center !important;
     }
@@ -184,8 +185,9 @@ html, body { height: 100%; }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
-    .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .blog-page .hero-subtitle,
+    .all-blogs-page .hero-subtitle {
         font-size: clamp(20px, 4.5vw, 30px) !important;
         text-align: center !important;
     }
@@ -260,8 +262,9 @@ html, body { height: 100%; }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
-    .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .blog-page .hero-subtitle,
+    .all-blogs-page .hero-subtitle {
         font-size: clamp(18px, 4vw, 26px) !important;
         text-align: center !important;
     }
@@ -3862,36 +3865,7 @@ a.visible-link {
     opacity: 0.9;
 }
 
-/* Blog hero subtitle and description */
-.blog-hero-subtitle {
-    font-size: clamp(14px, 3vw, 28px);
-    margin: 8px 0 12px;
-    font-weight: 600;
-    line-height: 1.3;
-    text-align: center;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Десктопные стили для blog-hero-subtitle - переопределение мобильных */
-@media (min-width: 769px) {
-    .blog-page .blog-hero-subtitle {
-        font-size: clamp(16px, 2.5vw, 24px) !important;
-        margin: 12px 0 16px !important;
-        text-align: center !important;
-    }
-}
-
-.blog-hero-description {
-    color: var(--text);
-    font-size: clamp(12px, 2.5vw, 16px);
-    line-height: 1.5;
-    margin: 8px 0 8px;
-    max-width: 100%;
-    opacity: 0.9;
-}
+/* Blog hero subtitle and description - REMOVED, now using .unified-h2 and .unified-h3 */
 
 .hero-cta { 
     margin-top: 16px; 
@@ -7530,27 +7504,7 @@ a.visible-link {
 
 /* .all-blogs-hero-title styles removed - now using .unified-h1 */
 
-.all-blogs-hero-subtitle {
-  font-size: clamp(14px, 3vw, 28px);
-  margin: 8px 0 12px;
-  font-weight: 600;
-  line-height: 1.3;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.all-blogs-hero-description {
-  font-size: clamp(14px, 3vw, 18px);
-  font-weight: 400;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-  color: var(--text);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* .all-blogs-hero-subtitle and .all-blogs-hero-description - REMOVED, now using .unified-h2 and .unified-h3 */
 
 .all-blogs-container {
   max-width: 1400px;
@@ -7739,14 +7693,7 @@ a.visible-link {
   }
   
   /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
-  
-  .all-blogs-hero-subtitle {
-    font-size: clamp(20px, 4.5vw, 30px);
-  }
-  
-  .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
-  }
+  /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
 }
 
 @media (max-width: 768px) {
@@ -7761,14 +7708,7 @@ a.visible-link {
   }
   
   /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
-  
-  .all-blogs-hero-subtitle {
-    font-size: clamp(18px, 4vw, 26px);
-  }
-  
-  .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
-  }
+  /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
   
   .all-blogs-container {
     padding: 0 1rem;
@@ -7791,14 +7731,7 @@ a.visible-link {
 
 @media (max-width: 480px) {
   /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
-  
-  .all-blogs-hero-subtitle {
-    font-size: clamp(24px, 5vw, 36px);
-  }
-  
-  .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
-  }
+  /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
   
   .all-blogs-content {
     padding: 1rem;
@@ -9855,10 +9788,7 @@ a.visible-link {
   }
   
   /* .blog-hero-title media queries removed - now using .unified-h1 */
-  
-  .blog-hero-subtitle {
-    font-size: 1.125rem;
-  }
+  /* .blog-hero-subtitle media queries removed - now using .unified-h2 */
   
   .featured-grid {
     grid-template-columns: 1fr;
@@ -9901,10 +9831,7 @@ a.visible-link {
 
 @media (max-width: 480px) {
   /* .blog-hero-title media queries removed - now using .unified-h1 */
-  
-  .blog-hero-subtitle {
-    font-size: 1rem;
-  }
+  /* .blog-hero-subtitle media queries removed - now using .unified-h2 */
   
   .featured-image,
   .post-image-wrapper {
@@ -11102,8 +11029,10 @@ a.visible-link {
 }
 
 /* ========================================
-   УНИФИЦИРОВАННЫЕ ЗАГОЛОВКИ H1
+   УНИФИЦИРОВАННЫЕ ЗАГОЛОВКИ H1, H2, H3
    ======================================== */
+
+/* Унифицированные H2 и H3 классы удалены - теперь используются стандартные .hero-subtitle и .hero-description */
 
 /* Базовые стили для унифицированного H1 */
 .unified-h1 {

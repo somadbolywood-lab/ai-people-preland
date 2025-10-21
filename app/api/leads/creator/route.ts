@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// Force static export compatibility
-export const dynamic = 'force-static';
-export const revalidate = false;
+// API route configuration
+export const dynamic = 'force-dynamic';
 
 // Rate limiting store (in production, use Redis or similar)
 const rateLimitStore = new Map<string, { count: number; resetAt: number }>();

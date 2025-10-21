@@ -6,6 +6,7 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import HeaderWithMenu from "../components/HeaderWithMenu";
+import MetaTags from "../components/MetaTags";
 import { useLanguage } from "../hooks/useLanguage";
 
 export interface BlogPost {
@@ -70,8 +71,18 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="container blog-page">
-      <HeaderWithMenu homeHref="/" />
+    <>
+      <MetaTags
+        title="AI-People Blog - Expert Insights on Virtual Influencers"
+        description="Discover the latest trends in AI-generated content, virtual influencer marketing, and digital personas. Expert insights on monetization strategies and success stories."
+        keywords="AI blog, virtual influencers, AI models, digital marketing, AI-generated content, virtual influencer trends"
+        url="https://ai-people.com/blog"
+        locale="en"
+        alternateLocale="ru"
+        alternateUrl="https://ai-people.com/ru/blog"
+      />
+      <div className="container blog-page">
+        <HeaderWithMenu homeHref="/" />
 
       {/* Pre-launch Notification Banner */}
       <div className="notification-banner">
@@ -102,8 +113,8 @@ export default function BlogPage() {
             <h1 className="unified-h1">
               <span className="gradient-text" data-lang-en="Blog" data-lang-ru="Блог">Blog</span>
             </h1>
-            <h2 className="blog-hero-subtitle" data-lang-en="Virtual influencer trends, monetization strategies, success stories of creators" data-lang-ru="Тренды виртуальных инфлюэнсеров, стратегии монетизации, истории успеха креаторов">Virtual influencer trends, monetization strategies, success stories of creators</h2>
-            <h3 className="blog-hero-description" data-lang-en="Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you." data-lang-ru="Создавай, исследуй и монетизируй цифровые образы созданные креаторами нового поколения. Сегодня то время, когда виртуальные люди имеют реальное влияние. AI-реализм, который работает на тебя.">Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you.</h3>
+            <h2 className="hero-subtitle" data-lang-en="Virtual influencer trends, monetization strategies, success stories of creators" data-lang-ru="Тренды виртуальных инфлюэнсеров, стратегии монетизации, истории успеха креаторов">Virtual influencer trends, monetization strategies, success stories of creators</h2>
+            <h3 className="hero-description" data-lang-en="Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you." data-lang-ru="Создавай, исследуй и монетизируй цифровые образы созданные креаторами нового поколения. Сегодня то время, когда виртуальные люди имеют реальное влияние. AI-реализм, который работает на тебя.">Create, explore and monetize digital personas created by creators of the new generation. Today is the time when virtual people have real influence. AI-realism that works for you.</h3>
           </div>
         </section>
 
@@ -261,6 +272,7 @@ export default function BlogPage() {
           })
         }}
       />
-    </div>
+      </div>
+    </>
   );
 }
