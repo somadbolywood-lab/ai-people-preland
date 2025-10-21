@@ -4,7 +4,6 @@ import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSelector from "./LanguageSelector";
 import { useHamburgerMenu } from "../hooks/useHamburgerMenu";
-import { useSwipeMenuNavigation } from "../hooks/useSwipeNavigation";
 
 interface HeaderWithMenuProps {
   homeHref: string;
@@ -12,7 +11,6 @@ interface HeaderWithMenuProps {
 
 export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
   useHamburgerMenu();
-  const { elementRef: swipeRef } = useSwipeMenuNavigation();
   
   return (
     <>
@@ -43,7 +41,6 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
       </header>
 
       <div 
-        ref={swipeRef as React.RefObject<HTMLDivElement>}
         className="menu-panel" 
         id="menuPanel" 
         role="menu" 

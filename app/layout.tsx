@@ -71,22 +71,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover" />
         
-        {/* PWA Meta Tags */}
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#8b5cf6" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="AI-People" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="application-name" content="AI-People" />
-        <meta name="msapplication-TileColor" content="#8b5cf6" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        
-        {/* Apple Touch Icons */}
-        <link rel="apple-touch-icon" href="/faq/Favicon.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/faq/Favicon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/faq/Favicon.png" />
-        <link rel="apple-touch-icon" sizes="167x167" href="/faq/Favicon.png" />
         
         <HreflangLinks currentPath="/" locale="en" />
         {/* Resource Hints - Critical Performance Optimization */}
@@ -309,7 +293,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {/* Optimized modular script loading */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
       <Script src="/scripts/theme.js" strategy="beforeInteractive" />
-      <Script src="/scripts/sw-register.js" strategy="afterInteractive" />
       <Script src="/scripts/async-loader.js" strategy="afterInteractive" />
       <Script src="/scripts/critical-path-optimization.js" strategy="afterInteractive" />
       <Script src="/scripts/web-vitals.js" strategy="afterInteractive" />

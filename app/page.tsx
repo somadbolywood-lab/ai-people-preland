@@ -3,29 +3,17 @@ import Image from "next/image";
 import { useState } from "react";
 import { useScrollBorder } from "./hooks/useScrollBorder";
 import { useLanguage } from "./hooks/useLanguage";
-import { useSwipePageNavigation } from "./hooks/useSwipeNavigation";
 import Footer from "./components/Footer";
 import VideoModal from "./components/VideoModal";
 import HeaderWithMenu from "./components/HeaderWithMenu";
-import PWAInstallPrompt from "./components/PWAInstallPrompt";
 
 export default function Page() {
   useLanguage({ forceLanguage: 'en' });
   const { buyerRef, creatorRef } = useScrollBorder();
-  const { elementRef: swipeRef, swipeState, isAnimating } = useSwipePageNavigation();
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
-    <div 
-      ref={swipeRef as React.RefObject<HTMLDivElement>}
-      className={`container home-page ${isAnimating ? 'swipe-animating' : ''}`}
-      style={{
-        transform: swipeState.isSwiping 
-          ? `translateX(${swipeState.deltaX * 0.1}px)` 
-          : 'translateX(0)',
-        transition: isAnimating ? 'transform 0.3s ease-out' : 'none'
-      }}
-    >
+    <div className="container home-page">
       <HeaderWithMenu homeHref="/" />
 
       {/* Pre-launch Notification Banner */}
@@ -158,9 +146,6 @@ export default function Page() {
       </main>
 
       <Footer />
-      
-      {/* PWA Install Prompt */}
-      <PWAInstallPrompt />
     </div>
   );
 }
