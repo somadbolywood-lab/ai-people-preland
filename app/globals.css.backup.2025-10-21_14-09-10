@@ -71,8 +71,9 @@ html, body { height: 100%; }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
-    .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .blog-page .hero-subtitle,
+    .all-blogs-page .hero-subtitle {
         font-size: clamp(24px, 5vw, 36px) !important;
         text-align: center !important;
     }
@@ -184,8 +185,9 @@ html, body { height: 100%; }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
-    .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .blog-page .hero-subtitle,
+    .all-blogs-page .hero-subtitle {
         font-size: clamp(20px, 4.5vw, 30px) !important;
         text-align: center !important;
     }
@@ -260,8 +262,9 @@ html, body { height: 100%; }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
-    .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .blog-page .hero-subtitle,
+    .all-blogs-page .hero-subtitle {
         font-size: clamp(18px, 4vw, 26px) !important;
         text-align: center !important;
     }
@@ -3862,36 +3865,7 @@ a.visible-link {
     opacity: 0.9;
 }
 
-/* Blog hero subtitle and description */
-.blog-hero-subtitle {
-    font-size: clamp(14px, 3vw, 28px);
-    margin: 8px 0 12px;
-    font-weight: 600;
-    line-height: 1.3;
-    text-align: center;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Десктопные стили для blog-hero-subtitle - переопределение мобильных */
-@media (min-width: 769px) {
-    .blog-page .blog-hero-subtitle {
-        font-size: clamp(16px, 2.5vw, 24px) !important;
-        margin: 12px 0 16px !important;
-        text-align: center !important;
-    }
-}
-
-.blog-hero-description {
-    color: var(--text);
-    font-size: clamp(12px, 2.5vw, 16px);
-    line-height: 1.5;
-    margin: 8px 0 8px;
-    max-width: 100%;
-    opacity: 0.9;
-}
+/* Blog hero subtitle and description - REMOVED, now using .unified-h2 and .unified-h3 */
 
 .hero-cta { 
     margin-top: 16px; 
@@ -7525,38 +7499,11 @@ a.visible-link {
 .all-blogs-hero-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
 }
 
-.all-blogs-hero-title {
-  font-size: clamp(28px, 6vw, 56px);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-}
+/* .all-blogs-hero-title styles removed - now using .unified-h1 */
 
-.all-blogs-hero-subtitle {
-  font-size: clamp(14px, 3vw, 28px);
-  margin: 8px 0 12px;
-  font-weight: 600;
-  line-height: 1.3;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.all-blogs-hero-description {
-  font-size: clamp(14px, 3vw, 18px);
-  font-weight: 400;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-  color: var(--text);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* .all-blogs-hero-subtitle and .all-blogs-hero-description - REMOVED, now using .unified-h2 and .unified-h3 */
 
 .all-blogs-container {
   max-width: 1400px;
@@ -7608,17 +7555,17 @@ a.visible-link {
 }
 
 .all-blogs-image .post-category {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+  position: static;
+  display: inline-block;
   background: var(--accent);
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.75rem;
 }
 
 .all-blogs-content {
@@ -7744,17 +7691,8 @@ a.visible-link {
     gap: 1.5rem;
   }
   
-  .all-blogs-hero-title {
-    font-size: clamp(24px, 5.5vw, 40px);
-  }
-  
-  .all-blogs-hero-subtitle {
-    font-size: clamp(20px, 4.5vw, 30px);
-  }
-  
-  .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
-  }
+  /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
+  /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
 }
 
 @media (max-width: 768px) {
@@ -7768,17 +7706,8 @@ a.visible-link {
     background: linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(139, 92, 246, 0.01) 50%, transparent 100%);
   }
   
-  .all-blogs-hero-title {
-    font-size: clamp(20px, 5vw, 36px);
-  }
-  
-  .all-blogs-hero-subtitle {
-    font-size: clamp(18px, 4vw, 26px);
-  }
-  
-  .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
-  }
+  /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
+  /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
   
   .all-blogs-container {
     padding: 0 1rem;
@@ -7800,20 +7729,12 @@ a.visible-link {
 }
 
 @media (max-width: 480px) {
-  .all-blogs-hero-title {
-    font-size: clamp(26px, 6vw, 44px);
-  }
+  /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
+  /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
   
-  .all-blogs-hero-subtitle {
-    font-size: clamp(24px, 5vw, 36px);
-  }
-  
-  .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
-  }
   
   .all-blogs-content {
-    padding: 1rem;
+    padding: 0 2rem;
   }
   
   .all-blogs-content .post-title {
@@ -9414,17 +9335,7 @@ a.visible-link {
   margin: 0 auto;
 }
 
-.blog-hero-title {
-  font-size: clamp(28px, 6vw, 56px);
-  font-weight: 700;
-  margin: 12px 0 0px;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-}
-
-.blog-hero-title .gradient-text {
-  font-size: inherit;
-}
+/* .blog-hero-title styles removed - now using .unified-h1 */
 
 .blog-title-white {
   color: white;
@@ -9499,18 +9410,17 @@ a.visible-link {
 }
 
 .post-category {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+  position: static;
+  display: inline-block;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  z-index: 1;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.75rem;
 }
 
 .featured-content {
@@ -9657,11 +9567,11 @@ a.visible-link {
   display: inline-block;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
-  padding: 0.35rem 0.75rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 8px;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   width: fit-content;
 }
 
@@ -9877,18 +9787,8 @@ a.visible-link {
     padding: 1.5rem 1rem 2.5rem;
   }
   
-  .blog-hero-title {
-    font-size: clamp(24px, 5.5vw, 40px);
-    margin: 8px 0 0px;
-  }
-  
-  .blog-hero-title .gradient-text {
-    font-size: clamp(30px, 6.5vw, 52px);
-  }
-  
-  .blog-hero-subtitle {
-    font-size: 1.125rem;
-  }
+  /* .blog-hero-title media queries removed - now using .unified-h1 */
+  /* .blog-hero-subtitle media queries removed - now using .unified-h2 */
   
   .featured-grid {
     grid-template-columns: 1fr;
@@ -9930,18 +9830,8 @@ a.visible-link {
 }
 
 @media (max-width: 480px) {
-  .blog-hero-title {
-    font-size: clamp(20px, 5vw, 36px);
-    margin: 6px 0 0px;
-  }
-  
-  .blog-hero-title .gradient-text {
-    font-size: clamp(26px, 6vw, 44px);
-  }
-  
-  .blog-hero-subtitle {
-    font-size: 1rem;
-  }
+  /* .blog-hero-title media queries removed - now using .unified-h1 */
+  /* .blog-hero-subtitle media queries removed - now using .unified-h2 */
   
   .featured-image,
   .post-image-wrapper {
@@ -10028,7 +9918,8 @@ a.visible-link {
 
 .article-hero-content {
   position: relative;
-  margin-top: -330px;
+  margin-top: 0;
+  padding-top: 1.5rem;
 }
 
 /* Desktop: Align text content with top of hero image */
@@ -10095,6 +9986,8 @@ a.visible-link {
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
+  min-height: 40px;
 }
 
 .back-button {
@@ -10131,22 +10024,28 @@ a.visible-link {
   transform: translateX(-1px);
 }
 
-.article-category {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: white;
-  padding: 0.35rem 0.85rem;
-  border-radius: 20px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.25);
-}
 
 .article-meta-info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.article-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.article-read-time {
   font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 500;
@@ -10154,6 +10053,20 @@ a.visible-link {
 
 .meta-separator {
   opacity: 0.5;
+}
+
+.article-category {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 0;
+  vertical-align: middle;
 }
 
 .article-title {
@@ -10165,7 +10078,7 @@ a.visible-link {
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  margin-top: 2rem;
+  margin-top: 0;
   margin-bottom: 1rem;
   letter-spacing: -0.01em;
   text-align: center;
@@ -10785,18 +10698,17 @@ a.visible-link {
 }
 
 .related-category {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+  position: static;
+  display: inline-block;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  z-index: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.3px;
 }
 
 .related-content {
@@ -10868,7 +10780,18 @@ a.visible-link {
     float: none;
     width: 100%;
     max-width: 100%;
-    margin: 1.5rem 0;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .article-hero-content {
+    margin-top: 0;
+    padding-top: 0;
+    clear: both;
+  }
+  
+  .article-hero-layout {
+    display: flex;
+    flex-direction: column;
   }
 
 
@@ -10980,6 +10903,24 @@ a.visible-link {
     font-size: 0.875rem;
   }
   
+  .article-hero-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .article-hero-image-float {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1rem 0;
+  }
+  
+  .article-hero-content {
+    margin-top: 0;
+    padding-top: 0;
+    clear: both;
+  }
+  
   .article-content .lead {
     font-size: 1.25rem;
     padding-left: 1rem;
@@ -11073,14 +11014,25 @@ a.visible-link {
     gap: 0.75rem;
   }
   
+  /* Компактные плашки категорий на мобильных */
+  .post-category,
+  .marquee-category,
+  .related-category {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
   .marquee-container {
     padding-top: 10px; /* Меньше для мобильных устройств */
   }
 }
 
 /* ========================================
-   УНИФИЦИРОВАННЫЕ ЗАГОЛОВКИ H1
+   УНИФИЦИРОВАННЫЕ ЗАГОЛОВКИ H1, H2, H3
    ======================================== */
+
+/* Унифицированные H2 и H3 классы удалены - теперь используются стандартные .hero-subtitle и .hero-description */
 
 /* Базовые стили для унифицированного H1 */
 .unified-h1 {
@@ -11179,8 +11131,64 @@ a.visible-link {
   
   .article-meta-top {
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
   }
+  
+  .article-meta-info {
+    display: none; /* Скрываем на мобильных */
+  }
+  
+  .article-category {
+    display: none; /* Скрываем на мобильных */
+  }
+  
+  .back-button {
+    flex-shrink: 0;
+  }
+  
+  /* Мобильные элементы - время чтения по центру в верхней строке */
+  .article-meta-top::after {
+    content: attr(data-read-time);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
+  /* Мобильная дата справа */
+  .article-meta-top::before {
+    content: attr(data-date);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
+  /* Мобильная категория под временем чтения */
+  .article-title-section::after {
+    content: attr(data-category);
+    display: block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 0.5rem auto 0.75rem;
+    width: fit-content;
+    text-align: center;
+  }
+  
 }
 
 @media (max-width: 480px) {
@@ -11192,6 +11200,131 @@ a.visible-link {
   .back-button svg {
     width: 16px;
     height: 16px;
+  }
+  
+  .article-meta-top {
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .article-date {
+    font-size: 0.75rem;
+  }
+  
+  .back-button {
+    flex-shrink: 0;
+  }
+  
+  /* Мобильные элементы для 480px - время чтения по центру */
+  .article-meta-top::after {
+    content: attr(data-read-time);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
+  /* Мобильная дата справа для 480px */
+  .article-meta-top::before {
+    content: attr(data-date);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
+  /* Мобильная категория для 480px */
+  .article-title-section::after {
+    content: attr(data-category);
+    display: block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 0.5rem auto 0.75rem;
+    width: fit-content;
+    text-align: center;
+  }
+}
+
+/* Extra small screens (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  .back-button {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .back-button svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .article-meta-top {
+    gap: 0.2rem;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .article-date {
+    font-size: 0.7rem;
+  }
+  
+  .back-button {
+    flex-shrink: 0;
+  }
+  
+  /* Мобильные элементы для 375px - время чтения по центру */
+  .article-meta-top::after {
+    content: attr(data-read-time);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
+  /* Мобильная дата справа для 375px */
+  .article-meta-top::before {
+    content: attr(data-date);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
+  /* Мобильная категория для 375px */
+  .article-title-section::after {
+    content: attr(data-category);
+    display: block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: white;
+    padding: 0.15rem 0.4rem;
+    border-radius: 10px;
+    font-size: 0.55rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 0.5rem auto 0.75rem;
+    width: fit-content;
+    text-align: center;
   }
 }
 
