@@ -71,13 +71,14 @@ html, body { height: 100%; }
     
     /* All Blogs page - override general .title .gradient-text rules */
     .all-blogs-hero-title .gradient-text {
-        font-size: clamp(22px, 5.2vw, 38px) !important;
+        font-size: clamp(48px, 10vw, 72px) !important;
     }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
     .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .all-blogs-hero-subtitle {
         font-size: clamp(24px, 5vw, 36px) !important;
         text-align: center !important;
     }
@@ -189,13 +190,14 @@ html, body { height: 100%; }
     
     /* All Blogs page - override general .title .gradient-text rules */
     .all-blogs-hero-title .gradient-text {
-        font-size: clamp(20px, 5vw, 36px) !important;
+        font-size: clamp(40px, 9vw, 60px) !important;
     }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
     .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .all-blogs-hero-subtitle {
         font-size: clamp(20px, 4.5vw, 30px) !important;
         text-align: center !important;
     }
@@ -270,13 +272,14 @@ html, body { height: 100%; }
     
     /* All Blogs page - override general .title .gradient-text rules */
     .all-blogs-hero-title .gradient-text {
-        font-size: clamp(18px, 4.5vw, 32px) !important;
+        font-size: clamp(36px, 8vw, 52px) !important;
     }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
     .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .all-blogs-hero-subtitle {
         font-size: clamp(18px, 4vw, 26px) !important;
         text-align: center !important;
     }
@@ -7546,7 +7549,7 @@ a.visible-link {
 .all-blogs-hero-title {
   font-size: clamp(28px, 6vw, 56px) !important;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin: 12px 0 0px;
   line-height: 1.2;
   letter-spacing: -0.5px;
 }
@@ -7567,7 +7570,7 @@ a.visible-link {
 }
 
 .all-blogs-hero-description {
-  font-size: clamp(14px, 3vw, 18px);
+  font-size: clamp(12px, 2.5vw, 16px);
   font-weight: 400;
   margin-bottom: 2rem;
   line-height: 1.5;
@@ -7764,7 +7767,7 @@ a.visible-link {
   }
   
   .all-blogs-hero-title {
-    font-size: clamp(26px, 5.8vw, 44px) !important;
+    font-size: clamp(24px, 5.5vw, 40px) !important;
   }
   
   .all-blogs-hero-title .gradient-text {
@@ -7772,11 +7775,11 @@ a.visible-link {
   }
   
   .all-blogs-hero-subtitle {
-    font-size: clamp(18px, 3.5vw, 28px) !important;
+    font-size: 1.125rem !important;
   }
   
   .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
+    font-size: clamp(12px, 2.5vw, 16px);
   }
 }
 
@@ -7792,7 +7795,7 @@ a.visible-link {
   }
   
   .all-blogs-hero-title {
-    font-size: clamp(22px, 5.2vw, 38px) !important;
+    font-size: clamp(24px, 5.5vw, 40px) !important;
   }
   
   .all-blogs-hero-title .gradient-text {
@@ -7800,11 +7803,11 @@ a.visible-link {
   }
   
   .all-blogs-hero-subtitle {
-    font-size: clamp(16px, 3.2vw, 26px) !important;
+    font-size: 1.125rem !important;
   }
   
   .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
+    font-size: clamp(12px, 2.5vw, 16px);
   }
   
   .all-blogs-container {
@@ -7836,11 +7839,11 @@ a.visible-link {
   }
   
   .all-blogs-hero-subtitle {
-    font-size: clamp(18px, 4vw, 26px) !important;
+    font-size: 1rem !important;
   }
   
   .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
+    font-size: clamp(12px, 2.5vw, 16px);
   }
   
   .all-blogs-content {
