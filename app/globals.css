@@ -4743,62 +4743,6 @@ a.visible-link {
 
 
 
-/* Swipe Navigation Styles */
-.swipe-animating {
-  transition: transform 0.3s ease-out;
-}
-
-.swipe-indicator {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 12px;
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.swipe-indicator.show {
-  opacity: 1;
-}
-
-.swipe-hint {
-  position: fixed;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 12px 20px;
-  font-size: 14px;
-  color: var(--text-secondary);
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.swipe-hint.show {
-  opacity: 1;
-}
-
-.swipe-hint::before {
-  content: "👆";
-  margin-right: 8px;
-}
-
-/* Swipe feedback for menu */
-.menu-panel.swipe-feedback {
-  transform: translateX(-10px);
-  transition: transform 0.2s ease;
-}
 
 /* Modern viewport units support for new devices */
 @supports (height: 100dvh) {
