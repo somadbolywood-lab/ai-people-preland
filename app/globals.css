@@ -7707,6 +7707,15 @@ a.visible-link {
     background: linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(139, 92, 246, 0.01) 50%, transparent 100%);
   }
   
+  .all-blogs-hero-content {
+    padding: 0 2rem;
+  }
+  
+  /* Russian version - wider hero content for better text display */
+  .ru-optimized .all-blogs-hero-content {
+    padding: 0 2rem;
+  }
+  
   /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
   /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
   
@@ -7732,6 +7741,15 @@ a.visible-link {
 @media (max-width: 480px) {
   /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
   /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
+  
+  .all-blogs-hero-content {
+    padding: 0 2rem;
+  }
+  
+  /* Russian version - wider hero content for better text display */
+  .ru-optimized .all-blogs-hero-content {
+    padding: 0 2rem;
+  }
   
   .all-blogs-content {
     padding: 0 2rem;
