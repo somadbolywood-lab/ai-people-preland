@@ -17,3 +17,4 @@ AI‑People Preland
 - robots.txt — /public/robots.txt
 - sitemap — app/sitemap.ts (отдаётся на /sitemap.xml)
 
+# Force update for Vercel deployment
