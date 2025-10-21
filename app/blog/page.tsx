@@ -25,13 +25,26 @@ export interface BlogPost {
 }
 
 export default function BlogPage() {
-  useLanguage();
+  useLanguage({ forceLanguage: 'en' });
 
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentLang, setCurrentLang] = useState('en');
 
   useEffect(() => {
+    // Get initial language from localStorage
+    const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+    setCurrentLang(savedLang);
+
+    // Listen for language changes
+    const handleLanguageChange = () => {
+      const newLang = localStorage.getItem('selectedLanguage') || 'en';
+      setCurrentLang(newLang);
+    };
+
+    window.addEventListener('languageChange', handleLanguageChange);
+
     // Load blog posts from API
     const loadBlogs = async () => {
       try {
@@ -50,6 +63,8 @@ export default function BlogPage() {
     };
 
     loadBlogs();
+    
+    return () => window.removeEventListener('languageChange', handleLanguageChange);
   }, []);
 
   if (isLoading) {
@@ -135,15 +150,25 @@ export default function BlogPage() {
                     />
                   </div>
                   <div className="featured-content">
-                    <span className="post-category" data-lang-en={post.category} data-lang-ru={post.categoryRu}>{post.category}</span>
-                    <h3 className="post-title" data-lang-en={post.title} data-lang-ru={post.titleRu}>{post.title}</h3>
-                    <p className="post-excerpt" data-lang-en={post.excerpt} data-lang-ru={post.excerptRu}>{post.excerpt}</p>
+                    <span className="post-category">
+                      {currentLang === 'ru' ? post.categoryRu : post.category}
+                    </span>
+                    <h3 className="post-title">
+                      {currentLang === 'ru' ? post.titleRu : post.title}
+                    </h3>
+                    <p className="post-excerpt">
+                      {currentLang === 'ru' ? post.excerptRu : post.excerpt}
+                    </p>
                     <div className="post-meta">
-                      <time className="post-date">{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                      <time className="post-date">{new Date(post.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
                       <span className="post-divider">•</span>
-                      <span className="post-read-time" data-lang-en={post.readTime} data-lang-ru={post.readTimeRu}>{post.readTime}</span>
+                      <span className="post-read-time">
+                        {currentLang === 'ru' ? post.readTimeRu : post.readTime}
+                      </span>
                     </div>
-                    <a href={`/blog/${post.id}`} className="read-more-btn" data-lang-en="Read Article →" data-lang-ru="Читать статью →">Read Article →</a>
+                    <a href={`/blog/${post.id}`} className="read-more-btn">
+                      {currentLang === 'ru' ? 'Читать статью →' : 'Read Article →'}
+                    </a>
                   </div>
                 </article>
               ))}
@@ -170,14 +195,22 @@ export default function BlogPage() {
                     />
                   </div>
                   <div className="marquee-content">
-                    <span className="marquee-category" data-lang-en={post.category} data-lang-ru={post.categoryRu}>{post.category}</span>
-                    <h3 className="marquee-title" data-lang-en={post.title} data-lang-ru={post.titleRu}>{post.title}</h3>
+                    <span className="marquee-category">
+                      {currentLang === 'ru' ? post.categoryRu : post.category}
+                    </span>
+                    <h3 className="marquee-title">
+                      {currentLang === 'ru' ? post.titleRu : post.title}
+                    </h3>
                     <div className="marquee-meta">
-                      <time className="marquee-date">{new Date(post.date).toLocaleDateString('ru-RU', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
-                      <span className="marquee-read-time" data-lang-en={post.readTime} data-lang-ru={post.readTimeRu}>{post.readTime}</span>
+                      <time className="marquee-date">{new Date(post.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                      <span className="marquee-read-time">
+                        {currentLang === 'ru' ? post.readTimeRu : post.readTime}
+                      </span>
                     </div>
                     <div className="marquee-footer">
-                      <span className="marquee-read-more" data-lang-en="Read more →" data-lang-ru="Читать далее →">Читать далее →</span>
+                      <span className="marquee-read-more">
+                        {currentLang === 'ru' ? 'Читать далее →' : 'Read more →'}
+                      </span>
                     </div>
                   </div>
                 </a>

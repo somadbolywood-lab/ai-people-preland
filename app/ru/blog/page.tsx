@@ -25,14 +25,27 @@ export interface BlogPost {
 }
 
 export default function BlogPage() {
-  // Use unified language hook with dynamic language switching
-  useLanguage();
+  // Use unified language hook with forced Russian language
+  useLanguage({ forceLanguage: 'ru' });
   
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentLang, setCurrentLang] = useState('ru');
 
   useEffect(() => {
+    // Get initial language from localStorage
+    const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
+    setCurrentLang(savedLang);
+
+    // Listen for language changes
+    const handleLanguageChange = () => {
+      const newLang = localStorage.getItem('selectedLanguage') || 'ru';
+      setCurrentLang(newLang);
+    };
+
+    window.addEventListener('languageChange', handleLanguageChange);
+
     // Load blog posts from API
     const loadBlogs = async () => {
       try {
@@ -51,6 +64,8 @@ export default function BlogPage() {
     };
 
     loadBlogs();
+    
+    return () => window.removeEventListener('languageChange', handleLanguageChange);
   }, []);
 
   if (isLoading) {
@@ -136,15 +151,25 @@ export default function BlogPage() {
                     />
                   </div>
                   <div className="featured-content">
-                    <span className="post-category" data-lang-en={post.category} data-lang-ru={post.categoryRu}>{post.category}</span>
-                    <h3 className="post-title" data-lang-en={post.title} data-lang-ru={post.titleRu}>{post.title}</h3>
-                    <p className="post-excerpt" data-lang-en={post.excerpt} data-lang-ru={post.excerptRu}>{post.excerpt}</p>
+                    <span className="post-category">
+                      {currentLang === 'ru' ? post.categoryRu : post.category}
+                    </span>
+                    <h3 className="post-title">
+                      {currentLang === 'ru' ? post.titleRu : post.title}
+                    </h3>
+                    <p className="post-excerpt">
+                      {currentLang === 'ru' ? post.excerptRu : post.excerpt}
+                    </p>
                     <div className="post-meta">
-                      <time className="post-date">{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                      <time className="post-date">{new Date(post.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
                       <span className="post-divider">•</span>
-                      <span className="post-read-time" data-lang-en={post.readTime} data-lang-ru={post.readTimeRu}>{post.readTime}</span>
+                      <span className="post-read-time">
+                        {currentLang === 'ru' ? post.readTimeRu : post.readTime}
+                      </span>
                     </div>
-                    <a href={`/ru/blog/${post.id}`} className="read-more-btn" data-lang-en="Read Article →" data-lang-ru="Читать статью →">Читать статью →</a>
+                    <a href={`/ru/blog/${post.id}`} className="read-more-btn">
+                      {currentLang === 'ru' ? 'Читать статью →' : 'Read Article →'}
+                    </a>
                   </div>
                 </article>
               ))}
