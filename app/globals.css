@@ -10096,6 +10096,7 @@ a.visible-link {
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
+  min-height: 40px;
 }
 
 .back-button {
@@ -10155,6 +10156,7 @@ a.visible-link {
   font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .article-date {
@@ -10183,7 +10185,8 @@ a.visible-link {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  vertical-align: middle;
 }
 
 .article-title {
