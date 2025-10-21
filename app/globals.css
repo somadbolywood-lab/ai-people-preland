@@ -11278,6 +11278,23 @@ a.visible-link {
     font-weight: 500;
   }
   
+  /* Мобильная категория под временем чтения */
+  .article-title-section::after {
+    content: attr(data-category);
+    display: block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 0.5rem auto 0.75rem;
+    width: fit-content;
+    text-align: center;
+  }
+  
 }
 
 @media (max-width: 480px) {
