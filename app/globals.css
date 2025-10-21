@@ -10095,6 +10095,7 @@ a.visible-link {
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
 }
 
 .back-button {
@@ -10144,6 +10145,10 @@ a.visible-link {
 }
 
 .article-meta-info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   gap: 0.5rem;
