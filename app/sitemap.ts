@@ -24,8 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/about`,
       lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.5,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
       alternates: {
         languages: {
           ru: `${baseUrl}/ru/about`,
@@ -57,11 +57,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/auth/role`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
       alternates: {
         languages: {
           ru: `${baseUrl}/ru/auth/role`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/all-blogs`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ru: `${baseUrl}/ru/all-blogs`,
         },
       },
     },
@@ -83,8 +94,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/ru/about`,
       lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.5,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
       alternates: {
         languages: {
           en: `${baseUrl}/about`,
@@ -116,18 +127,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/ru/auth/role`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
       alternates: {
         languages: {
           en: `${baseUrl}/auth/role`,
         },
       },
     },
+    {
+      url: `${baseUrl}/ru/all-blogs`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/all-blogs`,
+        },
+      },
+    },
   ];
   
-  // Blog posts - English
-  const enBlogPosts = [1, 2, 3, 4, 5, 6, 7].map(id => ({
+  // Blog posts - English (currently available: 1-6)
+  const enBlogPosts = [1, 2, 3, 4, 5, 6].map(id => ({
     url: `${baseUrl}/blog/${id}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
@@ -139,8 +161,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   }));
   
-  // Blog posts - Russian
-  const ruBlogPosts = [1, 2, 3, 4, 5, 6, 7].map(id => ({
+  // Blog posts - Russian (currently available: 1-6)
+  const ruBlogPosts = [1, 2, 3, 4, 5, 6].map(id => ({
     url: `${baseUrl}/ru/blog/${id}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
@@ -157,8 +179,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/auth/buyer`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
       alternates: {
         languages: {
           ru: `${baseUrl}/ru/auth/buyer`,
@@ -168,11 +190,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/auth/creator`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
       alternates: {
         languages: {
           ru: `${baseUrl}/ru/auth/creator`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/auth/buyer-info`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
+      alternates: {
+        languages: {
+          ru: `${baseUrl}/ru/auth/buyer-info`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/auth/creator-info`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
+      alternates: {
+        languages: {
+          ru: `${baseUrl}/ru/auth/creator-info`,
         },
       },
     },
@@ -183,8 +227,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/ru/auth/buyer`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
       alternates: {
         languages: {
           en: `${baseUrl}/auth/buyer`,
@@ -194,11 +238,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/ru/auth/creator`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
       alternates: {
         languages: {
           en: `${baseUrl}/auth/creator`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/ru/auth/buyer-info`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/auth/buyer-info`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/ru/auth/creator-info`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/auth/creator-info`,
         },
       },
     },
@@ -209,29 +275,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/legal/terms`,
       lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
+      changeFrequency: 'monthly' as const,
+      priority: 0.4,
       alternates: { languages: { ru: `${baseUrl}/ru/legal/terms` } },
     },
     {
       url: `${baseUrl}/legal/content-policy`,
       lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
+      changeFrequency: 'monthly' as const,
+      priority: 0.4,
       alternates: { languages: { ru: `${baseUrl}/ru/legal/content-policy` } },
     },
     {
       url: `${baseUrl}/legal/privacy`,
       lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
+      changeFrequency: 'monthly' as const,
+      priority: 0.4,
       alternates: { languages: { ru: `${baseUrl}/ru/legal/privacy` } },
     },
     {
       url: `${baseUrl}/legal/cookies`,
       lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
+      changeFrequency: 'monthly' as const,
+      priority: 0.4,
       alternates: { languages: { ru: `${baseUrl}/ru/legal/cookies` } },
     },
   ];

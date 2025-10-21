@@ -124,8 +124,8 @@ export default function Page() {
       {/* Pre-launch Notification Banner */}
       <div className="notification-banner">
         <div className="notification-content">
-          <span data-lang-en="🔥 This is just the warm-up! You're on the pre-landing page — subscribe and be among the first to break into the project. Early subscribers get privileges at launch. Launching 12/01/2025" data-lang-ru="🔥 Это только разогрев! Сейчас ты на прелендинге — подпишись и окажись в числе первых, кто ворвётся в проект. Ранние подписчики получают привилегии на старте. Стартуем 01.12.2025">
-            🔥 Это только разогрев! Сейчас ты на прелендинге — подпишись и окажись в числе первых, кто ворвётся в проект. Ранние подписчики получают привилегии на старте. Стартуем 01.12.2025
+          <span data-lang-en="🔥 AI-PEOPLE launching Dec 2025 - Early access with exclusive privileges available now!" data-lang-ru="🔥 AI-PEOPLE запуск дек 2025 - Ранний доступ с эксклюзивными привилегиями уже доступен!">
+            🔥 AI-PEOPLE запуск дек 2025 - Ранний доступ с эксклюзивными привилегиями уже доступен!
           </span>
         </div>
       </div>
@@ -146,7 +146,7 @@ export default function Page() {
         {/* Hero Section */}
         <section className="hero">
           <h1 className="unified-h1"><span className="gradient-text" data-lang-en="AI-PEOPLE.IO" data-lang-ru="AI-PEOPLE.IO">AI-PEOPLE.IO</span></h1>
-          <h2 className="hero-subtitle" data-lang-en="Buy and sell superrealistic virtual influencers" data-lang-ru="Покупайте и продавайте сеперреалистичных виртуальных инфлюэнсеров">Покупайте и продавайте сеперреалистичных виртуальных инфлюэнсеров</h2>
+          <h2 className="hero-subtitle" data-lang-en="First AI Models Marketplace - Launching Dec 2025" data-lang-ru="Первый маркетплейс AI-моделей - Запуск дек 2025">Первый маркетплейс AI-моделей - Запуск дек 2025</h2>
           <h3 className="hero-description" data-lang-en="The world's first curated platform for premium AI content. Join today to the community of creators revolutionizing digital marketing." data-lang-ru="Первая в мире курируемая платформа для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.">Первая в мире курируемая платформа для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.</h3>
           
           {/* Presentation Button */}

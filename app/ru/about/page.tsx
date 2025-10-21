@@ -37,8 +37,8 @@ export default function Page() {
   return (
     <div className="container home-page">
       <Head>
-        <title>О нас | AI-People — Первый курируемый маркетплейс AI-моделей</title>
-        <meta name="description" content="Узнайте об AI-People — первом курируемом маркетплейсе гиперреалистичных AI-моделей и виртуальных инфлюенсеров. Миссия, видение и то, что мы создаем." />
+        <title>О нас | AI-People — Первый маркетплейс AI-моделей запуск дек 2025</title>
+        <meta name="description" content="О AI-People — первом маркетплейсе AI-моделей запуск декабрь 2025. Ранний доступ уже доступен с эксклюзивными привилегиями и возможностями для креаторов." />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
         <link rel="canonical" href="https://ai-people.io/ru/about" />
         <meta property="og:title" content="О нас — AI-People" />
@@ -58,9 +58,9 @@ export default function Page() {
         {/* Уведомление */}
         <div className="notification-banner">
           <div className="notification-content">
-            <span data-lang-en="🔥 This is just the warm-up! You're on the pre-landing page — subscribe and be among the first to break into the project. Early subscribers get privileges at launch. 🚀 Launching 12/01/2025" data-lang-ru="🔥 Это только разогрев! Сейчас ты на прелендинге — подпишись и окажись в числе первых, кто ворвётся в проект. Ранние подписчики получают привилегии на старте. 🚀 Стартуем 01.12.2025">
-              🔥 Это только разогрев! Сейчас ты на прелендинге — подпишись и окажись в числе первых, кто ворвётся в проект. Ранние подписчики получают привилегии на старте. 🚀 Стартуем 01.12.2025
-            </span>
+          <span data-lang-en="🔥 AI-PEOPLE launching Dec 2025 - Early access with exclusive privileges available now!" data-lang-ru="🔥 AI-PEOPLE запуск дек 2025 - Ранний доступ с эксклюзивными привилегиями уже доступен!">
+            🔥 AI-PEOPLE запуск дек 2025 - Ранний доступ с эксклюзивными привилегиями уже доступен!
+          </span>
           </div>
         </div>
 
@@ -79,7 +79,7 @@ export default function Page() {
         {/* Hero (About RU) — после маркви */}
         <section className="hero">
           <h1 className="unified-h1"><span className="gradient-text" data-lang-en="About" data-lang-ru="О нас">О нас</span></h1>
-          <h2 className="hero-subtitle" data-lang-en="About AI-People — mission, vision and product" data-lang-ru="О AI-People — миссия, видение и продукт">О AI-People — миссия, видение и продукт</h2>
+          <h2 className="hero-subtitle" data-lang-en="AI-People — First AI Marketplace Launching Dec 2025" data-lang-ru="AI-People — Первый AI-маркетплейс запуск дек 2025">AI-People — Первый AI-маркетплейс запуск дек 2025</h2>
           <h3 className="hero-description" data-lang-en="We build the first curated marketplace for hyperrealistic AI models and virtual influencers to help businesses get premium visuals and empower creators to monetize their art." data-lang-ru="Мы создаём первый курируемый маркетплейс гиперреалистичных AI‑моделей и виртуальных инфлюенсеров, чтобы бизнес получал премиальные визуалы, а креаторы монетизировали творчество.">Мы создаём первый курируемый маркетплейс гиперреалистичных AI‑моделей и виртуальных инфлюенсеров, чтобы бизнес получал премиальные визуалы, а креаторы монетизировали творчество.</h3>
         </section>
 

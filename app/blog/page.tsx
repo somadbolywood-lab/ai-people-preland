@@ -98,8 +98,8 @@ export default function BlogPage() {
   return (
     <>
       <MetaTags
-        title="AI-People Blog - Expert Insights on Virtual Influencers"
-        description="Discover the latest trends in AI-generated content, virtual influencer marketing, and digital personas. Expert insights on monetization strategies and success stories."
+        title="AI-People Blog - Expert Insights on Virtual Influencers | Launching Dec 2025"
+        description="Discover the latest trends in AI-generated content, virtual influencer marketing, and digital personas. Platform launching Dec 2025 - early access available."
         keywords="AI blog, virtual influencers, AI models, digital marketing, AI-generated content, virtual influencer trends"
         url="https://ai-people.com/blog"
         locale="en"
@@ -268,13 +268,13 @@ export default function BlogPage() {
             "@type": "Blog",
             "name": "AI-People Blog",
             "description": "Expert insights on AI models, virtual influencers, and the future of AI-generated content",
-            "url": "https://ai-people.com/blog",
+            "url": "https://ai-people.io/blog",
             "publisher": {
               "@type": "Organization",
               "name": "AI-People",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://ai-people.com/faq/AI-people%20Logo.png"
+                "url": "https://ai-people.io/faq/AI-people%20Logo.png"
               }
             },
             "blogPost": [
@@ -282,7 +282,7 @@ export default function BlogPage() {
                 "@type": "BlogPosting",
                 "headline": "The Future of AI-Generated Content Marketing",
                 "description": "Explore how AI-generated content is revolutionizing digital marketing and what it means for businesses in 2025.",
-                "url": "https://ai-people.com/blog/1",
+                "url": "https://ai-people.io/blog/1",
                 "datePublished": "2025-10-01",
                 "author": {
                   "@type": "Person",
@@ -293,7 +293,7 @@ export default function BlogPage() {
                 "@type": "BlogPosting", 
                 "headline": "How to Create Hyperrealistic Virtual Influencers",
                 "description": "A comprehensive guide to creating hyperrealistic virtual influencers that engage audiences and drive conversions.",
-                "url": "https://ai-people.com/blog/2",
+                "url": "https://ai-people.io/blog/2",
                 "datePublished": "2025-10-03",
                 "author": {
                   "@type": "Person",
@@ -304,7 +304,7 @@ export default function BlogPage() {
                 "@type": "BlogPosting",
                 "headline": "AI Models Marketplace: What Creators Need to Know",
                 "description": "Everything creators need to know about selling AI models and virtual influencer content in 2025.",
-                "url": "https://ai-people.com/blog/3",
+                "url": "https://ai-people.io/blog/3",
                 "datePublished": "2025-10-06",
                 "author": {
                   "@type": "Person",

@@ -1,0 +1,20 @@
+# AI-People.io - Humans.txt
+
+/* TEAM */
+Developer: AI-People Development Team
+Contact: feedback@ai-people.io
+From: New York, USA
+
+/* THANKS */
+Next.js Team - For the amazing React framework
+Vercel - For hosting and deployment
+OpenAI - For AI inspiration and technology
+React Team - For the powerful UI library
+
+/* SITE */
+Last update: 2025/10/21
+Language: English, Russian
+Doctype: HTML5
+IDE: VS Code, Cursor
+Standards: W3C, Schema.org, Open Graph
+Components: React, Next.js, TypeScript

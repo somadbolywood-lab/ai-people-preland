@@ -71,8 +71,9 @@ html, body { height: 100%; }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
-    .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .blog-page .hero-subtitle,
+    .all-blogs-page .hero-subtitle {
         font-size: clamp(24px, 5vw, 36px) !important;
         text-align: center !important;
     }
@@ -160,6 +161,81 @@ html, body { height: 100%; }
     }
 }
 
+/* iPhone 14 Pro Max and similar large devices */
+@media (max-width: 430px) and (orientation: portrait) {
+    .container {
+        padding: 6px !important;
+    }
+    
+    .title {
+        font-size: clamp(20px, 4.2vw, 32px);
+        margin: 6px 0 4px;
+    }
+    
+    .title .gradient-text {
+        font-size: clamp(22px, 4.8vw, 34px);
+    }
+    
+    /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
+    .faq-page .title .gradient-text,
+    .blog-page .blog-hero-title .gradient-text,
+    .home-page .title .gradient-text {
+        font-size: clamp(44px, 10.5vw, 68px) !important;
+    }
+    
+    /* H2 на всех hero секциях - в 2 раза меньше H1 */
+    .faq-page .hero-subtitle,
+    .home-page .hero-subtitle,
+    .blog-page .hero-subtitle,
+    .all-blogs-page .hero-subtitle {
+        font-size: clamp(22px, 5vw, 34px) !important;
+        text-align: center !important;
+    }
+    
+    .subtitle {
+        font-size: clamp(13px, 3.2vw, 17px) !important;
+        margin: 8px 0 10px !important;
+        padding: 0 3px;
+    }
+    
+    .marquee-item {
+        width: 320px !important;
+        height: 190px !important;
+    }
+    
+    .marquee-item img {
+        width: 320px !important;
+        height: 190px !important;
+    }
+    
+    .section h2 {
+        font-size: clamp(17px, 3.8vw, 22px) !important;
+    }
+    
+    .section p {
+        font-size: clamp(13px, 3vw, 15px) !important;
+    }
+    
+    .btn {
+        padding: 8px 12px !important; /* Apple HIG compliant */
+        font-size: 12px !important;
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+    
+    .topbar {
+        padding: 3px 6px !important;
+        min-height: 54px !important;
+        height: 54px !important;
+    }
+    
+    .brand .logo-img {
+        height: 88px !important;
+        width: auto !important;
+        max-width: 180px !important;
+    }
+}
+
 /* Extra small screens in portrait mode */
 @media (max-width: 480px) and (orientation: portrait) {
     .container {
@@ -184,8 +260,9 @@ html, body { height: 100%; }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
-    .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .blog-page .hero-subtitle,
+    .all-blogs-page .hero-subtitle {
         font-size: clamp(20px, 4.5vw, 30px) !important;
         text-align: center !important;
     }
@@ -219,8 +296,10 @@ html, body { height: 100%; }
     }
     
     .btn {
-        padding: 6px 10px !important;
+        padding: 8px 12px !important; /* Увеличено для Apple HIG */
         font-size: 12px !important;
+        min-height: 44px !important; /* Apple HIG minimum */
+        min-width: 44px !important;  /* Apple HIG minimum */
     }
     
     .topbar {
@@ -233,6 +312,81 @@ html, body { height: 100%; }
         height: 84px !important;
         width: auto !important;
         max-width: 162px !important;
+    }
+}
+
+/* iPhone 14 Pro and similar devices */
+@media (max-width: 393px) and (orientation: portrait) {
+    .container {
+        padding: 4px !important;
+    }
+    
+    .title {
+        font-size: clamp(18px, 4vw, 30px);
+        margin: 4px 0 2px;
+    }
+    
+    .title .gradient-text {
+        font-size: clamp(20px, 4.5vw, 32px);
+    }
+    
+    /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
+    .faq-page .title .gradient-text,
+    .blog-page .blog-hero-title .gradient-text,
+    .home-page .title .gradient-text {
+        font-size: clamp(42px, 9.5vw, 64px) !important;
+    }
+    
+    /* H2 на всех hero секциях - в 2 раза меньше H1 */
+    .faq-page .hero-subtitle,
+    .home-page .hero-subtitle,
+    .blog-page .hero-subtitle,
+    .all-blogs-page .hero-subtitle {
+        font-size: clamp(21px, 4.5vw, 32px) !important;
+        text-align: center !important;
+    }
+    
+    .subtitle {
+        font-size: clamp(12px, 3vw, 16px) !important;
+        margin: 6px 0 8px !important;
+        padding: 0 2px;
+    }
+    
+    .marquee-item {
+        width: 280px !important;
+        height: 170px !important;
+    }
+    
+    .marquee-item img {
+        width: 280px !important;
+        height: 170px !important;
+    }
+    
+    .section h2 {
+        font-size: clamp(15px, 3.5vw, 20px) !important;
+    }
+    
+    .section p {
+        font-size: clamp(12px, 2.8vw, 14px) !important;
+    }
+    
+    .btn {
+        padding: 8px 12px !important; /* Apple HIG compliant */
+        font-size: 11px !important;
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+    
+    .topbar {
+        padding: 2px 4px !important;
+        min-height: 52px !important;
+        height: 52px !important;
+    }
+    
+    .brand .logo-img {
+        height: 78px !important;
+        width: auto !important;
+        max-width: 150px !important;
     }
 }
 
@@ -260,8 +414,9 @@ html, body { height: 100%; }
     
     /* H2 на всех hero секциях - в 2 раза меньше H1 */
     .faq-page .hero-subtitle,
-    .blog-page .blog-hero-subtitle,
-    .home-page .hero-subtitle {
+    .home-page .hero-subtitle,
+    .blog-page .hero-subtitle,
+    .all-blogs-page .hero-subtitle {
         font-size: clamp(18px, 4vw, 26px) !important;
         text-align: center !important;
     }
@@ -290,8 +445,10 @@ html, body { height: 100%; }
     }
     
     .btn {
-        padding: 5px 8px !important;
+        padding: 8px 12px !important; /* Увеличено для Apple HIG */
         font-size: 11px !important;
+        min-height: 44px !important; /* Apple HIG minimum */
+        min-width: 44px !important;  /* Apple HIG minimum */
     }
     
     .topbar {
@@ -331,10 +488,10 @@ html, body { height: 100%; }
     }
     
     .btn {
-        padding: 6px 10px;
+        padding: 8px 12px; /* Увеличено для лучшего touch */
         font-size: 12px;
-        min-height: 36px;
-        min-width: 36px;
+        min-height: 44px; /* Apple HIG minimum */
+        min-width: 44px;  /* Apple HIG minimum */
     }
     
     /* Match homepage CTA button size for info pages only, without changing styles/animations */
@@ -1634,8 +1791,8 @@ a.visible-link {
     background: var(--panel); 
     color: var(--text); 
     cursor: pointer; 
-    min-height: 40px;
-    min-width: 40px;
+    min-height: 44px; /* Apple HIG minimum touch target */
+    min-width: 44px;  /* Apple HIG minimum touch target */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1700,15 +1857,15 @@ a.visible-link {
     transform: scale(1.05);
 }
 
-/* Unified topbar icons styles */
+/* Unified topbar icons styles - Apple HIG Compliant */
 .theme-toggle, 
 .feedback-btn, 
 .hamburger {
     display: inline-flex;
     align-items: center;
+    min-height: 44px; /* Apple HIG minimum touch target */
+    min-width: 44px;  /* Apple HIG minimum touch target */
     justify-content: center;
-    min-width: 40px;
-    min-height: 40px;
     padding: 8px;
     background: var(--panel);
     border: 1px solid var(--border);
@@ -3862,36 +4019,7 @@ a.visible-link {
     opacity: 0.9;
 }
 
-/* Blog hero subtitle and description */
-.blog-hero-subtitle {
-    font-size: clamp(14px, 3vw, 28px);
-    margin: 8px 0 12px;
-    font-weight: 600;
-    line-height: 1.3;
-    text-align: center;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Десктопные стили для blog-hero-subtitle - переопределение мобильных */
-@media (min-width: 769px) {
-    .blog-page .blog-hero-subtitle {
-        font-size: clamp(16px, 2.5vw, 24px) !important;
-        margin: 12px 0 16px !important;
-        text-align: center !important;
-    }
-}
-
-.blog-hero-description {
-    color: var(--text);
-    font-size: clamp(12px, 2.5vw, 16px);
-    line-height: 1.5;
-    margin: 8px 0 8px;
-    max-width: 100%;
-    opacity: 0.9;
-}
+/* Blog hero subtitle and description - REMOVED, now using .unified-h2 and .unified-h3 */
 
 .hero-cta { 
     margin-top: 16px; 
@@ -4380,10 +4508,10 @@ a.visible-link {
     }
     
     .btn {
-        padding: 5px 8px;
+        padding: 8px 12px; /* Увеличено для Apple HIG */
         font-size: 11px;
-        min-height: 32px;
-        min-width: 32px;
+        min-height: 44px; /* Apple HIG minimum */
+        min-width: 44px;  /* Apple HIG minimum */
     }
     
     .pricing-card-glass {
@@ -4460,6 +4588,77 @@ a.visible-link {
 /* Mobile styles - full width menu */
 @media (max-width: 639px) {
     /* Menu panel styles moved to main section */
+}
+
+/* Foldable devices support */
+@media (min-width: 640px) and (max-width: 1024px) {
+    /* Foldable in portrait mode */
+    .container {
+        padding: 16px;
+        max-width: 100%;
+    }
+    
+    .title .gradient-text {
+        font-size: clamp(32px, 6vw, 48px);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(18px, 3.5vw, 24px);
+    }
+    
+    .marquee-item {
+        width: 200px;
+        height: 120px;
+    }
+    
+    .marquee-item img {
+        width: 200px;
+        height: 120px;
+    }
+    
+    /* Foldable specific adjustments */
+    @media (orientation: landscape) {
+        .container {
+            padding: 12px 24px;
+        }
+        
+        .topbar {
+            padding: 8px 24px;
+        }
+        
+        .hero {
+            padding: 2rem 0;
+        }
+        
+        .title .gradient-text {
+            font-size: clamp(28px, 4vw, 36px);
+        }
+    }
+}
+
+/* Large foldable devices (Samsung Galaxy Fold, etc.) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .container {
+        padding: 20px;
+    }
+    
+    .title .gradient-text {
+        font-size: clamp(36px, 5vw, 52px);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(20px, 3vw, 28px);
+    }
+    
+    .marquee-item {
+        width: 240px;
+        height: 140px;
+    }
+    
+    .marquee-item img {
+        width: 240px;
+        height: 140px;
+    }
 }
 
 /* Tablet styles */
@@ -7525,38 +7724,11 @@ a.visible-link {
 .all-blogs-hero-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
 }
 
-.all-blogs-hero-title {
-  font-size: clamp(28px, 6vw, 56px);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-}
+/* .all-blogs-hero-title styles removed - now using .unified-h1 */
 
-.all-blogs-hero-subtitle {
-  font-size: clamp(14px, 3vw, 28px);
-  margin: 8px 0 12px;
-  font-weight: 600;
-  line-height: 1.3;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.all-blogs-hero-description {
-  font-size: clamp(14px, 3vw, 18px);
-  font-weight: 400;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-  color: var(--text);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* .all-blogs-hero-subtitle and .all-blogs-hero-description - REMOVED, now using .unified-h2 and .unified-h3 */
 
 .all-blogs-container {
   max-width: 1400px;
@@ -7577,22 +7749,24 @@ a.visible-link {
 
 .all-blogs-card {
   background: var(--panel);
-  border-radius: 16px;
+  border: 2px solid var(--border);
+  border-radius: 20px;
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
 }
 
 .all-blogs-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
   border-color: var(--accent);
 }
 
 .all-blogs-image {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 300px;
   overflow: hidden;
 }
 
@@ -7610,7 +7784,7 @@ a.visible-link {
 .all-blogs-image .post-category {
   position: static;
   display: inline-block;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
   padding: 0.3rem 0.7rem;
   border-radius: 12px;
@@ -7622,31 +7796,35 @@ a.visible-link {
 }
 
 .all-blogs-content {
-  padding: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .all-blogs-content .post-title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 0.8rem;
-  line-height: 1.4;
-  color: var(--text);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  transition: color 0.3s ease;
 }
 
 .all-blogs-content .post-excerpt {
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .all-blogs-content .post-meta {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1.2rem;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--text-secondary);
+  margin-bottom: 1.5rem;
 }
 
 .all-blogs-content .post-date {
@@ -7654,24 +7832,26 @@ a.visible-link {
 }
 
 .all-blogs-content .post-divider {
-  color: var(--border);
+  opacity: 0.5;
 }
 
 .all-blogs-content .post-read-time {
-  font-weight: 500;
+  opacity: 0.8;
 }
 
 .all-blogs-content .read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--accent);
   font-weight: 600;
-  text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
 .all-blogs-content .read-more-btn:hover {
+  gap: 1rem;
   color: var(--accent-2);
-  transform: translateX(4px);
 }
 
 /* Pagination Styles */
@@ -7737,6 +7917,377 @@ a.visible-link {
   font-weight: 500;
 }
 
+/* PWA Install Prompt */
+.pwa-install-prompt {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 10000;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: slideUpIn 0.3s ease-out;
+}
+
+.pwa-install-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  position: relative;
+}
+
+.pwa-install-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.pwa-install-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.pwa-install-text h3 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.pwa-install-text p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.pwa-install-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.pwa-install-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.pwa-install-btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+}
+
+.pwa-install-btn.primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.pwa-install-btn.secondary {
+  background: var(--bg-hover);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.pwa-install-btn.secondary:hover {
+  background: var(--muted);
+}
+
+.pwa-install-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.pwa-install-close:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+@keyframes slideUpIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Offline Page Styles */
+.offline-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.offline-content {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.offline-icon {
+  margin-bottom: 2rem;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.offline-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.offline-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.offline-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.offline-features {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.offline-features h3 {
+  margin: 0 0 1rem 0;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.offline-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.offline-features li {
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.offline-tip {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.offline-tip p {
+  margin: 0;
+}
+
+/* Mobile responsive for offline page */
+@media (max-width: 639px) {
+  .offline-page {
+    padding: 1rem;
+  }
+  
+  .offline-title {
+    font-size: 2rem;
+  }
+  
+  .offline-description {
+    font-size: 1rem;
+  }
+  
+  .offline-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .offline-actions .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .offline-features {
+    padding: 1rem;
+  }
+}
+
+/* Swipe Navigation Styles */
+.swipe-animating {
+  transition: transform 0.3s ease-out;
+}
+
+.swipe-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swipe-indicator.show {
+  opacity: 1;
+}
+
+.swipe-hint {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.swipe-hint.show {
+  opacity: 1;
+}
+
+.swipe-hint::before {
+  content: "👆";
+  margin-right: 8px;
+}
+
+/* Swipe feedback for menu */
+.menu-panel.swipe-feedback {
+  transform: translateX(-10px);
+  transition: transform 0.2s ease;
+}
+
+/* Modern viewport units support for new devices */
+@supports (height: 100dvh) {
+  .container {
+    min-height: 100dvh;
+  }
+  
+  .offline-page {
+    min-height: 100dvh;
+  }
+}
+
+@supports (width: 100dvw) {
+  .marquee-item {
+    width: min(100dvw, 360px);
+  }
+}
+
+/* Safe area support for devices with notches */
+@supports (padding: env(safe-area-inset-top)) {
+  .topbar {
+    padding-top: max(4px, env(safe-area-inset-top));
+  }
+  
+  .container {
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+  
+  .pwa-install-prompt {
+    bottom: max(20px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Mobile responsive for PWA prompt */
+@media (max-width: 639px) {
+  .pwa-install-prompt {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+  }
+  
+  .pwa-install-content {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .pwa-install-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .pwa-install-text h3 {
+    font-size: 14px;
+  }
+  
+  .pwa-install-text p {
+    font-size: 12px;
+  }
+  
+  .pwa-install-actions {
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+  
+  .pwa-install-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+    width: 100%;
+  }
+  
+  .pwa-install-close {
+    top: 6px;
+    right: 6px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
 /* Mobile Responsive */
 @media (max-width: 1024px) {
   .all-blogs-grid {
@@ -7744,17 +8295,8 @@ a.visible-link {
     gap: 1.5rem;
   }
   
-  .all-blogs-hero-title {
-    font-size: clamp(24px, 5.5vw, 40px);
-  }
-  
-  .all-blogs-hero-subtitle {
-    font-size: clamp(20px, 4.5vw, 30px);
-  }
-  
-  .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
-  }
+  /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
+  /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
 }
 
 @media (max-width: 768px) {
@@ -7768,17 +8310,8 @@ a.visible-link {
     background: linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(139, 92, 246, 0.01) 50%, transparent 100%);
   }
   
-  .all-blogs-hero-title {
-    font-size: clamp(20px, 5vw, 36px);
-  }
-  
-  .all-blogs-hero-subtitle {
-    font-size: clamp(18px, 4vw, 26px);
-  }
-  
-  .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
-  }
+  /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
+  /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
   
   .all-blogs-container {
     padding: 0 1rem;
@@ -7800,24 +8333,16 @@ a.visible-link {
 }
 
 @media (max-width: 480px) {
-  .all-blogs-hero-title {
-    font-size: clamp(26px, 6vw, 44px);
-  }
+  /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
+  /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
   
-  .all-blogs-hero-subtitle {
-    font-size: clamp(24px, 5vw, 36px);
-  }
-  
-  .all-blogs-hero-description {
-    font-size: clamp(14px, 3vw, 18px);
-  }
   
   .all-blogs-content {
-    padding: 1rem;
+    padding: 1.25rem;
   }
   
   .all-blogs-content .post-title {
-    font-size: 1.1rem;
+    font-size: 1.125rem;
   }
   
   .pagination-btn {
@@ -9414,17 +9939,7 @@ a.visible-link {
   margin: 0 auto;
 }
 
-.blog-hero-title {
-  font-size: clamp(28px, 6vw, 56px);
-  font-weight: 700;
-  margin: 12px 0 0px;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-}
-
-.blog-hero-title .gradient-text {
-  font-size: inherit;
-}
+/* .blog-hero-title styles removed - now using .unified-h1 */
 
 .blog-title-white {
   color: white;
@@ -9876,18 +10391,8 @@ a.visible-link {
     padding: 1.5rem 1rem 2.5rem;
   }
   
-  .blog-hero-title {
-    font-size: clamp(24px, 5.5vw, 40px);
-    margin: 8px 0 0px;
-  }
-  
-  .blog-hero-title .gradient-text {
-    font-size: clamp(30px, 6.5vw, 52px);
-  }
-  
-  .blog-hero-subtitle {
-    font-size: 1.125rem;
-  }
+  /* .blog-hero-title media queries removed - now using .unified-h1 */
+  /* .blog-hero-subtitle media queries removed - now using .unified-h2 */
   
   .featured-grid {
     grid-template-columns: 1fr;
@@ -9929,18 +10434,8 @@ a.visible-link {
 }
 
 @media (max-width: 480px) {
-  .blog-hero-title {
-    font-size: clamp(20px, 5vw, 36px);
-    margin: 6px 0 0px;
-  }
-  
-  .blog-hero-title .gradient-text {
-    font-size: clamp(26px, 6vw, 44px);
-  }
-  
-  .blog-hero-subtitle {
-    font-size: 1rem;
-  }
+  /* .blog-hero-title media queries removed - now using .unified-h1 */
+  /* .blog-hero-subtitle media queries removed - now using .unified-h2 */
   
   .featured-image,
   .post-image-wrapper {
@@ -11138,8 +11633,10 @@ a.visible-link {
 }
 
 /* ========================================
-   УНИФИЦИРОВАННЫЕ ЗАГОЛОВКИ H1
+   УНИФИЦИРОВАННЫЕ ЗАГОЛОВКИ H1, H2, H3
    ======================================== */
+
+/* Унифицированные H2 и H3 классы удалены - теперь используются стандартные .hero-subtitle и .hero-description */
 
 /* Базовые стили для унифицированного H1 */
 .unified-h1 {

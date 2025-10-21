@@ -4,6 +4,7 @@ import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSelector from "./LanguageSelector";
 import { useHamburgerMenu } from "../hooks/useHamburgerMenu";
+import { useSwipeMenuNavigation } from "../hooks/useSwipeNavigation";
 
 interface HeaderWithMenuProps {
   homeHref: string;
@@ -11,6 +12,8 @@ interface HeaderWithMenuProps {
 
 export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
   useHamburgerMenu();
+  const { elementRef: swipeRef } = useSwipeMenuNavigation();
+  
   return (
     <>
       <header className="topbar">
@@ -39,7 +42,13 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
         </div>
       </header>
 
-      <div className="menu-panel" id="menuPanel" role="menu" aria-hidden="true">
+      <div 
+        ref={swipeRef as React.RefObject<HTMLDivElement>}
+        className="menu-panel" 
+        id="menuPanel" 
+        role="menu" 
+        aria-hidden="true"
+      >
         <a href={homeHref} role="menuitem" data-lang-en="Home" data-lang-ru="Главная">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>

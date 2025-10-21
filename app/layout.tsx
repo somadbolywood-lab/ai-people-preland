@@ -69,14 +69,52 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover" />
+        
+        {/* PWA Meta Tags */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#8b5cf6" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="AI-People" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="AI-People" />
+        <meta name="msapplication-TileColor" content="#8b5cf6" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        
+        {/* Apple Touch Icons */}
+        <link rel="apple-touch-icon" href="/faq/Favicon.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/faq/Favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/faq/Favicon.png" />
+        <link rel="apple-touch-icon" sizes="167x167" href="/faq/Favicon.png" />
+        
         <HreflangLinks currentPath="/" locale="en" />
+        {/* Resource Hints - Critical Performance Optimization */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://ai-people.io" />
+        
+        {/* Preload Critical Resources */}
+        <link rel="preload" href="/styles/critical.css" as="style" />
+        <link rel="preload" href="/scripts/theme.js" as="script" />
+        <link rel="preload" href="/scripts/main-init.js" as="script" />
+        <link rel="preload" href="/faq/AI-people Logo.png" as="image" />
+        <link rel="preload" href="/assets/models/model-01.png" as="image" />
+        <link rel="preload" href="/assets/models/model-02.png" as="image" />
+        <link rel="preload" href="/assets/models/model-03.png" as="image" />
+        
+        {/* Preload Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        
+        {/* Prefetch Next Pages */}
+        <link rel="prefetch" href="/blog" />
+        <link rel="prefetch" href="/faq" />
+        <link rel="prefetch" href="/about" />
+        <link rel="prefetch" href="/auth/role" />
         {/* Blocking theme initialization script - prevents white flash */}
         <script
           dangerouslySetInnerHTML={{
@@ -108,7 +146,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "url": "https://ai-people.io",
               "logo": "https://ai-people.io/faq/AI-people Logo.png",
               "description": "Leading AI models marketplace featuring hyperrealistic virtual influencers, AI-generated content, and premium AI art",
-              "foundingDate": "2024",
+              "foundingDate": "2025",
               "sameAs": [
                 "https://www.instagram.com/ai_people_io",
                 "https://www.tiktok.com/@ai_people_io",
@@ -189,7 +227,62 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             })
           }}
         />
-        {/* Critical CSS - Inline for fastest rendering */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "OnlineMarketplace",
+              "name": "AI-People Marketplace",
+              "description": "World's first curated marketplace for hyperrealistic AI models and virtual influencers",
+              "url": "https://ai-people.io",
+              "provider": { "@id": "https://ai-people.io/#organization" },
+              "hasStore": [
+                {
+                  "@type": "Store",
+                  "name": "AI Models Store",
+                  "description": "Premium AI models and virtual influencers"
+                },
+                {
+                  "@type": "Store", 
+                  "name": "Creator Tools Store",
+                  "description": "AI creation tools and resources"
+                }
+              ],
+              "category": "AI Technology Marketplace",
+              "offers": {
+                "@type": "AggregateOffer",
+                "priceRange": "$49-$500+",
+                "availability": "https://schema.org/PreOrder",
+                "validFrom": "2025-11-01"
+              }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "AI-People Platform",
+              "description": "AI models marketplace and virtual influencer platform",
+              "url": "https://ai-people.io",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web Browser",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/PreOrder"
+              },
+              "publisher": { "@id": "https://ai-people.io/#organization" },
+              "datePublished": "2025-10-01",
+              "version": "1.0"
+            })
+          }}
+        />
+        {/* Critical CSS - Optimized inline for fastest rendering */}
         <style dangerouslySetInnerHTML={{
           __html: `:root{--bg:#0b0b0c;--bg-primary:#0b0b0c;--bg-secondary:#111114;--bg-hover:#1a1a1f;--panel:#111114;--text:#f5f5f7;--text-primary:#f5f5f7;--text-secondary:#b5b7bd;--subtext:#b5b7bd;--muted:#1a1a1f;--accent:#8b5cf6;--accent-2:#ec4899;--danger:#f43f5e;--border:#232329;--shadow:0 10px 30px rgba(0,0,0,0.35)}.light{--bg:#ffffff;--bg-primary:#ffffff;--bg-secondary:#f7f7f8;--bg-hover:#efeff1;--panel:#f7f7f8;--text:#0a0a0b;--text-primary:#0a0a0b;--text-secondary:#52525b;--subtext:#52525b;--muted:#efeff1;--accent:#7c3aed;--accent-2:#db2777;--danger:#e11d48;--border:#e5e7eb;--shadow:0 10px 30px rgba(0,0,0,0.08)}*{box-sizing:border-box}html,body{height:100%}body{margin:0;padding-top:80px!important;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;min-height:100vh}a{color:inherit;text-decoration:none}.container{max-width:1200px;margin:0 auto;padding:12px;width:100%;min-width:320px}.topbar{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;gap:12px;padding:4px 12px;background:rgba(11,11,12,0.5);border-bottom:1px solid var(--border);min-height:80px;height:80px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.light .topbar{background:rgba(255,255,255,0.5);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.brand{display:flex;align-items:center;gap:10px;margin-right:auto}.logo-img{height:48px;width:auto;max-height:58px;max-width:150px;object-fit:contain}.actions{display:flex;gap:8px;align-items:center}.btn{border:none;padding:8px 16px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px;background:var(--panel);color:var(--text);min-height:42px}.btn:hover{background:var(--bg-hover);transform:scale(1.02)}.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:white}.gradient-text{background:linear-gradient(135deg,#8b5cf6 0%,#ec4899 50%,#f43f5e 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800}.light .gradient-text{background:linear-gradient(135deg,#7c3aed 0%,#db2777 50%,#e11d48 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}@media (max-width:639px){body{padding-top:80px!important}.topbar{gap:6px;padding:4px 72px;min-height:72px!important;height:72px!important;background:rgba(11,11,12,0.5)}.container{padding:8px}.logo-img{height:84px;width:auto;max-width:231px;object-fit:contain}.btn{padding:6px 10px;font-size:12px;min-height:36px}.light .topbar{background:rgba(255,255,255,0.5)}}`
         }} />
@@ -216,6 +309,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {/* Optimized modular script loading */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
       <Script src="/scripts/theme.js" strategy="beforeInteractive" />
+      <Script src="/scripts/sw-register.js" strategy="afterInteractive" />
+      <Script src="/scripts/async-loader.js" strategy="afterInteractive" />
+      <Script src="/scripts/critical-path-optimization.js" strategy="afterInteractive" />
+      <Script src="/scripts/web-vitals.js" strategy="afterInteractive" />
+      <Script src="/scripts/performance-api.js" strategy="afterInteractive" />
+      <Script src="/scripts/yandex-metrika.js" strategy="afterInteractive" />
+      <Script src="/scripts/performance.js" strategy="afterInteractive" />
       <Script src="/scripts/language.js" strategy="afterInteractive" />
       <Script src="/scripts/ui-components.js" strategy="afterInteractive" />
       <Script src="/scripts/main-init.js" strategy="afterInteractive" />

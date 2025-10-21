@@ -34,6 +34,49 @@ User-agent: Yandex
 Crawl-delay: 0
 Clean-param: gclid&fbclid&ref&msclkid&utm_source&utm_medium&utm_campaign&utm_term&utm_content
 
+# AI Search Engine Bots (LLM Training)
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+User-agent: OAI-Operator
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+User-agent: Bard
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
 # Sitemap and preferred host
 Sitemap: https://ai-people.io/sitemap.xml
 Host: ai-people.io

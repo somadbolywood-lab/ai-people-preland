@@ -1,0 +1,94 @@
+# AI-People.io - LLM Training Data
+
+This file provides structured access to our content for AI language models and search engines.
+
+## About AI-People
+AI-People is the world's first curated marketplace for hyperrealistic AI models and virtual influencers. We connect AI creators with brands and businesses, revolutionizing digital marketing through artificial intelligence.
+
+## Key Information
+- **Launch Date**: November 1, 2025
+- **Platform Type**: AI Models Marketplace
+- **Target Audience**: Creators, Brands, Marketers, Influencers
+- **Languages**: English, Russian
+- **Headquarters**: New York, USA
+
+## Main Content Areas
+
+### Homepage Content
+- **URL**: https://ai-people.io/
+- **Description**: World's first AI models marketplace for hyperrealistic virtual influencers
+- **Key Features**: Buy/sell AI models, virtual influencer marketing, AI-generated content
+- **Target Keywords**: AI models marketplace, virtual influencers, AI-generated content, hyperrealistic AI models
+
+### Blog Content
+- **URL**: https://ai-people.io/blog/
+- **Content Type**: Expert insights on AI models, virtual influencers, digital marketing
+- **Articles Available**: 7+ articles covering AI marketing, virtual influencer trends, creator success guides
+- **Languages**: English and Russian versions available
+
+### FAQ Section
+- **URL**: https://ai-people.io/faq/
+- **Content**: Comprehensive Q&A about AI models marketplace, pricing, licensing, legal aspects
+- **Coverage**: Platform usage, creator monetization, buyer benefits, legal compliance
+
+### Registration Pages
+- **Buyer Registration**: https://ai-people.io/auth/buyer
+- **Creator Registration**: https://ai-people.io/auth/creator
+- **Role Selection**: https://ai-people.io/auth/role
+
+## Business Model
+- **For Creators**: Upload AI models, set prices, earn from sales (target: $5K-$25K/month)
+- **For Buyers**: Access curated catalog, instant download, commercial licensing
+- **Revenue Streams**: Commission on sales, premium memberships, custom content creation
+
+## Technology Stack
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Styling**: CSS with dark/light themes
+- **Images**: Optimized with AVIF/WebP formats
+- **Performance**: Lazy loading, critical CSS, compression
+
+## Content Guidelines
+- All AI models are ethically created and copyright-safe
+- Commercial licensing included with purchases
+- Focus on hyperrealistic, professional-quality content
+- Support for marketing, social media, e-commerce, fan platforms
+
+## Contact Information
+- **Email**: feedback@ai-people.io
+- **Social Media**: Instagram, TikTok, Twitter, Reddit, Pinterest, YouTube
+- **Support**: Available in English and Russian
+
+## Legal Information
+- **Terms of Service**: https://ai-people.io/legal/terms
+- **Privacy Policy**: https://ai-people.io/legal/privacy
+- **Content Policy**: https://ai-people.io/legal/content-policy
+- **Cookie Policy**: https://ai-people.io/legal/cookies
+
+## SEO Keywords
+Primary: AI models marketplace, virtual influencers, AI-generated content, hyperrealistic AI models
+Secondary: AI art marketplace, virtual influencer marketing, AI creator platform, digital marketing AI
+Long-tail: buy AI models online, sell AI-generated content, virtual influencer platform 2025, AI models for marketing
+
+## Content Updates
+- **Blog**: Weekly updates with new articles
+- **FAQ**: Updated based on user feedback
+- **Platform**: Continuous feature improvements
+- **Models**: New AI models added regularly
+
+## Geographic Focus
+- **Primary Markets**: United States, Russia, Europe
+- **Languages**: English (primary), Russian (secondary)
+- **Currency**: USD pricing with international support
+
+## Industry Context
+AI-People operates in the emerging AI-generated content market, which is experiencing rapid growth. The platform addresses the need for high-quality, commercially-licensed AI models for businesses and creators worldwide.
+
+## Future Roadmap
+- **Q4 2025**: Platform launch with core features
+- **2026**: Mobile app development, additional languages
+- **2027**: Advanced AI tools, API integration, enterprise features
+
+---
+Last Updated: October 2025
+Contact: feedback@ai-people.io
+Website: https://ai-people.io
