@@ -10133,17 +10133,6 @@ a.visible-link {
   transform: translateX(-1px);
 }
 
-.article-category {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: white;
-  padding: 0.35rem 0.85rem;
-  border-radius: 20px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.25);
-}
 
 .article-meta-info {
   position: absolute;
@@ -11310,7 +11299,7 @@ a.visible-link {
   
   .article-meta-top {
     gap: 0.25rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     justify-content: space-between;
     align-items: center;
   }
@@ -11319,27 +11308,94 @@ a.visible-link {
     font-size: 0.75rem;
   }
   
-  .article-read-time-center {
-    margin-bottom: 0.25rem;
+  .back-button {
+    flex-shrink: 0;
   }
   
-  .article-read-time {
+  /* Мобильные элементы для 480px - время чтения по центру */
+  .article-meta-top::after {
+    content: attr(data-read-time);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
+  /* Мобильная категория для 480px */
+  .article-title-section::after {
+    content: attr(data-category);
+    display: block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 0.5rem auto 0.75rem;
+    width: fit-content;
+    text-align: center;
+  }
+}
+
+/* Extra small screens (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  .back-button {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .back-button svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .article-meta-top {
+    gap: 0.2rem;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .article-date {
+    font-size: 0.7rem;
   }
   
   .back-button {
     flex-shrink: 0;
   }
   
-  .article-category {
-    font-size: 0.6rem;
-    padding: 0.2rem 0.5rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
+  /* Мобильные элементы для 375px - время чтения по центру */
+  .article-meta-top::after {
+    content: attr(data-read-time);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
+  /* Мобильная категория для 375px */
+  .article-title-section::after {
+    content: attr(data-category);
+    display: block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: white;
+    padding: 0.15rem 0.4rem;
+    border-radius: 10px;
+    font-size: 0.55rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 0.5rem auto 0.75rem;
     width: fit-content;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
+    text-align: center;
   }
 }
 
