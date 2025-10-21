@@ -59,14 +59,14 @@ export function LanguageProvider({
 
       const textToSet = lang === 'ru' ? ruText : enText;
 
-      // Prefer updating only desktop labels to avoid overwriting mobile-short labels
+      // Update desktop labels if they exist, but don't skip main element
       const desktopLabels = element.querySelectorAll('span.label-desktop');
       if (desktopLabels.length > 0) {
         desktopLabels.forEach(span => {
           if (span.getAttribute('data-lang-skip') === 'true') return;
           span.textContent = textToSet;
         });
-        return;
+        // Continue to update main element as well
       }
 
       // Fallback: update spans that are not marked to skip
