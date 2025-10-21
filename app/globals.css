@@ -7499,7 +7499,6 @@ a.visible-link {
 .all-blogs-hero-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
 }
 
 /* .all-blogs-hero-title styles removed - now using .unified-h1 */
@@ -7707,15 +7706,6 @@ a.visible-link {
     background: linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(139, 92, 246, 0.01) 50%, transparent 100%);
   }
   
-  .all-blogs-hero-content {
-    padding: 0 2rem;
-  }
-  
-  /* Russian version - wider hero content for better text display */
-  .ru-optimized .all-blogs-hero-content {
-    padding: 0 2rem;
-  }
-  
   /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
   /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
   
@@ -7742,14 +7732,6 @@ a.visible-link {
   /* .all-blogs-hero-title media queries removed - now using .unified-h1 */
   /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
   
-  .all-blogs-hero-content {
-    padding: 0 2rem;
-  }
-  
-  /* Russian version - wider hero content for better text display */
-  .ru-optimized .all-blogs-hero-content {
-    padding: 0 2rem;
-  }
   
   .all-blogs-content {
     padding: 0 2rem;
