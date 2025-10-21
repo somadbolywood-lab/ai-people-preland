@@ -5,8 +5,8 @@ CATEGORY_EN: AI & Marketing
 CATEGORY_RU: AI и маркетинг
 AUTHOR_EN: AI-PEOPLE Editorial Team
 AUTHOR_RU: Редакция AI-PEOPLE
-READ_TIME_EN: 8 min read
-READ_TIME_RU: 8 мин чтения
+READ_TIME_EN: 4 min read
+READ_TIME_RU: 4 мин чтения
 EXCERPT_EN: Discover how AI-generated virtual models are revolutionizing digital marketing and reducing production costs by up to 90%
 EXCERPT_RU: Узнайте, как AI-модели революционизируют цифровой маркетинг и снижают производственные затраты до 90%
 FEATURED: true

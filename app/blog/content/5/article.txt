@@ -6,8 +6,8 @@ CATEGORY_EN: Digital Influence & Innovation
 CATEGORY_RU: Цифровое влияние и инновации
 AUTHOR_EN: AI-PEOPLE Editorial Team
 AUTHOR_RU: Редакция AI-PEOPLE
-READ_TIME_EN: 9 min read
-READ_TIME_RU: 9 мин чтения
+READ_TIME_EN: 4.5 min read
+READ_TIME_RU: 4.5 мин чтения
 FEATURED: true
 TAGS: AI Influencers, Real Influencers, Virtual Models, Digital Marketing, Social Media Strategy
 OG_IMAGE: ./hero.jpg
@@ -15,6 +15,8 @@ META_DESCRIPTION_EN: Discover how AI influencers are reshaping the creator econo
 META_DESCRIPTION_RU: Узнайте, как ИИ-инфлюенсеры меняют индустрию в 2025 году — переосмысливая аутентичность, охват и стоимость в цифровом маркетинге.
 EXCERPT_EN: AI influencers are redefining what it means to be authentic online. Explore how synthetic humans compete with real creators and reshape influence.
 EXCERPT_RU: ИИ-инфлюенсеры переосмысливают понятие аутентичности в сети. Узнайте, как цифровые личности конкурируют с людьми и меняют формат влияния.
+PUBLISHED_AT: 2025-10-12
+UPDATED_AT: 2025-10-12
 
 ---
 

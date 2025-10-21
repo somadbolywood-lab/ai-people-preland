@@ -229,7 +229,7 @@ export default function BlogPage() {
                 "headline": "The Future of AI-Generated Content Marketing",
                 "description": "Explore how AI-generated content is revolutionizing digital marketing and what it means for businesses in 2025.",
                 "url": "https://ai-people.com/blog/1",
-                "datePublished": "2025-10-08",
+                "datePublished": "2025-10-01",
                 "author": {
                   "@type": "Person",
                   "name": "AI-People Team"
@@ -240,7 +240,7 @@ export default function BlogPage() {
                 "headline": "How to Create Hyperrealistic Virtual Influencers",
                 "description": "A comprehensive guide to creating hyperrealistic virtual influencers that engage audiences and drive conversions.",
                 "url": "https://ai-people.com/blog/2",
-                "datePublished": "2025-10-07",
+                "datePublished": "2025-10-03",
                 "author": {
                   "@type": "Person",
                   "name": "AI-People Team"

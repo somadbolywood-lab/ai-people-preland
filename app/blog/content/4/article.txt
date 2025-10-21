@@ -5,8 +5,8 @@ CATEGORY_EN: Digital Influence & Branding
 CATEGORY_RU: Цифровое влияние и брендинг
 AUTHOR_EN: AI-PEOPLE Editorial Team
 AUTHOR_RU: Редакция AI-PEOPLE
-READ_TIME_EN: 8 min read
-READ_TIME_RU: 8 мин чтения
+READ_TIME_EN: 4 min read
+READ_TIME_RU: 4 мин чтения
 FEATURED: true
 TAGS: Virtual Influencers, AI Models, Digital Marketing, Synthetic Media, Brand Strategy
 OG_IMAGE: ./hero.jpg
@@ -14,6 +14,8 @@ META_DESCRIPTION_EN: Explore why top U.S. brands are shifting to virtual influen
 META_DESCRIPTION_RU: Узнайте, почему крупнейшие бренды США переходят на виртуальных инфлюенсеров и ИИ-модели в 2025 году — революция креатива, контроля и эффективности.
 EXCERPT_EN: Virtual influencers are taking over brand marketing. Learn how AI-generated personalities deliver consistency, cost efficiency, and global scalability.
 EXCERPT_RU: Виртуальные инфлюенсеры становятся лицом брендов. Узнайте, как цифровые личности обеспечивают контроль, эффективность и масштабируемость кампаний.
+PUBLISHED_AT: 2025-10-09
+UPDATED_AT: 2025-10-09
 
 ---
 

@@ -5,8 +5,8 @@ CATEGORY_EN: E-Commerce & Technology
 CATEGORY_RU: E-commerce и технологии
 AUTHOR_EN: AI-PEOPLE Editorial Team
 AUTHOR_RU: Редакция AI-PEOPLE
-READ_TIME_EN: 9 min read
-READ_TIME_RU: 9 мин чтения
+READ_TIME_EN: 4.5 min read
+READ_TIME_RU: 4.5 мин чтения
 FEATURED: true
 TAGS: E-Commerce, Product Photography, AI Models, Virtual Models, Digital Retail, Synthetic Media
 OG_IMAGE: ./hero.jpg
@@ -14,6 +14,8 @@ META_DESCRIPTION_EN: Learn how AI-generated models are reshaping e-commerce by r
 META_DESCRIPTION_RU: Узнайте, как модели на базе ИИ меняют e-commerce, заменяя классическую предметную съёмку масштабируемыми и доступными цифровыми визуалами.
 EXCERPT_EN: AI technology is redefining product photography — brands now launch collections in hours, not weeks. Discover how digital models transform e-commerce.
 EXCERPT_RU: Технологии ИИ переосмыслили предметную съёмку — бренды запускают коллекции за часы, а не недели. Узнайте, как цифровые модели меняют e-commerce.
+PUBLISHED_AT: 2025-10-15
+UPDATED_AT: 2025-10-15
 
 ---
 

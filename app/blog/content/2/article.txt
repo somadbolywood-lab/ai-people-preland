@@ -5,8 +5,8 @@ CATEGORY_EN: AI & Creativity
 CATEGORY_RU: AI и креативность
 AUTHOR_EN: AI-PEOPLE Editorial Team
 AUTHOR_RU: Редакция AI-PEOPLE
-READ_TIME_EN: 6 min read
-READ_TIME_RU: 6 мин чтения
+READ_TIME_EN: 3 min read
+READ_TIME_RU: 3 мин чтения
 EXCERPT_EN: AI models are reshaping the creative industry by enabling scalable, hyperrealistic digital humans for marketing, fashion, media, and entertainment.
 EXCERPT_RU: AI-модели меняют креативную индустрию, позволяя создавать масштабируемых цифровых людей для моды, медиа, рекламы и развлечений.
 FEATURED: true

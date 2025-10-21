@@ -5,8 +5,8 @@ CATEGORY_EN: Marketing & Strategy
 CATEGORY_RU: Маркетинг и стратегия
 AUTHOR_EN: AI-PEOPLE Editorial Team
 AUTHOR_RU: Редакция AI-PEOPLE
-READ_TIME_EN: 8 min read
-READ_TIME_RU: 8 мин чтения
+READ_TIME_EN: 4 min read
+READ_TIME_RU: 4 мин чтения
 FEATURED: true
 TAGS: AI Marketing, Virtual Models, Synthetic Media, Cost Reduction, Digital Advertising
 OG_IMAGE: ./hero.jpg
@@ -14,6 +14,8 @@ META_DESCRIPTION_EN: Discover how AI-generated virtual models revolutionize mark
 META_DESCRIPTION_RU: Узнайте, как виртуальные модели на базе ИИ меняют маркетинг, снижая затраты на 90% и ускоряя рост брендов.
 EXCERPT_EN: In 2025, the marketing world evolves beyond cameras and casting calls. Learn how AI-generated models reshape brand storytelling, cost, and creativity.
 EXCERPT_RU: В 2025 году маркетинг выходит за рамки фотосессий и кастингов. Узнайте, как модели на базе ИИ меняют подход к контенту, снижая расходы и усиливая креатив.
+PUBLISHED_AT: 2025-10-06
+UPDATED_AT: 2025-10-06
 
 ---
 
