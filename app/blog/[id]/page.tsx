@@ -224,10 +224,19 @@ export default function BlogArticlePage() {
       </div>
 
       {/* Article Title - Full Width */}
-      <div className="article-title-section">
+      <div className="article-title-section" data-category={currentLang === 'ru' ? article.category.ru : article.category.en}>
         <div className="article-container">
-          <div className="article-meta-top">
-            <time className="article-date">{new Date(article.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US')}</time>
+          <div className="article-meta-top" data-read-time={currentLang === 'ru' ? article.readTime.ru : article.readTime.en}>
+            <span className="article-category">
+              {currentLang === 'ru' ? article.category.ru : article.category.en}
+            </span>
+            <div className="article-meta-info">
+              <time className="article-date">{new Date(article.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US')}</time>
+              <span className="meta-separator">•</span>
+              <span className="article-read-time">
+                {currentLang === 'ru' ? article.readTime.ru : article.readTime.en}
+              </span>
+            </div>
             <button 
               className="back-button"
               onClick={() => router.back()}
@@ -245,14 +254,6 @@ export default function BlogArticlePage() {
               </svg>
             </button>
           </div>
-          <div className="article-read-time-center">
-            <span className="article-read-time">
-              {currentLang === 'ru' ? article.readTime.ru : article.readTime.en}
-            </span>
-          </div>
-          <span className="article-category">
-            {currentLang === 'ru' ? article.category.ru : article.category.en}
-          </span>
           <h1 className="article-title">
             {currentLang === 'ru' ? article.title.ru : article.title.en}
           </h1>

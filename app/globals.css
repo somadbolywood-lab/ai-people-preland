@@ -10092,7 +10092,7 @@ a.visible-link {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -10143,24 +10143,25 @@ a.visible-link {
   box-shadow: 0 2px 8px rgba(139, 92, 246, 0.25);
 }
 
+.article-meta-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
 .article-date {
   font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 500;
 }
 
-.article-read-time-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
 .article-read-time {
   font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 500;
-  text-align: center;
 }
 
 .meta-separator {
@@ -10168,7 +10169,7 @@ a.visible-link {
 }
 
 .article-category {
-  display: block;
+  display: inline-block;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
   padding: 0.3rem 0.7rem;
@@ -10178,10 +10179,6 @@ a.visible-link {
   text-transform: uppercase;
   letter-spacing: 0.3px;
   margin-bottom: 1rem;
-  text-align: center;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .article-title {
@@ -11249,31 +11246,45 @@ a.visible-link {
     align-items: center;
   }
   
-  .article-date {
-    font-size: 0.8rem;
+  .article-meta-info {
+    display: none; /* Скрываем на мобильных */
   }
   
-  .article-read-time-center {
-    margin-bottom: 0.5rem;
-  }
-  
-  .article-read-time {
-    font-size: 0.8rem;
+  .article-category {
+    display: none; /* Скрываем на мобильных */
   }
   
   .back-button {
     flex-shrink: 0;
   }
   
-  .article-category {
-    font-size: 0.65rem;
+  /* Мобильные элементы */
+  .article-meta-top::after {
+    content: attr(data-read-time);
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+  
+  .article-title-section::after {
+    content: attr(data-category);
+    display: block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: white;
     padding: 0.25rem 0.6rem;
-    margin-bottom: 0.75rem;
-    text-align: center;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 1rem auto 0.75rem;
     width: fit-content;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
+    text-align: center;
   }
 }
 
