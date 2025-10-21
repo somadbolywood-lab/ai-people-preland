@@ -1,0 +1,43 @@
+[33mcommit eae803edc6f49f285ea92d1b2e37952f028c27e6[m
+Author: AI-People Developer <developer@ai-people.io>
+Date:   Tue Oct 21 03:53:32 2025 +0300
+
+    BLOG DATES & READ TIME: Complete blog system optimization
+    
+    ADDED PUBLICATION DATES:
+    - Blog 1: 2025-10-01 (existing)
+    - Blog 2: 2025-10-03 (existing)
+    - Blog 3: 2025-10-06 (added)
+    - Blog 4: 2025-10-09 (added)
+    - Blog 5: 2025-10-12 (added)
+    - Blog 6: 2025-10-15 (added)
+    - All dates follow +3 day interval as requested
+    
+    REDUCED READ TIME (50% reduction):
+    - Blog 1: 8 min → 4 min
+    - Blog 2: 6 min → 3 min
+    - Blog 3: 8 min → 4 min
+    - Blog 4: 8 min → 4 min
+    - Blog 5: 9 min → 4.5 min
+    - Blog 6: 9 min → 4.5 min
+    
+    SYSTEM VERIFICATION:
+    - API correctly parses PUBLISHED_AT from article.txt files
+    - Dates display properly in blog cards (EN/RU formats)
+    - Featured cards: Oct 1, 2025 format
+    - Marquee cards: 1 окт. 2025 г. format
+    - All blog metadata updated and consistent
+    
+    MOBILE LAYOUT FIXES:
+    - Added publication date on right side in mobile version
+    - Layout: Back Button (left) - Read Time (center) - Date (right)
+    - Category badge centered below read time
+    - All changes isolated to mobile versions only
+
+app/blog/content/1/article.txt
+app/blog/content/2/article.txt
+app/blog/content/3/article.txt
+app/blog/content/4/article.txt
+app/blog/content/5/article.txt
+app/blog/content/6/article.txt
+app/blog/page.tsx
