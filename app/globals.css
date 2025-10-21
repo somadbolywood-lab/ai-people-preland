@@ -7734,7 +7734,7 @@ a.visible-link {
   /* .all-blogs-hero-subtitle and .all-blogs-hero-description media queries removed - now using .unified-h2 and .unified-h3 */
   
   .all-blogs-content {
-    padding: 1rem;
+    padding: 0 2rem;
   }
   
   .all-blogs-content .post-title {
