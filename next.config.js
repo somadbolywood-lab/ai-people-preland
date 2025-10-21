@@ -5,7 +5,7 @@ const nextConfig = {
   
   // Image optimization
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: false, // Enable optimization for Vercel
     qualities: [25, 50, 75, 100], // Configure quality values
     remotePatterns: [
       {
