@@ -28,13 +28,10 @@ export function useLanguage(options: UseLanguageOptions = {}) {
     return languageState;
   }, [forceLanguage, languageState]);
 
-  // Memoized language switching function
-  const switchLanguage = useCallback((lang: 'en' | 'ru') => {
+  // Function to reapply translations to new elements
+  const reapplyTranslations = useCallback((lang: 'en' | 'ru') => {
     if (typeof window === 'undefined') return;
-
-    // Update state to trigger re-render (don't update localStorage to avoid global conflicts)
-    setLanguageState(lang);
-
+    
     // Apply language to DOM elements
     const elements = document.querySelectorAll('[data-lang-en], [data-lang-ru]');
     elements.forEach(element => {
@@ -70,6 +67,17 @@ export function useLanguage(options: UseLanguageOptions = {}) {
         }
       }
     });
+  }, []);
+
+  // Memoized language switching function
+  const switchLanguage = useCallback((lang: 'en' | 'ru') => {
+    if (typeof window === 'undefined') return;
+
+    // Update state to trigger re-render (don't update localStorage to avoid global conflicts)
+    setLanguageState(lang);
+
+    // Apply language to DOM elements using the reusable function
+    reapplyTranslations(lang);
     
     // Update language selector button
     const langButton = document.querySelector('.language-text');
@@ -95,7 +103,7 @@ export function useLanguage(options: UseLanguageOptions = {}) {
     
     // Dispatch language change event
     window.dispatchEvent(new CustomEvent('languageChange', { detail: { language: lang } }));
-  }, [currentLanguage]);
+  }, [reapplyTranslations]);
 
   // Initialize language on mount (only if not skipped)
   useEffect(() => {
@@ -110,20 +118,14 @@ export function useLanguage(options: UseLanguageOptions = {}) {
       return () => clearTimeout(timer);
     }
 
-    // Check if language has already been initialized to prevent double initialization
-    const initKey = 'language-initialized';
-    if (document.body.hasAttribute(initKey)) {
-      console.log('[useLanguage] Language already initialized, skipping...');
-      return;
-    }
+    // Allow re-initialization for dynamic content
+    // Removed blocking logic to allow translations on dynamically loaded content
 
     // Don't set localStorage to avoid global state conflicts
 
     // Apply language with a small delay to ensure DOM is ready
     const timer = setTimeout(() => {
       switchLanguage(currentLanguage);
-      // Mark as initialized
-      document.body.setAttribute(initKey, 'true');
     }, 100);
 
     return () => clearTimeout(timer);
@@ -148,6 +150,7 @@ export function useLanguage(options: UseLanguageOptions = {}) {
   return {
     currentLanguage,
     switchLanguage,
+    reapplyTranslations,
     isRussian: currentLanguage === 'ru',
     isEnglish: currentLanguage === 'en'
   };

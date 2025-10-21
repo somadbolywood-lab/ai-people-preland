@@ -25,7 +25,7 @@ export interface BlogPost {
 }
 
 export default function BlogPage() {
-  useLanguage({ forceLanguage: 'en' });
+  const { reapplyTranslations } = useLanguage({ forceLanguage: 'en' });
 
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);
@@ -41,6 +41,10 @@ export default function BlogPage() {
     const handleLanguageChange = () => {
       const newLang = localStorage.getItem('selectedLanguage') || 'en';
       setCurrentLang(newLang);
+      // Reapply translations when language changes
+      setTimeout(() => {
+        reapplyTranslations(newLang as 'en' | 'ru');
+      }, 100);
     };
 
     window.addEventListener('languageChange', handleLanguageChange);
@@ -53,6 +57,12 @@ export default function BlogPage() {
         const posts = await response.json();
         setBlogPosts(posts);
         setFeaturedPosts(posts.filter((post: BlogPost) => post.featured).slice(0, 3));
+        
+        // Reapply translations after content is loaded
+        setTimeout(() => {
+          const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+          reapplyTranslations(savedLang as 'en' | 'ru');
+        }, 100);
       } catch (error) {
         console.error('Error loading blog posts:', error);
         setBlogPosts([]);
@@ -65,7 +75,7 @@ export default function BlogPage() {
     loadBlogs();
     
     return () => window.removeEventListener('languageChange', handleLanguageChange);
-  }, []);
+  }, [reapplyTranslations]);
 
   if (isLoading) {
     return (

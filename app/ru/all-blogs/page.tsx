@@ -25,7 +25,7 @@ export interface BlogPost {
 }
 
 export default function AllBlogsPage() {
-  useLanguage({ forceLanguage: 'ru' });
+  const { reapplyTranslations } = useLanguage({ forceLanguage: 'ru' });
 
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -42,6 +42,10 @@ export default function AllBlogsPage() {
     const handleLanguageChange = () => {
       const newLang = localStorage.getItem('selectedLanguage') || 'ru';
       setCurrentLang(newLang);
+      // Reapply translations when language changes
+      setTimeout(() => {
+        reapplyTranslations(newLang as 'en' | 'ru');
+      }, 100);
     };
 
     window.addEventListener('languageChange', handleLanguageChange);
@@ -53,6 +57,12 @@ export default function AllBlogsPage() {
         const response = await fetch('/api/blog');
         const posts = await response.json();
         setBlogPosts(posts);
+        
+        // Reapply translations after content is loaded
+        setTimeout(() => {
+          const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
+          reapplyTranslations(savedLang as 'en' | 'ru');
+        }, 100);
       } catch (error) {
         console.error('Error loading blog posts:', error);
         setBlogPosts([]);
@@ -64,7 +74,7 @@ export default function AllBlogsPage() {
     loadBlogs();
     
     return () => window.removeEventListener('languageChange', handleLanguageChange);
-  }, []);
+  }, [reapplyTranslations]);
 
   // Calculate pagination
   const totalPages = Math.ceil(blogPosts.length / postsPerPage);
