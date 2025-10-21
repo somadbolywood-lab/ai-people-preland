@@ -228,9 +228,6 @@ export default function BlogArticlePage() {
         <div className="article-container">
           <div className="article-meta-top">
             <time className="article-date">{new Date(article.date).toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US')}</time>
-            <span className="article-read-time">
-              {currentLang === 'ru' ? article.readTime.ru : article.readTime.en}
-            </span>
             <button 
               className="back-button"
               onClick={() => router.back()}
@@ -247,6 +244,11 @@ export default function BlogArticlePage() {
                 />
               </svg>
             </button>
+          </div>
+          <div className="article-read-time-center">
+            <span className="article-read-time">
+              {currentLang === 'ru' ? article.readTime.ru : article.readTime.en}
+            </span>
           </div>
           <span className="article-category">
             {currentLang === 'ru' ? article.category.ru : article.category.en}
