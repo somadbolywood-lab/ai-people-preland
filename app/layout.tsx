@@ -7,7 +7,6 @@ import LanguageSelector from './components/LanguageSelector';
 import HreflangLinks from './components/HreflangLinks';
 import { ThemeProvider } from './components/ThemeProvider';
 import { ThemeInitializer } from './components/ThemeInitializer';
-import { SSRSafeWrapper } from './components/SSRSafeWrapper';
 // LanguageProvider removed - using useLanguage hook in components instead
 
 export const metadata = {
@@ -120,7 +119,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://ai-people.io" />
         
         {/* Preload Critical Resources */}
-        <link rel="preload" href="/scripts/theme.js" as="script" />
         <link rel="preload" href="/scripts/main-init.js" as="script" />
         <link rel="preload" href="/faq/AI-people Logo.png" as="image" />
         <link rel="preload" href="/assets/models/model-01.png" as="image" />
@@ -352,14 +350,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </defs>
       </svg>
       
-      <SSRSafeWrapper>
-        <ThemeProvider>
-          <ThemeInitializer />
-          <ErrorBoundary>
-            {children}
-          </ErrorBoundary>
-        </ThemeProvider>
-      </SSRSafeWrapper>
+      <ThemeProvider>
+        <ThemeInitializer />
+        <ErrorBoundary>
+          {children}
+        </ErrorBoundary>
+      </ThemeProvider>
       {/* Optimized modular script loading - theme.js removed (handled by React) */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
       <Script src="/scripts/sw-register.js" strategy="afterInteractive" />

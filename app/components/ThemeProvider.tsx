@@ -66,7 +66,7 @@ export function ThemeProvider({ children, initialTheme = 'system' }: ThemeProvid
       html.setAttribute('data-theme', newTheme);
       
       // Добавляем класс для плавного перехода (только после инициализации)
-      if (!isInitial && isInitialized) {
+      if (!isInitial) {
         body.classList.add('theme-transition');
         setTimeout(() => {
           body.classList.remove('theme-transition');
@@ -81,7 +81,7 @@ export function ThemeProvider({ children, initialTheme = 'system' }: ThemeProvid
     } else {
       requestAnimationFrame(apply);
     }
-  }, [isInitialized]);
+  }, []);
 
   // Установить тему
   const setTheme = useCallback((newTheme: Theme) => {
@@ -111,9 +111,9 @@ export function ThemeProvider({ children, initialTheme = 'system' }: ThemeProvid
     
     // Use initial theme from window if available (set by inline script)
     let currentTheme: Theme = initialTheme;
-    if (window.__INITIAL_THEME__) {
+    if (typeof window !== 'undefined' && window.__INITIAL_THEME__) {
       currentTheme = window.__INITIAL_THEME__;
-    } else {
+    } else if (typeof window !== 'undefined') {
       // Fallback to localStorage
       try {
         const savedTheme = localStorage.getItem('theme') as Theme;
@@ -129,9 +129,9 @@ export function ThemeProvider({ children, initialTheme = 'system' }: ThemeProvid
     
     // Apply theme immediately
     let effectiveTheme: ResolvedTheme = 'dark';
-    if (window.__INITIAL_RESOLVED_THEME__) {
+    if (typeof window !== 'undefined' && window.__INITIAL_RESOLVED_THEME__) {
       effectiveTheme = window.__INITIAL_RESOLVED_THEME__;
-    } else {
+    } else if (typeof window !== 'undefined') {
       effectiveTheme = currentTheme === 'system' 
         ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
         : currentTheme;
