@@ -63,25 +63,27 @@ export default function LanguageSelector() {
       }
     };
 
-    window.addEventListener('languageChange', handleLanguageChange as EventListener);
-    
-    // Initialize language on mount - only update state, don't apply to DOM
-    const timer = setTimeout(() => {
-      // Determine initial language from URL
-      let initialLang: 'en' | 'ru' = 'en';
-      try {
-        const pathname = window.location?.pathname || '/';
-        if (pathname.startsWith('/ru')) initialLang = 'ru';
-      } catch {}
+    if (typeof window !== 'undefined') {
+      window.addEventListener('languageChange', handleLanguageChange as EventListener);
+      
+      // Initialize language on mount - only update state, don't apply to DOM
+      const timer = setTimeout(() => {
+        // Determine initial language from URL
+        let initialLang: 'en' | 'ru' = 'en';
+        try {
+          const pathname = window.location?.pathname || '/';
+          if (pathname.startsWith('/ru')) initialLang = 'ru';
+        } catch {}
 
-      // Only update state - useLanguage will handle DOM updates
-      setCurrentLanguage(initialLang);
-    }, 100);
+        // Only update state - useLanguage will handle DOM updates
+        setCurrentLanguage(initialLang);
+      }, 100);
 
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('languageChange', handleLanguageChange as EventListener);
-    };
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener('languageChange', handleLanguageChange as EventListener);
+      };
+    }
   }, [currentLanguage]);
 
   useEffect(() => {

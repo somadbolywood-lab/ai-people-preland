@@ -7,6 +7,7 @@ import LanguageSelector from './components/LanguageSelector';
 import HreflangLinks from './components/HreflangLinks';
 import { ThemeProvider } from './components/ThemeProvider';
 import { ThemeInitializer } from './components/ThemeInitializer';
+import { SSRSafeWrapper } from './components/SSRSafeWrapper';
 // LanguageProvider removed - using useLanguage hook in components instead
 
 export const metadata = {
@@ -351,12 +352,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </defs>
       </svg>
       
-      <ThemeProvider>
-        <ThemeInitializer />
-        <ErrorBoundary>
-          {children}
-        </ErrorBoundary>
-      </ThemeProvider>
+      <SSRSafeWrapper>
+        <ThemeProvider>
+          <ThemeInitializer />
+          <ErrorBoundary>
+            {children}
+          </ErrorBoundary>
+        </ThemeProvider>
+      </SSRSafeWrapper>
       {/* Optimized modular script loading - theme.js removed (handled by React) */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
       <Script src="/scripts/sw-register.js" strategy="afterInteractive" />

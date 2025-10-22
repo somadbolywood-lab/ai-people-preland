@@ -28,24 +28,11 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children, initialTheme = 'system' }: ThemeProviderProps) {
-  // Используем начальное состояние из window для предотвращения гидратации
-  const getInitialTheme = (): Theme => {
-    if (typeof window !== 'undefined' && window.__INITIAL_THEME__) {
-      return window.__INITIAL_THEME__;
-    }
-    return initialTheme;
-  };
-
-  const getInitialResolvedTheme = (): ResolvedTheme => {
-    if (typeof window !== 'undefined' && window.__INITIAL_RESOLVED_THEME__) {
-      return window.__INITIAL_RESOLVED_THEME__;
-    }
-    return 'dark';
-  };
-
-  const [theme, setThemeState] = useState<Theme>(getInitialTheme);
-  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(getInitialResolvedTheme);
+  // SSR-safe initialization - always start with default values
+  const [theme, setThemeState] = useState<Theme>(initialTheme);
+  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>('dark');
   const [isInitialized, setIsInitialized] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   // Получить эффективную тему (учитывая системную)
   const getEffectiveTheme = useCallback((): ResolvedTheme => {
@@ -118,26 +105,41 @@ export function ThemeProvider({ children, initialTheme = 'system' }: ThemeProvid
     setTheme(nextTheme);
   }, [theme, setTheme]);
 
-  // Инициализация при монтировании
+  // Client-side initialization
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    setIsClient(true);
     
-    // Получить сохраненную тему
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    const initialTheme = (savedTheme === 'light' || savedTheme === 'dark' || savedTheme === 'system') 
-      ? savedTheme 
-      : 'system';
+    // Use initial theme from window if available (set by inline script)
+    let currentTheme: Theme = initialTheme;
+    if (window.__INITIAL_THEME__) {
+      currentTheme = window.__INITIAL_THEME__;
+    } else {
+      // Fallback to localStorage
+      try {
+        const savedTheme = localStorage.getItem('theme') as Theme;
+        if (savedTheme === 'light' || savedTheme === 'dark' || savedTheme === 'system') {
+          currentTheme = savedTheme;
+        }
+      } catch (e) {
+        // localStorage not available
+      }
+    }
     
-    setThemeState(initialTheme);
+    setThemeState(currentTheme);
     
-    // Применить тему немедленно
-    const effectiveTheme = initialTheme === 'system' 
-      ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-      : initialTheme;
+    // Apply theme immediately
+    let effectiveTheme: ResolvedTheme = 'dark';
+    if (window.__INITIAL_RESOLVED_THEME__) {
+      effectiveTheme = window.__INITIAL_RESOLVED_THEME__;
+    } else {
+      effectiveTheme = currentTheme === 'system' 
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : currentTheme;
+    }
     
     applyTheme(effectiveTheme, true);
     setIsInitialized(true);
-  }, [applyTheme]);
+  }, [applyTheme, initialTheme]);
 
   // Отслеживание изменений системной темы
   useEffect(() => {
