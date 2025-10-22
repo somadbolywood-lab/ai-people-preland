@@ -6,6 +6,7 @@
 // Force theme initialization (call immediately)
 function forceThemeInit() {
     const body = document.body;
+    const html = document.documentElement;
     
     // 1. Check localStorage first (user preference)
     let currentTheme = localStorage.getItem('theme');
@@ -20,18 +21,22 @@ function forceThemeInit() {
     // 3. Apply theme immediately to prevent flash
     if (currentTheme === 'light') {
         body.classList.add('light');
+        html.classList.add('light');
     } else {
         body.classList.remove('light');
+        html.classList.remove('light');
     }
     
     // 4. Set data attribute for CSS targeting
     body.setAttribute('data-theme', currentTheme);
+    html.setAttribute('data-theme', currentTheme);
 }
 
 // Initialize theme toggle functionality
 function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
+    const html = document.documentElement;
     
     if (!themeToggle) {
         console.log('[Theme] Toggle button not found');
@@ -52,8 +57,10 @@ function initThemeToggle() {
     // Apply theme immediately but safely
     if (currentTheme === 'light') {
         body.classList.add('light');
+        html.classList.add('light');
     } else {
         body.classList.remove('light');
+        html.classList.remove('light');
     }
     
     // Update theme toggle icon
@@ -65,12 +72,16 @@ function initThemeToggle() {
         
         if (isLight) {
             body.classList.remove('light');
+            html.classList.remove('light');
             body.setAttribute('data-theme', 'dark');
+            html.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
             updateThemeIcon('dark', newThemeToggle);
         } else {
             body.classList.add('light');
+            html.classList.add('light');
             body.setAttribute('data-theme', 'light');
+            html.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
             updateThemeIcon('light', newThemeToggle);
         }

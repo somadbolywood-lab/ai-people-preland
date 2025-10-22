@@ -15,7 +15,9 @@
     --border: #232329;
     --shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
-.light {
+.light,
+html.light,
+body.light {
     --bg: #ffffff;
     --bg-primary: #ffffff;
     --bg-secondary: #f7f7f8;

@@ -97,26 +97,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="prefetch" href="/faq" />
         <link rel="prefetch" href="/about" />
         <link rel="prefetch" href="/auth/role" />
-        {/* Blocking theme initialization script - prevents white flash */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme');
-                  if (!theme) {
-                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    theme = prefersDark ? 'dark' : 'light';
-                  }
-                  if (theme === 'light') {
-                    document.documentElement.classList.add('light');
-                    document.body.classList.add('light');
-                  }
-                } catch (e) {}
-              })();
-            `
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
