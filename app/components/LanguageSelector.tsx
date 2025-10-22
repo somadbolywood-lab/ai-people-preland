@@ -113,8 +113,8 @@ export default function LanguageSelector() {
     }
   };
 
-  return (
-    <div className="language-selector">
+      return (
+        <div className="language-selector" suppressHydrationWarning>
       <button 
         ref={buttonRef}
         className="language-btn" 

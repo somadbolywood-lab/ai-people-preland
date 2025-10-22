@@ -2,14 +2,10 @@
 
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
 
-type Theme = 'light' | 'dark' | 'system';
-type ResolvedTheme = 'light' | 'dark';
+type Theme = 'dark';
 
 interface ThemeContextType {
   theme: Theme;
-  resolvedTheme: ResolvedTheme;
-  setTheme: (theme: Theme) => void;
-  cycleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -24,145 +20,38 @@ export function useTheme(): ThemeContextType {
 
 interface ThemeProviderProps {
   children: React.ReactNode;
-  initialTheme?: Theme;
 }
 
-export function ThemeProvider({ children, initialTheme = 'system' }: ThemeProviderProps) {
-  // SSR-safe initialization - always start with default values
-  const [theme, setThemeState] = useState<Theme>(initialTheme);
-  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>('dark');
-  const [isInitialized, setIsInitialized] = useState(false);
-  const [isClient, setIsClient] = useState(false);
+export function ThemeProvider({ children }: ThemeProviderProps) {
+  // Always dark theme only
+  const [theme] = useState<Theme>('dark');
 
-  // Получить эффективную тему (учитывая системную)
-  const getEffectiveTheme = useCallback((): ResolvedTheme => {
-    if (typeof window === 'undefined') return 'dark';
-    
-    if (theme === 'system') {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    return theme;
-  }, [theme]);
-
-  // Применить тему к DOM с оптимизацией
-  const applyTheme = useCallback((newTheme: ResolvedTheme, isInitial = false) => {
-    if (typeof window === 'undefined') return;
-    
-    const body = document.body;
-    const html = document.documentElement;
-    
-    // Используем requestAnimationFrame для плавного применения
-    const apply = () => {
-      if (newTheme === 'light') {
-        body.classList.add('light');
-        html.classList.add('light');
-      } else {
-        body.classList.remove('light');
-        html.classList.remove('light');
-      }
+  // Apply dark theme on mount - no transitions
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const body = document.body;
+      const html = document.documentElement;
       
-      // Установить data-атрибуты
-      body.setAttribute('data-theme', newTheme);
-      html.setAttribute('data-theme', newTheme);
+      // Disable all transitions temporarily
+      const style = document.createElement('style');
+      style.textContent = '* { transition: none !important; animation: none !important; }';
+      document.head.appendChild(style);
       
-      // Добавляем класс для плавного перехода (только после инициализации)
-      if (!isInitial) {
-        body.classList.add('theme-transition');
-        setTimeout(() => {
-          body.classList.remove('theme-transition');
-        }, 150);
-      }
+      // Always apply dark theme
+      body.classList.remove('light');
+      html.classList.remove('light');
+      body.setAttribute('data-theme', 'dark');
+      html.setAttribute('data-theme', 'dark');
       
-      setResolvedTheme(newTheme);
-    };
-
-    if (isInitial) {
-      apply();
-    } else {
-      requestAnimationFrame(apply);
+      // Remove the style after a short delay
+      setTimeout(() => {
+        document.head.removeChild(style);
+      }, 100);
     }
   }, []);
 
-  // Установить тему
-  const setTheme = useCallback((newTheme: Theme) => {
-    setThemeState(newTheme);
-    
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('theme', newTheme);
-      
-      const effectiveTheme = newTheme === 'system' 
-        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-        : newTheme;
-      
-      applyTheme(effectiveTheme);
-    }
-  }, [applyTheme]);
-
-  // Циклическое переключение: system -> light -> dark -> system
-  const cycleTheme = useCallback(() => {
-    const nextTheme: Theme = theme === 'system' ? 'light' : 
-                            theme === 'light' ? 'dark' : 'system';
-    setTheme(nextTheme);
-  }, [theme, setTheme]);
-
-  // Client-side initialization
-  useEffect(() => {
-    setIsClient(true);
-    
-    // Use initial theme from window if available (set by inline script)
-    let currentTheme: Theme = initialTheme;
-    if (typeof window !== 'undefined' && window.__INITIAL_THEME__) {
-      currentTheme = window.__INITIAL_THEME__;
-    } else if (typeof window !== 'undefined') {
-      // Fallback to localStorage
-      try {
-        const savedTheme = localStorage.getItem('theme') as Theme;
-        if (savedTheme === 'light' || savedTheme === 'dark' || savedTheme === 'system') {
-          currentTheme = savedTheme;
-        }
-      } catch (e) {
-        // localStorage not available
-      }
-    }
-    
-    setThemeState(currentTheme);
-    
-    // Apply theme immediately - sync with inline script
-    let effectiveTheme: ResolvedTheme = 'dark';
-    if (typeof window !== 'undefined' && window.__INITIAL_RESOLVED_THEME__) {
-      effectiveTheme = window.__INITIAL_RESOLVED_THEME__;
-    } else if (typeof window !== 'undefined') {
-      effectiveTheme = currentTheme === 'system' 
-        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-        : currentTheme;
-    }
-    
-    // Don't apply theme if it's already applied by inline script
-    // Just sync the state
-    setResolvedTheme(effectiveTheme);
-    setIsInitialized(true);
-  }, [initialTheme]);
-
-  // Отслеживание изменений системной темы
-  useEffect(() => {
-    if (typeof window === 'undefined' || theme !== 'system' || !isInitialized) return;
-
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    const handleChange = (e: MediaQueryListEvent) => {
-      const newResolvedTheme = e.matches ? 'dark' : 'light';
-      applyTheme(newResolvedTheme);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [theme, applyTheme, isInitialized]);
-
   const value: ThemeContextType = {
-    theme,
-    resolvedTheme,
-    setTheme,
-    cycleTheme
+    theme
   };
 
   return (

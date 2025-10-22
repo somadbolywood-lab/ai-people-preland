@@ -28,8 +28,8 @@ declare global {
     ) => void;
     
     // Theme initialization state
-    __INITIAL_THEME__?: 'light' | 'dark' | 'system';
-    __INITIAL_RESOLVED_THEME__?: 'light' | 'dark';
+    __INITIAL_THEME__?: 'light' | 'dark';
+    __THEME_APPLIED_BY_SCRIPT__?: boolean;
     
     // Async loader metrics
     AsyncLoaderMetrics?: any;

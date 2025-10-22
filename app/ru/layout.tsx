@@ -1,9 +1,11 @@
 import Script from 'next/script';
 import '../globals.css';
 import Image from 'next/image';
-import ThemeToggle from '../components/ThemeToggle';
+// ThemeToggle removed - only dark theme now
 import LanguageSelector from '../components/LanguageSelector';
 import HreflangLinks from '../components/HreflangLinks';
+import { ThemeProvider } from '../components/ThemeProvider';
+import ErrorBoundary from '../components/ErrorBoundary';
 // LanguageProvider removed - using useLanguage hook in components instead
 
 export const metadata = {
@@ -65,57 +67,6 @@ export const viewport = {
 export default function RuLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      {/* Organization JSON-LD (RU) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "@id": "https://ai-people.io/#organization",
-            "name": "AI-People",
-            "url": "https://ai-people.io",
-            "logo": "https://ai-people.io/faq/AI-people Logo.png",
-            "description": "Ведущий курируемый маркетплейс AI-моделей с гиперреалистичными виртуальными инфлюенсерами и премиум AI-артом",
-            "foundingDate": "2024",
-            "sameAs": [
-              "https://www.instagram.com/ai_people_io",
-              "https://www.tiktok.com/@ai_people_io",
-              "https://x.com/ai_people_io",
-              "https://www.reddit.com/u/AI-PEOPLE",
-              "https://pin.it/12q1ESjB2",
-              "https://youtube.com/@ai_people_io"
-            ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer service",
-              "email": "feedback@ai-people.io",
-              "availableLanguage": ["ru", "en"]
-            },
-            "address": {"@type": "PostalAddress", "addressCountry": "RU"}
-          })
-        }}
-      />
-      {/* WebSite JSON-LD (RU) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "@id": "https://ai-people.io/#website",
-            "name": "AI-People",
-            "url": "https://ai-people.io",
-            "publisher": { "@id": "https://ai-people.io/#organization" },
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://ai-people.io/search?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
-          })
-        }}
-      />
-      <HreflangLinks currentPath="/ru" locale="ru" />
       {children}
     </>
   );

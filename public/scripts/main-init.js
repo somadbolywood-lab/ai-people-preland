@@ -15,14 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // }
         
         // 2. Language (disabled - now handled by React useLanguage hook)
-        // if (typeof applySavedLanguage === 'function') {
-        //     applySavedLanguage();
-        //     console.log('[Main] ✅ Language initialized');
-        // }
-        
-        // if (typeof initLanguageSelector === 'function') {
-        //     initLanguageSelector();
-        // }
+        // Language initialization completely removed to prevent conflicts
         
         // 3. UI Components
         if (typeof initMobileMenu === 'function') {

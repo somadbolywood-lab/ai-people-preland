@@ -2,11 +2,10 @@ import './globals.css';
 import Script from 'next/script';
 import ErrorBoundary from './components/ErrorBoundary';
 import Image from 'next/image';
-import ThemeToggle from './components/ThemeToggle';
+// ThemeToggle removed - only dark theme now
 import LanguageSelector from './components/LanguageSelector';
 import HreflangLinks from './components/HreflangLinks';
 import { ThemeProvider } from './components/ThemeProvider';
-import { ThemeInitializer } from './components/ThemeInitializer';
 // LanguageProvider removed - using useLanguage hook in components instead
 
 export const metadata = {
@@ -75,159 +74,68 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <meta httpEquiv="Pragma" content="no-cache" />
             <meta httpEquiv="Expires" content="0" />
         
-        {/* Critical CSS - prevents FOUC */}
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            /* Force dark theme by default to prevent white flash */
-            html, body {
-              background-color: #0b0b0c !important;
-              color: #f5f5f7 !important;
-              transition: none !important;
-            }
+            {/* Critical CSS - prevents FOUC */}
+            <style dangerouslySetInnerHTML={{
+              __html: `
+                /* Force dark theme by default to prevent white flash */
+                html, body {
+                  background-color: #0b0b0c !important;
+                  color: #f5f5f7 !important;
+                  transition: none !important;
+                }
+                
+                /* Force all elements to dark theme immediately */
+                * {
+                  transition: none !important;
+                  animation: none !important;
+                }
+                
+                .topbar {
+                  background: rgba(17, 17, 20, 0.5) !important;
+                  backdrop-filter: blur(12px) !important;
+                  -webkit-backdrop-filter: blur(12px) !important;
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+                }
+                
+                .topbar * {
+                  color: #f5f5f7 !important;
+                }
+                
+                .theme-toggle, .language-btn, .feedback-btn, .hamburger {
+                  background: #111114 !important;
+                  border: 1px solid #232329 !important;
+                  color: #f5f5f7 !important;
+                }
+                
+                .brand {
+                  color: #f5f5f7 !important;
+                }
+                
+                .btn {
+                  background: #111114 !important;
+                  color: #f5f5f7 !important;
+                  border: 1px solid #232329 !important;
+                }
+                
+                .btn.primary {
+                  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
+                  color: white !important;
+                  border: none !important;
+                }
+              `
+            }} />
             
-            :root { 
-              --bg: #0b0b0c; 
-              --text: #f5f5f7; 
-              --bg-primary: #0b0b0c;
-              --bg-secondary: #111114;
-              --bg-hover: #1a1a1f;
-              --panel: #111114;
-              --text-primary: #f5f5f7;
-              --text-secondary: #b5b7bd;
-              --subtext: #b5b7bd;
-              --muted: #1a1a1f;
-              --accent: #8b5cf6;
-              --accent-2: #ec4899;
-              --danger: #f43f5e;
-              --border: #232329;
-              --shadow: 0 10px 30px rgba(0,0,0,0.35);
-            }
-            
-            .light, html.light, body.light { 
-              --bg: #ffffff; 
-              --text: #0a0a0b; 
-              --bg-primary: #ffffff;
-              --bg-secondary: #f7f7f8;
-              --bg-hover: #efeff1;
-              --panel: #f7f7f8;
-              --text-primary: #0a0a0b;
-              --text-secondary: #52525b;
-              --subtext: #52525b;
-              --muted: #efeff1;
-              --accent: #7c3aed;
-              --accent-2: #db2777;
-              --danger: #e11d48;
-              --border: #e5e7eb;
-              --shadow: 0 10px 30px rgba(0,0,0,0.08);
-            }
-            
-            .light, html.light, body.light {
-              background-color: #ffffff !important;
-              color: #0a0a0b !important;
-            }
-          `
-        }} />
+            {/* Dark theme only - no script needed */}
         
         <HreflangLinks currentPath="/" locale="en" />
-        {/* Resource Hints - Critical Performance Optimization */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://ai-people.io" />
-        
-        {/* Preload Critical Resources */}
-        <link rel="preload" href="/scripts/main-init.js" as="script" />
-        <link rel="preload" href="/faq/AI-people Logo.png" as="image" />
-        <link rel="preload" href="/assets/models/model-01.png" as="image" />
-        <link rel="preload" href="/assets/models/model-02.png" as="image" />
-        <link rel="preload" href="/assets/models/model-03.png" as="image" />
-        
-        {/* Preload Fonts */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        
-        {/* Prefetch Next Pages */}
-        <link rel="prefetch" href="/blog" />
-        <link rel="prefetch" href="/faq" />
-        <link rel="prefetch" href="/about" />
-        <link rel="prefetch" href="/auth/role" />
-        
-            {/* Optimized theme initialization - prevents FOUC */}
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  (function() {
-                    try {
-                      // 1. Clear old cache versions to prevent FOUC
-                      if ('serviceWorker' in navigator) {
-                        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                          for (let registration of registrations) {
-                            if (registration.scope.includes('ai-people')) {
-                              registration.update();
-                            }
-                          }
-                        });
-                      }
-                      
-                      // 2. Check localStorage first (user preference)
-                      var theme = localStorage.getItem('theme') || 'system';
-                      
-                      // 3. Determine effective theme
-                      var effectiveTheme;
-                      if (theme === 'system') {
-                        effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                      } else {
-                        effectiveTheme = theme;
-                      }
-                      
-                      // 4. Apply theme immediately to prevent flash - CRITICAL
-                      var html = document.documentElement;
-                      var body = document.body;
-                      
-                      // Remove any existing theme classes first
-                      html.classList.remove('light');
-                      body.classList.remove('light');
-                      
-                      if (effectiveTheme === 'light') {
-                        html.classList.add('light');
-                        body.classList.add('light');
-                        html.setAttribute('data-theme', 'light');
-                        body.setAttribute('data-theme', 'light');
-                        // Force light theme styles immediately
-                        html.style.backgroundColor = '#ffffff';
-                        body.style.backgroundColor = '#ffffff';
-                        html.style.color = '#0a0a0b';
-                        body.style.color = '#0a0a0b';
-                      } else {
-                        html.setAttribute('data-theme', 'dark');
-                        body.setAttribute('data-theme', 'dark');
-                        // Force dark theme styles immediately
-                        html.style.backgroundColor = '#0b0b0c';
-                        body.style.backgroundColor = '#0b0b0c';
-                        html.style.color = '#f5f5f7';
-                        body.style.color = '#f5f5f7';
-                      }
-                      
-                      // 5. Set initial state for React hydration
-                      window.__INITIAL_THEME__ = theme;
-                      window.__INITIAL_RESOLVED_THEME__ = effectiveTheme;
-                      
-                    } catch (e) {
-                      // Fallback: apply dark theme (default)
-                      console.warn('Theme initialization failed:', e);
-                      document.documentElement.setAttribute('data-theme', 'dark');
-                      document.body.setAttribute('data-theme', 'dark');
-                      document.documentElement.style.backgroundColor = '#0b0b0c';
-                      document.body.style.backgroundColor = '#0b0b0c';
-                      document.documentElement.style.color = '#f5f5f7';
-                      document.body.style.color = '#f5f5f7';
-                    }
-                  })();
-                `
-              }}
+            {/* Basic font loading */}
+            <link
+              href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+              rel="stylesheet"
             />
+        
+            {/* Theme initialization now handled by ThemeProvider component */}
         
         <script
           type="application/ld+json"
@@ -394,21 +302,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </svg>
       
       <ThemeProvider>
-        <ThemeInitializer />
         <ErrorBoundary>
           {children}
         </ErrorBoundary>
       </ThemeProvider>
-      {/* Optimized modular script loading - theme.js removed (handled by React) */}
+      {/* Essential scripts only */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
-      <Script src="/scripts/sw-register.js" strategy="afterInteractive" />
-      <Script src="/scripts/async-loader.js" strategy="afterInteractive" />
-      <Script src="/scripts/critical-path-optimization.js" strategy="afterInteractive" />
-      <Script src="/scripts/web-vitals.js" strategy="afterInteractive" />
-      <Script src="/scripts/performance-api.js" strategy="afterInteractive" />
       <Script src="/scripts/yandex-metrika.js" strategy="afterInteractive" />
-      <Script src="/scripts/performance.js" strategy="afterInteractive" />
-      <Script src="/scripts/language.js" strategy="afterInteractive" />
       <Script src="/scripts/ui-components.js" strategy="afterInteractive" />
       <Script src="/scripts/main-init.js" strategy="afterInteractive" />
     </body>

@@ -34,8 +34,8 @@ export default function Page() {
                 src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} 
                 alt={`Professional hyperrealistic AI model ${i+1} - Premium virtual influencer for commercial marketing campaigns and brand advertising`} 
                 title={`AI Model ${i+1} - Hyperrealistic Virtual Influencer`}
-                width={160} 
-                height={100} 
+                width={320} 
+                height={180} 
                 loading="lazy" 
               />
             </div>
@@ -46,8 +46,8 @@ export default function Page() {
                 src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} 
                 alt={`AI-generated virtual model ${i+1} - High-quality digital influencer for social media marketing and e-commerce`} 
                 title={`Premium AI Model ${i+1} for Marketing`}
-                width={160} 
-                height={100} 
+                width={320} 
+                height={180} 
                 loading="lazy" 
               />
             </div>
