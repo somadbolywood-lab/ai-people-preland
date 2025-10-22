@@ -478,7 +478,7 @@ html, body { height: 100%; }
     }
     
     body {
-        padding-top: 72px !important;
+        padding-top: 80px !important;
     }
     
     .logo-img {
@@ -574,7 +574,7 @@ html, body { height: 100%; }
 
 body {
     margin: 0;
-    padding-top: 78px !important;
+    padding-top: 80px !important;
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     background: var(--bg);
     color: var(--text);
@@ -2542,8 +2542,7 @@ a.visible-link {
 }
 .menu-panel a[aria-disabled="true"] { 
     opacity: 0.5; 
-    cursor: not-allowed;
-    /* pointer-events: none; REMOVED to allow click handling */
+    pointer-events: none; 
 }
 
 /* Coming Soon label styles */
@@ -3415,7 +3414,7 @@ a.visible-link {
     .container { padding: 16px; }
     .nav { display: flex; }
     .topbar { gap: 12px; padding: 8px 72px; min-height: 72px !important; height: 72px !important; }
-    body { padding-top: 72px !important; }
+    body { padding-top: 80px !important; }
     .logo-img { 
         height: 44px; 
         transition: all 0.3s ease;
@@ -3446,7 +3445,7 @@ a.visible-link {
 @media (min-width: 860px) {
     .container { padding: 20px; }
     .topbar { gap: 16px; padding: 8px 72px; min-height: 72px !important; height: 72px !important; }
-    body { padding-top: 72px !important; }
+    body { padding-top: 80px !important; }
     .logo-img { 
         height: 75px !important; 
         max-width: 180px !important; 

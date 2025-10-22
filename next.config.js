@@ -28,11 +28,6 @@ const nextConfig = {
       {
         source: '/(.*)',
         headers: [
-          // Critical CSS
-          {
-            key: 'Link',
-            value: '</styles/critical.css>; rel=preload; as=style'
-          },
           // Critical JavaScript
           {
             key: 'Link', 

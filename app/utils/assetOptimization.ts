@@ -200,12 +200,6 @@ export function generateFontCSS(
 /**
  * Инлайн критического CSS
  */
-export function inlineCriticalCSS(css: string): void {
-  const style = document.createElement('style');
-  style.textContent = css;
-  style.setAttribute('data-critical', 'true');
-  document.head.insertBefore(style, document.head.firstChild);
-}
 
 /**
  * Загрузка некритического CSS асинхронно
@@ -255,7 +249,6 @@ export function addResourceHints(): void {
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
     
     // Preload для критических ресурсов
-    { rel: 'preload', href: '/styles/critical.css', as: 'style' },
     { rel: 'preload', href: '/scripts/theme.js', as: 'script' },
   ];
 
@@ -346,7 +339,6 @@ export function optimizeResourceLoading(): void {
 export function setupResourceCache(): void {
   // Кэширование критических ресурсов
   const criticalResources = [
-    '/styles/critical.css',
     '/scripts/theme.js',
     '/scripts/main-init.js',
     '/faq/AI-people Logo.png'
@@ -372,7 +364,6 @@ export default {
   setupLazyImages,
   optimizeFonts,
   generateFontCSS,
-  inlineCriticalCSS,
   loadNonCriticalCSS,
   minifyCSS,
   addResourceHints,

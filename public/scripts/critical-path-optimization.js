@@ -90,11 +90,6 @@
     preloadCriticalResources: function() {
       const criticalResources = [
         {
-          type: 'css',
-          url: '/styles/critical.css',
-          priority: 'critical'
-        },
-        {
           type: 'js',
           url: '/scripts/theme.js',
           priority: 'critical'

@@ -29,12 +29,6 @@ const CONFIG = {
   // Критические ресурсы
   criticalResources: [
     {
-      type: 'css' as const,
-      url: '/styles/critical.css',
-      priority: 'critical' as const,
-      inline: true
-    },
-    {
       type: 'js' as const,
       url: '/scripts/theme.js',
       priority: 'critical' as const,
@@ -67,213 +61,6 @@ const CONFIG = {
 // CRITICAL CSS OPTIMIZATION
 // ========================================
 
-/**
- * Извлекает критический CSS из стилей
- */
-export function extractCriticalCSS(): string {
-  const criticalCSS = `
-    /* Critical CSS for AI-People */
-    :root {
-      --bg: #0b0b0c;
-      --bg-primary: #0b0b0c;
-      --bg-secondary: #111114;
-      --bg-hover: #1a1a1f;
-      --panel: #111114;
-      --text: #f5f5f7;
-      --text-primary: #f5f5f7;
-      --text-secondary: #b5b7bd;
-      --subtext: #b5b7bd;
-      --muted: #1a1a1f;
-      --accent: #8b5cf6;
-      --accent-2: #ec4899;
-      --danger: #f43f5e;
-      --border: #232329;
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
-    }
-    
-    .light {
-      --bg: #ffffff;
-      --bg-primary: #ffffff;
-      --bg-secondary: #f7f7f8;
-      --bg-hover: #efeff1;
-      --panel: #f7f7f8;
-      --text: #0a0a0b;
-      --text-primary: #0a0a0b;
-      --text-secondary: #52525b;
-      --subtext: #52525b;
-      --muted: #efeff1;
-      --accent: #7c3aed;
-      --accent-2: #db2777;
-      --danger: #e11d48;
-      --border: #e5e7eb;
-      --shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-    
-    * {
-      box-sizing: border-box;
-    }
-    
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 12px;
-      width: 100%;
-      min-width: 320px;
-    }
-    
-    .topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 4px 12px;
-      background: rgba(11,11,12,0.5);
-      border-bottom: 1px solid var(--border);
-      min-height: 80px;
-      height: 80px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    
-    .light .topbar {
-      background: rgba(255,255,255,0.5);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-    
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-right: auto;
-    }
-    
-    .logo-img {
-      height: 48px;
-      width: auto;
-      max-height: 58px;
-      max-width: 150px;
-      object-fit: contain;
-    }
-    
-    .btn {
-      border: none;
-      padding: 8px 16px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--panel);
-      color: var(--text);
-      min-height: 42px;
-    }
-    
-    .btn:hover {
-      background: var(--bg-hover);
-      transform: scale(1.02);
-    }
-    
-    .btn.primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: white;
-    }
-    
-    .gradient-text {
-      background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f43f5e 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-weight: 800;
-    }
-    
-    .light .gradient-text {
-      background: linear-gradient(135deg, #7c3aed 0%, #db2777 50%, #e11d48 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    /* Mobile optimizations */
-    @media (max-width: 639px) {
-      body {
-        padding-top: 80px !important;
-      }
-      
-      .topbar {
-        gap: 6px;
-        padding: 4px 72px;
-        min-height: 72px !important;
-        height: 72px !important;
-        background: rgba(11,11,12,0.5);
-      }
-      
-      .container {
-        padding: 8px;
-      }
-      
-      .logo-img {
-        height: 84px;
-        width: auto;
-        max-width: 231px;
-        object-fit: contain;
-      }
-      
-      .btn {
-        padding: 6px 10px;
-        font-size: 12px;
-        min-height: 36px;
-      }
-      
-      .light .topbar {
-        background: rgba(255,255,255,0.5);
-      }
-    }
-  `;
-  
-  return criticalCSS;
-}
-
-/**
- * Инлайнит критический CSS в head
- */
-export function inlineCriticalCSS(): void {
-  const criticalCSS = extractCriticalCSS();
-  
-  // Проверяем размер
-  if (criticalCSS.length > CONFIG.thresholds.maxInlineSize) {
-    console.warn('[Critical Path] Critical CSS exceeds 14KB limit');
-  }
-  
-  // Создаем style элемент
-  const style = document.createElement('style');
-  style.textContent = criticalCSS;
-  style.setAttribute('data-critical', 'true');
-  
-  // Вставляем в начало head
-  document.head.insertBefore(style, document.head.firstChild);
-  
-  console.log('[Critical Path] Critical CSS inlined');
-}
 
 // ========================================
 // RENDER BLOCKING OPTIMIZATION
@@ -509,7 +296,6 @@ export function initCriticalPathOptimization(): void {
   console.log('[Critical Path] Initializing optimization...');
   
   // Инлайним критический CSS
-  inlineCriticalCSS();
   
   // Оптимизируем блокирующие ресурсы
   optimizeRenderBlockingResources();
@@ -535,8 +321,6 @@ export function initCriticalPathOptimization(): void {
 // ========================================
 
 export default {
-  extractCriticalCSS,
-  inlineCriticalCSS,
   findRenderBlockingResources,
   optimizeRenderBlockingResources,
   preloadCriticalResources,

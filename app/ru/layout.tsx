@@ -65,9 +65,6 @@ export const viewport = {
 export default function RuLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <style dangerouslySetInnerHTML={{
-        __html: `body{margin:0;padding-top:80px!important;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;min-height:100vh}@media (max-width:639px){body{padding-top:80px!important}}`
-      }} />
       {/* Organization JSON-LD (RU) */}
       <script
         type="application/ld+json"
