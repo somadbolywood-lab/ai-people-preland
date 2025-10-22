@@ -17,12 +17,15 @@ function forceThemeInit() {
         // Don't save to localStorage yet - let user explicitly choose
     }
     
-    // 3. Apply theme
+    // 3. Apply theme immediately to prevent flash
     if (currentTheme === 'light') {
         body.classList.add('light');
     } else {
         body.classList.remove('light');
     }
+    
+    // 4. Set data attribute for CSS targeting
+    body.setAttribute('data-theme', currentTheme);
 }
 
 // Initialize theme toggle functionality
@@ -62,10 +65,12 @@ function initThemeToggle() {
         
         if (isLight) {
             body.classList.remove('light');
+            body.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
             updateThemeIcon('dark', newThemeToggle);
         } else {
             body.classList.add('light');
+            body.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
             updateThemeIcon('light', newThemeToggle);
         }
@@ -102,7 +107,13 @@ function updateThemeIcon(theme, toggleElement) {
 
 // Call theme initialization immediately when script loads
 if (typeof document !== 'undefined') {
+    // Initialize immediately to prevent flash
     forceThemeInit();
+    
+    // Also initialize when DOM is ready (fallback)
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', forceThemeInit);
+    }
 }
 
 // Export functions

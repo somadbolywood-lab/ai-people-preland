@@ -1,20 +1,8 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export default function ThemeToggle() {
-  useEffect(() => {
-    // Initialize theme from localStorage on component mount
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    const body = document.body;
-    
-    if (savedTheme === 'light') {
-      body.classList.add('light');
-    } else {
-      body.classList.remove('light');
-    }
-  }, []);
-
   const toggleTheme = () => {
     const body = document.body;
     const isLight = body.classList.contains('light');

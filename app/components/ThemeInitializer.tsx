@@ -4,23 +4,34 @@ import { useEffect } from 'react';
 
 export default function ThemeInitializer() {
   useEffect(() => {
-    // Initialize theme from localStorage
+    // Initialize theme immediately to prevent flash
     if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme') || 'light';
+      const body = document.body;
       
+      // 1. Check localStorage first (user preference)
+      let savedTheme = localStorage.getItem('theme');
+      
+      // 2. If no saved preference, detect system theme
+      if (!savedTheme) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        savedTheme = prefersDark ? 'dark' : 'light';
+        // Don't save to localStorage yet - let user explicitly choose
+      }
+      
+      // 3. Apply theme immediately
       if (savedTheme === 'light') {
-        document.body.classList.add('light');
+        body.classList.add('light');
       } else {
-        document.body.classList.remove('light');
+        body.classList.remove('light');
       }
 
       // Handle storage changes from other tabs
       const handleStorageChange = (e: StorageEvent) => {
         if (e.key === 'theme' && e.newValue) {
           if (e.newValue === 'light') {
-            document.body.classList.add('light');
+            body.classList.add('light');
           } else {
-            document.body.classList.remove('light');
+            body.classList.remove('light');
           }
         }
       };
