@@ -478,7 +478,7 @@ html, body { height: 100%; }
     }
     
     body {
-        padding-top: 80px !important;
+        padding-top: 72px !important;
     }
     
     .logo-img {
@@ -508,7 +508,7 @@ html, body { height: 100%; }
     }
     
     .menu-panel {
-        top: 68px;
+        top: 72px;
     }
     
     
@@ -574,7 +574,7 @@ html, body { height: 100%; }
 
 body {
     margin: 0;
-    padding-top: 80px !important;
+    padding-top: 78px !important;
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     background: var(--bg);
     color: var(--text);
@@ -2438,7 +2438,7 @@ a.visible-link {
 /* Hamburger menu panel */
 .menu-panel { 
     position: fixed; 
-    top: 50px; 
+    top: 78px; 
     right: 8px; 
     left: auto;
     width: 395px;
@@ -2463,7 +2463,7 @@ a.visible-link {
     max-width: 100vw;
     width: 100vw;
     padding: 12px;
-    top: 64px;
+    top: 72px;
   }
 }
 
@@ -2474,7 +2474,7 @@ a.visible-link {
     max-width: 100vw;
     width: 100vw;
     padding: 10px;
-    top: 64px;
+    top: 72px;
   }
 }
 .light .menu-panel { 
@@ -3410,7 +3410,7 @@ a.visible-link {
     .container { padding: 16px; }
     .nav { display: flex; }
     .topbar { gap: 12px; padding: 8px 72px; min-height: 72px !important; height: 72px !important; }
-    body { padding-top: 80px !important; }
+    body { padding-top: 72px !important; }
     .logo-img { 
         height: 44px; 
         transition: all 0.3s ease;
@@ -3423,7 +3423,7 @@ a.visible-link {
     }
     
     .menu-panel {
-        top: 64px;
+        top: 72px;
     }
     .marquee-item { width: 176px; height: 110px; }
     .marquee::before, .marquee::after { width: 55px; }
@@ -3441,7 +3441,7 @@ a.visible-link {
 @media (min-width: 860px) {
     .container { padding: 20px; }
     .topbar { gap: 16px; padding: 8px 72px; min-height: 72px !important; height: 72px !important; }
-    body { padding-top: 80px !important; }
+    body { padding-top: 72px !important; }
     .logo-img { 
         height: 75px !important; 
         max-width: 180px !important; 
@@ -3455,7 +3455,7 @@ a.visible-link {
     }
     
     .menu-panel {
-        top: 64px;
+        top: 72px;
     }
     .marquee::before, .marquee::after { width: 66px; }
     .grid { 
