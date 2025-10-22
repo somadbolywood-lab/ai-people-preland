@@ -1,149 +1,94 @@
 // ========================================
-// THEME MODULE
-// Управление темной/светлой темой
+// THEME MODULE - SIMPLIFIED FALLBACK
+// Управление темой для страниц без React
 // ========================================
 
-// Force theme initialization (call immediately)
+// Fallback theme initialization (only for non-React pages)
 function forceThemeInit() {
-    const body = document.body;
-    const html = document.documentElement;
+    if (typeof window === 'undefined') return;
     
-    // 1. Check localStorage first (user preference)
-    let currentTheme = localStorage.getItem('theme');
-    
-    // 2. If no saved preference, detect system theme
-    if (!currentTheme) {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        currentTheme = prefersDark ? 'dark' : 'light';
-        // Don't save to localStorage yet - let user explicitly choose
-    }
-    
-    // 3. Apply theme immediately to prevent flash
-    if (currentTheme === 'light') {
-        body.classList.add('light');
-        html.classList.add('light');
-    } else {
-        body.classList.remove('light');
-        html.classList.remove('light');
-    }
-    
-    // 4. Set data attribute for CSS targeting
-    body.setAttribute('data-theme', currentTheme);
-    html.setAttribute('data-theme', currentTheme);
-}
-
-// Initialize theme toggle functionality
-function initThemeToggle() {
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    const html = document.documentElement;
-    
-    if (!themeToggle) {
-        console.log('[Theme] Toggle button not found');
-        return;
-    }
-    
-    // Remove existing event listeners to prevent duplicates
-    const newThemeToggle = themeToggle.cloneNode(true);
-    themeToggle.parentNode.replaceChild(newThemeToggle, themeToggle);
-    
-    // Check for saved theme preference or detect system theme
-    let currentTheme = localStorage.getItem('theme');
-    if (!currentTheme) {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        currentTheme = prefersDark ? 'dark' : 'light';
-    }
-    
-    // Apply theme immediately but safely
-    if (currentTheme === 'light') {
-        body.classList.add('light');
-        html.classList.add('light');
-    } else {
-        body.classList.remove('light');
-        html.classList.remove('light');
-    }
-    
-    // Update theme toggle icon
-    updateThemeIcon(currentTheme, newThemeToggle);
-    
-    // Theme toggle event listener
-    newThemeToggle.addEventListener('click', function() {
-        const isLight = body.classList.contains('light');
+    try {
+        const theme = localStorage.getItem('theme') || 'system';
+        let effectiveTheme;
         
-        if (isLight) {
-            body.classList.remove('light');
-            html.classList.remove('light');
-            body.setAttribute('data-theme', 'dark');
-            html.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            updateThemeIcon('dark', newThemeToggle);
+        if (theme === 'system') {
+            effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         } else {
+            effectiveTheme = theme;
+        }
+        
+        const body = document.body;
+        const html = document.documentElement;
+        
+        if (effectiveTheme === 'light') {
             body.classList.add('light');
             html.classList.add('light');
-            body.setAttribute('data-theme', 'light');
-            html.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            updateThemeIcon('light', newThemeToggle);
+        } else {
+            body.classList.remove('light');
+            html.classList.remove('light');
         }
-    });
-}
-
-function updateThemeIcon(theme, toggleElement) {
-    const element = toggleElement || document.getElementById('themeToggle');
-    if (!element) return;
-    
-    const icon = element.querySelector('svg');
-    if (!icon) return;
-    
-    if (theme === 'light') {
-        // Sun icon for light theme
-        icon.innerHTML = `
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        `;
-    } else {
-        // Moon icon for dark theme
-        icon.innerHTML = `
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        `;
+        
+        body.setAttribute('data-theme', effectiveTheme);
+        html.setAttribute('data-theme', effectiveTheme);
+        
+        console.log('[Theme] Fallback initialization applied:', effectiveTheme);
+    } catch (e) {
+        console.warn('[Theme] Fallback initialization failed:', e);
     }
 }
 
-// Call theme initialization immediately when script loads
-if (typeof document !== 'undefined') {
-    // Initialize immediately to prevent flash
-    forceThemeInit();
+// Initialize system theme listener for fallback
+function initSystemThemeListener() {
+    if (typeof window === 'undefined') return;
     
-    // Also initialize when DOM is ready (fallback)
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', forceThemeInit);
-    }
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     
-    // Fallback for very slow connections - re-apply theme after a delay
-    setTimeout(function() {
-        // Only re-apply if no theme classes are present (fallback protection)
-        if (!document.body.classList.contains('light') && !document.documentElement.classList.contains('light')) {
-            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            if (!prefersDark) {
-                document.documentElement.classList.add('light');
-                document.body.classList.add('light');
-                document.documentElement.setAttribute('data-theme', 'light');
-                document.body.setAttribute('data-theme', 'light');
+    const handleChange = (e) => {
+        const currentTheme = localStorage.getItem('theme');
+        
+        // Only react if theme is 'system' or not set
+        if (currentTheme === 'system' || !currentTheme) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            const body = document.body;
+            const html = document.documentElement;
+            
+            if (newTheme === 'light') {
+                body.classList.add('light');
+                html.classList.add('light');
+            } else {
+                body.classList.remove('light');
+                html.classList.remove('light');
             }
+            
+            body.setAttribute('data-theme', newTheme);
+            html.setAttribute('data-theme', newTheme);
+            
+            console.log('[Theme] System theme changed to:', newTheme);
         }
-    }, 100);
+    };
+    
+    mediaQuery.addEventListener('change', handleChange);
+    console.log('[Theme] System theme listener initialized');
 }
 
-// Export functions
+// Call only if React components are not available
+if (typeof window !== 'undefined') {
+    // Check if React is available
+    const hasReact = document.querySelector('[data-react-root]') || 
+                    document.querySelector('#__next') ||
+                    window.React;
+    
+    if (!hasReact) {
+        // Initialize fallback theme system
+        forceThemeInit();
+        initSystemThemeListener();
+        console.log('[Theme] Fallback theme system initialized');
+    } else {
+        console.log('[Theme] React detected, skipping fallback initialization');
+    }
+}
+
+// Export for manual use
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { forceThemeInit, initThemeToggle };
+    module.exports = { forceThemeInit, initSystemThemeListener };
 }
-
-
