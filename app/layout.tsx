@@ -5,6 +5,8 @@ import Image from 'next/image';
 import ThemeToggle from './components/ThemeToggle';
 import LanguageSelector from './components/LanguageSelector';
 import HreflangLinks from './components/HreflangLinks';
+import { ThemeProvider } from './components/ThemeProvider';
+import { ThemeInitializer } from './components/ThemeInitializer';
 // LanguageProvider removed - using useLanguage hook in components instead
 
 export const metadata = {
@@ -137,7 +139,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="prefetch" href="/about" />
         <link rel="prefetch" href="/auth/role" />
         
-        {/* Critical theme initialization - prevents white flash */}
+        {/* Optimized theme initialization - prevents FOUC */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -155,20 +157,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   }
                   
                   // 3. Apply theme immediately to prevent flash
+                  var html = document.documentElement;
+                  var body = document.body;
+                  
                   if (effectiveTheme === 'light') {
-                    document.documentElement.classList.add('light');
-                    document.body.classList.add('light');
-                    document.documentElement.setAttribute('data-theme', 'light');
-                    document.body.setAttribute('data-theme', 'light');
+                    html.classList.add('light');
+                    body.classList.add('light');
+                    html.setAttribute('data-theme', 'light');
+                    body.setAttribute('data-theme', 'light');
                   } else {
-                    document.documentElement.classList.remove('light');
-                    document.body.classList.remove('light');
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    document.body.setAttribute('data-theme', 'dark');
+                    html.classList.remove('light');
+                    body.classList.remove('light');
+                    html.setAttribute('data-theme', 'dark');
+                    body.setAttribute('data-theme', 'dark');
                   }
+                  
+                  // 4. Set initial state for React hydration
+                  window.__INITIAL_THEME__ = theme;
+                  window.__INITIAL_RESOLVED_THEME__ = effectiveTheme;
+                  
                 } catch (e) {
                   // Fallback: apply dark theme (default)
                   console.warn('Theme initialization failed:', e);
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  document.body.setAttribute('data-theme', 'dark');
                 }
               })();
             `
@@ -339,11 +351,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </defs>
       </svg>
       
-      <ErrorBoundary>
-        {children}
-      </ErrorBoundary>
-      {/* Optimized modular script loading - theme.js loads first */}
-      <Script src="/scripts/theme.js" strategy="beforeInteractive" />
+      <ThemeProvider>
+        <ThemeInitializer />
+        <ErrorBoundary>
+          {children}
+        </ErrorBoundary>
+      </ThemeProvider>
+      {/* Optimized modular script loading - theme.js removed (handled by React) */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
       <Script src="/scripts/sw-register.js" strategy="afterInteractive" />
       <Script src="/scripts/async-loader.js" strategy="afterInteractive" />

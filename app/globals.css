@@ -40,6 +40,16 @@ body.light {
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 
+/* Smooth theme transitions */
+.theme-transition * {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Prevent flash during theme changes */
+html, body {
+  transition: background-color 0.15s ease;
+}
+
 /* Mobile-first optimizations */
 @media (max-width: 639px) {
     .container {

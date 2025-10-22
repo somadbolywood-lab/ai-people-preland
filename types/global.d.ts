@@ -26,6 +26,14 @@ declare global {
       targetId: string,
       config?: GtagConfig | GtagEventParams
     ) => void;
+    
+    // Theme initialization state
+    __INITIAL_THEME__?: 'light' | 'dark' | 'system';
+    __INITIAL_RESOLVED_THEME__?: 'light' | 'dark';
+    
+    // Async loader metrics
+    AsyncLoaderMetrics?: any;
+    AsyncLoader?: any;
   }
 }
 

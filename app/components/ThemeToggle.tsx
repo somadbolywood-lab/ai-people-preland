@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { useTheme } from '../hooks/useTheme';
+import { useTheme } from './ThemeProvider';
 
 export default function ThemeToggle() {
   const { theme, cycleTheme } = useTheme();
