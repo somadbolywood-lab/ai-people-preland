@@ -50,6 +50,10 @@ html, body { height: 100%; }
         overflow-x: hidden;
     }
     
+    .hero {
+        text-align: unset;
+    }
+    
     .title {
         font-size: clamp(20px, 4.5vw, 32px);
         margin: 6px 0 4px;
@@ -176,6 +180,10 @@ html, body { height: 100%; }
         padding: 6px !important;
     }
     
+    .hero {
+        text-align: unset;
+    }
+    
     .title {
         font-size: clamp(20px, 4.2vw, 32px);
         margin: 6px 0 4px;
@@ -257,6 +265,10 @@ html, body { height: 100%; }
 @media (max-width: 480px) and (orientation: portrait) {
     .container {
         padding: 4px !important;
+    }
+    
+    .hero {
+        text-align: unset;
     }
     
     .title {
@@ -347,6 +359,10 @@ html, body { height: 100%; }
         padding: 4px !important;
     }
     
+    .hero {
+        text-align: unset;
+    }
+    
     .title {
         font-size: clamp(18px, 4vw, 30px);
         margin: 4px 0 2px;
@@ -428,6 +444,10 @@ html, body { height: 100%; }
 @media (max-width: 375px) and (orientation: portrait) {
     .container {
         padding: 2px !important;
+    }
+    
+    .hero {
+        text-align: unset;
     }
     
     .title {
