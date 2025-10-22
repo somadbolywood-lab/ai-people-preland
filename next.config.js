@@ -31,15 +31,17 @@ const nextConfig = {
     // instrumentationHook removed - no longer needed in Next.js 15
   },
   
-  // Simplified webpack configuration for Vercel compatibility
+  // Minimal webpack configuration for Vercel compatibility
   webpack: (config, { isServer }) => {
-    // Ignore problematic modules
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false,
-      net: false,
-      tls: false,
-    };
+    // Only add fallbacks if needed
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      };
+    }
     
     return config;
   },
