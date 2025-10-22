@@ -3,15 +3,14 @@
 // Автоочистка кэша и управление ресурсами
 // ========================================
 
-const CACHE_NAME = 'ai-people-v1.0.0';
-const STATIC_CACHE = 'ai-people-static-v1.0.0';
-const DYNAMIC_CACHE = 'ai-people-dynamic-v1.0.0';
+const CACHE_NAME = 'ai-people-v1.0.1';
+const STATIC_CACHE = 'ai-people-static-v1.0.1';
+const DYNAMIC_CACHE = 'ai-people-dynamic-v1.0.1';
 
 // Ресурсы для кэширования
 const STATIC_ASSETS = [
   '/',
   '/globals.css',
-  '/scripts/theme.js',
   '/scripts/main-init.js',
   '/scripts/polyfills.js',
   '/scripts/ui-components.js',

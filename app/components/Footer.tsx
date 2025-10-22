@@ -1,8 +1,6 @@
 "use client";
 
-import dynamic from 'next/dynamic';
-
-const FooterContent = dynamic(() => Promise.resolve(function FooterContent() {
+function FooterContent() {
   return (
     <footer className="foot">
       <div className="foot-social">
@@ -50,7 +48,7 @@ const FooterContent = dynamic(() => Promise.resolve(function FooterContent() {
       <span>© 2025 <span className="gradient-text">AI-People</span></span>
     </footer>
   );
-}), { ssr: false });
+}
 
 export default function Footer() {
   return <FooterContent />;

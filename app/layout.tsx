@@ -69,8 +69,11 @@ export const viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover" />
+          <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover" />
+            <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+            <meta httpEquiv="Pragma" content="no-cache" />
+            <meta httpEquiv="Expires" content="0" />
         
         {/* Critical CSS - prevents FOUC */}
         <style dangerouslySetInnerHTML={{
@@ -138,53 +141,64 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="prefetch" href="/about" />
         <link rel="prefetch" href="/auth/role" />
         
-        {/* Optimized theme initialization - prevents FOUC */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  // 1. Check localStorage first (user preference)
-                  var theme = localStorage.getItem('theme') || 'system';
-                  
-                  // 2. Determine effective theme
-                  var effectiveTheme;
-                  if (theme === 'system') {
-                    effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  } else {
-                    effectiveTheme = theme;
-                  }
-                  
-                  // 3. Apply theme immediately to prevent flash
-                  var html = document.documentElement;
-                  var body = document.body;
-                  
-                  if (effectiveTheme === 'light') {
-                    html.classList.add('light');
-                    body.classList.add('light');
-                    html.setAttribute('data-theme', 'light');
-                    body.setAttribute('data-theme', 'light');
-                  } else {
-                    html.classList.remove('light');
-                    body.classList.remove('light');
-                    html.setAttribute('data-theme', 'dark');
-                    body.setAttribute('data-theme', 'dark');
-                  }
-                  
-                  // 4. Set initial state for React hydration
-                  window.__INITIAL_THEME__ = theme;
-                  window.__INITIAL_RESOLVED_THEME__ = effectiveTheme;
-                  
-                } catch (e) {
-                  // Fallback: apply dark theme (default)
-                  console.warn('Theme initialization failed:', e);
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                  document.body.setAttribute('data-theme', 'dark');
-                }
-              })();
-            `
-          }}
-        />
+            {/* Optimized theme initialization - prevents FOUC */}
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function() {
+                    try {
+                      // 1. Clear old cache versions to prevent FOUC
+                      if ('serviceWorker' in navigator) {
+                        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                          for (let registration of registrations) {
+                            if (registration.scope.includes('ai-people')) {
+                              registration.update();
+                            }
+                          }
+                        });
+                      }
+                      
+                      // 2. Check localStorage first (user preference)
+                      var theme = localStorage.getItem('theme') || 'system';
+                      
+                      // 3. Determine effective theme
+                      var effectiveTheme;
+                      if (theme === 'system') {
+                        effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                      } else {
+                        effectiveTheme = theme;
+                      }
+                      
+                      // 4. Apply theme immediately to prevent flash
+                      var html = document.documentElement;
+                      var body = document.body;
+                      
+                      if (effectiveTheme === 'light') {
+                        html.classList.add('light');
+                        body.classList.add('light');
+                        html.setAttribute('data-theme', 'light');
+                        body.setAttribute('data-theme', 'light');
+                      } else {
+                        html.classList.remove('light');
+                        body.classList.remove('light');
+                        html.setAttribute('data-theme', 'dark');
+                        body.setAttribute('data-theme', 'dark');
+                      }
+                      
+                      // 5. Set initial state for React hydration
+                      window.__INITIAL_THEME__ = theme;
+                      window.__INITIAL_RESOLVED_THEME__ = effectiveTheme;
+                      
+                    } catch (e) {
+                      // Fallback: apply dark theme (default)
+                      console.warn('Theme initialization failed:', e);
+                      document.documentElement.setAttribute('data-theme', 'dark');
+                      document.body.setAttribute('data-theme', 'dark');
+                    }
+                  })();
+                `
+              }}
+            />
         
         <script
           type="application/ld+json"

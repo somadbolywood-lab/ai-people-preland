@@ -165,6 +165,18 @@ function forceUpdate() {
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
+  // Принудительная очистка старого кэша для предотвращения FOUC
+  if ('caches' in window) {
+    caches.keys().then(cacheNames => {
+      cacheNames.forEach(cacheName => {
+        if (cacheName.includes('v1.0.0')) {
+          console.log('[SW] Clearing old cache:', cacheName);
+          caches.delete(cacheName);
+        }
+      });
+    });
+  }
+  
   registerServiceWorker();
   
   // Проверяем обновления каждые 30 минут
