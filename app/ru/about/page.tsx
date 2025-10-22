@@ -79,7 +79,7 @@ export default function Page() {
         {/* Hero (About RU) — после маркви */}
         <section className="hero">
           <h1 className="unified-h1"><span className="gradient-text" data-lang-en="About" data-lang-ru="О нас">О нас</span></h1>
-          <h2 className="hero-subtitle" data-lang-en="AI-People — First AI Marketplace Launching Dec 2025" data-lang-ru="AI-People — Первый AI-маркетплейс запуск дек 2025">AI-People — Первый AI-маркетплейс запуск дек 2025</h2>
+          <h2 className="hero-subtitle" data-lang-en="World's First AI Influencer Marketplace: Empowering Creators and Brands with Hyperrealistic Models" data-lang-ru="Первый маркетплейс AI-инфлюенсеров: вдохновляем креаторов и бренды гиперреалистичными моделями">Первый маркетплейс AI-инфлюенсеров: вдохновляем креаторов и бренды гиперреалистичными моделями</h2>
           <h3 className="hero-description" data-lang-en="We build the first curated marketplace for hyperrealistic AI models and virtual influencers to help businesses get premium visuals and empower creators to monetize their art." data-lang-ru="Мы создаём первый курируемый маркетплейс гиперреалистичных AI‑моделей и виртуальных инфлюенсеров, чтобы бизнес получал премиальные визуалы, а креаторы монетизировали творчество.">Мы создаём первый курируемый маркетплейс гиперреалистичных AI‑моделей и виртуальных инфлюенсеров, чтобы бизнес получал премиальные визуалы, а креаторы монетизировали творчество.</h3>
         </section>
 
