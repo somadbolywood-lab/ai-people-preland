@@ -26,7 +26,7 @@ export default function TermsOfServicePage() {
     <>
       <Head>
         <title>Terms of Service — AI-PEOPLE.IO</title>
-        <meta name="description" content="AI-PEOPLE.IO Terms of Service. Rules for creators and clients, eligibility, IP, conduct, membership, disclaimers and contacts." />
+        <meta name="description" content="AI-PEOPLE.IO Terms of Service. Rules for creators and clients, eligibility, IP, conduct, membership, disclaimers and contacts" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ai-people.io/legal/terms" />
         <link rel="alternate" href="https://ai-people.io/legal/terms" hrefLang="en" />
@@ -34,13 +34,13 @@ export default function TermsOfServicePage() {
         <meta property="og:locale" content="en_US" />
         <meta property="og:locale:alternate" content="ru_RU" />
         <meta property="og:title" content="Terms of Service — AI-PEOPLE.IO" />
-        <meta property="og:description" content="Terms governing the use of AI-PEOPLE.IO marketplace." />
+        <meta property="og:description" content="Terms governing the use of AI-PEOPLE.IO marketplace" />
         <meta property="og:url" content="https://ai-people.io/legal/terms" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://ai-people.io/assets/models/model-02.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Terms of Service — AI-PEOPLE.IO" />
-        <meta name="twitter:description" content="Terms governing the use of AI-PEOPLE.IO marketplace." />
+        <meta name="twitter:description" content="Terms governing the use of AI-PEOPLE.IO marketplace" />
         <meta name="twitter:image" content="https://ai-people.io/assets/models/model-02.png" />
         <script
           type="application/ld+json"

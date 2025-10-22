@@ -38,17 +38,17 @@ export default function Page() {
     <div className="container home-page">
       <Head>
         <title>О нас | AI-People — Первый маркетплейс AI-моделей запуск дек 2025</title>
-        <meta name="description" content="О AI-People — первом маркетплейсе AI-моделей запуск декабрь 2025. Ранний доступ уже доступен с эксклюзивными привилегиями и возможностями для креаторов." />
+        <meta name="description" content="О AI-People — первом маркетплейсе AI-моделей запуск декабрь 2025. Ранний доступ уже доступен с эксклюзивными привилегиями и возможностями для креаторов" />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
         <link rel="canonical" href="https://ai-people.io/ru/about" />
         <meta property="og:title" content="О нас — AI-People" />
-        <meta property="og:description" content="Первый курируемый маркетплейс гиперреалистичных AI-моделей и виртуальных инфлюенсеров." />
+        <meta property="og:description" content="Первый курируемый маркетплейс гиперреалистичных AI-моделей и виртуальных инфлюенсеров" />
         <meta property="og:url" content="https://ai-people.io/ru/about" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://ai-people.io/faq/AI-people%20Logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="О нас — AI-People" />
-        <meta name="twitter:description" content="Первый курируемый маркетплейс гиперреалистичных AI-моделей и виртуальных инфлюенсеров." />
+        <meta name="twitter:description" content="Первый курируемый маркетплейс гиперреалистичных AI-моделей и виртуальных инфлюенсеров" />
         <meta name="twitter:image" content="https://ai-people.io/faq/AI-people%20Logo.png" />
         <HreflangLinks currentPath="/ru/about" locale="ru" />
       </Head>

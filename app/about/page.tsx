@@ -54,15 +54,15 @@ export default function Page() {
     <div className="container home-page">
       <Head>
         <title>About AI-People | First AI Models Marketplace Launching Dec 2025</title>
-        <meta name="description" content="About AI-People — the first curated marketplace launching December 2025. Early access available now for exclusive privileges and creator opportunities." />
+        <meta name="description" content="About AI-People — the first curated marketplace launching December 2025. Early access available now for exclusive privileges and creator opportunities" />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
         <link rel="canonical" href="https://ai-people.io/about" />
         <meta property="og:title" content="About AI-People" />
-        <meta property="og:description" content="The first curated marketplace for hyperrealistic AI models and virtual influencers." />
+        <meta property="og:description" content="The first curated marketplace for hyperrealistic AI models and virtual influencers" />
         <meta property="og:url" content="https://ai-people.io/about" />
         <meta property="og:type" content="website" />
         <meta name="twitter:title" content="About AI-People" />
-        <meta name="twitter:description" content="The first curated marketplace for hyperrealistic AI models and virtual influencers." />
+        <meta name="twitter:description" content="The first curated marketplace for hyperrealistic AI models and virtual influencers" />
       </Head>
       <HeaderWithMenu homeHref="/" />
 

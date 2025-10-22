@@ -19,12 +19,12 @@ export default function ContentPolicyRuPage() {
     <>
       <Head>
         <title>Политика контента и 18+ — AI-PEOPLE.IO</title>
-        <meta name="description" content="Правила контента на AI-PEOPLE.IO, включая AI‑генерацию и разделы 18+. Этичность, законность, модерация и доступ 18+." />
+        <meta name="description" content="Правила контента на AI-PEOPLE.IO, включая AI‑генерацию и разделы 18+. Этичность, законность, модерация и доступ 18+" />
         <link rel="canonical" href="https://ai-people.io/ru/legal/content-policy" />
         <link rel="alternate" href="https://ai-people.io/legal/content-policy" hrefLang="en" />
         <link rel="alternate" href="https://ai-people.io/ru/legal/content-policy" hrefLang="ru" />
         <meta property="og:title" content="Политика контента и 18+ — AI-PEOPLE.IO" />
-        <meta property="og:description" content="Стандарты контента, маркировка AI‑контента, модерация и возрастной доступ." />
+        <meta property="og:description" content="Стандарты контента, маркировка AI‑контента, модерация и возрастной доступ" />
         <meta property="og:url" content="https://ai-people.io/ru/legal/content-policy" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://ai-people.io/assets/models/model-04.png" />

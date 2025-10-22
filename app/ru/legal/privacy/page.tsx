@@ -15,18 +15,18 @@ export default function PrivacyPolicyRuPage() {
     <>
       <Head>
         <title>Политика конфиденциальности — AI-PEOPLE.IO</title>
-        <meta name="description" content="Политика конфиденциальности AI-PEOPLE.IO. Какие данные собираем, как используем и защищаем. Контакт: support@ai-people.io." />
+        <meta name="description" content="Политика конфиденциальности AI-PEOPLE.IO. Какие данные собираем, как используем и защищаем. Контакт: support@ai-people.io" />
         <link rel="canonical" href="https://ai-people.io/ru/legal/privacy" />
         <link rel="alternate" href="https://ai-people.io/legal/privacy" hrefLang="en" />
         <link rel="alternate" href="https://ai-people.io/ru/legal/privacy" hrefLang="ru" />
         <meta property="og:title" content="Политика конфиденциальности — AI-PEOPLE.IO" />
-        <meta property="og:description" content="Какие данные собираем, как используем и защищаем. Обновлено: Октябрь 2025." />
+        <meta property="og:description" content="Какие данные собираем, как используем и защищаем. Обновлено: Октябрь 2025" />
         <meta property="og:url" content="https://ai-people.io/ru/legal/privacy" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://ai-people.io/assets/models/model-01.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Политика конфиденциальности — AI-PEOPLE.IO" />
-        <meta name="twitter:description" content="Политика конфиденциальности AI-PEOPLE.IO." />
+        <meta name="twitter:description" content="Политика конфиденциальности AI-PEOPLE.IO" />
         <meta name="twitter:image" content="https://ai-people.io/assets/models/model-01.png" />
         <script
           type="application/ld+json"

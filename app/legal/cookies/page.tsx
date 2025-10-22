@@ -13,19 +13,19 @@ export default function CookiePolicyPage() {
     <>
       <Head>
         <title>Cookie Policy — AI-PEOPLE.IO</title>
-        <meta name="description" content="Cookie Policy for AI-PEOPLE.IO: what cookies are, types we use (essential, analytics, functional, marketing), how to manage them, and contacts." />
+        <meta name="description" content="Cookie Policy for AI-PEOPLE.IO: what cookies are, types we use (essential, analytics, functional, marketing), how to manage them, and contacts" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ai-people.io/legal/cookies" />
         <link rel="alternate" href="https://ai-people.io/legal/cookies" hrefLang="en" />
         <link rel="alternate" href="https://ai-people.io/ru/legal/cookies" hrefLang="ru" />
         <meta property="og:title" content="Cookie Policy — AI-PEOPLE.IO" />
-        <meta property="og:description" content="How AI-PEOPLE.IO uses cookies and how you can manage them." />
+        <meta property="og:description" content="How AI-PEOPLE.IO uses cookies and how you can manage them" />
         <meta property="og:url" content="https://ai-people.io/legal/cookies" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://ai-people.io/assets/models/model-03.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Cookie Policy — AI-PEOPLE.IO" />
-        <meta name="twitter:description" content="Cookie types we use and management options." />
+        <meta name="twitter:description" content="Cookie types we use and management options" />
         <meta name="twitter:image" content="https://ai-people.io/assets/models/model-03.png" />
         <script
           type="application/ld+json"

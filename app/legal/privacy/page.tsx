@@ -26,20 +26,20 @@ export default function PrivacyPolicyPage() {
     <>
       <Head>
         <title>Privacy Policy — AI-PEOPLE.IO</title>
-        <meta name="description" content="AI-PEOPLE.IO Privacy Policy. Effective October 2025. How we collect, use, store and protect data. Contact: support@ai-people.io." />
+        <meta name="description" content="AI-PEOPLE.IO Privacy Policy. Effective October 2025. How we collect, use, store and protect data. Contact: support@ai-people.io" />
         <meta name="keywords" content="AI-People privacy, GDPR compliance, CCPA privacy policy, data protection AI marketplace, email privacy" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ai-people.io/legal/privacy" />
         <link rel="alternate" href="https://ai-people.io/legal/privacy" hrefLang="en" />
         <link rel="alternate" href="https://ai-people.io/ru/legal/privacy" hrefLang="ru" />
         <meta property="og:title" content="Privacy Policy — AI-PEOPLE.IO" />
-        <meta property="og:description" content="How AI-PEOPLE.IO collects, uses and protects your data. Effective October 2025." />
+        <meta property="og:description" content="How AI-PEOPLE.IO collects, uses and protects your data. Effective October 2025" />
         <meta property="og:url" content="https://ai-people.io/legal/privacy" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://ai-people.io/assets/models/model-01.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Privacy Policy — AI-PEOPLE.IO" />
-        <meta name="twitter:description" content="How AI-PEOPLE.IO collects, uses and protects your data." />
+        <meta name="twitter:description" content="How AI-PEOPLE.IO collects, uses and protects your data" />
         <meta name="twitter:image" content="https://ai-people.io/assets/models/model-01.png" />
         <script
           type="application/ld+json"

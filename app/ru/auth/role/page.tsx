@@ -15,7 +15,7 @@ export default function RoleSelectionPage() {
     <>
       <Head>
         <title>Присоединяйтесь к AI-People | Регистрация покупателя или креатора 2025</title>
-        <meta name="description" content="Присоединяйтесь к списку ожидания AI-People! Выберите Покупателя (доступ к 18+ AI-моделям, OnlyFans контенту) или Креатора (зарабатывайте 75%, без KYC до $10K). Запуск 1 декабря 2025. Получите VIP ранний доступ!" />
+        <meta name="description" content="Присоединяйтесь к списку ожидания AI-People! Выберите Покупателя (доступ к 18+ AI-моделям, OnlyFans контенту) или Креатора (зарабатывайте 75%, без KYC до $10K). Запуск 1 декабря 2025. Получите VIP ранний доступ" />
         <meta name="keywords" content="регистрация AI-People, присоединиться к списку ожидания, регистрация AI-креатора, регистрация покупателя, 75% комиссия, без KYC, предзапуск доступ" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ai-people.io/ru/auth/role" />

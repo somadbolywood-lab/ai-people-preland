@@ -15,12 +15,12 @@ export default function CookiePolicyRuPage() {
     <>
       <Head>
         <title>Политика файлов cookie — AI-PEOPLE.IO</title>
-        <meta name="description" content="Политика cookie AI-PEOPLE.IO: что такое cookie, виды (необходимые, аналитические, функциональные, маркетинговые), управление и контакты." />
+        <meta name="description" content="Политика cookie AI-PEOPLE.IO: что такое cookie, виды (необходимые, аналитические, функциональные, маркетинговые), управление и контакты" />
         <link rel="canonical" href="https://ai-people.io/ru/legal/cookies" />
         <link rel="alternate" href="https://ai-people.io/legal/cookies" hrefLang="en" />
         <link rel="alternate" href="https://ai-people.io/ru/legal/cookies" hrefLang="ru" />
         <meta property="og:title" content="Политика файлов cookie — AI-PEOPLE.IO" />
-        <meta property="og:description" content="Как AI-PEOPLE.IO использует cookie и как ими управлять." />
+        <meta property="og:description" content="Как AI-PEOPLE.IO использует cookie и как ими управлять" />
         <meta property="og:url" content="https://ai-people.io/ru/legal/cookies" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://ai-people.io/assets/models/model-03.png" />

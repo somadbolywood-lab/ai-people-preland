@@ -25,18 +25,18 @@ export default function ContentPolicyPage() {
     <>
       <Head>
         <title>Content & 18+ Policy — AI-PEOPLE.IO</title>
-        <meta name="description" content="Standards for content on AI-PEOPLE.IO, including AI-generated materials and 18+ guidelines. Effective Oct 2025." />
+        <meta name="description" content="Standards for content on AI-PEOPLE.IO, including AI-generated materials and 18+ guidelines. Effective Oct 2025" />
         <link rel="canonical" href="https://ai-people.io/legal/content-policy" />
         <link rel="alternate" href="https://ai-people.io/legal/content-policy" hrefLang="en" />
         <link rel="alternate" href="https://ai-people.io/ru/legal/content-policy" hrefLang="ru" />
         <meta property="og:title" content="Content & 18+ Policy — AI-PEOPLE.IO" />
-        <meta property="og:description" content="Content standards, AI-generated labeling, moderation and age-restricted access." />
+        <meta property="og:description" content="Content standards, AI-generated labeling, moderation and age-restricted access" />
         <meta property="og:url" content="https://ai-people.io/legal/content-policy" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://ai-people.io/assets/models/model-04.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Content & 18+ Policy — AI-PEOPLE.IO" />
-        <meta name="twitter:description" content="Content standards, AI-generated labeling, moderation and age-restricted access." />
+        <meta name="twitter:description" content="Content standards, AI-generated labeling, moderation and age-restricted access" />
         <meta name="twitter:image" content="https://ai-people.io/assets/models/model-04.png" />
         <script
           type="application/ld+json"

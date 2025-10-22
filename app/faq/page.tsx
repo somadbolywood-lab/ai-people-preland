@@ -112,7 +112,7 @@ export default function Page() {
         <section className="hero">
           <h1 className="title"><span className="gradient-text" data-lang-en="FAQ" data-lang-ru="FAQ">FAQ</span></h1>
           <h2 className="hero-subtitle" data-lang-en="Everything about the marketplace of already ready virtual AI models" data-lang-ru="Всё о маркетплейсе уже готовых виртуальных AI-моделей">Everything about the marketplace of already ready virtual AI models</h2>
-          <h3 className="hero-description" data-lang-en="How technology, creativity and monetization unite in one AI space. Create, own and earn from digital personas of the future using the power of AI." data-lang-ru="Как технологии, креатив и монетизация объединяются в одном AI-пространстве. Создавай, владей и зарабатывай на цифровых образах будущего, используя потенциал AI.">How technology, creativity and monetization unite in one AI space. Create, own and earn from digital personas of the future using the power of AI.</h3>
+          <h3 className="hero-description" data-lang-en="How technology, creativity and monetization unite in one AI space. Create, own and earn from digital personas of the future using the power of AI" data-lang-ru="Как технологии, креатив и монетизация объединяются в одном AI-пространстве. Создавай, владей и зарабатывай на цифровых образах будущего, используя потенциал AI">How technology, creativity and monetization unite in one AI space. Create, own and earn from digital personas of the future using the power of AI</h3>
         </section>
 
         {/* FAQ Question 1 */}

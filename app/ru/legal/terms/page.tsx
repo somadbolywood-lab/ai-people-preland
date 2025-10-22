@@ -15,14 +15,14 @@ export default function TermsRuPage() {
     <>
       <Head>
         <title>Пользовательское соглашение — AI-PEOPLE.IO</title>
-        <meta name="description" content="Пользовательское соглашение AI-PEOPLE.IO: условия использования, возраст, аккаунты, ИС, поведение, подписка, ответственность." />
+        <meta name="description" content="Пользовательское соглашение AI-PEOPLE.IO: условия использования, возраст, аккаунты, ИС, поведение, подписка, ответственность" />
         <link rel="canonical" href="https://ai-people.io/ru/legal/terms" />
         <link rel="alternate" href="https://ai-people.io/legal/terms" hrefLang="en" />
         <link rel="alternate" href="https://ai-people.io/ru/legal/terms" hrefLang="ru" />
         <meta property="og:locale" content="ru_RU" />
         <meta property="og:locale:alternate" content="en_US" />
         <meta property="og:title" content="Пользовательское соглашение — AI-PEOPLE.IO" />
-        <meta property="og:description" content="Основные условия использования маркетплейса AI-PEOPLE.IO." />
+        <meta property="og:description" content="Основные условия использования маркетплейса AI-PEOPLE.IO" />
         <meta property="og:url" content="https://ai-people.io/ru/legal/terms" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://ai-people.io/assets/models/model-02.png" />
