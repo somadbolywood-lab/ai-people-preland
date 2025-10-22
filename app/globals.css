@@ -75,7 +75,6 @@ html, body { height: 100%; }
     .blog-page .hero-subtitle,
     .all-blogs-page .hero-subtitle {
         font-size: clamp(24px, 5vw, 36px) !important;
-        text-align: center !important;
     }
     
     .subtitle {
@@ -199,7 +198,6 @@ html, body { height: 100%; }
     .blog-page .hero-subtitle,
     .all-blogs-page .hero-subtitle {
         font-size: clamp(22px, 5vw, 34px) !important;
-        text-align: center !important;
     }
     
     .subtitle {
@@ -283,7 +281,6 @@ html, body { height: 100%; }
     .blog-page .hero-subtitle,
     .all-blogs-page .hero-subtitle {
         font-size: clamp(20px, 4.5vw, 30px) !important;
-        text-align: center !important;
     }
     
     .subtitle {
@@ -372,7 +369,6 @@ html, body { height: 100%; }
     .blog-page .hero-subtitle,
     .all-blogs-page .hero-subtitle {
         font-size: clamp(21px, 4.5vw, 32px) !important;
-        text-align: center !important;
     }
     
     .subtitle {
@@ -456,7 +452,6 @@ html, body { height: 100%; }
     .blog-page .hero-subtitle,
     .all-blogs-page .hero-subtitle {
         font-size: clamp(18px, 4vw, 26px) !important;
-        text-align: center !important;
     }
     
     .subtitle {
