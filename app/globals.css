@@ -7556,7 +7556,7 @@ a.visible-link {
   }
   
   .marquee-track {
-    animation: marquee 96s linear infinite !important;
+    animation: marquee 30s linear infinite !important;
     gap: 1rem;
   }
 }
@@ -7572,6 +7572,7 @@ a.visible-link {
   }
   
   .marquee-track {
+    animation: marquee 30s linear infinite !important;
     gap: 0.75rem;
   }
   
@@ -7586,6 +7587,20 @@ a.visible-link {
   
   .marquee-container {
     padding-top: 10px; /* Меньше для мобильных устройств */
+  }
+}
+
+/* Desktop Blog Marquee Animation */
+@media (min-width: 860px) {
+  .marquee-track {
+    animation: marquee 25s linear infinite !important;
+  }
+}
+
+/* Tablet/Foldable Blog Marquee Animation */
+@media (min-width: 640px) and (max-width: 1024px) {
+  .marquee-track {
+    animation: marquee 35s linear infinite !important;
   }
 }
 
