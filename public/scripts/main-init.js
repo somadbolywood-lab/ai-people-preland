@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('[Main] Initializing application...');
     
     try {
-        // 1. Theme (highest priority - must run first)
-        if (typeof initThemeToggle === 'function') {
-            initThemeToggle();
-            console.log('[Main] ✅ Theme initialized');
-        }
+        // 1. Theme (disabled - now handled by React ThemeInitializer component)
+        // if (typeof initThemeToggle === 'function') {
+        //     initThemeToggle();
+        //     console.log('[Main] ✅ Theme initialized');
+        // }
         
         // 2. Language (disabled - now handled by React useLanguage hook)
         // if (typeof applySavedLanguage === 'function') {

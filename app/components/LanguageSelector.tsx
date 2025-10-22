@@ -8,17 +8,9 @@ export default function LanguageSelector() {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const router = useRouter();
   
-  // Local state for language management
-  const [currentLanguage, setCurrentLanguage] = useState<'en' | 'ru'>(() => {
-    if (typeof window === 'undefined') return 'en';
-    try {
-      const pathname = window.location?.pathname || '/';
-      if (pathname.startsWith('/ru')) return 'ru';
-      return 'en';
-    } catch {
-      return 'en';
-    }
-  });
+  // Local state for language management - avoid hydration mismatch
+  const [currentLanguage, setCurrentLanguage] = useState<'en' | 'ru'>('en');
+  const [isClient, setIsClient] = useState(false);
 
   // applyLanguageToDOM function removed - useLanguage handles DOM updates
 
@@ -59,6 +51,9 @@ export default function LanguageSelector() {
   };
 
   useEffect(() => {
+    // Set client flag to avoid hydration mismatch
+    setIsClient(true);
+    
     // Listen for language change events from useLanguage hook
     const handleLanguageChange = (event: CustomEvent) => {
       const newLang = event.detail?.language;
@@ -91,7 +86,7 @@ export default function LanguageSelector() {
 
   useEffect(() => {
     // Update button text and active state based on current language
-    if (buttonRef.current) {
+    if (isClient && buttonRef.current) {
       const textSpan = buttonRef.current.querySelector('.language-text');
       if (textSpan) {
         textSpan.textContent = currentLanguage.toUpperCase();
@@ -99,14 +94,16 @@ export default function LanguageSelector() {
     }
     
     // Update active state
-    const menuItems = menuRef.current?.querySelectorAll('.language-item');
-    menuItems?.forEach(item => {
-      item.classList.remove('active');
-      if (item.textContent === currentLanguage.toUpperCase()) {
-        item.classList.add('active');
-      }
-    });
-  }, [currentLanguage]);
+    if (isClient) {
+      const menuItems = menuRef.current?.querySelectorAll('.language-item');
+      menuItems?.forEach(item => {
+        item.classList.remove('active');
+        if (item.textContent === currentLanguage.toUpperCase()) {
+          item.classList.add('active');
+        }
+      });
+    }
+  }, [currentLanguage, isClient]);
 
   const toggleMenu = () => {
     if (menuRef.current) {
