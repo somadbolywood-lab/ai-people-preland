@@ -41,14 +41,33 @@ export function useHamburgerMenu() {
 
       hamburger.addEventListener('click', handleMenuToggle);
 
-      // Close menu when clicking outside
+      // Close menu when clicking outside or on menu links
       const handleClickOutside = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
+        
+        // Close menu if clicking outside
         if (!hamburger.contains(target) && !menuPanel.contains(target)) {
           menuPanel.classList.remove('open');
           hamburger.setAttribute('aria-expanded', 'false');
           menuPanel.setAttribute('aria-hidden', 'true');
           setIsOpen(false);
+        }
+        
+        // Close menu if clicking on a working menu link (not disabled)
+        if (menuPanel.contains(target)) {
+          const link = target.closest('a[role="menuitem"]') as HTMLAnchorElement;
+          if (link && !link.hasAttribute('aria-disabled')) {
+            // Allow navigation and close menu
+            menuPanel.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            menuPanel.setAttribute('aria-hidden', 'true');
+            setIsOpen(false);
+          } else if (link && link.hasAttribute('aria-disabled')) {
+            // Prevent navigation for disabled links
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('[Menu] Disabled link clicked, navigation prevented');
+          }
         }
       };
 

@@ -2542,7 +2542,8 @@ a.visible-link {
 }
 .menu-panel a[aria-disabled="true"] { 
     opacity: 0.5; 
-    pointer-events: none; 
+    cursor: not-allowed;
+    /* pointer-events: none; REMOVED to allow click handling */
 }
 
 /* Coming Soon label styles */

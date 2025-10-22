@@ -24,53 +24,14 @@ function initRoleSelection() {
     });
 }
 
-// Initialize mobile menu functionality
+// Initialize mobile menu functionality - DISABLED (handled by React useHamburgerMenu hook)
 let mobileMenuInitialized = false;
 
 function initMobileMenu() {
-    const hamburger = document.getElementById('hamburger');
-    const menuPanel = document.getElementById('menuPanel');
-    
-    if (!hamburger || !menuPanel) return;
-    
-    // Prevent multiple initializations on same elements
-    if (hamburger.hasAttribute('data-menu-initialized')) return;
-    hamburger.setAttribute('data-menu-initialized', 'true');
-    
-    function handleHamburgerClick(e) {
-        e.stopPropagation();
-        const isOpen = menuPanel.classList.contains('open');
-        
-        if (isOpen) {
-            menuPanel.classList.remove('open');
-            menuPanel.setAttribute('aria-hidden', 'true');
-            hamburger.setAttribute('aria-expanded', 'false');
-        } else {
-            menuPanel.classList.add('open');
-            menuPanel.setAttribute('aria-hidden', 'false');
-            hamburger.setAttribute('aria-expanded', 'true');
-        }
-    }
-    
-    function handleOutsideClick(event) {
-        if (!hamburger.contains(event.target) && !menuPanel.contains(event.target)) {
-            menuPanel.classList.remove('open');
-            menuPanel.setAttribute('aria-hidden', 'true');
-            hamburger.setAttribute('aria-expanded', 'false');
-        }
-    }
-    
-    function handleEscapeKey(event) {
-        if (event.key === 'Escape' && menuPanel.classList.contains('open')) {
-            menuPanel.classList.remove('open');
-            menuPanel.setAttribute('aria-hidden', 'true');
-            hamburger.setAttribute('aria-expanded', 'false');
-        }
-    }
-    
-    hamburger.addEventListener('click', handleHamburgerClick);
-    document.addEventListener('click', handleOutsideClick);
-    document.addEventListener('keydown', handleEscapeKey);
+    // DISABLED: Mobile menu is now handled by React useHamburgerMenu hook
+    // This prevents conflicts between React and vanilla JS event handlers
+    console.log('[UI Components] Mobile menu initialization disabled - handled by React hook');
+    return;
 }
 
 // Initialize presentation button functionality
