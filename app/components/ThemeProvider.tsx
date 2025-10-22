@@ -127,7 +127,7 @@ export function ThemeProvider({ children, initialTheme = 'system' }: ThemeProvid
     
     setThemeState(currentTheme);
     
-    // Apply theme immediately
+    // Apply theme immediately - sync with inline script
     let effectiveTheme: ResolvedTheme = 'dark';
     if (typeof window !== 'undefined' && window.__INITIAL_RESOLVED_THEME__) {
       effectiveTheme = window.__INITIAL_RESOLVED_THEME__;
@@ -137,9 +137,11 @@ export function ThemeProvider({ children, initialTheme = 'system' }: ThemeProvid
         : currentTheme;
     }
     
-    applyTheme(effectiveTheme, true);
+    // Don't apply theme if it's already applied by inline script
+    // Just sync the state
+    setResolvedTheme(effectiveTheme);
     setIsInitialized(true);
-  }, [applyTheme, initialTheme]);
+  }, [initialTheme]);
 
   // Отслеживание изменений системной темы
   useEffect(() => {

@@ -78,6 +78,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Critical CSS - prevents FOUC */}
         <style dangerouslySetInnerHTML={{
           __html: `
+            /* Force dark theme by default to prevent white flash */
+            html, body {
+              background-color: #0b0b0c !important;
+              color: #f5f5f7 !important;
+              transition: none !important;
+            }
+            
             :root { 
               --bg: #0b0b0c; 
               --text: #f5f5f7; 
@@ -95,7 +102,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               --border: #232329;
               --shadow: 0 10px 30px rgba(0,0,0,0.35);
             }
-            .light { 
+            
+            .light, html.light, body.light { 
               --bg: #ffffff; 
               --text: #0a0a0b; 
               --bg-primary: #ffffff;
@@ -111,6 +119,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               --danger: #e11d48;
               --border: #e5e7eb;
               --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            }
+            
+            .light, html.light, body.light {
+              background-color: #ffffff !important;
+              color: #0a0a0b !important;
             }
           `
         }} />
@@ -169,20 +182,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         effectiveTheme = theme;
                       }
                       
-                      // 4. Apply theme immediately to prevent flash
+                      // 4. Apply theme immediately to prevent flash - CRITICAL
                       var html = document.documentElement;
                       var body = document.body;
+                      
+                      // Remove any existing theme classes first
+                      html.classList.remove('light');
+                      body.classList.remove('light');
                       
                       if (effectiveTheme === 'light') {
                         html.classList.add('light');
                         body.classList.add('light');
                         html.setAttribute('data-theme', 'light');
                         body.setAttribute('data-theme', 'light');
+                        // Force light theme styles immediately
+                        html.style.backgroundColor = '#ffffff';
+                        body.style.backgroundColor = '#ffffff';
+                        html.style.color = '#0a0a0b';
+                        body.style.color = '#0a0a0b';
                       } else {
-                        html.classList.remove('light');
-                        body.classList.remove('light');
                         html.setAttribute('data-theme', 'dark');
                         body.setAttribute('data-theme', 'dark');
+                        // Force dark theme styles immediately
+                        html.style.backgroundColor = '#0b0b0c';
+                        body.style.backgroundColor = '#0b0b0c';
+                        html.style.color = '#f5f5f7';
+                        body.style.color = '#f5f5f7';
                       }
                       
                       // 5. Set initial state for React hydration
@@ -194,6 +219,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       console.warn('Theme initialization failed:', e);
                       document.documentElement.setAttribute('data-theme', 'dark');
                       document.body.setAttribute('data-theme', 'dark');
+                      document.documentElement.style.backgroundColor = '#0b0b0c';
+                      document.body.style.backgroundColor = '#0b0b0c';
+                      document.documentElement.style.color = '#f5f5f7';
+                      document.body.style.color = '#f5f5f7';
                     }
                   })();
                 `

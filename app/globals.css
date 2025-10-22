@@ -17,6 +17,13 @@
     --shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
+/* Force dark theme by default to prevent white flash */
+html, body {
+    background-color: #0b0b0c !important;
+    color: #f5f5f7 !important;
+    transition: none !important;
+}
+
 /* Media queries removed - theme is now controlled by JavaScript classes */
 .light,
 html.light,
@@ -37,17 +44,25 @@ body.light {
     --border: #e5e7eb;
     --shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
+
+.light,
+html.light,
+body.light {
+    background-color: #ffffff !important;
+    color: #0a0a0b !important;
+}
+
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 
-/* Smooth theme transitions */
+/* Smooth theme transitions - only after initialization */
 .theme-transition * {
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-/* Prevent flash during theme changes */
+/* Prevent flash during theme changes - disabled by default */
 html, body {
-  transition: background-color 0.15s ease;
+  transition: none;
 }
 
 /* Mobile-first optimizations */
