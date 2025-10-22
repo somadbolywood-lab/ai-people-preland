@@ -125,6 +125,20 @@ if (typeof document !== 'undefined') {
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', forceThemeInit);
     }
+    
+    // Fallback for very slow connections - re-apply theme after a delay
+    setTimeout(function() {
+        // Only re-apply if no theme classes are present (fallback protection)
+        if (!document.body.classList.contains('light') && !document.documentElement.classList.contains('light')) {
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (!prefersDark) {
+                document.documentElement.classList.add('light');
+                document.body.classList.add('light');
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.body.setAttribute('data-theme', 'light');
+            }
+        }
+    }, 100);
 }
 
 // Export functions

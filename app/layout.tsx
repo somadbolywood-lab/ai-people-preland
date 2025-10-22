@@ -97,6 +97,47 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="prefetch" href="/faq" />
         <link rel="prefetch" href="/about" />
         <link rel="prefetch" href="/auth/role" />
+        
+        {/* Critical theme initialization - prevents white flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  // 1. Check localStorage first (user preference)
+                  var theme = localStorage.getItem('theme');
+                  
+                  // 2. If no saved preference, detect system theme
+                  if (!theme) {
+                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    theme = prefersDark ? 'dark' : 'light';
+                  }
+                  
+                  // 3. Apply theme immediately to prevent flash
+                  if (theme === 'light') {
+                    document.documentElement.classList.add('light');
+                    document.body.classList.add('light');
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    document.body.setAttribute('data-theme', 'light');
+                  } else {
+                    document.documentElement.classList.remove('light');
+                    document.body.classList.remove('light');
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    document.body.setAttribute('data-theme', 'dark');
+                  }
+                } catch (e) {
+                  // Fallback: apply system theme via CSS media query
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (!prefersDark) {
+                    document.documentElement.classList.add('light');
+                    document.body.classList.add('light');
+                  }
+                }
+              })();
+            `
+          }}
+        />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -264,9 +305,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <ErrorBoundary>
         {children}
       </ErrorBoundary>
-      {/* Optimized modular script loading */}
-      <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
+      {/* Optimized modular script loading - theme.js loads first */}
       <Script src="/scripts/theme.js" strategy="beforeInteractive" />
+      <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
       <Script src="/scripts/async-loader.js" strategy="afterInteractive" />
       <Script src="/scripts/critical-path-optimization.js" strategy="afterInteractive" />
       <Script src="/scripts/web-vitals.js" strategy="afterInteractive" />
