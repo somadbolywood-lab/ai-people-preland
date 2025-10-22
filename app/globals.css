@@ -3069,13 +3069,23 @@ a.visible-link {
     }
     .marquee-item { width: 320px; height: 180px; }
     .marquee .marquee-track { animation: slide 96s linear infinite !important; }
+    .marquee:hover .marquee-track { animation-play-state: paused !important; }
     .marquee-item img {
+        /* Enhanced image quality for desktop */
         image-rendering: -webkit-optimize-contrast;
-        image-rendering: auto;
+        image-rendering: crisp-edges;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        /* Additional quality enhancements */
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        will-change: transform;
+        /* Better scaling for high-DPI displays */
+        image-rendering: -moz-crisp-edges;
+        /* Fallback to high quality */
+        image-rendering: auto;
     }
     
     .feedback-btn {
