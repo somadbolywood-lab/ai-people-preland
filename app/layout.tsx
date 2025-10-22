@@ -70,6 +70,45 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover" />
         
+        {/* Critical CSS - prevents FOUC */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            :root { 
+              --bg: #0b0b0c; 
+              --text: #f5f5f7; 
+              --bg-primary: #0b0b0c;
+              --bg-secondary: #111114;
+              --bg-hover: #1a1a1f;
+              --panel: #111114;
+              --text-primary: #f5f5f7;
+              --text-secondary: #b5b7bd;
+              --subtext: #b5b7bd;
+              --muted: #1a1a1f;
+              --accent: #8b5cf6;
+              --accent-2: #ec4899;
+              --danger: #f43f5e;
+              --border: #232329;
+              --shadow: 0 10px 30px rgba(0,0,0,0.35);
+            }
+            .light { 
+              --bg: #ffffff; 
+              --text: #0a0a0b; 
+              --bg-primary: #ffffff;
+              --bg-secondary: #f7f7f8;
+              --bg-hover: #efeff1;
+              --panel: #f7f7f8;
+              --text-primary: #0a0a0b;
+              --text-secondary: #52525b;
+              --subtext: #52525b;
+              --muted: #efeff1;
+              --accent: #7c3aed;
+              --accent-2: #db2777;
+              --danger: #e11d48;
+              --border: #e5e7eb;
+              --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            }
+          `
+        }} />
         
         <HreflangLinks currentPath="/" locale="en" />
         {/* Resource Hints - Critical Performance Optimization */}
@@ -105,33 +144,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               (function() {
                 try {
                   // 1. Check localStorage first (user preference)
-                  var theme = localStorage.getItem('theme');
+                  var theme = localStorage.getItem('theme') || 'system';
+                  var effectiveTheme;
                   
-                  // 2. If no saved preference, detect system theme
-                  if (!theme) {
-                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    theme = prefersDark ? 'dark' : 'light';
+                  // 2. Determine effective theme
+                  if (theme === 'system') {
+                    effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  } else {
+                    effectiveTheme = theme;
                   }
                   
                   // 3. Apply theme immediately to prevent flash
-                  if (theme === 'light') {
+                  if (effectiveTheme === 'light') {
                     document.documentElement.classList.add('light');
                     document.body.classList.add('light');
-                    document.documentElement.setAttribute('data-theme', 'light');
-                    document.body.setAttribute('data-theme', 'light');
                   } else {
                     document.documentElement.classList.remove('light');
                     document.body.classList.remove('light');
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    document.body.setAttribute('data-theme', 'dark');
                   }
+                  
+                  // 4. Set data attributes
+                  document.documentElement.setAttribute('data-theme', effectiveTheme);
+                  document.body.setAttribute('data-theme', effectiveTheme);
                 } catch (e) {
-                  // Fallback: apply system theme via CSS media query
-                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (!prefersDark) {
-                    document.documentElement.classList.add('light');
-                    document.body.classList.add('light');
-                  }
+                  // Fallback: apply dark theme
+                  console.warn('Theme initialization failed:', e);
                 }
               })();
             `
@@ -308,6 +345,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {/* Optimized modular script loading - theme.js loads first */}
       <Script src="/scripts/theme.js" strategy="beforeInteractive" />
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
+      <Script src="/scripts/sw-register.js" strategy="afterInteractive" />
       <Script src="/scripts/async-loader.js" strategy="afterInteractive" />
       <Script src="/scripts/critical-path-optimization.js" strategy="afterInteractive" />
       <Script src="/scripts/web-vitals.js" strategy="afterInteractive" />

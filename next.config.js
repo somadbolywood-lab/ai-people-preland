@@ -3,7 +3,7 @@ const nextConfig = {
   // Dynamic site - no static export needed
   trailingSlash: true,
   
-  // Image optimization
+  // Image optimization with cache busting
   images: {
     unoptimized: false, // Enable optimization for Vercel
     qualities: [25, 50, 75, 100], // Configure quality values
@@ -16,18 +16,29 @@ const nextConfig = {
       },
     ],
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 0, // Disable aggressive caching for development
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   
   // Enable compression
   compress: true,
   
-  // HTTP/2 Server Push Headers for Critical Resources
+  // HTTP/2 Server Push Headers for Critical Resources with Cache Busting
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
+          // Cache busting headers
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate'
+          },
+          {
+            key: 'ETag',
+            value: `"${Date.now()}"`
+          },
           // Critical JavaScript
           {
             key: 'Link', 
@@ -58,6 +69,33 @@ const nextConfig = {
           {
             key: 'Link',
             value: '<https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap>; rel=preload; as=style'
+          }
+        ]
+      },
+      // Static assets cache busting
+      {
+        source: '/scripts/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate'
+          },
+          {
+            key: 'ETag',
+            value: `"${Date.now()}"`
+          }
+        ]
+      },
+      {
+        source: '/assets/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate'
+          },
+          {
+            key: 'ETag',
+            value: `"${Date.now()}"`
           }
         ]
       },
