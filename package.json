@@ -1,0 +1,15 @@
+{
+  "name": "ai-people-preland",
+  "version": "1.0.0",
+  "description": "AI-People Prelanding Page",
+  "private": true,
+  "scripts": {
+    "build": "cd aipeople-next && npm run build",
+    "dev": "cd aipeople-next && npm run dev",
+    "start": "cd aipeople-next && npm run start",
+    "install": "cd aipeople-next && npm install"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
