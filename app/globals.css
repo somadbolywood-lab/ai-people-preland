@@ -17,6 +17,7 @@
     --shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
+/* Media queries removed - theme is now controlled by JavaScript classes */
 .light,
 html.light,
 body.light {

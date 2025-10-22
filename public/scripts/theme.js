@@ -1,6 +1,6 @@
 // ========================================
 // THEME MODULE - SIMPLIFIED FALLBACK
-// Управление темой для страниц без React
+// Основная логика теперь в React useTheme hook
 // ========================================
 
 // Fallback theme initialization (only for non-React pages)
@@ -8,6 +8,11 @@ function forceThemeInit() {
     if (typeof window === 'undefined') return;
     
     try {
+        // Check if React components are handling theme
+        if (document.querySelector('[data-react-root]')) {
+            return; // Let React handle it
+        }
+        
         const theme = localStorage.getItem('theme') || 'system';
         let effectiveTheme;
         
@@ -37,58 +42,22 @@ function forceThemeInit() {
     }
 }
 
-// Initialize system theme listener for fallback
-function initSystemThemeListener() {
-    if (typeof window === 'undefined') return;
-    
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    const handleChange = (e) => {
-        const currentTheme = localStorage.getItem('theme');
-        
-        // Only react if theme is 'system' or not set
-        if (currentTheme === 'system' || !currentTheme) {
-            const newTheme = e.matches ? 'dark' : 'light';
-            const body = document.body;
-            const html = document.documentElement;
-            
-            if (newTheme === 'light') {
-                body.classList.add('light');
-                html.classList.add('light');
-            } else {
-                body.classList.remove('light');
-                html.classList.remove('light');
-            }
-            
-            body.setAttribute('data-theme', newTheme);
-            html.setAttribute('data-theme', newTheme);
-            
-            console.log('[Theme] System theme changed to:', newTheme);
-        }
-    };
-    
-    mediaQuery.addEventListener('change', handleChange);
-    console.log('[Theme] System theme listener initialized');
-}
-
 // Call only if React components are not available
-if (typeof window !== 'undefined') {
-    // Check if React is available
-    const hasReact = document.querySelector('[data-react-root]') || 
-                    document.querySelector('#__next') ||
-                    window.React;
-    
-    if (!hasReact) {
-        // Initialize fallback theme system
-        forceThemeInit();
-        initSystemThemeListener();
-        console.log('[Theme] Fallback theme system initialized');
+if (typeof document !== 'undefined') {
+    // Check if we need fallback initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Small delay to let React components initialize
+            setTimeout(forceThemeInit, 50);
+        });
     } else {
-        console.log('[Theme] React detected, skipping fallback initialization');
+        setTimeout(forceThemeInit, 50);
     }
 }
 
 // Export for manual use
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { forceThemeInit, initSystemThemeListener };
+    module.exports = { forceThemeInit };
 }
+
+

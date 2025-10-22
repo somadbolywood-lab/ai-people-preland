@@ -222,3 +222,5 @@ async function clearOldCaches() {
 }
 
 console.log('[SW] Service Worker script loaded');
+
+

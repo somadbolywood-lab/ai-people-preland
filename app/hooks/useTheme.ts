@@ -54,13 +54,13 @@ export function useTheme(): UseThemeReturn {
     
     if (typeof window !== 'undefined') {
       localStorage.setItem('theme', newTheme);
+      
+      const effectiveTheme = newTheme === 'system' 
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : newTheme;
+      
+      applyTheme(effectiveTheme);
     }
-    
-    const effectiveTheme = newTheme === 'system' 
-      ? (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-      : newTheme;
-    
-    applyTheme(effectiveTheme);
   }, [applyTheme]);
 
   // Циклическое переключение: system -> light -> dark -> system
@@ -76,7 +76,9 @@ export function useTheme(): UseThemeReturn {
     
     // Получить сохраненную тему
     const savedTheme = localStorage.getItem('theme') as Theme;
-    const initialTheme = savedTheme || 'system';
+    const initialTheme = (savedTheme === 'light' || savedTheme === 'dark' || savedTheme === 'system') 
+      ? savedTheme 
+      : 'system';
     
     setThemeState(initialTheme);
     
@@ -110,3 +112,5 @@ export function useTheme(): UseThemeReturn {
     cycleTheme
   };
 }
+
+

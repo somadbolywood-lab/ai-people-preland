@@ -145,9 +145,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 try {
                   // 1. Check localStorage first (user preference)
                   var theme = localStorage.getItem('theme') || 'system';
-                  var effectiveTheme;
                   
                   // 2. Determine effective theme
+                  var effectiveTheme;
                   if (theme === 'system') {
                     effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                   } else {
@@ -158,16 +158,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   if (effectiveTheme === 'light') {
                     document.documentElement.classList.add('light');
                     document.body.classList.add('light');
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    document.body.setAttribute('data-theme', 'light');
                   } else {
                     document.documentElement.classList.remove('light');
                     document.body.classList.remove('light');
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    document.body.setAttribute('data-theme', 'dark');
                   }
-                  
-                  // 4. Set data attributes
-                  document.documentElement.setAttribute('data-theme', effectiveTheme);
-                  document.body.setAttribute('data-theme', effectiveTheme);
                 } catch (e) {
-                  // Fallback: apply dark theme
+                  // Fallback: apply dark theme (default)
                   console.warn('Theme initialization failed:', e);
                 }
               })();

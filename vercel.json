@@ -1,15 +1,6 @@
 {
-<<<<<<< HEAD
   "functions": {
     "app/api/**/*.ts": {
-=======
-  "buildCommand": "cd aipeople-next && npm run build",
-  "outputDirectory": "aipeople-next/.next",
-  "installCommand": "cd aipeople-next && npm install",
-  "devCommand": "cd aipeople-next && npm run dev",
-  "functions": {
-    "aipeople-next/app/api/**/*.ts": {
->>>>>>> e3b7ad948d440df3717ba48de149839425076017
       "maxDuration": 30
     }
   },

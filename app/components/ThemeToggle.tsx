@@ -39,12 +39,23 @@ export default function ThemeToggle() {
     }
   };
 
+  const getAriaLabel = () => {
+    switch (theme) {
+      case 'system':
+        return 'Current theme: System. Click to cycle themes.';
+      case 'light':
+        return 'Current theme: Light. Click to cycle themes.';
+      case 'dark':
+        return 'Current theme: Dark. Click to cycle themes.';
+    }
+  };
+
   return (
     <button 
       className="theme-toggle" 
       onClick={cycleTheme}
-      aria-label={`Current theme: ${theme}. Click to cycle themes.`}
-      title={`Current theme: ${theme}. Click to cycle themes.`}
+      aria-label={getAriaLabel()}
+      title={getAriaLabel()}
     >
       {getIcon()}
     </button>
