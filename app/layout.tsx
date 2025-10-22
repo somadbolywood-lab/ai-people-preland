@@ -308,6 +308,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {/* Optimized modular script loading - theme.js loads first */}
       <Script src="/scripts/theme.js" strategy="beforeInteractive" />
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
+      <Script src="/scripts/sw-register.js" strategy="afterInteractive" />
       <Script src="/scripts/async-loader.js" strategy="afterInteractive" />
       <Script src="/scripts/critical-path-optimization.js" strategy="afterInteractive" />
       <Script src="/scripts/web-vitals.js" strategy="afterInteractive" />
