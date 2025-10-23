@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import ThankYouModal from "../../components/ThankYouModal";
 import Script from "next/script";
-import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSelector from "../../components/LanguageSelector";
 import CustomDropdown from "../../components/CustomDropdown";
 import HeaderWithMenu from "../../components/HeaderWithMenu";

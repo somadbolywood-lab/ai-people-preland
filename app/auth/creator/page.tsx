@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import ThankYouModal from "../../components/ThankYouModal";
-import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSelector from "../../components/LanguageSelector";
 import CustomDropdown from "../../components/CustomDropdown";
 import HeaderWithMenu from "../../components/HeaderWithMenu";

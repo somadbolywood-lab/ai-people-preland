@@ -5,7 +5,6 @@ import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
 import Image from "next/image";
 import Script from "next/script";
 import FooterRU from "../../../components/FooterRU";
-import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
 import HeaderWithMenu from "../../../components/HeaderWithMenu";
 import Head from "next/head";

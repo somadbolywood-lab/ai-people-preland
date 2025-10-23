@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
 import ThankYouModal from "../../../components/ThankYouModal";
-import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
 import { useDropdownOptions } from "../../../hooks/useDropdownOptions";
 import CustomDropdown from "../../../components/CustomDropdown";
