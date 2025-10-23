@@ -25,10 +25,10 @@
     // Дополнительные настройки
     advanced: {
       // Отслеживание Web Vitals
-      trackWebVitals: true,
+      trackWebVitals: false,
       
       // Отслеживание производительности
-      trackPerformance: true,
+      trackPerformance: false,
       
       // Отслеживание ошибок
       trackErrors: true,
@@ -89,13 +89,7 @@
       console.log('[Yandex Metrika] Initialized with counter ID:', counterId);
       
       // Запуск дополнительных трекеров
-      if (YANDEX_CONFIG.advanced.trackWebVitals) {
-        initWebVitalsTracking();
-      }
-      
-      if (YANDEX_CONFIG.advanced.trackPerformance) {
-        initPerformanceTracking();
-      }
+      // WebVitals and PerformanceAPI tracking removed
       
       if (YANDEX_CONFIG.advanced.trackErrors) {
         initErrorTracking();
@@ -115,39 +109,8 @@
   // ========================================
   
   function initWebVitalsTracking() {
-    if (!window.WebVitals) {
-      console.warn('[Yandex Metrika] WebVitals not available');
-      return;
-    }
-    
-    // Отслеживание LCP
-    if (window.WebVitals.getMetrics().lcp) {
-      const lcp = window.WebVitals.getMetrics().lcp;
-      window.ym(YANDEX_CONFIG.counterId, 'reachGoal', 'web_vitals_lcp', {
-        value: lcp.value,
-        rating: lcp.rating
-      });
-    }
-    
-    // Отслеживание FID
-    if (window.WebVitals.getMetrics().fid) {
-      const fid = window.WebVitals.getMetrics().fid;
-      window.ym(YANDEX_CONFIG.counterId, 'reachGoal', 'web_vitals_fid', {
-        value: fid.value,
-        rating: fid.rating
-      });
-    }
-    
-    // Отслеживание CLS
-    if (window.WebVitals.getMetrics().cls) {
-      const cls = window.WebVitals.getMetrics().cls;
-      window.ym(YANDEX_CONFIG.counterId, 'reachGoal', 'web_vitals_cls', {
-        value: cls.value,
-        rating: cls.rating
-      });
-    }
-    
-    console.log('[Yandex Metrika] Web Vitals tracking enabled');
+    // WebVitals tracking removed
+    console.log('[Yandex Metrika] Web Vitals tracking disabled');
   }
   
   // ========================================
@@ -155,31 +118,8 @@
   // ========================================
   
   function initPerformanceTracking() {
-    if (!window.PerformanceAPI) {
-      console.warn('[Yandex Metrika] PerformanceAPI not available');
-      return;
-    }
-    
-    // Отслеживание времени загрузки страницы
-    window.addEventListener('load', () => {
-      const perfData = window.PerformanceAPI.getData();
-      
-      if (perfData.navigation) {
-        window.ym(YANDEX_CONFIG.counterId, 'reachGoal', 'page_load_time', {
-          totalTime: perfData.navigation.totalTime,
-          rating: perfData.navigation.rating
-        });
-      }
-      
-      if (perfData.memory) {
-        window.ym(YANDEX_CONFIG.counterId, 'reachGoal', 'memory_usage', {
-          usage: perfData.memory.usage,
-          used: perfData.memory.used
-        });
-      }
-    });
-    
-    console.log('[Yandex Metrika] Performance tracking enabled');
+    // PerformanceAPI tracking removed
+    console.log('[Yandex Metrika] Performance tracking disabled');
   }
   
   // ========================================

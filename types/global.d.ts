@@ -31,9 +31,7 @@ declare global {
     __INITIAL_THEME__?: 'light' | 'dark';
     __THEME_APPLIED_BY_SCRIPT__?: boolean;
     
-    // Async loader metrics
-    AsyncLoaderMetrics?: any;
-    AsyncLoader?: any;
+  // Async loader metrics removed
   }
 }
 

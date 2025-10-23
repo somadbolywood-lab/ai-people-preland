@@ -129,11 +129,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* Dark theme only - no script needed */}
         
         <HreflangLinks currentPath="/" locale="en" />
-            {/* Basic font loading */}
+        {/* Resource Hints - Critical Performance Optimization */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://ai-people.io" />
+        
+        {/* Preload Critical Resources */}
+        <link rel="preload" href="/scripts/main-init.js" as="script" />
+        <link rel="preload" href="/faq/AI-people Logo.png" as="image" />
+        <link rel="preload" href="/assets/models/model-01.png" as="image" />
+        <link rel="preload" href="/assets/models/model-02.png" as="image" />
+        <link rel="preload" href="/assets/models/model-03.png" as="image" />
+        
+            {/* Optimized Font Loading */}
             <link
               href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
               rel="stylesheet"
             />
+            <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossOrigin="anonymous" fetchPriority="high" />
+        
+        {/* Prefetch Next Pages */}
+        <link rel="prefetch" href="/blog" />
+        <link rel="prefetch" href="/faq" />
+        <link rel="prefetch" href="/about" />
+        <link rel="prefetch" href="/auth/role" />
         
             {/* Theme initialization now handled by ThemeProvider component */}
         
@@ -306,9 +325,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </ErrorBoundary>
       </ThemeProvider>
-      {/* Essential scripts only */}
+      {/* Optimized modular script loading - theme.js removed (handled by React) */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
+      <Script src="/scripts/sw-register.js" strategy="afterInteractive" />
+      <Script src="/scripts/async-loader.js" strategy="afterInteractive" />
+      <Script src="/scripts/critical-path-optimization.js" strategy="afterInteractive" />
+      <Script src="/scripts/web-vitals.js" strategy="afterInteractive" />
+      <Script src="/scripts/performance-api.js" strategy="afterInteractive" />
       <Script src="/scripts/yandex-metrika.js" strategy="afterInteractive" />
+      <Script src="/scripts/performance.js" strategy="afterInteractive" />
       <Script src="/scripts/ui-components.js" strategy="afterInteractive" />
       <Script src="/scripts/main-init.js" strategy="afterInteractive" />
     </body>
