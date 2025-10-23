@@ -18,11 +18,12 @@
     
     /* Logo size variables */
     --logo-height-mobile: 36px;
-    --logo-height-tablet: 44px;
-    --logo-height-desktop: 48px;
-    --logo-height-large: 52px;
-    --logo-height-xl: 56px;
-    --logo-height-xxl: 60px;
+    --logo-height-tablet: 74px;
+    --logo-height-desktop: 75px;
+    --logo-height-large: 78px;
+    --logo-height-xl: 84px;
+    --logo-height-xxl: 88px;
+    --logo-height-xxxl: 92px;
 }
 
 /* Force dark theme by default to prevent white flash */
@@ -175,7 +176,7 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: var(--logo-height-xxl) !important;
+        height: var(--logo-height-xxxl) !important;
         width: auto !important;
         max-width: 184px !important;
     }
@@ -261,7 +262,7 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: var(--logo-height-xl) !important;
+        height: var(--logo-height-xxl) !important;
         width: auto !important;
         max-width: 180px !important;
     }
@@ -352,7 +353,7 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: var(--logo-height-large) !important;
+        height: var(--logo-height-xl) !important;
         width: auto !important;
         max-width: 162px !important;
     }
@@ -438,7 +439,7 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: var(--logo-height-desktop) !important;
+        height: var(--logo-height-large) !important;
         width: auto !important;
         max-width: 150px !important;
     }
@@ -523,7 +524,7 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: var(--logo-height-tablet) !important;
+        height: var(--logo-height-desktop) !important;
         width: auto !important;
         max-width: 138px !important;
     }
@@ -544,13 +545,13 @@ html, body { height: 100%; }
 
 @media (min-width: 1025px) and (max-width: 1440px) {
     .logo-img {
-        height: var(--logo-height-desktop);
+        height: var(--logo-height-large);
     }
 }
 
 @media (min-width: 1441px) {
     .logo-img {
-        height: var(--logo-height-large);
+        height: var(--logo-height-xl);
     }
 }
 
@@ -3118,7 +3119,7 @@ a.visible-link {
     }
     body { padding-top: 80px !important; }
     .logo-img { 
-        height: var(--logo-height-desktop) !important; 
+        height: var(--logo-height-large) !important; 
         max-width: 180px !important; 
         /* No transitions to prevent glitches */
     }

@@ -25,8 +25,8 @@ export default function LogoImage({
       src="/faq/AI-people Logo.png" 
       alt="AI-People" 
       className={`${className} ${logoLoaded ? 'loaded' : 'loading'} ${animated ? 'animated' : ''}`}
-      width={120} 
-      height={48}
+      width={180} 
+      height={75}
       priority={priority}
       quality={75}
       unoptimized={false}
