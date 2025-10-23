@@ -15,6 +15,15 @@
     --danger: #f43f5e;
     --border: #232329;
     --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    
+    /* Logo size variables */
+    --logo-height-mobile: 36px;
+    --logo-height-tablet: 74px;
+    --logo-height-desktop: 75px;
+    --logo-height-large: 78px;
+    --logo-height-xl: 84px;
+    --logo-height-xxl: 88px;
+    --logo-height-xxxl: 92px;
 }
 
 /* Force dark theme by default to prevent white flash */
@@ -167,7 +176,7 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: 92px !important;
+        height: var(--logo-height-xxxl) !important;
         width: auto !important;
         max-width: 184px !important;
     }
@@ -253,7 +262,7 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: 88px !important;
+        height: var(--logo-height-xxl) !important;
         width: auto !important;
         max-width: 180px !important;
     }
@@ -344,7 +353,7 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: 84px !important;
+        height: var(--logo-height-xl) !important;
         width: auto !important;
         max-width: 162px !important;
     }
@@ -430,7 +439,7 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: 78px !important;
+        height: var(--logo-height-large) !important;
         width: auto !important;
         max-width: 150px !important;
     }
@@ -515,9 +524,34 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: 74px !important;
+        height: var(--logo-height-desktop) !important;
         width: auto !important;
         max-width: 138px !important;
+    }
+}
+
+/* Responsive logo breakpoints */
+@media (max-width: 768px) {
+    .logo-img {
+        height: var(--logo-height-mobile);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .logo-img {
+        height: var(--logo-height-tablet);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .logo-img {
+        height: var(--logo-height-large);
+    }
+}
+
+@media (min-width: 1441px) {
+    .logo-img {
+        height: var(--logo-height-xl);
     }
 }
 
@@ -542,7 +576,7 @@ html, body { height: 100%; }
     }
     
     .logo-img {
-        height: 36px;
+        height: var(--logo-height-mobile);
         max-width: 100px;
         /* No transitions to prevent glitches */
     }
@@ -1643,7 +1677,7 @@ a.visible-link {
     opacity: 0.8;
 }
 .logo-img { 
-    height: 40px; 
+    height: var(--logo-height-desktop); 
     width: auto; 
     display: block; 
     object-fit: contain; 
@@ -1656,40 +1690,14 @@ a.visible-link {
     -ms-interpolation-mode: nearest-neighbor;
     backface-visibility: hidden;
     -webkit-font-smoothing: subpixel-antialiased;
-    transition: all 0.3s ease;
+    transition: opacity 0.2s ease;
+    aspect-ratio: 2.4 / 1;
 }
 
-.logo-img.animated {
-    animation: pulse 2s infinite;
-}
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-/* Logo animation keyframes */
-@keyframes logoFadeIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    50% {
-        opacity: 0.7;
-        transform: scale(1.05);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Logo loaded state - анимация завершена */
-.logo-img.animation-complete {
-    opacity: 1;
-    transform: scale(1);
-    animation: none;
+.logo-img:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
 }
 .actions { 
     display: flex; 
@@ -3030,7 +3038,7 @@ a.visible-link {
     }
     body { padding-top: 80px !important; }
     .logo-img { 
-        height: 44px; 
+        height: var(--logo-height-tablet); 
         /* No transitions to prevent glitches */
     }
     .social-link { width: 36px; height: 36px; }
@@ -3078,7 +3086,7 @@ a.visible-link {
     }
     body { padding-top: 80px !important; }
     .logo-img { 
-        height: 75px !important; 
+        height: var(--logo-height-large) !important; 
         max-width: 180px !important; 
         /* No transitions to prevent glitches */
     }
