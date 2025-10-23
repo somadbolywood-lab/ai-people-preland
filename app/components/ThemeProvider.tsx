@@ -2,10 +2,11 @@
 
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
 
-type Theme = 'dark';
+type Theme = 'dark' | 'light';
 
 interface ThemeContextType {
   theme: Theme;
+  toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -23,25 +24,67 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  // Always dark theme only
-  const [theme] = useState<Theme>('dark');
-
-  // Apply dark theme on mount
-  useEffect(() => {
+  // Initialize theme based on localStorage immediately
+  const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== 'undefined') {
+      return (localStorage.getItem('theme') as Theme) || 'light';
+    }
+    return 'light';
+  });
+  const [isClient, setIsClient] = useState(false);
+
+  // Initialize theme on mount
+  useEffect(() => {
+    setIsClient(true);
+    
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme') as Theme || 'light';
+      
+      // Apply theme immediately
       const body = document.body;
       const html = document.documentElement;
       
-      // Always apply dark theme
-      body.classList.remove('light');
-      html.classList.remove('light');
-      body.setAttribute('data-theme', 'dark');
-      html.setAttribute('data-theme', 'dark');
+      if (savedTheme === 'light') {
+        body.classList.add('light');
+        html.classList.add('light');
+      } else {
+        body.classList.remove('light');
+        html.classList.remove('light');
+      }
+      
+      body.setAttribute('data-theme', savedTheme);
+      html.setAttribute('data-theme', savedTheme);
+      
+      setTheme(savedTheme);
     }
   }, []);
 
+  const toggleTheme = useCallback(() => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme', newTheme);
+      
+      const body = document.body;
+      const html = document.documentElement;
+      
+      if (newTheme === 'light') {
+        body.classList.add('light');
+        html.classList.add('light');
+      } else {
+        body.classList.remove('light');
+        html.classList.remove('light');
+      }
+      
+      body.setAttribute('data-theme', newTheme);
+      html.setAttribute('data-theme', newTheme);
+    }
+  }, [theme]);
+
   const value: ThemeContextType = {
-    theme
+    theme,
+    toggleTheme
   };
 
   return (

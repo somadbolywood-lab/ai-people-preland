@@ -17,10 +17,35 @@
     --shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
+/* Light theme variables */
+.light {
+    --bg: #ffffff;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7f7f8;
+    --bg-hover: #efeff1;
+    --panel: #f7f7f8;
+    --text: #0a0a0b;
+    --text-primary: #0a0a0b;
+    --text-secondary: #52525b;
+    --subtext: #52525b;
+    --muted: #efeff1;
+    --accent: #7c3aed; /* violet */
+    --accent-2: #db2777; /* pink */
+    --danger: #e11d48;
+    --border: #e5e7eb;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
 /* Force dark theme by default to prevent white flash */
 html, body {
     background-color: var(--bg-primary) !important;
     color: var(--text-primary) !important;
+}
+
+/* Light theme body styles */
+html.light, body.light {
+    background-color: #ffffff !important;
+    color: #0a0a0b !important;
 }
 
 /* Light theme removed - only dark theme now */
@@ -1558,7 +1583,7 @@ a.visible-link {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 10000;
     background: rgba(17, 17, 20, 0.5);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -1567,9 +1592,16 @@ a.visible-link {
     /* No transitions to prevent glitches */
 }
 
-/* Light theme styles removed */
+/* Light theme topbar styles */
+.light .topbar {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
 
-/* Light theme button styles removed */
+/* Light theme button styles */
 
 .brand { 
     display: flex; 
@@ -3243,7 +3275,7 @@ a.visible-link {
     visibility: visible !important;
     display: inline-block !important;
     position: relative !important;
-    z-index: 9999 !important;
+    z-index: 100 !important;
 }
 
 .section-title:hover svg {

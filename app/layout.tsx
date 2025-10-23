@@ -2,11 +2,12 @@ import './globals.css';
 import Script from 'next/script';
 import ErrorBoundary from './components/ErrorBoundary';
 import Image from 'next/image';
-// ThemeToggle removed - only dark theme now
+import ThemeToggle from './components/ThemeToggle';
+import ThemeInitializer from './components/ThemeInitializer';
 import LanguageSelector from './components/LanguageSelector';
 import HreflangLinks from './components/HreflangLinks';
+import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './components/ThemeProvider';
-// LanguageProvider removed - using useLanguage hook in components instead
 
 export const metadata = {
   title: "World's First Curated AI Models Marketplace | AI-People",
@@ -77,11 +78,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* Critical CSS - prevents FOUC */}
             <style dangerouslySetInnerHTML={{
               __html: `
-                /* Force dark theme by default to prevent white flash */
+                /* Initialize theme based on localStorage */
                 html, body {
-                  background-color: #0b0b0c !important;
-                  color: #f5f5f7 !important;
+                  background-color: var(--bg-primary) !important;
+                  color: var(--text-primary) !important;
                   transition: none !important;
+                }
+                
+                /* Light theme support */
+                html.light, body.light {
+                  background-color: #ffffff !important;
+                  color: #0a0a0b !important;
+                }
+                
+                /* Apply light theme immediately if saved in localStorage */
+                html.light, body.light {
+                  background-color: #ffffff !important;
+                  color: #0a0a0b !important;
                 }
                 
                 /* Force all elements to dark theme immediately */
@@ -123,6 +136,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   color: white !important;
                   border: none !important;
                 }
+                
+                /* Light theme critical styles */
+                .light .topbar {
+                  background: rgba(255, 255, 255, 0.5) !important;
+                  backdrop-filter: blur(16px) !important;
+                  -webkit-backdrop-filter: blur(16px) !important;
+                  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+                }
+                
+                .light .topbar * {
+                  color: #0a0a0b !important;
+                }
+                
+                .light .theme-toggle, .light .language-btn, .light .feedback-btn, .light .hamburger {
+                  background: #f7f7f8 !important;
+                  border: 1px solid #e5e7eb !important;
+                  color: #0a0a0b !important;
+                }
+                
+                .light .brand {
+                  color: #0a0a0b !important;
+                }
+                
+                .light .btn {
+                  background: #f7f7f8 !important;
+                  color: #0a0a0b !important;
+                  border: 1px solid #e5e7eb !important;
+                }
+                
+                .light .btn.primary {
+                  background: linear-gradient(135deg, #7c3aed, #db2777) !important;
+                  color: white !important;
+                  border: none !important;
+                }
               `
             }} />
             
@@ -154,7 +202,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="prefetch" href="/about" />
         <link rel="prefetch" href="/auth/role" />
         
-            {/* Theme initialization now handled by ThemeProvider component */}
+            {/* Theme initialization script - runs before React */}
+            <script dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  try {
+                    const savedTheme = localStorage.getItem('theme') || 'light';
+                    if (savedTheme === 'light') {
+                      document.documentElement.classList.add('light');
+                      document.body.classList.add('light');
+                    }
+                  } catch (e) {
+                    // localStorage not available, use default
+                  }
+                })();
+              `
+            }} />
         
         <script
           type="application/ld+json"
@@ -320,13 +383,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </defs>
       </svg>
       
-      <ThemeProvider>
-        <ErrorBoundary>
-          {children}
-        </ErrorBoundary>
-      </ThemeProvider>
-      {/* Optimized modular script loading - theme.js removed (handled by React) */}
+      <ErrorBoundary>
+        <ThemeProvider>
+          <LanguageProvider defaultLanguage="en">
+            <ThemeInitializer />
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
+      </ErrorBoundary>
+      {/* Optimized modular script loading */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
+      <Script src="/scripts/theme.js" strategy="beforeInteractive" />
       <Script src="/scripts/sw-register.js" strategy="afterInteractive" />
       <Script src="/scripts/async-loader.js" strategy="afterInteractive" />
       <Script src="/scripts/critical-path-optimization.js" strategy="afterInteractive" />
