@@ -54,6 +54,7 @@ html, body { height: 100%; }
         font-size: clamp(20px, 4.5vw, 32px);
         margin: 6px 0 4px;
         line-height: 1.2;
+        text-align: center;
     }
     
     .title .gradient-text {
@@ -188,6 +189,7 @@ html, body { height: 100%; }
     .title {
         font-size: clamp(20px, 4.2vw, 32px);
         margin: 6px 0 4px;
+        text-align: center;
     }
     
     .title .gradient-text {
@@ -280,6 +282,7 @@ html, body { height: 100%; }
     .title {
         font-size: clamp(18px, 4vw, 28px);
         margin: 4px 0 2px;
+        text-align: center;
     }
     
     .title .gradient-text {
@@ -377,6 +380,7 @@ html, body { height: 100%; }
     .title {
         font-size: clamp(18px, 4vw, 30px);
         margin: 4px 0 2px;
+        text-align: center;
     }
     
     .title .gradient-text {
@@ -469,6 +473,7 @@ html, body { height: 100%; }
     .title {
         font-size: clamp(16px, 3.5vw, 24px);
         margin: 2px 0 1px;
+        text-align: center;
     }
     
     .title .gradient-text {
@@ -608,6 +613,7 @@ html, body { height: 100%; }
         font-size: clamp(24px, 5.5vw, 40px);
         margin: 8px 0 0px;
         font-weight: 700;
+        text-align: center;
     }
     
     .title .gradient-text {
@@ -2718,6 +2724,7 @@ a.visible-link {
     letter-spacing: -0.5px; 
     line-height: 1.2;
     font-weight: 700;
+    text-align: center;
 }
 
 .title .gradient-text {
@@ -2904,6 +2911,7 @@ a.visible-link {
         font-size: clamp(20px, 5vw, 36px);
         margin: 6px 0 0px;
         font-weight: 700;
+        text-align: center;
     }
     
     .title .gradient-text {
