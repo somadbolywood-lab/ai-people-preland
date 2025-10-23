@@ -2155,19 +2155,6 @@ a.visible-link {
     line-height: 1.15;
   }
 
-  .hero .hero-subtitle[data-lang-ru],
-  .hero .hero-subtitle [data-lang-ru] {
-    /* Синхронизировано с английской версией */
-    font-size: clamp(14px, 3vw, 28px);
-    line-height: 1.5;
-  }
-
-  .hero .hero-subtitle[data-lang-en],
-  .hero .hero-subtitle [data-lang-en] {
-    /* Синхронизировано с русской версией */
-    font-size: clamp(14px, 3vw, 28px);
-    line-height: 1.5;
-  }
   
   /* Синхронизация unified-h1 с title для русской версии */
   .hero .unified-h1 .gradient-text[data-lang-ru] {
