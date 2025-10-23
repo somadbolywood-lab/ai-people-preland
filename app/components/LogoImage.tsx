@@ -28,7 +28,7 @@ export default function LogoImage({
       width={120} 
       height={48}
       priority={priority}
-      quality={85}
+      quality={75}
       unoptimized={false}
       onLoad={handleLoad}
     />
