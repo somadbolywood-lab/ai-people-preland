@@ -58,7 +58,7 @@ export default function Page() {
       <main>
         {/* Hero Section */}
         <section className="hero">
-          <h1 className="unified-h1"><span className="gradient-text" data-lang-en="AI-PEOPLE.IO" data-lang-ru="AI-PEOPLE.IO">AI-PEOPLE.IO</span></h1>
+          <h1 className="title"><span className="gradient-text" data-lang-en="AI-PEOPLE.IO" data-lang-ru="AI-PEOPLE.IO">AI-PEOPLE.IO</span></h1>
           <h2 className="hero-subtitle" data-lang-en="World's First AI Influencer Marketplace: Buy and Sell Hyperrealistic AI Models for Marketing and Branding" data-lang-ru="Первый маркетплейс виртуальных AI-инфлюенсеров: покупайте и продавайте гиперреалистичные AI-модели для маркетинга и брендинга">World's First AI Influencer Marketplace: Buy and Sell Hyperrealistic AI Models for Marketing and Branding</h2>
           <h3 className="hero-description" data-lang-en="The world's first curated platform for premium AI content. Join today to the community of creators revolutionizing digital marketing." data-lang-ru="Первая в мире курируемая платформа для премиального AI-контента. Присоединяйтесь уже сегодня к сообществу креаторов революционизирующих цифровой маркетинг.">The world's first curated platform for premium AI content. Join today to the community of creators revolutionizing digital marketing.</h3>
           
