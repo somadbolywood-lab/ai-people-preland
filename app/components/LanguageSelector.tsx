@@ -28,31 +28,80 @@ export default function LanguageSelector() {
     window.dispatchEvent(new CustomEvent('languageChange', { detail: { language: lang } }));
   };
 
+  const showLanguageSpinner = () => {
+    console.log('🔄 showLanguageSpinner called');
+    const overlay = document.getElementById('languageSwitchingOverlay');
+    console.log('🔍 Overlay element found:', overlay);
+    if (overlay) {
+      overlay.classList.add('show');
+      console.log('✅ Added "show" class to overlay');
+      console.log('🎯 Overlay classes:', overlay.className);
+    } else {
+      console.error('❌ Overlay element not found!');
+    }
+  };
+
+  const hideLanguageSpinner = () => {
+    console.log('🔄 hideLanguageSpinner called');
+    const overlay = document.getElementById('languageSwitchingOverlay');
+    if (overlay) {
+      overlay.classList.remove('show');
+      console.log('✅ Removed "show" class from overlay');
+    }
+  };
+
   const handleLanguageSwitch = (lang: 'en' | 'ru') => {
+    console.log('🚀 handleLanguageSwitch called with lang:', lang);
+    
     // Close menu first
     if (menuRef.current) {
       menuRef.current.classList.remove('show');
     }
+
+    // Show global spinner
+    console.log('📱 About to show spinner...');
+    showLanguageSpinner();
 
     // Switch language globally (this will also persist to localStorage)
     switchLanguage(lang);
 
     // Route to locale-specific path if needed (with small delay to allow DOM update)
     const pathname = window.location?.pathname || '/';
+    console.log('🛣️ Current pathname:', pathname);
+    
     setTimeout(() => {
       if (lang === 'ru' && !pathname.startsWith('/ru')) {
         const target = pathname === '/' ? '/ru' : `/ru${pathname}`;
+        console.log('🔄 Navigating to RU:', target);
         router.push(target);
       } else if (lang === 'en' && pathname.startsWith('/ru')) {
         const target = pathname.replace(/^\/ru/, '') || '/';
+        console.log('🔄 Navigating to EN:', target);
         router.push(target);
       }
+      
+      // Hide spinner after navigation
+      setTimeout(() => {
+        console.log('⏰ Hiding spinner after delay...');
+        hideLanguageSpinner();
+      }, 1500); // Increased delay to make spinner more visible
     }, 150); // Small delay to allow DOM to update
   };
 
   useEffect(() => {
+    console.log('🔧 LanguageSelector useEffect - initializing...');
+    
     // Set client flag to avoid hydration mismatch
     setIsClient(true);
+    
+    // Only hide spinner on initial page load, not during language switching
+    const isInitialLoad = !document.getElementById('languageSwitchingOverlay')?.classList.contains('show');
+    if (isInitialLoad) {
+      console.log('🧹 Hiding spinner on initial page load...');
+      hideLanguageSpinner();
+    } else {
+      console.log('⏸️ Skipping spinner hide - language switching in progress');
+    }
     
     // Listen for language change events from useLanguage hook
     const handleLanguageChange = (event: CustomEvent) => {
@@ -114,32 +163,49 @@ export default function LanguageSelector() {
   };
 
       return (
-        <div className="language-selector" suppressHydrationWarning>
-      <button 
-        ref={buttonRef}
-        className="language-btn" 
-        onClick={toggleMenu}
-        aria-label="Select language"
-      >
-        <span className="language-text">EN</span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="m6 9 6 6 6-6" />
-        </svg>
-      </button>
-      <div ref={menuRef} className="language-menu">
-        <button 
-          className="language-item active"
-          onClick={() => handleLanguageSwitch('en')}
-        >
-          EN
-        </button>
-        <button 
-          className="language-item"
-          onClick={() => handleLanguageSwitch('ru')}
-        >
-          RU
-        </button>
-      </div>
-    </div>
-  );
+        <>
+          <div className="language-selector" suppressHydrationWarning>
+            <button 
+              ref={buttonRef}
+              className="language-btn" 
+              onClick={toggleMenu}
+              aria-label="Select language"
+            >
+              <span className="language-text">EN</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div ref={menuRef} className="language-menu">
+              <button 
+                className="language-item active"
+                onClick={() => handleLanguageSwitch('en')}
+              >
+                EN
+              </button>
+              <button 
+                className="language-item"
+                onClick={() => handleLanguageSwitch('ru')}
+              >
+                RU
+              </button>
+            </div>
+          </div>
+
+          {/* Глобальный спиннер переключения языка */}
+          <div className="language-switching-overlay" id="languageSwitchingOverlay">
+            <div className="language-switching-spinner">
+              <div className="gradient-spinner">
+                <div className="spinner-dot"></div>
+                <div className="spinner-dot"></div>
+                <div className="spinner-dot"></div>
+                <div className="spinner-dot"></div>
+              </div>
+              <p className="language-switching-text" data-lang-en="Switching language..." data-lang-ru="Переключение языка...">
+                Switching language...
+              </p>
+            </div>
+          </div>
+        </>
+      );
 }
