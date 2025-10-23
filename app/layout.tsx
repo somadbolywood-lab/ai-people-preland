@@ -74,7 +74,59 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <meta httpEquiv="Pragma" content="no-cache" />
             <meta httpEquiv="Expires" content="0" />
         
-            {/* Theme initialization handled by ThemeProvider component */}
+            {/* Critical CSS - prevents FOUC */}
+            <style dangerouslySetInnerHTML={{
+              __html: `
+                /* Force dark theme by default to prevent white flash */
+                html, body {
+                  background-color: #0b0b0c !important;
+                  color: #f5f5f7 !important;
+                  transition: none !important;
+                }
+                
+                /* Force all elements to dark theme immediately */
+                * {
+                  transition: none !important;
+                  animation: none !important;
+                }
+                
+                .topbar {
+                  background: rgba(17, 17, 20, 0.5) !important;
+                  backdrop-filter: blur(12px) !important;
+                  -webkit-backdrop-filter: blur(12px) !important;
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+                }
+                
+                .topbar * {
+                  color: #f5f5f7 !important;
+                }
+                
+                .theme-toggle, .language-btn, .feedback-btn, .hamburger {
+                  background: #111114 !important;
+                  border: 1px solid #232329 !important;
+                  color: #f5f5f7 !important;
+                }
+                
+                .brand {
+                  color: #f5f5f7 !important;
+                }
+                
+                .btn {
+                  background: #111114 !important;
+                  color: #f5f5f7 !important;
+                  border: 1px solid #232329 !important;
+                }
+                
+                .btn.primary {
+                  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
+                  color: white !important;
+                  border: none !important;
+                }
+              `
+            }} />
+            
+            {/* Dark theme only - no script needed */}
         
         <HreflangLinks currentPath="/" locale="en" />
             {/* Basic font loading */}

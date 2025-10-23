@@ -4,6 +4,7 @@ import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
 import FooterRU from "../../../components/FooterRU";
 import { useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
 import Image from "next/image";
 import Head from "next/head";

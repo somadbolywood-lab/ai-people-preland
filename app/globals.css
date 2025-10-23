@@ -175,11 +175,6 @@ html, body { height: 100%; }
         -webkit-backdrop-filter: blur(12px);
     }
     
-    .brand .logo-img {
-        height: var(--logo-height-xxxl) !important;
-        width: auto !important;
-        max-width: 184px !important;
-    }
 }
 
 /* iPhone 14 Pro Max and similar large devices */
@@ -261,11 +256,6 @@ html, body { height: 100%; }
         -webkit-backdrop-filter: blur(12px);
     }
     
-    .brand .logo-img {
-        height: var(--logo-height-xxl) !important;
-        width: auto !important;
-        max-width: 180px !important;
-    }
 }
 
 /* Extra small screens in portrait mode */
@@ -352,11 +342,6 @@ html, body { height: 100%; }
         -webkit-backdrop-filter: blur(12px);
     }
     
-    .brand .logo-img {
-        height: var(--logo-height-xl) !important;
-        width: auto !important;
-        max-width: 162px !important;
-    }
 }
 
 /* iPhone 14 Pro and similar devices */
@@ -438,11 +423,6 @@ html, body { height: 100%; }
         -webkit-backdrop-filter: blur(12px);
     }
     
-    .brand .logo-img {
-        height: var(--logo-height-large) !important;
-        width: auto !important;
-        max-width: 150px !important;
-    }
 }
 
 /* Very small screens in portrait mode */
@@ -523,14 +503,9 @@ html, body { height: 100%; }
         -webkit-backdrop-filter: blur(12px);
     }
     
-    .brand .logo-img {
-        height: var(--logo-height-desktop) !important;
-        width: auto !important;
-        max-width: 138px !important;
-    }
 }
 
-/* Responsive logo breakpoints */
+/* Responsive logo breakpoints - simplified */
 @media (max-width: 768px) {
     .logo-img {
         height: var(--logo-height-mobile);
@@ -543,15 +518,9 @@ html, body { height: 100%; }
     }
 }
 
-@media (min-width: 1025px) and (max-width: 1440px) {
+@media (min-width: 1025px) {
     .logo-img {
-        height: var(--logo-height-large);
-    }
-}
-
-@media (min-width: 1441px) {
-    .logo-img {
-        height: var(--logo-height-xl);
+        height: var(--logo-height-desktop);
     }
 }
 
@@ -1690,8 +1659,9 @@ a.visible-link {
     -ms-interpolation-mode: nearest-neighbor;
     backface-visibility: hidden;
     -webkit-font-smoothing: subpixel-antialiased;
-    transition: opacity 0.2s ease;
     aspect-ratio: 2.4 / 1;
+    will-change: auto;
+    transform: translateZ(0);
 }
 
 

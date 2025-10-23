@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
 // ThemeToggle removed - only dark theme now
 import LanguageSelector from "./LanguageSelector";
 import { useHamburgerMenu } from "../hooks/useHamburgerMenu";
@@ -11,6 +12,34 @@ interface HeaderWithMenuProps {
 
 export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
   useHamburgerMenu();
+  const [logoSize, setLogoSize] = useState({ width: 180, height: 75 });
+  
+  useEffect(() => {
+    const updateLogoSize = () => {
+      const width = window.innerWidth;
+      if (width <= 375) {
+        setLogoSize({ width: 120, height: 36 }); // mobile
+      } else if (width <= 393) {
+        setLogoSize({ width: 138, height: 48 }); // small mobile
+      } else if (width <= 480) {
+        setLogoSize({ width: 150, height: 52 }); // medium mobile
+      } else if (width <= 639) {
+        setLogoSize({ width: 162, height: 56 }); // large mobile
+      } else if (width <= 768) {
+        setLogoSize({ width: 150, height: 74 }); // tablet
+      } else if (width <= 1024) {
+        setLogoSize({ width: 150, height: 74 }); // tablet
+      } else if (width <= 1440) {
+        setLogoSize({ width: 150, height: 78 }); // desktop
+      } else {
+        setLogoSize({ width: 180, height: 92 }); // large desktop
+      }
+    };
+    
+    updateLogoSize();
+    window.addEventListener('resize', updateLogoSize);
+    return () => window.removeEventListener('resize', updateLogoSize);
+  }, []);
   
   return (
     <>
@@ -21,11 +50,12 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
               src="/faq/AI-people Logo.png" 
               alt="AI-People" 
               className="logo-img"
-              width={180} 
-              height={75} 
+              width={logoSize.width} 
+              height={logoSize.height} 
               priority
               quality={75}
               unoptimized={false}
+              sizes="(max-width: 768px) 120px, (max-width: 1024px) 150px, 180px"
             />
           </a>
         </div>
