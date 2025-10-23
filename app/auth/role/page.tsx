@@ -1,13 +1,14 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
 import { useLanguage } from "../../hooks/useLanguage";
-import LogoImage from "../../components/LogoImage";
 import Image from "next/image";
 import Script from "next/script";
 import Footer from "../../components/Footer";
 import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSelector from "../../components/LanguageSelector";
+import HeaderWithMenu from "../../components/HeaderWithMenu";
 import Head from "next/head";
 
 export default function RoleSelectionPage() {
@@ -80,18 +81,7 @@ export default function RoleSelectionPage() {
         />
       </Head>
       <div className="container auth-page role-selection-page">
-      <header className="topbar">
-        <div className="brand">
-          <a href="/" className="brand-link">
-              <LogoImage priority={true} />
-          </a>
-        </div>
-        <div className="actions">
-          <LanguageSelector />
-          <ThemeToggle />
-          <a href="/" className="topbar-nav-btn" data-lang-en="Back" data-lang-ru="Назад">Back</a>
-        </div>
-      </header>
+      <HeaderWithMenu homeHref="/" />
 
       {/* Pre-launch Notification Banner */}
       <div className="notification-banner">

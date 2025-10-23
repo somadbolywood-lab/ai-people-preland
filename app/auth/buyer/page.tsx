@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import ThankYouModal from "../../components/ThankYouModal";
-import LogoImage from "../../components/LogoImage";
 import Script from "next/script";
 import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSelector from "../../components/LanguageSelector";
 import CustomDropdown from "../../components/CustomDropdown";
+import HeaderWithMenu from "../../components/HeaderWithMenu";
 import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
 import { useDropdownOptions } from "../../hooks/useDropdownOptions";
 import { useLanguage } from "../../hooks/useLanguage";
@@ -245,19 +245,7 @@ export default function BuyerLeadPage() {
 
   return (
     <div className="container auth-page">
-      <header className="topbar">
-        <div className="brand">
-          <a href="/" className="brand-link">
-            <LogoImage />
-          </a>
-        </div>
-        
-        <div className="actions">
-          <LanguageSelector />
-          <ThemeToggle />
-          <a href="/auth/role" className="topbar-nav-btn" data-lang-en="Back" data-lang-ru="Назад">Back</a>
-        </div>
-      </header>
+      <HeaderWithMenu homeHref="/" />
 
       {/* Pre-launch Notification Banner */}
       <div className="notification-banner">
