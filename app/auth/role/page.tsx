@@ -2,6 +2,7 @@
 
 import { useHamburgerMenu } from "../../hooks/useHamburgerMenu";
 import { useLanguage } from "../../hooks/useLanguage";
+import LogoImage from "../../components/LogoImage";
 import Image from "next/image";
 import Script from "next/script";
 import Footer from "../../components/Footer";
@@ -82,7 +83,7 @@ export default function RoleSelectionPage() {
       <header className="topbar">
         <div className="brand">
           <a href="/" className="brand-link">
-              <Image src="/faq/AI-people Logo.png" alt="AI-People" className="logo-img" width={75} height={75} priority quality={100} unoptimized={true} />
+              <LogoImage priority={true} />
           </a>
         </div>
         <div className="actions">

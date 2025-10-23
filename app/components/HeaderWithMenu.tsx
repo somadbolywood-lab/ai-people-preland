@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import LogoImage from "./LogoImage";
 // ThemeToggle removed - only dark theme now
 import LanguageSelector from "./LanguageSelector";
 import { useHamburgerMenu } from "../hooks/useHamburgerMenu";
@@ -17,13 +17,9 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
       <header className="topbar">
         <div className="brand">
           <a href={homeHref} className="brand-link">
-            <Image 
-              src="/faq/AI-people Logo.png" 
-              alt="AI-People" 
-              className="logo-img animated" 
-              width={180} 
-              height={75} 
-              priority
+            <LogoImage 
+              priority={true}
+              animated={true}
             />
           </a>
         </div>

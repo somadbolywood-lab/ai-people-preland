@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ThankYouModal from "../../components/ThankYouModal";
+import LogoImage from "../../components/LogoImage";
 import Script from "next/script";
 import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSelector from "../../components/LanguageSelector";
@@ -247,7 +248,7 @@ export default function BuyerLeadPage() {
       <header className="topbar">
         <div className="brand">
           <a href="/" className="brand-link">
-            <img src="/faq/AI-people Logo.png" alt="AI-People" className="logo-img" width="75" height="75" />
+            <LogoImage />
           </a>
         </div>
         

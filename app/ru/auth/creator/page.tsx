@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useHamburgerMenu } from "../../../hooks/useHamburgerMenu";
 import ThankYouModal from "../../../components/ThankYouModal";
+import LogoImage from "../../../components/LogoImage";
 import ThemeToggle from "../../../components/ThemeToggle";
 import LanguageSelector from "../../../components/LanguageSelector";
 import { useDropdownOptions } from "../../../hooks/useDropdownOptions";
@@ -324,7 +325,7 @@ export default function CreatorLeadPage() {
       <header className="topbar">
         <div className="brand">
           <a href="/ru" className="brand-link">
-            <img src="/faq/AI-people Logo.png" alt="AI-People" className="logo-img" width="75" height="75" />
+            <LogoImage />
           </a>
         </div>
         
