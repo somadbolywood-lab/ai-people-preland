@@ -39,7 +39,7 @@ export default function Page() {
                   width={360} 
                   height={234} 
                   quality={100}
-                  loading="eager"
+                  loading="eager" 
                   sizes="(max-width: 639px) 360px, (max-width: 430px) 360px, (max-width: 393px) 360px, (max-width: 375px) 360px, 320px"
                 />
               </picture>
@@ -57,7 +57,7 @@ export default function Page() {
                   height={234} 
                   quality={100}
                   loading="eager"
-                  sizes="(max-width: 639px) 360px, (max-width: 430px) 360px, (max-width: 393px) 360px, (max-width: 375px) 360px, 320px" 
+                  sizes="(max-width: 639px) 360px, (max-width: 430px) 360px, (max-width: 393px) 360px, (max-width: 375px) 360px, 320px"
                 />
               </picture>
             </div>
