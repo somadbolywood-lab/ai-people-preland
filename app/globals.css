@@ -124,12 +124,12 @@ html, body { height: 100%; }
     
     .marquee-item {
         width: 360px !important;
-        height: 234px !important;
+        height: 203px !important;
     }
     
     .marquee-item img {
         width: 360px !important;
-        height: 234px !important;
+        height: 203px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         /* Override global backface-visibility to prevent GPU layer conflicts */
@@ -248,12 +248,12 @@ html, body { height: 100%; }
     
     .marquee-item {
         width: 360px !important;
-        height: 234px !important;
+        height: 203px !important;
     }
     
     .marquee-item img {
         width: 360px !important;
-        height: 234px !important;
+        height: 203px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         /* Override global backface-visibility to prevent GPU layer conflicts */
@@ -339,12 +339,12 @@ html, body { height: 100%; }
     
     .marquee-item {
         width: 360px !important;
-        height: 234px !important;
+        height: 203px !important;
     }
     
     .marquee-item img {
         width: 360px !important;
-        height: 234px !important;
+        height: 203px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         /* Override global backface-visibility to prevent GPU layer conflicts */
@@ -427,12 +427,12 @@ html, body { height: 100%; }
     
     .marquee-item {
         width: 360px !important;
-        height: 234px !important;
+        height: 203px !important;
     }
     
     .marquee-item img {
         width: 360px !important;
-        height: 234px !important;
+        height: 203px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         /* Override global backface-visibility to prevent GPU layer conflicts */
@@ -504,12 +504,12 @@ html, body { height: 100%; }
     
     .marquee-item {
         width: 360px !important;
-        height: 234px !important;
+        height: 203px !important;
     }
     
     .marquee-item img {
         width: 360px !important;
-        height: 234px !important;
+        height: 203px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         /* Override global backface-visibility to prevent GPU layer conflicts */
@@ -2820,8 +2820,8 @@ a.visible-link {
 }
 .marquee-item { 
     flex: 0 0 auto; 
-    width: 360px; 
-    height: 234px; 
+    width: 320px; 
+    height: 180px; 
     border-radius: 6px; 
     overflow: hidden; 
     border: 1px solid var(--border); 
@@ -3075,10 +3075,10 @@ a.visible-link {
     .menu-panel {
         top: 72px;
     }
-    .marquee-item { width: 280px; height: 184px; }
+    .marquee-item { width: 280px; height: 157px; }
     .marquee-item img {
         width: 280px;
-        height: 184px;
+        height: 157px;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -3113,10 +3113,10 @@ a.visible-link {
         min-height: 64px !important;
         max-height: 64px !important;
     }
-    .marquee-item { width: 320px; height: 204px; }
+    .marquee-item { width: 320px; height: 180px; }
     .marquee-item img {
         width: 320px;
-        height: 204px;
+        height: 180px;
         /* Enhanced image quality for desktop */
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
@@ -7697,11 +7697,11 @@ a.visible-link {
 @media (min-width: 1200px) {
   .marquee-item { 
     width: 367px; 
-    height: 207px; 
+    height: 206px; 
   }
   .marquee-item img {
     width: 367px; 
-    height: 207px; 
+    height: 206px; 
     image-rendering: high-quality;
     -ms-interpolation-mode: bicubic;
   }
@@ -7723,11 +7723,11 @@ a.visible-link {
 @media (min-width: 1600px) {
   .marquee-item { 
     width: 490px; 
-    height: 275px; 
+    height: 276px; 
   }
   .marquee-item img {
     width: 490px; 
-    height: 275px; 
+    height: 276px; 
     image-rendering: high-quality;
     -ms-interpolation-mode: bicubic;
   }
