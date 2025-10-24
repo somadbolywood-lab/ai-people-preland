@@ -122,6 +122,11 @@ function initLazyLoading() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
+                    // Skip marquee images to prevent conflicts
+                    if (img.closest('.marquee-item')) {
+                        observer.unobserve(img);
+                        return;
+                    }
                     img.src = img.dataset.src || img.src;
                     img.classList.add('loaded');
                     observer.unobserve(img);
@@ -129,7 +134,12 @@ function initLazyLoading() {
             });
         });
         
-        images.forEach(img => imageObserver.observe(img));
+        images.forEach(img => {
+            // Skip marquee images entirely
+            if (!img.closest('.marquee-item')) {
+                imageObserver.observe(img);
+            }
+        });
     }
 }
 

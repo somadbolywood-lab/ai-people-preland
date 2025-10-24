@@ -132,11 +132,16 @@ html, body { height: 100%; }
         height: 234px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
-        /* Removed backface-visibility and transforms to prevent layout shift */
+        /* Override global backface-visibility to prevent GPU layer conflicts */
+        backface-visibility: visible !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         /* Prevent layout shift on mobile */
         contain: layout style;
+        /* Additional stabilization for mobile rendering */
+        transform: none !important;
+        will-change: auto !important;
+        transition: none !important;
     }
     
     .marquee .marquee-track {
@@ -251,11 +256,16 @@ html, body { height: 100%; }
         height: 234px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
-        /* Removed backface-visibility and transforms to prevent layout shift */
+        /* Override global backface-visibility to prevent GPU layer conflicts */
+        backface-visibility: visible !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         /* Prevent layout shift on mobile */
         contain: layout style;
+        /* Additional stabilization for mobile rendering */
+        transform: none !important;
+        will-change: auto !important;
+        transition: none !important;
     }
     
     .section h2 {
@@ -337,11 +347,16 @@ html, body { height: 100%; }
         height: 234px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
-        /* Removed backface-visibility and transforms to prevent layout shift */
+        /* Override global backface-visibility to prevent GPU layer conflicts */
+        backface-visibility: visible !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         /* Prevent layout shift on mobile */
         contain: layout style;
+        /* Additional stabilization for mobile rendering */
+        transform: none !important;
+        will-change: auto !important;
+        transition: none !important;
     }
     
     .marquee .marquee-track {
@@ -420,11 +435,16 @@ html, body { height: 100%; }
         height: 234px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
-        /* Removed backface-visibility and transforms to prevent layout shift */
+        /* Override global backface-visibility to prevent GPU layer conflicts */
+        backface-visibility: visible !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         /* Prevent layout shift on mobile */
         contain: layout style;
+        /* Additional stabilization for mobile rendering */
+        transform: none !important;
+        will-change: auto !important;
+        transition: none !important;
     }
     
     .section h2 {
@@ -492,11 +512,16 @@ html, body { height: 100%; }
         height: 234px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
-        /* Removed backface-visibility and transforms to prevent layout shift */
+        /* Override global backface-visibility to prevent GPU layer conflicts */
+        backface-visibility: visible !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         /* Prevent layout shift on mobile */
         contain: layout style;
+        /* Additional stabilization for mobile rendering */
+        transform: none !important;
+        will-change: auto !important;
+        transition: none !important;
     }
     
     .section h2 {
