@@ -118,13 +118,13 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 360px !important;
-        height: 234px !important;
+        width: 360px;
+        height: 234px;
     }
     
     .marquee-item img {
-        width: 360px !important;
-        height: 234px !important;
+        width: 360px;
+        height: 234px;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -230,13 +230,13 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 360px !important;
-        height: 234px !important;
+        width: 360px;
+        height: 234px;
     }
     
     .marquee-item img {
-        width: 360px !important;
-        height: 234px !important;
+        width: 360px;
+        height: 234px;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -314,13 +314,13 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 360px !important;
-        height: 234px !important;
+        width: 360px;
+        height: 234px;
     }
     
     .marquee-item img {
-        width: 360px !important;
-        height: 234px !important;
+        width: 360px;
+        height: 234px;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -390,13 +390,13 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 360px !important;
-        height: 234px !important;
+        width: 360px;
+        height: 234px;
     }
     
     .marquee-item img {
-        width: 360px !important;
-        height: 234px !important;
+        width: 360px;
+        height: 234px;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -460,13 +460,13 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 360px !important;
-        height: 234px !important;
+        width: 360px;
+        height: 234px;
     }
     
     .marquee-item img {
-        width: 360px !important;
-        height: 234px !important;
+        width: 360px;
+        height: 234px;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -2782,6 +2782,8 @@ a.visible-link {
     image-rendering: auto;
     -ms-interpolation-mode: bicubic;
     backface-visibility: hidden;
+    /* Prevent layout shift on mobile */
+    contain: layout style;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* Protection from downloading */

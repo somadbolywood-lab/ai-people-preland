@@ -137,7 +137,7 @@ export default function Page() {
                    <div className="marquee-item" key={`m-a-${i}`}>
                      <picture>
                        <source srcSet={`/assets/models/model-${String(i+1).padStart(2, '0')}.webp`} type="image/webp" />
-                       <Image src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} alt={`Гиперреалистичная AI Модель ${i+1} - Премиум виртуальный инфлюенсер для цифровых маркетинговых кампаний`} width={320} height={180} quality={100} loading="eager" />
+                       <Image src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} alt={`Гиперреалистичная AI Модель ${i+1} - Премиум виртуальный инфлюенсер для цифровых маркетинговых кампаний`} width={360} height={234} quality={100} loading="eager" sizes="(max-width: 639px) 360px, (max-width: 430px) 360px, (max-width: 393px) 360px, (max-width: 375px) 360px, 320px" />
                      </picture>
                    </div>
                  ))}
@@ -145,7 +145,7 @@ export default function Page() {
                    <div className="marquee-item" key={`m-b-${i}`}>
                      <picture>
                        <source srcSet={`/assets/models/model-${String(i+1).padStart(2, '0')}.webp`} type="image/webp" />
-                       <Image src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} alt={`Профессиональная AI Сгенерированная Модель ${i+1} - Виртуальный инфлюенсер для бренд-маркетинга`} width={320} height={180} quality={100} loading="eager" />
+                       <Image src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} alt={`Профессиональная AI Сгенерированная Модель ${i+1} - Виртуальный инфлюенсер для бренд-маркетинга`} width={360} height={234} quality={100} loading="eager" sizes="(max-width: 639px) 360px, (max-width: 430px) 360px, (max-width: 393px) 360px, (max-width: 375px) 360px, 320px" />
                      </picture>
                    </div>
                  ))}

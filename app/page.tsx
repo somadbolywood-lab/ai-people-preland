@@ -36,10 +36,11 @@ export default function Page() {
                   src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} 
                   alt={`Professional hyperrealistic AI model ${i+1} - Premium virtual influencer for commercial marketing campaigns and brand advertising`} 
                   title={`AI Model ${i+1} - Hyperrealistic Virtual Influencer`}
-                  width={320} 
-                  height={180} 
+                  width={360} 
+                  height={234} 
                   quality={100}
-                  loading="eager" 
+                  loading="eager"
+                  sizes="(max-width: 639px) 360px, (max-width: 430px) 360px, (max-width: 393px) 360px, (max-width: 375px) 360px, 320px"
                 />
               </picture>
             </div>
@@ -52,10 +53,11 @@ export default function Page() {
                   src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} 
                   alt={`AI-generated virtual model ${i+1} - High-quality digital influencer for social media marketing and e-commerce`} 
                   title={`Premium AI Model ${i+1} for Marketing`}
-                  width={320} 
-                  height={180} 
+                  width={360} 
+                  height={234} 
                   quality={100}
-                  loading="eager" 
+                  loading="eager"
+                  sizes="(max-width: 639px) 360px, (max-width: 430px) 360px, (max-width: 393px) 360px, (max-width: 375px) 360px, 320px" 
                 />
               </picture>
             </div>
