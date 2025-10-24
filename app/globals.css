@@ -688,6 +688,12 @@ img, video, iframe, embed, object {
     max-width: 100%;
     height: auto;
 }
+
+/* Exception for marquee images to prevent mobile shrinking */
+.marquee-item img {
+    max-width: none !important;
+    height: auto !important;
+}
 a { color: inherit; text-decoration: none; }
 
 /* Exception for content block links */
@@ -2824,10 +2830,12 @@ a.visible-link {
     background: #000; 
 }
 .marquee-item img { 
-    width: 100%; 
-    height: 100%; 
+    width: 360px;
+    height: 234px;
     object-fit: cover; 
     display: block;
+    /* Prevent global img rule conflicts on mobile */
+    max-width: none !important;
     /* High quality image rendering for photos */
     image-rendering: auto;
     -ms-interpolation-mode: bicubic;
