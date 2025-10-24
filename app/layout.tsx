@@ -185,6 +185,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preload Critical Resources */}
         <link rel="preload" href="/scripts/main-init.js" as="script" />
         <link rel="preload" href="/faq/AI-people Logo.webp" as="image" fetchPriority="high" />
+        <link rel="preload" href="/faq/AI-people Logo.png" as="image" fetchPriority="high" />
         <link rel="preload" href="/assets/models/model-01.png" as="image" />
         <link rel="preload" href="/assets/models/model-02.png" as="image" />
         <link rel="preload" href="/assets/models/model-03.png" as="image" />
@@ -394,13 +395,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {/* Optimized modular script loading */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
       <Script src="/scripts/theme.js" strategy="beforeInteractive" />
-      <Script src="/scripts/sw-register.js" strategy="afterInteractive" />
-      <Script src="/scripts/async-loader.js" strategy="afterInteractive" />
-      <Script src="/scripts/critical-path-optimization.js" strategy="afterInteractive" />
-      <Script src="/scripts/web-vitals.js" strategy="afterInteractive" />
-      <Script src="/scripts/performance-api.js" strategy="afterInteractive" />
       <Script src="/scripts/yandex-metrika.js" strategy="afterInteractive" />
-      <Script src="/scripts/performance.js" strategy="afterInteractive" />
       <Script src="/scripts/ui-components.js" strategy="afterInteractive" />
       <Script src="/scripts/main-init.js" strategy="afterInteractive" />
     </body>
