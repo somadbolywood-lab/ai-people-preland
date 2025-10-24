@@ -4552,7 +4552,7 @@ a.visible-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 10001;
   padding: 2rem;
   /* Animation disabled to prevent glitches */
 }
@@ -4601,7 +4601,7 @@ a.visible-link {
   cursor: pointer;
   color: var(--text);
   transition: all 0.3s ease;
-  z-index: 10001;
+  z-index: 10002;
 }
 
 .video-modal-close::before {
