@@ -134,10 +134,20 @@ export default function Page() {
       <section className="marquee" aria-label="Model previews">
         <div className="marquee-track">
                  {Array.from({length:19}).map((_,i)=> (
-                   <div className="marquee-item" key={`m-a-${i}`}><Image src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} alt={`Гиперреалистичная AI Модель ${i+1} - Премиум виртуальный инфлюенсер для цифровых маркетинговых кампаний`} width={320} height={180} loading="lazy" /></div>
+                   <div className="marquee-item" key={`m-a-${i}`}>
+                     <picture>
+                       <source srcSet={`/assets/models/model-${String(i+1).padStart(2, '0')}.webp`} type="image/webp" />
+                       <Image src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} alt={`Гиперреалистичная AI Модель ${i+1} - Премиум виртуальный инфлюенсер для цифровых маркетинговых кампаний`} width={320} height={180} quality={100} loading="eager" />
+                     </picture>
+                   </div>
                  ))}
                  {Array.from({length:19}).map((_,i)=> (
-                   <div className="marquee-item" key={`m-b-${i}`}><Image src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} alt={`Профессиональная AI Сгенерированная Модель ${i+1} - Виртуальный инфлюенсер для бренд-маркетинга`} width={320} height={180} loading="lazy" /></div>
+                   <div className="marquee-item" key={`m-b-${i}`}>
+                     <picture>
+                       <source srcSet={`/assets/models/model-${String(i+1).padStart(2, '0')}.webp`} type="image/webp" />
+                       <Image src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} alt={`Профессиональная AI Сгенерированная Модель ${i+1} - Виртуальный инфлюенсер для бренд-маркетинга`} width={320} height={180} quality={100} loading="eager" />
+                     </picture>
+                   </div>
                  ))}
         </div>
       </section>

@@ -30,26 +30,34 @@ export default function Page() {
         <div className="marquee-track">
           {Array.from({length:19}).map((_,i)=> (
             <div className="marquee-item" key={`m-a-${i}`}>
-              <Image 
-                src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} 
-                alt={`Professional hyperrealistic AI model ${i+1} - Premium virtual influencer for commercial marketing campaigns and brand advertising`} 
-                title={`AI Model ${i+1} - Hyperrealistic Virtual Influencer`}
-                width={320} 
-                height={180} 
-                loading="lazy" 
-              />
+              <picture>
+                <source srcSet={`/assets/models/model-${String(i+1).padStart(2, '0')}.webp`} type="image/webp" />
+                <Image 
+                  src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} 
+                  alt={`Professional hyperrealistic AI model ${i+1} - Premium virtual influencer for commercial marketing campaigns and brand advertising`} 
+                  title={`AI Model ${i+1} - Hyperrealistic Virtual Influencer`}
+                  width={320} 
+                  height={180} 
+                  quality={100}
+                  loading="eager" 
+                />
+              </picture>
             </div>
           ))}
           {Array.from({length:19}).map((_,i)=> (
             <div className="marquee-item" key={`m-b-${i}`}>
-              <Image 
-                src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} 
-                alt={`AI-generated virtual model ${i+1} - High-quality digital influencer for social media marketing and e-commerce`} 
-                title={`Premium AI Model ${i+1} for Marketing`}
-                width={320} 
-                height={180} 
-                loading="lazy" 
-              />
+              <picture>
+                <source srcSet={`/assets/models/model-${String(i+1).padStart(2, '0')}.webp`} type="image/webp" />
+                <Image 
+                  src={`/assets/models/model-${String(i+1).padStart(2, '0')}.png`} 
+                  alt={`AI-generated virtual model ${i+1} - High-quality digital influencer for social media marketing and e-commerce`} 
+                  title={`Premium AI Model ${i+1} for Marketing`}
+                  width={320} 
+                  height={180} 
+                  quality={100}
+                  loading="eager" 
+                />
+              </picture>
             </div>
           ))}
         </div>

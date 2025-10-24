@@ -2776,7 +2776,7 @@ a.visible-link {
 .marquee-item img { 
     width: 100%; 
     height: 100%; 
-    object-fit: contain; 
+    object-fit: cover; 
     display: block;
     /* High quality image rendering for photos */
     image-rendering: auto;
@@ -2998,7 +2998,7 @@ a.visible-link {
         min-height: 72px !important; 
         height: 72px !important; 
     }
-    body { padding-top: 80px !important; }
+    body { padding-top: 65px !important; }
     .logo-img { 
         height: 64px;
         min-height: 64px;
@@ -3042,7 +3042,7 @@ a.visible-link {
         min-height: 72px !important; 
         height: 72px !important; 
     }
-    body { padding-top: 80px !important; }
+    body { padding-top: 65px !important; }
     .logo-img { 
         height: 64px !important; 
         max-width: 192px !important;
@@ -7624,6 +7624,46 @@ a.visible-link {
 @media (min-width: 640px) and (max-width: 1024px) {
   .marquee-track {
     animation: marquee 35s linear infinite !important;
+  }
+}
+
+/* Desktop marquee optimizations - уменьшено на 25% (15% + 10%) */
+@media (min-width: 1200px) {
+  .marquee-item { 
+    width: 367px; 
+    height: 207px; 
+  }
+  .marquee-item img {
+    width: 367px; 
+    height: 207px; 
+    image-rendering: high-quality;
+    -ms-interpolation-mode: bicubic;
+  }
+}
+
+@media (min-width: 1400px) {
+  .marquee-item { 
+    width: 428px; 
+    height: 241px; 
+  }
+  .marquee-item img {
+    width: 428px; 
+    height: 241px; 
+    image-rendering: high-quality;
+    -ms-interpolation-mode: bicubic;
+  }
+}
+
+@media (min-width: 1600px) {
+  .marquee-item { 
+    width: 490px; 
+    height: 275px; 
+  }
+  .marquee-item img {
+    width: 490px; 
+    height: 275px; 
+    image-rendering: high-quality;
+    -ms-interpolation-mode: bicubic;
   }
 }
 
