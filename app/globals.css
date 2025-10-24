@@ -119,13 +119,12 @@ html, body { height: 100%; }
     
     .marquee-item {
         width: 360px !important;
-        height: 225px !important;
+        height: 234px !important;
     }
     
     .marquee-item img {
         width: 360px !important;
-        height: 225px !important;
-        image-rendering: -webkit-optimize-contrast;
+        height: 234px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -183,9 +182,11 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: 92px !important;
+        height: 48px !important;
         width: auto !important;
-        max-width: 184px !important;
+        max-width: 144px !important;
+        min-height: 48px !important;
+        max-height: 48px !important;
     }
 }
 
@@ -229,14 +230,13 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 320px !important;
-        height: 180px !important;
+        width: 360px !important;
+        height: 234px !important;
     }
     
     .marquee-item img {
-        width: 320px !important;
-        height: 180px !important;
-        image-rendering: -webkit-optimize-contrast;
+        width: 360px !important;
+        height: 234px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -266,9 +266,11 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: 88px !important;
+        height: 48px !important;
         width: auto !important;
-        max-width: 180px !important;
+        max-width: 144px !important;
+        min-height: 48px !important;
+        max-height: 48px !important;
     }
 }
 
@@ -312,14 +314,13 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 300px !important;
-        height: 169px !important;
+        width: 360px !important;
+        height: 234px !important;
     }
     
     .marquee-item img {
-        width: 300px !important;
-        height: 169px !important;
-        image-rendering: -webkit-optimize-contrast;
+        width: 360px !important;
+        height: 234px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -389,14 +390,13 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 280px !important;
-        height: 157px !important;
+        width: 360px !important;
+        height: 234px !important;
     }
     
     .marquee-item img {
-        width: 280px !important;
-        height: 157px !important;
-        image-rendering: -webkit-optimize-contrast;
+        width: 360px !important;
+        height: 234px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -460,14 +460,13 @@ html, body { height: 100%; }
     }
     
     .marquee-item {
-        width: 240px !important;
-        height: 135px !important;
+        width: 360px !important;
+        height: 234px !important;
     }
     
     .marquee-item img {
-        width: 240px !important;
-        height: 135px !important;
-        image-rendering: -webkit-optimize-contrast;
+        width: 360px !important;
+        height: 234px !important;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -497,9 +496,11 @@ html, body { height: 100%; }
     }
     
     .brand .logo-img {
-        height: 74px !important;
+        height: 48px !important;
         width: auto !important;
-        max-width: 138px !important;
+        max-width: 144px !important;
+        min-height: 48px !important;
+        max-height: 48px !important;
     }
 }
 
@@ -521,9 +522,10 @@ html, body { height: 100%; }
     }
     
     .logo-img {
-        height: 36px;
-        max-width: 100px;
-        transition: all 0.3s ease;
+        height: 52px;
+        max-width: 156px;
+        min-height: 52px;
+        max-height: 52px;
     }
     
     .btn {
@@ -950,7 +952,6 @@ a.visible-link {
   padding: 2.5rem;
   border-radius: 16px;
   text-align: center;
-  transition: all 0.3s ease;
   cursor: pointer;
   border: 2px solid transparent;
   min-height: 600px;
@@ -974,13 +975,11 @@ a.visible-link {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .title-icon {
   flex-shrink: 0;
-  transition: all 0.3s ease;
     width: 32px; 
     height: 32px; 
 }
@@ -1084,7 +1083,6 @@ a.visible-link {
   font-size: 1rem;
   font-weight: 600;
   border-radius: 12px;
-  transition: all 0.3s ease;
   border: none;
   cursor: pointer;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -1199,7 +1197,6 @@ a.visible-link {
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
   position: relative;
 }
 
@@ -1317,7 +1314,6 @@ a.visible-link {
   font-size: 1rem;
   background: var(--bg-primary);
   color: var(--text-primary);
-  transition: all 0.3s ease;
   width: 100%;
 }
 
@@ -1498,7 +1494,6 @@ a.visible-link {
   font-size: 1rem;
   font-weight: 500;
   border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
 .google-auth:hover {
@@ -1629,48 +1624,44 @@ a.visible-link {
     opacity: 0.8;
 }
 .logo-img { 
-    height: 40px; 
+    height: 64px; 
     width: auto; 
     display: block; 
     object-fit: contain; 
     box-shadow: none; 
     border-radius: 0; 
-    max-width: 120px;
+    max-width: 192px;
+    min-width: auto;
     flex-shrink: 0;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: auto;
+    -ms-interpolation-mode: bicubic;
     backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
-    transition: all 0.3s ease;
+    -webkit-font-smoothing: antialiased;
     /* Critical CSS - анимация загружается сразу */
     opacity: 1;
-    will-change: opacity, transform;
+    /* Layout Shift Prevention */
+    min-height: 64px;
+    max-height: 64px;
+    /* Prevent jumping */
+    position: relative;
+    top: 0;
+    left: 0;
+    /* Prevent vertical stretching */
+    transform: none;
+    transition: none;
+    /* Force stable dimensions */
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Prevent any layout shifts */
+    will-change: auto;
+    contain: layout style;
+    /* Loading optimization */
+    content-visibility: auto;
+    contain-intrinsic-size: 192px 64px;
 }
 
 
-/* Logo animation keyframes */
-@keyframes logoFadeIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    50% {
-        opacity: 0.7;
-        transform: scale(1.05);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Logo loaded state - анимация завершена */
-.logo-img.animation-complete {
-    opacity: 1;
-    transform: scale(1);
-    animation: none;
-}
+/* Logo animations COMPLETELY REMOVED to prevent jumping */
 .actions { 
     display: flex; 
     gap: 8px; 
@@ -1808,7 +1799,6 @@ a.visible-link {
     height: 2px;
     background: var(--text);
     border-radius: 2px;
-    transition: all 0.3s ease;
 }
 
 .gradient-text { 
@@ -2786,10 +2776,9 @@ a.visible-link {
 .marquee-item img { 
     width: 100%; 
     height: 100%; 
-    object-fit: cover; 
+    object-fit: contain; 
     display: block;
     /* High quality image rendering for photos */
-    image-rendering: -webkit-optimize-contrast;
     image-rendering: auto;
     -ms-interpolation-mode: bicubic;
     backface-visibility: hidden;
@@ -2838,10 +2827,11 @@ a.visible-link {
     }
     
     .logo-img {
-        height: 32px;
+        height: 52px;
         width: auto;
-        max-width: 90px;
-        transition: all 0.3s ease;
+        max-width: 156px;
+        min-height: 52px;
+        max-height: 52px;
     }
     
     .btn {
@@ -2941,7 +2931,6 @@ a.visible-link {
     .marquee-item img {
         width: 200px;
         height: 112px;
-        image-rendering: -webkit-optimize-contrast;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -2991,7 +2980,6 @@ a.visible-link {
     .marquee-item img {
         width: 240px;
         height: 135px;
-        image-rendering: -webkit-optimize-contrast;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -3012,8 +3000,9 @@ a.visible-link {
     }
     body { padding-top: 80px !important; }
     .logo-img { 
-        height: 44px; 
-        transition: all 0.3s ease;
+        height: 64px;
+        min-height: 64px;
+        max-height: 64px;
     }
     .social-link { width: 36px; height: 36px; }
     
@@ -3024,11 +3013,10 @@ a.visible-link {
     .menu-panel {
         top: 72px;
     }
-    .marquee-item { width: 176px; height: 99px; }
+    .marquee-item { width: 280px; height: 184px; }
     .marquee::before, .marquee::after { width: 55px; }
     .marquee .marquee-track { animation: slide 96s linear infinite !important; }
     .marquee-item img {
-        image-rendering: -webkit-optimize-contrast;
         image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
@@ -3056,17 +3044,17 @@ a.visible-link {
     }
     body { padding-top: 80px !important; }
     .logo-img { 
-        height: 75px !important; 
-        max-width: 180px !important; 
-        transition: all 0.3s ease;
+        height: 64px !important; 
+        max-width: 192px !important;
+        min-height: 64px !important;
+        max-height: 64px !important;
     }
-    .marquee-item { width: 320px; height: 180px; }
+    .marquee-item { width: 320px; height: 204px; }
     .marquee .marquee-track { animation: slide 96s linear infinite !important; }
     .marquee:hover .marquee-track { animation-play-state: paused !important; }
     .marquee-item img {
         /* Enhanced image quality for desktop */
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
+        image-rendering: auto;
         -ms-interpolation-mode: bicubic;
         backface-visibility: hidden;
         -webkit-font-smoothing: antialiased;
@@ -3076,7 +3064,6 @@ a.visible-link {
         -webkit-transform: translateZ(0);
         will-change: transform;
         /* Better scaling for high-DPI displays */
-        image-rendering: -moz-crisp-edges;
         /* Fallback to high quality */
         image-rendering: auto;
     }
@@ -3977,7 +3964,6 @@ a.visible-link {
   border-radius: 16px;
   position: relative;
   cursor: pointer;
-  transition: all 0.3s ease;
   text-decoration: none;
   color: var(--text);
   font-size: 1.4rem;
@@ -4006,7 +3992,6 @@ a.visible-link {
   width: 48px;
   height: 48px;
   color: var(--accent);
-  transition: all 0.3s ease;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -4086,7 +4071,6 @@ a.visible-link {
   border-radius: 16px;
   position: relative;
   cursor: pointer;
-  transition: all 0.3s ease;
   color: var(--text);
   font-size: 1.3rem;
   font-weight: 600;
@@ -4114,7 +4098,6 @@ a.visible-link {
   width: 24px;
   height: 24px;
   color: var(--accent);
-  transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
@@ -4167,7 +4150,6 @@ a.visible-link {
   border-radius: 16px;
   position: relative;
   cursor: pointer;
-  transition: all 0.3s ease;
   color: var(--text);
   font-size: 1.3rem;
   font-weight: 600;
@@ -4195,7 +4177,6 @@ a.visible-link {
   width: 24px;
   height: 24px;
   color: var(--accent);
-  transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
@@ -4271,7 +4252,6 @@ a.visible-link {
   border: 2px solid var(--border);
   border-radius: 20px;
   overflow: hidden;
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
 }
@@ -4365,7 +4345,6 @@ a.visible-link {
   color: var(--accent);
   font-weight: 600;
   font-size: 1rem;
-  transition: all 0.3s ease;
 }
 
 .all-blogs-content .read-more-btn:hover {
@@ -4600,7 +4579,6 @@ a.visible-link {
   justify-content: center;
   cursor: pointer;
   color: var(--text);
-  transition: all 0.3s ease;
   z-index: 10002;
 }
 
@@ -4677,7 +4655,6 @@ a.visible-link {
   border-radius: 12px;
   position: relative;
   cursor: pointer;
-  transition: all 0.3s ease;
   color: var(--text);
   font-size: 1.1rem;
   font-weight: 600;
@@ -4705,7 +4682,6 @@ a.visible-link {
   width: 24px;
   height: 24px;
   color: #FF0000;
-  transition: all 0.3s ease;
 }
 
 .video-modal-youtube-btn:hover {
@@ -4979,7 +4955,6 @@ a.visible-link {
   color: var(--text-primary);
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -5232,7 +5207,6 @@ a.visible-link {
   border: 2px solid transparent;
   background-clip: padding-box;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -5359,7 +5333,6 @@ a.visible-link {
   font-size: 1rem;
   border: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
   position: relative;
   z-index: 2;
 }
@@ -5396,7 +5369,6 @@ a.visible-link {
   border-radius: 8px;
   display: inline-block;
   margin-top: 1rem !important;
-  transition: all 0.3s ease;
   cursor: pointer;
 }
 
@@ -5646,7 +5618,6 @@ a.visible-link {
   justify-content: center;
   cursor: pointer;
   color: var(--text-primary);
-  transition: all 0.3s ease;
 }
 
 .modal-close:hover {
@@ -5728,7 +5699,6 @@ a.visible-link {
   background: rgba(139, 92, 246, 0.05);
   border: 1px solid rgba(139, 92, 246, 0.1);
   border-radius: 12px;
-  transition: all 0.3s ease;
 }
 
 .benefits-list li:hover {
@@ -5998,7 +5968,6 @@ a.visible-link {
   border: 2px solid var(--border);
   border-radius: 20px;
   overflow: hidden;
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
 }
@@ -6096,7 +6065,6 @@ a.visible-link {
   color: var(--accent);
   font-weight: 600;
   font-size: 1rem;
-  transition: all 0.3s ease;
 }
 
 .read-more-btn:hover {
@@ -6144,7 +6112,6 @@ a.visible-link {
   border: 2px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
-  transition: all 0.3s ease;
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -6166,13 +6133,11 @@ a.visible-link {
 .marquee-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.5s ease;
   /* Image quality improvements */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  image-rendering: pixelated;
-  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: auto;
+  -ms-interpolation-mode: bicubic;
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -6362,7 +6327,6 @@ a.visible-link {
   background: rgba(255, 255, 255, 0.1);
   color: white;
   font-size: 1rem;
-  transition: all 0.3s ease;
 }
 
 .newsletter-input:focus {
@@ -6384,7 +6348,6 @@ a.visible-link {
   font-size: 1rem;
   border: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
   position: relative;
   z-index: 2;
   white-space: nowrap;
@@ -7012,7 +6975,6 @@ a.visible-link {
   font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 500;
-  transition: all 0.3s ease;
   cursor: pointer;
 }
 
@@ -7046,7 +7008,6 @@ a.visible-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
   border: 1px solid var(--border);
   background: var(--panel);
 }
@@ -7155,7 +7116,6 @@ a.visible-link {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  transition: all 0.3s ease;
   border: 1px solid var(--border);
   background: var(--bg-secondary);
   color: var(--text-secondary);
@@ -7196,7 +7156,6 @@ a.visible-link {
   border: 2px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -7293,7 +7252,6 @@ a.visible-link {
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   text-decoration: none;

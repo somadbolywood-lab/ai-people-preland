@@ -184,7 +184,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
         {/* Preload Critical Resources */}
         <link rel="preload" href="/scripts/main-init.js" as="script" />
-        <link rel="preload" href="/faq/AI-people Logo.png" as="image" />
+        <link rel="preload" href="/faq/AI-people Logo.webp" as="image" fetchPriority="high" />
         <link rel="preload" href="/assets/models/model-01.png" as="image" />
         <link rel="preload" href="/assets/models/model-02.png" as="image" />
         <link rel="preload" href="/assets/models/model-03.png" as="image" />

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSelector from "./LanguageSelector";
 import { useHamburgerMenu } from "../hooks/useHamburgerMenu";
@@ -17,14 +16,20 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
       <header className="topbar">
         <div className="brand">
           <a href={homeHref} className="brand-link">
-            <Image 
-              src="/faq/AI-people Logo.png" 
-              alt="AI-People" 
-              className="logo-img" 
-              width={180} 
-              height={75} 
-              priority
-            />
+            <picture>
+              <source 
+                srcSet="/faq/AI-people Logo.webp 1x, /faq/AI-people Logo@2x.webp 2x" 
+                type="image/webp" 
+              />
+              <img 
+                src="/faq/AI-people Logo.png" 
+                srcSet="/faq/AI-people Logo.png 1x, /faq/AI-people Logo@2x.png 2x"
+                alt="AI-People" 
+                className="logo-img"
+                loading="eager"
+                fetchPriority="high"
+              />
+            </picture>
           </a>
         </div>
         <div className="actions">

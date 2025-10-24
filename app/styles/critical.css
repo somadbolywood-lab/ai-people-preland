@@ -102,11 +102,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 .logo-img { 
-    height: 48px; 
+    height: 64px; 
     width: auto; 
-    max-height: 58px;
-    max-width: 150px;
+    max-height: 64px;
+    max-width: 192px;
     object-fit: contain;
+    min-height: 64px;
+    min-width: auto;
 }
 
 .actions { 
@@ -176,8 +178,10 @@ a { color: inherit; text-decoration: none; }
     }
     
     .logo-img {
-        height: 36px;
-        max-width: 100px;
+        height: 64px;
+        max-width: 192px;
+        min-height: 64px;
+        max-height: 64px;
     }
     
     .btn {
