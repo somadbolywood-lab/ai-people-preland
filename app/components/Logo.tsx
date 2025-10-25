@@ -20,6 +20,8 @@ export default function Logo({ homeHref }: LogoProps) {
             className="logo-img"
             loading="eager"
             fetchPriority="high"
+            decoding="sync"
+            style={{ opacity: 1 }}
           />
         </picture>
       </a>

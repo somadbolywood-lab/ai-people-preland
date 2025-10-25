@@ -212,6 +212,15 @@ html, body { height: 100%; }
         opacity: 1 !important;
         transform: translateY(0) scale(1) !important;
     }
+    
+    /* Collapsible header padding for mobile */
+    .section-title.collapsible-header {
+        padding-left: 0.75rem !important;
+    }
+    
+    .collapsible-content {
+        padding-left: 0.75rem !important;
+    }
 }
 
 /* iPhone 14 Pro Max and similar large devices */
@@ -319,6 +328,15 @@ html, body { height: 100%; }
         opacity: 1 !important;
         transform: translateY(0) scale(1) !important;
     }
+    
+    /* Collapsible header padding for mobile */
+    .section-title.collapsible-header {
+        padding-left: 0.5rem !important;
+    }
+    
+    .collapsible-content {
+        padding-left: 0.5rem !important;
+    }
 }
 
 /* Extra small screens in portrait mode */
@@ -403,6 +421,14 @@ html, body { height: 100%; }
         min-width: 44px !important;  /* Apple HIG minimum */
     }
     
+    /* Collapsible header padding for mobile */
+    .section-title.collapsible-header {
+        padding-left: 0.4rem !important;
+    }
+    
+    .collapsible-content {
+        padding-left: 0.4rem !important;
+    }
 }
 
 /* iPhone 14 Pro and similar devices */
@@ -2012,6 +2038,7 @@ a.visible-link {
 @media (max-width: 768px) {
     .section-title.collapsible-header {
         font-size: 1.1rem !important;
+        padding-left: 0.75rem !important;
         padding-right: 2.5rem !important;
     }
     
@@ -2019,17 +2046,26 @@ a.visible-link {
         font-size: 1.1rem !important;
         right: 0.75rem !important;
     }
+    
+    .collapsible-content {
+        padding-left: 0.75rem !important;
+    }
 }
 
 @media (max-width: 480px) {
     .section-title.collapsible-header {
         font-size: 1rem !important;
+        padding-left: 0.5rem !important;
         padding-right: 2rem !important;
     }
     
     .section-title.collapsible-header::after {
         font-size: 1rem !important;
         right: 0.5rem !important;
+    }
+    
+    .collapsible-content {
+        padding-left: 0.5rem !important;
     }
 }
 
