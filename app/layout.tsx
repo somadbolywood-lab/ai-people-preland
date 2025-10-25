@@ -8,6 +8,7 @@ import LanguageSelector from './components/LanguageSelector';
 import HreflangLinks from './components/HreflangLinks';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './components/ThemeProvider';
+import Logo from './components/Logo';
 
 export const metadata = {
   title: "World's First Curated AI Models Marketplace | AI-People",
@@ -74,6 +75,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <link rel="preload" href="/faq/AI-people Logo.webp" as="image" type="image/webp" fetchPriority="high" />
             <link rel="preload" href="/faq/AI-people Logo.png" as="image" type="image/png" fetchPriority="high" />
             
+            {/* Force logo to load first by adding explicit dimensions */}
+            <style dangerouslySetInnerHTML={{
+              __html: `
+                .logo-img {
+                  content: url('/faq/AI-people Logo.png');
+                  min-width: 166px;
+                  min-height: 55px;
+                  max-width: 166px;
+                  max-height: 55px;
+                  width: 166px;
+                  height: 55px;
+                }
+              `
+            }} />
+            
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover" />
             <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
             <meta httpEquiv="Pragma" content="no-cache" />
@@ -132,6 +148,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   opacity: 1 !important;
                   transform: none !important;
                   transition: none !important;
+                  display: block !important;
+                  visibility: visible !important;
+                  height: auto !important;
+                  width: auto !important;
+                }
+                
+                .brand {
+                  display: flex !important;
+                  align-items: center !important;
+                  height: 100% !important;
                 }
                 
                 .btn {

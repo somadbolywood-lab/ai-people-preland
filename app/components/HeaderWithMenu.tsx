@@ -15,6 +15,7 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
   return (
     <>
       <header className="topbar">
+        {/* Logo component rendered as server component */}
         <Logo homeHref={homeHref} />
         <div className="actions">
           <LanguageSelector />
