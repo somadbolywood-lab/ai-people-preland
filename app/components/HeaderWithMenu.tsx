@@ -2,6 +2,8 @@
 
 import ThemeToggle from "./ThemeToggle";
 import LanguageSelector from "./LanguageSelector";
+import Logo from "./Logo";
+import LogoAnimation from "./LogoAnimation";
 import { useHamburgerMenu } from "../hooks/useHamburgerMenu";
 
 interface HeaderWithMenuProps {
@@ -14,24 +16,8 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
   return (
     <>
       <header className="topbar">
-        <div className="brand">
-          <a href={homeHref} className="brand-link">
-            <picture>
-              <source 
-                srcSet="/faq/AI-people Logo.webp 1x, /faq/AI-people Logo@2x.webp 2x" 
-                type="image/webp" 
-              />
-              <img 
-                src="/faq/AI-people Logo.png" 
-                srcSet="/faq/AI-people Logo.png 1x, /faq/AI-people Logo@2x.png 2x"
-                alt="AI-People" 
-                className="logo-img"
-                loading="eager"
-                fetchPriority="high"
-              />
-            </picture>
-          </a>
-        </div>
+        <Logo homeHref={homeHref} />
+        <LogoAnimation />
         <div className="actions">
           <LanguageSelector />
           <ThemeToggle />

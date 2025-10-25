@@ -90,8 +90,8 @@ export default function Page() {
       {/* Pre-launch Notification Banner */}
       <div className="notification-banner">
         <div className="notification-content">
-          <span data-lang-en="🔥 This is just the warm-up! You're on the pre-landing page — subscribe and be among the first to break into the project. Early subscribers get privileges at launch. Launching 12/01/2025" data-lang-ru="🔥 Это только разогрев! Сейчас ты на прелендинге — подпишись и окажись в числе первых, кто ворвётся в проект. Ранние подписчики получают привилегии на старте. Стартуем 01.12.2025">
-            🔥 This is just the warm-up! You're on the pre-landing page — subscribe and be among the first to break into the project. Early subscribers get privileges at launch. Launching 12/01/2025
+          <span data-lang-en="🔥 This is just the warm-up! You're on the pre-landing page — subscribe now and be among the first to break into the project. Early subscribers get exclusive perks at launch. Step into 2026 with game-changing opportunities!" data-lang-ru="🔥 Это только разминка! Вы на прелендинговой странице - подпишитесь сейчас и станьте одним из первых, кто освоит проект. Ранние подписчики получат эксклюзивные бонусы при запуске. Шагните в 2026 год с революционными возможностями!">
+            🔥 This is just the warm-up! You're on the pre-landing page — subscribe now and be among the first to break into the project. Early subscribers get exclusive perks at launch. Step into 2026 with game-changing opportunities!
           </span>
         </div>
       </div>

@@ -70,6 +70,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning>
           <head>
+            {/* Logo preloads - ABSOLUTE FIRST PRIORITY */}
+            <link rel="preload" href="/faq/AI-people Logo.webp" as="image" type="image/webp" fetchPriority="high" />
+            <link rel="preload" href="/faq/AI-people Logo.png" as="image" type="image/png" fetchPriority="high" />
+            
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover" />
             <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
             <meta httpEquiv="Pragma" content="no-cache" />
@@ -100,7 +104,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 /* Force all elements to dark theme immediately */
                 * {
                   transition: none !important;
-                  animation: none !important;
                 }
                 
                 .topbar {
@@ -183,19 +186,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://ai-people.io" />
         
         {/* Preload Critical Resources */}
-        <link rel="preload" href="/scripts/main-init.js" as="script" />
-        <link rel="preload" href="/faq/AI-people Logo.webp" as="image" fetchPriority="high" />
-        <link rel="preload" href="/faq/AI-people Logo.png" as="image" fetchPriority="high" />
-        <link rel="preload" href="/assets/models/model-01.png" as="image" />
-        <link rel="preload" href="/assets/models/model-02.png" as="image" />
-        <link rel="preload" href="/assets/models/model-03.png" as="image" />
+        {/* Model images - lowest priority */}
+        <link rel="preload" href="/assets/models/model-01.png" as="image" fetchPriority="low" />
+        <link rel="preload" href="/assets/models/model-02.png" as="image" fetchPriority="low" />
+        <link rel="preload" href="/assets/models/model-03.png" as="image" fetchPriority="low" />
+        {/* Scripts - lowest priority */}
+        <link rel="preload" href="/scripts/main-init.js" as="script" fetchPriority="low" />
         
             {/* Optimized Font Loading */}
             <link
               href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
               rel="stylesheet"
             />
-            <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossOrigin="anonymous" fetchPriority="high" />
+            <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossOrigin="anonymous" fetchPriority="low" />
         
         {/* Prefetch Next Pages */}
         <link rel="prefetch" href="/blog" />
@@ -203,170 +206,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="prefetch" href="/about" />
         <link rel="prefetch" href="/auth/role" />
         
-            {/* Theme initialization script - runs before React */}
-            <script dangerouslySetInnerHTML={{
-              __html: `
-                (function() {
-                  try {
-                    const savedTheme = localStorage.getItem('theme') || 'light';
-                    if (savedTheme === 'light') {
-                      document.documentElement.classList.add('light');
-                      document.body.classList.add('light');
-                    }
-                  } catch (e) {
-                    // localStorage not available, use default
-                  }
-                })();
-              `
-            }} />
         
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "@id": "https://ai-people.io/#organization",
-              "name": "AI-People",
-              "url": "https://ai-people.io",
-              "logo": "https://ai-people.io/faq/AI-people Logo.png",
-              "description": "Leading AI models marketplace featuring hyperrealistic virtual influencers, AI-generated content, and premium AI art",
-              "foundingDate": "2025",
-              "sameAs": [
-                "https://www.instagram.com/ai_people_io",
-                "https://www.tiktok.com/@ai_people_io",
-                "https://x.com/ai_people_io",
-                "https://www.reddit.com/u/AI-PEOPLE",
-                "https://pin.it/12q1ESjB2",
-                "https://youtube.com/@ai_people_io"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "customer service",
-                "email": "feedback@ai-people.io",
-                "availableLanguage": ["en", "ru"]
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "US"
-              },
-              "offers": {
-                "@type": "Offer",
-                "category": "AI Models Marketplace",
-                "priceRange": "$49-$500+",
-                "availability": "https://schema.org/PreOrder",
-                "availabilityStarts": "2025-11-01T00:00:00Z",
-                "validFrom": "2025-10-07"
-              }
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "@id": "https://ai-people.io/#website",
-              "name": "AI-People",
-              "url": "https://ai-people.io",
-              "publisher": { "@id": "https://ai-people.io/#organization" },
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://ai-people.io/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Event",
-              "name": "AI-People Marketplace Official Launch",
-              "description": "World's first curated marketplace for hyperrealistic AI models and virtual influencers goes live",
-              "startDate": "2025-11-01T00:00:00-05:00",
-              "endDate": "2025-11-01T23:59:59-05:00",
-              "eventStatus": "https://schema.org/EventScheduled",
-              "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-              "location": {
-                "@type": "VirtualLocation",
-                "url": "https://ai-people.io"
-              },
-              "image": "https://ai-people.io/faq/AI-people Logo.png",
-              "organizer": {
-                "@type": "Organization",
-                "name": "AI-People",
-                "url": "https://ai-people.io"
-              },
-              "offers": {
-                "@type": "Offer",
-                "url": "https://ai-people.io/auth/role",
-                "price": "0",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/PreOrder",
-                "validFrom": "2025-10-07"
-              }
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "OnlineMarketplace",
-              "name": "AI-People Marketplace",
-              "description": "World's first curated marketplace for hyperrealistic AI models and virtual influencers",
-              "url": "https://ai-people.io",
-              "provider": { "@id": "https://ai-people.io/#organization" },
-              "hasStore": [
-                {
-                  "@type": "Store",
-                  "name": "AI Models Store",
-                  "description": "Premium AI models and virtual influencers"
-                },
-                {
-                  "@type": "Store", 
-                  "name": "Creator Tools Store",
-                  "description": "AI creation tools and resources"
-                }
-              ],
-              "category": "AI Technology Marketplace",
-              "offers": {
-                "@type": "AggregateOffer",
-                "priceRange": "$49-$500+",
-                "availability": "https://schema.org/PreOrder",
-                "validFrom": "2025-11-01"
-              }
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "AI-People Platform",
-              "description": "AI models marketplace and virtual influencer platform",
-              "url": "https://ai-people.io",
-              "applicationCategory": "BusinessApplication",
-              "operatingSystem": "Web Browser",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/PreOrder"
-              },
-              "publisher": { "@id": "https://ai-people.io/#organization" },
-              "datePublished": "2025-10-01",
-              "version": "1.0"
-            })
-          }}
-        />
         {/* Critical CSS - Optimized inline for fastest rendering */}
       </head>
     <body suppressHydrationWarning>
@@ -392,12 +232,178 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </LanguageProvider>
         </ThemeProvider>
       </ErrorBoundary>
+      {/* Theme initialization script - moved to end for faster rendering */}
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          (function() {
+            try {
+              const savedTheme = localStorage.getItem('theme') || 'light';
+              if (savedTheme === 'light') {
+                document.documentElement.classList.add('light');
+                document.body.classList.add('light');
+              }
+            } catch (e) {
+              // localStorage not available, use default
+            }
+          })();
+        `
+      }} />
+      
       {/* Optimized modular script loading */}
       <Script src="/scripts/polyfills.js" strategy="beforeInteractive" />
       <Script src="/scripts/theme.js" strategy="beforeInteractive" />
       <Script src="/scripts/yandex-metrika.js" strategy="afterInteractive" />
       <Script src="/scripts/ui-components.js" strategy="afterInteractive" />
       <Script src="/scripts/main-init.js" strategy="afterInteractive" />
+      
+      {/* JSON-LD Schema - moved to end for faster rendering */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://ai-people.io/#organization",
+            "name": "AI-People",
+            "url": "https://ai-people.io",
+            "logo": "https://ai-people.io/faq/AI-people Logo.png",
+            "description": "Leading AI models marketplace featuring hyperrealistic virtual influencers, AI-generated content, and premium AI art",
+            "foundingDate": "2025",
+            "sameAs": [
+              "https://www.instagram.com/ai_people_io",
+              "https://www.tiktok.com/@ai_people_io",
+              "https://x.com/ai_people_io",
+              "https://www.reddit.com/u/AI-PEOPLE",
+              "https://pin.it/12q1ESjB2",
+              "https://youtube.com/@ai_people_io"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "email": "feedback@ai-people.io",
+              "availableLanguage": ["en", "ru"]
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "US"
+            },
+            "offers": {
+              "@type": "Offer",
+              "category": "AI Models Marketplace",
+              "priceRange": "$49-$500+",
+              "availability": "https://schema.org/PreOrder",
+              "availabilityStarts": "2025-11-01T00:00:00Z",
+              "validFrom": "2025-10-07"
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://ai-people.io/#website",
+            "name": "AI-People",
+            "url": "https://ai-people.io",
+            "publisher": { "@id": "https://ai-people.io/#organization" },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://ai-people.io/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": "AI-People Marketplace Official Launch",
+            "description": "World's first curated marketplace for hyperrealistic AI models and virtual influencers goes live",
+            "startDate": "2025-11-01T00:00:00-05:00",
+            "endDate": "2025-11-01T23:59:59-05:00",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+            "location": {
+              "@type": "VirtualLocation",
+              "url": "https://ai-people.io"
+            },
+            "image": "https://ai-people.io/faq/AI-people Logo.png",
+            "organizer": {
+              "@type": "Organization",
+              "name": "AI-People",
+              "url": "https://ai-people.io"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://ai-people.io/auth/role",
+              "price": "0",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/PreOrder",
+              "validFrom": "2025-10-07"
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "OnlineMarketplace",
+            "name": "AI-People Marketplace",
+            "description": "World's first curated marketplace for hyperrealistic AI models and virtual influencers",
+            "url": "https://ai-people.io",
+            "provider": { "@id": "https://ai-people.io/#organization" },
+            "hasStore": [
+              {
+                "@type": "Store",
+                "name": "AI Models Store",
+                "description": "Premium AI models and virtual influencers"
+              },
+              {
+                "@type": "Store", 
+                "name": "Creator Tools Store",
+                "description": "AI creation tools and resources"
+              }
+            ],
+            "category": "AI Technology Marketplace",
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceRange": "$49-$500+",
+              "availability": "https://schema.org/PreOrder",
+              "validFrom": "2025-11-01"
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "AI-People Platform",
+            "description": "AI models marketplace and virtual influencer platform",
+            "url": "https://ai-people.io",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web Browser",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/PreOrder"
+            },
+            "publisher": { "@id": "https://ai-people.io/#organization" },
+            "datePublished": "2025-10-01",
+            "version": "1.0"
+          })
+        }}
+      />
     </body>
     </html>
   );
