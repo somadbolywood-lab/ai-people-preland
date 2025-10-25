@@ -90,7 +90,8 @@ html, body { height: 100%; }
     /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
     .faq-page .title .gradient-text,
     .blog-page .blog-hero-title .gradient-text,
-    .home-page .title .gradient-text {
+    .home-page .title .gradient-text,
+    .role-selection-page .title .gradient-text {
         font-size: clamp(30px, 6.5vw, 52px) !important;
     }
     
@@ -98,7 +99,8 @@ html, body { height: 100%; }
     .faq-page .hero-subtitle,
     .home-page .hero-subtitle,
     .blog-page .hero-subtitle,
-    .all-blogs-page .hero-subtitle {
+    .all-blogs-page .hero-subtitle,
+    .role-selection-page .hero-subtitle {
         font-size: clamp(24px, 5vw, 36px) !important;
         text-align: center !important;
     }
@@ -236,7 +238,8 @@ html, body { height: 100%; }
     /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
     .faq-page .title .gradient-text,
     .blog-page .blog-hero-title .gradient-text,
-    .home-page .title .gradient-text {
+    .home-page .title .gradient-text,
+    .role-selection-page .title .gradient-text {
         font-size: clamp(30px, 6.5vw, 52px) !important;
     }
     
@@ -337,7 +340,8 @@ html, body { height: 100%; }
     /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
     .faq-page .title .gradient-text,
     .blog-page .blog-hero-title .gradient-text,
-    .home-page .title .gradient-text {
+    .home-page .title .gradient-text,
+    .role-selection-page .title .gradient-text {
         font-size: clamp(30px, 6.5vw, 52px) !important;
     }
     
@@ -425,7 +429,8 @@ html, body { height: 100%; }
     /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
     .faq-page .title .gradient-text,
     .blog-page .blog-hero-title .gradient-text,
-    .home-page .title .gradient-text {
+    .home-page .title .gradient-text,
+    .role-selection-page .title .gradient-text {
         font-size: clamp(30px, 6.5vw, 52px) !important;
     }
     
@@ -503,7 +508,8 @@ html, body { height: 100%; }
     /* FAQ and Blog H1 - увеличено в 2 раза ТОЛЬКО на mobile */
     .faq-page .title .gradient-text,
     .blog-page .blog-hero-title .gradient-text,
-    .home-page .title .gradient-text {
+    .home-page .title .gradient-text,
+    .role-selection-page .title .gradient-text {
         font-size: clamp(30px, 6.5vw, 52px) !important;
     }
     
@@ -909,12 +915,7 @@ a.visible-link {
 
 /* Role selection page - auth-container is no longer used */
 
-/* Role selection page - remove width constraints from auth-main */
-.role-selection-page .auth-main {
-  max-width: none;
-  margin: 0;
-  padding: 0;
-}
+/* Role selection page - auth-main is no longer used */
 
 /* Role selection page - hero block should be full width like marquee */
 .role-selection-page .hero {
