@@ -606,13 +606,17 @@ html, body { height: 100%; }
         max-width: 180px;
         min-height: 60px;
         max-height: 60px;
-        /* Smooth loading animation for mobile */
-        opacity: 0;
-        transform: translateY(-6px) scale(0.95);
-        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        /* Logo initial state for smooth animation */
+        opacity: 0.8 !important;
+        transform: translateY(-2px) scale(0.98) !important;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
     
-    /* Logo loaded state - no longer needed */
+    /* Logo loaded state for mobile */
+    .logo-img.loaded {
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+    }
     
     .btn {
         padding: 8px 12px; /* Увеличено для лучшего touch */
@@ -776,7 +780,7 @@ a.visible-link {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 0;
+    /* padding управляется медиа-запросами как у обычного .container */
 }
 
 /* 
@@ -888,7 +892,7 @@ a.visible-link {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 1.25rem 1rem 0;
+  padding: 0 1rem 0;
 }
 
 .auth-container {
@@ -902,6 +906,27 @@ a.visible-link {
 .auth-page .auth-container {
   max-width: 1200px;
 }
+
+/* Role selection page - auth-container is no longer used */
+
+/* Role selection page - remove width constraints from auth-main */
+.role-selection-page .auth-main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Role selection page - hero block should be full width like marquee */
+.role-selection-page .hero {
+  max-width: none;
+}
+
+/* Role selection page - unify notification banner margin with main page */
+.role-selection-page .notification-banner {
+  margin: 0 auto 0;
+}
+
+/* Role selection page - legal notice is now full width like other blocks */
 
 /* Narrow forms for buyer and creator pages */
 .auth-page:not(.role-selection-page) .auth-container {
@@ -2937,13 +2962,17 @@ a.visible-link {
         max-width: 156px;
         min-height: 52px;
         max-height: 52px;
-        /* Logo visible by default with smooth animation */
-        opacity: 1 !important;
-        transform: translateY(0) scale(1) !important;
+        /* Logo initial state for smooth animation */
+        opacity: 0.8 !important;
+        transform: translateY(-2px) scale(0.98) !important;
         transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
     
-    /* Logo loaded state - no longer needed */
+    /* Logo loaded state for desktop */
+    .logo-img.loaded {
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+    }
     
     .btn {
         padding: 8px 12px; /* Увеличено для Apple HIG */
@@ -3114,13 +3143,17 @@ a.visible-link {
         height: 64px;
         min-height: 64px;
         max-height: 64px;
-        /* Logo visible by default with smooth animation */
-        opacity: 1 !important;
-        transform: translateY(0) scale(1) !important;
+        /* Logo initial state for smooth animation */
+        opacity: 0.8 !important;
+        transform: translateY(-2px) scale(0.98) !important;
         transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
     
-    /* Logo loaded state - no longer needed */
+    /* Logo loaded state for desktop */
+    .logo-img.loaded {
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+    }
     .social-link { width: 36px; height: 36px; }
     
     .feedback-btn {
@@ -3167,13 +3200,17 @@ a.visible-link {
         max-width: 192px !important;
         min-height: 64px !important;
         max-height: 64px !important;
-        /* Logo visible by default with smooth animation */
-        opacity: 1 !important;
-        transform: translateY(0) scale(1) !important;
+        /* Logo initial state for smooth animation */
+        opacity: 0.8 !important;
+        transform: translateY(-2px) scale(0.98) !important;
         transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
     
-    /* Logo loaded state - no longer needed */
+    /* Logo loaded state for desktop */
+    .logo-img.loaded {
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+    }
     .marquee-item { width: 320px; height: 180px; }
     .marquee-item img {
         width: 320px;
