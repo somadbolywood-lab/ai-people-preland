@@ -199,10 +199,10 @@ html, body { height: 100%; }
         max-width: 166px !important;
         min-height: 55px !important;
         max-height: 55px !important;
-        /* Logo visible by default - no animation blocking */
+        /* Logo visible by default with smooth animation */
         opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
+        transform: translateY(0) scale(1) !important;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
 }
 
@@ -299,10 +299,10 @@ html, body { height: 100%; }
         max-width: 166px !important;
         min-height: 55px !important;
         max-height: 55px !important;
-        /* Logo visible by default - no animation blocking */
+        /* Logo visible by default with smooth animation */
         opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
+        transform: translateY(0) scale(1) !important;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
 }
 
@@ -559,10 +559,10 @@ html, body { height: 100%; }
         max-width: 166px !important;
         min-height: 55px !important;
         max-height: 55px !important;
-        /* Logo visible by default - no animation blocking */
+        /* Logo visible by default with smooth animation */
         opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
+        transform: translateY(0) scale(1) !important;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
 }
 
@@ -1710,9 +1710,9 @@ a.visible-link {
     -ms-interpolation-mode: bicubic;
     backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
-    /* Logo visible by default - no animation blocking */
+    /* Logo visible by default with smooth animation */
     opacity: 1 !important;
-    transform: none !important;
+    transform: translateY(0) scale(1) !important;
     /* Layout Shift Prevention */
     min-height: 64px;
     max-height: 64px;
@@ -1720,8 +1720,8 @@ a.visible-link {
     position: relative;
     top: 0;
     left: 0;
-    /* No transition to prevent blocking */
-    transition: none !important;
+    /* Smooth transition for better UX */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     /* Force stable dimensions */
     box-sizing: border-box;
     overflow: hidden;
@@ -1732,7 +1732,18 @@ a.visible-link {
     content-visibility: auto;
 }
 
-/* Logo loaded state - no longer needed since logo is visible by default */
+/* Logo initial state - smooth appearance animation */
+.logo-img {
+    /* Initial state for smooth animation */
+    opacity: 0.8 !important;
+    transform: translateY(-2px) scale(0.98) !important;
+}
+
+/* Logo loaded state - smooth appearance */
+.logo-img.loaded {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+}
 
 
 /* Logo animations COMPLETELY REMOVED to prevent jumping */
@@ -2913,10 +2924,10 @@ a.visible-link {
         max-width: 156px;
         min-height: 52px;
         max-height: 52px;
-        /* Logo visible by default - no animation blocking */
-        opacity: 1;
-        transform: none;
-        transition: none;
+        /* Logo visible by default with smooth animation */
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
     
     /* Logo loaded state - no longer needed */
@@ -3090,10 +3101,10 @@ a.visible-link {
         height: 64px;
         min-height: 64px;
         max-height: 64px;
-        /* Logo visible by default - no animation blocking */
-        opacity: 1;
-        transform: none;
-        transition: none;
+        /* Logo visible by default with smooth animation */
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
     
     /* Logo loaded state - no longer needed */
@@ -3143,10 +3154,10 @@ a.visible-link {
         max-width: 192px !important;
         min-height: 64px !important;
         max-height: 64px !important;
-        /* Logo visible by default - no animation blocking */
+        /* Logo visible by default with smooth animation */
         opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
+        transform: translateY(0) scale(1) !important;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
     
     /* Logo loaded state - no longer needed */
