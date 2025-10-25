@@ -199,10 +199,16 @@ html, body { height: 100%; }
         max-width: 166px !important;
         min-height: 55px !important;
         max-height: 55px !important;
-        /* Logo visible by default with smooth animation */
+        /* Logo initial state for smooth animation */
+        opacity: 0.8 !important;
+        transform: translateY(-2px) scale(0.98) !important;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
+    }
+    
+    /* Logo loaded state for mobile */
+    .brand .logo-img.loaded {
         opacity: 1 !important;
         transform: translateY(0) scale(1) !important;
-        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
 }
 
@@ -299,10 +305,16 @@ html, body { height: 100%; }
         max-width: 166px !important;
         min-height: 55px !important;
         max-height: 55px !important;
-        /* Logo visible by default with smooth animation */
+        /* Logo initial state for smooth animation */
+        opacity: 0.8 !important;
+        transform: translateY(-2px) scale(0.98) !important;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
+    }
+    
+    /* Logo loaded state for mobile */
+    .brand .logo-img.loaded {
         opacity: 1 !important;
         transform: translateY(0) scale(1) !important;
-        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
 }
 
@@ -559,10 +571,16 @@ html, body { height: 100%; }
         max-width: 166px !important;
         min-height: 55px !important;
         max-height: 55px !important;
-        /* Logo visible by default with smooth animation */
+        /* Logo initial state for smooth animation */
+        opacity: 0.8 !important;
+        transform: translateY(-2px) scale(0.98) !important;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
+    }
+    
+    /* Logo loaded state for mobile */
+    .brand .logo-img.loaded {
         opacity: 1 !important;
         transform: translateY(0) scale(1) !important;
-        transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
     }
 }
 
@@ -1710,9 +1728,9 @@ a.visible-link {
     -ms-interpolation-mode: bicubic;
     backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
-    /* Logo visible by default with smooth animation */
-    opacity: 1 !important;
-    transform: translateY(0) scale(1) !important;
+    /* Logo initial state for smooth animation */
+    opacity: 0.8 !important;
+    transform: translateY(-2px) scale(0.98) !important;
     /* Layout Shift Prevention */
     min-height: 64px;
     max-height: 64px;
@@ -1732,12 +1750,7 @@ a.visible-link {
     content-visibility: auto;
 }
 
-/* Logo initial state - smooth appearance animation */
-.logo-img {
-    /* Initial state for smooth animation */
-    opacity: 0.8 !important;
-    transform: translateY(-2px) scale(0.98) !important;
-}
+/* Logo initial state - smooth appearance animation (consolidated above) */
 
 /* Logo loaded state - smooth appearance */
 .logo-img.loaded {
