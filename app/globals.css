@@ -1231,6 +1231,7 @@ a.visible-link {
   display: flex;
   gap: 1rem;
   padding: 1.5rem;
+  margin: 2rem 0;
   border-radius: 12px;
   background: rgba(139, 92, 246, 0.05);
   border: 1px solid rgba(139, 92, 246, 0.1);
@@ -2719,7 +2720,7 @@ a.visible-link {
 /* Hero */
 .hero { 
     text-align: center; 
-    padding: 2rem 1rem 3rem;
+    padding: 2rem 1rem 1.5rem;
     background: linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(139, 92, 246, 0.01) 50%, transparent 100%);
 }
 
@@ -4112,7 +4113,7 @@ a.visible-link {
   gap: 2rem;
   justify-content: center;
   align-items: center;
-  margin: 3rem 0;
+  margin: 0 0 1.5rem 0;
   flex-wrap: wrap;
 }
 
@@ -4184,7 +4185,7 @@ a.visible-link {
   .role-selection-buttons {
     flex-direction: column;
     gap: 1.5rem;
-    margin: 2rem 0;
+    margin: 0 0 1rem 0;
   }
 
   .role-choice-btn {
