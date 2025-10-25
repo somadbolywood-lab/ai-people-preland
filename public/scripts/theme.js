@@ -7,7 +7,7 @@
 function forceThemeInit() {
     const body = document.body;
     const html = document.documentElement;
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    const currentTheme = localStorage.getItem('theme') || 'dark';
     
     if (currentTheme === 'light') {
         body.classList.add('light');
@@ -32,8 +32,8 @@ function initThemeToggle() {
     const newThemeToggle = themeToggle.cloneNode(true);
     themeToggle.parentNode.replaceChild(newThemeToggle, themeToggle);
     
-    // Check for saved theme preference or default to 'light'
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    // Check for saved theme preference or default to 'dark'
+    const currentTheme = localStorage.getItem('theme') || 'dark';
     
     // Apply theme immediately but safely
     if (currentTheme === 'light') {

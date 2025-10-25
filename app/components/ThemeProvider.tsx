@@ -27,9 +27,9 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   // Initialize theme based on localStorage immediately
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== 'undefined') {
-      return (localStorage.getItem('theme') as Theme) || 'light';
+      return (localStorage.getItem('theme') as Theme) || 'dark';
     }
-    return 'light';
+    return 'dark';
   });
   const [isClient, setIsClient] = useState(false);
 
@@ -38,7 +38,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     setIsClient(true);
     
     if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme') as Theme || 'light';
+      const savedTheme = localStorage.getItem('theme') as Theme || 'dark';
       
       // Apply theme immediately
       const body = document.body;
