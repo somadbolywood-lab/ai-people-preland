@@ -3,7 +3,6 @@
 import ThemeToggle from "./ThemeToggle";
 import LanguageSelector from "./LanguageSelector";
 import Logo from "./Logo";
-import LogoAnimation from "./LogoAnimation";
 import { useHamburgerMenu } from "../hooks/useHamburgerMenu";
 
 interface HeaderWithMenuProps {
@@ -17,7 +16,6 @@ export default function HeaderWithMenu({ homeHref }: HeaderWithMenuProps) {
     <>
       <header className="topbar">
         <Logo homeHref={homeHref} />
-        <LogoAnimation />
         <div className="actions">
           <LanguageSelector />
           <ThemeToggle />

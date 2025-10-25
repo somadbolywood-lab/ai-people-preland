@@ -128,6 +128,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   color: #f5f5f7 !important;
                 }
                 
+                .logo-img {
+                  opacity: 1 !important;
+                  transform: none !important;
+                  transition: none !important;
+                }
+                
                 .btn {
                   background: #111114 !important;
                   color: #f5f5f7 !important;
